@@ -1,0 +1,275 @@
+{
+  "schema_version": "1.0",
+  "intake_type": "curation",
+  "channel": "aixchem",
+  "date": "2026-08-16",
+  "selected": [
+    {
+      "id": "biorxiv:10.64898/2026.02.15.705956",
+      "category": "方法与模型",
+      "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“Physically Grounded Generative Modeling of All-Atom Biomolecular Dynamics”所涉及的模型与验证结果。",
+      "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+      "quality_score": 100,
+      "tags": [
+        "方法与模型",
+        "bioinformatics",
+        "generative model",
+        "molecular",
+        "biomolecular"
+      ],
+      "evidence_flags": []
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007443/v1",
+      "category": "方法与模型",
+      "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“Neural Networks Accelerate Ab Initio Multiple Spawning Simulations: A Case Study of Using Machine Learning Potentials for Excited State Dynamics”所涉及的模型与验证结果。",
+      "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+      "quality_score": 100,
+      "tags": [
+        "方法与模型",
+        "ChemRxiv",
+        "machine learning",
+        "neural network",
+        "machine learning potential"
+      ],
+      "evidence_flags": []
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744759",
+      "category": "分子与药物发现",
+      "summary_zh": "该预印本提出一项用于分子设计或药物发现的新方法，重点讨论了“LEN-Seek: Fast and scalable ligand binding-site similarity search in the latent space of an SE(3)-invariant graph VAE”所涉及的模型与验证结果。",
+      "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+      "quality_score": 100,
+      "tags": [
+        "分子与药物发现",
+        "bioinformatics",
+        "ligand",
+        "language model",
+        "graph neural"
+      ],
+      "evidence_flags": []
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007436/v1",
+      "category": "方法与模型",
+      "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“SafeChem: A Benchmark Dataset for Multi-Label Chemical Hazard Prediction and LLM Safety Hallucination Evaluation”所涉及的模型与验证结果。",
+      "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+      "quality_score": 100,
+      "tags": [
+        "方法与模型",
+        "ChemRxiv",
+        "llm",
+        "chemical",
+        "large language model"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "dataset"
+      ]
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.10.743877",
+      "category": "方法与模型",
+      "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“CALFP-MHC: Interpretable Pan-Allelic Prediction of Peptide-MHC Binding and Presentation Using Chemically Grounded Fingerprints and Contrastive Learning”所涉及的模型与验证结果。",
+      "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+      "quality_score": 100,
+      "tags": [
+        "方法与模型",
+        "immunology",
+        "chemical",
+        "peptide",
+        "deep learning"
+      ],
+      "evidence_flags": [
+        "benchmark"
+      ]
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.09.743788",
+      "category": "方法与模型",
+      "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“Learning from human and chemical languages to predict biological function”所涉及的模型与验证结果。",
+      "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+      "quality_score": 100,
+      "tags": [
+        "方法与模型",
+        "bioinformatics",
+        "chemical",
+        "machine learning",
+        "deep learning"
+      ],
+      "evidence_flags": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.12.744314",
+      "category": "分子与药物发现",
+      "summary_zh": "该预印本提出一项用于分子设计或药物发现的新方法，重点讨论了“AI4Loop: an Artificial Intelligence Framework Reveals Increased 3D Chromatin Interactions and Therapeutic Vulnerabilities across 12,000 Cancer Samples”所涉及的模型与验证结果。",
+      "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+      "quality_score": 100,
+      "tags": [
+        "分子与药物发现",
+        "bioinformatics",
+        "artificial intelligence",
+        "therapeutic",
+        "deep learning"
+      ],
+      "evidence_flags": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.09.743676",
+      "category": "方法与模型",
+      "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“FP8 Inference in Genomic Foundation Models: Theoretical vs. Realized Speedups on GenomeOcean”所涉及的模型与验证结果。",
+      "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+      "quality_score": 99.6,
+      "tags": [
+        "方法与模型",
+        "bioinformatics",
+        "foundation model",
+        "genome",
+        "language model"
+      ],
+      "evidence_flags": []
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.08.743505",
+      "category": "方法与模型",
+      "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“DQHTFI: Dynamic-Query Hypergraph Transformer for Fine-Grained Drug-Target Interaction and Affinity Prediction”所涉及的模型与验证结果。",
+      "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+      "quality_score": 100,
+      "tags": [
+        "方法与模型",
+        "bioinformatics",
+        "transformer",
+        "drug",
+        "deep learning"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "dataset"
+      ]
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744831",
+      "category": "方法与模型",
+      "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“A Two-Stage ESM-Based Machine Learning Pipeline for Robust Hierarchical Enzyme Function Prediction”所涉及的模型与验证结果。",
+      "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+      "quality_score": 100,
+      "tags": [
+        "方法与模型",
+        "bioinformatics",
+        "machine learning",
+        "enzyme",
+        "language model"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "dataset"
+      ]
+    },
+    {
+      "id": "biorxiv:10.1101/2025.10.24.684491",
+      "category": "方法与模型",
+      "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“A machine learning framework for supervised treatment response prediction from tumor transcriptomics: A large-scale pan-cancer study”所涉及的模型与验证结果。",
+      "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+      "quality_score": 100,
+      "tags": [
+        "方法与模型",
+        "cancer biology",
+        "machine learning",
+        "omics",
+        "drug"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "prospective"
+      ]
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.08.743602",
+      "category": "方法与模型",
+      "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“ACCREDIT: A Quality-Aware Agentic Engine for Cell-resolved Cross-modal Image Registration with Dynamic Iterative Tuning”所涉及的模型与验证结果。",
+      "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+      "quality_score": 92.5,
+      "tags": [
+        "方法与模型",
+        "bioinformatics",
+        "agentic",
+        "large language model",
+        "language model"
+      ],
+      "evidence_flags": []
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.08.743577",
+      "category": "分子与药物发现",
+      "summary_zh": "该预印本提出一项用于分子设计或药物发现的新方法，重点讨论了“A Conversational Multi-Agent AI System for Integrated Multi-Omics Analysis and Biomedical Discovery”所涉及的模型与验证结果。",
+      "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+      "quality_score": 89.2,
+      "tags": [
+        "分子与药物发现",
+        "bioinformatics",
+        "omics",
+        "agentic",
+        "synthesis"
+      ],
+      "evidence_flags": []
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744850",
+      "category": "方法与模型",
+      "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“CARD:Epi - Contextualizing Antimicrobial Resistance Determinants Using Deep Learning Language Models”所涉及的模型与验证结果。",
+      "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+      "quality_score": 91.0,
+      "tags": [
+        "方法与模型",
+        "genomics",
+        "deep learning",
+        "language model",
+        "drug"
+      ],
+      "evidence_flags": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744703",
+      "category": "结构与生物",
+      "summary_zh": "该预印本提出一项用于解析生物分子结构与功能的新方法，重点讨论了“Protein language models and the long tail of functional diversity”所涉及的模型与验证结果。",
+      "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+      "quality_score": 89.2,
+      "tags": [
+        "结构与生物",
+        "bioinformatics",
+        "language model",
+        "protein",
+        "rna"
+      ],
+      "evidence_flags": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.11.744248",
+      "category": "结构与生物",
+      "summary_zh": "该预印本提出一项用于解析生物分子结构与功能的新方法，重点讨论了“Maternal diet and genetics shape the human milk metabolome”所涉及的模型与验证结果。",
+      "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+      "quality_score": 76.0,
+      "tags": [
+        "结构与生物",
+        "genomics",
+        "rna",
+        "machine learning",
+        "genome"
+      ],
+      "evidence_flags": []
+    }
+  ],
+  "imported_at": "2026-08-15T16:56:09+00:00",
+  "issue": {
+    "number": "3",
+    "url": "https://github.com/ZiChenWang114514/ai-chem-daily/issues/3"
+  }
+}
