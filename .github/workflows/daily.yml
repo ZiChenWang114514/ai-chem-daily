@@ -18,7 +18,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: ai-chem-daily-production
+  group: aix-daily-content
   cancel-in-progress: false
 
 jobs:
@@ -48,9 +48,13 @@ jobs:
         run: >-
           python backend/daily_digest.py
           --site-root public
+          --raw-root work/raw
           --days "${{ inputs.days || '3' }}"
           --limit 16
           --send-email
+
+      - name: Build hub interfaces
+        run: python backend/hub_publish.py --site-root public
 
       - name: Verify generated files
         run: python -m unittest discover -s tests -v
@@ -67,7 +71,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data public/email
+          git add public/data public/email public/api
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else
@@ -93,6 +97,15 @@ jobs:
             public/email/latest.html
             public/email/latest.md
           retention-days: 30
+
+      - name: Upload private raw snapshot for Zeus synchronization
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: raw-aixchem-${{ steps.meta.outputs.digest_date || github.run_id }}
+          path: work/raw
+          if-no-files-found: warn
+          retention-days: 14
 
   deploy:
     needs: build

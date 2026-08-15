@@ -36,6 +36,8 @@ class DigestOutputTests(unittest.TestCase):
     def test_archive_index_contains_latest(self):
         index = json.loads(ARCHIVE_INDEX.read_text(encoding="utf-8"))
         self.assertIn(self.payload["date"], [item["date"] for item in index["items"]])
+        latest_item = next(item for item in index["items"] if item["date"] == self.payload["date"])
+        self.assertEqual(latest_item["candidates"], self.payload["stats"]["candidates"])
 
 
 if __name__ == "__main__":

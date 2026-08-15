@@ -6,6 +6,7 @@
       "href": "data/archive/2026-08-15.json",
       "selected": 16,
       "fetched": 1186,
+      "candidates": 51,
       "kind": "json"
     },
     {
@@ -13,6 +14,7 @@
       "href": "legacy/2026-07-17.html",
       "selected": 16,
       "fetched": 522,
+      "candidates": 81,
       "kind": "html"
     }
   ]

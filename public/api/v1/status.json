@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-15T16:46:06+00:00",
+  "timezone": "Asia/Shanghai",
+  "expected_date": "2026-08-16",
+  "latest_date": "2026-08-15",
+  "state": "stale",
+  "active_channels": [
+    "aixchem"
+  ],
+  "channels_with_data": [
+    "aixchem"
+  ],
+  "planned_channels": [
+    "aixbio",
+    "aixmath",
+    "aivoices",
+    "engineering"
+  ]
+}

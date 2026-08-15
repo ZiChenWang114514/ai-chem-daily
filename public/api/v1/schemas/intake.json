@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zichenwang114514.github.io/ai-chem-daily/api/v1/schemas/intake.json",
+  "title": "AIX Daily scheduled intake",
+  "description": "网页版 ChatGPT 已安排任务提交每日资料时使用的通用格式。",
+  "type": "object",
+  "required": ["schema_version", "intake_type", "channel", "date"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "intake_type": { "enum": ["curation", "digest", "notes"] },
+    "channel": { "enum": ["aixchem", "aixbio", "aixmath", "aivoices", "engineering"] },
+    "date": { "type": "string", "format": "date" },
+    "title": { "type": "string" },
+    "summary": { "type": "string" },
+    "selected": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "category", "summary_zh", "why_it_matters_zh"],
+        "properties": {
+          "id": { "type": "string" },
+          "category": { "type": "string" },
+          "summary_zh": { "type": "string" },
+          "why_it_matters_zh": { "type": "string" },
+          "quality_score": { "type": "number" },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "evidence_flags": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "url", "summary_zh"],
+        "properties": {
+          "title": { "type": "string" },
+          "url": { "type": "string" },
+          "source": { "type": "string" },
+          "published": { "type": "string" },
+          "summary_zh": { "type": "string" },
+          "why_it_matters_zh": { "type": "string" },
+          "tags": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AIX Daily 与 ChatGPT 已安排任务的公开连接说明。">
+  <meta name="theme-color" content="#172333">
+  <title>连接已安排任务 · AIX Daily</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <style>
+    :root { color-scheme: light; --ink:#172333; --sub:#667286; --line:#dfe5e9; --teal:#0d7c78; --canvas:#f2f5f6; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--canvas); font-family:Inter,"Noto Sans SC","Microsoft YaHei",system-ui,sans-serif; line-height:1.7; }
+    a { color:inherit; }
+    .shell { width:min(860px,calc(100% - 32px)); margin:0 auto; }
+    header { padding:28px 0 72px; color:#fff; background:linear-gradient(135deg,#111c31,#173d4b); }
+    nav { display:flex; align-items:center; justify-content:space-between; }
+    nav a { font-size:12px; text-decoration:none; }
+    .brand { font-weight:800; letter-spacing:.16em; }
+    .eyebrow { margin-top:70px; color:#83cbc4; font-size:11px; font-weight:800; letter-spacing:.18em; }
+    h1 { max-width:720px; margin:9px 0 13px; font-family:"Noto Serif SC","Songti SC",serif; font-size:clamp(34px,7vw,58px); line-height:1.2; }
+    header p { max-width:680px; margin:0; color:rgba(255,255,255,.7); }
+    main { padding:34px 0 80px; }
+    .status { display:grid; grid-template-columns:repeat(3,1fr); margin-bottom:16px; overflow:hidden; background:#fff; border:1px solid var(--line); border-radius:13px; }
+    .status div { padding:16px 18px; }
+    .status div + div { border-left:1px solid var(--line); }
+    .status span,.status strong { display:block; }
+    .status span { color:var(--sub); font-size:10px; }
+    .status strong { margin-top:2px; font-size:14px; }
+    article { padding:26px 28px; background:#fff; border:1px solid var(--line); border-radius:13px; }
+    h2 { margin:0 0 7px; font-family:"Noto Serif SC","Songti SC",serif; font-size:23px; }
+    article > p { margin:0 0 18px; color:var(--sub); font-size:13px; }
+    pre { max-height:380px; margin:0; padding:18px; overflow:auto; color:#dce8e8; background:#172333; border-radius:10px; white-space:pre-wrap; font:12px/1.75 ui-monospace,SFMono-Regular,Consolas,monospace; }
+    .actions { display:flex; gap:9px; flex-wrap:wrap; margin-top:16px; }
+    button,.button { padding:9px 14px; color:#fff; background:var(--teal); border:0; border-radius:8px; cursor:pointer; font:700 12px inherit; text-decoration:none; }
+    .button.secondary { color:var(--ink); background:#edf1f2; }
+    .note { margin-top:16px; padding:15px 17px; color:#4a5668; background:#e8f1f0; border-radius:9px; font-size:12px; }
+    code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; }
+    @media(max-width:600px){ .status{grid-template-columns:1fr}.status div+div{border-top:1px solid var(--line);border-left:0}article{padding:21px 18px}.eyebrow{margin-top:48px} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell">
+      <nav><a class="brand" href="../">AIX DAILY</a><a href="../">返回日报</a></nav>
+      <div class="eyebrow">CHATGPT SCHEDULED TASK</div>
+      <h1>让每日采集与智能简报协同运行</h1>
+      <p>公开数据接口提供稳定内容；ChatGPT 已安排任务按时阅读、完成复核，并通过 GitHub 资料接口上传结果，网站随后自动更新。</p>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="status" aria-label="接口状态">
+      <div><span>接口状态</span><strong id="status-state">正在检查</strong></div>
+      <div><span>最近一期</span><strong id="status-date">—</strong></div>
+      <div><span>建议时间</span><strong>每日 09:15 · 北京时间</strong></div>
+    </section>
+    <article>
+      <h2>已安排任务说明</h2>
+      <p>在 ChatGPT 的“已安排”页面创建每日任务，并粘贴下面这段内容。任务每次都会从版本化接口读取最新说明。</p>
+      <pre id="task-prompt">正在载入任务说明…</pre>
+      <div class="actions">
+        <button id="copy-button" type="button">复制任务说明</button>
+        <a class="button secondary" href="../api/v1/manifest.json">查看接口清单</a>
+        <a class="button secondary" href="../api/v1/status.json">查看运行状态</a>
+      </div>
+      <div class="note">请在 ChatGPT 中连接并授权 GitHub 应用。网页版任务读取本页公开接口后，会把结果提交为带有 <code>scheduled-intake</code> 标签的 Issue；仓库工作流接收资料并重新部署网站，无需保存个人 Token。</div>
+    </article>
+  </main>
+  <script>
+    const promptElement = document.getElementById("task-prompt");
+    Promise.all([
+      fetch("../api/v1/tasks/daily-brief.md", { cache: "no-store" }).then((response) => response.text()),
+      fetch("../api/v1/status.json", { cache: "no-store" }).then((response) => response.json()),
+    ]).then(([prompt, status]) => {
+      promptElement.textContent = prompt;
+      document.getElementById("status-state").textContent = status.state === "fresh" ? "今日数据已就绪" : "等待今日更新";
+      document.getElementById("status-date").textContent = status.latest_date || "尚无数据";
+    }).catch(() => { promptElement.textContent = "任务说明暂时无法读取，请稍后刷新。"; });
+    document.getElementById("copy-button").addEventListener("click", async (event) => {
+      await navigator.clipboard.writeText(promptElement.textContent);
+      event.currentTarget.textContent = "已复制";
+    });
+  </script>
+</body>
+</html>

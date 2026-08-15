@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import email.utils
+import gzip
 import html
 import json
 import os
@@ -520,6 +521,38 @@ def write_json(path: Path, value: Any) -> None:
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def write_raw_snapshot(
+    raw_root: Path,
+    papers: list[Paper],
+    *,
+    start_date: date,
+    end_date: date,
+    source_counts: dict[str, int],
+    errors: list[str],
+) -> dict[str, Any]:
+    """Write a compact raw snapshot outside the published site."""
+    snapshot_root = raw_root / "aixchem" / f"{end_date:%Y}" / f"{end_date:%m}"
+    snapshot_root.mkdir(parents=True, exist_ok=True)
+    data_path = snapshot_root / f"{end_date.isoformat()}.jsonl.gz"
+    with gzip.open(data_path, "wt", encoding="utf-8", newline="\n") as stream:
+        for paper in papers:
+            stream.write(json.dumps(asdict(paper), ensure_ascii=False, separators=(",", ":")) + "\n")
+    manifest = {
+        "schema_version": "1.0",
+        "channel": "aixchem",
+        "date": end_date.isoformat(),
+        "window": {"start": start_date.isoformat(), "end": end_date.isoformat()},
+        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "record_count": len(papers),
+        "source_counts": source_counts,
+        "source_errors": errors,
+        "data_file": data_path.name,
+        "bytes": data_path.stat().st_size,
+    }
+    write_json(snapshot_root / f"{end_date.isoformat()}.manifest.json", manifest)
+    return manifest
+
+
 def render_email(payload: dict[str, Any], site_url: str) -> tuple[str, str]:
     day = payload["date"]
     stats = payload["stats"]
@@ -595,6 +628,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--limit", type=int, default=16)
     parser.add_argument("--date", dest="run_date", help="Digest date in YYYY-MM-DD")
     parser.add_argument("--site-url", default=os.getenv("SITE_URL", "https://zichenwang114514.github.io/ai-chem-daily/"))
+    parser.add_argument("--raw-root", type=Path, help="Optional private raw snapshot directory")
     parser.add_argument("--send-email", action="store_true")
     return parser.parse_args()
 
@@ -625,6 +659,19 @@ def main() -> int:
     if not all_papers:
         raise RuntimeError("All sources returned no records or failed")
     unique = deduplicate(all_papers)
+    if args.raw_root:
+        raw_manifest = write_raw_snapshot(
+            args.raw_root,
+            unique,
+            start_date=start_date,
+            end_date=end_date,
+            source_counts=source_counts,
+            errors=errors,
+        )
+        log(
+            f"Raw snapshot: {raw_manifest['record_count']} records, "
+            f"{raw_manifest['bytes']} bytes compressed"
+        )
     candidates = [paper for paper in unique if score_paper(paper, end_date)]
     log(f"Candidate filter: {len(unique)} unique -> {len(candidates)} relevant")
     if not candidates:
@@ -666,6 +713,7 @@ def main() -> int:
             "href": f"data/archive/{end_date.isoformat()}.json",
             "selected": len(selected),
             "fetched": sum(source_counts.values()),
+            "candidates": len(candidates),
             "kind": "json",
         }
     )

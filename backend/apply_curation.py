@@ -87,6 +87,7 @@ def main() -> int:
     for item in archive_index.get("items", []):
         if item.get("date") == latest["date"]:
             item["selected"] = len(papers)
+            item["candidates"] = latest["stats"].get("candidates", 0)
     write_json(archive_index_path, archive_index)
 
     email_html, email_markdown = render_email(latest, args.site_url)

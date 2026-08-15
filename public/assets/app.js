@@ -1,5 +1,9 @@
 const state = {
   payload: null,
+  manifest: null,
+  archive: [],
+  activity: [],
+  activityMetric: "selected",
   source: "all",
   query: "",
 };
@@ -30,6 +34,116 @@ function formatGeneratedAt(value) {
 function setText(id, value) {
   const element = document.getElementById(id);
   if (element) element.textContent = value ?? "—";
+}
+
+function dateKey(date) {
+  const year = date.getUTCFullYear();
+  const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(date.getUTCDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function dateFromKey(value) {
+  const [year, month, day] = String(value).split("-").map(Number);
+  return new Date(Date.UTC(year, month - 1, day));
+}
+
+function activityLevel(value, maximum) {
+  if (!value || !maximum) return 0;
+  const ratio = Math.sqrt(value / maximum);
+  return Math.max(1, Math.min(4, Math.ceil(ratio * 4)));
+}
+
+function renderHeatmap() {
+  const container = document.getElementById("activity-heatmap");
+  if (!container) return;
+  container.replaceChildren();
+  const metric = state.activityMetric;
+  const byDate = new Map(
+    state.activity
+      .filter((item) => item.channel === "aixchem")
+      .map((item) => [item.date, item])
+  );
+  const values = [...byDate.values()].map((item) => Number(item[metric]) || 0);
+  const maximum = Math.max(0, ...values);
+  const activityDates = state.activity.map((item) => item.date).filter(Boolean).sort();
+  const latestDate = activityDates.at(-1) || state.payload?.date || dateKey(new Date());
+  const end = dateFromKey(latestDate);
+  end.setUTCDate(end.getUTCDate() + (6 - end.getUTCDay()));
+  const start = new Date(end);
+  start.setUTCDate(start.getUTCDate() - 370);
+  const activeDate = new URLSearchParams(location.search).get("date") || state.payload?.date;
+  const metricNames = { selected: "精选", candidates: "候选", fetched: "抓取" };
+  let populatedDays = 0;
+  let total = 0;
+  let previousMonth = -1;
+
+  for (let offset = 0; offset < 371; offset += 1) {
+    const day = new Date(start);
+    day.setUTCDate(start.getUTCDate() + offset);
+    const key = dateKey(day);
+    const item = byDate.get(key);
+    const value = Number(item?.[metric]) || 0;
+    const week = Math.floor(offset / 7);
+    if (day.getUTCMonth() !== previousMonth && (offset === 0 || day.getUTCDate() <= 7)) {
+      previousMonth = day.getUTCMonth();
+      const month = document.createElement("span");
+      month.className = "heatmap__month";
+      month.style.setProperty("--week", week);
+      month.textContent = `${day.getUTCMonth() + 1}月`;
+      container.appendChild(month);
+    }
+
+    const hasArchive = Boolean(item?.href);
+    const cell = document.createElement(hasArchive ? "button" : "span");
+    cell.className = "heatmap__day";
+    cell.dataset.level = String(activityLevel(value, maximum));
+    cell.setAttribute("role", "gridcell");
+    if (key > latestDate) cell.classList.add("is-future");
+    if (key === activeDate) cell.classList.add("is-current");
+    const label = `${formatDate(key)}：${metricNames[metric]} ${value.toLocaleString("zh-CN")}`;
+    cell.title = label;
+    cell.setAttribute("aria-label", label);
+    if (hasArchive) {
+      cell.type = "button";
+      cell.addEventListener("click", () => {
+        location.href = item.kind === "html" ? item.href : `?date=${encodeURIComponent(key)}`;
+      });
+    }
+    container.appendChild(cell);
+    if (value > 0) populatedDays += 1;
+    total += value;
+  }
+  const units = { selected: "篇精选", candidates: "篇候选", fetched: "条抓取记录" };
+  setText("activity-summary", `过去一年有 ${populatedDays} 天记录，共计 ${total.toLocaleString("zh-CN")} ${units[metric]}`);
+}
+
+function renderChannels() {
+  const container = document.getElementById("channel-cards");
+  if (!container || !state.manifest) return;
+  container.replaceChildren();
+  state.manifest.channels.forEach((channel) => {
+    const card = document.createElement("article");
+    card.className = `channel-card ${channel.status === "active" ? "is-active" : ""}`;
+    card.style.setProperty("--channel-accent", channel.accent || "#0d7c78");
+    const top = document.createElement("div");
+    top.className = "channel-card__top";
+    const title = document.createElement("h3");
+    title.textContent = channel.name;
+    const status = document.createElement("span");
+    status.className = "channel-card__status";
+    status.textContent = channel.status === "active" ? "每日更新" : (channel.has_data ? "已有资料" : "待接入");
+    top.append(title, status);
+    const description = document.createElement("p");
+    description.textContent = channel.description;
+    const meta = document.createElement("span");
+    meta.className = "channel-card__meta";
+    meta.textContent = channel.status === "active" || channel.has_data
+      ? `最近一期 ${channel.latest_date || "等待生成"}`
+      : `拟接入：${(channel.sources || []).join(" · ")}`;
+    card.append(top, description, meta);
+    container.appendChild(card);
+  });
 }
 
 function paperSearchText(paper) {
@@ -139,7 +253,8 @@ async function loadArchiveIndex() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const archive = await response.json();
     container.replaceChildren();
-    (archive.items || []).forEach((item) => {
+    state.archive = archive.items || [];
+    state.archive.forEach((item) => {
       const link = document.createElement("a");
       link.className = "history-link";
       link.href = item.kind === "html" ? item.href : `?date=${encodeURIComponent(item.date)}`;
@@ -149,8 +264,29 @@ async function loadArchiveIndex() {
       link.appendChild(count);
       container.appendChild(link);
     });
+    if (!state.activity.length) {
+      state.activity = state.archive.map((item) => ({ ...item, channel: "aixchem" }));
+      renderHeatmap();
+    }
   } catch (error) {
     container.textContent = `历史列表读取失败：${error.message}`;
+  }
+}
+
+async function loadHub() {
+  try {
+    const [manifestResponse, activityResponse] = await Promise.all([
+      fetch("api/v1/manifest.json", { cache: "no-store" }),
+      fetch("api/v1/activity.json", { cache: "no-store" }),
+    ]);
+    if (!manifestResponse.ok || !activityResponse.ok) throw new Error("hub interface unavailable");
+    state.manifest = await manifestResponse.json();
+    const activity = await activityResponse.json();
+    state.activity = activity.items || [];
+    renderChannels();
+    renderHeatmap();
+  } catch (_error) {
+    renderHeatmap();
   }
 }
 
@@ -182,6 +318,18 @@ document.getElementById("source-filters").addEventListener("click", (event) => {
   renderPapers();
 });
 
+document.getElementById("activity-tabs").addEventListener("click", (event) => {
+  const button = event.target.closest("button[data-metric]");
+  if (!button) return;
+  state.activityMetric = button.dataset.metric;
+  document.querySelectorAll("#activity-tabs button").forEach((item) => {
+    const active = item === button;
+    item.classList.toggle("is-active", active);
+    item.setAttribute("aria-pressed", String(active));
+  });
+  renderHeatmap();
+});
+
 const historyButton = document.getElementById("history-button");
 const historyPanel = document.getElementById("history-panel");
 historyButton.addEventListener("click", () => {
@@ -196,4 +344,4 @@ document.addEventListener("click", (event) => {
   historyButton.setAttribute("aria-expanded", "false");
 });
 
-Promise.all([loadDigest(), loadArchiveIndex()]);
+Promise.all([loadDigest(), loadArchiveIndex(), loadHub()]);

@@ -1,0 +1,25 @@
+name: AIX Daily 资料提交
+description: 为 ChatGPT 已安排任务和人工整理提供结构化资料提交页
+title: "AIX Intake · channel · YYYY-MM-DD"
+labels: ["scheduled-intake"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请在下方粘贴符合公开 intake schema 的 JSON。提交后，GitHub Actions 会自动导入资料并更新网站。
+  - type: textarea
+    id: payload
+    attributes:
+      label: JSON 资料
+      description: https://zichenwang114514.github.io/ai-chem-daily/api/v1/schemas/intake.json
+      render: json
+      placeholder: |
+        {
+          "schema_version": "1.0",
+          "intake_type": "notes",
+          "channel": "aivoices",
+          "date": "2026-08-16",
+          "items": []
+        }
+    validations:
+      required: true

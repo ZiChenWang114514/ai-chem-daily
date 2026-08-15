@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-15T16:46:06+00:00",
+  "hub": {
+    "id": "aix-daily",
+    "name": "AIX Daily",
+    "title": "每日智能研究集散中心",
+    "timezone": "Asia/Shanghai",
+    "site_url": "https://zichenwang114514.github.io/ai-chem-daily/"
+  },
+  "channels": [
+    {
+      "id": "aixchem",
+      "name": "AI × Chem",
+      "title": "AI 与化学",
+      "description": "预印本、方法、数据集与实验验证的每日精选。",
+      "status": "active",
+      "cadence": "daily",
+      "accent": "#4fc3b7",
+      "sources": [
+        "arXiv",
+        "bioRxiv",
+        "ChemRxiv"
+      ],
+      "latest_path": "data/latest.json",
+      "archive_path": "data/archive/index.json",
+      "candidate_path": "data/candidates/latest.json",
+      "endpoints": {
+        "latest": "https://zichenwang114514.github.io/ai-chem-daily/data/latest.json",
+        "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/archive/index.json",
+        "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/candidates/latest.json"
+      },
+      "latest_date": "2026-08-15",
+      "has_data": true,
+      "stats": {
+        "fetched": 1186,
+        "candidates": 51,
+        "selected": 16,
+        "sources": {
+          "arXiv": 893,
+          "bioRxiv": 216,
+          "ChemRxiv": 77
+        },
+        "topics": {
+          "分子与药物发现": 4,
+          "方法与模型": 4,
+          "结构与生物": 7,
+          "材料与催化": 1
+        }
+      }
+    },
+    {
+      "id": "aixbio",
+      "name": "AI × Bio",
+      "title": "AI 与生命科学",
+      "description": "计算生物学、组学、蛋白质与生物医学模型。",
+      "status": "planned",
+      "cadence": "daily",
+      "accent": "#7eb889",
+      "sources": [
+        "arXiv",
+        "bioRxiv",
+        "medRxiv",
+        "Europe PMC"
+      ],
+      "endpoints": {},
+      "has_data": false
+    },
+    {
+      "id": "aixmath",
+      "name": "AI × Math",
+      "title": "AI 与数学",
+      "description": "自动推理、形式化证明、数学智能与基础模型。",
+      "status": "planned",
+      "cadence": "daily",
+      "accent": "#8098d4",
+      "sources": [
+        "arXiv",
+        "OpenReview"
+      ],
+      "endpoints": {},
+      "has_data": false
+    },
+    {
+      "id": "aivoices",
+      "name": "AI Voices",
+      "title": "研究者与工程师动态",
+      "description": "公开社交媒体观点、研究发布与重要讨论。",
+      "status": "planned",
+      "cadence": "daily",
+      "accent": "#c18ac7",
+      "sources": [
+        "公开社交媒体",
+        "研究博客"
+      ],
+      "endpoints": {},
+      "has_data": false
+    },
+    {
+      "id": "engineering",
+      "name": "Engineering",
+      "title": "工程更新",
+      "description": "重要框架、模型、工具链的发布说明与变更记录。",
+      "status": "planned",
+      "cadence": "daily",
+      "accent": "#d39b62",
+      "sources": [
+        "GitHub Releases",
+        "官方更新日志"
+      ],
+      "endpoints": {},
+      "has_data": false
+    }
+  ],
+  "endpoints": {
+    "status": "https://zichenwang114514.github.io/ai-chem-daily/api/v1/status.json",
+    "activity": "https://zichenwang114514.github.io/ai-chem-daily/api/v1/activity.json",
+    "daily_task": "https://zichenwang114514.github.io/ai-chem-daily/api/v1/tasks/daily-brief.json",
+    "daily_task_text": "https://zichenwang114514.github.io/ai-chem-daily/api/v1/tasks/daily-brief.md"
+  }
+}

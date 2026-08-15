@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="每日筛选 arXiv、bioRxiv 与 ChemRxiv 中值得关注的 AI × Chem 预印本。">
+  <meta name="description" content="面向 AI 与科学交叉研究的每日信息中心，当前提供 AI × Chem 预印本精选。">
   <meta name="theme-color" content="#142238">
   <title>AI × Chem 每日预印本精选</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -15,14 +15,25 @@
   <header class="masthead">
     <div class="shell masthead__inner">
       <nav class="topbar" aria-label="主要导航">
-        <a class="brand" href="./" aria-label="AI × Chem 日报首页">
-          <span class="brand__mark" aria-hidden="true">A×C</span>
-          <span>PREPRINT DAILY</span>
+        <a class="brand" href="./" aria-label="AIX Daily 首页">
+          <span class="brand__mark" aria-hidden="true">AIX</span>
+          <span>DAILY INTELLIGENCE</span>
         </a>
-        <button class="history-button" id="history-button" type="button" aria-expanded="false" aria-controls="history-panel">
-          历史日报
-          <span aria-hidden="true">⌄</span>
-        </button>
+        <div class="topbar__actions">
+          <a class="task-link" href="task/">已安排任务接口</a>
+          <button class="history-button" id="history-button" type="button" aria-expanded="false" aria-controls="history-panel">
+            历史日报
+            <span aria-hidden="true">⌄</span>
+          </button>
+        </div>
+      </nav>
+
+      <nav class="channel-nav" id="channel-nav" aria-label="信息频道">
+        <a class="channel-nav__item is-active" href="./" aria-current="page">AI × Chem</a>
+        <span class="channel-nav__item is-planned">AI × Bio <small>筹备中</small></span>
+        <span class="channel-nav__item is-planned">AI × Math <small>筹备中</small></span>
+        <span class="channel-nav__item is-planned">AI Voices <small>筹备中</small></span>
+        <span class="channel-nav__item is-planned">Engineering <small>筹备中</small></span>
       </nav>
 
       <div class="history-panel" id="history-panel" hidden>
@@ -64,6 +75,36 @@
   </header>
 
   <main class="shell main-content">
+    <section class="activity-panel" aria-labelledby="activity-title">
+      <div class="activity-panel__head">
+        <div>
+          <span class="section-heading__kicker">365-DAY ACTIVITY</span>
+          <h2 id="activity-title">每日研究活动</h2>
+          <p id="activity-summary">正在读取历史采集记录…</p>
+        </div>
+        <div class="activity-tabs" id="activity-tabs" aria-label="选择活动指标">
+          <button type="button" class="is-active" data-metric="selected" aria-pressed="true">精选</button>
+          <button type="button" data-metric="candidates" aria-pressed="false">候选</button>
+          <button type="button" data-metric="fetched" aria-pressed="false">抓取</button>
+        </div>
+      </div>
+      <div class="heatmap-scroll" tabindex="0" aria-label="可横向滚动的年度活动日历">
+        <div class="heatmap" id="activity-heatmap" role="grid" aria-label="过去一年每日研究活动"></div>
+      </div>
+      <div class="activity-legend" aria-hidden="true">
+        <span>少</span><i data-level="0"></i><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i><span>多</span>
+      </div>
+    </section>
+
+    <section class="channel-overview" aria-labelledby="channel-title">
+      <div class="channel-overview__intro">
+        <span class="section-heading__kicker">RESEARCH CHANNELS</span>
+        <h2 id="channel-title">一个中心，多条研究线索</h2>
+        <p>共享同一套日期、来源、运行状态与归档格式，后续频道可以独立加入，不影响现有日报。</p>
+      </div>
+      <div class="channel-cards" id="channel-cards" aria-live="polite"></div>
+    </section>
+
     <section class="notice" id="method-note" aria-label="方法说明">
       <span class="notice__icon" aria-hidden="true">i</span>
       <p>正在载入筛选说明。</p>
@@ -102,8 +143,8 @@
   <footer class="site-footer">
     <div class="shell footer-grid">
       <div>
-        <strong>AI × Chem 每日预印本精选</strong>
-        <p>公开元数据的自动化整理与摘要辅助阅读。</p>
+        <strong>AIX Daily · 每日智能研究集散中心</strong>
+        <p>公开元数据的自动化整理、研究筛选与长期归档。</p>
       </div>
       <div class="footer-note">
         <p>预印本未经同行评议，请以原文为准。</p>

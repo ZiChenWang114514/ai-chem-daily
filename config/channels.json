@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "hub": {
+    "id": "aix-daily",
+    "name": "AIX Daily",
+    "title": "每日智能研究集散中心",
+    "timezone": "Asia/Shanghai",
+    "site_url": "https://zichenwang114514.github.io/ai-chem-daily/"
+  },
+  "channels": [
+    {
+      "id": "aixchem",
+      "name": "AI × Chem",
+      "title": "AI 与化学",
+      "description": "预印本、方法、数据集与实验验证的每日精选。",
+      "status": "active",
+      "cadence": "daily",
+      "accent": "#4fc3b7",
+      "sources": ["arXiv", "bioRxiv", "ChemRxiv"],
+      "latest_path": "data/latest.json",
+      "archive_path": "data/archive/index.json",
+      "candidate_path": "data/candidates/latest.json"
+    },
+    {
+      "id": "aixbio",
+      "name": "AI × Bio",
+      "title": "AI 与生命科学",
+      "description": "计算生物学、组学、蛋白质与生物医学模型。",
+      "status": "planned",
+      "cadence": "daily",
+      "accent": "#7eb889",
+      "sources": ["arXiv", "bioRxiv", "medRxiv", "Europe PMC"]
+    },
+    {
+      "id": "aixmath",
+      "name": "AI × Math",
+      "title": "AI 与数学",
+      "description": "自动推理、形式化证明、数学智能与基础模型。",
+      "status": "planned",
+      "cadence": "daily",
+      "accent": "#8098d4",
+      "sources": ["arXiv", "OpenReview"]
+    },
+    {
+      "id": "aivoices",
+      "name": "AI Voices",
+      "title": "研究者与工程师动态",
+      "description": "公开社交媒体观点、研究发布与重要讨论。",
+      "status": "planned",
+      "cadence": "daily",
+      "accent": "#c18ac7",
+      "sources": ["公开社交媒体", "研究博客"]
+    },
+    {
+      "id": "engineering",
+      "name": "Engineering",
+      "title": "工程更新",
+      "description": "重要框架、模型、工具链的发布说明与变更记录。",
+      "status": "planned",
+      "cadence": "daily",
+      "accent": "#d39b62",
+      "sources": ["GitHub Releases", "官方更新日志"]
+    }
+  ]
+}
