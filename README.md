@@ -5,7 +5,7 @@ AIX Daily 使用 GitHub Pages 发布，使用 GitHub Actions 采集、导入和�
 ## 每日流程
 
 1. 北京时间 08:12，GitHub Actions 读取 arXiv、bioRxiv 与 ChemRxiv 的公开元数据，生成候选列表和基础日报。
-2. 原始记录压缩为短期 Actions 工件。本地轻量任务在电脑可用时把新文件复制到 `zeus_ts:/data3/zcwang/daily-intelligence-hub/raw/`，完成后清理临时目录。
+2. 北京时间 08:25，`zeus_ts` 上的 systemd 定时器独立采集一份原始记录，压缩保存到 `/data3/zcwang/daily-intelligence-hub/raw/`。该流程不依赖 Windows 开机。
 3. 北京时间 09:15，ChatGPT 网页版已安排任务读取公开任务接口和候选资料，完成摘要复核。
 4. 网页版任务通过已连接的 GitHub 应用创建或更新 `scheduled-intake` Issue。导入工作流读取其中的 JSON，将资料写入频道归档并更新网站。
 5. GitHub Pages 部署公开页面、版本化 JSON 接口和年度活动日历。GitHub Issue 与 ChatGPT 通知共同提供每日提醒。
@@ -33,6 +33,9 @@ backend/hub_publish.py         生成公开接口、任务说明和活动数据
 backend/import_intake.py       导入网页版已安排任务提交的资料
 backend/apply_curation.py      将 AI × Chem 复核结果写入日报
 ops/sync_raw_to_zeus.ps1       把短期 Actions 原始资料复制到 Zeus
+ops/zeus_daily.sh               Zeus 每日采集程序
+ops/install_zeus_timer.sh       安装并启用 Zeus systemd 定时器
+ops/systemd/                    Zeus 服务与定时器配置
 public/                        GitHub Pages 页面、接口与已发布数据
 .github/workflows/daily.yml    每日采集
 .github/workflows/intake.yml   已安排任务资料导入
@@ -48,10 +51,25 @@ python -m unittest discover -s tests -v
 python -m http.server 8000 --directory public
 ```
 
-打开 `http://localhost:8000` 查看网站。同步短期原始资料时运行：
+打开 `http://localhost:8000` 查看网站。Windows 同步脚本保留为手动补充工具：
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File ops/sync_raw_to_zeus.ps1
+```
+
+## Zeus 定时运行
+
+服务器上的项目目录为 `/data3/zcwang/daily-intelligence-hub/app`。首次安装或更新定时器时运行：
+
+```bash
+bash /data3/zcwang/daily-intelligence-hub/app/ops/install_zeus_timer.sh
+```
+
+定时器名称为 `aix-daily-raw.timer`，每天北京时间 08:25 执行。`Persistent=true` 会让服务器在重启后补做错过的当日任务。日志可通过以下命令查看：
+
+```bash
+systemctl --user list-timers aix-daily-raw.timer
+journalctl --user -u aix-daily-raw.service -n 100 --no-pager
 ```
 
 ## 新增频道

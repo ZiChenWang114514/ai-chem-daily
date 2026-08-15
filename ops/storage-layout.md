@@ -12,6 +12,6 @@ Raw snapshots are private and live under:
   engineering/YYYY/MM/...
 ```
 
-Each compressed JSON Lines file has a neighboring manifest with its channel, collection window, record count, source counts, and byte size. The Windows sync process uses a temporary directory, copies new files to Zeus, and then removes the temporary directory.
+Each compressed JSON Lines file has a neighboring manifest with its channel, collection window, record count, source counts, and byte size. The primary collector is `aix-daily-raw.timer` on Zeus and runs every day at 08:25 Asia/Shanghai. Windows synchronization remains available for manual use.
 
 GitHub Actions keeps raw artifacts for 14 days so a temporarily offline Windows or Zeus host can synchronize later. Raw snapshots are never published by GitHub Pages and are never committed to Git.
