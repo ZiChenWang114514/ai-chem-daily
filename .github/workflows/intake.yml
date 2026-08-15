@@ -12,6 +12,8 @@ on:
 permissions:
   contents: write
   issues: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: aix-daily-content
@@ -23,6 +25,9 @@ jobs:
       github.event_name == 'workflow_dispatch' ||
       (startsWith(github.event.issue.title, 'AIX Intake') && contains(github.event.issue.labels.*.name, 'scheduled-intake'))
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
@@ -71,6 +76,18 @@ jobs:
             git pull --rebase origin main
             git push origin main
           fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+      - name: Deploy updated site
+        id: deployment
+        uses: actions/deploy-pages@v4
 
       - name: Confirm import on the issue
         env:
