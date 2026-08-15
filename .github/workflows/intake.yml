@@ -2,7 +2,7 @@ name: Import scheduled task materials
 
 on:
   issues:
-    types: [opened, edited, labeled]
+    types: [opened, edited]
   workflow_dispatch:
     inputs:
       issue_number:
