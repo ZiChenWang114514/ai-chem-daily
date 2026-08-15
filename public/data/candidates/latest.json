@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "date": "2026-08-15",
-  "generated_at": "2026-08-15T16:50:18+00:00",
+  "date": "2026-08-16",
+  "generated_at": "2026-08-15T16:53:07+00:00",
   "window": {
-    "start": "2026-08-13",
-    "end": "2026-08-15"
+    "start": "2026-08-14",
+    "end": "2026-08-16"
   },
-  "count": 68,
+  "count": 20,
   "papers": [
     {
       "id": "biorxiv:10.64898/2026.02.15.705956",
@@ -35,7 +35,7 @@
         "molecular",
         "biomolecular"
       ],
-      "relevance_score": 64.5,
+      "relevance_score": 63.5,
       "quality_score": 100,
       "summary_zh": "",
       "why_it_matters_zh": "",
@@ -65,46 +65,7 @@
         "neural network",
         "machine learning potential"
       ],
-      "relevance_score": 64.5,
-      "quality_score": 100,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.08.743506",
-      "source": "bioRxiv",
-      "title": "PARNET: A CLIP-SEQ-BASED FOUNDATION MODEL FOR RNA SEQUENCE REPRESENTATION LEARNING",
-      "abstract": "RNA-binding proteins (RBPs) orchestrate a complex combinatorial regulatory \"code\" that governs RNA splicing, stability, localization, and translation. Learning the relationship between RNA sequences and these processes is a central challenge in genomics. Foundation models, notably RNA language models, have emerged as the dominant approach, learning general-purpose representations from unlabeled sequence at scale. While RNA language models have demonstrated impressive performance across a broad range of downstream tasks, they generally learn from sequence reconstruction objectives alone, lacking direct connections to the regulatory principles that govern RNA function. Here we introduce Parnet, an RNA foundation model trained directly and exclusively on experimental CLIP-seq data. Parnet is a multi-task foundation model trained end-to-end on 223 eCLIP-seq experiments spanning 150 RBPs to predict base-resolution RBP binding profiles directly from RNA sequence. This CLIP-seq pretraining strategy departs fundamentally from the masked-language-modeling paradigm, anchoring learned RNA representations directly in measured protein-RNA interactions rather than sequence statistics. Parnet substantially outperforms its single-task predecessor RBPNet in binding profile and motif recovery, generalizes to unseen cell types and iCLIP data, and recapitulates position-dependent splicing regulation. Frozen Parnet embeddings, without task-specific fine-tuning, match or exceed the performance of both task-specific tools, as well as larger self-supervised RNA and genomic language models across diverse downstream tasks, including RNA biotype classification, lncRNA chromatin localization, translational efficiency, splice-site recognition, intron retention, and non-coding variant effect prediction. Importantly, Parnet remains mechanistically interpretable, tracing predictions back to the specific RBPs and motifs that drive them. These results establish the RBP interactome as a compact, functionally sufficient, and interpretable basis for foundation model pretraining in RNA biology.",
-      "authors": [
-        "Moyon, L.",
-        "Tirabassi, A.",
-        "Baranowskii, A.",
-        "Capitanchik, C.",
-        "Kuret Hodnik, K.",
-        "Wilkinson, L.",
-        "Londhe, S.",
-        "Dumbovic, G.",
-        "Gagneur, J.",
-        "Ule, J.",
-        "Horlacher, M.",
-        "Marsico, A."
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.08.743506",
-      "doi": "10.64898/2026.08.08.743506",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "bioinformatics",
-        "foundation model",
-        "representation learning",
-        "rna"
-      ],
-      "relevance_score": 57.2,
+      "relevance_score": 63.5,
       "quality_score": 100,
       "summary_zh": "",
       "why_it_matters_zh": "",
@@ -135,7 +96,7 @@
         "language model",
         "graph neural"
       ],
-      "relevance_score": 54.8,
+      "relevance_score": 53.8,
       "quality_score": 100,
       "summary_zh": "",
       "why_it_matters_zh": "",
@@ -174,7 +135,7 @@
         "chemical",
         "large language model"
       ],
-      "relevance_score": 53.5,
+      "relevance_score": 52.5,
       "quality_score": 100,
       "summary_zh": "",
       "why_it_matters_zh": "",
@@ -210,116 +171,13 @@
         "peptide",
         "deep learning"
       ],
-      "relevance_score": 52.0,
+      "relevance_score": 51.0,
       "quality_score": 100,
       "summary_zh": "",
       "why_it_matters_zh": "",
       "evidence_flags": [
         "benchmark"
       ],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "arxiv:2608.12906v1",
-      "source": "arXiv",
-      "title": "EGRL: Edge generation-guided relation-aware learning for RNA-protein interaction prediction",
-      "abstract": "RNA-Protein Interactions (RPIs) are critical for regulating cellular functions. While traditional wet-lab experiments for RPI detection are costly and time-consuming, Deep Learning (DL) methods provide an efficient computational alternative for RPI Prediction (RPIP). In particular, Graph Neural Networks (GNNs) are promising, as they naturally model RPI networks. However, existing GNN-based methods often rely on homogeneous graphs or predefined meta-paths, which limit their ability to handle data sparsity and to generalize to cold-start scenarios involving unknown molecules. To address these limitations, we propose Edge Generation-guided Relation-aware Learning (EGRL), a novel framework with several key components: implicit meta-path learning to capture relational semantics without handcrafted paths; a multi-relation-aware attention mechanism for adaptive fusion of interaction patterns; a graph generator that predicts potential (\"soft\") edges to support cold-start nodes; and a multi-feature fusion predictor for final interaction scoring. EGRL is jointly trained with a primary task loss and an auxiliary generator loss. Comprehensive evaluations on four benchmark datasets demonstrate that EGRL achieves competitive overall performance. More importantly, it exhibits superior generalization in cold-start settings, achieving an Area Under the Receiver Operating Characteristic curve (AUROC) of 0.867 and an Area Under the Precision-Recall curve (AUPR) of 0.861 on unknown molecules, corresponding to improvements of 8.6% in AUROC and 5.0% in AUPR over prior state-of-the-art methods. The code will be released soon.",
-      "authors": [
-        "Danyu Li",
-        "Ling Zhou",
-        "Rubing Huang",
-        "Xian Zhong",
-        "Bin Zou",
-        "Kui Jiang"
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://arxiv.org/abs/2608.12906v1",
-      "doi": "",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "cs.LG",
-        "cs.AI",
-        "protein",
-        "rna"
-      ],
-      "relevance_score": 49.2,
-      "quality_score": 100,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [
-        "benchmark",
-        "dataset"
-      ],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "arxiv:2608.12741v1",
-      "source": "arXiv",
-      "title": "Knowledge Synthesis Review Framework: Task-Level Benchmarking of LLM-Based Systems for Multi-Source Evidence Synthesis",
-      "abstract": "Evidence in rapidly evolving fields is fragmented across academic studies, industry reports, policy documents, and media sources that differ in quality, structure, and purpose, making timely synthesis difficult. Large language models (LLMs) may accelerate this work, but their reliability across the distinct cognitive tasks of a review remains uncertain. We introduce the Knowledge Synthesis Review (KSR), a human-in-the-loop framework that decomposes evidence synthesis into screening, extraction, analysis, and synthesis, benchmarks LLM-based systems on each task against expert reference standards, and routes each task to the best-performing system under continuous expert validation. We evaluated GPT-5, Claude Sonnet 4, Gemini 2.5 Pro, and NotebookLM on a 244-document benchmark subset drawn from a 1,893-document corpus on AI and work spanning four source types, against a gold standard with high inter-rater reliability (92.2% agreement, kappa = 0.80). No system led on all tasks. Claude Sonnet 4 achieved the highest screening accuracy (82.8%) and GPT-5 the highest recall (91.8%) at the expense of lower specificity. Extraction exceeded 90% agreement for titles and sources but degraded in author and reference fields. Performance declined most in interpretive analysis and cross-source synthesis, where expert judgment remained essential. A contamination check on post-cutoff documents showed no evidence that prior exposure inflated results. Applied to the full corpus, the routed workflow surfaced cross-source asymmetries and blind spots that single-source synthesis would miss, including worker well-being, small firms, and the Global South. KSR offers a transparent, auditable, model-agnostic framework for governing LLM assistance in research synthesis while preserving human accountability.",
-      "authors": [
-        "Wafa Shafqat",
-        "Mark Patterson",
-        "Steven N. Liss"
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://arxiv.org/abs/2608.12741v1",
-      "doi": "",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "cs.IR",
-        "llm",
-        "synthesis",
-        "large language model"
-      ],
-      "relevance_score": 48.2,
-      "quality_score": 100,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [
-        "benchmark"
-      ],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "arxiv:2608.12751v1",
-      "source": "arXiv",
-      "title": "SynAct: A Reasoning-Acting Large Language Model Agent for Adaptive Synthesis Optimization",
-      "abstract": "Logic synthesis transforms RTL designs into gate-level netlists, where PPA results are highly sensitive to the choice of optimization commands, making synthesis tuning both high-dimensional and expensive. Previous approaches fall into two categories: automated methods, which perform black-box search over fixed action spaces with limited decision-level interpretability, and LLM-based methods, which typically generate static scripts upfront and cannot adapt to evolving circuit states. We present SynAct, an adaptive closed-loop LLM reasoning--acting agent that iteratively diagnoses live synthesis reports and reasons over the current circuit state, retrieved tool knowledge, and historical optimization experience to issue targeted commands. SynAct focuses on improving timing, particularly worst negative slack (WNS), while maintaining balanced area and power trade-offs. Experiments on a commercial synthesis tool across 14 designs show that SynAct reduces average WNS to 27% of that from bootstrap synthesis.",
-      "authors": [
-        "Fangzhou Liu",
-        "Peiyi Han",
-        "Jiawei Liu",
-        "Yuan Pu",
-        "Zhuolun He",
-        "Rongliang Fu",
-        "Tsung-Yi Ho",
-        "Bei Yu"
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://arxiv.org/abs/2608.12751v1",
-      "doi": "",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "cs.AR",
-        "cs.AI",
-        "large language model",
-        "language model"
-      ],
-      "relevance_score": 46.8,
-      "quality_score": 100,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [],
       "rank": 0,
       "featured": false
     },
@@ -358,76 +216,13 @@
         "machine learning",
         "deep learning"
       ],
-      "relevance_score": 46.0,
+      "relevance_score": 45.0,
       "quality_score": 100,
       "summary_zh": "",
       "why_it_matters_zh": "",
       "evidence_flags": [
         "dataset"
       ],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv.15007383/v1",
-      "source": "ChemRxiv",
-      "title": "Controllable molecular graph generation from natural-language chemical constraints",
-      "abstract": "Designing molecules under user-specified constraints is central to drug design, catalyst development and materials discovery. Deep generative models have advanced conditional molecule generation, but many controllable systems still rely on structured numerical or categorical inputs, limiting their ability to capture the qualitative, compositional and often ambiguous design intents used by chemists. Here, we report MolWeaver, a text-guided molecular graph generation framework that translates qualitative and quantitative natural-language prompts into chemically valid 2D molecular graphs. MolWeaver combines a frozen language-model backbone with explicit constraint grounding, graph-level control and scaffold-aware graph decoding. We evaluate MolWeaver on ZINC22-derived prompt-conditioned generation and downstream control tasks including ring-size specification, Lipinski rule-of-five-guided generation and phosphine ligand generation under specified steric demands. Across these settings, MolWeaver shows that natural language can serve as a practical interface for controllable molecular graph generation.",
-      "authors": [
-        "Li-Cheng Xu",
-        "Yu-Duo Qian",
-        "Fenglei Cao",
-        "Yuan Qi"
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://doi.org/10.26434/chemrxiv.15007383/v1",
-      "doi": "10.26434/chemrxiv.15007383/v1",
-      "category": "分子与药物发现",
-      "tags": [
-        "分子与药物发现",
-        "ChemRxiv",
-        "molecular",
-        "chemical",
-        "generative model"
-      ],
-      "relevance_score": 46.0,
-      "quality_score": 99.5,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.09.743676",
-      "source": "bioRxiv",
-      "title": "FP8 Inference in Genomic Foundation Models: Theoretical vs. Realized Speedups on GenomeOcean",
-      "abstract": "Genomic Foundation Models (GFMs) are increasingly used for large-scale sequence analysis and generation. Compared with frontier language models, GFMs are typically smaller and frequently operate on long genomic sequences, with evaluation often requiring preservation of biologically meaningful structure and sequence-level relationships. Although low-precision post-training quantization (PTQ) has shown substantial memory and throughput benefits for general-purpose language models, it remains unclear whether these benefits transfer to GFMs given their distinct model scales, sequence characteristics, and evaluation requirements. We present an empirical case study of FP8 post-training quantization applied to GenomeOcean, a computationally efficient genomic foundation model with strong reported performance across diverse genomics tasks. Its range of model scales, from 100M to 4B parameters, provides a useful setting for examining how quantization effects vary with model size. We evaluate FP8 across two primary GFM inference regimes - embedding extraction and autoregressive generation - and assess its impact along two dimensions: biological fidelity relative to BF16 baselines and system-level efficiency in terms of throughput, memory usage, and energy efficiency. We find that FP8 largely preserves biological fidelity across the evaluated scales and inference regimes, while reducing GPU memory footprint at 4B scale and improving energy efficiency during autoregressive generation. However, realized throughput gains remain substantially below FP8's theoretical 2x hardware ceiling, with a best-case improvement of 19.3% in autoregressive generation and benefits varying strongly by model scale and workload. Autoregressive generation shows the clearest gains, driven largely by KV-cache compression, whereas embedding extraction provides limited or negative throughput benefits at smaller model scales. We attribute this theory-practice gap to the interaction of model-scale effects, memory-system bottlenecks, and software-stack limitations. These findings highlight the need for workload-specific empirical evaluation before adopting low-precision inference in scientific foundation models.",
-      "authors": [
-        "Yu, M.",
-        "Egan, R.",
-        "Liu, F.",
-        "Wang, Z.",
-        "Shi, L."
-      ],
-      "published": "2026-08-14",
-      "updated": "2026-08-14",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.09.743676",
-      "doi": "10.64898/2026.08.09.743676",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "bioinformatics",
-        "foundation model",
-        "genome",
-        "language model"
-      ],
-      "relevance_score": 45.5,
-      "quality_score": 100,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [],
       "rank": 0,
       "featured": false
     },
@@ -461,7 +256,7 @@
         "therapeutic",
         "deep learning"
       ],
-      "relevance_score": 45.5,
+      "relevance_score": 44.5,
       "quality_score": 100,
       "summary_zh": "",
       "why_it_matters_zh": "",
@@ -472,49 +267,34 @@
       "featured": false
     },
     {
-      "id": "biorxiv:10.64898/2026.08.12.744533",
+      "id": "biorxiv:10.64898/2026.08.09.743676",
       "source": "bioRxiv",
-      "title": "A comprehensive phage-bacteria interaction atlas links phage lineage and capsule serotype to genome-guided machine learning prediction in Klebsiella pneumoniae",
-      "abstract": "Klebsiella pneumoniae is a WHO critical-priority pathogen for which strain-specific bacteriophages are being explored as precision antimicrobials, yet rapid phage-host matching remains a major barrier to therapeutic deployment. We constructed a comprehensive interaction atlas comprising 84 taxonomically diverse phages and 101 globally sourced, clinically representative K. pneumoniae strains, including multidrug-resistant isolates. Systematic pairwise profiling produced 8,484 interaction measurements, of which 2,656 (31.3%) scored positive for bacterial clearance. Genus was the dominant phage-side determinant of host range, while capsule K-serotype was the strongest host-side determinant of susceptibility; aggregate defense, prophage, plasmid, and antimicrobial-resistance features contributed comparatively little. A genome-guided machine learning model predicted interactions without curated host annotations (AUROC, 0.882; AUPR, 0.765), outperforming a model based only on phage genus and K-serotype and modestly exceeding a curated genomic baseline. The model recovered capsule- and lipopolysaccharide-biosynthesis genes, canonical receptors and defense-associated features as major predictors using SHAP analysis. Feasibility tests of expert- and model-selected cocktails exposed a translational constraint. Although all formulations suppressed growth in vitro, only the specific cocktail whose phages replicated robustly within the murine gut reduced colonization, suggesting in vivo amplification rather than predicted host range as the limiting factor for therapeutic efficacy. Together with the activity of a model-selected cocktail built for an isolate completely excluded from training, these results provide a species-wide resource for K. pneumoniae phage matching and support a hybrid workflow combining genome-based ranking with targeted phenotypic validation.",
+      "title": "FP8 Inference in Genomic Foundation Models: Theoretical vs. Realized Speedups on GenomeOcean",
+      "abstract": "Genomic Foundation Models (GFMs) are increasingly used for large-scale sequence analysis and generation. Compared with frontier language models, GFMs are typically smaller and frequently operate on long genomic sequences, with evaluation often requiring preservation of biologically meaningful structure and sequence-level relationships. Although low-precision post-training quantization (PTQ) has shown substantial memory and throughput benefits for general-purpose language models, it remains unclear whether these benefits transfer to GFMs given their distinct model scales, sequence characteristics, and evaluation requirements. We present an empirical case study of FP8 post-training quantization applied to GenomeOcean, a computationally efficient genomic foundation model with strong reported performance across diverse genomics tasks. Its range of model scales, from 100M to 4B parameters, provides a useful setting for examining how quantization effects vary with model size. We evaluate FP8 across two primary GFM inference regimes - embedding extraction and autoregressive generation - and assess its impact along two dimensions: biological fidelity relative to BF16 baselines and system-level efficiency in terms of throughput, memory usage, and energy efficiency. We find that FP8 largely preserves biological fidelity across the evaluated scales and inference regimes, while reducing GPU memory footprint at 4B scale and improving energy efficiency during autoregressive generation. However, realized throughput gains remain substantially below FP8's theoretical 2x hardware ceiling, with a best-case improvement of 19.3% in autoregressive generation and benefits varying strongly by model scale and workload. Autoregressive generation shows the clearest gains, driven largely by KV-cache compression, whereas embedding extraction provides limited or negative throughput benefits at smaller model scales. We attribute this theory-practice gap to the interaction of model-scale effects, memory-system bottlenecks, and software-stack limitations. These findings highlight the need for workload-specific empirical evaluation before adopting low-precision inference in scientific foundation models.",
       "authors": [
-        "Selvakumar, H.",
-        "Noonan, A. J. C.",
-        "Rotman, E.",
-        "Alayouni, M.",
-        "Piya, D.",
-        "Maucourt, F.",
-        "Koderi Valappil, S.",
-        "Svab, M.",
-        "Orihuela, B.",
-        "Cowser, G.",
-        "Murray, I.",
-        "Bousliman, C.",
-        "Kazakov, A.",
-        "Deutschbauer, A. M.",
-        "Roux, S.",
-        "Mimee, M.",
-        "Arkin, A. P.",
-        "Mutalik, V. K."
+        "Yu, M.",
+        "Egan, R.",
+        "Liu, F.",
+        "Wang, Z.",
+        "Shi, L."
       ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.744533",
-      "doi": "10.64898/2026.08.12.744533",
-      "category": "分子与药物发现",
+      "published": "2026-08-14",
+      "updated": "2026-08-14",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.09.743676",
+      "doi": "10.64898/2026.08.09.743676",
+      "category": "方法与模型",
       "tags": [
-        "分子与药物发现",
-        "microbiology",
-        "machine learning",
+        "方法与模型",
+        "bioinformatics",
+        "foundation model",
         "genome",
-        "synthesis"
+        "language model"
       ],
-      "relevance_score": 44.8,
-      "quality_score": 100,
+      "relevance_score": 44.5,
+      "quality_score": 99.6,
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "evidence_flags": [
-        "in vivo"
-      ],
+      "evidence_flags": [],
       "rank": 0,
       "featured": false
     },
@@ -542,7 +322,7 @@
         "drug",
         "deep learning"
       ],
-      "relevance_score": 44.5,
+      "relevance_score": 43.5,
       "quality_score": 100,
       "summary_zh": "",
       "why_it_matters_zh": "",
@@ -574,52 +354,12 @@
         "enzyme",
         "language model"
       ],
-      "relevance_score": 43.5,
+      "relevance_score": 42.5,
       "quality_score": 100,
       "summary_zh": "",
       "why_it_matters_zh": "",
       "evidence_flags": [
         "benchmark",
-        "dataset"
-      ],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "arxiv:2608.13341v1",
-      "source": "arXiv",
-      "title": "Simulation-to-real transfer learning for infrared spectroscopic chemical sensing and analysis from molecules to complex samples",
-      "abstract": "Infrared (IR) spectroscopy is widely used for chemical sensing, but extracting reliable chemical information from spectra remains challenging. Conventional interpretation is labor-intensive, relies on prior knowledge and reference spectra, and is difficult to scale, whereas most machine-learning methods are tailored to individual tasks or datasets, require large labeled training sets, and transfer poorly across analytical objectives and experimental datasets. Here we introduce UltraIR, a foundation model for IR spectroscopy with more than 100 million parameters that enables simulation-to-real transfer learning for chemical sensing and analysis from molecules to complex samples. UltraIR is pretrained on approximately 60 million simulated IR spectra using spectral reconstruction, molecular fingerprint similarity alignment, and functional-group prediction, then adapted to downstream objectives with task-specific labels or targets. Across functional-group prediction, molecular structure elucidation, physicochemical property prediction, mixture-component identification and quantification, bacterial classification, medicinal-herb geographic origin traceability and constituent quantification, microplastics classification, and soil property prediction, UltraIR outperforms conventional machine-learning and task-specific deep-learning baselines. It performs strongly with limited labeled experimental spectra and in zero-shot inference for the same analytical task across Fourier-transform infrared spectrometers and laboratories, providing a route to adaptable, data-efficient chemical sensing from complex real-world samples.",
-      "authors": [
-        "Yusen Tan",
-        "Yixuan Chen",
-        "Zheng Fang",
-        "Pan Liu",
-        "Yifan Li",
-        "Qinyu Guo",
-        "Zhedong Lin",
-        "Yuqiang Li",
-        "Xiangxiang Zeng",
-        "Tong Wang",
-        "Jun Xia"
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://arxiv.org/abs/2608.13341v1",
-      "doi": "",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "cs.LG",
-        "cs.AI",
-        "molecule",
-        "chemical"
-      ],
-      "relevance_score": 43.0,
-      "quality_score": 98.8,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [
         "dataset"
       ],
       "rank": 0,
@@ -660,82 +400,13 @@
         "omics",
         "drug"
       ],
-      "relevance_score": 42.8,
+      "relevance_score": 41.8,
       "quality_score": 100,
       "summary_zh": "",
       "why_it_matters_zh": "",
       "evidence_flags": [
         "dataset",
         "prospective"
-      ],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.07.743325",
-      "source": "bioRxiv",
-      "title": "Leveraging Targeted Gene Sets and Neural Networks for Zebrafish Transcriptome Extrapolation in High-Throughput Toxicogenomics",
-      "abstract": "Background: Zebrafish (Danio rerio) are a powerful vertebrate model for developmental toxicology and chemical safety assessment, yet large-scale transcriptomics in zebrafish remains limited by cost and data heterogeneity. Targeted transcriptomics offers a cost-effective alternative, but gene extrapolation methods tailored to zebrafish have not been systematically developed or evaluated. Objectives: While the S1500+ platform is widely used for toxicogenomics research with rat, mouse, and human cell lines as model systems, its use in zebrafish has been limited due to data scarcity and lack of suitable bioinformatics approaches for analysis of such data. To that end, we sought to (i) curate a large zebrafish transcriptomic training data resource, and (ii) evaluate multiple machine learning strategies for reconstructing unmeasured transcriptome-wide expression profiles for data originating from the zebrafish-specific reduced representation gene set (Zf S1500+). Methods: We assembled 14,924 zebrafish RNA-Seq samples covering 21,930 genes across 1,246 studies. Using the Zf S1500+ gene subset (3,062 genes), we trained and tested three extrapolation approaches: principal components regression (PCR), a locally weighted extension of PCR (PCR+), and a neural network mixture-of-experts model (NN-MoE). Model performance was assessed using mean absolute error (MAE), mean squared regression error (MSRE), and weighted variants of these metrics. Results: Extrapolation performance using the baseline approach was strongly influenced by tissue and developmental context, with within-tissue models outperforming cross-tissue models. Errors were lowest when training and testing were conducted within the same tissue or between developmentally related tissues. Both PCR+ and NN-MoE improved upon the baseline PCR approach, with NN-MoE reducing average MAE by ~20% and MSRE by ~17%. Importantly, extrapolation remained reliable for the majority of genes, even when limiting output to high-confidence predictions using an empirical MAE threshold. Conclusions: We demonstrate that targeted transcriptomics can be effectively extended to zebrafish, enabling robust transcriptome-wide extrapolation at reduced cost. The NN-MoE method provided the most substantial gains, highlighting the value of non-linear and ensemble modeling in heterogeneous datasets. These results establish a scalable framework for zebrafish toxicogenomics and suggest that accuracy will continue to improve with larger, better-annotated datasets, paving the way for broader application in chemical safety assessments.",
-      "authors": [
-        "Howard, B. E.",
-        "Mav, D.",
-        "Balik-Meisner, M.",
-        "Phadke, D.",
-        "Green, A. J.",
-        "Truong, L.",
-        "Tanguay, R. L.",
-        "Shah, R. R."
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.07.743325",
-      "doi": "10.64898/2026.08.07.743325",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "bioinformatics",
-        "neural network",
-        "omics",
-        "machine learning"
-      ],
-      "relevance_score": 41.0,
-      "quality_score": 98.2,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [
-        "dataset"
-      ],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "arxiv:2608.13355v1",
-      "source": "arXiv",
-      "title": "Evaluating Electrostatic Embedding MLIP/MM for Relative Binding Free Energy Calculations",
-      "abstract": "Alchemical relative binding free energy (RBFE) calculations are limited by the fixed-charge approximation of classical force fields. Hybrid machine learning interatomic potential/molecular mechanics (MLIP/MM) schemes correct ligand strain, but under mechanical embedding still describe ligand--environment electrostatics with static point charges. Electrostatic embedding schemes coupling machine-learned charges to the MM environment have been proposed and validated against QM/MM for simple systems, but not tested in a production alchemical workflow. We take the electrostatic embedding scheme of Semelak et al.\\ and evaluate it on protein--ligand RBFE. We trained a TensorNet2 model, AceFF-2-RESP-1, on 10^{6} conformations from the AceFF dataset, jointly predicting energies, forces and Restrained Electrostatic Potential (RESP) charges. We chose RESP over MBIS for commensurability with the AMBER-family force field it couples to. The predicted charges enter the short-range direct-space part of the particle mesh Ewald sum, with Thole damping to prevent polarization catastrophes during alchemical transformations. We tested the scheme across five targets from the Wang et al.\\ benchmark set, fixed in advance by a prior study, with three replicates per edge and matched protocols. Electrostatic embedding improved every accuracy and correlation metric for TYK2 (ΔΔG RMSE 0.86 \\rightarrow 0.45~kcal/mol against GAFF2), but performed comparably to the classical and mechanical-embedding baselines for CDK2, thrombin, p38 and JNK1. Standard single-molecule energy and charge benchmarks were not good predictors of this target-dependent outcome. TYK2 combined good ΔΔG accuracy with the lowest force error on the Schrödinger benchmark, but this pattern did not hold for the other targets.",
-      "authors": [
-        "Stephen E. Farr",
-        "Gianni De Fabritiis"
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://arxiv.org/abs/2608.13355v1",
-      "doi": "",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "physics.chem-ph",
-        "physics.comp-ph",
-        "embedding",
-        "machine learning"
-      ],
-      "relevance_score": 40.2,
-      "quality_score": 99.2,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [
-        "benchmark",
-        "dataset"
       ],
       "rank": 0,
       "featured": false
@@ -771,205 +442,11 @@
         "large language model",
         "language model"
       ],
-      "relevance_score": 39.8,
-      "quality_score": 93.8,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "biorxiv:10.64898/2026.04.20.719538",
-      "source": "bioRxiv",
-      "title": "Human-supervised Agentic AI for Hypothesis Generation and Experimental Assistance in Drug Repurposing",
-      "abstract": "Computational drug repurposing has largely been focused on rapid hypothesis generation, yet real-world applications span a far broader lifecycle, from drug candidate suggestion to designing experiments, analyzing assay data, and iteratively refining candidates. Here, we demonstrate that agentic AI can operate throughout this lifecycle. To this end, we developed RepurAgent, a hierarchical multi-agent AI system comprising a supervisor agent and a planning agent that coordinate four specialized sub-agents (research, prediction, data, and report), through a human-in-the-loop design, with episodic memory and retrieval-augmented generation. The system is grounded in data, tools, and standard operating procedures specific for drug repurposing, developed within the REMEDi4ALL consortium. We validated the agentic system across three scenarios spanning the various stages within the repurposing lifecycle: in Acute Myeloid Leukemia, a blinded expert evaluation indicated that RepurAgent produced substantially more novel and mechanistically credible candidates compared to a vanilla LLM baseline; in a retrospective COVID-19 antiviral screen, RepurAgent acted as an adaptive experimental collaborator, prioritizing compounds with AUC-ROC up to 0.99 without predefined thresholds and flagging confounders missed in manual review; and for Multiple Sulfatase Deficiency, it prioritized 81 high-confidence candidates from 5000 compounds, which were further corroborated by domain experts. These results demonstrate that agentic AI can support across the drug repurposing lifecycle, from hypothesis generation to experimental analysis. RepurAgent is open source and deployed at https://repuragent.serve.scilifelab.se/.",
-      "authors": [
-        "Huynh, D.-L.",
-        "Asp, E.",
-        "Ballante, F.",
-        "Puigvert, J. C.",
-        "DeGrave, A.",
-        "Karki, R.",
-        "Nader, K.",
-        "Östling, P.",
-        "Pokharel, B.",
-        "Rietdijk, J.",
-        "Schlotawa, L.",
-        "Schmidt, L.",
-        "Seal, S.",
-        "Seashore-Ludlow, B.",
-        "Aittokallio, T.",
-        "Spjuth, O."
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.04.20.719538",
-      "doi": "10.64898/2026.04.20.719538",
-      "category": "分子与药物发现",
-      "tags": [
-        "分子与药物发现",
-        "bioinformatics",
-        "agentic",
-        "drug",
-        "llm"
-      ],
-      "relevance_score": 39.5,
-      "quality_score": 94.4,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [
-        "open source"
-      ],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "arxiv:2608.13077v1",
-      "source": "arXiv",
-      "title": "How Powerful are LLMs in Generating Formal Program Specifications?",
-      "abstract": "Formal verification provides strong guarantees of software correctness, but its adoption is limited by the high cost of writing precise formal specifications. While recent large language models (LLMs) have shown strong capabilities in theorem proving and verified code generation, their true ability to generate program specifications remains unclear. Existing evaluations require either verifying implementation conformance or proving semantic equivalence between specifications, both of which are formidably difficult and may conflate proof difficulty with specification quality. To address this problem, we introduce Coins, a Rocq based evaluation framework that assesses specification quality by instantiating specifications under evaluation on trusted test cases and generating concrete proof obligations. This design aligns with the asymmetric nature of formal reasoning, where successful proofs provide reliable evidence while proof failures are inherently ambiguous. Using Coins, we conduct a large scale study on HumanEval with a curated set of human written Rocq specifications. Our results show that specification generation remains a formidable challenge, and that verification complexity can obscure genuine differences in specification quality. Overall, we find that accurate specification evaluation, rather than model scaling alone, is central to understanding the power of LLMs for specification synthesis, and that test case based formal reasoning offers a more faithful and discriminative measure of progress.",
-      "authors": [
-        "Fanpeng Yang",
-        "Xing Li",
-        "Shuling Wang",
-        "Jie An",
-        "Zeyu Sun",
-        "Shenghua Feng",
-        "Wenhan Wang",
-        "Weiyi Wang",
-        "Naijun Zhan",
-        "Fanjiang Xu"
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://arxiv.org/abs/2608.13077v1",
-      "doi": "",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "cs.SE",
-        "llm",
-        "large language model",
-        "language model"
-      ],
-      "relevance_score": 39.5,
-      "quality_score": 93.4,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv.15007400/v1",
-      "source": "ChemRxiv",
-      "title": "High-throughput Molecular Dynamics Simulation on an AIpowered Platform",
-      "abstract": "We present an end-to-end, AI-powered platform for high-throughput molecular dynamics (MD) simulation of liquid electrolytes and complex formulations. At its core is MU-PFF, a many-body polarizable force field (PFF) whose functional form follows the well-validated polarizable force field, but whose parameters are produced entirely by an automated machine-learning pipeline rather than by hand. We assemble a quantum-chemistry (QC) dataset of roughly 106 molecules and molecular complexes and train a single message-passing neural network (MPNN) to predict the complete parameter set—partial charges, atomic polarizabilities, bonded (bond, bend, torsion) terms, and the repulsion–dispersion (van der Waals) parameters—directly from molecular structure. Parameterization that traditionally takes weeks of expert effort per chemistry is reduced to a single forward pass, yielding a universal PFF that transfers across solvents, salts and additives. Coupled to automated system building and trajectory analysis (MU-MDSuiteTM), the platform reproduces experimental electrolyte properties with high fidelity: density error below 0.02 g/cm3, lithium-electrolyte ionic conductivity of approximately 1.5 mS/cm in quantitative agreement with measurement, and salt/additive solubility predicted to within 10%. We further demonstrate extended capabilities, including additive solubility by thermodynamic integration and electric-double-layer (EDL) simulation under applied potential.",
-      "authors": [
-        "Dengpan Dong",
-        "Yani Guan",
-        "Shuang Luo",
-        "Jingxuan Ding",
-        "Dan C. Hannah",
-        "Yumin Zhang",
-        "Qichao Hu",
-        "Kang Xu"
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://doi.org/10.26434/chemrxiv.15007400/v1",
-      "doi": "10.26434/chemrxiv.15007400/v1",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "ChemRxiv",
-        "molecular",
-        "neural network",
-        "molecule"
-      ],
-      "relevance_score": 38.0,
+      "relevance_score": 38.8,
       "quality_score": 92.5,
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "evidence_flags": [
-        "dataset"
-      ],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "biorxiv:10.64898/2026.03.26.714501",
-      "source": "bioRxiv",
-      "title": "LAMBDA: A Prophage Detection Benchmark for Genomic Language Models",
-      "abstract": "Transformer-based genomic sequence models represent an emerging frontier in computational biology. Yet, their embeddings have not yet shown the same level of predictive power as natural and protein language models, indicating a gap between current implementations and theoretical promise. Existing benchmarks for DNA language models primarily focus on classifying regulatory elements in eukaryotic genomes, leaving open the fundamental question of whether these models learn sequence-level features across whole genomes. We introduce LAMBDA, a benchmark designed to rigorously evaluate genome language model embeddings through phage-bacteria sequence discrimination across four categories of increasing complexity: probing tasks, fine-tuning assessments, diagnostic tests, and genome-wide prophage detection. Our comprehensive analysis of current genomic language models provides novel insights into the importance of training data quality relative to model size, the need for domain-specific training, and the application of genomic language models for detecting prophage sequences. This benchmark represents a challenging genomic annotation task in the bacterial domain and addresses a key computational problem with direct relevance to microbiology and medicine.",
-      "authors": [
-        "Lindsey, L. M.",
-        "Pershing, N. L.",
-        "Dufault-Thompson, K.",
-        "Gwak, H.-j.",
-        "Habib, A.",
-        "Schindler, A.",
-        "Rakheja, A.",
-        "Round, J.",
-        "Stephens, W. Z.",
-        "Blaschke, A. J.",
-        "Sundar, H.",
-        "Jiang, X."
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.03.26.714501",
-      "doi": "10.64898/2026.03.26.714501",
-      "category": "结构与生物",
-      "tags": [
-        "结构与生物",
-        "genomics",
-        "language model",
-        "transformer",
-        "embedding"
-      ],
-      "relevance_score": 37.8,
-      "quality_score": 93.2,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [
-        "benchmark"
-      ],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.07.743490",
-      "source": "bioRxiv",
-      "title": "Learning Discrete Cell and Niche Codes from Spatial Transcriptomics Using Dual Residual Vector Quantization",
-      "abstract": "Spatially-resolved transcriptomics (SRT) measures gene expression at single-cell resolution while preserving each cell's spatial location, enabling the joint study of cell identity and cellular niche, the recurring microenvironment that organises tissue function. Existing representation-learning methods typically capture only one of these axes at a time. We present SQUINT, a graph vector quantized variational autoencoder (VQ-VAE) that learns two disjoint codebooks per cell from a shared architecture: a cell codebook quantising the per-cell embedding before neighbourhood aggregation, biased toward cell-intrinsic identity, and a niche codebook quantising the embedding after graph neural network (GNN) aggregation, biased toward spatial context. Both use residual vector quantization, giving a coarse-to-fine discrete-token hierarchy. SQUINT is trained with per-branch negative-binomial reconstruction objectives and three domain-motivated components that we show are crucial: a within-section cosine adjacency loss that anchors the niche codes in the spatial graph, a cross-section contrastive loss on the cell latents that aligns transcriptomically matched cells, and a decoder section covariate that absorbs batch effects. Across three datasets spanning four spatial assays (STARmap, MERFISH, CosMx, Xenium) and four tasks -- niche identification, cell-type identification, cross-section integration, and spatial gene-expression imputation in held-out regions -- SQUINT outperforms or is competitive with strong baselines on identification and achieves the most faithful cross-section integration. The resulting discrete vocabulary makes tissues directly consumable by transformer-style foundation models and enables one-step query-to-reference atlas mapping via code-distribution similarity, which we demonstrate on a CosMx human non-small-cell lung cancer cohort.",
-      "authors": [
-        "Birk, S.",
-        "Merchant, A.",
-        "Vahidi, A.",
-        "Theis, F. J.",
-        "Lotfollahi, M."
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.07.743490",
-      "doi": "10.64898/2026.08.07.743490",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "genomics",
-        "omics",
-        "foundation model",
-        "graph neural"
-      ],
-      "relevance_score": 37.2,
-      "quality_score": 93.5,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [
-        "dataset"
-      ],
+      "evidence_flags": [],
       "rank": 0,
       "featured": false
     },
@@ -1001,76 +478,11 @@
         "agentic",
         "synthesis"
       ],
-      "relevance_score": 37.2,
-      "quality_score": 90.5,
+      "relevance_score": 36.2,
+      "quality_score": 89.2,
       "summary_zh": "",
       "why_it_matters_zh": "",
       "evidence_flags": [],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "arxiv:2608.12675v1",
-      "source": "arXiv",
-      "title": "Privacy-Preserving RAG by Concealing Sensitive Information from External LLMs",
-      "abstract": "Retrieval-Augmented Generation (RAG) is widely used to improve the performance of Large Language Models (LLMs) in answering user queries. Existing privacy research on RAG has focused on preventing unauthorized users from accessing sensitive data. However, another important problem that is often overlooked in RAG privacy research is that external generators have access to the query and the retrieved documents, which may contain confidential information that could potentially be misused or accessed for unintended purposes. In this paper, we introduce the Sensitive Entity Alias Generator (SEAG), a privacy-preserving framework that empowers users to utilize powerful third-party generators without disclosing sensitive information. SEAG introduces a lightweight model that locates sensitive entities, generates corresponding aliases, and constructs an entity replacement table. The table is used to replace sensitive words in the user's query and in the retrieved documents before they are forwarded to an external generator. For this purpose, two datasets were constructed: one for fine-tuning SEAG models to generate entity replacement tables, and another for evaluating the entire SEAG framework. The experimental results demonstrate the success of the SEAG framework. As for the User metric, which measures the ability of the model to provide a correct response to the user while hiding sensitive information from the external generator, all SEAG models achieved over 80% accuracy. Additional analysis further evaluated the ability of SEAG models Qwen-3, LLaMA-3.2, and Phi-4 to hide all sensitive entities within given documents. The results show good performance with total accuracies of 77.83%, 76.73%, and 74.91%, respectively.",
-      "authors": [
-        "Saleh Almohaimeed",
-        "Saad Almohaimeed",
-        "Mousa Jari",
-        "Fahad Alotaibi",
-        "Khalid A. Alobaid"
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://arxiv.org/abs/2608.12675v1",
-      "doi": "",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "cs.AI",
-        "cs.CR",
-        "llm",
-        "rna"
-      ],
-      "relevance_score": 36.8,
-      "quality_score": 91.0,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [
-        "dataset"
-      ],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv.15007373/v1",
-      "source": "ChemRxiv",
-      "title": "Artificial Intelligence-Integrated Circular Solvent Sustainability Assessment (AI2CS2A): A Standardized Laboratory-to-Decision Protocol for Environmental Sustainability Assessment in Solvent-Intensive Manufacturing",
-      "abstract": "The transition toward environmentally sustainable pharmaceutical manufacturing requires standardized methodologies that integrate digital technologies with established sustainability assessment tools. Although artificial intelligence (AI), life cycle assessment (LCA), Green Chemistry metrics and Digital Twin (DT) technologies have individually demonstrated considerable potential for improving manufacturing sustainability, their implementation remains fragmented, limiting reproducibility and routine application in industrial and academic settings. Here we present the Artificial Intelligence-Integrated Circular Solvent Sustainability Assessment (AI2CS2A) Protocol, a standardized laboratory-to-decision methodology that integrates experimental process data acquisition, Green Chemistry metrics, LCA, explainable artificial intelligence (XAI), DT simulation, circular solvent management and environmental decision reporting within a unified Environmental AI workflow. The protocol begins with systematic acquisition and validation of manufacturing process data, followed by calculation of Process Mass Intensity (PMI), Circular Process Mass Intensity (cPMI), and complementary Green Chemistry metrics. Environmental impacts are quantified using LCA, including Global Warming Potential (GWP) and Cumulative Energy Demand (CED). A standardized Random Forest workflow is then used for AI-assisted solvent sustainability evaluation, while XAI provides transparent interpretation of model predictions. DT simulation is subsequently used to evaluate solvent recovery strategies, material circulation and alternative operating scenarios before physical implementation. These outputs are integrated through the Overall AI2CS2A Sustainability Index (OASI), a predefined composite indicator calculated from normalized process-mass intensity, solvent recovery, product yield, process energy demand and VOC emissions to provide comparative sustainability benchmarking within a defined protocol execution. OASI is not a machinelearning prediction or a measure of AI model accuracy; rather, it provides a reproducible comparative summary of selected process-level sustainability indicators. OASI is not a machine-learning prediction or a measure of AI model accuracy; rather, it provides a reproducible comparative summary of selected process-level sustainability indicators. The workflow culminates in validated, protocol-derived analytical outputs that are integrated into the AI2CS2A Dashboard v2.0 and the Integrated Environmental Decision Report (IEDR), which consolidates analytical results, AI validation, DT scenarios, sustainability indicators, uncertainty analyses and evidence-based environmental recommendations into a traceable decision-support document. Representative outputs are illustrated using a literature-derived manufacturing process for the active pharmaceutical ingredient (API) Sertraline. Although demonstrated using pharmaceutical manufacturing, the AI2CS2A Protocol is broadly applicable to solvent-intensive chemical industries seeking standardized, transparent and reproducible approaches to environmental sustainability assessment, circular resource management, industrial decarbonization and climate-resilient manufacturing.",
-      "authors": [
-        "ISAK RAJJAK SHAIKH",
-        "SANIYA M. SHAIKH"
-      ],
-      "published": "2026-08-12",
-      "updated": "2026-08-13",
-      "url": "https://doi.org/10.26434/chemrxiv.15007373/v1",
-      "doi": "10.26434/chemrxiv.15007373/v1",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "ChemRxiv",
-        "artificial intelligence",
-        "chemistry",
-        "chemical"
-      ],
-      "relevance_score": 36.5,
-      "quality_score": 93.6,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [
-        "benchmark"
-      ],
       "rank": 0,
       "featured": false
     },
@@ -1101,8 +513,8 @@
         "language model",
         "drug"
       ],
-      "relevance_score": 36.2,
-      "quality_score": 92.2,
+      "relevance_score": 35.2,
+      "quality_score": 91.0,
       "summary_zh": "",
       "why_it_matters_zh": "",
       "evidence_flags": [
@@ -1135,8 +547,8 @@
         "protein",
         "rna"
       ],
-      "relevance_score": 34.8,
-      "quality_score": 90.5,
+      "relevance_score": 33.8,
+      "quality_score": 89.2,
       "summary_zh": "",
       "why_it_matters_zh": "",
       "evidence_flags": [
@@ -1146,64 +558,43 @@
       "featured": false
     },
     {
-      "id": "biorxiv:10.64898/2026.08.07.743571",
+      "id": "biorxiv:10.64898/2026.08.11.744248",
       "source": "bioRxiv",
-      "title": "Extracting deep learning based morphology segmentation footprint for boar sperm cells",
-      "abstract": "Reliable delineation of the head and tail of swine spermatozoa supports automated assessment of boar semen quality, from morphometric measurement to the quality control of insemination doses. In practice this relies on fluorescent staining, which adds chemistry, cost, and delay to every acquisition and labels only the nucleus. Recent work coupling imaging flow cytometry with machine learning has advanced rapidly, yet the segmentation stage still depends on a stained channel at inference and resolves the head alone. We present a supervised encoder decoder network that segments boar spermatozoa from brightfield images acquired on an Amnis ImageStream Mark II with no stain at inference. Training labels derive from the Hoechst 33342 nuclear channel (Ch7), recorded in registration with brightfield (Ch1); the dye serves only as an annotation source, and the network sees Ch1 alone. The best semantic segmentation model reaches a Dice coefficient of 0.940 on held-out cells. For comparison we evaluate a classical morphological pipeline, four further semantic segmentation models spanning three decoder families and two ImageNet-pretrained backbones, and two zero-shot pipelines built on the Segment Anything Model 2 (SAM 2), prompted either by a dilated box around the predicted head mask or by head and tail boxes emitted by a Gemma 4 Vision Language Model (VLM). The zero-shot route scores 0.637 against Ch7 but labels the tail, which the fluorescence protocol cannot. Cells scoring worst under the supervised model proved to be mostly registration failures rather than segmentation failures, as Ch7 is displaced relative to Ch1. Manual screening for this drift is infeasible at dataset scale, so we propose a flagging system that marks any Dice below 0.792, two standard deviations below the mean, and pairs it with a zero-shot pipeline in which a VLM l and SAM 2 cross-check the flagged cell before human review.",
+      "title": "Maternal diet and genetics shape the human milk metabolome",
+      "abstract": "Human milk contains a diverse array of metabolites that contribute to infant nutrition, immune development, and microbial colonization. The maternal factors shaping the milk metabolome, and the relative contribution of genetics or diet vs. other factors, remain poorly understood. Here, we profiled 458 milk metabolites in 349 one-month postpartum human milk samples and integrated metabolomic data with maternal diet, clinical, transcriptomic, and genomic measurements. Maternal diet was broadly associated with milk metabolite composition, with significant correlations identified between dietary features and 323 metabolites. Coffee consumption strongly predicted milk quinic acid and 1,3-dimethyluric acid abundance, while high-fiber dietary patterns were associated with metabolites including proline-betaine and N-acetylornithine. Integration of milk transcriptomic and metabolomic data via machine learning identified biologically plausible gene-metabolite pairs, including associations between QPRT expression and quinolinic acid, and DPEP1 and cysteine-glycine dipeptide. Genome-wide association analyses identified nine study-wide significant metabolite quantitative trait loci, including novel milk-specific associations near PDE6A affecting purine metabolites and near GNE affecting free sialic acid. Comparison with plasma metabolite studies demonstrated both shared and milk-specific genetic regulation of metabolites. Finally, we found that of all tested maternal features, diet explained the largest proportion of variation in the milk metabolome. Together, these findings demonstrate that the human milk metabolome reflects both maternal exposures and mammary gland-specific biology. This work establishes a framework for understanding how genetic and environmental factors shape milk composition.",
       "authors": [
-        "Park, J.",
-        "Ratka, M.",
-        "Biswas, A.",
-        "Shofner, I.",
-        "Kerns, K.",
-        "Sarkar, A."
+        "Johnson, K. E.",
+        "Duan, Y.",
+        "Youssef, A.",
+        "Aristizabal-Henao, J. J.",
+        "Johnson, A.",
+        "Kiebish, M. A.",
+        "Nagel, E. M.",
+        "Palmsten, K.",
+        "Pierce, S.",
+        "Wernimont, S.",
+        "Bode, L.",
+        "Lock, E. F.",
+        "Isganaitis, E. M.",
+        "Fields, D. A.",
+        "Albert, F. W.",
+        "Blekhman, R.",
+        "Demerath, E. W."
       ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.07.743571",
-      "doi": "10.64898/2026.08.07.743571",
-      "category": "方法与模型",
+      "published": "2026-08-14",
+      "updated": "2026-08-14",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.11.744248",
+      "doi": "10.64898/2026.08.11.744248",
+      "category": "结构与生物",
       "tags": [
-        "方法与模型",
-        "bioinformatics",
-        "deep learning",
+        "结构与生物",
+        "genomics",
+        "rna",
         "machine learning",
-        "language model"
+        "genome"
       ],
-      "relevance_score": 32.5,
-      "quality_score": 87.6,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [
-        "dataset"
-      ],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "arxiv:2608.13123v1",
-      "source": "arXiv",
-      "title": "Using Diffusion Models to Estimate Uncertainties in Analytic Continuation",
-      "abstract": "Inverse problems are ubiquitous in physics, chemistry, and engineering, arising when reconstructing hidden quantities from indirect measurements. A key example is the analytic continuation of imaginary-time correlation functions (iTCFs) to the real-frequency domain. This process requires an inverse Laplace transform, which is inherently ill-posed and highly sensitive to small input variations. Recent neural network (NN)-based methods have shown promising results by learning mappings from imaginary-time to real-frequency spectra, often outperforming traditional techniques such as maximum entropy. However, because the problem is ill-posed, many spectra fit the same iTCF. Regression-based approaches output a single solution, which approximates an average over the true solution space, and therefore fail to capture the full distribution of plausible power spectra. To address this issue, we introduce a diffusion-based framework for analytic continuation that learns the distribution of spectra consistent with a given iTCF. It offers two key advantages. First, it quantifies uncertainty directly from the learned distribution. Second, by analyzing the spread and structure of this distribution, we can quantitatively assess the intrinsic hardness of each inversion problem. We measure this hardness with a new metric, the uncertainty pseudo-volume. Applying the framework to an iTCF from a path-integral molecular dynamics simulation of liquid parahydrogen, we obtain the self-diffusion coefficient with an error bar and flag a secondary high-frequency peak as a possible spurious artifact. In contrast to previous attempts at uncertainty quantification, our generative approach rests on a concrete probabilistic basis, providing a more theoretically grounded measure of confidence in the reconstructed power spectra.",
-      "authors": [
-        "Sagi Meir",
-        "Daniel Freedman",
-        "Barak Hirshberg"
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://arxiv.org/abs/2608.13123v1",
-      "doi": "",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "physics.comp-ph",
-        "cond-mat.stat-mech",
-        "diffusion model",
-        "neural network"
-      ],
-      "relevance_score": 32.2,
-      "quality_score": 84.2,
+      "relevance_score": 27.2,
+      "quality_score": 76.0,
       "summary_zh": "",
       "why_it_matters_zh": "",
       "evidence_flags": [],
@@ -1211,154 +602,66 @@
       "featured": false
     },
     {
-      "id": "biorxiv:10.64898/2026.08.07.738656",
+      "id": "biorxiv:10.64898/2026.08.10.744024",
       "source": "bioRxiv",
-      "title": "FuncSeek: Multi-PLM contrastive learning for protein functional similarity search",
-      "abstract": "Below 30% pairwise sequence identity, alignment-based methods struggle to reliably distinguish true homologs from chance (Rost 1999), and enzyme function prediction degrades accordingly: on proteins in this regime, even advanced methods (CLEAN) achieves only 55.1% accuracy at full EC specificity on the CARE benchmark (Yang et al. 2024). To this end Protein Language Models (PLMs) have gained favor as alternatives. However, PLMs often encode only a subset of the biology (Heinzinger et al. 2024, Lin et al. 2023), whereas the understanding of enzyme function requires among other things a combination of sequence, structure and functional-context simultaneously (Ribeiro et al. 2023). In this work, we describe FuncSeek, a contrastive learning model which utilizes three diverse, complementary PLMs: ESM2 (to model evolutionary co-variation), ProstT5 (for bilingual sequence and structure embeddings), and ProteinBERT (for functional semantic similarities). Using SwissProt data, these 2816-D embeddings are labeled with Enzyme Commission numbers (EC) and are trained through a supervised contrastive head into a 256-D space. FuncSeek attains 64.6% nearest-neighbour EC4 accuracy on the CARE out-of-distribution benchmark set (ood30; proteins below 30% identity to training set), outperforming CLEAN (55.1%) and Diamond BLASTp (51.4%), and obtains 93.7% nearest-neighbour EC4 accuracy on the promiscuous, multi-functional enzymes benchmark (CLEAN, 69.4%). We also show that the learned representations transfer without retraining to the TrEMBL database, achieving 97.3% nearest-neighbour EC4 accuracy on a 8,031 BRENDA-validated enzyme set (Schomburg et al. 2004), never seen during training. Because only projected embeddings are stored in the target index, and function is inferred from an annotated reference set, we propose this paradigm for rapidly searching extremely large metagenomic databases, bypassing costly sequence alignment and annotation pipelines.",
+      "title": "Benchmark Averages Hide the Failures That Matter: Quantizing ESM-2 for Protein Variant-Effect Prediction",
+      "abstract": "We benchmark six numerical precision configurations for ESM-2 protein language models across throughput, memory footprint and predictive accuracy, on two workloads with sharply different characteristics: bulk embedding extraction and deep mutational scanning (DMS) variant-effect scoring. Accuracy is evaluated on the complete ProteinGym substitution benchmark -- 201 assays, 2.41M variants -- at three model scales spanning 650M to 15B parameters, with a paired bootstrap clustered on protein. Three findings follow, and each contradicts a common practice. First, benchmark averages conceal the failure that decides deployability: no configuration shifts mean correlation by more than 0:007 at any scale, yet INT8 dynamic quantization -- indistinguishable from fp32 on that mean at 3B (p = 0:34) -- takes a single assay from {rho} = 0:591 to 0:223. Selection must be made on worst-case, not mean, behaviour. Second, fidelity measured against fp32 bounds risk but cannot rank quality: over 3015 assay/configuration pairs it predicts the magnitude of ground-truth change (r = 0:56-0:81) but not its direction, and the INT4 effect differs significantly between 650M and 3B (+0:0101, p = 0:0007) with no monotone trend to extrapolate. Third, quantizing a large model is dominated by using a small one: of eighteen scale/configuration combinations only three are Pareto-optimal over accuracy, memory and speed, and all three are 650M. The one catastrophic failure we observe is a defect of default symmetric activation scaling, not of W8A8 itself: asymmetric activation quantization, a one-line change needing no calibration, removes every damaged assay. We also give a label-free screen for at-risk targets, and report four measurement artifacts encountered during this study, three of which inverted the result they were meant to measure.",
       "authors": [
-        "Cloete, L. J.",
-        "Patterton, H. G."
+        "Shao, Q."
       ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.07.738656",
-      "doi": "10.64898/2026.08.07.738656",
-      "category": "结构与生物",
+      "published": "2026-08-15",
+      "updated": "2026-08-15",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.10.744024",
+      "doi": "10.64898/2026.08.10.744024",
+      "category": "方法与模型",
       "tags": [
-        "结构与生物",
+        "方法与模型",
         "bioinformatics",
         "protein",
         "language model",
         "embedding"
       ],
-      "relevance_score": 32.0,
-      "quality_score": 91.0,
+      "relevance_score": 26.0,
+      "quality_score": 78.5,
       "summary_zh": "",
       "why_it_matters_zh": "",
       "evidence_flags": [
-        "benchmark",
-        "out-of-distribution"
+        "benchmark"
       ],
       "rank": 0,
       "featured": false
     },
     {
-      "id": "biorxiv:10.1101/2025.11.21.689783",
+      "id": "biorxiv:10.64898/2026.08.10.743892",
       "source": "bioRxiv",
-      "title": "scDRP: Disentangled representation learning for predicting single-cell responses to perturbations and estimating individual treatment effects",
-      "abstract": "Dissecting cell-state-specific changes in gene regulation induced by perturbations is crucial for understanding biological mechanisms. However, single-cell sequencing provides only unmatched snapshots of cells under different conditions. This destructive measurement process hinders the estimation of individualized treatment effects (ITEs), which are essential for pinpointing these heterogeneous mechanistic responses. We develop scDRP, a generative framework that leverages disentangled representation learning with asymptotic correctness guarantees to separate perturbation-induced and perturbation-invariant latent variables via a sparsity regularized beta-VAE. Assuming quantile-preserving effects of perturbations conditional on confounders, scDRP performs conditional optimal transport in the disentangled latent space to infer counterfactual states and estimate ITEs. Applied to simulated and real single-cell perturbation data, scDRP accurately estimates treatment effects and individual counterfactual responses, with subsequent biclustering analysis further elucidating cell-type-specific functional gene module dynamics. Specifically, it captures distinct cellular patterns under rhinovirus and cigarette-smoke extract exposures, reveals heterogeneous responses to interferon stimulation across diverse immune cell types, and identifies distinct functional module activation in chronic myeloid leukemia cells following CRISPR activation targeting different genes. scDRP also generalizes to unseen perturbation doses and combinations. Our framework provides a principled computational approach to extracting heterogeneous causal relationships from single-cell perturbation data, enabling a deeper understanding of cellular and molecular mechanisms.",
+      "title": "SpatialMOC: Accurate reconstruction of spatial multi-omics landscapes through cross-modality prediction",
+      "abstract": "Spatial multi-omics technologies provide unprecedented opportunities to characterize tissue organization by measuring complementary molecular layers within their native spatial context. However, simultaneous profiling of multiple molecular modalities remains technically challenging, limiting the widespread application of spatial multi-omics and leaving most studies reliant on single-modality measurements. Here, we present SpatialMOC, a computational framework that reconstructs missing spatial molecular modalities by integrating spatial context with cross-modality representation learning. Across multiple tissues, molecular modalities, developmental stages, sequencing platforms, and degraded datasets, SpatialMOC consistently outperformed existing computational approaches in bidirectional molecular prediction. Beyond accurate prediction, SpatialMOC faithfully reconstructed tissue architecture, preserved dynamic molecular and regulatory heterogeneity, and recovered biologically meaningful spatial landscapes from technically compromised measurements. Together, these results establish SpatialMOC as a general framework for spatial multi-omics reconstruction, extending the analytical value of existing spatial omics datasets and facilitating comprehensive investigations of tissue organization, development, and disease.",
       "authors": [
-        "Sun, J.",
-        "Stojanov, P.",
-        "Zhang, K."
+        "Liu, Z.",
+        "Zhen, P.",
+        "Wang, B.",
+        "Shu, H.",
+        "Zhao, Y.",
+        "Zhang, K.",
+        "Wang, Y.",
+        "Hu, J.",
+        "Wang, T.",
+        "Chen, J."
       ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://www.biorxiv.org/content/10.1101/2025.11.21.689783",
-      "doi": "10.1101/2025.11.21.689783",
-      "category": "结构与生物",
+      "published": "2026-08-14",
+      "updated": "2026-08-14",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.10.743892",
+      "doi": "10.64898/2026.08.10.743892",
+      "category": "方法与模型",
       "tags": [
-        "结构与生物",
+        "方法与模型",
         "bioinformatics",
+        "omics",
         "representation learning",
-        "single-cell",
         "molecular"
       ],
-      "relevance_score": 32.0,
-      "quality_score": 82.0,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.08.739980",
-      "source": "bioRxiv",
-      "title": "MG2Act: A Mechanism-Inspired Sequential Attention Framework for Molecular Glue Degradation Prediction",
-      "abstract": "Molecular glue degraders act by inducing productive proximity between an E3 ligase and a substrate protein. For most characterized degradative glues, a small molecule first engages the E3, conditions its substrate-recognition surface, and only then enables recruitment of a compatible neo-substrate. This directionality is rarely encoded explicitly in computational models, which typically fuse molecule, E3 and target representations simultaneously. We present MG2Act, a structure-independent framework that translates this two-step logic into sequential cross-attention, using CRBN-mediated degradation as the most data-rich representative system. Starting from a curated continuous-valued benchmark of 1,207 pairs across 47 targets, a refined subset of 1,159 pairs was selected to train MG2Act after excluding rare targets. On identical processed data, MG2Act consistently outperforms machine learning baselines, robustly generalizes under strict redundancy-filtering, and responds coherently to mechanism-based perturbations. Prospective screening and zero-shot target-conditioned prioritization identified nanomolar degraders of IKZF1, CK1 and CDK4, including the non-classical IMiD-core CDK4 degrader SWC-202.",
-      "authors": [
-        "zhuang, z.",
-        "teng, d.",
-        "Xu, X.",
-        "Fang, S.",
-        "Wang, Y.",
-        "Hou, M.",
-        "Ge, L.",
-        "Yuan, S.",
-        "Yang, M.",
-        "Cheng, L.",
-        "Zhang, Z.",
-        "He, Q.",
-        "Li, Z.",
-        "Xu, X.",
-        "-Ma, S.",
-        "Zhang, S.",
-        "Wang, X.",
-        "Zheng, M.",
-        "Qin, C."
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.08.739980",
-      "doi": "10.64898/2026.08.08.739980",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "bioinformatics",
-        "molecular",
-        "machine learning",
-        "molecule"
-      ],
-      "relevance_score": 31.0,
-      "quality_score": 90.8,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [
-        "benchmark",
-        "prospective"
-      ],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv.15007390/v1",
-      "source": "ChemRxiv",
-      "title": "Autonomous mechanism discovery from minimal experiments",
-      "abstract": "Reliable experimental data in the physical sciences are costly and slow to obtain, limiting data-driven artificial intelligence (AI) approaches that depend on large training datasets and making evidence efficiency essential. Mechanism-driven discovery instead extracts physical rules from sparse observations, but large language models (LLM)-generated hypotheses often lack quantitative physical constraints, remaining plausible yet unverifiable. Here we introduce MiMEDAL (Minimal-experiment Mechanism-Evolving Discovery with Adaptive Learning), a nested AI framework integrating adaptive experimentation, symbolic regression, LLM reasoning and first-principles falsification. Domain-specific digital models extract expressions from minimal data to constrain LLM-generated hypotheses, which simulations iteratively test and revise until a consistent mechanism emerges. We deployed MiMEDAL on an autonomous robotic platform to investigate fluorescence in Schiff-base covalent organic frameworks (COFs). Without prior task-specific data, the system halted autonomously after 25 experiments, identifying a governing principle: emission requires exciton localisation on the aldehyde fragment, whereas leakage to the amine causes quenching. Distilled into the parameter-free descriptor η, this mechanism achieves 96.1% accuracy across 103 unseen COFs. Informed by η, the platform identified and synthesised BT-3Phethene, a conjugated COF with a 61% solid-state photoluminescence quantum yield, surpassing all reported conjugated COFs. MiMEDAL thus provides a transferable route from statistical prediction to physics-grounded mechanism discovery with minimal experimental data.",
-      "authors": [
-        "Jiahui Du",
-        "Zikai Xie",
-        "Man Luo",
-        "Liang Zhang",
-        "Hengtao Lei",
-        "Fangming Gao",
-        "Chunxing Yan",
-        "Chengxi Zhao",
-        "Xini Chu",
-        "Ziyi Cheng",
-        "Ziyi Jin",
-        "Bing Huang",
-        "Xijun Wang",
-        "Linjiang Chen",
-        "Hexiang Deng",
-        "Jun Jiang",
-        "Yi Luo"
-      ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://doi.org/10.26434/chemrxiv.15007390/v1",
-      "doi": "10.26434/chemrxiv.15007390/v1",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "ChemRxiv",
-        "artificial intelligence",
-        "large language model",
-        "language model"
-      ],
-      "relevance_score": 31.0,
-      "quality_score": 83.8,
+      "relevance_score": 23.2,
+      "quality_score": 74.0,
       "summary_zh": "",
       "why_it_matters_zh": "",
       "evidence_flags": [
@@ -1368,95 +671,68 @@
       "featured": false
     },
     {
-      "id": "chemrxiv:10.26434/chemrxiv.15007407/v1",
-      "source": "ChemRxiv",
-      "title": "Unsupervised Motif Discovery in Zintl Phases via Sparse Hierarchical Graph Learning",
-      "abstract": "Graph neural networks (GNNs) are a highly effective way to learn structureproperty relationships for materials, but most architectures overlook physical intuition that properties are governed by substructures and motifs rather than individual atom interactions. Here, we show that motifs can be learned automatically by training a sparse hierarchical GNN end-to-end using only property labels. Unlike attention-based methods, ours is interpretable by design rather than through post-hoc analysis, and unlike existing motif-based approaches, it uses no hand-crafted chemical heuristics. We demonstrate this on Zintl phases, intermetallics of strong interest for thermoelectrics whose properties are driven by anionic and cationic substructure interactions. Our model matches imperfect chemical heuristic pooling by up to 9× better than random assignment, with discrepancies that are justifiable rather than arbitrary, enabling interpretable substructure-property relationships and informative priors downstream for generative materials design.",
+      "id": "biorxiv:10.1101/2025.10.10.681591",
+      "source": "bioRxiv",
+      "title": "Accurate and Robust Characterization of Structural Variants at Low Coverages with ARCLID",
+      "abstract": "Structural variants (SVs) shape genome diversity and underlie human diseases, yet accurate detection remains difficult, especially at low sequencing coverages. Most existing callers are optimized for deep sequencing and lose sensitivity as coverage falls, limiting their use in studies that sequence genomes at shallow depth. We present ARCLID, a deep learning-based SV caller that reframes SV detection as an object detection task. We benchmarked ARCLID against six well-established callers on four samples and challenging medically relevant genes, across coverages from 28x down to 5x, multiple SV sizes, and both relaxed and strict breakpoint matching. At 5x, ARCLID achieved the highest F1 score of all evaluated callers on every sample, exceeding the second-best tool by up to 8%. This advantage widened under strict breakpoint matching, indicating genuine variant recovery with accurate breakpoint placement. At higher coverages, ARCLID remains competitive with the strongest current tools. By preserving accuracy at low depth, it makes reliable SV discovery feasible from shallow data, enabling lower sequencing cost, time, and storage for population-scale and clinical genomics. We additionally curated SV benchmarking regions for HG00733 and NA19240 that complement the widely used HG002 GIAB benchmark regions, supporting evaluation of SV callers across ancestrally distinct genomes.",
       "authors": [
-        "Nila Mandal",
-        "Rinkumoni Chaliha",
-        "Prashun Gorai",
-        "Qian Yang"
+        "Tavakoli, S.",
+        "Frandsen, R. J. N.",
+        "Majidian, S.",
+        "Mansourvar, M."
       ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://doi.org/10.26434/chemrxiv.15007407/v1",
-      "doi": "10.26434/chemrxiv.15007407/v1",
+      "published": "2026-08-14",
+      "updated": "2026-08-14",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.10.10.681591",
+      "doi": "10.1101/2025.10.10.681591",
       "category": "方法与模型",
       "tags": [
         "方法与模型",
-        "ChemRxiv",
-        "graph neural",
-        "neural network",
-        "gnn"
+        "bioinformatics",
+        "deep learning",
+        "genome",
+        "omics"
       ],
-      "relevance_score": 31.0,
-      "quality_score": 80.8,
+      "relevance_score": 18.0,
+      "quality_score": 68.5,
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "evidence_flags": [],
+      "evidence_flags": [
+        "benchmark"
+      ],
       "rank": 0,
       "featured": false
     },
     {
-      "id": "arxiv:2608.13455v1",
-      "source": "arXiv",
-      "title": "Evaluation of Clinically Steerable Retinal Image Generation from Foundation Model Latent Spaces",
-      "abstract": "Medical foundation models learn latent representations of clinically meaningful phenotypes, yet their ability to support controllable image generation remains largely unexplored. We evaluate four retinal foundation models within the representation tokenizer framework and examine whether demographic and clinical information encoded in latent representations from foundation models is preserved during synthetic image generation. We show that generated representations and images faithfully inherit phenotype information when evaluated within their originating foundation models, consistently outperforming conventional latent diffusion on multiple downstream prediction tasks. However, these gains largely disappear when evaluated using classifiers trained on real images, revealing a previously uncharacterised synthetic-to-real representation gap. These findings demonstrate that foundation-model latent spaces provide a powerful substrate for controllable retinal synthesis while highlighting the need to better align synthetic representations with real-image distributions.",
+      "id": "biorxiv:10.64898/2026.08.12.744371",
+      "source": "bioRxiv",
+      "title": "A leakage-controlled benchmark shows apparent codon-language-model advantages in synonymous-variant prediction are evaluation artifacts",
+      "abstract": "Synonymous codon choices shape mRNA stability, translation, and folding, and codon language models (cLMs) are increasingly reported to read this biology from sequence. However, when a true signal is thin relative to a confounding one, standard evaluation protocols can manufacture the reported gain rather than measure it, and we show this is what has happened for cLMs on synonymous-variant prediction. Under random splits, the codon advantage is large: tokenization gaps of +2.3~14.3 percentage points (pp) and pretrained codon leads of +8.0 pp over the strongest protein model (ESM-1b) and up to +10.0 pp over ESM-2. We find these numbers are properties of the measurement, not the models. A memorization baseline outscores every neural model; the advantage collapses under gene-held-out evaluation; the sole surviving residual dissolves into six defensible probe defaults; and the synonym-randomization drop that appeared to confirm true signal is itself variance under pooled analysis (0.3 pp, p = 0.49). No advantage survives leakage-controlled evaluation with pooled statistics. We release CodonBench, a leakage-controlled benchmark with an emergent audit cascade, and characterize how artifacts accumulate at every pipeline step. A thin signal (I({sigma};Y|A) {approx} 0.04 bits) may exist but is not reliably detectable at current sample sizes; we specify what detecting it would require.",
       "authors": [
-        "Zuzanna A. Wakefield-Skórniewska",
-        "Bartłomiej W. Papież"
+        "Liang, Y.",
+        "Zhu, W.",
+        "Liang, H.",
+        "Pan, X."
       ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://arxiv.org/abs/2608.13455v1",
-      "doi": "",
+      "published": "2026-08-14",
+      "updated": "2026-08-14",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.744371",
+      "doi": "10.64898/2026.08.12.744371",
       "category": "方法与模型",
       "tags": [
         "方法与模型",
-        "cs.CV",
-        "foundation model",
-        "synthesis"
+        "bioinformatics",
+        "language model",
+        "protein",
+        "rna"
       ],
-      "relevance_score": 30.2,
-      "quality_score": 81.8,
+      "relevance_score": 18.0,
+      "quality_score": 68.5,
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "evidence_flags": [],
-      "rank": 0,
-      "featured": false
-    },
-    {
-      "id": "arxiv:2608.12884v1",
-      "source": "arXiv",
-      "title": "Hybrid HPC-Quantum Simulations: DFT-Quantum Embedding for Molecular Systems",
-      "abstract": "Scientific simulations demand methods combining scalability with predictive accuracy. Density Functional Theory (DFT) on High-Performance Computing (HPC) enables large-scale electronic-structure simulations but is limited by approximations affecting strongly correlated systems and band-gap predictions. Quantum computing offers a pathway to address this, though current Noisy Intermediate-Scale Quantum (NISQ) hardware remains constrained by qubit resources, noise, and execution cost. This work presents a hybrid DFT-Quantum Embedding (QDFT) framework integrating classical HPC-based DFT with a quantum electronic-structure solver. Large systems are partitioned to isolate a chemically relevant active space, treated via the Variational Quantum Eigensolver (VQE), while the remaining degrees of freedom are described by DFT. The framework incorporates active-space selection, embedded Hamiltonian construction, symmetry preservation, operator mapping, self-consistent density updating, and modular classical-quantum coupling. We focus on noiseless quantum simulation to systematically evaluate accuracy, convergence, active-space dependence, computational cost, and HPC scalability without hardware noise. Detailed profiling identifies computational bottlenecks and highlights limitations of CPU-based quantum simulation. A QPU runtime-estimation methodology is additionally developed to assess execution requirements on actual quantum hardware. Results demonstrate quantum embedding's potential to improve selected electronic-structure properties while retaining classical HPC's scalability. Noisy quantum simulation and QPU execution remain key future directions, providing a pathway toward practical, scalable HPC-quantum hybrid simulations as hardware matures.",
-      "authors": [
-        "Namrata Manglani",
-        "Samrit Maity",
-        "Shashank Sharma",
-        "Tejjan Arora",
-        "Soham Phulare",
-        "Shreyas Kadam",
-        "Sanjay Wandhekar"
+      "evidence_flags": [
+        "benchmark"
       ],
-      "published": "2026-08-13",
-      "updated": "2026-08-13",
-      "url": "https://arxiv.org/abs/2608.12884v1",
-      "doi": "",
-      "category": "方法与模型",
-      "tags": [
-        "方法与模型",
-        "quant-ph",
-        "embedding",
-        "molecular",
-        "chemical"
-      ],
-      "relevance_score": 29.2,
-      "quality_score": 80.5,
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "evidence_flags": [],
       "rank": 0,
       "featured": false
     }

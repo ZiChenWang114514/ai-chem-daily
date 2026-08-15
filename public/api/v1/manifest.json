@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-15T16:50:18+00:00",
+  "generated_at": "2026-08-15T16:53:07+00:00",
   "hub": {
     "id": "aix-daily",
     "name": "AIX Daily",
@@ -30,20 +30,21 @@
         "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/archive/index.json",
         "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/candidates/latest.json"
       },
-      "latest_date": "2026-08-15",
+      "latest_date": "2026-08-16",
       "has_data": true,
       "stats": {
-        "fetched": 1449,
-        "candidates": 68,
+        "fetched": 289,
+        "candidates": 20,
         "selected": 16,
         "sources": {
-          "arXiv": 893,
-          "bioRxiv": 479,
-          "ChemRxiv": 77
+          "arXiv": 0,
+          "bioRxiv": 259,
+          "ChemRxiv": 30
         },
         "topics": {
-          "方法与模型": 12,
-          "分子与药物发现": 4
+          "方法与模型": 11,
+          "分子与药物发现": 3,
+          "结构与生物": 2
         }
       }
     },
