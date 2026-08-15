@@ -1,0 +1,151 @@
+name: Build and publish the daily digest
+
+on:
+  schedule:
+    # 00:12 UTC = 08:12 Asia/Shanghai. GitHub may delay scheduled runs briefly.
+    - cron: "12 0 * * *"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Inclusive collection window in days"
+        required: false
+        default: "3"
+
+permissions:
+  contents: write
+  issues: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ai-chem-daily-production
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      digest_date: ${{ steps.meta.outputs.digest_date }}
+      digest_title: ${{ steps.meta.outputs.digest_title }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Build digest from public metadata
+        env:
+          SITE_URL: https://zichenwang114514.github.io/ai-chem-daily/
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+          MAIL_TO: ${{ vars.MAIL_TO }}
+        run: >-
+          python backend/daily_digest.py
+          --site-root public
+          --days "${{ inputs.days || '3' }}"
+          --limit 16
+          --send-email
+
+      - name: Verify generated files
+        run: python -m unittest discover -s tests -v
+
+      - name: Read digest metadata
+        id: meta
+        shell: bash
+        run: |
+          echo "digest_date=$(python -c 'import json; print(json.load(open("public/data/latest.json", encoding="utf-8"))["date"])')" >> "$GITHUB_OUTPUT"
+          echo "digest_title=AI × Chem 每日预印本精选" >> "$GITHUB_OUTPUT"
+
+      - name: Save data and archive in the repository
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data public/email
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "data: publish digest ${{ steps.meta.outputs.digest_date }}"
+            git push
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+      - name: Upload diagnostic artifact
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: digest-${{ steps.meta.outputs.digest_date || github.run_id }}
+          path: |
+            public/data/latest.json
+            public/email/latest.html
+            public/email/latest.md
+          retention-days: 30
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  notify:
+    needs: [build, deploy]
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out generated digest
+        uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - name: Create the daily GitHub notification
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DIGEST_DATE: ${{ needs.build.outputs.digest_date }}
+          SITE_URL: https://zichenwang114514.github.io/ai-chem-daily/
+        shell: bash
+        run: |
+          title="AI × Chem 日报 · ${DIGEST_DATE}"
+          if gh issue list --state all --search "${title} in:title" --json title --jq '.[].title' | grep -Fxq "$title"; then
+            echo "Notification issue already exists."
+            exit 0
+          fi
+          gh issue create \
+            --title "$title" \
+            --body-file public/email/latest.md \
+            --assignee ZiChenWang114514 \
+            --label daily-digest
+
+  report-failure:
+    needs: [build, deploy]
+    if: ${{ failure() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open a failure report
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          gh issue create \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "日报自动更新失败 · $(date -u +%F)" \
+            --body "本次自动更新未完成。请查看运行日志：${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" \
+            --assignee ZiChenWang114514 \
+            --label automation-alert

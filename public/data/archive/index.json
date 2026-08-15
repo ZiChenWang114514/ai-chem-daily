@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "date": "2026-08-15",
+      "href": "data/archive/2026-08-15.json",
+      "selected": 16,
+      "fetched": 1186,
+      "kind": "json"
+    },
+    {
+      "date": "2026-07-17",
+      "href": "legacy/2026-07-17.html",
+      "selected": 16,
+      "fetched": 522,
+      "kind": "html"
+    }
+  ]
+}

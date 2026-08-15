@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="每日筛选 arXiv、bioRxiv 与 ChemRxiv 中值得关注的 AI × Chem 预印本。">
+  <meta name="theme-color" content="#142238">
+  <title>AI × Chem 每日预印本精选</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#papers">跳到日报内容</a>
+
+  <header class="masthead">
+    <div class="shell masthead__inner">
+      <nav class="topbar" aria-label="主要导航">
+        <a class="brand" href="./" aria-label="AI × Chem 日报首页">
+          <span class="brand__mark" aria-hidden="true">A×C</span>
+          <span>PREPRINT DAILY</span>
+        </a>
+        <button class="history-button" id="history-button" type="button" aria-expanded="false" aria-controls="history-panel">
+          历史日报
+          <span aria-hidden="true">⌄</span>
+        </button>
+      </nav>
+
+      <div class="history-panel" id="history-panel" hidden>
+        <div class="history-panel__head">
+          <strong>历史日报</strong>
+          <span>按日期查看自动归档</span>
+        </div>
+        <div id="history-list" class="history-list" aria-live="polite"></div>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">AI × CHEMISTRY · DAILY CURATION</div>
+          <h1>AI × Chem<br>每日预印本精选</h1>
+          <p id="subtitle" class="hero-subtitle">面向人工智能与化学交叉研究的每日文献观察</p>
+          <div class="source-row" aria-label="数据源">
+            <span><i class="source-dot source-dot--arxiv"></i>arXiv</span>
+            <span><i class="source-dot source-dot--biorxiv"></i>bioRxiv</span>
+            <span><i class="source-dot source-dot--chemrxiv"></i>ChemRxiv</span>
+          </div>
+        </div>
+
+        <div class="edition-card" aria-label="本期信息">
+          <span class="edition-card__label">LATEST EDITION</span>
+          <time id="digest-date" datetime="">载入中</time>
+          <p id="window-text">正在读取日报数据…</p>
+          <div class="edition-card__rule"></div>
+          <span id="generated-time" class="edition-card__meta">—</span>
+        </div>
+      </div>
+
+      <div class="metric-row" aria-label="日报统计">
+        <div class="metric"><strong id="stat-fetched">—</strong><span>抓取记录</span></div>
+        <div class="metric"><strong id="stat-candidates">—</strong><span>相关候选</span></div>
+        <div class="metric"><strong id="stat-selected">—</strong><span>本期精选</span></div>
+        <div class="metric metric--wide"><strong id="method-label">—</strong><span>筛选方式</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell main-content">
+    <section class="notice" id="method-note" aria-label="方法说明">
+      <span class="notice__icon" aria-hidden="true">i</span>
+      <p>正在载入筛选说明。</p>
+    </section>
+
+    <section class="toolbar" aria-label="筛选与搜索">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.3-4.3m2.3-5.2a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+        <label class="sr-only" for="search-input">搜索题名、作者与摘要</label>
+        <input id="search-input" type="search" placeholder="搜索题名、作者、摘要或标签">
+      </div>
+      <div class="filter-group" id="source-filters" aria-label="按来源筛选">
+        <button class="filter-chip is-active" type="button" data-source="all">全部来源</button>
+        <button class="filter-chip" type="button" data-source="arXiv">arXiv</button>
+        <button class="filter-chip" type="button" data-source="bioRxiv">bioRxiv</button>
+        <button class="filter-chip" type="button" data-source="ChemRxiv">ChemRxiv</button>
+      </div>
+    </section>
+
+    <section id="papers" aria-labelledby="papers-title">
+      <div class="section-heading">
+        <div>
+          <span class="section-heading__kicker">TODAY'S SELECTION</span>
+          <h2 id="papers-title">本期精选</h2>
+        </div>
+        <p id="result-count" aria-live="polite"></p>
+      </div>
+      <div id="paper-groups" class="paper-groups" aria-live="polite"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <strong>没有匹配的预印本</strong>
+        <p>请减少筛选条件或更换搜索词。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <strong>AI × Chem 每日预印本精选</strong>
+        <p>公开元数据的自动化整理与摘要辅助阅读。</p>
+      </div>
+      <div class="footer-note">
+        <p>预印本未经同行评议，请以原文为准。</p>
+        <p id="footer-date">—</p>
+      </div>
+    </div>
+  </footer>
+
+  <template id="paper-template">
+    <article class="paper-card">
+      <div class="paper-card__aside">
+        <span class="rank"></span>
+        <span class="source-badge"></span>
+      </div>
+      <div class="paper-card__body">
+        <div class="paper-card__topline">
+          <span class="topic-label"></span>
+          <span class="score-label"></span>
+        </div>
+        <h3><a class="paper-title" target="_blank" rel="noopener noreferrer"></a></h3>
+        <p class="paper-meta"></p>
+        <div class="tag-list"></div>
+        <div class="editor-note">
+          <span>编辑说明</span>
+          <p class="summary-zh"></p>
+        </div>
+        <p class="why-it-matters"></p>
+        <details class="abstract-details">
+          <summary>查看英文摘要</summary>
+          <p class="abstract-text"></p>
+        </details>
+      </div>
+    </article>
+  </template>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
