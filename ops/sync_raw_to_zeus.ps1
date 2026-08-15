@@ -2,8 +2,7 @@
 param(
     [string]$Repository = "ZiChenWang114514/ai-chem-daily",
     [string]$RemoteHost = "zeus_ts",
-    [string]$RemoteRoot = "/data3/zcwang/daily-intelligence-hub/raw",
-    [int]$LookbackDays = 14
+    [string]$RemoteRoot = "/data3/zcwang/daily-intelligence-hub/raw"
 )
 
 $ErrorActionPreference = "Stop"
@@ -25,8 +24,7 @@ try {
 
     $runsJson = & gh run list --repo $Repository --workflow daily.yml --status success --limit 30 --json databaseId,createdAt
     if ($LASTEXITCODE -ne 0) { throw "Unable to list GitHub Actions runs" }
-    $cutoff = [DateTimeOffset]::UtcNow.AddDays(-1 * [Math]::Abs($LookbackDays))
-    $runs = $runsJson | ConvertFrom-Json | Where-Object { [DateTimeOffset]$_.createdAt -ge $cutoff }
+    $runs = $runsJson | ConvertFrom-Json
 
     foreach ($run in $runs) {
         $artifactJson = & gh api ("repos/{0}/actions/runs/{1}/artifacts" -f $Repository, $run.databaseId)

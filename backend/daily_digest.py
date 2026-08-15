@@ -635,7 +635,8 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    end_date = date.fromisoformat(args.run_date) if args.run_date else date.today()
+    shanghai_today = datetime.now(timezone(timedelta(hours=8))).date()
+    end_date = date.fromisoformat(args.run_date) if args.run_date else shanghai_today
     days = max(1, args.days)
     if end_date.weekday() == 0:
         days = max(days, 4)
