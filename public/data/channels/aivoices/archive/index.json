@@ -1,0 +1,13 @@
+{
+  "schema_version": "2.0",
+  "items": [
+    {
+      "date": "2026-08-16",
+      "href": "data/channels/aivoices/archive/2026-08-16.json",
+      "selected": 0,
+      "candidates": 0,
+      "fetched": 0,
+      "kind": "json"
+    }
+  ]
+}

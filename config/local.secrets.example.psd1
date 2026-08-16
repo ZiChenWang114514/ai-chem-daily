@@ -1,0 +1,5 @@
+@{
+    XBearerToken = ""
+    OpenReviewUsername = ""
+    OpenReviewPassword = ""
+}

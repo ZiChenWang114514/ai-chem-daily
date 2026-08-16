@@ -314,6 +314,8 @@ button.heatmap__day:hover, button.heatmap__day:focus-visible { outline: 2px soli
   border: 1px solid var(--line);
   border-radius: 11px;
 }
+.channel-card { color: inherit; text-decoration: none; }
+.channel-card:hover, .channel-card:focus-visible { border-color: #cbd5df; box-shadow: var(--shadow); transform: translateY(-2px); }
 .channel-card::before { content: ""; position: absolute; top: 16px; bottom: 16px; left: 0; width: 3px; background: var(--channel-accent, var(--teal)); border-radius: 0 3px 3px 0; }
 .channel-card__top { display: flex; gap: 12px; align-items: center; justify-content: space-between; }
 .channel-card h3 { margin: 0; font-family: var(--serif); font-size: 16px; }

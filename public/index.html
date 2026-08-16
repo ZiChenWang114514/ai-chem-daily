@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="面向 AI 与科学交叉研究的每日信息中心，当前提供 AI × Chem 预印本精选。">
+  <meta name="description" content="AI × Chem、AI × Bio、AI × Math、AI Voices 与 Engineering 的每日研究精选。">
   <meta name="theme-color" content="#142238">
-  <title>AI × Chem 每日预印本精选</title>
+  <title>AIX Daily 每日智能研究集散中心</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
+<body data-page="home" data-root="">
   <a class="skip-link" href="#papers">跳到日报内容</a>
 
   <header class="masthead">
@@ -29,11 +29,12 @@
       </nav>
 
       <nav class="channel-nav" id="channel-nav" aria-label="信息频道">
-        <a class="channel-nav__item is-active" href="./" aria-current="page">AI × Chem</a>
-        <span class="channel-nav__item is-planned">AI × Bio <small>筹备中</small></span>
-        <span class="channel-nav__item is-planned">AI × Math <small>筹备中</small></span>
-        <span class="channel-nav__item is-planned">AI Voices <small>筹备中</small></span>
-        <span class="channel-nav__item is-planned">Engineering <small>筹备中</small></span>
+        <a class="channel-nav__item is-active" href="./" aria-current="page">总览</a>
+        <a class="channel-nav__item" href="channels/aixchem/">AI × Chem</a>
+        <a class="channel-nav__item" href="channels/aixbio/">AI × Bio</a>
+        <a class="channel-nav__item" href="channels/aixmath/">AI × Math</a>
+        <a class="channel-nav__item" href="channels/aivoices/">AI Voices</a>
+        <a class="channel-nav__item" href="channels/engineering/">Engineering</a>
       </nav>
 
       <div class="history-panel" id="history-panel" hidden>
@@ -46,14 +47,10 @@
 
       <div class="hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">AI × CHEMISTRY · DAILY CURATION</div>
-          <h1>AI × Chem<br>每日预印本精选</h1>
-          <p id="subtitle" class="hero-subtitle">面向人工智能与化学交叉研究的每日文献观察</p>
-          <div class="source-row" aria-label="数据源">
-            <span><i class="source-dot source-dot--arxiv"></i>arXiv</span>
-            <span><i class="source-dot source-dot--biorxiv"></i>bioRxiv</span>
-            <span><i class="source-dot source-dot--chemrxiv"></i>ChemRxiv</span>
-          </div>
+          <div class="eyebrow" id="eyebrow">FIVE CHANNELS · DAILY CURATION</div>
+          <h1 id="hero-title">AIX Daily<br>每日智能研究精选</h1>
+          <p id="subtitle" class="hero-subtitle">从学术预印本、研究观点到工程发布的每日信息中心</p>
+          <div class="source-row" id="source-row" aria-label="数据源"></div>
         </div>
 
         <div class="edition-card" aria-label="本期信息">
@@ -100,7 +97,7 @@
       <div class="channel-overview__intro">
         <span class="section-heading__kicker">RESEARCH CHANNELS</span>
         <h2 id="channel-title">一个中心，多条研究线索</h2>
-        <p>共享同一套日期、来源、运行状态与归档格式，后续频道可以独立加入，不影响现有日报。</p>
+        <p>五个频道共享日期、来源状态与归档格式，每条内容保留原始链接与审阅依据。</p>
       </div>
       <div class="channel-cards" id="channel-cards" aria-live="polite"></div>
     </section>
@@ -134,7 +131,7 @@
       </div>
       <div id="paper-groups" class="paper-groups" aria-live="polite"></div>
       <div id="empty-state" class="empty-state" hidden>
-        <strong>没有匹配的预印本</strong>
+        <strong>没有匹配的内容</strong>
         <p>请减少筛选条件或更换搜索词。</p>
       </div>
     </section>
@@ -147,7 +144,7 @@
         <p>公开元数据的自动化整理、研究筛选与长期归档。</p>
       </div>
       <div class="footer-note">
-        <p>预印本未经同行评议，请以原文为准。</p>
+        <p>预印本、公开观点与软件发布均请结合原始来源判断。</p>
         <p id="footer-date">—</p>
       </div>
     </div>
@@ -173,7 +170,7 @@
         </div>
         <p class="why-it-matters"></p>
         <details class="abstract-details">
-          <summary>查看英文摘要</summary>
+          <summary>查看原始摘要或正文</summary>
           <p class="abstract-text"></p>
         </details>
       </div>

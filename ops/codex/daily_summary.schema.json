@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["date", "overview_zh", "channel_highlights"],
+  "additionalProperties": false,
+  "properties": {
+    "date": {"type": "string", "format": "date"},
+    "overview_zh": {"type": "string"},
+    "channel_highlights": {
+      "type": "object",
+      "required": ["aixchem", "aixbio", "aixmath", "aivoices", "engineering"],
+      "additionalProperties": false,
+      "properties": {
+        "aixchem": {"type": "string"}, "aixbio": {"type": "string"}, "aixmath": {"type": "string"},
+        "aivoices": {"type": "string"}, "engineering": {"type": "string"}
+      }
+    }
+  }
+}
