@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AIX Daily 与 ChatGPT 已安排任务的公开连接说明。">
+  <meta name="description" content="AIX Daily 本地自动学术复核流程与运行状态。">
   <meta name="theme-color" content="#172333">
-  <title>连接已安排任务 · AIX Daily</title>
+  <title>本地自动流程 · AIX Daily</title>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <style>
     :root { color-scheme: light; --ink:#172333; --sub:#667286; --line:#dfe5e9; --teal:#0d7c78; --canvas:#f2f5f6; }
@@ -43,27 +43,27 @@
   <header>
     <div class="shell">
       <nav><a class="brand" href="../">AIX DAILY</a><a href="../">返回日报</a></nav>
-      <div class="eyebrow">CHATGPT SCHEDULED TASK</div>
-      <h1>让每日采集与智能简报协同运行</h1>
-      <p>公开数据接口提供稳定内容；ChatGPT 已安排任务按时阅读、完成复核，并通过 GitHub 资料接口上传结果，网站随后自动更新。</p>
+      <div class="eyebrow">LOCAL ACADEMIC PIPELINE</div>
+      <h1>本地完成采集、复核与发布</h1>
+      <p>Windows 每日运行采集程序与 Codex 学术复核，测试通过后推送 GitHub，Pages 随后更新网站并发送 GitHub 通知。</p>
     </div>
   </header>
   <main class="shell">
     <section class="status" aria-label="接口状态">
       <div><span>接口状态</span><strong id="status-state">正在检查</strong></div>
       <div><span>最近一期</span><strong id="status-date">—</strong></div>
-      <div><span>建议时间</span><strong>每日 09:15 · 北京时间</strong></div>
+      <div><span>计划时间</span><strong>每日 08:00 · 北京时间</strong></div>
     </section>
     <article>
-      <h2>已安排任务说明</h2>
-      <p>在 ChatGPT 的“已安排”页面创建每日任务，并粘贴下面这段内容。任务每次都会从版本化接口读取最新说明。</p>
+      <h2>本地运行说明</h2>
+      <p>下面显示当前发布流程。实际执行由 Windows 计划任务和本机 Codex CLI 完成。</p>
       <pre id="task-prompt">正在载入任务说明…</pre>
       <div class="actions">
-        <button id="copy-button" type="button">复制任务说明</button>
+        <button id="copy-button" type="button">复制运行说明</button>
         <a class="button secondary" href="../api/v1/manifest.json">查看接口清单</a>
         <a class="button secondary" href="../api/v1/status.json">查看运行状态</a>
       </div>
-      <div class="note">请在 ChatGPT 中连接并授权 GitHub 应用。网页版任务读取本页公开接口后，会把结果提交为带有 <code>scheduled-intake</code> 标签的 Issue；仓库工作流接收资料并重新部署网站，无需保存个人 Token。</div>
+      <div class="note">Pages 部署完成后会创建带有 <code>daily-digest</code> 标签的当日日报 Issue。GitHub 根据你的通知设置把邮件发送到指定邮箱。</div>
     </article>
   </main>
   <script>

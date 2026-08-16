@@ -5,3 +5,4 @@ __pycache__/
 .env.*
 !.env.example
 work/
+config/local.settings.psd1
