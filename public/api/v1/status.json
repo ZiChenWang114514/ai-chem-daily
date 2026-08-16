@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-16T13:41:44+00:00",
+  "generated_at": "2026-08-16T22:15:57+00:00",
   "timezone": "Asia/Shanghai",
-  "expected_date": "2026-08-16",
-  "latest_date": "2026-08-16",
+  "expected_date": "2026-08-17",
+  "latest_date": "2026-08-17",
   "state": "fresh",
   "active_channels": [
     "aixchem",
@@ -23,41 +23,41 @@
   "channels": {
     "aixchem": {
       "state": "success",
-      "latest_date": "2026-08-16",
-      "updated_at": "2026-08-16T12:28:41+00:00",
+      "latest_date": "2026-08-17",
+      "updated_at": "2026-08-16T17:17:22+00:00",
       "source_errors": [],
       "stats": {
-        "fetched": 0,
-        "candidates": 0,
-        "selected": 0,
+        "fetched": 338,
+        "candidates": 50,
+        "selected": 14,
         "sources": {
           "arXiv": 0,
-          "bioRxiv": 0,
-          "ChemRxiv": 0
+          "bioRxiv": 311,
+          "ChemRxiv": 30
         }
       }
     },
     "aixbio": {
       "state": "success",
-      "latest_date": "2026-08-16",
-      "updated_at": "2026-08-16T12:29:09+00:00",
+      "latest_date": "2026-08-17",
+      "updated_at": "2026-08-16T18:00:44+00:00",
       "source_errors": [],
       "stats": {
-        "fetched": 0,
-        "candidates": 0,
-        "selected": 0,
+        "fetched": 1091,
+        "candidates": 60,
+        "selected": 11,
         "sources": {
           "arXiv": 0,
-          "bioRxiv": 0,
-          "medRxiv": 0,
-          "Europe PMC": 0
+          "bioRxiv": 311,
+          "medRxiv": 79,
+          "Europe PMC": 953
         }
       }
     },
     "aixmath": {
       "state": "success",
-      "latest_date": "2026-08-16",
-      "updated_at": "2026-08-16T12:38:26+00:00",
+      "latest_date": "2026-08-17",
+      "updated_at": "2026-08-16T19:00:01+00:00",
       "source_errors": [
         "OpenReview: HTTP 403"
       ],
@@ -73,8 +73,8 @@
     },
     "aivoices": {
       "state": "success",
-      "latest_date": "2026-08-16",
-      "updated_at": "2026-08-16T12:38:27+00:00",
+      "latest_date": "2026-08-17",
+      "updated_at": "2026-08-16T20:00:49+00:00",
       "source_errors": [
         "X: HTTP 402"
       ],
@@ -90,15 +90,15 @@
     },
     "engineering": {
       "state": "success",
-      "latest_date": "2026-08-16",
-      "updated_at": "2026-08-16T12:35:24+00:00",
+      "latest_date": "2026-08-17",
+      "updated_at": "2026-08-16T21:02:29+00:00",
       "source_errors": [],
       "stats": {
-        "fetched": 3,
-        "candidates": 3,
-        "selected": 1,
+        "fetched": 0,
+        "candidates": 0,
+        "selected": 0,
         "sources": {
-          "GitHub Releases": 3
+          "GitHub Releases": 0
         }
       }
     }

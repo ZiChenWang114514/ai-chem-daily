@@ -14,7 +14,7 @@
   "stats": {
     "fetched": 1091,
     "candidates": 60,
-    "selected": 11,
+    "selected": 16,
     "sources": {
       "arXiv": 0,
       "bioRxiv": 311,
@@ -135,6 +135,216 @@
       "abstract": "BACKGROUND: Coronary angiography remains the reference standard for diagnosing coronary artery disease and guiding revascularization, yet its interpretation requires expert integration of multi-view anatomy, lesion morphology and procedural context. Existing artificial intelligence approaches are largely task-specific, annotation-dependent and limited in capturing the semantic relationship between angiographic findings and interventional decision-making. Whether large-scale vision-language pretraining can enable transferable foundation-model representations for invasive coronary imaging remains unknown. METHODS We developed CAG-MIND, a domain-specific vision-language foundation model for coronary angiography, using 135,475 CAG examinations paired with procedural reports, comprising 812,850 angiographic videos from Zhongshan Hospital and Shanghai Geriatric Medical Center. Each case consisted of standardized six-view angiographic acquisitions paired with structured procedural semantics extracted from routine reports using a large language model-assisted pipeline. The model was pretrained by aligning multi-view angiographic representations with report-derived semantic embeddings through bidirectional contrastive learning. Performance was evaluated under zero-shot and supervised fine-tuning settings across 11 downstream tasks grouped into structural abnormality detection, atherosclerotic plaque assessment, and interventional decision prediction, using both an internal validation cohort and an independent external test cohort. RESULTS CAG-MIND demonstrated robust performance across all three task categories. In the zero-shot setting, the model achieved mean AUROCs of 0.686 in the internal validation cohort and 0.745 in the external test cohort, indicating transferable multimodal representations without task-specific supervision. Following supervised fine-tuning, the mean AUROC increased to 0.827 and 0.846, respectively, with excellent performance for coronary stenosis detection (AUROC 0.940 in both cohorts), balloon/stent prediction (0.900 and 0.907), and CABG recommendation (0.877 and 0.875). Compared with representative biomedical vision-language models and conventional image-based architectures, CAG-MIND consistently achieved superior performance in both zero-shot and supervised settings and remained superior to fully fine-tuned competing models when trained with only 10% of the labelled data. Grad-CAM visualization demonstrated anatomically plausible lesion-focused attention, supporting the interpretability of the learned representations. CONCLUSIONS CAG-MIND is, to our knowledge, the first large-scale vision-language foundation model for coronary angiography trained at more than 100,000-patient scale. By aligning standardized multi-view angiographic videos with report-derived procedural semantics, CAG-MIND enables robust zero-shot transfer, data-efficient fine-tuning and cross-center generalization. These findings support domain-aligned multimodal pretraining as a scalable foundation-model paradigm for invasive cardiovascular imaging and future cath-lab decision support.",
       "published": "2026-08-14",
       "author_line": "Li, Z., Sun, Y., Jiang, C. 等 24 人"
+    },
+    {
+      "id": "biorxiv:10.1101/2025.10.24.684491",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A machine learning framework for supervised treatment response prediction from tumor transcriptomics: A large-scale pan-cancer study",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.10.24.684491",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Pal, L. R.",
+        "Gertz, E. M.",
+        "Ulhas Nair, N.",
+        "Mukherjee, S.",
+        "Patiyal, S.",
+        "Cantore, T.",
+        "Campagnolo, E. M.",
+        "Chang, T.",
+        "Dhruba, S. R.",
+        "Kim, Y.",
+        "Shulman, E. D.",
+        "Rajagopal, P. S.",
+        "Hoang, D.-T.",
+        "Hannenhalli, S.",
+        "Schaffer, A. A.",
+        "Ruppin, E."
+      ],
+      "language": "en",
+      "abstract_or_text": "Precision oncology aims to guide treatment decisions using biomarkers. While DNA-based panels are increasingly applied, RNA transcriptomics remain underused due to limited datasets and the absence of robust models. We assembled the largest transcriptomic resource for drug response prediction to date, spanning 91 cohorts, 5,675 patients, nine cancer types, and six frontline therapies: anti-PD-1/PD-L1 immune-checkpoint inhibitors, trastuzumab, bevacizumab, BRAF inhibitors, paclitaxel, and FAC/FEC (Fluorouracil-Adriamycin-Cyclophosphamide/Fluorouracil-Epirubicin-Cyclophosphamide) chemotherapy. We developed EXPRESSO (EXpression-Profile-RESponSe-Optimizer), a supervised machine-learning framework that predicts treatment response from pre-treatment transcriptomes by integrating drug targets and context-specific biomarkers. EXPRESSO achieves mean ROC-AUCs of 0.62 - 0.73 and median odds ratios of 2.4 - 4.6 across therapies, outperforming 20 published transcriptomic signatures and other machine learning methods. Prospective validation on 22 independent cohorts confirms that performance generalizes beyond cross-validation. The EXPRESSO signature additionally stratifies progression-free survival in immune checkpoint blockade-treated cohorts, demonstrating prognostic value beyond binary response prediction. Robustness analysis reveals that predictive performance plateaued for some therapies with increasing training cohorts but continued to improve for others. These findings suggest inherent limits of supervised brute-force learning for certain treatments, but additional data and deeper mechanistic modeling may further enhance transcriptomics-based predictors.",
+      "summary_zh": "EXPRESSO整合91个队列、5,675名患者、九类癌种的治疗前转录组，预测六种一线治疗响应，并在22个独立队列进行前瞻性验证。",
+      "why_it_matters_zh": "跨疗法、跨癌种的规模和独立验证使其成为转录组精准治疗预测的重要资源；预测关联不等同于治疗获益的因果证据。",
+      "quality_score": 86.0,
+      "tags": [
+        "组学与细胞",
+        "preprint",
+        "cancer biology",
+        "machine learning",
+        "transcriptomics",
+        "bio"
+      ],
+      "evidence_flags": [
+        "preprint",
+        "dataset",
+        "prospective",
+        "performance",
+        "external_validation"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2025.10.24.684491",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Pal, L. R.",
+        "Gertz, E. M.",
+        "Ulhas Nair, N.",
+        "Mukherjee, S.",
+        "Patiyal, S.",
+        "Cantore, T.",
+        "Campagnolo, E. M.",
+        "Chang, T.",
+        "Dhruba, S. R.",
+        "Kim, Y.",
+        "Shulman, E. D.",
+        "Rajagopal, P. S.",
+        "Hoang, D.-T.",
+        "Hannenhalli, S.",
+        "Schaffer, A. A.",
+        "Ruppin, E."
+      ],
+      "abstract": "Precision oncology aims to guide treatment decisions using biomarkers. While DNA-based panels are increasingly applied, RNA transcriptomics remain underused due to limited datasets and the absence of robust models. We assembled the largest transcriptomic resource for drug response prediction to date, spanning 91 cohorts, 5,675 patients, nine cancer types, and six frontline therapies: anti-PD-1/PD-L1 immune-checkpoint inhibitors, trastuzumab, bevacizumab, BRAF inhibitors, paclitaxel, and FAC/FEC (Fluorouracil-Adriamycin-Cyclophosphamide/Fluorouracil-Epirubicin-Cyclophosphamide) chemotherapy. We developed EXPRESSO (EXpression-Profile-RESponSe-Optimizer), a supervised machine-learning framework that predicts treatment response from pre-treatment transcriptomes by integrating drug targets and context-specific biomarkers. EXPRESSO achieves mean ROC-AUCs of 0.62 - 0.73 and median odds ratios of 2.4 - 4.6 across therapies, outperforming 20 published transcriptomic signatures and other machine learning methods. Prospective validation on 22 independent cohorts confirms that performance generalizes beyond cross-validation. The EXPRESSO signature additionally stratifies progression-free survival in immune checkpoint blockade-treated cohorts, demonstrating prognostic value beyond binary response prediction. Robustness analysis reveals that predictive performance plateaued for some therapies with increasing training cohorts but continued to improve for others. These findings suggest inherent limits of supervised brute-force learning for certain treatments, but additional data and deeper mechanistic modeling may further enhance transcriptomics-based predictors.",
+      "published": "2026-08-14",
+      "author_line": "Pal, L. R., Gertz, E. M., Ulhas Nair, N. 等 16 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.12.744314",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "AI4Loop: an Artificial Intelligence Framework Reveals Increased 3D Chromatin Interactions and Therapeutic Vulnerabilities across 12,000 Cancer Samples",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.744314",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Dao, F.",
+        "Lebeau, B.",
+        "Amuley, P.",
+        "Tan, W. K.",
+        "Li, X.",
+        "Goh, B. C.",
+        "Chng, W. J.",
+        "Kwoh, C. K.",
+        "Lin, H.",
+        "Lyu, H.",
+        "Fullwood, M."
+      ],
+      "language": "en",
+      "abstract_or_text": "Three-dimensional chromatin interactions shape gene regulation, but their large-scale analysis remains limited by the cost and complexity of experimental assays. Here we present AI4Loop, a deep learning framework that infers genome-wide gene-centered chromatin interaction networks directly from RNA-seq data. Across multiple cell types, AI4Loop recovered interaction patterns consistent with clinical samples and orthogonal chromatin conformation datasets. Applied to 12,347 transcriptomes from 32 cancer types, AI4Loop revealed pervasive increases in gene-centered chromatin interactions in tumors, particularly at oncogene-associated loci. These inferred interaction networks outperformed gene expression alone in cancer classification. Integration with more than 50,000 drug-treated transcriptomes identified compounds predicted to reverse cancer-associated interaction gains. Hi-C experiments confirmed that the oxazolidinone antibiotics eperezolid and radezolid reduce breast cancer-gain chromatin interactions. Together, these results identify increased gene-centered chromatin interactions as a pan-cancer feature and provide a scalable strategy for linking 3D genome dysregulation to therapeutic vulnerabilities.",
+      "summary_zh": "AI4Loop从RNA-seq推断基因中心染色质互作网络，分析12,347份、32类癌症转录组，并以超过50,000份药物处理转录组筛选候选药物；Hi-C验证了两种药物可降低乳腺癌相关互作。",
+      "why_it_matters_zh": "研究将可扩展的转录组推断与正交染色质实验相连，可用于提出3D基因组治疗脆弱性的可检验假设。",
+      "quality_score": 85.0,
+      "tags": [
+        "组学与细胞",
+        "preprint",
+        "3D genome",
+        "cancer",
+        "deep learning",
+        "bioinformatics"
+      ],
+      "evidence_flags": [
+        "preprint",
+        "dataset",
+        "experimental",
+        "clinical",
+        "orthogonal_validation"
+      ],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.12.744314",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Dao, F.",
+        "Lebeau, B.",
+        "Amuley, P.",
+        "Tan, W. K.",
+        "Li, X.",
+        "Goh, B. C.",
+        "Chng, W. J.",
+        "Kwoh, C. K.",
+        "Lin, H.",
+        "Lyu, H.",
+        "Fullwood, M."
+      ],
+      "abstract": "Three-dimensional chromatin interactions shape gene regulation, but their large-scale analysis remains limited by the cost and complexity of experimental assays. Here we present AI4Loop, a deep learning framework that infers genome-wide gene-centered chromatin interaction networks directly from RNA-seq data. Across multiple cell types, AI4Loop recovered interaction patterns consistent with clinical samples and orthogonal chromatin conformation datasets. Applied to 12,347 transcriptomes from 32 cancer types, AI4Loop revealed pervasive increases in gene-centered chromatin interactions in tumors, particularly at oncogene-associated loci. These inferred interaction networks outperformed gene expression alone in cancer classification. Integration with more than 50,000 drug-treated transcriptomes identified compounds predicted to reverse cancer-associated interaction gains. Hi-C experiments confirmed that the oxazolidinone antibiotics eperezolid and radezolid reduce breast cancer-gain chromatin interactions. Together, these results identify increased gene-centered chromatin interactions as a pan-cancer feature and provide a scalable strategy for linking 3D genome dysregulation to therapeutic vulnerabilities.",
+      "published": "2026-08-14",
+      "author_line": "Dao, F., Lebeau, B., Amuley, P. 等 11 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744703",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Protein language models and the long tail of functional diversity",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744703",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Vinod, R.",
+        "Char, S.",
+        "Amini, A. P.",
+        "Crawford, L. K.",
+        "Yang, K. K."
+      ],
+      "language": "en",
+      "abstract_or_text": "Protein language model performance on downstream tasks depends on the pretraining data, motivating recent efforts to combine genomic- and metagenomic-derived protein sequences into large-scale atlases. Because these datasets are highly redundant, sequences are typically clustered by similarity and sampled during training. Sequences that do not belong to any cluster, known as ``singletons'', are typically excluded from training and evaluation because they are considered to be artifacts. However, singletons represent the long tail of functional diversity and are abundant in many large-scale atlases: nearly 43\\% of the 3.34 billion sequences in the joint genomic-metagenomic dataset GigaRef are singletons. Here, we characterize singletons derived from UniRef and GigaRef by assessing whether clustering missed homologs, how much their exclusion affects protein language model (PLM) training, and which biological domains they contain. We find that many GigaRef singletons belong to a cluster under alternative parameter settings, suggesting that genomic and metagenomic datasets may require dataset-specific clustering configurations. We also show that singletons share mutual information with clustered sequences, making them learnable by PLMs and useful for training. Finally, metagenomic singletons carry denser, more diverse domain content than clustered sequences, including domain-level homology that sequence-identity clustering misses. Together, these results support including singletons in PLM training and call for closer examination of data curation in large-scale integrated sequence atlases.",
+      "summary_zh": "研究审视蛋白语言模型训练中常被剔除的单例序列：在GigaRef的33.4亿条序列中，约43%为单例，并评估其聚类、信息量与结构域多样性。",
+      "why_it_matters_zh": "它将注意力转向蛋白基础模型数据整理中的长尾功能多样性，对训练集构建和功能泛化具有直接方法学意义。",
+      "quality_score": 80.0,
+      "tags": [
+        "蛋白质与结构",
+        "preprint",
+        "protein language model",
+        "dataset curation",
+        "metagenomics",
+        "bioinformatics"
+      ],
+      "evidence_flags": [
+        "preprint",
+        "dataset",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744703",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Vinod, R.",
+        "Char, S.",
+        "Amini, A. P.",
+        "Crawford, L. K.",
+        "Yang, K. K."
+      ],
+      "abstract": "Protein language model performance on downstream tasks depends on the pretraining data, motivating recent efforts to combine genomic- and metagenomic-derived protein sequences into large-scale atlases. Because these datasets are highly redundant, sequences are typically clustered by similarity and sampled during training. Sequences that do not belong to any cluster, known as ``singletons'', are typically excluded from training and evaluation because they are considered to be artifacts. However, singletons represent the long tail of functional diversity and are abundant in many large-scale atlases: nearly 43\\% of the 3.34 billion sequences in the joint genomic-metagenomic dataset GigaRef are singletons. Here, we characterize singletons derived from UniRef and GigaRef by assessing whether clustering missed homologs, how much their exclusion affects protein language model (PLM) training, and which biological domains they contain. We find that many GigaRef singletons belong to a cluster under alternative parameter settings, suggesting that genomic and metagenomic datasets may require dataset-specific clustering configurations. We also show that singletons share mutual information with clustered sequences, making them learnable by PLMs and useful for training. Finally, metagenomic singletons carry denser, more diverse domain content than clustered sequences, including domain-level homology that sequence-identity clustering misses. Together, these results support including singletons in PLM training and call for closer examination of data curation in large-scale integrated sequence atlases.",
+      "published": "2026-08-14",
+      "author_line": "Vinod, R., Char, S., Amini, A. P. 等 5 人"
     },
     {
       "id": "medrxiv:10.64898/2026.08.11.26359946",
@@ -619,6 +829,57 @@
       "author_line": "Shin, J. H., Perinan, M. T., Jang, J. W. 等 43 人"
     },
     {
+      "id": "biorxiv:10.64898/2026.08.14.744826",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Activity-based chemical proteomics uncovers unexpected covalent targetsof E64d and reveals a role for cysteine cathepsins in PLD3 proteostasis.",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744826",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Hertwig, M.",
+        "Kielkowski, P."
+      ],
+      "language": "en",
+      "abstract_or_text": "Catalytic activity of 5'-3' exonuclease Phospholipase D3 (PLD3) is associated with immune signaling and neurodegeneration including Alzheimer's disease. PLD3 undergoes multiple post-translational modifications and proteolytic cleavage to establish its catalytically active form. However, the proteases catalyzing the cleavage of PLD3 have remained unidentified. To study the proteolytic cleavage of PLD3, we have evaluated the small molecule covalent inhibitor E64d that blocks proteolysis catalyzed by cysteine cathepsins. To validate the selectivity of E64d, we have designed and synthetized an E64d propargyl analogue and carried out a detailed activity-based protein profiling to reveal a broad engagement of the compound with other protein targets including bleomycin hydrolase (BLMH), Kelch-like ECH-associated protein 1 (KEAP1), transcription elongation factor SPT5 (SUPT5H) and asparagine synthetase (ASNS). The specificity of the E64d-protein interactions was confirmed by biochemical assays and mass spectrometry-based site identifications. In neurons, treatment with E64d lead to about 50-fold PLD3 accumulation and dysregulation of its proteolytic cleavage, while there was only a minor overall change on the whole proteome level. Taken together, this study provides insights into previously unknown E64d selectivity and renders cysteine cathepsins responsible for PLD3 degradation in neurons. It highlights the importance of cysteine cathepsins activity in neuronal lysosomes for proper PLD3 processing and hence it suggests that their activation might be responsible for decreased PLD3 levels in neurons of patients with Alzheimer's diseases. These findings are key for further elucidation of PLD3 function in neurodegenerative diseases.",
+      "summary_zh": "活性基蛋白质组学显示半胱氨酸蛋白酶抑制剂E64d具有超出预期的共价靶标谱；结合生化和质谱位点验证，在神经元中观察到PLD3约50倍积累。",
+      "why_it_matters_zh": "该工作用化学蛋白质组学澄清工具化合物选择性，并提出半胱氨酸组织蛋白酶参与PLD3加工的实验依据。",
+      "quality_score": 73.0,
+      "tags": [
+        "组学与细胞",
+        "preprint",
+        "chemical proteomics",
+        "neurons",
+        "mass spectrometry",
+        "biochemistry"
+      ],
+      "evidence_flags": [
+        "preprint",
+        "experimental",
+        "biochemical_validation"
+      ],
+      "publication_status": "preprint",
+      "rank": 11,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744826",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Hertwig, M.",
+        "Kielkowski, P."
+      ],
+      "abstract": "Catalytic activity of 5'-3' exonuclease Phospholipase D3 (PLD3) is associated with immune signaling and neurodegeneration including Alzheimer's disease. PLD3 undergoes multiple post-translational modifications and proteolytic cleavage to establish its catalytically active form. However, the proteases catalyzing the cleavage of PLD3 have remained unidentified. To study the proteolytic cleavage of PLD3, we have evaluated the small molecule covalent inhibitor E64d that blocks proteolysis catalyzed by cysteine cathepsins. To validate the selectivity of E64d, we have designed and synthetized an E64d propargyl analogue and carried out a detailed activity-based protein profiling to reveal a broad engagement of the compound with other protein targets including bleomycin hydrolase (BLMH), Kelch-like ECH-associated protein 1 (KEAP1), transcription elongation factor SPT5 (SUPT5H) and asparagine synthetase (ASNS). The specificity of the E64d-protein interactions was confirmed by biochemical assays and mass spectrometry-based site identifications. In neurons, treatment with E64d lead to about 50-fold PLD3 accumulation and dysregulation of its proteolytic cleavage, while there was only a minor overall change on the whole proteome level. Taken together, this study provides insights into previously unknown E64d selectivity and renders cysteine cathepsins responsible for PLD3 degradation in neurons. It highlights the importance of cysteine cathepsins activity in neuronal lysosomes for proper PLD3 processing and hence it suggests that their activation might be responsible for decreased PLD3 levels in neurons of patients with Alzheimer's diseases. These findings are key for further elucidation of PLD3 function in neurodegenerative diseases.",
+      "published": "2026-08-15",
+      "author_line": "Hertwig, M., Kielkowski, P."
+    },
+    {
       "id": "biorxiv:10.64898/2026.08.08.743502",
       "channel": "aixbio",
       "related_channels": [],
@@ -667,6 +928,86 @@
       "abstract": "Public transcriptomic repositories contain thousands of gene perturbation experiments, a valuable resource for understanding gene function, but perturbation metadata is not structured, which blocks systematic reuse. Existing perturbation atlases depend on expert manual curation, so they are costly to maintain and infrequently updated, while automated grouping approaches neither identify which samples form the perturbation arm nor recover the perturbed gene. Here we develop an automated pipeline that uses large language models to find single-gene perturbation experiments in NCBI-GEO and reconstruct their case-control sample groupings, along with the perturbed gene, perturbation type and cell line as structured, ontology-normalised fields. We manually curated 3,300 GEO experiments with sample-level case-control assignments and release these as an open benchmark (2,400 training, 600 validation, 300 temporally held-out test). Reasoning models and task-specific finetuning substantially improved identification of valid perturbation groups, with the best model reaching precision 0.925 and recall 0.836 on the test set. Applied at scale, the pipeline generated an atlas of 6,802 gene perturbation expression signatures from 4,453 GEO experiments, covering 2,907 uniquely perturbed genes. An R package, perturbMatch, supports exploration of the atlas and querying of user-supplied expression signatures against it using similarity scoring, so users can identify experiments that recapitulate a transcriptional state of interest.",
       "published": "2026-08-14",
       "author_line": "Soul, J., Young, D. A."
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.09.743788",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Learning from human and chemical languages to predict biological function",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.09.743788",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Kosonocky, C. W.",
+        "Kaderabkova, N.",
+        "Kim, K.",
+        "Mahmood, A. J. S.",
+        "Dunmyre, A.",
+        "Woolley, P.",
+        "Xing, K.",
+        "Winkler, D.",
+        "Babu, T.",
+        "Kaderabek, F.",
+        "Sessler, J. L.",
+        "Anslyn, E. V.",
+        "Marcotte, E. M.",
+        "Zhang, Y. J.",
+        "Ellington, A. D.",
+        "Mavridou, D. A. I."
+      ],
+      "language": "en",
+      "abstract_or_text": "Understanding how molecular structure encodes biological function remains a grand challenge in drug discovery. Here, we present PubCheF-1, a deep learning model that predicts literature-derived biological function directly from chemical structure. PubCheF-1 was trained on a dataset linking molecules to labels derived from the scientific articles in which they appear, a strategy that connects disparate compounds through the language used to describe their functionalities. When tasked with identifying inhibitors of {beta}-lactamases, including enzymes considered largely refractory to inhibition, PubCheF-1 predicted structurally distinct compounds that collectively have activity against all {beta}-lactamase classes. Furthermore, hit compounds directly bind the enzyme active site, restore antibiotic efficacy in multidrug-resistant high-priority pathogens, and demonstrate potent activity in animal infection models. Together, these findings establish that machine learning-based prediction of biological function derived from the language of scientific literature allows the identification of bioactive molecules at high hit rates, thereby accelerating therapeutic discovery.",
+      "summary_zh": "PubCheF-1从化学结构预测文献语言衍生的生物功能，并报告了针对各类β-内酰胺酶的结构新颖命中物、靶点结合、耐药菌增敏及动物感染模型活性。",
+      "why_it_matters_zh": "模型预测与生化、微生物和动物实验相连，为由文献语义扩展小分子功能发现提供了较完整的前临床证据链。",
+      "quality_score": 72.0,
+      "tags": [
+        "蛋白质与结构",
+        "preprint",
+        "drug discovery",
+        "beta-lactamase",
+        "animal model",
+        "bioinformatics"
+      ],
+      "evidence_flags": [
+        "preprint",
+        "dataset",
+        "experimental",
+        "in_vivo"
+      ],
+      "publication_status": "preprint",
+      "rank": 13,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.09.743788",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Kosonocky, C. W.",
+        "Kaderabkova, N.",
+        "Kim, K.",
+        "Mahmood, A. J. S.",
+        "Dunmyre, A.",
+        "Woolley, P.",
+        "Xing, K.",
+        "Winkler, D.",
+        "Babu, T.",
+        "Kaderabek, F.",
+        "Sessler, J. L.",
+        "Anslyn, E. V.",
+        "Marcotte, E. M.",
+        "Zhang, Y. J.",
+        "Ellington, A. D.",
+        "Mavridou, D. A. I."
+      ],
+      "abstract": "Understanding how molecular structure encodes biological function remains a grand challenge in drug discovery. Here, we present PubCheF-1, a deep learning model that predicts literature-derived biological function directly from chemical structure. PubCheF-1 was trained on a dataset linking molecules to labels derived from the scientific articles in which they appear, a strategy that connects disparate compounds through the language used to describe their functionalities. When tasked with identifying inhibitors of {beta}-lactamases, including enzymes considered largely refractory to inhibition, PubCheF-1 predicted structurally distinct compounds that collectively have activity against all {beta}-lactamase classes. Furthermore, hit compounds directly bind the enzyme active site, restore antibiotic efficacy in multidrug-resistant high-priority pathogens, and demonstrate potent activity in animal infection models. Together, these findings establish that machine learning-based prediction of biological function derived from the language of scientific literature allows the identification of bioactive molecules at high hit rates, thereby accelerating therapeutic discovery.",
+      "published": "2026-08-14",
+      "author_line": "Kosonocky, C. W., Kaderabkova, N., Kim, K. 等 16 人"
     },
     {
       "id": "biorxiv:10.64898/2026.08.12.744371",
@@ -941,6 +1282,216 @@
       "author_line": "Li, Z., Sun, Y., Jiang, C. 等 24 人"
     },
     {
+      "id": "biorxiv:10.1101/2025.10.24.684491",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A machine learning framework for supervised treatment response prediction from tumor transcriptomics: A large-scale pan-cancer study",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.10.24.684491",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Pal, L. R.",
+        "Gertz, E. M.",
+        "Ulhas Nair, N.",
+        "Mukherjee, S.",
+        "Patiyal, S.",
+        "Cantore, T.",
+        "Campagnolo, E. M.",
+        "Chang, T.",
+        "Dhruba, S. R.",
+        "Kim, Y.",
+        "Shulman, E. D.",
+        "Rajagopal, P. S.",
+        "Hoang, D.-T.",
+        "Hannenhalli, S.",
+        "Schaffer, A. A.",
+        "Ruppin, E."
+      ],
+      "language": "en",
+      "abstract_or_text": "Precision oncology aims to guide treatment decisions using biomarkers. While DNA-based panels are increasingly applied, RNA transcriptomics remain underused due to limited datasets and the absence of robust models. We assembled the largest transcriptomic resource for drug response prediction to date, spanning 91 cohorts, 5,675 patients, nine cancer types, and six frontline therapies: anti-PD-1/PD-L1 immune-checkpoint inhibitors, trastuzumab, bevacizumab, BRAF inhibitors, paclitaxel, and FAC/FEC (Fluorouracil-Adriamycin-Cyclophosphamide/Fluorouracil-Epirubicin-Cyclophosphamide) chemotherapy. We developed EXPRESSO (EXpression-Profile-RESponSe-Optimizer), a supervised machine-learning framework that predicts treatment response from pre-treatment transcriptomes by integrating drug targets and context-specific biomarkers. EXPRESSO achieves mean ROC-AUCs of 0.62 - 0.73 and median odds ratios of 2.4 - 4.6 across therapies, outperforming 20 published transcriptomic signatures and other machine learning methods. Prospective validation on 22 independent cohorts confirms that performance generalizes beyond cross-validation. The EXPRESSO signature additionally stratifies progression-free survival in immune checkpoint blockade-treated cohorts, demonstrating prognostic value beyond binary response prediction. Robustness analysis reveals that predictive performance plateaued for some therapies with increasing training cohorts but continued to improve for others. These findings suggest inherent limits of supervised brute-force learning for certain treatments, but additional data and deeper mechanistic modeling may further enhance transcriptomics-based predictors.",
+      "summary_zh": "EXPRESSO整合91个队列、5,675名患者、九类癌种的治疗前转录组，预测六种一线治疗响应，并在22个独立队列进行前瞻性验证。",
+      "why_it_matters_zh": "跨疗法、跨癌种的规模和独立验证使其成为转录组精准治疗预测的重要资源；预测关联不等同于治疗获益的因果证据。",
+      "quality_score": 86.0,
+      "tags": [
+        "组学与细胞",
+        "preprint",
+        "cancer biology",
+        "machine learning",
+        "transcriptomics",
+        "bio"
+      ],
+      "evidence_flags": [
+        "preprint",
+        "dataset",
+        "prospective",
+        "performance",
+        "external_validation"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2025.10.24.684491",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Pal, L. R.",
+        "Gertz, E. M.",
+        "Ulhas Nair, N.",
+        "Mukherjee, S.",
+        "Patiyal, S.",
+        "Cantore, T.",
+        "Campagnolo, E. M.",
+        "Chang, T.",
+        "Dhruba, S. R.",
+        "Kim, Y.",
+        "Shulman, E. D.",
+        "Rajagopal, P. S.",
+        "Hoang, D.-T.",
+        "Hannenhalli, S.",
+        "Schaffer, A. A.",
+        "Ruppin, E."
+      ],
+      "abstract": "Precision oncology aims to guide treatment decisions using biomarkers. While DNA-based panels are increasingly applied, RNA transcriptomics remain underused due to limited datasets and the absence of robust models. We assembled the largest transcriptomic resource for drug response prediction to date, spanning 91 cohorts, 5,675 patients, nine cancer types, and six frontline therapies: anti-PD-1/PD-L1 immune-checkpoint inhibitors, trastuzumab, bevacizumab, BRAF inhibitors, paclitaxel, and FAC/FEC (Fluorouracil-Adriamycin-Cyclophosphamide/Fluorouracil-Epirubicin-Cyclophosphamide) chemotherapy. We developed EXPRESSO (EXpression-Profile-RESponSe-Optimizer), a supervised machine-learning framework that predicts treatment response from pre-treatment transcriptomes by integrating drug targets and context-specific biomarkers. EXPRESSO achieves mean ROC-AUCs of 0.62 - 0.73 and median odds ratios of 2.4 - 4.6 across therapies, outperforming 20 published transcriptomic signatures and other machine learning methods. Prospective validation on 22 independent cohorts confirms that performance generalizes beyond cross-validation. The EXPRESSO signature additionally stratifies progression-free survival in immune checkpoint blockade-treated cohorts, demonstrating prognostic value beyond binary response prediction. Robustness analysis reveals that predictive performance plateaued for some therapies with increasing training cohorts but continued to improve for others. These findings suggest inherent limits of supervised brute-force learning for certain treatments, but additional data and deeper mechanistic modeling may further enhance transcriptomics-based predictors.",
+      "published": "2026-08-14",
+      "author_line": "Pal, L. R., Gertz, E. M., Ulhas Nair, N. 等 16 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.12.744314",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "AI4Loop: an Artificial Intelligence Framework Reveals Increased 3D Chromatin Interactions and Therapeutic Vulnerabilities across 12,000 Cancer Samples",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.744314",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Dao, F.",
+        "Lebeau, B.",
+        "Amuley, P.",
+        "Tan, W. K.",
+        "Li, X.",
+        "Goh, B. C.",
+        "Chng, W. J.",
+        "Kwoh, C. K.",
+        "Lin, H.",
+        "Lyu, H.",
+        "Fullwood, M."
+      ],
+      "language": "en",
+      "abstract_or_text": "Three-dimensional chromatin interactions shape gene regulation, but their large-scale analysis remains limited by the cost and complexity of experimental assays. Here we present AI4Loop, a deep learning framework that infers genome-wide gene-centered chromatin interaction networks directly from RNA-seq data. Across multiple cell types, AI4Loop recovered interaction patterns consistent with clinical samples and orthogonal chromatin conformation datasets. Applied to 12,347 transcriptomes from 32 cancer types, AI4Loop revealed pervasive increases in gene-centered chromatin interactions in tumors, particularly at oncogene-associated loci. These inferred interaction networks outperformed gene expression alone in cancer classification. Integration with more than 50,000 drug-treated transcriptomes identified compounds predicted to reverse cancer-associated interaction gains. Hi-C experiments confirmed that the oxazolidinone antibiotics eperezolid and radezolid reduce breast cancer-gain chromatin interactions. Together, these results identify increased gene-centered chromatin interactions as a pan-cancer feature and provide a scalable strategy for linking 3D genome dysregulation to therapeutic vulnerabilities.",
+      "summary_zh": "AI4Loop从RNA-seq推断基因中心染色质互作网络，分析12,347份、32类癌症转录组，并以超过50,000份药物处理转录组筛选候选药物；Hi-C验证了两种药物可降低乳腺癌相关互作。",
+      "why_it_matters_zh": "研究将可扩展的转录组推断与正交染色质实验相连，可用于提出3D基因组治疗脆弱性的可检验假设。",
+      "quality_score": 85.0,
+      "tags": [
+        "组学与细胞",
+        "preprint",
+        "3D genome",
+        "cancer",
+        "deep learning",
+        "bioinformatics"
+      ],
+      "evidence_flags": [
+        "preprint",
+        "dataset",
+        "experimental",
+        "clinical",
+        "orthogonal_validation"
+      ],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.12.744314",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Dao, F.",
+        "Lebeau, B.",
+        "Amuley, P.",
+        "Tan, W. K.",
+        "Li, X.",
+        "Goh, B. C.",
+        "Chng, W. J.",
+        "Kwoh, C. K.",
+        "Lin, H.",
+        "Lyu, H.",
+        "Fullwood, M."
+      ],
+      "abstract": "Three-dimensional chromatin interactions shape gene regulation, but their large-scale analysis remains limited by the cost and complexity of experimental assays. Here we present AI4Loop, a deep learning framework that infers genome-wide gene-centered chromatin interaction networks directly from RNA-seq data. Across multiple cell types, AI4Loop recovered interaction patterns consistent with clinical samples and orthogonal chromatin conformation datasets. Applied to 12,347 transcriptomes from 32 cancer types, AI4Loop revealed pervasive increases in gene-centered chromatin interactions in tumors, particularly at oncogene-associated loci. These inferred interaction networks outperformed gene expression alone in cancer classification. Integration with more than 50,000 drug-treated transcriptomes identified compounds predicted to reverse cancer-associated interaction gains. Hi-C experiments confirmed that the oxazolidinone antibiotics eperezolid and radezolid reduce breast cancer-gain chromatin interactions. Together, these results identify increased gene-centered chromatin interactions as a pan-cancer feature and provide a scalable strategy for linking 3D genome dysregulation to therapeutic vulnerabilities.",
+      "published": "2026-08-14",
+      "author_line": "Dao, F., Lebeau, B., Amuley, P. 等 11 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744703",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Protein language models and the long tail of functional diversity",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744703",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Vinod, R.",
+        "Char, S.",
+        "Amini, A. P.",
+        "Crawford, L. K.",
+        "Yang, K. K."
+      ],
+      "language": "en",
+      "abstract_or_text": "Protein language model performance on downstream tasks depends on the pretraining data, motivating recent efforts to combine genomic- and metagenomic-derived protein sequences into large-scale atlases. Because these datasets are highly redundant, sequences are typically clustered by similarity and sampled during training. Sequences that do not belong to any cluster, known as ``singletons'', are typically excluded from training and evaluation because they are considered to be artifacts. However, singletons represent the long tail of functional diversity and are abundant in many large-scale atlases: nearly 43\\% of the 3.34 billion sequences in the joint genomic-metagenomic dataset GigaRef are singletons. Here, we characterize singletons derived from UniRef and GigaRef by assessing whether clustering missed homologs, how much their exclusion affects protein language model (PLM) training, and which biological domains they contain. We find that many GigaRef singletons belong to a cluster under alternative parameter settings, suggesting that genomic and metagenomic datasets may require dataset-specific clustering configurations. We also show that singletons share mutual information with clustered sequences, making them learnable by PLMs and useful for training. Finally, metagenomic singletons carry denser, more diverse domain content than clustered sequences, including domain-level homology that sequence-identity clustering misses. Together, these results support including singletons in PLM training and call for closer examination of data curation in large-scale integrated sequence atlases.",
+      "summary_zh": "研究审视蛋白语言模型训练中常被剔除的单例序列：在GigaRef的33.4亿条序列中，约43%为单例，并评估其聚类、信息量与结构域多样性。",
+      "why_it_matters_zh": "它将注意力转向蛋白基础模型数据整理中的长尾功能多样性，对训练集构建和功能泛化具有直接方法学意义。",
+      "quality_score": 80.0,
+      "tags": [
+        "蛋白质与结构",
+        "preprint",
+        "protein language model",
+        "dataset curation",
+        "metagenomics",
+        "bioinformatics"
+      ],
+      "evidence_flags": [
+        "preprint",
+        "dataset",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744703",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Vinod, R.",
+        "Char, S.",
+        "Amini, A. P.",
+        "Crawford, L. K.",
+        "Yang, K. K."
+      ],
+      "abstract": "Protein language model performance on downstream tasks depends on the pretraining data, motivating recent efforts to combine genomic- and metagenomic-derived protein sequences into large-scale atlases. Because these datasets are highly redundant, sequences are typically clustered by similarity and sampled during training. Sequences that do not belong to any cluster, known as ``singletons'', are typically excluded from training and evaluation because they are considered to be artifacts. However, singletons represent the long tail of functional diversity and are abundant in many large-scale atlases: nearly 43\\% of the 3.34 billion sequences in the joint genomic-metagenomic dataset GigaRef are singletons. Here, we characterize singletons derived from UniRef and GigaRef by assessing whether clustering missed homologs, how much their exclusion affects protein language model (PLM) training, and which biological domains they contain. We find that many GigaRef singletons belong to a cluster under alternative parameter settings, suggesting that genomic and metagenomic datasets may require dataset-specific clustering configurations. We also show that singletons share mutual information with clustered sequences, making them learnable by PLMs and useful for training. Finally, metagenomic singletons carry denser, more diverse domain content than clustered sequences, including domain-level homology that sequence-identity clustering misses. Together, these results support including singletons in PLM training and call for closer examination of data curation in large-scale integrated sequence atlases.",
+      "published": "2026-08-14",
+      "author_line": "Vinod, R., Char, S., Amini, A. P. 等 5 人"
+    },
+    {
       "id": "medrxiv:10.64898/2026.08.11.26359946",
       "channel": "aixbio",
       "related_channels": [],
@@ -1423,6 +1974,57 @@
       "author_line": "Shin, J. H., Perinan, M. T., Jang, J. W. 等 43 人"
     },
     {
+      "id": "biorxiv:10.64898/2026.08.14.744826",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Activity-based chemical proteomics uncovers unexpected covalent targetsof E64d and reveals a role for cysteine cathepsins in PLD3 proteostasis.",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744826",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Hertwig, M.",
+        "Kielkowski, P."
+      ],
+      "language": "en",
+      "abstract_or_text": "Catalytic activity of 5'-3' exonuclease Phospholipase D3 (PLD3) is associated with immune signaling and neurodegeneration including Alzheimer's disease. PLD3 undergoes multiple post-translational modifications and proteolytic cleavage to establish its catalytically active form. However, the proteases catalyzing the cleavage of PLD3 have remained unidentified. To study the proteolytic cleavage of PLD3, we have evaluated the small molecule covalent inhibitor E64d that blocks proteolysis catalyzed by cysteine cathepsins. To validate the selectivity of E64d, we have designed and synthetized an E64d propargyl analogue and carried out a detailed activity-based protein profiling to reveal a broad engagement of the compound with other protein targets including bleomycin hydrolase (BLMH), Kelch-like ECH-associated protein 1 (KEAP1), transcription elongation factor SPT5 (SUPT5H) and asparagine synthetase (ASNS). The specificity of the E64d-protein interactions was confirmed by biochemical assays and mass spectrometry-based site identifications. In neurons, treatment with E64d lead to about 50-fold PLD3 accumulation and dysregulation of its proteolytic cleavage, while there was only a minor overall change on the whole proteome level. Taken together, this study provides insights into previously unknown E64d selectivity and renders cysteine cathepsins responsible for PLD3 degradation in neurons. It highlights the importance of cysteine cathepsins activity in neuronal lysosomes for proper PLD3 processing and hence it suggests that their activation might be responsible for decreased PLD3 levels in neurons of patients with Alzheimer's diseases. These findings are key for further elucidation of PLD3 function in neurodegenerative diseases.",
+      "summary_zh": "活性基蛋白质组学显示半胱氨酸蛋白酶抑制剂E64d具有超出预期的共价靶标谱；结合生化和质谱位点验证，在神经元中观察到PLD3约50倍积累。",
+      "why_it_matters_zh": "该工作用化学蛋白质组学澄清工具化合物选择性，并提出半胱氨酸组织蛋白酶参与PLD3加工的实验依据。",
+      "quality_score": 73.0,
+      "tags": [
+        "组学与细胞",
+        "preprint",
+        "chemical proteomics",
+        "neurons",
+        "mass spectrometry",
+        "biochemistry"
+      ],
+      "evidence_flags": [
+        "preprint",
+        "experimental",
+        "biochemical_validation"
+      ],
+      "publication_status": "preprint",
+      "rank": 11,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744826",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Hertwig, M.",
+        "Kielkowski, P."
+      ],
+      "abstract": "Catalytic activity of 5'-3' exonuclease Phospholipase D3 (PLD3) is associated with immune signaling and neurodegeneration including Alzheimer's disease. PLD3 undergoes multiple post-translational modifications and proteolytic cleavage to establish its catalytically active form. However, the proteases catalyzing the cleavage of PLD3 have remained unidentified. To study the proteolytic cleavage of PLD3, we have evaluated the small molecule covalent inhibitor E64d that blocks proteolysis catalyzed by cysteine cathepsins. To validate the selectivity of E64d, we have designed and synthetized an E64d propargyl analogue and carried out a detailed activity-based protein profiling to reveal a broad engagement of the compound with other protein targets including bleomycin hydrolase (BLMH), Kelch-like ECH-associated protein 1 (KEAP1), transcription elongation factor SPT5 (SUPT5H) and asparagine synthetase (ASNS). The specificity of the E64d-protein interactions was confirmed by biochemical assays and mass spectrometry-based site identifications. In neurons, treatment with E64d lead to about 50-fold PLD3 accumulation and dysregulation of its proteolytic cleavage, while there was only a minor overall change on the whole proteome level. Taken together, this study provides insights into previously unknown E64d selectivity and renders cysteine cathepsins responsible for PLD3 degradation in neurons. It highlights the importance of cysteine cathepsins activity in neuronal lysosomes for proper PLD3 processing and hence it suggests that their activation might be responsible for decreased PLD3 levels in neurons of patients with Alzheimer's diseases. These findings are key for further elucidation of PLD3 function in neurodegenerative diseases.",
+      "published": "2026-08-15",
+      "author_line": "Hertwig, M., Kielkowski, P."
+    },
+    {
       "id": "biorxiv:10.64898/2026.08.08.743502",
       "channel": "aixbio",
       "related_channels": [],
@@ -1471,6 +2073,86 @@
       "abstract": "Public transcriptomic repositories contain thousands of gene perturbation experiments, a valuable resource for understanding gene function, but perturbation metadata is not structured, which blocks systematic reuse. Existing perturbation atlases depend on expert manual curation, so they are costly to maintain and infrequently updated, while automated grouping approaches neither identify which samples form the perturbation arm nor recover the perturbed gene. Here we develop an automated pipeline that uses large language models to find single-gene perturbation experiments in NCBI-GEO and reconstruct their case-control sample groupings, along with the perturbed gene, perturbation type and cell line as structured, ontology-normalised fields. We manually curated 3,300 GEO experiments with sample-level case-control assignments and release these as an open benchmark (2,400 training, 600 validation, 300 temporally held-out test). Reasoning models and task-specific finetuning substantially improved identification of valid perturbation groups, with the best model reaching precision 0.925 and recall 0.836 on the test set. Applied at scale, the pipeline generated an atlas of 6,802 gene perturbation expression signatures from 4,453 GEO experiments, covering 2,907 uniquely perturbed genes. An R package, perturbMatch, supports exploration of the atlas and querying of user-supplied expression signatures against it using similarity scoring, so users can identify experiments that recapitulate a transcriptional state of interest.",
       "published": "2026-08-14",
       "author_line": "Soul, J., Young, D. A."
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.09.743788",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Learning from human and chemical languages to predict biological function",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.09.743788",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Kosonocky, C. W.",
+        "Kaderabkova, N.",
+        "Kim, K.",
+        "Mahmood, A. J. S.",
+        "Dunmyre, A.",
+        "Woolley, P.",
+        "Xing, K.",
+        "Winkler, D.",
+        "Babu, T.",
+        "Kaderabek, F.",
+        "Sessler, J. L.",
+        "Anslyn, E. V.",
+        "Marcotte, E. M.",
+        "Zhang, Y. J.",
+        "Ellington, A. D.",
+        "Mavridou, D. A. I."
+      ],
+      "language": "en",
+      "abstract_or_text": "Understanding how molecular structure encodes biological function remains a grand challenge in drug discovery. Here, we present PubCheF-1, a deep learning model that predicts literature-derived biological function directly from chemical structure. PubCheF-1 was trained on a dataset linking molecules to labels derived from the scientific articles in which they appear, a strategy that connects disparate compounds through the language used to describe their functionalities. When tasked with identifying inhibitors of {beta}-lactamases, including enzymes considered largely refractory to inhibition, PubCheF-1 predicted structurally distinct compounds that collectively have activity against all {beta}-lactamase classes. Furthermore, hit compounds directly bind the enzyme active site, restore antibiotic efficacy in multidrug-resistant high-priority pathogens, and demonstrate potent activity in animal infection models. Together, these findings establish that machine learning-based prediction of biological function derived from the language of scientific literature allows the identification of bioactive molecules at high hit rates, thereby accelerating therapeutic discovery.",
+      "summary_zh": "PubCheF-1从化学结构预测文献语言衍生的生物功能，并报告了针对各类β-内酰胺酶的结构新颖命中物、靶点结合、耐药菌增敏及动物感染模型活性。",
+      "why_it_matters_zh": "模型预测与生化、微生物和动物实验相连，为由文献语义扩展小分子功能发现提供了较完整的前临床证据链。",
+      "quality_score": 72.0,
+      "tags": [
+        "蛋白质与结构",
+        "preprint",
+        "drug discovery",
+        "beta-lactamase",
+        "animal model",
+        "bioinformatics"
+      ],
+      "evidence_flags": [
+        "preprint",
+        "dataset",
+        "experimental",
+        "in_vivo"
+      ],
+      "publication_status": "preprint",
+      "rank": 13,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.09.743788",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Kosonocky, C. W.",
+        "Kaderabkova, N.",
+        "Kim, K.",
+        "Mahmood, A. J. S.",
+        "Dunmyre, A.",
+        "Woolley, P.",
+        "Xing, K.",
+        "Winkler, D.",
+        "Babu, T.",
+        "Kaderabek, F.",
+        "Sessler, J. L.",
+        "Anslyn, E. V.",
+        "Marcotte, E. M.",
+        "Zhang, Y. J.",
+        "Ellington, A. D.",
+        "Mavridou, D. A. I."
+      ],
+      "abstract": "Understanding how molecular structure encodes biological function remains a grand challenge in drug discovery. Here, we present PubCheF-1, a deep learning model that predicts literature-derived biological function directly from chemical structure. PubCheF-1 was trained on a dataset linking molecules to labels derived from the scientific articles in which they appear, a strategy that connects disparate compounds through the language used to describe their functionalities. When tasked with identifying inhibitors of {beta}-lactamases, including enzymes considered largely refractory to inhibition, PubCheF-1 predicted structurally distinct compounds that collectively have activity against all {beta}-lactamase classes. Furthermore, hit compounds directly bind the enzyme active site, restore antibiotic efficacy in multidrug-resistant high-priority pathogens, and demonstrate potent activity in animal infection models. Together, these findings establish that machine learning-based prediction of biological function derived from the language of scientific literature allows the identification of bioactive molecules at high hit rates, thereby accelerating therapeutic discovery.",
+      "published": "2026-08-14",
+      "author_line": "Kosonocky, C. W., Kaderabkova, N., Kim, K. 等 16 人"
     },
     {
       "id": "biorxiv:10.64898/2026.08.12.744371",

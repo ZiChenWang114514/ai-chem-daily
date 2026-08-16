@@ -1,8 +1,2809 @@
 {
   "schema_version": "2.0",
-  "date": "2026-08-16",
+  "date": "2026-08-17",
   "channel": "aixbio",
-  "generated_at": "2026-08-16T12:29:09+00:00",
-  "count": 0,
-  "items": []
+  "generated_at": "2026-08-16T18:00:44+00:00",
+  "count": 60,
+  "items": [
+    {
+      "id": "medrxiv:10.64898/2026.08.11.26360095",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "A Vision-Language Model for Coronary Angiography Interpretation and Clinical Decision Support",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.08.11.26360095",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Li, Z.",
+        "Sun, Y.",
+        "Jiang, C.",
+        "Pan, T.",
+        "Zhou, Y.",
+        "Wang, C.",
+        "Pan, L.",
+        "Zhang, X.",
+        "Yang, Z.",
+        "Yu, Z.",
+        "Xiao, Z.",
+        "Chen, J.",
+        "Huang, Y.",
+        "Sun, R.",
+        "Gan, Y.",
+        "Li, X.",
+        "Zhang, B.",
+        "Zhang, Z.",
+        "Wang, X.",
+        "Han, L.",
+        "Qi, Y.",
+        "Cheng, Y.",
+        "Liang, Y.",
+        "Ge, J."
+      ],
+      "language": "en",
+      "abstract_or_text": "BACKGROUND: Coronary angiography remains the reference standard for diagnosing coronary artery disease and guiding revascularization, yet its interpretation requires expert integration of multi-view anatomy, lesion morphology and procedural context. Existing artificial intelligence approaches are largely task-specific, annotation-dependent and limited in capturing the semantic relationship between angiographic findings and interventional decision-making. Whether large-scale vision-language pretraining can enable transferable foundation-model representations for invasive coronary imaging remains unknown. METHODS We developed CAG-MIND, a domain-specific vision-language foundation model for coronary angiography, using 135,475 CAG examinations paired with procedural reports, comprising 812,850 angiographic videos from Zhongshan Hospital and Shanghai Geriatric Medical Center. Each case consisted of standardized six-view angiographic acquisitions paired with structured procedural semantics extracted from routine reports using a large language model-assisted pipeline. The model was pretrained by aligning multi-view angiographic representations with report-derived semantic embeddings through bidirectional contrastive learning. Performance was evaluated under zero-shot and supervised fine-tuning settings across 11 downstream tasks grouped into structural abnormality detection, atherosclerotic plaque assessment, and interventional decision prediction, using both an internal validation cohort and an independent external test cohort. RESULTS CAG-MIND demonstrated robust performance across all three task categories. In the zero-shot setting, the model achieved mean AUROCs of 0.686 in the internal validation cohort and 0.745 in the external test cohort, indicating transferable multimodal representations without task-specific supervision. Following supervised fine-tuning, the mean AUROC increased to 0.827 and 0.846, respectively, with excellent performance for coronary stenosis detection (AUROC 0.940 in both cohorts), balloon/stent prediction (0.900 and 0.907), and CABG recommendation (0.877 and 0.875). Compared with representative biomedical vision-language models and conventional image-based architectures, CAG-MIND consistently achieved superior performance in both zero-shot and supervised settings and remained superior to fully fine-tuned competing models when trained with only 10% of the labelled data. Grad-CAM visualization demonstrated anatomically plausible lesion-focused attention, supporting the interpretability of the learned representations. CONCLUSIONS CAG-MIND is, to our knowledge, the first large-scale vision-language foundation model for coronary angiography trained at more than 100,000-patient scale. By aligning standardized multi-view angiographic videos with report-derived procedural semantics, CAG-MIND enables robust zero-shot transfer, data-efficient fine-tuning and cross-center generalization. These findings support domain-aligned multimodal pretraining as a scalable foundation-model paradigm for invasive cardiovascular imaging and future cath-lab decision support.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 90,
+      "tags": [
+        "生物医学与临床",
+        "medRxiv",
+        "clinical",
+        "artificial intelligence",
+        "foundation model",
+        "bio"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.11.26360095",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298819",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "A Conversational Multi-Agent AI System for Integrated Multi-Omics Analysis and Biomedical Discovery",
+      "url": "https://europepmc.org/article/PPR/PPR1298819",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Rajdeo P",
+        "Asanuma S",
+        "Kouril M",
+        "Lu P",
+        "Chen J",
+        "Chadha A",
+        "Prasath VBS",
+        "Aronow BJ",
+        "Salomonis N"
+      ],
+      "language": "en",
+      "abstract_or_text": "Single-cell and spatial omics offer unprecedented opportunities to decipher the mechanisms of disease, however, this process requires teams of experts, iterative trial-and-error and reasoning across modalities. Here we present LungChat (https://chat.lungmap.net), a conversational system for integrated multi-omics analysis and biomedical discovery, deployed as a hierarchical multi-agent architecture in which a supervisor decomposes natural-language questions into parallel, tool-grounded tasks spanning single-cell and spatial analyses, literature and clinical-trial synthesis, and drug repurposing. To predict new therapeutics, LungChat implements Direction-Aware Repurposing and Targeting (DART) to distinguish perturbations that reverse disease transcriptional programs from those that reinforce them, at the cell-type level, for safety prediction. Controlled architecture ablations showed that hierarchical orchestration improved grounded abstention and token efficiency and preserved strong performance on complex multi-step tasks. In pulmonary disease case studies, LungChat independently prioritized saracatinib for IPF through drug-connectivity screening, followed by DART-based cell-type analysis; the same compound has been evaluated in the STOP-IPF clinical trial ( NCT04598919 ). The system also recovered fluticasone propionate, an established COPD therapy, through a single orchestrated analysis. This tissue-agnostic system provides a blueprint for verifiable agentic AI systems that support reproducible scientific discovery.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 86,
+      "tags": [
+        "组学与细胞",
+        "preprint",
+        "agent",
+        "bio",
+        "transcript"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "ablation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.08.743577",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.1101/2025.10.24.684491",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A machine learning framework for supervised treatment response prediction from tumor transcriptomics: A large-scale pan-cancer study",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.10.24.684491",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Pal, L. R.",
+        "Gertz, E. M.",
+        "Ulhas Nair, N.",
+        "Mukherjee, S.",
+        "Patiyal, S.",
+        "Cantore, T.",
+        "Campagnolo, E. M.",
+        "Chang, T.",
+        "Dhruba, S. R.",
+        "Kim, Y.",
+        "Shulman, E. D.",
+        "Rajagopal, P. S.",
+        "Hoang, D.-T.",
+        "Hannenhalli, S.",
+        "Schaffer, A. A.",
+        "Ruppin, E."
+      ],
+      "language": "en",
+      "abstract_or_text": "Precision oncology aims to guide treatment decisions using biomarkers. While DNA-based panels are increasingly applied, RNA transcriptomics remain underused due to limited datasets and the absence of robust models. We assembled the largest transcriptomic resource for drug response prediction to date, spanning 91 cohorts, 5,675 patients, nine cancer types, and six frontline therapies: anti-PD-1/PD-L1 immune-checkpoint inhibitors, trastuzumab, bevacizumab, BRAF inhibitors, paclitaxel, and FAC/FEC (Fluorouracil-Adriamycin-Cyclophosphamide/Fluorouracil-Epirubicin-Cyclophosphamide) chemotherapy. We developed EXPRESSO (EXpression-Profile-RESponSe-Optimizer), a supervised machine-learning framework that predicts treatment response from pre-treatment transcriptomes by integrating drug targets and context-specific biomarkers. EXPRESSO achieves mean ROC-AUCs of 0.62 - 0.73 and median odds ratios of 2.4 - 4.6 across therapies, outperforming 20 published transcriptomic signatures and other machine learning methods. Prospective validation on 22 independent cohorts confirms that performance generalizes beyond cross-validation. The EXPRESSO signature additionally stratifies progression-free survival in immune checkpoint blockade-treated cohorts, demonstrating prognostic value beyond binary response prediction. Robustness analysis reveals that predictive performance plateaued for some therapies with increasing training cohorts but continued to improve for others. These findings suggest inherent limits of supervised brute-force learning for certain treatments, but additional data and deeper mechanistic modeling may further enhance transcriptomics-based predictors.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 86,
+      "tags": [
+        "组学与细胞",
+        "cancer biology",
+        "machine learning",
+        "bio",
+        "transcript"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "prospective",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2025.10.24.684491",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "medrxiv:10.64898/2026.08.09.26360024",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "Machine learning models for predicting prostate cancer and clinically significant prostate cancer at biopsy: An updated analysis of an expanded Japanese cohort",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.08.09.26360024",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Takeuchi, T.",
+        "Nomiya, A."
+      ],
+      "language": "en",
+      "abstract_or_text": "BackgroundA 2019 report from our institution described a multilayer artificial neural network (ANN) for predicting prostate cancer at biopsy in 334 patients, trained with TensorFlow 1.x and evaluated at three fixed step counts without separating hyperparameter selection from test evaluation. We re-analyzed an expanded cohort from the same institution using contemporary machine-learning practice. MethodsWe pooled all available biopsy episodes from the same institutional database (n = 526; 524 after excluding one non-binary outcome code and one record with missing digital rectal examination [DRE] data), retaining the same seven predictors used in the original report (age, prior biopsy history, PSA, prostate volume, DRE, and MRI diffusion-weighted imaging findings in the peripheral and transition zones). Because 27 patients contributed more than one biopsy episode, we used patient-ID-grouped, stratified k-fold cross-validation (StratifiedGroupKFold; scikit-learn 1.8.0) with 3 and 5 folds, repeated over 10 random partitions, to avoid leakage between folds. Four classifiers were compared: L2-regularized logistic regression, gradient boosting, random forest, and a shallow (single hidden layer) multilayer perceptron. Two outcomes were modeled: detection of any prostate cancer, and detection of clinically significant prostate cancer (Gleason score [≥] 7). ResultsAny-cancer prevalence was 55.7% (292/524) and Gleason score [≥] 7 prevalence was 39.7% (208/524). With repeated 5-fold cross-validation, gradient boosting gave the highest discrimination for any prostate cancer (mean AUC 0.826, 95% CI 0.823-0.830) and for Gleason score [≥] 7 (mean AUC 0.855, 95% CI 0.852-0.859), closely followed by random forest and logistic regression (AUC 0.81-0.85). The shallow multilayer perceptron performed worse and less consistently than the other three models (any-cancer AUC 0.671; Gleason score [≥] 7 AUC 0.742) and than the deeper five-hidden-layer ANN reported in 2019. Results with 3-fold cross-validation were essentially unchanged. ConclusionsIn an expanded cohort, regularized logistic regression, gradient boosting, and random forest all discriminated prostate cancer at biopsy at least as well as the previously reported multilayer ANN, using far simpler models and a methodology that separates hyperparameter tuning from performance estimation. A shallow neural network offered no advantage over these simpler alternatives in this sample size. This is a preprint; the study has not undergone external peer review.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 86,
+      "tags": [
+        "方法与模型",
+        "medRxiv",
+        "clinical",
+        "machine learning",
+        "neural",
+        "bio"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.09.26360024",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.12.744314",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "AI4Loop: an Artificial Intelligence Framework Reveals Increased 3D Chromatin Interactions and Therapeutic Vulnerabilities across 12,000 Cancer Samples",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.744314",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Dao, F.",
+        "Lebeau, B.",
+        "Amuley, P.",
+        "Tan, W. K.",
+        "Li, X.",
+        "Goh, B. C.",
+        "Chng, W. J.",
+        "Kwoh, C. K.",
+        "Lin, H.",
+        "Lyu, H.",
+        "Fullwood, M."
+      ],
+      "language": "en",
+      "abstract_or_text": "Three-dimensional chromatin interactions shape gene regulation, but their large-scale analysis remains limited by the cost and complexity of experimental assays. Here we present AI4Loop, a deep learning framework that infers genome-wide gene-centered chromatin interaction networks directly from RNA-seq data. Across multiple cell types, AI4Loop recovered interaction patterns consistent with clinical samples and orthogonal chromatin conformation datasets. Applied to 12,347 transcriptomes from 32 cancer types, AI4Loop revealed pervasive increases in gene-centered chromatin interactions in tumors, particularly at oncogene-associated loci. These inferred interaction networks outperformed gene expression alone in cancer classification. Integration with more than 50,000 drug-treated transcriptomes identified compounds predicted to reverse cancer-associated interaction gains. Hi-C experiments confirmed that the oxazolidinone antibiotics eperezolid and radezolid reduce breast cancer-gain chromatin interactions. Together, these results identify increased gene-centered chromatin interactions as a pan-cancer feature and provide a scalable strategy for linking 3D genome dysregulation to therapeutic vulnerabilities.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 85,
+      "tags": [
+        "组学与细胞",
+        "bioinformatics",
+        "artificial intelligence",
+        "deep learning",
+        "bio",
+        "genom"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "experimental",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.12.744314",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744831",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A Two-Stage ESM-Based Machine Learning Pipeline for Robust Hierarchical Enzyme Function Prediction",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744831",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Hua, X.",
+        "Grimaud, G."
+      ],
+      "language": "en",
+      "abstract_or_text": "Accurate enzyme annotation remains a major bottleneck in translating rapidly growing protein sequence data into biological knowledge. Enzyme Commission (EC) prediction is particularly challenging because enzyme functions are organized hierarchically, annotations are often imbalanced across classes, and sequence similarity alone may be insufficient to resolve functional differences. To address these challenges, we developed ESM-ECForest, a two-stage framework that combines protein embeddings generated by the pretrained language model ESM-2 (Evolutionary Scale Modeling 2) with Random Forest classifiers. The first stage distinguishes enzymes from non-enzymes, whereas the second assigns one or more EC numbers to proteins predicted to be enzymatic. On an external benchmark comprising 25,778 protein sequences, ESM-ECForest achieved the highest weighted F1 score among the evaluated methods at all four EC levels, decreasing from 0.94 at Level 1 to 0.90 at Level 4. The largest relative improvements were observed for lyases (EC 4), ligases (EC 6), and translocases (EC 7), although EC 6 and EC 7 remained the most difficult classes internally. Visualization of the ESM-2 embedding space using Uniform Manifold Approximation and Projection (UMAP) revealed clustering patterns consistent with enzyme functional relationships, indicating that biologically relevant information is retained in the pretrained representations prior to supervised classification. These results support the use of pretrained protein language model embeddings as an effective foundation for enzyme annotation. By combining large-scale sequence representations with a lightweight supervised classifier, ESM-ECForest provides a scalable approach for EC prediction and may facilitate functional annotation of protein sequences derived from large genomic and metagenomic datasets.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 84,
+      "tags": [
+        "蛋白质与结构",
+        "bioinformatics",
+        "machine learning",
+        "language model",
+        "bio",
+        "protein"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744831",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298569",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Multi-omic machine learning overcomes transcriptomic blind spots to rescue therapeutic targets in ALS",
+      "url": "https://europepmc.org/article/PPR/PPR1298569",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Sharma M",
+        "Gupta M",
+        "Verma P"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Amyotrophic lateral sclerosis (ALS) lacks effective therapies partly because transcriptomic screens cannot distinguish disease-relevant genes from downstream perturbations. Here we integrate a cross-tissue meta-analysis of 13 datasets (1,227 samples; CNS, myeloid, lymphoid, and mesenchymal domains) with an explainable machine learning framework trained on evolutionary constraint, brain expression, interaction-network topology, Mendelian disease annotations, and 12 engineered cross-database interaction terms. SHAP-based decomposition of an ensemble classifier reveals that ALS gene identity is defined by the convergence of neurological disease history, evolutionary constraint, brain-enriched expression, and network centrality, not differential expression magnitude. In silico drug-reversal simulations formalize this as a model-derived hypothesis, the Genomic Architecture Barrier, demonstrating that within the model’s feature space pharmacological correction of modifiable features alone is insufficient to shift predicted disease relevance beyond classification threshold. A nine-axis multi-evidence evaluation framework identifies eleven consensus prioritized candidates, led by ATP1A1 , YWHAG , and ANLN , that share the genomic signature of established ALS associated genes and interact physically with ALS proteins across autophagy-proteostasis, RNA-processing, cytoskeletal, and innate-immunity axes. Instead of cataloging expression changes, this framework identifies new therapeutic targets by prioritizing genes whose genomic architecture mirrors that of known ALS-associated genes.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 84,
+      "tags": [
+        "组学与细胞",
+        "preprint",
+        "machine learning",
+        "protein",
+        "genom"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-9305370/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1299007",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Self-Supervised Multi-Modal Transformer for Early Brain Tumor Prediction Using Super-Resolution MRI and ICU Time-Series Data",
+      "url": "https://europepmc.org/article/PPR/PPR1299007",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-16",
+      "creators": [
+        "Govind A",
+        "Kumare PK"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Early and accurate detection of brain tumors remains one of the most challenging and consequential problems in clinical neuroscience and critical care medicine. Conventional diagnostic pipelines rely heavily on expert radiological interpretation of single-modality MRI scans, often overlooking the rich temporal and physiological information embedded in Intensive Care Unit (ICU) monitoring records. This article presents the Self-Supervised Multi-Modal Transformer (SS-MMT), a novel deep learning framework that synergistically integrates super-resolution MRI reconstruction with ICU time-series physiological signals to achieve superior early brain tumor prediction. The proposed architecture employs a masked autoencoder pre-training strategy for self-supervised representation learning, followed by cross-modal attention-based fusion of spatial MRI features and temporal ICU biomarkers. A Generative Adversarial Network (GAN)-based super-resolution module enhances low-quality clinical MRI scans to 4× resolution before feature extraction. Extensive experiments on the BraTS-2023, MIMIC-IV-ICU, and TCGA-GBM datasets comprising 3,951 subjects demonstrate that SS-MMT achieves an AUC-ROC of 0.945, F1-score of 0.931, and sensitivity of 0.924, outperforming state-of-the-art methods by up to 6.2% in AUC. Ablation studies confirm the independent contribution of each modality and the self-supervised pre-training strategy. The proposed framework offers a clinically actionable, interpretable, and computationally efficient pathway toward automated neuro-oncological triage in ICU settings.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 81,
+      "tags": [
+        "方法与模型",
+        "preprint",
+        "deep learning",
+        "transformer",
+        "bio",
+        "clinical"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "dataset",
+        "state-of-the-art",
+        "ablation"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10532727/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744760",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "PlantAI: A Multi-Agent System for Plant Functional Genomics Analysis and Biological Knowledge Interpretation",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744760",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Wu, T.",
+        "Yang, Z.",
+        "Shi, J.",
+        "Zou, M.",
+        "Wu, Y.",
+        "Jiang, S.",
+        "Xia, C.",
+        "Kong, L.",
+        "Yang, L.",
+        "Xia, Z."
+      ],
+      "language": "en",
+      "abstract_or_text": "Plant functional genomics requires the integration of sequence, expression, evolutionary, regulatory and literature evidence. However, the corresponding analyses are often distributed across disparate programs, scripts and databases, creating substantial barriers to task organization and result interpretation. Here, we present PlantAI, a multi-agent system that integrates bioinformatics analysis, project-level process tracking and knowledge-assisted interpretation. A Main Agent coordinates two complementary routes: an analysis route that invokes bioinformatics tools for RNA-seq and gene-family analyses, and a knowledge route that uses PlantAI-RAG for knowledge retrieval and evidence synthesis. PlantAI-RAG currently contains 31,207 plant-science literature records, comprising approximately 3.82 million normalized entities and 8.25 million literature-supported relation assertions. In an evaluation using plant-science questions, it achieved a Gold evidence-assertion recall of 86.7%, while strict accuracy ranged from 77% to 82% across three independent evaluator models. We further demonstrate an end-to-end task using 24 rice RNA-seq libraries collected under salt stress, spanning transcriptome analysis, candidate-family screening, HXK/HKL family analysis and knowledge-assisted interpretation, and prioritize OsHXK8 for experimental validation. By preserving analysis artifacts, run manifests, logs and environment records, PlantAI supports result verification and repeat execution while linking project-derived results to traceable literature evidence. Together, these capabilities provide an integrated and auditable framework to support plant functional genomics research.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 81,
+      "tags": [
+        "组学与细胞",
+        "bioinformatics",
+        "agent",
+        "bio",
+        "genom"
+      ],
+      "evidence_flags": [
+        "experimental",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744760",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744703",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Protein language models and the long tail of functional diversity",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744703",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Vinod, R.",
+        "Char, S.",
+        "Amini, A. P.",
+        "Crawford, L. K.",
+        "Yang, K. K."
+      ],
+      "language": "en",
+      "abstract_or_text": "Protein language model performance on downstream tasks depends on the pretraining data, motivating recent efforts to combine genomic- and metagenomic-derived protein sequences into large-scale atlases. Because these datasets are highly redundant, sequences are typically clustered by similarity and sampled during training. Sequences that do not belong to any cluster, known as ``singletons'', are typically excluded from training and evaluation because they are considered to be artifacts. However, singletons represent the long tail of functional diversity and are abundant in many large-scale atlases: nearly 43\\% of the 3.34 billion sequences in the joint genomic-metagenomic dataset GigaRef are singletons. Here, we characterize singletons derived from UniRef and GigaRef by assessing whether clustering missed homologs, how much their exclusion affects protein language model (PLM) training, and which biological domains they contain. We find that many GigaRef singletons belong to a cluster under alternative parameter settings, suggesting that genomic and metagenomic datasets may require dataset-specific clustering configurations. We also show that singletons share mutual information with clustered sequences, making them learnable by PLMs and useful for training. Finally, metagenomic singletons carry denser, more diverse domain content than clustered sequences, including domain-level homology that sequence-identity clustering misses. Together, these results support including singletons in PLM training and call for closer examination of data curation in large-scale integrated sequence atlases.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 80,
+      "tags": [
+        "蛋白质与结构",
+        "bioinformatics",
+        "language model",
+        "bio",
+        "protein"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744703",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298305",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Brain as Language: Neuro-Semantic Modeling of Glioblastoma Radiogenomics",
+      "url": "https://europepmc.org/article/PPR/PPR1298305",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Miteva M",
+        "Nisheva-Pavlova M"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Glioblastoma (GBM) is an adult-type diffuse glioma, isocitrate dehydrogenase (IDH)-wildtype, central nervous system (CNS) World Health Organization (WHO) grade 4, characterized by pronounced spatial, vascular, and molecular heterogeneity. Radiogenomics aims to associate quantitative magnetic resonance imaging (MRI) phenotypes with molecular tumor characteristics, yet conventional radiomic pipelines usually encode MRI-derived information as high-dimensional numerical feature matrices with limited semantic interpretability. We propose a neuro-semantic radiogenomic language framework that translates multiparametric MRI (mpMRI) radiomics into controlled, evidence-linked patient-level token sequences. Using the University of Pennsylvania Glioblastoma (UPenn-GBM) dataset, radiomic features from 11 MRI sequences or derived imaging measures and three tumor subregions were translated into semantic phenotype domains covering vascular, diffusion, enhancement, infiltration-associated, morphological, textural, and intensity-related tumor characteristics. The framework generated 652 radiogenomic sequence records, of which 611 were linked to clinical metadata and 278 had definitive binary O6-methylguanine-DNA methyltransferase (MGMT) promoter methylation labels. In repeated stratified nested cross-validation, hierarchical semantic modeling achieved a ROC AUC of 0.80 (95% CI, 0.75–0.85), while hybrid radiomic-semantic modeling reached 0.83 (95% CI, 0.78–0.88). The main contribution of this work is a structured representation layer that makes radiomic evidence interpretable, modelable, and auditable, connecting quantitative imaging phenotypes with molecular prediction and verifiable biomedical reasoning.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 80,
+      "tags": [
+        "生物医学与临床",
+        "preprint",
+        "diffusion",
+        "bio",
+        "genom"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10688745/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.1101/2025.07.08.663685",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Integration of steady-state diffusion MRI with Neural Posterior Estimation (NPE) for post-mortem investigations",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.07.08.663685",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Tendler, B. C."
+      ],
+      "language": "en",
+      "abstract_or_text": "Post-mortem diffusion MRI plays a key role in investigative pipelines to characterise tissue microstructure, with long scan times facilitating the acquisition of datasets with improved spatial/angular resolution and reduced artefacts versus in vivo. Diffusion-weighted steady-state free precession (DW-SSFP) has emerged as a powerful technique for post-mortem imaging, achieving high SNR-efficiency and strong diffusion weighting in the challenging imaging environment of fixed tissue. However, the sophisticated signal forming mechanisms of DW-SSFP limit the characterisation of tissue properties with conventional parameter estimation routines. Here, I investigate the integration of DW-SSFP with neural posterior estimation (NPE), a parameter inference technique leveraging concepts from Bayesian statistics and machine learning to directly estimate P({theta} | S) (i.e. the posterior distribution of parameters {theta} given signal S). A key challenge is that diffusion attenuation in DW-SSFP is dependent on tissue relaxation properties (T1/T2) and transmit inhomogeneity (B1), which must be estimated experimentally and incorporated into the NPE network for accurate modelling. Using a Tensor representation and NPE to estimate P({theta} | S,T1,T2,B1) (i.e. conditioning on S and known T1/T2/B1), evaluations using synthetic DW-SSP data give excellent agreement to simulation ground truth even in the presence of non-Gaussian noise in low-SNR regimes. Evaluations using experimental DW-SSFP data (whole human post-mortem brain) give excellent agreement to non-linear least-squares estimates, with NPE providing 1000s of posterior samples in a matched evaluation time. Taken together, findings provide a framework to perform rapid parameter estimation with DW-SSFP, and an intuitive approach to incorporate conditional dependencies with NPE.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 78,
+      "tags": [
+        "方法与模型",
+        "neuroscience",
+        "machine learning",
+        "neural",
+        "cell",
+        "imaging"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "experimental",
+        "in vivo",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2025.07.08.663685",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1299056",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Beyond Engraftment: Real-Time Imaging of Mesenchymal Stem Cell-Mediated Vasculoprotection in Cardiac Injury",
+      "url": "https://europepmc.org/article/PPR/PPR1299056",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-16",
+      "creators": [
+        "Singh M",
+        "Satnam1 *",
+        "Kumar K",
+        "Krishna1 *",
+        "Kumar N",
+        "Singh K"
+      ],
+      "language": "en",
+      "abstract_or_text": "Background and Purpose: Ischaemic heart disease drives microvascular obstruction despite epicardial reperfusion. Mesenchymal stem cells (MSCs) emerged to treat this, yet their exact functional mechanisms remain contested. This review synthesises how intravital microscopy reshapes our understanding of MSC-mediated cardiac repair. Experimental Approach: We analysed recent preclinical investigations utilising multiphoton intravital imaging within murine myocardial ischaemia-reperfusion models. We evaluated real-time cellular tracking, microvascular perfusion mapping, and extracellular vesicle distribution kinetics. Key Results: Real-time imaging proves long-term cellular engraftment rarely occurs. MSCs operate as transient pharmacological vectors. They immediately release localised extracellular vesicles and paracrine factors upon microvascular arrest. This rapid secretion limits endothelial permeability and blocks neutrophil extravasation. The cardiac microcirculation clears over 80% of administered MSCs within 48 hours. Resident host macrophages subsequently ingest this apoptotic cell debris. This efferocytosis initiates a secondary reparative cascade, reprogramming macrophages to sustain angiogenesis long after the initial MSCs vanish. Conclusion and Implications: Acute vasculoprotection, rather than permanent cellular replacement, drives MSC efficacy. Clinical administration must shift to target the immediate ischaemic reperfusion window. Merging dynamic optical datasets with machine learning will eventually replace live cells with precision-engineered, cell-free therapeutics.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 78,
+      "tags": [
+        "生物医学与临床",
+        "preprint",
+        "machine learning",
+        "clinical",
+        "disease"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "dataset",
+        "experimental",
+        "release"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.22541/authorea.15007457/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.09.743676",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "FP8 Inference in Genomic Foundation Models: Theoretical vs. Realized Speedups on GenomeOcean",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.09.743676",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Yu, M.",
+        "Egan, R.",
+        "Liu, F.",
+        "Wang, Z.",
+        "Shi, L."
+      ],
+      "language": "en",
+      "abstract_or_text": "Genomic Foundation Models (GFMs) are increasingly used for large-scale sequence analysis and generation. Compared with frontier language models, GFMs are typically smaller and frequently operate on long genomic sequences, with evaluation often requiring preservation of biologically meaningful structure and sequence-level relationships. Although low-precision post-training quantization (PTQ) has shown substantial memory and throughput benefits for general-purpose language models, it remains unclear whether these benefits transfer to GFMs given their distinct model scales, sequence characteristics, and evaluation requirements. We present an empirical case study of FP8 post-training quantization applied to GenomeOcean, a computationally efficient genomic foundation model with strong reported performance across diverse genomics tasks. Its range of model scales, from 100M to 4B parameters, provides a useful setting for examining how quantization effects vary with model size. We evaluate FP8 across two primary GFM inference regimes - embedding extraction and autoregressive generation - and assess its impact along two dimensions: biological fidelity relative to BF16 baselines and system-level efficiency in terms of throughput, memory usage, and energy efficiency. We find that FP8 largely preserves biological fidelity across the evaluated scales and inference regimes, while reducing GPU memory footprint at 4B scale and improving energy efficiency during autoregressive generation. However, realized throughput gains remain substantially below FP8's theoretical 2x hardware ceiling, with a best-case improvement of 19.3% in autoregressive generation and benefits varying strongly by model scale and workload. Autoregressive generation shows the clearest gains, driven largely by KV-cache compression, whereas embedding extraction provides limited or negative throughput benefits at smaller model scales. We attribute this theory-practice gap to the interaction of model-scale effects, memory-system bottlenecks, and software-stack limitations. These findings highlight the need for workload-specific empirical evaluation before adopting low-precision inference in scientific foundation models.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 78,
+      "tags": [
+        "组学与细胞",
+        "bioinformatics",
+        "foundation model",
+        "language model",
+        "bio",
+        "genom"
+      ],
+      "evidence_flags": [
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.09.743676",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.13.744598",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "DNA gyrase in live bacteria forms liquid condensates through weak multivalent bonding of excess GyrB",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.13.744598",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Syeda, A.",
+        "Hollnds, K.",
+        "Frame, L.",
+        "Shepherd, J.",
+        "Payne-Dwyer, A. C.",
+        "Goffee, E.",
+        "Burton, N.",
+        "Basu, A.",
+        "Noy, A.",
+        "Maxwell, T.",
+        "Leake, M. C."
+      ],
+      "language": "en",
+      "abstract_or_text": "Type IIA bacterial topoisomerase DNA gyrase, a GyrA/GyrB heterotetramer, has crucial roles maintaining transcription and DNA replication by relaxing positive DNA supercoils through introducing negative supercoils. However, rates of gyrase-catalysed supercoiling in vitro cannot explain much higher rates required in vivo. To address this puzzle, we used high-speed single-molecule fluorescence imaging of GyrA/GyrB reporters in live Escherichia coli, indicating that cells contain ~40% more GyrB than GyrA expressed in a diffuse pool or in clusters whose mobility depends on whether they are bound to DNA. Unexpectedly, we discovered that clusters are non-stoichiometric containing ~150% more GyrB than GyrA, significantly greater than the cellular average, with fluorescence recovery after photobleaching revealing that clustered GyrA and GyrB behave as a liquid whose abundance can be increased by applying gyrase-targeting antibiotics. Structural docking indicates that the liquid state is stabilised through excess GyrB progressively binding to existing clusters via weak, multivalent interactions. By operating in liquid condensates, A2B2 that dissociates from DNA can rebind rapidly instead of diffusing away, increasing enzyme processivity to enable multiple rounds of catalysis that can keep pace with transcription and DNA replication in vivo. This demonstrates a new role for condensates of overcoming kinetic limitations imposed by diffusion.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 78,
+      "tags": [
+        "组学与细胞",
+        "biophysics",
+        "diffusion",
+        "bio",
+        "transcript"
+      ],
+      "evidence_flags": [
+        "in vivo"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.13.744598",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "medrxiv:10.64898/2026.08.12.26360210",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "Large Language Models Generate Stigmatizing Language During Reasoning Over Real-World Clinical Data",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.08.12.26360210",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Yang, Y.",
+        "Gu, B.",
+        "Hathaway, D. B.",
+        "Wyss, R.",
+        "Marengo, L.",
+        "Gibbons, J. B.",
+        "Lyndon, S.",
+        "Wu, J.",
+        "Chen, Q.",
+        "Liu, N.",
+        "Wang, P. S.",
+        "Celi, L. A.",
+        "Bates, D. W.",
+        "Lin, J.",
+        "Zhou, L.",
+        "Yang, J."
+      ],
+      "language": "en",
+      "abstract_or_text": "Stigmatizing language in clinical documentation, which conveys negative stereotypes, attitudes, or judgments toward patients, is a recognized source of documentation bias and is associated with poorer care and adverse health outcomes. Although prior stigma-related research has focused on clinician-written EHR notes, the increasing use of large language model (LLM)-generated documentation in clinical workflows raises new concerns about its potential to reproduce or amplify bias and affect patient safety. In this study, we conducted a large-scale assessment of stigmatizing language in LLM-generated reasoning text on 35 real-world clinical tasks across 107 LLMs. We applied a psychiatrist-validated, natural language processing (NLP) system to detect stigma terms in LLM reasoning text and quantified stigma rates of LLM-generated reasoning texts across 3,745 model-task pairs. Results showed that stigma rates ranged from 0% to 33.33%, with 84.06% of pairs containing stigma terms. Open-source models and reasoning models showed statistically higher stigma rates than proprietary (1.97% vs. 1.60%; p < 0.01) and non-reasoning models (2.35% vs. 1.70%; p < 0.0001), while the stigma rate difference between the general and medical models is not statistically significant (2.00% vs. 1.80%; p = 0.26). Stigma rates of LLM outputs correlated negatively with task accuracy (r = -0.304; p < 0.001) and positively with input clinical-text stigma (r = 0.569; p < 0.001), with 19.76% of model-task pairs amplifying stigma in the original input notes. Applying prompt engineering as a destigmatizing approach helped reduce model stigma rates by as much as 91.91% without affecting the model performance. This study shows that stigmatizing language generation is common but reducible during LLMs' reasoning traces, suggesting that well-implemented approaches for LLM monitoring and destigmatizing will be essential for healthcare systems to implement.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 78,
+      "tags": [
+        "生物医学与临床",
+        "medRxiv",
+        "clinical",
+        "language model",
+        "llm",
+        "medical"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.12.26360210",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "medrxiv:10.64898/2026.08.11.26359946",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "Grounding Health AI: Architecture and Evaluation of a Domain-Expert Metabolic Health Agent",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.08.11.26359946",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Diament, A.",
+        "Sapir, G.",
+        "Gorodetski, M.",
+        "Wolf, A.",
+        "Rice, A.",
+        "Azouri, D.",
+        "Etzion-Fuchs, A.",
+        "Gelbard Solodkin, D.",
+        "Talmor-Barkan, Y.",
+        "Lutsker, G.",
+        "Segal, E.",
+        "Rossman, H."
+      ],
+      "language": "en",
+      "abstract_or_text": "General-purpose language models generate fluent health reports that can fabricate derived clinical metrics. In an illustrative comparison on identical two-week CGM and meal data, leading foundation models produced reports with invented MAGE values, inflated meal counts, and unreferenced complication-risk projections: failures invisible to non-expert readers and plausible enough to mislead clinicians. We describe the HPP Personal Health Agent (PHA), a metabolic health agent that grounds generation in four layers: the Human Phenotype Project (HPP), a deep-phenotyped cohort of 13,000+ participants supplying population references and trained predictive models; 21 domain-expert tools and trained-model wrappers that compute clinical metrics and risk predictions; declarative behavioural skills that constrain what the model may claim; and 21 automated evals across 8 categories developed via a test-driven cycle in which each eval encodes a failure mode discovered during iterative development. In a 210-report matrix (14 participants x 3 prompts x 5 system conditions), the gains are largest on the system's primary use case (meal-grounded metabolic reports, the report it was designed for), where the full system raises a deterministic form/provenance score from 0.37 (the same foundation model with no tools or skills) to 0.91; this score measures structural completeness, numerical accuracy, tool grounding, and clinical-language compliance: a necessary condition for trustworthy health reporting, with clinical quality as a complementary axis examined qualitatively. A skills-vs-tools decomposition shows the two layers act on different axes: tools drive numerical accuracy (from about 14% to 90% of reported metrics correct), while the declarative skills add most of the remaining gain in citations, completeness, and structure (tools alone recover only part of the gap, 0.49 from the same 0.37 baseline). The lift generalises beyond the primary use case: to a second metabolic prompt (0.72) and a cardiovascular extension (0.70), each from a 0.37-0.39 baseline. The architecture extends across clinical domains: adding a SCORE2 cardiovascular risk tool and a corresponding skill (with no changes to orchestration, eval harness, or existing tools) produced a cardiovascular risk report from the same system. Trustworthy domain-specialised health AI is a systems design problem: deep-phenotyped cohort data, domain-expert tools and models, and eval-driven development together form a replicable pattern.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 78,
+      "tags": [
+        "方法与模型",
+        "medRxiv",
+        "clinical",
+        "foundation model",
+        "language model",
+        "health"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.11.26359946",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "medrxiv:10.64898/2026.02.10.26344393",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "Genomics link obesity and type 2 diabetes to Alzheimer's disease to unveil novel biological insights",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.02.10.26344393",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Cunha, C.",
+        "Garcia-Urena, M.",
+        "Sanz Martlnez, R.",
+        "J. Romero-Lado, M.",
+        "Fernandez, M. V.",
+        "Andreassen, O. A.",
+        "Sims, R.",
+        "Tsolaki, M.",
+        "Sleegers, K.",
+        "Hiltunen, M.",
+        "Nicolas, G.",
+        "Sanchez-Juan, P.",
+        "Ingelsson, M.",
+        "Giedraitis, V.",
+        "Ghidoni, R.",
+        "Holstege, H.",
+        "van Duijn, C.",
+        "van der Lee, S.",
+        "Ramirez, A.",
+        "Bellenguez, C.",
+        "Lambert, J.-C.",
+        "Frikke-Schmidt, R.",
+        "EADB,",
+        "O. Kilpeläinen, T.",
+        "J. F. Loos, R."
+      ],
+      "language": "en",
+      "abstract_or_text": "Body mass index (BMI), type 2 diabetes (T2D) and related cardiometabolic features associate with Alzheimer's disease (AD) risk, yet shared mechanisms remain poorly understood. By combining multi-trait, machine learning and single-cell transcriptomics with genotyping data for BMI and T2D, we investigate how these traits converge on shared genetic pathways to AD risk. Variant-level analyses reveal AD risk associates with genetically-driven hypotension and hypoglycaemia. We identify sixteen high-confidence effector genes in seven independent loci colocalizing between BMI/T2D and AD, mapping primarily to peripheral immune-metabolic tissues and cell-types. Eight high-confidence risk genes are currently targeted by ongoing therapeutic programmes, substantiating translatability relevance. Exploratory approaches using sex- and age-stratified genotyping data for BMI and T2D pinpoints potential sex-specific cardiometabolic liability linked to higher BMI-associated risk in women and T2D-driven risk in men. These findings elucidate shared cardiometabolic correlates with AD, prioritizes biological pathways, and reveal computationally-nominated drug candidates for preclinical testing.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 78,
+      "tags": [
+        "组学与细胞",
+        "medRxiv",
+        "clinical",
+        "machine learning",
+        "bio",
+        "genom"
+      ],
+      "evidence_flags": [
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.02.10.26344393",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298627",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "An Explainable Artificial Intelligence Framework for Decision-Making in Critical Information Technology Systems",
+      "url": "https://europepmc.org/article/PPR/PPR1298627",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "KOTHAPALLI SD"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract AI systems are now being deployed inside the critical IT systems like intrusion detection systems, IT operations analytics (AIOps), cloud governance platforms, clinical decision support systems and more. Artificial intelligence (AI) systems are now being incorporated into critical information technology (IT) infrastructure such as intrusion detection systems, IT operations analytics (AIOps), cloud governance platforms, clinical decision support systems and more. Deep learning and ensemble methods provide better predictive accuracy but have the disadvantage of being \"black-box\" algorithms, which makes them less trusted by operators, harder to regulate and create the potential for undetected propagation of errors in critical applications. Explainable AI (XAI) is now the main solution to this lack of transparency, though there is a disciplinary divide in the literature and no synthesis of technical methods of explainability and operational, human factors and governance needs of critical IT systems exists. This review aims to identify, integrate and apply 32 peer-reviewed and archival research papers published mainly during the period of 2019 to 2025, in addition to foundational research, to build an integrated XAI framework for critical IT decision making. The methodology is guided by a structured narrative-systematic review protocol covering explainability techniques, applications in the domain of cybersecurity, AIOps, and infrastructure in the healthcare domain, and governance instruments like the NIST AI Risk Management Framework. Post-hoc model-agnostic methods, especially SHAP and LIME, are the most applied methods today, especially in intrusion detection and financial risk applications, and are significantly preferred over intrinsically interpretable and attention-based methods, despite the latter's better transparency-performance trade-offs, according to the review. A conceptual five-layer model is suggested, that combines the concepts of data provenance, the generation of explainability, interpretation with human in the loop, and the governing process that is auditable. Persistent issues are highlighted such as the instability of explanations, computational complexity, and inconsistent evaluation of explanations, as well as the lack of a standardised fidelity measure. The review shows that instead of single explainability techniques, it is a need for coordinated progress in technical methods, how to design interfaces, and the alignment of the regulations to make operational explainability in critical systems possible.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 78,
+      "tags": [
+        "生物医学与临床",
+        "preprint",
+        "artificial intelligence",
+        "deep learning",
+        "rna",
+        "clinical"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "evaluation",
+        "security",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10682801/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298567",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Automated Bone Marrow Cellularity Estimation from Whole-Slide Images Using Deep Learning: Validation in an Indian Clinical Cohort",
+      "url": "https://europepmc.org/article/PPR/PPR1298567",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Patil AP",
+        "Rastogi P",
+        "Sunderasan D",
+        "Bal A",
+        "Sharma P",
+        "Sharma M",
+        "Bhardwaj V"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Bone marrow evaluation is central to diagnosing leukemia, lymphoma, unexplained cytopenias and other hematologic disorders, yet it depends on specialised expertise and remains time-consuming, subjective and prone to interobserver variability. We present the Artificial Intelligence Slide Analysis Platform (AiSAP), a deep learning framework for automated bone marrow cellularity estimation directly from raw whole-slide images (WSIs), trained and validated on an Indian clinical trephine biopsy cohort that is underrepresented in existing automated pipelines. Unlike approaches restricted to cropped or pre-selected patches, AiSAP performs end-to-end WSI tiling, automated marrow region-of-interest extraction and adipocyte segmentation using a dual Mask R-CNN architecture, before computing a case-level cellularity ratio. Across five backbone configurations, average precision ranged from 45.3% to 51.9%, while case-level concordance reached up to a Pearson correlation coefficient of 0.95 and Lin's concordance correlation coefficient of 0.88 (depending on the backbone). These results show that AiSAP achieves expert-level concordance for automated cellularity estimation and represents a promising, generalizable step toward clinical decision support in bone marrow pathology, warranting further multi-institutional validation.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 78,
+      "tags": [
+        "方法与模型",
+        "preprint",
+        "artificial intelligence",
+        "deep learning",
+        "bio",
+        "clinical"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10468634/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298342",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Development and Validation of a Machine Learning Model Integrating SPECT MPI Multiparametric Features for Risk Prediction in Coronary Artery Disease with Preserved Ejection Fraction",
+      "url": "https://europepmc.org/article/PPR/PPR1298342",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Li Y",
+        "Cao J",
+        "Zhao Y",
+        "Wu P",
+        "Wang R",
+        "Wu Z",
+        "Liu H",
+        "Li S"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Objective Early identification of high-risk patients with coronary artery disease (CAD) and preserved left ventricular ejection fraction (LVEF) is essential for optimizing management. This study aimed to develop a machine learning model integrating clinical and myocardial perfusion imaging (MPI)–derived parameters to predict major adverse cardiac events (MACE). Methods We retrospectively included 1,675 patients with suspected or confirmed CAD and preserved LVEF who underwent resting MPI. Demographic, clinical, and imaging variables were collected, and missing data were handled via multiple imputation. Ten machine learning algorithms were developed and compared. Model performance was assessed by the area under the receiver operating characteristic curve (AUC) and additional metrics. Shapley additive explanations analysis (SHAP) was applied to interpret feature contributions. Results The CatBoost model showed the best performance, with cross-validated AUC of 0.693, accuracy 0.632, precision 0.551, F1 score 0.451, and Brier score 0.234. SHAP analysis identified nine key predictors: prior cardio-cerebrovascular disease, age, peak filling rate, low-density lipoprotein cholesterol, total perfusion deficit, eccentricity index (no-gated), entropy, coronary stenosis ≥ 50%, and New York Heart Association functional class. Conclusions We developed an interpretable CatBoost model integrating clinical and MPI features to predict MACE risk in CAD patients with preserved LVEF. The model demonstrated a balanced performance in terms of stability, generalizability, and clinical applicability, and may serve as a valuable tool for risk stratification and personalized management in this patient population. Trial registration Not applicable. This study is a retrospective analysis.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 78,
+      "tags": [
+        "生物医学与临床",
+        "preprint",
+        "machine learning",
+        "protein",
+        "clinical"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10383224/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.02.15.705956",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Physically Grounded Generative Modeling of All-Atom Biomolecular Dynamics",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.02.15.705956",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Feng, B.",
+        "Zhang, J.",
+        "Zhang, X.",
+        "Cao, H.",
+        "Zhang, M.",
+        "Barth, P.",
+        "Liu, Z.",
+        "Li, Y."
+      ],
+      "language": "en",
+      "abstract_or_text": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 77,
+      "tags": [
+        "方法与模型",
+        "bioinformatics",
+        "deep learning",
+        "diffusion",
+        "bio",
+        "protein"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.02.15.705956",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1299014",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Applying Machine Learning for the Prediction of Tuberculosis Among People Living with HIV from Health Facilities in Addis Ababa, Ethiopia",
+      "url": "https://europepmc.org/article/PPR/PPR1299014",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-16",
+      "creators": [
+        "Tiyou A",
+        "Belina M",
+        "Seid Y",
+        "Haftu B"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Background Tuberculosis (TB) is a major global public health problem and one of the leading causes of death worldwide, particularly in the era of Human Immunodeficiency Virus (HIV). TB is among the leading causes of death for people living with HIV (PLWHIV). Early diagnosis of TB among PLWHIV remains challenging due to non-specific clinical symptoms, coexisting opportunistic infections, and limitations of conventional diagnostic and screening approaches. The objective of this study was to develop and validate a machine learning model to predict TB cases among PLWHIV using smart care data from health facilities. Methods The research employs quantitative analysis of secondary data from four health facilities that provided HIV care and treatment to PLWHIV and reported to the Addis Ababa Health Bureau. The study uses an experimental research design applying machine learning and deep learning models. Results From four facilities, 16,698 adult patients currently on ART were included; 59% were female, and 85% were married. In this study, the majority of the models performed better when the Hybrid method combined SMOTE with Edited Nearest Neighbors (ENN), and XGBoost had the strongest influence on the predictor of TB occurrence across most evaluation matrices. The XGBoost accuracy was 98%, recall 80%, precision 25%, F1 score 38%, F Beta 30%, MCC 52%, and AUC 96%. ART regimen, taking Tuberculosis Preventive Therapy (TPT), cotrimoxazole prophylaxis, months on ART, patient weight, and functional status are the strongest risk factors for developing TB and for protection against TB development. Conclusion Overall, XGBoost outperforms the other models across accuracy, precision, F1 score, and ROC AUC. Using the XGBoost model, the ART regimen, TPT, cotrimoxazole prophylaxis, months on ART, and patient weight were the strongest predictors of whether a patient would be protected against TB or would develop TB.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 77,
+      "tags": [
+        "生物医学与临床",
+        "preprint",
+        "machine learning",
+        "deep learning",
+        "clinical",
+        "health"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "experimental",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10411125/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298966",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Development of a Multiclass Predictive Baseline for Diverticulum Ultrasound Imaging Types Using Nonlinear Machine Learning",
+      "url": "https://europepmc.org/article/PPR/PPR1298966",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-16",
+      "creators": [
+        "LUAN S",
+        "LIU X",
+        "JIANG Y",
+        "LIU Q"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Context: Diverticulum anomalies exhibit a range of serious clinical manifestations of a similar nature requiring accurate imaging classification to implement appropriate and targeted management. However, clinical data are often characterized by severe class imbalances and convoluted decision boundaries that prevent traditional diagnostic heuristics from being applied effectively. Objective To apply structured clinical variables to create an interpretable and reproducible machine learning framework to serve as a baseline for multiclass predictions related to the imaging types of Meckel's diverticulum. Methods The retrospective observational data used in this study comprised a sample population of 559 patients where each patient had an imaging type label associated with them. The independent predictors used in the models were a set of continuous demographic variables, a set of continuous lesion-specific variables, and a set of categorical variables, which included patient clinical symptoms and hospitalisation history, and ectopic-tissue distribution. Following a rigorous data imputation approach, the dataset was split into a training dataset and a second, independent test dataset using the stratified random-split method. Logistic regression, LASSO, Support Vector Classification, and Random Forests were the four classifiers developed and evaluated using an iterative approach. Results The Random Forest algorithm performed best overall in prediction accuracy for the testing set with an accuracy of 0.4762, balanced accuracy of 0.4567, macro F1 score of 0.3587 and macro AUC of 0.7991. Although the Random Forest showed excellent distinction for the upper-end of high frequency head categories, it was unable to provide similar levels of performance with sparse categories at the lower end of the tail, due to the inherent structural class imbalance within the data. Multivariate logistic regression confirmed that intestinal obstruction by band type retained an independent, statistically significant association with small effusions as the focus category (OR = 0.1456, p = 0.0338). Decision curve analysis confirmed that using Random Forest model outputs produced a consistently higher net clinical benefit than baseline strategies at either extreme. Conclusion The Random Forest algorithm supports a stable, reliable basis upon which multiclass diverticulum imaging types can be classified. Despite the challenges posed by a long-tailed data distribution, the proposed framework is proven practical and viable for use in real-world clinical decision support scenarios.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 77,
+      "tags": [
+        "生物医学与临床",
+        "preprint",
+        "machine learning",
+        "clinical",
+        "cell"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "dataset",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10478196/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.08.743602",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "ACCREDIT: A Quality-Aware Agentic Engine for Cell-resolved Cross-modal Image Registration with Dynamic Iterative Tuning",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.08.743602",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Zhou, L.",
+        "Zhao, F.",
+        "Ren, T.",
+        "Goodyear, S. M.",
+        "Tang, C.",
+        "Li, B.",
+        "Zhang, T.",
+        "Chen, Y.",
+        "Sears, R. C.",
+        "Mills, G. B.",
+        "Kardosh, A.",
+        "Xia, Z."
+      ],
+      "language": "en",
+      "abstract_or_text": "Spatial omics across complementary modalities is transforming our understanding of tissue architecture. Realizing this potential requires accurate and robust registration of cross-platform molecular images with hematoxylin-and-eosin (H&E) sections, the primary morphological reference for pathology. Existing methods, however, often fail silently when image orientation is unknown, image contrast is inverted, or tissue overlap is incomplete, producing erroneous registrations without alerting users or attempting recovery. Here, we present ACCREDIT, a quality-aware agentic framework that redefines cross-modal registration as an adaptive decision-making process rather than a one-shot computation. ACCREDIT combines deterministic registration pipelines with a reference-free composite quality score that automatically evaluates registration quality and rejects plausible but biologically incorrect registrations. When registration quality is insufficient, a large language model (LLM)-based rescue agent autonomously diagnoses failure modes and selects targeted recovery strategies, while an optional strategy-learning module captures expert-validated corrections for future reuse. Across Xenium, CODEX, cell-boundary, and IHC-to-H&E registration tasks, ACCREDIT outperformed competing methods by detecting registration failures and improving alignment quality through automated recovery and rescue. Ultimately, ACCREDIT enables robust integration of histology and spatial molecular profiling, providing a foundation for translating spatial omics into routine H&E-based pathology workflows.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 77,
+      "tags": [
+        "方法与模型",
+        "bioinformatics",
+        "language model",
+        "llm",
+        "bio",
+        "omics"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.08.743602",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298637",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Small molecules targeting HDAC6: indirect microtubule assembly modulators.",
+      "url": "https://europepmc.org/article/PPR/PPR1298637",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Stykhylias M",
+        "Rybachuk O",
+        "Raevsky AV",
+        "Dariya S",
+        "Svetlana S",
+        "Sergey O",
+        "Maksim P",
+        "Yaroslav B",
+        "Pavel K"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Protein lysine acetylation is a fundamental post-translational modification regulating diverse cellular processes, and its dysregulation is implicated in numerous human diseases. Histone deacetylase 6 (HDAC6) is a unique cytoplasmic deacetylase that primarily targets non-histone proteins, including α-tubulin, and plays critical roles in cytoskeletal organization, intracellular transport, and protein quality control. Due to its involvement in neurodegenerative disorders, cancer, inflammatory diseases, fibrosis, and cardiovascular and metabolic dysfunction, HDAC6 has emerged as an attractive therapeutic target. However, the development of highly selective HDAC6 inhibitors remains challenging because the catalytic pocket and zinc-coordinating residues are highly conserved across HDAC isoforms. In this study, we employed a computational approach combining pharmacophore-based virtual screening, molecular docking, binding site interaction analysis, and ADMET prediction to identify novel selective inhibitors of human HDAC6. From the Enamine compound library screened using the Pharmit service, seven compounds were selected based on their predicted high affinity for HDAC6 and low affinity for other human HDAC isoforms. Docking analysis revealed that these compounds coordinate the catalytic Zn²⁺ ion via alternative monodentate neutral O-donor zinc-binding groups (carbonyl or sulfoxide oxygen) and establish key interactions with residues in the L1 and L2 pockets (Leu749, Ser568, Phe620) that determine HDAC6 isoform selectivity, as well as with catalytically essential residues His611 and Tyr782. Experimental validation in primary porcine neuron cultures confirmed the biological activity of all seven compounds, with no observed cytotoxicity toward neural stem cells. Importantly, comparative analysis with plant tubulin-associated histone deacetylases, particularly Arabidopsis thaliana HDA14, revealed that six compounds exhibited high predicted affinity for these plant enzymes, recapitulating the binding pattern observed for human HDAC6. These findings demonstrate the potential of human HDAC6-selective inhibitors for selective targeting of plant tubulin deacetylases and provide a structural framework for the rational design of isoform-selective inhibitors across eukaryotic lineages.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 77,
+      "tags": [
+        "蛋白质与结构",
+        "preprint",
+        "neural",
+        "generative",
+        "bio",
+        "protein"
+      ],
+      "evidence_flags": [
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10691863/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298237",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Design, Synthesis, Molecular Docking, and In Vitro Cytotoxic Evaluation of Novel Isoniazid-Tethered 1,3,4-Thiadiazole Derivatives as Potential Anticancer Agents",
+      "url": "https://europepmc.org/article/PPR/PPR1298237",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "N BS",
+        "Jawale NR",
+        "V SB"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Breast cancer remains one of the leading causes of cancer-related mortality worldwide, with overexpression of the human epidermal growth factor receptor-2 (HER2) contributing to aggressive disease progression and therapeutic resistance. The present study aimed to identify novel HER2-targeting anticancer agents by designing 1,3,4-thiadiazole derivatives tethered with isoniazid and evaluating their biological potential through integrated computational and experimental approaches. Twenty derivatives were subjected to molecular docking against the HER2 kinase domain (PDB ID: 7PCD) using AutoDock Vina implemented in PyRx. The docking scores ranged from − 8.7 to − 10.2 kcal/mol, with compounds BVSBSN10, BVSBSN18, and BVSBSN19 exhibiting the highest binding affinities and favorable interactions with key active-site residues. Drug-likeness and pharmacokinetic properties were predicted using SwissADME, demonstrating that most compounds satisfied Lipinski's rule of five. Molecular dynamics simulation of the lead complex (BVSBSN18–HER2) over 100 ns confirmed stable protein–ligand interactions based on RMSD and RMSF analyses. The top-ranked compounds were synthesized, characterized by IR, ^1H NMR, and mass spectroscopy, and evaluated for cytotoxic activity against MCF-7 human breast cancer cells using the MTT assay. Among the synthesized derivatives, BVSBSN2C (2-chloro-5-nitro derivative) exhibited the highest antiproliferative activity with an IC₅₀ of 53.21 µg/mL, followed by BVSBSN1C and BVSBSN3C. These findings demonstrate that isoniazid-tethered 1,3,4-thiadiazole derivatives possess promising HER2 inhibitory potential and provide a valuable scaffold for the development of novel anticancer agents targeting HER2-positive breast cancer.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 77,
+      "tags": [
+        "蛋白质与结构",
+        "preprint",
+        "agent",
+        "bio",
+        "protein"
+      ],
+      "evidence_flags": [
+        "experimental",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10287679/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744830",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Isolation and Characterization of Bacteriocin-Producing Lactic Acid Bacteria from Cheese and Functional Evaluation of Their Synthesized Bioactive Peptides",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744830",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Anumudu, C. K.",
+        "Miri, T.",
+        "Onyeaka, H."
+      ],
+      "language": "en",
+      "abstract_or_text": "Biopreservatives including nisin and its derivatives are becoming more desirable in the food processing industry because of the growing demand for naturally preserved and minimally processed foods free from artificial preservatives. However, ensuring microbiological safety while meeting these consumer preferences remains a major challenge. This has necessitated the continuous investigation of potential new antimicrobial agents produced by naturally occurring microorganisms. Hence, this study explored the synthesis, characterisation, and optimisation of a bacteriocinogenic lactic acid bacterium and its antimicrobial product, possibly novel bacteriocin (Nisin 2A) from Lactococcus lactis isolated from commercial brined cheese. The isolation was achieved by screening for wild-type bacteriocin-producing lactic acid bacteria from dairy products using MRS media. Screening was performed using antagonism assays, yielding five producer organisms. Of these, the isolate whose metabolites exhibited the most potent antimicrobial activity was identified as Lactococcus lactis, which synthesised an active antimicrobial peptide designated as Nisin 2A, with a molecular mass of approximately 3.3 kDa as determined by UHPLC-MS and SDS-PAGE. Production of Nisin 2A was scaled up through fed-batch fermentation of Lactococcus lactis in modified MRS broth following process optimisation using a Plackett Burman experimental design and purified by ammonium sulphate precipitation and solid-phase extraction (SPE). Furthermore, the antimicrobial potential of the bacteriocin was evaluated by the agar well diffusion assay and quantified using the tube dilution method. The purified peptide demonstrated broad-spectrum antimicrobial activity, particularly against the test Gram-positive bacteria Bacillus cereus and retained its bioactivity across a wide pH range (3 to 9) and high thermal conditions (up to 100 C). Furthermore, it had high sensitivity to proteolytic enzymes (Proteinase K and Trypsin). Notably, the peptide was thermostable and retained up to 90% of its initial activity after thermal treatment and maintained consistent inhibitory performance after extended storage. These findings highlight the potential application of Nisin 2A as a natural biopreservative in food systems.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 76,
+      "tags": [
+        "蛋白质与结构",
+        "microbiology",
+        "diffusion",
+        "agent",
+        "bio",
+        "protein"
+      ],
+      "evidence_flags": [
+        "experimental",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744830",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.12.744552",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "SAMP V2: A novel stacking ensemble learning model for antimicrobial peptides identification based on augmented split amino acid composition with biochemical-sequence-order information",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.744552",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Sun, M.",
+        "Wang, J.",
+        "Wan, S."
+      ],
+      "language": "en",
+      "abstract_or_text": "Antimicrobial resistance reduces the effectiveness of conventional antibiotics and has become a major global health threat, highlighting the need for new anti-infective agents. Antimicrobial peptides (AMPs), a diverse class of innate immune effectors with broad-spectrum antimicrobial activity, are promising candidates for combating drug-resistant infections. Identifying AMPs by wet-lab experiments, however, remains costly and time-consuming, creating a strong demand for computational identification methods. Our recently developed method, SAMP, captures region-specific residue distributions based on proportionalized split amino acid composition. However, SAMP might ignore key biochemical information and sequence order information. Here we present SAMP V2, a stacking ensemble learning framework based on biochemical and sequence-order information augmented split amino acid composition (BIA-SAAC), which extends SAMP by integrating pseudo-amino acid composition features with biochemical and sequence-order information into split peptide regions. Specifically, each peptide is divided into N-terminal, middle, and C-terminal regions, and pseudo amino acid composition is calculated within each region. Benchmarking tests on six independent test datasets, SAMP V2 outperformed multiple state-of-the-art models, including AMPpred-MFA and iAMP-Attenpred, in terms of accuracy, MCC, G-measure and F1-score. Given its high and robust performance, SAMP V2 could significantly accelerate the discovery of next-generation antimicrobial therapeutics for addressing the global threat of multidrug-resistant pathogens.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 75,
+      "tags": [
+        "生物医学与临床",
+        "bioinformatics",
+        "agent",
+        "bio",
+        "drug"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "dataset",
+        "state-of-the-art",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.12.744552",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.1101/2025.10.10.681591",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Accurate and Robust Characterization of Structural Variants at Low Coverages with ARCLID",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.10.10.681591",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Tavakoli, S.",
+        "Frandsen, R. J. N.",
+        "Majidian, S.",
+        "Mansourvar, M."
+      ],
+      "language": "en",
+      "abstract_or_text": "Structural variants (SVs) shape genome diversity and underlie human diseases, yet accurate detection remains difficult, especially at low sequencing coverages. Most existing callers are optimized for deep sequencing and lose sensitivity as coverage falls, limiting their use in studies that sequence genomes at shallow depth. We present ARCLID, a deep learning-based SV caller that reframes SV detection as an object detection task. We benchmarked ARCLID against six well-established callers on four samples and challenging medically relevant genes, across coverages from 28x down to 5x, multiple SV sizes, and both relaxed and strict breakpoint matching. At 5x, ARCLID achieved the highest F1 score of all evaluated callers on every sample, exceeding the second-best tool by up to 8%. This advantage widened under strict breakpoint matching, indicating genuine variant recovery with accurate breakpoint placement. At higher coverages, ARCLID remains competitive with the strongest current tools. By preserving accuracy at low depth, it makes reliable SV discovery feasible from shallow data, enabling lower sequencing cost, time, and storage for population-scale and clinical genomics. We additionally curated SV benchmarking regions for HG00733 and NA19240 that complement the widely used HG002 GIAB benchmark regions, supporting evaluation of SV callers across ancestrally distinct genomes.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 75,
+      "tags": [
+        "生物医学与临床",
+        "bioinformatics",
+        "deep learning",
+        "genom",
+        "omics"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "clinical",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2025.10.10.681591",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.08.743505",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "DQHTFI: Dynamic-Query Hypergraph Transformer for Fine-Grained Drug-Target Interaction and Affinity Prediction",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.08.743505",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Tao, K.",
+        "Chai, H.",
+        "Chen, Z.",
+        "Gao, X.",
+        "Yu, B."
+      ],
+      "language": "en",
+      "abstract_or_text": "Drug-target interaction prediction and binding affinity prediction are two key tasks in drug discovery and drug repurposing. Although deep learning methods have made significant progress, existing models typically rely on global representations of drugs and proteins, making it difficult to adequately model fine-grained interactions between their local units. Fixed multimodal fusion strategies also struggle to dynamically adjust the contributions of different modalities for different drug-target combinations. To address these issues, we propose DQHTFI, a fine-grained interaction prediction framework for drug-target interaction classification and binding affinity regression. DQHTFI employs BRICS fragments and Pfam functional domains as the basic interaction units and jointly learns semantic and structural representations. We design a dynamic-query hypergraph Transformer framework in which hyperedges are constructed among the multimodal features of fragment-domain pairs. Dynamic queries are generated from the cross-conditioned features of fragment-domain pairs to adaptively adjust the contribution of each modality, thereby modeling higher-order interactions between local units. Our proposed model achieves competitive results on multiple benchmark datasets.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 75,
+      "tags": [
+        "方法与模型",
+        "bioinformatics",
+        "deep learning",
+        "transformer",
+        "protein",
+        "drug"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.08.743505",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744850",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "CARD:Epi - Contextualizing Antimicrobial Resistance Determinants Using Deep Learning Language Models",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744850",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Edalatmand, A.",
+        "Ta, T. E.",
+        "Zhao, C.",
+        "Ibrahim, A.",
+        "Upadhyaya, R.",
+        "Rajapaksa, S.",
+        "Raphenya, A. R.",
+        "McArthur, A. G."
+      ],
+      "language": "en",
+      "abstract_or_text": "Bacterial outbreak publications outline the key factors involved in the uncontrolled spread of infection. Such factors include the environment, pathogens, hosts, and antimicrobial resistance genes (ARGs). Individually, each paper published in this area gives a glimpse into the devastating impact drug resistant infections have on healthcare, agriculture, and livestock. When examined together, these publications provide contextual information on ARG transmission, from the discovery of new resistance genes to their dissemination to different pathogens, hosts, and environments. We have extracted this information from publications in PubMed by using the biomedical deep-learning language model, BioBERT. We trained BioBERT on two tasks: entity recognition to identify AMR-relevant terms (i.e., ARGs, taxonomy, environments, geographical locations, etc.) and relation extraction to determine which terms identified through entity recognition contextualize ARGs. By collating results from 204,094 antimicrobial resistance publications worldwide, we have generated interpretable results about the sources where genes are commonly found. To visualize the dataset, we have created two pipelines to analyze transmission patterns of ARGs across agriculture, environments, and human populations using a Confusogram and Uniform Manifold Approximation and Projection. Overall, we have taken a large-scale approach to collect antimicrobial resistance data from a commonly overlooked resource, i.e., the systematic examination of the large body of AMR literature and have visualized how scientific literature can be used to assess transmission patterns of ARGs.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 75,
+      "tags": [
+        "生物医学与临床",
+        "genomics",
+        "deep learning",
+        "language model",
+        "bio",
+        "medical"
+      ],
+      "evidence_flags": [
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744850",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.11.744248",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Maternal diet and genetics shape the human milk metabolome",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.11.744248",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Johnson, K. E.",
+        "Duan, Y.",
+        "Youssef, A.",
+        "Aristizabal-Henao, J. J.",
+        "Johnson, A.",
+        "Kiebish, M. A.",
+        "Nagel, E. M.",
+        "Palmsten, K.",
+        "Pierce, S.",
+        "Wernimont, S.",
+        "Bode, L.",
+        "Lock, E. F.",
+        "Isganaitis, E. M.",
+        "Fields, D. A.",
+        "Albert, F. W.",
+        "Blekhman, R.",
+        "Demerath, E. W."
+      ],
+      "language": "en",
+      "abstract_or_text": "Human milk contains a diverse array of metabolites that contribute to infant nutrition, immune development, and microbial colonization. The maternal factors shaping the milk metabolome, and the relative contribution of genetics or diet vs. other factors, remain poorly understood. Here, we profiled 458 milk metabolites in 349 one-month postpartum human milk samples and integrated metabolomic data with maternal diet, clinical, transcriptomic, and genomic measurements. Maternal diet was broadly associated with milk metabolite composition, with significant correlations identified between dietary features and 323 metabolites. Coffee consumption strongly predicted milk quinic acid and 1,3-dimethyluric acid abundance, while high-fiber dietary patterns were associated with metabolites including proline-betaine and N-acetylornithine. Integration of milk transcriptomic and metabolomic data via machine learning identified biologically plausible gene-metabolite pairs, including associations between QPRT expression and quinolinic acid, and DPEP1 and cysteine-glycine dipeptide. Genome-wide association analyses identified nine study-wide significant metabolite quantitative trait loci, including novel milk-specific associations near PDE6A affecting purine metabolites and near GNE affecting free sialic acid. Comparison with plasma metabolite studies demonstrated both shared and milk-specific genetic regulation of metabolites. Finally, we found that of all tested maternal features, diet explained the largest proportion of variation in the milk metabolome. Together, these findings demonstrate that the human milk metabolome reflects both maternal exposures and mammary gland-specific biology. This work establishes a framework for understanding how genetic and environmental factors shape milk composition.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 75,
+      "tags": [
+        "组学与细胞",
+        "genomics",
+        "machine learning",
+        "bio",
+        "genom"
+      ],
+      "evidence_flags": [
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.11.744248",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298327",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Cerebrospinal Fluid Chloride as an Independent Prognostic Biomarker in Cryptococcal Meningitis: A Dual-Center Externally Validated Machine Learning Study with SHAP-Based Interpretability",
+      "url": "https://europepmc.org/article/PPR/PPR1298327",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Zou Q",
+        "Yu K",
+        "Liu D",
+        "Zhu X",
+        "Li S",
+        "Zhang C",
+        "Wang X",
+        "Liao W",
+        "Lin W",
+        "Zhang K",
+        "Pan W"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Background Cryptococcal meningitis (CM) carries a high 10-week mortality rate, necessitating accurate early prognostic tools. While cerebrospinal fluid chloride (CSF-Cl) is a routine test, its independent prognostic value in CM remains ill-defined. Furthermore, existing machine learning models lack external validation and clinical interpretability. This study aimed to validate CSF-Cl as an independent biomarker and to develop an externally validated, interpretable prognostic model for CM. Methods We enrolled 253 treatment-naive CM patients from two tertiary hospitals. Univariate and multivariate logistic regression identified independent prognostic risk factors across the full cohort. Patients were stratified into a training cohort (The Fourth People’s Hospital of Nanning, n = 194) and an independent external test cohort (Jiangxi Provincial Chest Hospital, n = 59). In the training set, nine machine learning classifiers were developed following feature selection via LASSO-recursive feature elimination (LASSO-RFE) and sample balancing via synthetic minority oversampling technique (SMOTE). Paired models with and without CSF-Cl were compared to quantify the incremental value of CSF-Cl using ΔAUC, net reclassification index (NRI), integrated discrimination improvement (IDI), and decision curve analysis (DCA). SHapley Additive exPlanations (SHAP) was deployed to dissect dose-response relationships and feature interactions, with subgroup analyses to define risk thresholds. Results Multivariate regression confirmed CSF-Cl as an independent risk factor for unfavorable CM outcomes (OR = 1.059, 95% CI 1.011–1.110, P = 0.017). CatBoost demonstrated the best generalizability among the nine models evaluated, yielding an AUC of 0.712 and precision of 0.722 in the external test set. Incorporation of CSF-Cl increased the external AUC from 0.651 to 0.712 (ΔAUC = 0.061), with an NRI of 0.132 and IDI of 0.040. SHAP analysis uncovered a positive dose-response association between CSF-Cl and adverse prognosis, alongside synergistic interactions with intracranial pressure (ICP) and HIV status. The model retained robust performance in HIV-positive patients and those aged",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 75,
+      "tags": [
+        "生物医学与临床",
+        "preprint",
+        "machine learning",
+        "bio",
+        "rna"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10261941/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "medrxiv:10.64898/2026.08.14.26359677",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "GCH1 genetic variation as a prognostic factor in Parkinson disease across populations",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.08.14.26359677",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Shin, J. H.",
+        "Perinan, M. T.",
+        "Jang, J. W.",
+        "Screven, L.",
+        "Lange, L. M.",
+        "Klein, C.",
+        "Shulman, J. M.",
+        "Gan-Or, Z.",
+        "Shahkhali, M. G.",
+        "Senkevich, K.",
+        "Dusek, P.",
+        "Miliukhina, I.",
+        "Alcalay, R. N.",
+        "Lin, C.-H.",
+        "Wu, R.-M.",
+        "Morris, H. R.",
+        "Tan, E.-K.",
+        "Zhang, B.-R.",
+        "Cogan, G.",
+        "Brice, A.",
+        "Mencacci, N. E.",
+        "Sarmiento, I. J. K.",
+        "Simuni, T.",
+        "Sassi, S. B.",
+        "Marti, M. J.",
+        "Pastor, P.",
+        "Tay, Y. W.",
+        "Tan, A. H.",
+        "Lim, S.-Y.",
+        "Stamelou, M.",
+        "Chafota, F.",
+        "Renteria, M. E.",
+        "Mohamed, W.",
+        "Mata, I. F.",
+        "Cornejo Olivas, M.",
+        "Cesarini, M.",
+        "Rivera, A.",
+        "Avenali, M.",
+        "Valente, E. M.",
+        "Foroud, T. M.",
+        "Nudelman, K. N. H.",
+        "Brumm, M. C.",
+        "Gasser, T."
+      ],
+      "language": "en",
+      "abstract_or_text": "Background: Pathogenic variants in GCH1 have been associated with Parkinson's disease (PD), but the clinical phenotype and longitudinal disease course of GCH1-associated PD remain incompletely characterized. Objectives: To characterize the genetic spectrum, clinical phenotype, and longitudinal progression of GCH1-associated PD across multiple populations. Methods: Whole-genome sequencing (WGS) and clinical exome sequencing (CES) data from the Global Parkinson Genetics Program (GP2) were analyzed together with unpublished and published GCH1-associated PD patients. Variant pathogenicity was classified according to ACMG criteria. Demographic, clinical, and longitudinal features were compared between GCH1 P/LP variant carriers and non-carrier PD patients; individuals with known pathogenic variants in PD-associated genes were excluded from both groups. Results: In the GP2 cohort (PD, n=22,825; controls, n=4,453), 16 pathogenic or likely pathogenic (P/LP) GCH1 variants were identified in 58 individuals, including 54 PD patients, one control, and three individuals with other neurodegenerative phenotypes (two with progressive supranuclear palsy and one with dementia with Lewy bodies). In the pooled-ancestry WGS analysis, GCH1 P/LP variants were enriched in PD patients versus controls (0.267% vs 0.023%; OR=11.854; 95% CI=1.620-86.699; p=0.0006). Variant frequencies in PD patients ranged from 0.121% to 0.714% across ancestries. In the CES cohort, P/LP variants were identified in 0.201% of PD patients. After integrating GP2 with additional unpublished and published datasets, 119 GCH1-associated PD patients were analyzed. Compared with noncarriers, carriers of P/LP GCH1 variants had an earlier age at onset (mean [SD], 53.7 [14.8] vs 59.2 [11.7] years; P < .001), lower levodopa equivalent daily dose requirements (mean [SD , 467.5 [331.7] vs 680.3 [466.4] mg/d; P < .001), and a higher frequency of a family history of Parkinson disease (47.6% vs 19.9%; P < .001). Adjusted Cox models showed significant delayed progression to motor fluctuations (HR=0.32, 95% CI=0.16-0.62) and levodopa-induced dyskinesias (HR=0.51, 95% CI=0.30-0.87). Conclusion: GCH1 pathogenic variants were associated with a clinically distinct phenotype characterized by earlier disease onset and slower progression of motor complications. These findings suggest that GCH1 genetic variants may serve as genetic biomarkers for patient stratification and prognosis in PD.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 74,
+      "tags": [
+        "生物医学与临床",
+        "medRxiv",
+        "clinical",
+        "generative",
+        "bio",
+        "genom"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.26359677",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298506",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Effect of Mesenchymal Stem Cell-Derived Secretome Injection on Functional Outcomes After Anterior Cruciate Ligament Reconstruction Using Peroneus Longus Tendon Autograft: A Double-Blind Randomized Controlled Trial",
+      "url": "https://europepmc.org/article/PPR/PPR1298506",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Aryana IGNW",
+        "Febyan F",
+        "Dusak IWS",
+        "Karna MB",
+        "Suyasa IK",
+        "Dharmayuda CGO",
+        "Sartika CR"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Introduction : Graft healing after anterior cruciate ligament (ACL) reconstruction remains challenging, as inadequate ligamentization and tendon–bone integration can lead to graft failure. Mesenchymal stem cell (MSC)-derived secretome, a cell-free conditioned medium containing bioactive factors, has demonstrated promising regenerative potential in preclinical studies. This study compared six-month functional outcomes of ACL reconstruction using a peroneus longus tendon (PLT) autograft with and without adjuvant secretome injection. Methods : A double-blind randomized controlled trial enrolled 24 participants undergoing arthroscopic single-bundle ACL reconstruction with a PLT autograft, randomly assigned to receive intralesional secretome injection into the graft (secretome group, n = 12) or saline placebo (control group, n = 12). Functional outcomes were assessed preoperatively and at six months using the International Knee Documentation Committee (IKDC) Subjective Knee Evaluation Form and Tegner–Lysholm Knee Scoring Scale. Between-group comparisons used the independent-samples t-test or Mann–Whitney U test, with significance at p Results : Baseline IKDC scores were comparable (secretome 48.57 ± 4.91 vs. control 47.51 ± 4.45; p > 0.05). At six months, the secretome group showed significantly higher IKDC scores (86.89 ± 5.11 vs. 78.27 ± 3.91; p Conclusion : Adjuvant MSC-derived secretome injection during PLT autograft ACL reconstruction yielded significantly superior six-month functional outcomes. Secretome may serve as a promising cell-free biologic adjuvant to enhance graft healing and early recovery following ACL reconstruction. Level of evidence Level 1 Registry: ClinicalTrials.gov, NCT07723625, Registration date: 19 July 2026.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 74,
+      "tags": [
+        "组学与细胞",
+        "preprint",
+        "generative",
+        "bio",
+        "rna"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10642292/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298200",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Multimodal interrogation establishes the AAA+ ATPase RUVBL1 as a prognostic driver and tractable dependency in malignant pleural mesothelioma",
+      "url": "https://europepmc.org/article/PPR/PPR1298200",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Senturk S",
+        "Gungor MZ",
+        "Cakiroglu E",
+        "Eris S",
+        "Ozturk M",
+        "Bayramoglu Z",
+        "Akdemir B",
+        "Simsek GO",
+        "Karacam V",
+        "Ucan ES"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Malignant pleural mesothelioma (MPM) is an inexorably lethal malignancy, yet its therapeutic landscape remains largely devoid of actionable drivers. Here, by leveraging a stringent prioritization framework on genome-scale CRISPR dependency maps integrated with orthogonal molecular interrogation, we identify the AAA+ ATPase RUVBL1, an obligate component of the RUVBL1/2 complex, as a non-redundant and pharmacologically tractable vulnerability in MPM. This liability reflects a network-level addiction to RUVBL1/2-containing multiprotein assemblies, operating as survival hubs where subunit integrity appears indispensable. Genetic depletion of RUVBL1 induces profound cytostasis and cytotoxicity, compromising tumor cell fitness and clonogenic expansion in adherent monolayers and multicellular spheroids. Mechanistically, RUVBL1 loss triggers canonical replication stress with destabilization of the PIKK family kinases ATM and ATR. This leads to γH2AX accumulation, induction of p21, and activation of apoptotic signaling, enforcing checkpoint engagement and subsequent cell death. In contrast, ectopic RUVBL1 expression amplifies proliferative kinetics and potentiates aggressive traits, including epithelial-to-mesenchymal transition (EMT), invasion, and anchorage-independent growth. Correlative transcriptomics consensually links RUVBL1 to core oncogenic programs governing DNA damage repair, cell fitness, and EMT plasticity. Remarkably, pharmacologic inhibition of the RUVBL1/2 complex phenocopies the hallmarks of genetic perturbation. Clinically, tissue microarray profiling demonstrates significantly elevated RUVBL1 in mesothelioma, while multi-cohort analyses position it as a disease-specific marker and negative prognostic indicator. Critically, patient-derived, treatment-naïve ex vivo MPM cultures retain tumor-intrinsic RUVBL1 expression and exhibit strong sensitivity to ATPase inhibition, providing preclinical validation in patient-proximal models. Together, our findings establish RUVBL1 as a bona fide driver of MPM pathobiology and nominate the RUVBL1/2 complex as a rational target for therapeutic exploitation.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 74,
+      "tags": [
+        "组学与细胞",
+        "preprint",
+        "llm",
+        "bio",
+        "protein"
+      ],
+      "evidence_flags": [
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-9380290/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298310",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "An End-to-End Reproducible RNA-Seq Workflow from Raw Sequencing Reads to Differential Expression, Pathway Enrichment, and Biological Interpretation",
+      "url": "https://europepmc.org/article/PPR/PPR1298310",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Nasir FY",
+        "Obaid M",
+        "Udden S"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract RNA sequencing (RNA-seq) enables comprehensive characterization of transcriptional states, but reproducible analysis from raw sequencing reads to biologically interpretable results requires integration of multiple computational tools, reference resources, statistical procedures, and visualization methods. Although mature software exists for individual analytical steps, implementation of a transparent end-to-end workflow can remain challenging, particularly when analyses must be fully reproducible and accompanied by publication-quality figures and source data. We developed a modular and version-controlled bulk RNA-seq workflow spanning raw sequencing data acquisition, quality assessment, transcript quantification, gene-level summarization, differential-expression analysis, exploratory visualization, functional enrichment, and gene-set interpretation. The workflow integrates SRA Toolkit, FastQC, MultiQC, a GENCODE v25/GRCh38 decoy-aware Salmon reference, Salmon, tximport, DESeq2, apeglm, clusterProfiler, fgsea, MSigDB Hallmark gene sets, and R-based visualization. A publicly available breast-cancer RNA-seq dataset comprising six single-end libraries representing MCF-7 wild-type cells, Y537S-mutant cells, and Y537S-mutant cells treated with the BET inhibitor OTX015 was analyzed as a worked example. Differentially expressed genes were defined using a Benjamini–Hochberg adjusted P value 2 fold change ≥ 1. Gene Ontology Biological Process (GO-BP) and KEGG over-representation analyses were complemented by preranked Hallmark gene-set enrichment analysis. Salmon successfully quantified all six libraries, with mapping rates ranging from 92.80% to 94.13%. Transcript-level estimates were summarized to 57,627 genes, of which 16,503 passed expression filtering and were retained for statistical analysis. Principal component analysis showed strong separation of the three experimental conditions, with PC1 and PC2 explaining 44.51% and 31.33% of total transcriptomic variance, respectively, accounting jointly for 75.84%. ESR1 Y537S-mutant cells differed from wild-type cells at 846 genes, including 401 upregulated and 445 downregulated genes. OTX015-treated Y537S cells differed from untreated Y537S cells at 2,359 genes, including 959 upregulated and 1,400 downregulated genes, whereas comparison of OTX015-treated Y537S cells with wild-type cells identified 2,539 differentially expressed genes. Functional analyses demonstrated broader pathway-level remodeling following OTX015 exposure. Hallmark GSEA identified 11 significant gene sets for Y537S mutant versus wild type, 26 for OTX015-treated Y537S versus wild type, and 20 for OTX015-treated versus untreated Y537S cells at FDR",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 74,
+      "tags": [
+        "组学与细胞",
+        "preprint",
+        "llm",
+        "bio",
+        "transcript"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10682168/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.743880",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A Robust and Scalable Workflow for the Production of Circular Single-Stranded DNA for Genome Engineering Applications",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.743880",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Mathews, S.",
+        "Kapoor, M.",
+        "Sivacoumar, A.",
+        "Acharya, R.",
+        "Maiti, S.",
+        "Chakraborty, D."
+      ],
+      "language": "en",
+      "abstract_or_text": "Circular single-stranded DNA (cssDNA) is a versatile biomolecule with applications spanning genome editing, DNA nanotechnology, synthetic biology, molecular diagnostics, and aptamer development. Compared with linear single-stranded DNA, cssDNA offers enhanced structural stability, resistance to in-cellulo degradation by exonucleases and enables the generation of long, sequence-defined DNA molecules that are difficult to obtain through conventional chemical synthesis methods. Despite its growing utility, widespread adoption of cssDNA has been limited by the lack of accessible, scalable, and cost-effective production methods, with many existing workflows relying on specialized reagents, extensive optimization, or commercially synthesized DNA. Here, we present a streamlined, end-to-end protocol for the laboratory-scale production of high-purity cssDNA using an M13 phagemid-based system and standard molecular biology laboratory infrastructure. The workflow encompasses bacterial culture, phage amplification, nuclease treatment, phage precipitation, anion-exchange purification, and quality control, with practical optimizations to improve yield, reproducibility, and scalability. Using this approach, we routinely obtain 120 to 195 ug of purified cssDNA from 300 mL of culture supernatant. The protocol provides detailed guidance on critical process parameters, troubleshooting, and quality assessment, enabling reliable production of cssDNA suitable for a wide range of downstream molecular biology and genome engineering applications.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 73,
+      "tags": [
+        "组学与细胞",
+        "molecular biology",
+        "agent",
+        "bio",
+        "genom"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.743880",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744812",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Development and validation of an SDA-500 Anopheles stephensi cell line for molecular studies",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744812",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Kavil, S.",
+        "Jinmi, D.",
+        "Alphey, L.",
+        "Anderson, M."
+      ],
+      "language": "en",
+      "abstract_or_text": "Background: Malaria control is increasingly challenged by the urban-adapted vector Anopheles stephensi, yet molecular and cellular tools for this species remain scarce, restricting functional genomic studies and the development of genetic control strategies. To help address this gap, we established a new embryo-derived Anopheles stephensi cell line. Results: We generated and characterised a novel embryo-derived Anopheles stephensi (SDA-500) cell line capable of sustained growth in vitro. Species identity was confirmed by mitochondrial COI barcoding, and karyotypic analysis revealed a diploid chromosome complement with the presence of a Y chromosome, confirming that at least some cells are of male origin. Transfection conditions were optimized, with TransIT-PRO showing higher efficiency than Lipofectamine-based reagents. Using a dual-luciferase reporter assay, of several promoters tested the Anopheles gambiae polyubiquitin promoter exhibited the strongest and most consistent transcriptional activity in SDA-500 cells. Conclusions: The SDA-500 cell line provides a stable and genetically validated in vitro platform that supports efficient transgene expression. This resource provides a useful system for functional genomics and molecular manipulation in Anopheles stephensi and is expected to facilitate studies of mosquito biology and contribute to the development of novel malaria control strategies.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 73,
+      "tags": [
+        "组学与细胞",
+        "cell biology",
+        "agent",
+        "bio",
+        "genom"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744812",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744826",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Activity-based chemical proteomics uncovers unexpected covalent targetsof E64d and reveals a role for cysteine cathepsins in PLD3 proteostasis.",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744826",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Hertwig, M.",
+        "Kielkowski, P."
+      ],
+      "language": "en",
+      "abstract_or_text": "Catalytic activity of 5'-3' exonuclease Phospholipase D3 (PLD3) is associated with immune signaling and neurodegeneration including Alzheimer's disease. PLD3 undergoes multiple post-translational modifications and proteolytic cleavage to establish its catalytically active form. However, the proteases catalyzing the cleavage of PLD3 have remained unidentified. To study the proteolytic cleavage of PLD3, we have evaluated the small molecule covalent inhibitor E64d that blocks proteolysis catalyzed by cysteine cathepsins. To validate the selectivity of E64d, we have designed and synthetized an E64d propargyl analogue and carried out a detailed activity-based protein profiling to reveal a broad engagement of the compound with other protein targets including bleomycin hydrolase (BLMH), Kelch-like ECH-associated protein 1 (KEAP1), transcription elongation factor SPT5 (SUPT5H) and asparagine synthetase (ASNS). The specificity of the E64d-protein interactions was confirmed by biochemical assays and mass spectrometry-based site identifications. In neurons, treatment with E64d lead to about 50-fold PLD3 accumulation and dysregulation of its proteolytic cleavage, while there was only a minor overall change on the whole proteome level. Taken together, this study provides insights into previously unknown E64d selectivity and renders cysteine cathepsins responsible for PLD3 degradation in neurons. It highlights the importance of cysteine cathepsins activity in neuronal lysosomes for proper PLD3 processing and hence it suggests that their activation might be responsible for decreased PLD3 levels in neurons of patients with Alzheimer's diseases. These findings are key for further elucidation of PLD3 function in neurodegenerative diseases.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 73,
+      "tags": [
+        "组学与细胞",
+        "biochemistry",
+        "generative",
+        "bio",
+        "protein"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744826",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "medrxiv:10.64898/2026.03.26.26349205",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "Towards clinical implementation of artificial intelligence in cancer care: Concept mapping analysis of provincial workshop findings",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.03.26.26349205",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Nayyar, C.",
+        "Xu, H. H.",
+        "Bates, A. T.",
+        "Conati, C.",
+        "Hilbers, D.",
+        "Avery, J.",
+        "Raman, S.",
+        "Fayaz-Bakhsh, A.",
+        "Nunez, J.-J."
+      ],
+      "language": "en",
+      "abstract_or_text": "BackgroundArtificial intelligence (AI) has rapidly garnered interest in healthcare. Cancer cares multidisciplinary nature and high coordination demands are well positioned to benefit from AI. While attitudes toward implementation of AI in medicine have been explored generally, literature remains scarce with specific regards to AI in cancer care. This study sought to understand perspectives of both patients and professionals in guiding responsible, effective implementation of evidence-based AI in cancer care. MethodsWe conducted a workshop at a provincial Cancer Summit (Vancouver, Canada). Discussions addressed concerns, benefits, and priorities for AI in cancer care. Responses from 48 workshop participants underwent structured conceptualization by concept mapping. Sorting and rating of the resulting statements were performed by a purposively sampled 13-member expert panel. Multidimensional scaling, hierarchical cluster and subcluster analysis produced visual and quantitative maps of findings. ResultsA total of 265 statements on perceived benefits, concerns, and priorities related to the implementation of AI in cancer care were generated; a deduplicated and consolidated final set of 100 statements underwent concept mapping. Two main clusters identified pertained to \"Challenges and Safeguards for AI Implementation \" (Cluster 1) and \"Clinical Benefits and Efficiency Gains\" (Cluster 2). Subcluster analysis distinguished 8 thematic subclusters (4 per cluster). Mean importance and feasibility ratings were higher for Cluster 2, with large effect sizes for both importance (Cohens d = 0.94) and feasibility (Cohens d = 1.59). Ratings by clinical and nonclinical professionals were similar across comparisons except for Cluster 2 feasibility, rated higher by clinical participants (P = .029, Hedges g = 0.465). Further go-zone analysis classified statements according to their relative superiority/inferiority in importance and feasibility from overall average. ConclusionsExpert panel ratings were higher for statements describing clinical benefits and efficiency gains than for those describing challenges and safeguards for AI implementation in cancer care. Concept mapping analysis distinguished between workflow-aligned AI applications, perceived as ready for implementation, and system-level governance requirements requiring longer-term investment. Present findings offer initial, context-specific structuring of stakeholder perspectives that may inform the prioritization and sequencing of AI implementation efforts in cancer care, providing a foundation for validation in other settings. Contributions to the literatureO_LIWhile systematic reviews have identified barriers and facilitators to AI adoption in healthcare, this study provides the first structured prioritization framework for AI implementation in cancer care using concept mapping methodology, addressing an urgent need as AI capabilities advance rapidly in oncology. C_LIO_LIStrategic-level stakeholders distinguished between workflow-aligned domains perceived as implementation-ready and system-level domains requiring longer-term investment, enabling sequenced implementation planning that matches organizational readiness. C_LIO_LIThis approach, combining broad stakeholder statement generation with expert panel prioritization, demonstrates how integrating experiential knowledge with quantitative prioritization methods can provide implementation scientists and health system leaders with actionable frameworks for staged AI adoption strategies. C_LI",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 73,
+      "tags": [
+        "生物医学与临床",
+        "medRxiv",
+        "clinical",
+        "artificial intelligence",
+        "rna"
+      ],
+      "evidence_flags": [
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.03.26.26349205",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298463",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Lymphoma arising in the setting of inborn errors of immunity: A six-case series of XMEN-associated pediatric lymphoma",
+      "url": "https://europepmc.org/article/PPR/PPR1298463",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Gao Hx",
+        "Li N",
+        "Jin L",
+        "Zhou C",
+        "Zhang N",
+        "Huang S",
+        "Zhang M",
+        "Zhang J",
+        "Wang T",
+        "Duan Y"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Background Inborn errors of immunity (IEIs), formerly termed primary immunodeficiencies (PIDs), frequently predispose affected individuals to early-onset, recurrent malignant neoplasms as a core clinical hallmark. X-linked immunodeficiency with magnesium defect, Epstein-Barr virus (EBV) infection, and neoplasia (XMEN) represents an ultra-rare X-linked recessive IEI driven by loss-of-function variants in the MAGT1 gene. Per the classification framework issued by the Expert Committee of the International Union of Immunological Societies, XMEN is categorized under immune dysregulation disorders, and it exhibits remarkable heterogeneity across clinical presentations and immunological phenotypes. Inborn errors of immunity (IEIs) represent a large group of monogenic immune disorders characterized by impaired host defense and immune dysregulation, which confer a markedly increased risk of early-onset infection and hematological malignancy. X-linked immunodeficiency with magnesium defect, Epstei-Barr virus (EBV) infection, and neoplasia (XMEN) is an ultra-rare X-linked recessive IEI caused by loss-of-function variants in MAGT1 . As classified by the International Union of Immunological Societies, XMEN belongs to the immune dysregulation disorder group and exhibits extensive interindividual clinical and immunological heterogeneity. Although the link between MAGT1 deficiency and EBV-driven lymphoproliferative disorders is well established, the full phenotypic and mutational spectrum of pediatric XMEN-associated lymphoma remains incompletely defined. Case presentation This retrospective study enrolled six male pediatric patients diagnosed with XMEN-related lymphoma. All patients harbored novel, previously unreported MAGT1 pathogenic variants. Notably, the underlying IEI was not identified until recurrent lymphoma episodes or persistent refractory EBV viremia in most cases. One patient presented with persistent unexplained hypoxemia, representing a previously unrecognized clinical phenotype of XMEN disease. In several patients, lymphoma occurred as the inaugural manifestation without classic immunodeficiency symptoms, further delaying genetic diagnosis. All patients received individualized chemotherapy according to pathological subtypes. Two patients underwent allogeneic hematopoietic stem cell transplantation (HSCT). One patient died 18 months post-transplant due to severe chronic pulmonary graft-versus-host disease (cGVHD), whereas the other patient remains stable more than two months after HSCT. The remaining four patients maintain sustained complete remission after chemotherapy. Conclusions This case series expands the mutational and phenotypic spectrum of pediatric XMEN-associated lymphoma. We demonstrate distinct phenotypic stratification according to MAGT1 variant types: frameshift insertion/deletion variants leading to complete protein truncation correlate with more severe, recurrent, and protracted disease courses compared with single-nucleotide or intronic variants. We report, for the first time, persistent immune-mediated hypoxemia as a novel XMEN manifestation. Our findings emphasize the necessity of comprehensive genetic and immunological evaluations for IEIs in individuals presenting with recurrent infections and hematological malignancies.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 73,
+      "tags": [
+        "生物医学与临床",
+        "preprint",
+        "llm",
+        "protein",
+        "rna"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10382310/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298355",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath",
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Trustworthy Agentic AI: A Rapid, PRISMA-Informed Evidence Review of Safety, Explainability, Alignment, and Human Oversight in Autonomous AI Systems",
+      "url": "https://europepmc.org/article/PPR/PPR1298355",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Garike V"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Agentic artificial intelligence is rapidly emerging as a paradigm in which large language models, retrieval systems, memory modules, software tools, and multi-agent coordination mechanisms are integrated to support autonomous or semi-autonomous decision-making. Unlike conventional AI systems that primarily produce predictions or responses, agentic AI systems can interpret goals, decompose tasks, retrieve external evidence, invoke tools, interact with digital environments, communicate with other agents, and execute multi-step workflows. These capabilities introduce trustworthiness challenges because failures may propagate from generated text into planning, tool calls, workflow execution, external communication, and real-world decision support. This paper presents a rapid, PRISMA-informed evidence review of trustworthy agentic AI across a primary corpus of 33 studies, complemented by one additional structural reference used only to model manuscript organization, focusing on safety, explainability, alignment, human oversight, fairness, privacy, security, evaluation, and governance. The review reports transparent search and screening procedures, a seven-item quality assessment applied to every primary study, and quantitative synthesis of publication trends, source types, and trust-dimension coverage. The paper proposes the T-SAFE taxonomy, organizing trustworthy agentic AI around Transparency, Safety, Alignment, Fairness, and Explainability, and introduces a layered trustworthy agentic AI framework linking environment interaction, memory, retrieval, tool use, reasoning, trust controls, governance, and human oversight. The taxonomy is explicitly positioned against fifteen related academic, industry, and regulatory frameworks published between 2023 and 2026, including four closely related systematic surveys published in 2026, to clarify its specific contribution. Quantitative analysis of the reviewed corpus reveals that Safety dominates current research emphasis (52% of studies) while Fairness receives no primary treatment in any reviewed study, a gap that directly motivates the fifth T-SAFE dimension. The review identifies open challenges in agent safety benchmarking, explainable tool use, secure retrieval-augmented agents, lifecycle alignment monitoring, and human-in-command governance, discusses appropriate manuscript-type positioning for this rapid-review methodology, and explicitly recommends formal multi-database replication as a next step toward a comprehensive systematic literature review.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 73,
+      "tags": [
+        "方法与模型",
+        "preprint",
+        "artificial intelligence",
+        "language model",
+        "rna"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "evaluation",
+        "security"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10582034/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298447",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Artificial intelligence use, perceptions, and educational needs among medical undergraduates at a Sri Lankan medical faculty: A cross-sectional survey",
+      "url": "https://europepmc.org/article/PPR/PPR1298447",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Andadola A",
+        "Walallawita W",
+        "Perera P",
+        "Mendis S"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Background Artificial intelligence (AI) is rapidly transforming medicine, yet medical curricula, particularly in low- and middle-income countries, have not systematically integrated AI competencies. Understanding medical students' AI use, competence, and perceptions is essential for evidence-based curriculum development. Objective To investigate AI tool usage, self-rated AI competence, and attitudes towards AI in medical education, physician roles, and patient care among medical undergraduates at the Faculty of Medicine, Sabaragamuwa University of Sri Lanka (SUSL), and to compare findings across year groups and gender. Methods A cross-sectional online survey was conducted among Years 1–5 medical undergraduates at SUSL in May 2025. The questionnaire, adapted from previously published international surveys, assessed demographics, AI tool usage, self-rated competence, and 12 Likert-scale attitudinal items covering curriculum integration, physician roles, and patient care. Descriptive statistics, Kruskal–Wallis H-tests, Mann–Whitney U-tests, and chi-square tests were used for analysis. Results A total of 369 responses were analysed. AI adoption was almost universal (99.2%; 366/369). ChatGPT was the most frequently used tool (98.1%), followed by Google Gemini (34.9%), DeepSeek (20.2%), and Microsoft Copilot (6.2%). The main uses of AI were subject reference (89.3%), general information retrieval (72.9%), assignment assistance (50.8%), and writing improvement (39.6%). ChatGPT showed the highest self-rated competence, with 92.4% reporting good or higher competence. Among AI-supported medical applications, Medscape was used by 77.9% of respondents, followed by UpToDate (37.4%) and WebMD/WebMD Symptom Checker (15.4%). Most students agreed that AI could enhance learning in preclinical (85.1%), paraclinical (77.8%), and clinical (68.6%) subjects. Significant differences across year groups were observed for attitudes towards curriculum integration (Kruskal–Wallis H = 29.27, p p = 0.010), with preclinical students expressing more favourable attitudes. Conclusions Medical undergraduates demonstrated near-universal AI adoption despite limited formal training. Preclinical students were more receptive to AI integration than clinical students. These findings support the integration of structured, ethically grounded AI education into undergraduate medical curricula to promote the safe, effective, and responsible use of AI in future clinical practice.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 73,
+      "tags": [
+        "生物医学与临床",
+        "preprint",
+        "artificial intelligence",
+        "rna",
+        "clinical"
+      ],
+      "evidence_flags": [
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10590390/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298388",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "miR-26a and miR-125b as a promising biomarker for the diagnosis of RRMS patients",
+      "url": "https://europepmc.org/article/PPR/PPR1298388",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Mohammadzadeh M",
+        "Jalali PS",
+        "Zafari V",
+        "Bornehdeli S",
+        "Shanehbandi D",
+        "Shaafi S",
+        "Amlashi SG"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Background MicroRNAs have a profound impact on many molecular mechanisms and are dysregulated in some neurodegenerative diseases; they are important contributors to MS pathogenesis. Existing studies indicate that miR-26a and miR-125b play essential roles in MS pathogenesis. Therefore, this survey focuses on evaluating the expression of miR-26a and miR-125 b in MS patients in Iran. Methods A total of 150 blood specimens were acquired from 75 patients diagnosed with relapsing-remitting MS (RRMS) and 75 healthy individuals for this study. Subsequently, using the Ficoll-Hypaque density gradient technique, Peripheral blood mononuclear cells (PBMCs) were separated from both groups. Finally, qRT-PCR was performed on the extracted total RNA. Results The findings demonstrate a significant increase in miR-26a (P = 0.0001) and miR-125b (P = 0.019) expression in RRMS patients compared with healthy individuals. Additionally, ROC curve analysis revealed an area under the curve (AUC) of 0.678 with P = 0.0001 for miR-26a, and AUC = 0.7 with P = 0.0001 for miR-125b. Conclusion This study indicates that abnormal expression of miR-26 and mir-125b is likely to serve as diagnostic biomarkers for MS, but further research is needed to confirm this.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 73,
+      "tags": [
+        "生物医学与临床",
+        "preprint",
+        "generative",
+        "bio",
+        "rna"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10529707/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.1101/2025.07.16.665148",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Self-supervised generation of realistic training data enables nanoscale localization in challenging conditions",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.07.16.665148",
+      "published_at": "2026-08-16",
+      "updated_at": "2026-08-16",
+      "creators": [
+        "Goldenberg, O.",
+        "Daniel, T.",
+        "Xiao, D.",
+        "Shalev ezra, Y.",
+        "Alalouf, O.",
+        "Shechtman, Y."
+      ],
+      "language": "en",
+      "abstract_or_text": "Localization microscopy has overcome the diffraction limit, i.e. the conventional resolution limit of a microscope, enabling nanoscale biological imaging by precisely determining the positions of individual emitters such as single fluorescent molecules. However, the performance of deep learning methods, commonly applied to these tasks, depends significantly on the quality of training data, typically generated through simulation. Creating simulations that perfectly replicate experimental conditions remains challenging, resulting in a persistent simulation-to-experiment gap. To bridge this gap, we propose a physics-informed generative model leveraging self-supervised learning directly on experimental data. Our model extends the Deep Latent Particles (DLP) framework by incorporating a physical model of the Point Spread Function (PSF; the image of a single point source in the microscope) into the decoder, enabling it to disentangle learned realistic environments from emitters. Trained directly on unlabeled experimental images, our model intrinsically captures realistic background, noise patterns, and emitter characteristics. The decoder thus acts as a high-fidelity generator, producing fully labeled, realistic training images with known emitter locations. Using these generated datasets significantly improves the performance of supervised localization networks, particularly in challenging scenarios such as complex backgrounds and low signal-to-noise ratios. We demonstrate our approach on a variety of experimentally measured microscopy data, including super-resolution imaging in 2D and 3D and particle tracking in live cells, showing substantial improvements in localization precision and emitter detection.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 72,
+      "tags": [
+        "方法与模型",
+        "bioengineering",
+        "deep learning",
+        "generative",
+        "bio",
+        "cell"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "experimental",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2025.07.16.665148",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.07.743267",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "GESTURE: Unsupervised Genotype-specific Behavioral Phenotyping in Rodents via Graph-based Representation Learning",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.07.743267",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Qiu, R.",
+        "Farkhani, S.",
+        "Janjua, T.",
+        "Canko, E.",
+        "Pedersen, K.",
+        "Gastambide, F.",
+        "Basirat, A.",
+        "Ebbesen, C. L.",
+        "Richter, U."
+      ],
+      "language": "en",
+      "abstract_or_text": "Objective quantification of complex animal behavior is fundamental to neuroscience and pharmacology, yet extracting biologically meaningful insights from high-dimensional pose data remains challenging. This is especially true for subtle phenotypic differences caused by genetic mutations, which frequently evade conventional evaluation metrics. Here, we introduce GESTURE, an unsupervised, graph-based deep generative framework that autonomously discovers and quantifies behavioral structure from raw pose dynamics. Analyzing mice with motor dysfunction alongside wild-type controls, GESTURE identifies a shared vocabulary of behavioral motifs. We show that genotype-specific differences arise from the differential usage of these motifs, yielding distinct \"behavioral fingerprints\" that reliably separate genotypes without supervision. By modeling behavior as a sequence rather than a static partition, GESTURE measures temporal organization directly: affected animals held motifs longer and transitioned more predictably, revealing a slowing and stereotyping of behavioral sequences rather than a simple reduction in activity. Importantly, GESTUREs graph-based representation enables training across multiple recordings and embedding behaviors into a shared latent space, supporting robust cross-animal comparisons and future cross-experiment alignment. Furthermore, automatically derived metrics of behavioral divergence track the temporal dynamics of expert-annotated disability scores, reaching agreement comparable to independent human raters. Finally, node- and edge-level explainability analyses indicate that the models latent representations are shaped by a biologically plausible focus on the animals core motor scaffold. Together, these results position GESTURE as an interpretable and scalable framework for automated behavioral phenotyping, linking genetic perturbation to quantitative behavioral phenotypes. Author summaryHow can we measure, objectively, the subtle changes in behavior caused by a disease-causing mutation? Such changes are hard for human observers to judge consistently, and scoring them by hand is slow and does not scale. We studied mice carrying a mutation in a calcium-channel gene. In people, mutations in the same gene cause episodic ataxia and related movement disorders. We developed GESTURE, which learns recurring patterns of movement directly from video of a freely moving mouse, without being told what to look for. It treats the body as a set of connected landmarks and follows how their arrangement changes over time, discovering a shared vocabulary of movements. Affected and healthy mice drew on the same vocabulary but used it differently. Each animals pattern of use formed a distinctive \"behavioral fingerprint\", and these fingerprints alone identified which animals carried the mutation --in every case. They also revealed something a simple activity measure would miss: affected mice hold each movement longer, and string movements together more predictably. A severity score read automatically from them matched expert judgement as closely as two trained raters matched each other, and returned the same answer every time.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 72,
+      "tags": [
+        "生物医学与临床",
+        "neuroscience",
+        "generative",
+        "representation learning",
+        "bio",
+        "disease"
+      ],
+      "evidence_flags": [
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.07.743267",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.08.743502",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Automated generation of a gene perturbation transcriptomic atlas using large language models",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.08.743502",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Soul, J.",
+        "Young, D. A."
+      ],
+      "language": "en",
+      "abstract_or_text": "Public transcriptomic repositories contain thousands of gene perturbation experiments, a valuable resource for understanding gene function, but perturbation metadata is not structured, which blocks systematic reuse. Existing perturbation atlases depend on expert manual curation, so they are costly to maintain and infrequently updated, while automated grouping approaches neither identify which samples form the perturbation arm nor recover the perturbed gene. Here we develop an automated pipeline that uses large language models to find single-gene perturbation experiments in NCBI-GEO and reconstruct their case-control sample groupings, along with the perturbed gene, perturbation type and cell line as structured, ontology-normalised fields. We manually curated 3,300 GEO experiments with sample-level case-control assignments and release these as an open benchmark (2,400 training, 600 validation, 300 temporally held-out test). Reasoning models and task-specific finetuning substantially improved identification of valid perturbation groups, with the best model reaching precision 0.925 and recall 0.836 on the test set. Applied at scale, the pipeline generated an atlas of 6,802 gene perturbation expression signatures from 4,453 GEO experiments, covering 2,907 uniquely perturbed genes. An R package, perturbMatch, supports exploration of the atlas and querying of user-supplied expression signatures against it using similarity scoring, so users can identify experiments that recapitulate a transcriptional state of interest.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 72,
+      "tags": [
+        "组学与细胞",
+        "bioinformatics",
+        "language model",
+        "transcript",
+        "cell"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "release"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.08.743502",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.09.743788",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Learning from human and chemical languages to predict biological function",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.09.743788",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Kosonocky, C. W.",
+        "Kaderabkova, N.",
+        "Kim, K.",
+        "Mahmood, A. J. S.",
+        "Dunmyre, A.",
+        "Woolley, P.",
+        "Xing, K.",
+        "Winkler, D.",
+        "Babu, T.",
+        "Kaderabek, F.",
+        "Sessler, J. L.",
+        "Anslyn, E. V.",
+        "Marcotte, E. M.",
+        "Zhang, Y. J.",
+        "Ellington, A. D.",
+        "Mavridou, D. A. I."
+      ],
+      "language": "en",
+      "abstract_or_text": "Understanding how molecular structure encodes biological function remains a grand challenge in drug discovery. Here, we present PubCheF-1, a deep learning model that predicts literature-derived biological function directly from chemical structure. PubCheF-1 was trained on a dataset linking molecules to labels derived from the scientific articles in which they appear, a strategy that connects disparate compounds through the language used to describe their functionalities. When tasked with identifying inhibitors of {beta}-lactamases, including enzymes considered largely refractory to inhibition, PubCheF-1 predicted structurally distinct compounds that collectively have activity against all {beta}-lactamase classes. Furthermore, hit compounds directly bind the enzyme active site, restore antibiotic efficacy in multidrug-resistant high-priority pathogens, and demonstrate potent activity in animal infection models. Together, these findings establish that machine learning-based prediction of biological function derived from the language of scientific literature allows the identification of bioactive molecules at high hit rates, thereby accelerating therapeutic discovery.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 72,
+      "tags": [
+        "蛋白质与结构",
+        "bioinformatics",
+        "machine learning",
+        "deep learning",
+        "bio",
+        "drug"
+      ],
+      "evidence_flags": [
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.09.743788",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.12.744371",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A leakage-controlled benchmark shows apparent codon-language-model advantages in synonymous-variant prediction are evaluation artifacts",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.744371",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Liang, Y.",
+        "Zhu, W.",
+        "Liang, H.",
+        "Pan, X."
+      ],
+      "language": "en",
+      "abstract_or_text": "Synonymous codon choices shape mRNA stability, translation, and folding, and codon language models (cLMs) are increasingly reported to read this biology from sequence. However, when a true signal is thin relative to a confounding one, standard evaluation protocols can manufacture the reported gain rather than measure it, and we show this is what has happened for cLMs on synonymous-variant prediction. Under random splits, the codon advantage is large: tokenization gaps of +2.3~14.3 percentage points (pp) and pretrained codon leads of +8.0 pp over the strongest protein model (ESM-1b) and up to +10.0 pp over ESM-2. We find these numbers are properties of the measurement, not the models. A memorization baseline outscores every neural model; the advantage collapses under gene-held-out evaluation; the sole surviving residual dissolves into six defensible probe defaults; and the synonym-randomization drop that appeared to confirm true signal is itself variance under pooled analysis (0.3 pp, p = 0.49). No advantage survives leakage-controlled evaluation with pooled statistics. We release CodonBench, a leakage-controlled benchmark with an emergent audit cascade, and characterize how artifacts accumulate at every pipeline step. A thin signal (I({sigma};Y|A) {approx} 0.04 bits) may exist but is not reliably detectable at current sample sizes; we specify what detecting it would require.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 72,
+      "tags": [
+        "方法与模型",
+        "bioinformatics",
+        "language model",
+        "neural",
+        "bio",
+        "protein"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "evaluation",
+        "release"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.12.744371",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.10.743848",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Autonomous Spatial Transcriptomics Analysis (ASTA): Demonstrating Performance Improvements through Clustering, Biological Annotation, and AI-Driven Discovery",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.10.743848",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Zhang, M.",
+        "Roe, M.",
+        "Pollett, C.",
+        "ANDREOPOULOS, W. B."
+      ],
+      "language": "en",
+      "abstract_or_text": "Spatial transcriptomics keeps measurement of gene expression while preserving spatial context, yet traditional analysis methods face challenges in computational efficiency, biological interpretability, and autonomous discovery. This project presents a framework solving these issues through three parts: (1) an ensemble clustering system achieving 66.7% improvement over baseline average and 23.9% over best single method with silhouette score of 0.540 and statistical significance (p = 0.0032, Cohen's d = 1.82); (2) a knowledge-based clustering framework that annotates 88.6% of cells across 8 ovarian cell types using 428 marker genes; and (3) a GPT-4o-mini-powered autonomous agent that generated 3 biological hypotheses with validations.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 72,
+      "tags": [
+        "组学与细胞",
+        "bioinformatics",
+        "agent",
+        "bio",
+        "transcript"
+      ],
+      "evidence_flags": [
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.10.743848",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298441",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "A Multidimensional Stacking Ensemble Framework for Predicting Foodborne Disease Risks Originating from Animal Sources",
+      "url": "https://europepmc.org/article/PPR/PPR1298441",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Jin C",
+        "Zhou W",
+        "Zhang Y",
+        "Lan J",
+        "Wang J",
+        "Qi X"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Foodborne diseases impose a major global public health burden, yet existing surveillance systems remain largely reactive. This study develops a multidimensional machine learning framework for predicting disease risks associated with animal products in Zhejiang Province, China. Drawing on 175,803 patient surveillance records collected between 2014 and 2023, supplemented by diverse meteorological, environmental, and socioeconomic indicators, we constructed a systematic feature engineering pipeline. We comprehensively evaluated seven predictive models, including algorithms based on decision trees and classical time series approaches. Ultimately, a hierarchical Stacking ensemble approach, integrating XGBoost, LightGBM, and Random Forest with a Ridge regression secondary algorithm, demonstrated superior predictive performance on the independent testing set. This optimal ensemble recorded a Mean Absolute Percentage Error of 11.30\\%, alongside a Mean Absolute Error of 218.90 and a Root Mean Square Error of 273.65, significantly outperforming all individual baseline models. Furthermore, an integrated SHapley Additive exPlanations (SHAP) analysis identified three critical predictive dimensions: annual seasonality, spatial heterogeneity across prefectures, and specific food source contexts. Within these contexts, catering venue types and bulk processing methods emerged as the strongest predictive indicators. These findings definitively demonstrate that integrating advanced ensemble learning with explainable artificial intelligence can transition epidemiological surveillance from reactive monitoring to proactive risk stratification, providing a highly scalable template for proactive food safety governance.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 72,
+      "tags": [
+        "生物医学与临床",
+        "preprint",
+        "artificial intelligence",
+        "machine learning",
+        "rna",
+        "disease"
+      ],
+      "evidence_flags": [
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-9260118/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298528",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Proteomic analysis reveals a 4-methylumbelliferone-induced metabolic shift accompanied by reduced CD147 expression and MMP-2 activity in U937 cells",
+      "url": "https://europepmc.org/article/PPR/PPR1298528",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Díaz M",
+        "Ledesma MM",
+        "Lombardo T",
+        "Pibuel M",
+        "Hajos SE",
+        "Argüello RJ",
+        "Valacco P",
+        "Papademetrio DL",
+        "Lompardía S"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Acute Myeloid Leukemia (AML) is a hematological malignancy with poor therapeutic outcomes, as up to 50% of patients relapse or become refractory to treatment. The identification of novel therapeutic strategies therefore remains an unmet clinical need. 4-Methylumbelliferone (4MU), a clinically approved inhibitor of hyaluronan synthesis, has demonstrated antitumor properties in several cancers and represents a promising candidate for drug repositioning. To explore its mechanisms of action in AML, we employed the U937 cell line, in which 4MU inhibits proliferation without affecting hyaluronic acid synthesis, enabling the study of HA-independent pathways. Proteomic profiling revealed that 4MU modulated proteins primarily associated with cellular metabolism. Consistently, SCENITH assays demonstrated reduced glycolytic activity accompanied by increased mitochondrial dependence, suggesting a metabolic shift toward OXPHOS, along with enhanced utilization of glutaminolysis and fatty acid oxidation pathways. Among the differentially expressed proteins, CD147 was selected for further validation because of its established role in metabolic reprogramming and tumor progression. Here, we demonstrate for the first time that 4MU downregulates CD147 expression in U937 cells, as confirmed by flow cytometry and immunofluorescence, and reduces MMP-2 activity. Together, our findings uncover a novel HA-independent mechanism of 4MU action characterized by metabolic reprogramming, CD147 downregulation, and reduced MMP-2 activity, supporting its repositioning as a therapeutic agent for AML.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 72,
+      "tags": [
+        "生物医学与临床",
+        "preprint",
+        "agent",
+        "protein",
+        "clinical"
+      ],
+      "evidence_flags": [
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10593328/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744773",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Deep learning-based identification and quantification of rare circulating hybrid cells in orthotopic pancreatic cancer models",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744773",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Rounds, C.",
+        "Ravi, D.",
+        "Huang, G.",
+        "Mengesha, B.",
+        "Tran, S.",
+        "Garcia, A.",
+        "Rueb, N.",
+        "Chang, Y. H.",
+        "Park, B. S.",
+        "Wong, M.",
+        "Gibbs, S. L."
+      ],
+      "language": "en",
+      "abstract_or_text": "Significance: Rare-cell identification in fluorescence microscopy remains challenging because targets are sparse and background varies between specimens. Combining specimen-specific fluorescence enrichment with image classification may enable efficient and more specific automated detection of rare cells. Aim: We developed a two-stage framework to identify and quantify candidate rare circulating hybrid neoplastic cells (CHCs, ECAD+/CD45+) in peripheral blood mononuclear cell (PBMC) preparations from tumor-bearing and tumor-naive mice. Approach: PBMCs from 28 mice were imaged by multichannel fluorescence microscopy. Matched unstained samples established animal-specific ECAD and CD45 background distributions for candidate cell enrichment. Blinded multi-annotator consensus labels were used to train a convolutional neural network (CNN) from DAPI, ECAD, and CD45 image crops. Generalization was evaluated by leave-one-animal-out validation across 10 random initializations. Final classification used a 10-model ensemble, and rare-cell burden was compared between groups using negative-binomial regression with total segmented-cell count as an exposure. Results: Of the 1,065,512 segmented cells, enrichment retained 10,176 candidates (0.96%), reducing the search space by >99%. Four of five evaluable tumor-bearing animals showed reproducible held-out discrimination, with median quantified area under the receiver operator characteristic curve (AUROCs) of 0.918 - 0.951; one animal was a reproducible outlier (median AUROC, 0.338). Ensemble deployment identified 157.94 positive-consensus cells per 50,000 segmented cells in tumor-bearing animals versus 49.55 in controls. The estimated rare-cell rate was 3.15-fold higher in tumor-bearing animals (95% CI, 0.91 - 10.99; two-sided p=0.071; prespecified one-sided p=0.036). Conclusions: Specimen-specific fluorescence enrichment combined with supervised image classification reduced the cellular search space and enabled automated quantification of a rare CHC (ECAD+/CD45+) phenotypes. Cross-animal validation also identified specimen-specific generalization failure, highlighting the importance of biological-specimen-level validation.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 71,
+      "tags": [
+        "方法与模型",
+        "cancer biology",
+        "deep learning",
+        "neural",
+        "bio",
+        "cell"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744773",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.10.743941",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Noncoding regulatory mutations contribute to the aberrant gene expression in neuroblastoma.",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.10.743941",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Jones, B.",
+        "Seth, G.",
+        "Robertson, A. N.",
+        "Sen, A."
+      ],
+      "language": "en",
+      "abstract_or_text": "Comprehensive analyses of whole-genome and exome sequencing data from high-risk neuroblastoma tumors have revealed relatively few recurrent, clinically actionable protein-coding driver mutations at initial diagnosis. This observation suggests that noncoding genetic variation, which can alter regulatory sequences like promoters, enhancers and insulators and influence gene expression, may play a critical role in neuroblastoma tumorigenesis. By integrating allele-specific expression (ASE) with somatic mutation profiles from two independent neuroblastoma patient cohorts, we identified a significant and reproducible enrichment of noncoding single-nucleotide variants (SNVs) within regulatory regions of neuroblastoma-specific ASE (NB-ASE) genes. Notably, 63% of these variants disrupted transcription factor binding sites (TFBSs), with FOXJ2 being the most frequently affected transcription factor (TF) across both cohorts. Supporting a functional link between FOXJ2 TFBS SNVs and gene expression dysregulation, NB-ASE genes harboring these variants were significantly enriched among FOXJ2 co-expression partners. These findings nominate FOXJ2 dysregulation via TFBS mutations as a potentially crucial molecular mechanism contributing to aberrant gene expression profiles of neuroblastoma. To prioritize high-impact regulatory mutations associated with NB-ASE genes, we also performed extensive deep learning-based functional predictions and identified 297 TFBS mutations predicted to significantly alter chromatin state. Among these were variants predicted to deactivate enhancers regulating the tumor suppressor genes CASZ1 and PRDM11, both detected in tumors lacking copy-number alteration at the locus, suggesting an alternative, copy number-independent mechanism of downregulation. Collectively, our findings demonstrate that integrating ASE with somatic mutation profiles is a powerful strategy for detecting and interpreting regulatory variations in cancer genomes.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 71,
+      "tags": [
+        "组学与细胞",
+        "bioinformatics",
+        "deep learning",
+        "protein",
+        "genom"
+      ],
+      "evidence_flags": [
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.10.743941",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1299013",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Effects of esketamine combined with parecoxib sodium on early postoperative pain and inflammatory biomarkers after video-assisted thoracoscopic lung resection: a single-center, four-arm randomized controlled trial",
+      "url": "https://europepmc.org/article/PPR/PPR1299013",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-16",
+      "creators": [
+        "Li J",
+        "Zhang J",
+        "Yan D"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Background Postoperative pain and inflammation associated with one-lung ventilation may impair recovery after video-assisted thoracoscopic lung resection. We evaluated esketamine combined with parecoxib sodium for early analgesia and systemic postoperative inflammation. Methods In this single-center, four-arm randomized controlled trial in Chongqing, China, 100 patients undergoing video-assisted thoracoscopic lobectomy or segmentectomy were assigned 1:1:1:1 to parecoxib sodium (P group), esketamine (S group), both agents (PS group), or saline control (N group). The P group received intravenous parecoxib sodium 0.5 mg/kg 20 min before incision; the S group received an esketamine infusion of 0.25 mg/kg/h from anesthesia induction until 30 min before surgery ended; and the PS group received both interventions. The primary outcome was resting visual analog scale (VAS) score 30 min after extubation and at 6, 12, 24, and 48 h. Secondary outcomes included interleukin-6 (IL-6), C-reactive protein (CRP), hemodynamics, adverse events, and pulmonary complications. Results Of 100 randomized participants, 92 (23 per group) were included in the complete-case analysis. Exploratory overall comparisons showed between-group differences in resting VAS scores at 6 and 12 h (P Conclusions The combined regimen was associated with lower mean resting pain scores and inflammatory biomarker levels at several early postoperative time points. These exploratory findings support further evaluation of esketamine plus parecoxib sodium as a multimodal perioperative regimen. Trial registration: Chinese Clinical Trial Registry, ChiCTR2500095107. Registered 2 January 2025.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 71,
+      "tags": [
+        "生物医学与临床",
+        "preprint",
+        "agent",
+        "bio",
+        "protein"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10513938/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1299022",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Development and Validation of an MRI-Based Radiomics Model Integrating Spinal Canal and Paraspinal Muscle Features for Predicting Early Functional Recovery After Unilateral Biportal Endoscopic Decompression in Lumbar Spinal Stenosis",
+      "url": "https://europepmc.org/article/PPR/PPR1299022",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-16",
+      "creators": [
+        "Tang FT",
+        "Feng z",
+        "Wen BW",
+        "Fu CF",
+        "Wu QW",
+        "Ding TD"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Purpose To develop and validate machine learning models based on single-sequence T2-weighted fat-suppressed (T2-FS) magnetic resonance imaging (MRI) radiomic features extracted from the spinal canal (SC) and the paravertebral muscle (PVM) compartment for predicting early functional recovery following single-level unilateral biportal endoscopic decompression in patients with lumbar spinal stenosis. Methods A total of 175 patients with LSS who underwent single-level UBE decompression between January 2024 and April 2026 were retrospectively enrolled. The primary endpoint was achievement of the minimum clinically important difference (MCID) in the Oswestry Disability Index (ODI) at two months postoperatively, defined as an absolute improvement of at least 12.8 points, or a relative improvement of at least 50% for patients with a preoperative ODI of 26 or lower. Radiomic features were extracted from preoperative T2-FS axial images using PyRadiomics within manually segmented SC and PVM regions of interest (ROI). Three feature sets were constructed, namely SC alone, PVM alone, and Combined set. After sequential feature selection via Spearman correlation analysis, recursive feature elimination (RFE), and the least absolute shrinkage and selection operator (LASSO), seven machine learning classifiers were trained and compared. The model’s performance was evaluated using the area under the curve (AUC) metric. Results Among the 175 patients, 130 (74.3%) achieved MCID and 45 (25.7%) did not. After feature selection, six radiomic features were retained for the SC model, six for the PVM model, and eight for the Combined model. In the independent test cohort, the Combined model using Gaussian Naive Bayes (GNB) yielded the highest AUC of 0.897 (95% CI: 0.744–1.000), outperforming the best SC model (Random Forest; AUC 0.861, 95% CI: 0.720–0.984) and the best PVM model (Logistic Regression; AUC 0.710, 95% CI: 0.535–0.865). Calibration curves and decision curve analysis (DCA) confirmed the Combined model’s favorable calibration and the greatest net clinical benefit across a broad range of threshold probabilities. Conclusion A radiomics model combining SC and PVM features derived from a single T2-FS MRI sequence predicts early functional recovery after Unilateral biportal endoscopic decompression with good discriminatory performance, surpassing models built on either region alone. This noninvasive imaging tool holds promise for preoperative risk stratification in patients undergoing minimally invasive lumbar spine surgery.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 71,
+      "tags": [
+        "生物医学与临床",
+        "preprint",
+        "machine learning",
+        "omics",
+        "clinical"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10294206/v1",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1299202",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "A Stochastic Neural Mass Model for Cortical Beta Bursts in Parkinson’s Disease",
+      "url": "https://europepmc.org/article/PPR/PPR1299202",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-16",
+      "creators": [
+        "Ross J",
+        "Skelly B",
+        "Seedat Z",
+        "Brookes M",
+        "Coombes S",
+        "Byrne Á"
+      ],
+      "language": "en",
+      "abstract_or_text": "Beta-band (13–30 Hz) oscillations are increasingly understood to occur as transient \"bursts\" rather than sustained rhythms, with altered burst dynamics, specifically increased duration and power alongside reduced burst rates, in patients with Parkinson’s disease (PD). In this study, we utilise resting state magnetoencephalography (MEG) data from healthy adults to quantify the temporal fluctuations in the beta-band, and examine the distributions of burst statistics. We then fit a stochastic next-generation neural mass model to these empirical statistics using a Genetic Algorithm. Systematic parameter sweeps reveal that reducing background drive to excitatory and inhibitory neuronal populations reproduces the altered burst statistics observed in PD. Crucially, we show that strengthening synaptic coupling can counteract these deficits and restore healthy bursting dynamics. Together, this work establishes a computational framework linking cellular-level mechanisms to macroscale burst statistics, and highlights potential targets for therapeutic neuromodulation in movement disorders.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 71,
+      "tags": [
+        "生物医学与临床",
+        "preprint",
+        "neural",
+        "disease",
+        "cell"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.10.743870",
+        "pmid": ""
+      }
+    },
+    {
+      "id": "europepmc:ppr1298827",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Making Broad Evidence Synthesis Feasible: An LLM Screening Agent for Meta-Analyses Applied To Suicide Prevention",
+      "url": "https://europepmc.org/article/PPR/PPR1298827",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Dobin D",
+        "Witmer AM",
+        "Sweeney F",
+        "Ryan T",
+        "Cimino A",
+        "Haroz EE",
+        "Nestadt PS",
+        "Wilcox HC"
+      ],
+      "language": "en",
+      "abstract_or_text": "Importance. Systematic reviews and meta-analyses inform suicide-prevention policy and practice, but broad database searches are difficult to screen manually. This limits capture of upstream interventions, such as economic policies, with indirect effects on suicide. Reliable automated screening could make broader and more comprehensive evidence syntheses feasible. Objective: To develop and validate ScreenAgent, a large language model (LLM) agent for title and abstract screening, and a review-specific method for prospectively estimating screening performance. Design: , Setting, and Participants. ScreenAgent was validated internally on a prospective meta-analysis, and externally on two published systematic reviews. The correct include and exclude decisions followed standard systematic-review screening methodology. Exposures. ScreenAgent, an LLM agent returning structured include-or-exclude decisions. Records it marked for inclusion were re-checked by a second, cascade pass using a higher-effort LLM. For the external reviews, the agent's prompt was tuned automatically on a small set of labeled examples. Main Outcomes and Measures. We calculated sensitivity, specificity, workload reduction (the percentage of records removed from human review), and agent-versus-human reliability via Cohen kappa. Sensitivity was estimated by direct comparison (internal) and 5-fold cross-validation (external). Results: . In the internal validation, ScreenAgent identified 43 of 44 eligible studies (sensitivity 97.7%; 95% CI, 88.2%-99.6%) with a generic prompt applied without any review-specific optimization, specificity 98.0%, and a measured full-corpus workload reduction of 99.4%. The cost was 855.91 for the full 201,064-record corpus (0.43 US cents per record). Agent-versus-human-consensus agreement exceeded human-versus-human agreement (Cohen kappa 0.75 vs 0.64; percent agreement 97.3% vs 95.4%). For two external validation studies, automatic tuning resulted in a cross-validated sensitivity of 95.9% (95% CI, 90.0%-98.4%) and 97.4% (90.9%-99.3%), with workload reductions of 97.4% and 98.4%. Conclusions: and Relevance. Suicide prevention efforts often require rapid consolidation of evidence because of the inherent challenges of single studies trying to prevent rare outcomes. On both internal and external validation sets, ScreenAgent identified nearly all eligible studies with human-level reliability for a fraction of a US cent per record while keeping human reviewers as the final arbiters. By making broad searches feasible and screening performance measurable beforehand, this approach can serve as a transparent methodology to strengthen the speed at which we can inform and advance suicide prevention efforts.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 71,
+      "tags": [
+        "方法与模型",
+        "preprint",
+        "language model",
+        "llm",
+        "rna"
+      ],
+      "evidence_flags": [
+        "prospective",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.12.26360335",
+        "pmid": ""
+      }
+    }
+  ]
 }

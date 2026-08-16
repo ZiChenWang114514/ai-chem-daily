@@ -1,49 +1,475 @@
 {
   "schema_version": "2.0",
-  "date": "2026-08-16",
-  "generated_at": "2026-08-16T12:43:06+00:00",
+  "date": "2026-08-17",
+  "generated_at": "2026-08-16T22:15:56+00:00",
   "title": "AIX Daily 每日智能研究集散中心",
-  "overview_zh": "2026年8月16日，五个频道中仅工程频道录得一项精选：llama.cpp 的官方软件发布 b10451，为 LoRA 张量加载加入文件范围检查。化学、生物、数学与观点频道的候选集均为空，今日没有足够高质量更新；因此本期未收录预印本、同行评议论文或公开观点，避免将软件更新混同为研究结论。",
+  "overview_zh": "8月17日的精选以AI驱动的化学与生物医学研究为主。AIX Chem关注将文献语言和化学表征用于功能预测、免疫肽筛选及化学蛋白组学；AIX Bio收录冠脉造影视觉语言模型、泛癌治疗响应预测与三维染色质分析。上述均为预印本，尚未经过同行评议；今日未有入选的同行评议论文、研究者公开观点或软件发布，数学、观点与工程频道均无足够高质量更新。",
   "channel_highlights": {
-    "aixchem": "今日没有足够高质量更新：候选集为空，未收录化学与 AI 相关的预印本或同行评议论文。",
-    "aixbio": "今日没有足够高质量更新：候选集为空，未收录生命科学与 AI 相关的预印本或同行评议论文。",
-    "aixmath": "今日没有足够高质量更新：候选集为空，未收录 AI 数学研究的预印本或同行评议论文。",
-    "aivoices": "今日没有足够高质量更新：候选集为空，未收录值得精选的公开观点或研究博客文章。",
-    "engineering": "官方软件发布：llama.cpp b10451 为 LoRA 张量数据增加文件范围检查，旨在强化适配器加载时的输入校验；这是一项工程更新，并非研究论文。"
+    "aixchem": "三项均为bioRxiv预印本：PubCheF-1将文献功能标签接入结构预测，CALFP-MHC和E64d蛋白组学分别提供免疫肽与共价靶点研究线索。",
+    "aixbio": "三项均为预印本：CAG-MIND的冠脉造影多模态模型、EXPRESSO的泛癌响应预测与AI4Loop的染色质互作推断均报告大规模或独立验证。",
+    "aixmath": "今日没有足够高质量更新：候选集为空，未收录预印本、同行评议论文或其他精选。",
+    "aivoices": "今日没有足够高质量更新：未形成可入选的研究者公开观点或研究发布，故不作延伸解读。",
+    "engineering": "今日没有足够高质量更新：GitHub Releases未提供可入选条目，本频道没有软件发布精选。"
   },
   "channels": [
     {
       "id": "aixchem",
       "name": "AI × Chem",
       "stats": {
-        "fetched": 0,
-        "candidates": 0,
-        "selected": 0,
+        "fetched": 338,
+        "candidates": 50,
+        "selected": 14,
         "sources": {
           "arXiv": 0,
-          "bioRxiv": 0,
-          "ChemRxiv": 0
+          "bioRxiv": 311,
+          "ChemRxiv": 30
         }
       },
       "source_errors": [],
-      "items": []
+      "items": [
+        {
+          "id": "biorxiv:10.64898/2026.08.09.743788",
+          "channel": "aixchem",
+          "related_channels": [
+            "aixbio"
+          ],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "Learning from human and chemical languages to predict biological function",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.09.743788",
+          "published_at": "2026-08-14",
+          "updated_at": "2026-08-14",
+          "creators": [
+            "Kosonocky, C. W.",
+            "Kaderabkova, N.",
+            "Kim, K.",
+            "Mahmood, A. J. S.",
+            "Dunmyre, A.",
+            "Woolley, P.",
+            "Xing, K.",
+            "Winkler, D.",
+            "Babu, T.",
+            "Kaderabek, F.",
+            "Sessler, J. L.",
+            "Anslyn, E. V.",
+            "Marcotte, E. M.",
+            "Zhang, Y. J.",
+            "Ellington, A. D.",
+            "Mavridou, D. A. I."
+          ],
+          "language": "en",
+          "abstract_or_text": "Understanding how molecular structure encodes biological function remains a grand challenge in drug discovery. Here, we present PubCheF-1, a deep learning model that predicts literature-derived biological function directly from chemical structure. PubCheF-1 was trained on a dataset linking molecules to labels derived from the scientific articles in which they appear, a strategy that connects disparate compounds through the language used to describe their functionalities. When tasked with identifying inhibitors of {beta}-lactamases, including enzymes considered largely refractory to inhibition, PubCheF-1 predicted structurally distinct compounds that collectively have activity against all {beta}-lactamase classes. Furthermore, hit compounds directly bind the enzyme active site, restore antibiotic efficacy in multidrug-resistant high-priority pathogens, and demonstrate potent activity in animal infection models. Together, these findings establish that machine learning-based prediction of biological function derived from the language of scientific literature allows the identification of bioactive molecules at high hit rates, thereby accelerating therapeutic discovery.",
+          "summary_zh": "PubCheF-1将化学结构与论文文本归纳出的生物功能标签联合学习，用于从结构预测功能；作者据此发现了覆盖多类β-内酰胺酶的结构新颖抑制剂，并报告了靶点结合、耐药菌增敏和动物感染模型活性。",
+          "why_it_matters_zh": "将文献语言转化为化学功能监督信号，为跳出已知骨架的药物发现提供了新思路，并有多层级实验支撑；但功能标签的来源与偏倚、命中物的药代和安全性仍需进一步审查。",
+          "quality_score": 72.0,
+          "tags": [
+            "分子与药物发现",
+            "bioinformatics",
+            "machine learning",
+            "deep learning",
+            "chem",
+            "molecul"
+          ],
+          "evidence_flags": [
+            "dataset"
+          ],
+          "publication_status": "preprint",
+          "rank": 1,
+          "featured": true,
+          "category": "分子与药物发现",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.09.743788",
+            "arxiv_id": ""
+          },
+          "authors": [
+            "Kosonocky, C. W.",
+            "Kaderabkova, N.",
+            "Kim, K.",
+            "Mahmood, A. J. S.",
+            "Dunmyre, A.",
+            "Woolley, P.",
+            "Xing, K.",
+            "Winkler, D.",
+            "Babu, T.",
+            "Kaderabek, F.",
+            "Sessler, J. L.",
+            "Anslyn, E. V.",
+            "Marcotte, E. M.",
+            "Zhang, Y. J.",
+            "Ellington, A. D.",
+            "Mavridou, D. A. I."
+          ],
+          "abstract": "Understanding how molecular structure encodes biological function remains a grand challenge in drug discovery. Here, we present PubCheF-1, a deep learning model that predicts literature-derived biological function directly from chemical structure. PubCheF-1 was trained on a dataset linking molecules to labels derived from the scientific articles in which they appear, a strategy that connects disparate compounds through the language used to describe their functionalities. When tasked with identifying inhibitors of {beta}-lactamases, including enzymes considered largely refractory to inhibition, PubCheF-1 predicted structurally distinct compounds that collectively have activity against all {beta}-lactamase classes. Furthermore, hit compounds directly bind the enzyme active site, restore antibiotic efficacy in multidrug-resistant high-priority pathogens, and demonstrate potent activity in animal infection models. Together, these findings establish that machine learning-based prediction of biological function derived from the language of scientific literature allows the identification of bioactive molecules at high hit rates, thereby accelerating therapeutic discovery.",
+          "published": "2026-08-14",
+          "author_line": "Kosonocky, C. W., Kaderabkova, N., Kim, K. 等 16 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.10.743877",
+          "channel": "aixchem",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "CALFP-MHC: Interpretable Pan-Allelic Prediction of Peptide-MHC Binding and Presentation Using Chemically Grounded Fingerprints and Contrastive Learning",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.10.743877",
+          "published_at": "2026-08-14",
+          "updated_at": "2026-08-14",
+          "creators": [
+            "Pham, M.-D. N.",
+            "Ho, T.-K.-C.",
+            "Nguyen, H.-N.",
+            "Tran, L.-S.",
+            "Phan, M.-D.",
+            "Nguyen, V."
+          ],
+          "language": "en",
+          "abstract_or_text": "Identifying which peptides bind major histocompatibility complex (MHC) molecules is central to vaccine design, neoantigen prioritization, and precision immunotherapy. Existing deep learning predictors largely encode amino acids as discrete symbols, thereby missing the residue-level chemistry driving molecular recognition. Performance also tends to degrade under class imbalance, for rare alleles, and on peptide-MHC combinations outside the training distribution. We developed CALFP-MHC, a framework that encodes each amino acid as a set of complementary cheminformatics fingerprints capturing functional groups, atomic connectivity, and substructural features, and combines positional encoding with supervised contrastive pre-training to organize the latent space by binding class before fine-tuning a binary classifier. Peptide-MHC interactions are modeled through a hybrid convolutional-transformer backbone. In a large-scale computational benchmark covering ~18.7 million peptide-MHC pairs across 112 HLA class I and 53 class II alleles, CALFP-MHC achieved AUCs of 0.93-0.97 and PPVs of 0.66 - 0.94. Critically, performance remained above AUC 0.90 even at a 200:1 negative-to-positive ratio, where competing tools frequently collapsed toward chance. On independent experimental data containing 3,627 class I and 520 class II MS/MS-confirmed ligands and 570 validated neoantigens, the model maintained strong discrimination, correctly prioritizing immunogenic peptides and MHC-presented ligands. Attention and integrated-gradient analyses recovered established anchor positions (P2 and P{Omega}; for class I, P1, P4, P6, and P9 for class II) and highlighted chemically interpretable functional groups consistent with known binding determinants. CALFP-MHC demonstrates that grounding residue representations in molecular chemistry, rather than sequence symbols alone, improves both robustness and interpretability in peptide-MHC binding prediction.",
+          "summary_zh": "CALFP-MHC以化学指纹表征氨基酸残基，并结合对比预训练和卷积—Transformer模型预测肽-MHC结合及呈递；在大规模计算基准以及质谱配体、已验证新抗原数据上进行了评估。",
+          "why_it_matters_zh": "以残基化学特征替代纯序列符号，有助于提升罕见等位基因和类别不平衡条件下的稳健性，并给出可解释的结合位点信号；但摘要中的实验验证主要是独立数据集评测，尚不等同于前瞻性疫苗或临床验证。",
+          "quality_score": 79.0,
+          "tags": [
+            "分子与药物发现",
+            "immunology",
+            "deep learning",
+            "transformer",
+            "chem",
+            "molecul"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "experimental",
+            "performance"
+          ],
+          "publication_status": "preprint",
+          "rank": 2,
+          "featured": true,
+          "category": "分子与药物发现",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.10.743877",
+            "arxiv_id": ""
+          },
+          "authors": [
+            "Pham, M.-D. N.",
+            "Ho, T.-K.-C.",
+            "Nguyen, H.-N.",
+            "Tran, L.-S.",
+            "Phan, M.-D.",
+            "Nguyen, V."
+          ],
+          "abstract": "Identifying which peptides bind major histocompatibility complex (MHC) molecules is central to vaccine design, neoantigen prioritization, and precision immunotherapy. Existing deep learning predictors largely encode amino acids as discrete symbols, thereby missing the residue-level chemistry driving molecular recognition. Performance also tends to degrade under class imbalance, for rare alleles, and on peptide-MHC combinations outside the training distribution. We developed CALFP-MHC, a framework that encodes each amino acid as a set of complementary cheminformatics fingerprints capturing functional groups, atomic connectivity, and substructural features, and combines positional encoding with supervised contrastive pre-training to organize the latent space by binding class before fine-tuning a binary classifier. Peptide-MHC interactions are modeled through a hybrid convolutional-transformer backbone. In a large-scale computational benchmark covering ~18.7 million peptide-MHC pairs across 112 HLA class I and 53 class II alleles, CALFP-MHC achieved AUCs of 0.93-0.97 and PPVs of 0.66 - 0.94. Critically, performance remained above AUC 0.90 even at a 200:1 negative-to-positive ratio, where competing tools frequently collapsed toward chance. On independent experimental data containing 3,627 class I and 520 class II MS/MS-confirmed ligands and 570 validated neoantigens, the model maintained strong discrimination, correctly prioritizing immunogenic peptides and MHC-presented ligands. Attention and integrated-gradient analyses recovered established anchor positions (P2 and P{Omega}; for class I, P1, P4, P6, and P9 for class II) and highlighted chemically interpretable functional groups consistent with known binding determinants. CALFP-MHC demonstrates that grounding residue representations in molecular chemistry, rather than sequence symbols alone, improves both robustness and interpretability in peptide-MHC binding prediction.",
+          "published": "2026-08-14",
+          "author_line": "Pham, M.-D. N., Ho, T.-K.-C., Nguyen, H.-N. 等 6 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.14.744826",
+          "channel": "aixchem",
+          "related_channels": [
+            "aixbio"
+          ],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "Activity-based chemical proteomics uncovers unexpected covalent targetsof E64d and reveals a role for cysteine cathepsins in PLD3 proteostasis.",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744826",
+          "published_at": "2026-08-15",
+          "updated_at": "2026-08-15",
+          "creators": [
+            "Hertwig, M.",
+            "Kielkowski, P."
+          ],
+          "language": "en",
+          "abstract_or_text": "Catalytic activity of 5'-3' exonuclease Phospholipase D3 (PLD3) is associated with immune signaling and neurodegeneration including Alzheimer's disease. PLD3 undergoes multiple post-translational modifications and proteolytic cleavage to establish its catalytically active form. However, the proteases catalyzing the cleavage of PLD3 have remained unidentified. To study the proteolytic cleavage of PLD3, we have evaluated the small molecule covalent inhibitor E64d that blocks proteolysis catalyzed by cysteine cathepsins. To validate the selectivity of E64d, we have designed and synthetized an E64d propargyl analogue and carried out a detailed activity-based protein profiling to reveal a broad engagement of the compound with other protein targets including bleomycin hydrolase (BLMH), Kelch-like ECH-associated protein 1 (KEAP1), transcription elongation factor SPT5 (SUPT5H) and asparagine synthetase (ASNS). The specificity of the E64d-protein interactions was confirmed by biochemical assays and mass spectrometry-based site identifications. In neurons, treatment with E64d lead to about 50-fold PLD3 accumulation and dysregulation of its proteolytic cleavage, while there was only a minor overall change on the whole proteome level. Taken together, this study provides insights into previously unknown E64d selectivity and renders cysteine cathepsins responsible for PLD3 degradation in neurons. It highlights the importance of cysteine cathepsins activity in neuronal lysosomes for proper PLD3 processing and hence it suggests that their activation might be responsible for decreased PLD3 levels in neurons of patients with Alzheimer's diseases. These findings are key for further elucidation of PLD3 function in neurodegenerative diseases.",
+          "summary_zh": "研究以E64d炔基探针开展活性基础化学蛋白组学，发现该半胱氨酸蛋白酶抑制剂还广泛结合BLMH、KEAP1、SUPT5H和ASNS等蛋白，并用生化实验和质谱定位验证；在神经元中，E64d导致PLD3显著累积并扰乱其加工。",
+          "why_it_matters_zh": "工作直接提示常用共价抑制剂E64d的选择性比预期更宽，并把半胱氨酸组织蛋白酶与PLD3稳态联系起来；其疾病机制与治疗外推仍主要来自细胞和蛋白组学证据。",
+          "quality_score": 73.0,
+          "tags": [
+            "分子与药物发现",
+            "biochemistry",
+            "generative",
+            "chem",
+            "molecul"
+          ],
+          "evidence_flags": [],
+          "publication_status": "preprint",
+          "rank": 3,
+          "featured": true,
+          "category": "分子与药物发现",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.14.744826",
+            "arxiv_id": ""
+          },
+          "authors": [
+            "Hertwig, M.",
+            "Kielkowski, P."
+          ],
+          "abstract": "Catalytic activity of 5'-3' exonuclease Phospholipase D3 (PLD3) is associated with immune signaling and neurodegeneration including Alzheimer's disease. PLD3 undergoes multiple post-translational modifications and proteolytic cleavage to establish its catalytically active form. However, the proteases catalyzing the cleavage of PLD3 have remained unidentified. To study the proteolytic cleavage of PLD3, we have evaluated the small molecule covalent inhibitor E64d that blocks proteolysis catalyzed by cysteine cathepsins. To validate the selectivity of E64d, we have designed and synthetized an E64d propargyl analogue and carried out a detailed activity-based protein profiling to reveal a broad engagement of the compound with other protein targets including bleomycin hydrolase (BLMH), Kelch-like ECH-associated protein 1 (KEAP1), transcription elongation factor SPT5 (SUPT5H) and asparagine synthetase (ASNS). The specificity of the E64d-protein interactions was confirmed by biochemical assays and mass spectrometry-based site identifications. In neurons, treatment with E64d lead to about 50-fold PLD3 accumulation and dysregulation of its proteolytic cleavage, while there was only a minor overall change on the whole proteome level. Taken together, this study provides insights into previously unknown E64d selectivity and renders cysteine cathepsins responsible for PLD3 degradation in neurons. It highlights the importance of cysteine cathepsins activity in neuronal lysosomes for proper PLD3 processing and hence it suggests that their activation might be responsible for decreased PLD3 levels in neurons of patients with Alzheimer's diseases. These findings are key for further elucidation of PLD3 function in neurodegenerative diseases.",
+          "published": "2026-08-15",
+          "author_line": "Hertwig, M., Kielkowski, P."
+        }
+      ]
     },
     {
       "id": "aixbio",
       "name": "AI × Bio",
       "stats": {
-        "fetched": 0,
-        "candidates": 0,
-        "selected": 0,
+        "fetched": 1091,
+        "candidates": 60,
+        "selected": 11,
         "sources": {
           "arXiv": 0,
-          "bioRxiv": 0,
-          "medRxiv": 0,
-          "Europe PMC": 0
+          "bioRxiv": 311,
+          "medRxiv": 79,
+          "Europe PMC": 953
         }
       },
       "source_errors": [],
-      "items": []
+      "items": [
+        {
+          "id": "medrxiv:10.64898/2026.08.11.26360095",
+          "channel": "aixbio",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "medRxiv",
+          "title": "A Vision-Language Model for Coronary Angiography Interpretation and Clinical Decision Support",
+          "url": "https://www.medrxiv.org/content/10.64898/2026.08.11.26360095",
+          "published_at": "2026-08-14",
+          "updated_at": "2026-08-14",
+          "creators": [
+            "Li, Z.",
+            "Sun, Y.",
+            "Jiang, C.",
+            "Pan, T.",
+            "Zhou, Y.",
+            "Wang, C.",
+            "Pan, L.",
+            "Zhang, X.",
+            "Yang, Z.",
+            "Yu, Z.",
+            "Xiao, Z.",
+            "Chen, J.",
+            "Huang, Y.",
+            "Sun, R.",
+            "Gan, Y.",
+            "Li, X.",
+            "Zhang, B.",
+            "Zhang, Z.",
+            "Wang, X.",
+            "Han, L.",
+            "Qi, Y.",
+            "Cheng, Y.",
+            "Liang, Y.",
+            "Ge, J."
+          ],
+          "language": "en",
+          "abstract_or_text": "BACKGROUND: Coronary angiography remains the reference standard for diagnosing coronary artery disease and guiding revascularization, yet its interpretation requires expert integration of multi-view anatomy, lesion morphology and procedural context. Existing artificial intelligence approaches are largely task-specific, annotation-dependent and limited in capturing the semantic relationship between angiographic findings and interventional decision-making. Whether large-scale vision-language pretraining can enable transferable foundation-model representations for invasive coronary imaging remains unknown. METHODS We developed CAG-MIND, a domain-specific vision-language foundation model for coronary angiography, using 135,475 CAG examinations paired with procedural reports, comprising 812,850 angiographic videos from Zhongshan Hospital and Shanghai Geriatric Medical Center. Each case consisted of standardized six-view angiographic acquisitions paired with structured procedural semantics extracted from routine reports using a large language model-assisted pipeline. The model was pretrained by aligning multi-view angiographic representations with report-derived semantic embeddings through bidirectional contrastive learning. Performance was evaluated under zero-shot and supervised fine-tuning settings across 11 downstream tasks grouped into structural abnormality detection, atherosclerotic plaque assessment, and interventional decision prediction, using both an internal validation cohort and an independent external test cohort. RESULTS CAG-MIND demonstrated robust performance across all three task categories. In the zero-shot setting, the model achieved mean AUROCs of 0.686 in the internal validation cohort and 0.745 in the external test cohort, indicating transferable multimodal representations without task-specific supervision. Following supervised fine-tuning, the mean AUROC increased to 0.827 and 0.846, respectively, with excellent performance for coronary stenosis detection (AUROC 0.940 in both cohorts), balloon/stent prediction (0.900 and 0.907), and CABG recommendation (0.877 and 0.875). Compared with representative biomedical vision-language models and conventional image-based architectures, CAG-MIND consistently achieved superior performance in both zero-shot and supervised settings and remained superior to fully fine-tuned competing models when trained with only 10% of the labelled data. Grad-CAM visualization demonstrated anatomically plausible lesion-focused attention, supporting the interpretability of the learned representations. CONCLUSIONS CAG-MIND is, to our knowledge, the first large-scale vision-language foundation model for coronary angiography trained at more than 100,000-patient scale. By aligning standardized multi-view angiographic videos with report-derived procedural semantics, CAG-MIND enables robust zero-shot transfer, data-efficient fine-tuning and cross-center generalization. These findings support domain-aligned multimodal pretraining as a scalable foundation-model paradigm for invasive cardiovascular imaging and future cath-lab decision support.",
+          "summary_zh": "CAG-MIND以135,475例冠脉造影检查、812,850段视频及操作报告训练视觉语言基础模型，并在内部与独立外部队列的11项任务中评估零样本和微调性能。",
+          "why_it_matters_zh": "这是大规模侵入性心血管影像多模态建模，兼有跨中心测试和数据效率结果；其临床决策预测仍属预印本阶段，不能替代临床判断。",
+          "quality_score": 90.0,
+          "tags": [
+            "生物医学与临床",
+            "preprint",
+            "clinical",
+            "foundation model",
+            "multimodal imaging",
+            "medRxiv"
+          ],
+          "evidence_flags": [
+            "preprint",
+            "clinical",
+            "performance",
+            "external_validation"
+          ],
+          "publication_status": "preprint",
+          "rank": 1,
+          "featured": true,
+          "category": "生物医学与临床",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.11.26360095",
+            "arxiv_id": ""
+          },
+          "authors": [
+            "Li, Z.",
+            "Sun, Y.",
+            "Jiang, C.",
+            "Pan, T.",
+            "Zhou, Y.",
+            "Wang, C.",
+            "Pan, L.",
+            "Zhang, X.",
+            "Yang, Z.",
+            "Yu, Z.",
+            "Xiao, Z.",
+            "Chen, J.",
+            "Huang, Y.",
+            "Sun, R.",
+            "Gan, Y.",
+            "Li, X.",
+            "Zhang, B.",
+            "Zhang, Z.",
+            "Wang, X.",
+            "Han, L.",
+            "Qi, Y.",
+            "Cheng, Y.",
+            "Liang, Y.",
+            "Ge, J."
+          ],
+          "abstract": "BACKGROUND: Coronary angiography remains the reference standard for diagnosing coronary artery disease and guiding revascularization, yet its interpretation requires expert integration of multi-view anatomy, lesion morphology and procedural context. Existing artificial intelligence approaches are largely task-specific, annotation-dependent and limited in capturing the semantic relationship between angiographic findings and interventional decision-making. Whether large-scale vision-language pretraining can enable transferable foundation-model representations for invasive coronary imaging remains unknown. METHODS We developed CAG-MIND, a domain-specific vision-language foundation model for coronary angiography, using 135,475 CAG examinations paired with procedural reports, comprising 812,850 angiographic videos from Zhongshan Hospital and Shanghai Geriatric Medical Center. Each case consisted of standardized six-view angiographic acquisitions paired with structured procedural semantics extracted from routine reports using a large language model-assisted pipeline. The model was pretrained by aligning multi-view angiographic representations with report-derived semantic embeddings through bidirectional contrastive learning. Performance was evaluated under zero-shot and supervised fine-tuning settings across 11 downstream tasks grouped into structural abnormality detection, atherosclerotic plaque assessment, and interventional decision prediction, using both an internal validation cohort and an independent external test cohort. RESULTS CAG-MIND demonstrated robust performance across all three task categories. In the zero-shot setting, the model achieved mean AUROCs of 0.686 in the internal validation cohort and 0.745 in the external test cohort, indicating transferable multimodal representations without task-specific supervision. Following supervised fine-tuning, the mean AUROC increased to 0.827 and 0.846, respectively, with excellent performance for coronary stenosis detection (AUROC 0.940 in both cohorts), balloon/stent prediction (0.900 and 0.907), and CABG recommendation (0.877 and 0.875). Compared with representative biomedical vision-language models and conventional image-based architectures, CAG-MIND consistently achieved superior performance in both zero-shot and supervised settings and remained superior to fully fine-tuned competing models when trained with only 10% of the labelled data. Grad-CAM visualization demonstrated anatomically plausible lesion-focused attention, supporting the interpretability of the learned representations. CONCLUSIONS CAG-MIND is, to our knowledge, the first large-scale vision-language foundation model for coronary angiography trained at more than 100,000-patient scale. By aligning standardized multi-view angiographic videos with report-derived procedural semantics, CAG-MIND enables robust zero-shot transfer, data-efficient fine-tuning and cross-center generalization. These findings support domain-aligned multimodal pretraining as a scalable foundation-model paradigm for invasive cardiovascular imaging and future cath-lab decision support.",
+          "published": "2026-08-14",
+          "author_line": "Li, Z., Sun, Y., Jiang, C. 等 24 人"
+        },
+        {
+          "id": "medrxiv:10.64898/2026.08.11.26359946",
+          "channel": "aixbio",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "medRxiv",
+          "title": "Grounding Health AI: Architecture and Evaluation of a Domain-Expert Metabolic Health Agent",
+          "url": "https://www.medrxiv.org/content/10.64898/2026.08.11.26359946",
+          "published_at": "2026-08-14",
+          "updated_at": "2026-08-14",
+          "creators": [
+            "Diament, A.",
+            "Sapir, G.",
+            "Gorodetski, M.",
+            "Wolf, A.",
+            "Rice, A.",
+            "Azouri, D.",
+            "Etzion-Fuchs, A.",
+            "Gelbard Solodkin, D.",
+            "Talmor-Barkan, Y.",
+            "Lutsker, G.",
+            "Segal, E.",
+            "Rossman, H."
+          ],
+          "language": "en",
+          "abstract_or_text": "General-purpose language models generate fluent health reports that can fabricate derived clinical metrics. In an illustrative comparison on identical two-week CGM and meal data, leading foundation models produced reports with invented MAGE values, inflated meal counts, and unreferenced complication-risk projections: failures invisible to non-expert readers and plausible enough to mislead clinicians. We describe the HPP Personal Health Agent (PHA), a metabolic health agent that grounds generation in four layers: the Human Phenotype Project (HPP), a deep-phenotyped cohort of 13,000+ participants supplying population references and trained predictive models; 21 domain-expert tools and trained-model wrappers that compute clinical metrics and risk predictions; declarative behavioural skills that constrain what the model may claim; and 21 automated evals across 8 categories developed via a test-driven cycle in which each eval encodes a failure mode discovered during iterative development. In a 210-report matrix (14 participants x 3 prompts x 5 system conditions), the gains are largest on the system's primary use case (meal-grounded metabolic reports, the report it was designed for), where the full system raises a deterministic form/provenance score from 0.37 (the same foundation model with no tools or skills) to 0.91; this score measures structural completeness, numerical accuracy, tool grounding, and clinical-language compliance: a necessary condition for trustworthy health reporting, with clinical quality as a complementary axis examined qualitatively. A skills-vs-tools decomposition shows the two layers act on different axes: tools drive numerical accuracy (from about 14% to 90% of reported metrics correct), while the declarative skills add most of the remaining gain in citations, completeness, and structure (tools alone recover only part of the gap, 0.49 from the same 0.37 baseline). The lift generalises beyond the primary use case: to a second metabolic prompt (0.72) and a cardiovascular extension (0.70), each from a 0.37-0.39 baseline. The architecture extends across clinical domains: adding a SCORE2 cardiovascular risk tool and a corresponding skill (with no changes to orchestration, eval harness, or existing tools) produced a cardiovascular risk report from the same system. Trustworthy domain-specialised health AI is a systems design problem: deep-phenotyped cohort data, domain-expert tools and models, and eval-driven development together form a replicable pattern.",
+          "summary_zh": "HPP个人健康智能体结合13,000余人深度表型队列、21个专家工具及自动化评测，在210份代谢健康报告中检验数值正确性、来源追溯和临床语言合规性。",
+          "why_it_matters_zh": "以工具计算、声明式约束和可执行评测降低健康报告中的虚构指标，为专科健康AI的可复现实证评估提供了具体范式。",
+          "quality_score": 78.0,
+          "tags": [
+            "方法与模型",
+            "preprint",
+            "health AI",
+            "agent",
+            "evaluation",
+            "medRxiv"
+          ],
+          "evidence_flags": [
+            "preprint",
+            "clinical",
+            "evaluation",
+            "reproducibility"
+          ],
+          "publication_status": "preprint",
+          "rank": 5,
+          "featured": false,
+          "category": "方法与模型",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.11.26359946",
+            "arxiv_id": ""
+          },
+          "authors": [
+            "Diament, A.",
+            "Sapir, G.",
+            "Gorodetski, M.",
+            "Wolf, A.",
+            "Rice, A.",
+            "Azouri, D.",
+            "Etzion-Fuchs, A.",
+            "Gelbard Solodkin, D.",
+            "Talmor-Barkan, Y.",
+            "Lutsker, G.",
+            "Segal, E.",
+            "Rossman, H."
+          ],
+          "abstract": "General-purpose language models generate fluent health reports that can fabricate derived clinical metrics. In an illustrative comparison on identical two-week CGM and meal data, leading foundation models produced reports with invented MAGE values, inflated meal counts, and unreferenced complication-risk projections: failures invisible to non-expert readers and plausible enough to mislead clinicians. We describe the HPP Personal Health Agent (PHA), a metabolic health agent that grounds generation in four layers: the Human Phenotype Project (HPP), a deep-phenotyped cohort of 13,000+ participants supplying population references and trained predictive models; 21 domain-expert tools and trained-model wrappers that compute clinical metrics and risk predictions; declarative behavioural skills that constrain what the model may claim; and 21 automated evals across 8 categories developed via a test-driven cycle in which each eval encodes a failure mode discovered during iterative development. In a 210-report matrix (14 participants x 3 prompts x 5 system conditions), the gains are largest on the system's primary use case (meal-grounded metabolic reports, the report it was designed for), where the full system raises a deterministic form/provenance score from 0.37 (the same foundation model with no tools or skills) to 0.91; this score measures structural completeness, numerical accuracy, tool grounding, and clinical-language compliance: a necessary condition for trustworthy health reporting, with clinical quality as a complementary axis examined qualitatively. A skills-vs-tools decomposition shows the two layers act on different axes: tools drive numerical accuracy (from about 14% to 90% of reported metrics correct), while the declarative skills add most of the remaining gain in citations, completeness, and structure (tools alone recover only part of the gap, 0.49 from the same 0.37 baseline). The lift generalises beyond the primary use case: to a second metabolic prompt (0.72) and a cardiovascular extension (0.70), each from a 0.37-0.39 baseline. The architecture extends across clinical domains: adding a SCORE2 cardiovascular risk tool and a corresponding skill (with no changes to orchestration, eval harness, or existing tools) produced a cardiovascular risk report from the same system. Trustworthy domain-specialised health AI is a systems design problem: deep-phenotyped cohort data, domain-expert tools and models, and eval-driven development together form a replicable pattern.",
+          "published": "2026-08-14",
+          "author_line": "Diament, A., Sapir, G., Gorodetski, M. 等 12 人"
+        },
+        {
+          "id": "medrxiv:10.64898/2026.08.12.26360210",
+          "channel": "aixbio",
+          "related_channels": [
+            "aixmath"
+          ],
+          "item_type": "paper",
+          "source": "medRxiv",
+          "title": "Large Language Models Generate Stigmatizing Language During Reasoning Over Real-World Clinical Data",
+          "url": "https://www.medrxiv.org/content/10.64898/2026.08.12.26360210",
+          "published_at": "2026-08-14",
+          "updated_at": "2026-08-14",
+          "creators": [
+            "Yang, Y.",
+            "Gu, B.",
+            "Hathaway, D. B.",
+            "Wyss, R.",
+            "Marengo, L.",
+            "Gibbons, J. B.",
+            "Lyndon, S.",
+            "Wu, J.",
+            "Chen, Q.",
+            "Liu, N.",
+            "Wang, P. S.",
+            "Celi, L. A.",
+            "Bates, D. W.",
+            "Lin, J.",
+            "Zhou, L.",
+            "Yang, J."
+          ],
+          "language": "en",
+          "abstract_or_text": "Stigmatizing language in clinical documentation, which conveys negative stereotypes, attitudes, or judgments toward patients, is a recognized source of documentation bias and is associated with poorer care and adverse health outcomes. Although prior stigma-related research has focused on clinician-written EHR notes, the increasing use of large language model (LLM)-generated documentation in clinical workflows raises new concerns about its potential to reproduce or amplify bias and affect patient safety. In this study, we conducted a large-scale assessment of stigmatizing language in LLM-generated reasoning text on 35 real-world clinical tasks across 107 LLMs. We applied a psychiatrist-validated, natural language processing (NLP) system to detect stigma terms in LLM reasoning text and quantified stigma rates of LLM-generated reasoning texts across 3,745 model-task pairs. Results showed that stigma rates ranged from 0% to 33.33%, with 84.06% of pairs containing stigma terms. Open-source models and reasoning models showed statistically higher stigma rates than proprietary (1.97% vs. 1.60%; p < 0.01) and non-reasoning models (2.35% vs. 1.70%; p < 0.0001), while the stigma rate difference between the general and medical models is not statistically significant (2.00% vs. 1.80%; p = 0.26). Stigma rates of LLM outputs correlated negatively with task accuracy (r = -0.304; p < 0.001) and positively with input clinical-text stigma (r = 0.569; p < 0.001), with 19.76% of model-task pairs amplifying stigma in the original input notes. Applying prompt engineering as a destigmatizing approach helped reduce model stigma rates by as much as 91.91% without affecting the model performance. This study shows that stigmatizing language generation is common but reducible during LLMs' reasoning traces, suggesting that well-implemented approaches for LLM monitoring and destigmatizing will be essential for healthcare systems to implement.",
+          "summary_zh": "研究在35项真实临床任务、107个大语言模型和3,745个模型—任务组合中，用精神科医师验证的NLP系统量化推理文本中的污名化语言。",
+          "why_it_matters_zh": "其大规模比较显示临床文本偏见可被提示策略显著降低，提示医疗AI评测应同时考察任务准确性与语言伤害风险。",
+          "quality_score": 78.0,
+          "tags": [
+            "生物医学与临床",
+            "preprint",
+            "clinical AI",
+            "LLM",
+            "health equity",
+            "medRxiv"
+          ],
+          "evidence_flags": [
+            "preprint",
+            "clinical",
+            "performance",
+            "safety_evaluation"
+          ],
+          "publication_status": "preprint",
+          "rank": 6,
+          "featured": false,
+          "category": "生物医学与临床",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.12.26360210",
+            "arxiv_id": ""
+          },
+          "authors": [
+            "Yang, Y.",
+            "Gu, B.",
+            "Hathaway, D. B.",
+            "Wyss, R.",
+            "Marengo, L.",
+            "Gibbons, J. B.",
+            "Lyndon, S.",
+            "Wu, J.",
+            "Chen, Q.",
+            "Liu, N.",
+            "Wang, P. S.",
+            "Celi, L. A.",
+            "Bates, D. W.",
+            "Lin, J.",
+            "Zhou, L.",
+            "Yang, J."
+          ],
+          "abstract": "Stigmatizing language in clinical documentation, which conveys negative stereotypes, attitudes, or judgments toward patients, is a recognized source of documentation bias and is associated with poorer care and adverse health outcomes. Although prior stigma-related research has focused on clinician-written EHR notes, the increasing use of large language model (LLM)-generated documentation in clinical workflows raises new concerns about its potential to reproduce or amplify bias and affect patient safety. In this study, we conducted a large-scale assessment of stigmatizing language in LLM-generated reasoning text on 35 real-world clinical tasks across 107 LLMs. We applied a psychiatrist-validated, natural language processing (NLP) system to detect stigma terms in LLM reasoning text and quantified stigma rates of LLM-generated reasoning texts across 3,745 model-task pairs. Results showed that stigma rates ranged from 0% to 33.33%, with 84.06% of pairs containing stigma terms. Open-source models and reasoning models showed statistically higher stigma rates than proprietary (1.97% vs. 1.60%; p < 0.01) and non-reasoning models (2.35% vs. 1.70%; p < 0.0001), while the stigma rate difference between the general and medical models is not statistically significant (2.00% vs. 1.80%; p = 0.26). Stigma rates of LLM outputs correlated negatively with task accuracy (r = -0.304; p < 0.001) and positively with input clinical-text stigma (r = 0.569; p < 0.001), with 19.76% of model-task pairs amplifying stigma in the original input notes. Applying prompt engineering as a destigmatizing approach helped reduce model stigma rates by as much as 91.91% without affecting the model performance. This study shows that stigmatizing language generation is common but reducible during LLMs' reasoning traces, suggesting that well-implemented approaches for LLM monitoring and destigmatizing will be essential for healthcare systems to implement.",
+          "published": "2026-08-14",
+          "author_line": "Yang, Y., Gu, B., Hathaway, D. B. 等 16 人"
+        }
+      ]
     },
     {
       "id": "aixmath",
@@ -83,61 +509,15 @@
       "id": "engineering",
       "name": "Engineering",
       "stats": {
-        "fetched": 3,
-        "candidates": 3,
-        "selected": 1,
+        "fetched": 0,
+        "candidates": 0,
+        "selected": 0,
         "sources": {
-          "GitHub Releases": 3
+          "GitHub Releases": 0
         }
       },
       "source_errors": [],
-      "items": [
-        {
-          "id": "github:371260055",
-          "channel": "engineering",
-          "related_channels": [],
-          "item_type": "software_release",
-          "source": "GitHub Releases",
-          "title": "b10451",
-          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10451",
-          "published_at": "2026-08-16T07:24:37Z",
-          "updated_at": "2026-08-16T06:38:01Z",
-          "creators": [
-            "ggml-org/llama.cpp"
-          ],
-          "language": "en",
-          "abstract_or_text": "llama : check LoRA tensor data is within file bounds (#27056) * llama : check LoRA tensor data is within file bounds * Update src/llama-adapter.cpp Co-authored-by: Sigbjørn Skjæret --------- Co-authored-by: Sigbjørn Skjæret **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10451/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10451/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10451/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-ui.tar.gz)",
-          "summary_zh": "ggml-org/llama.cpp 发布 b10451，为 LoRA 张量数据增加文件范围检查，强化适配器加载过程的输入校验。",
-          "why_it_matters_zh": "加载第三方或不完整 LoRA 文件的本地推理用户与集成者可降低异常读取风险；升级后应回归测试现有模型和适配器的加载流程。",
-          "quality_score": 66.0,
-          "tags": [
-            "模型与框架",
-            "ggml-org/llama.cpp",
-            "b10451"
-          ],
-          "evidence_flags": [
-            "github",
-            "release"
-          ],
-          "publication_status": "release",
-          "rank": 1,
-          "featured": true,
-          "category": "模型与框架",
-          "metrics": {},
-          "metadata": {
-            "repository": "ggml-org/llama.cpp",
-            "version": "b10451",
-            "release_id": "371260055",
-            "release_type": "release"
-          },
-          "authors": [
-            "ggml-org/llama.cpp"
-          ],
-          "abstract": "llama : check LoRA tensor data is within file bounds (#27056) * llama : check LoRA tensor data is within file bounds * Update src/llama-adapter.cpp Co-authored-by: Sigbjørn Skjæret --------- Co-authored-by: Sigbjørn Skjæret **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10451/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10451/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10451/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-ui.tar.gz)",
-          "published": "2026-08-16",
-          "author_line": "ggml-org/llama.cpp"
-        }
-      ]
+      "items": []
     }
   ]
 }

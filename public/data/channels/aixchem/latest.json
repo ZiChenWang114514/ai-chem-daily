@@ -1,24 +1,24 @@
 {
   "schema_version": "2.0",
-  "date": "2026-08-16",
+  "date": "2026-08-17",
   "channel": "aixchem",
-  "generated_at": "2026-08-16T12:28:41+00:00",
+  "generated_at": "2026-08-16T17:17:22+00:00",
   "title": "AI × Chem 每日精选",
   "subtitle": "预印本、方法、数据集与实验验证的每日精选。",
   "window": {
-    "start": "2026-08-16",
-    "end": "2026-08-16"
+    "start": "2026-08-17",
+    "end": "2026-08-17"
   },
   "method": "公开来源采集、规则筛选与模型审阅",
   "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
   "stats": {
-    "fetched": 0,
-    "candidates": 0,
-    "selected": 0,
+    "fetched": 338,
+    "candidates": 50,
+    "selected": 14,
     "sources": {
       "arXiv": 0,
-      "bioRxiv": 0,
-      "ChemRxiv": 0
+      "bioRxiv": 311,
+      "ChemRxiv": 30
     }
   },
   "source_status": {
@@ -27,20 +27,1720 @@
       "count": 0
     },
     "bioRxiv": {
-      "state": "empty",
-      "count": 0
+      "state": "ok",
+      "count": 311
     },
     "ChemRxiv": {
-      "state": "empty",
-      "count": 0
+      "state": "ok",
+      "count": 30
     }
   },
   "source_errors": [],
-  "items": [],
-  "papers": [],
+  "items": [
+    {
+      "id": "biorxiv:10.64898/2026.08.09.743788",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Learning from human and chemical languages to predict biological function",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.09.743788",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Kosonocky, C. W.",
+        "Kaderabkova, N.",
+        "Kim, K.",
+        "Mahmood, A. J. S.",
+        "Dunmyre, A.",
+        "Woolley, P.",
+        "Xing, K.",
+        "Winkler, D.",
+        "Babu, T.",
+        "Kaderabek, F.",
+        "Sessler, J. L.",
+        "Anslyn, E. V.",
+        "Marcotte, E. M.",
+        "Zhang, Y. J.",
+        "Ellington, A. D.",
+        "Mavridou, D. A. I."
+      ],
+      "language": "en",
+      "abstract_or_text": "Understanding how molecular structure encodes biological function remains a grand challenge in drug discovery. Here, we present PubCheF-1, a deep learning model that predicts literature-derived biological function directly from chemical structure. PubCheF-1 was trained on a dataset linking molecules to labels derived from the scientific articles in which they appear, a strategy that connects disparate compounds through the language used to describe their functionalities. When tasked with identifying inhibitors of {beta}-lactamases, including enzymes considered largely refractory to inhibition, PubCheF-1 predicted structurally distinct compounds that collectively have activity against all {beta}-lactamase classes. Furthermore, hit compounds directly bind the enzyme active site, restore antibiotic efficacy in multidrug-resistant high-priority pathogens, and demonstrate potent activity in animal infection models. Together, these findings establish that machine learning-based prediction of biological function derived from the language of scientific literature allows the identification of bioactive molecules at high hit rates, thereby accelerating therapeutic discovery.",
+      "summary_zh": "PubCheF-1将化学结构与论文文本归纳出的生物功能标签联合学习，用于从结构预测功能；作者据此发现了覆盖多类β-内酰胺酶的结构新颖抑制剂，并报告了靶点结合、耐药菌增敏和动物感染模型活性。",
+      "why_it_matters_zh": "将文献语言转化为化学功能监督信号，为跳出已知骨架的药物发现提供了新思路，并有多层级实验支撑；但功能标签的来源与偏倚、命中物的药代和安全性仍需进一步审查。",
+      "quality_score": 72.0,
+      "tags": [
+        "分子与药物发现",
+        "bioinformatics",
+        "machine learning",
+        "deep learning",
+        "chem",
+        "molecul"
+      ],
+      "evidence_flags": [
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 1,
+      "featured": true,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.09.743788",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Kosonocky, C. W.",
+        "Kaderabkova, N.",
+        "Kim, K.",
+        "Mahmood, A. J. S.",
+        "Dunmyre, A.",
+        "Woolley, P.",
+        "Xing, K.",
+        "Winkler, D.",
+        "Babu, T.",
+        "Kaderabek, F.",
+        "Sessler, J. L.",
+        "Anslyn, E. V.",
+        "Marcotte, E. M.",
+        "Zhang, Y. J.",
+        "Ellington, A. D.",
+        "Mavridou, D. A. I."
+      ],
+      "abstract": "Understanding how molecular structure encodes biological function remains a grand challenge in drug discovery. Here, we present PubCheF-1, a deep learning model that predicts literature-derived biological function directly from chemical structure. PubCheF-1 was trained on a dataset linking molecules to labels derived from the scientific articles in which they appear, a strategy that connects disparate compounds through the language used to describe their functionalities. When tasked with identifying inhibitors of {beta}-lactamases, including enzymes considered largely refractory to inhibition, PubCheF-1 predicted structurally distinct compounds that collectively have activity against all {beta}-lactamase classes. Furthermore, hit compounds directly bind the enzyme active site, restore antibiotic efficacy in multidrug-resistant high-priority pathogens, and demonstrate potent activity in animal infection models. Together, these findings establish that machine learning-based prediction of biological function derived from the language of scientific literature allows the identification of bioactive molecules at high hit rates, thereby accelerating therapeutic discovery.",
+      "published": "2026-08-14",
+      "author_line": "Kosonocky, C. W., Kaderabkova, N., Kim, K. 等 16 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.10.743877",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "CALFP-MHC: Interpretable Pan-Allelic Prediction of Peptide-MHC Binding and Presentation Using Chemically Grounded Fingerprints and Contrastive Learning",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.10.743877",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Pham, M.-D. N.",
+        "Ho, T.-K.-C.",
+        "Nguyen, H.-N.",
+        "Tran, L.-S.",
+        "Phan, M.-D.",
+        "Nguyen, V."
+      ],
+      "language": "en",
+      "abstract_or_text": "Identifying which peptides bind major histocompatibility complex (MHC) molecules is central to vaccine design, neoantigen prioritization, and precision immunotherapy. Existing deep learning predictors largely encode amino acids as discrete symbols, thereby missing the residue-level chemistry driving molecular recognition. Performance also tends to degrade under class imbalance, for rare alleles, and on peptide-MHC combinations outside the training distribution. We developed CALFP-MHC, a framework that encodes each amino acid as a set of complementary cheminformatics fingerprints capturing functional groups, atomic connectivity, and substructural features, and combines positional encoding with supervised contrastive pre-training to organize the latent space by binding class before fine-tuning a binary classifier. Peptide-MHC interactions are modeled through a hybrid convolutional-transformer backbone. In a large-scale computational benchmark covering ~18.7 million peptide-MHC pairs across 112 HLA class I and 53 class II alleles, CALFP-MHC achieved AUCs of 0.93-0.97 and PPVs of 0.66 - 0.94. Critically, performance remained above AUC 0.90 even at a 200:1 negative-to-positive ratio, where competing tools frequently collapsed toward chance. On independent experimental data containing 3,627 class I and 520 class II MS/MS-confirmed ligands and 570 validated neoantigens, the model maintained strong discrimination, correctly prioritizing immunogenic peptides and MHC-presented ligands. Attention and integrated-gradient analyses recovered established anchor positions (P2 and P{Omega}; for class I, P1, P4, P6, and P9 for class II) and highlighted chemically interpretable functional groups consistent with known binding determinants. CALFP-MHC demonstrates that grounding residue representations in molecular chemistry, rather than sequence symbols alone, improves both robustness and interpretability in peptide-MHC binding prediction.",
+      "summary_zh": "CALFP-MHC以化学指纹表征氨基酸残基，并结合对比预训练和卷积—Transformer模型预测肽-MHC结合及呈递；在大规模计算基准以及质谱配体、已验证新抗原数据上进行了评估。",
+      "why_it_matters_zh": "以残基化学特征替代纯序列符号，有助于提升罕见等位基因和类别不平衡条件下的稳健性，并给出可解释的结合位点信号；但摘要中的实验验证主要是独立数据集评测，尚不等同于前瞻性疫苗或临床验证。",
+      "quality_score": 79.0,
+      "tags": [
+        "分子与药物发现",
+        "immunology",
+        "deep learning",
+        "transformer",
+        "chem",
+        "molecul"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "experimental",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.10.743877",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Pham, M.-D. N.",
+        "Ho, T.-K.-C.",
+        "Nguyen, H.-N.",
+        "Tran, L.-S.",
+        "Phan, M.-D.",
+        "Nguyen, V."
+      ],
+      "abstract": "Identifying which peptides bind major histocompatibility complex (MHC) molecules is central to vaccine design, neoantigen prioritization, and precision immunotherapy. Existing deep learning predictors largely encode amino acids as discrete symbols, thereby missing the residue-level chemistry driving molecular recognition. Performance also tends to degrade under class imbalance, for rare alleles, and on peptide-MHC combinations outside the training distribution. We developed CALFP-MHC, a framework that encodes each amino acid as a set of complementary cheminformatics fingerprints capturing functional groups, atomic connectivity, and substructural features, and combines positional encoding with supervised contrastive pre-training to organize the latent space by binding class before fine-tuning a binary classifier. Peptide-MHC interactions are modeled through a hybrid convolutional-transformer backbone. In a large-scale computational benchmark covering ~18.7 million peptide-MHC pairs across 112 HLA class I and 53 class II alleles, CALFP-MHC achieved AUCs of 0.93-0.97 and PPVs of 0.66 - 0.94. Critically, performance remained above AUC 0.90 even at a 200:1 negative-to-positive ratio, where competing tools frequently collapsed toward chance. On independent experimental data containing 3,627 class I and 520 class II MS/MS-confirmed ligands and 570 validated neoantigens, the model maintained strong discrimination, correctly prioritizing immunogenic peptides and MHC-presented ligands. Attention and integrated-gradient analyses recovered established anchor positions (P2 and P{Omega}; for class I, P1, P4, P6, and P9 for class II) and highlighted chemically interpretable functional groups consistent with known binding determinants. CALFP-MHC demonstrates that grounding residue representations in molecular chemistry, rather than sequence symbols alone, improves both robustness and interpretability in peptide-MHC binding prediction.",
+      "published": "2026-08-14",
+      "author_line": "Pham, M.-D. N., Ho, T.-K.-C., Nguyen, H.-N. 等 6 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744826",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Activity-based chemical proteomics uncovers unexpected covalent targetsof E64d and reveals a role for cysteine cathepsins in PLD3 proteostasis.",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744826",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Hertwig, M.",
+        "Kielkowski, P."
+      ],
+      "language": "en",
+      "abstract_or_text": "Catalytic activity of 5'-3' exonuclease Phospholipase D3 (PLD3) is associated with immune signaling and neurodegeneration including Alzheimer's disease. PLD3 undergoes multiple post-translational modifications and proteolytic cleavage to establish its catalytically active form. However, the proteases catalyzing the cleavage of PLD3 have remained unidentified. To study the proteolytic cleavage of PLD3, we have evaluated the small molecule covalent inhibitor E64d that blocks proteolysis catalyzed by cysteine cathepsins. To validate the selectivity of E64d, we have designed and synthetized an E64d propargyl analogue and carried out a detailed activity-based protein profiling to reveal a broad engagement of the compound with other protein targets including bleomycin hydrolase (BLMH), Kelch-like ECH-associated protein 1 (KEAP1), transcription elongation factor SPT5 (SUPT5H) and asparagine synthetase (ASNS). The specificity of the E64d-protein interactions was confirmed by biochemical assays and mass spectrometry-based site identifications. In neurons, treatment with E64d lead to about 50-fold PLD3 accumulation and dysregulation of its proteolytic cleavage, while there was only a minor overall change on the whole proteome level. Taken together, this study provides insights into previously unknown E64d selectivity and renders cysteine cathepsins responsible for PLD3 degradation in neurons. It highlights the importance of cysteine cathepsins activity in neuronal lysosomes for proper PLD3 processing and hence it suggests that their activation might be responsible for decreased PLD3 levels in neurons of patients with Alzheimer's diseases. These findings are key for further elucidation of PLD3 function in neurodegenerative diseases.",
+      "summary_zh": "研究以E64d炔基探针开展活性基础化学蛋白组学，发现该半胱氨酸蛋白酶抑制剂还广泛结合BLMH、KEAP1、SUPT5H和ASNS等蛋白，并用生化实验和质谱定位验证；在神经元中，E64d导致PLD3显著累积并扰乱其加工。",
+      "why_it_matters_zh": "工作直接提示常用共价抑制剂E64d的选择性比预期更宽，并把半胱氨酸组织蛋白酶与PLD3稳态联系起来；其疾病机制与治疗外推仍主要来自细胞和蛋白组学证据。",
+      "quality_score": 73.0,
+      "tags": [
+        "分子与药物发现",
+        "biochemistry",
+        "generative",
+        "chem",
+        "molecul"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744826",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Hertwig, M.",
+        "Kielkowski, P."
+      ],
+      "abstract": "Catalytic activity of 5'-3' exonuclease Phospholipase D3 (PLD3) is associated with immune signaling and neurodegeneration including Alzheimer's disease. PLD3 undergoes multiple post-translational modifications and proteolytic cleavage to establish its catalytically active form. However, the proteases catalyzing the cleavage of PLD3 have remained unidentified. To study the proteolytic cleavage of PLD3, we have evaluated the small molecule covalent inhibitor E64d that blocks proteolysis catalyzed by cysteine cathepsins. To validate the selectivity of E64d, we have designed and synthetized an E64d propargyl analogue and carried out a detailed activity-based protein profiling to reveal a broad engagement of the compound with other protein targets including bleomycin hydrolase (BLMH), Kelch-like ECH-associated protein 1 (KEAP1), transcription elongation factor SPT5 (SUPT5H) and asparagine synthetase (ASNS). The specificity of the E64d-protein interactions was confirmed by biochemical assays and mass spectrometry-based site identifications. In neurons, treatment with E64d lead to about 50-fold PLD3 accumulation and dysregulation of its proteolytic cleavage, while there was only a minor overall change on the whole proteome level. Taken together, this study provides insights into previously unknown E64d selectivity and renders cysteine cathepsins responsible for PLD3 degradation in neurons. It highlights the importance of cysteine cathepsins activity in neuronal lysosomes for proper PLD3 processing and hence it suggests that their activation might be responsible for decreased PLD3 levels in neurons of patients with Alzheimer's diseases. These findings are key for further elucidation of PLD3 function in neurodegenerative diseases.",
+      "published": "2026-08-15",
+      "author_line": "Hertwig, M., Kielkowski, P."
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.08.743505",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "DQHTFI: Dynamic-Query Hypergraph Transformer for Fine-Grained Drug-Target Interaction and Affinity Prediction",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.08.743505",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Tao, K.",
+        "Chai, H.",
+        "Chen, Z.",
+        "Gao, X.",
+        "Yu, B."
+      ],
+      "language": "en",
+      "abstract_or_text": "Drug-target interaction prediction and binding affinity prediction are two key tasks in drug discovery and drug repurposing. Although deep learning methods have made significant progress, existing models typically rely on global representations of drugs and proteins, making it difficult to adequately model fine-grained interactions between their local units. Fixed multimodal fusion strategies also struggle to dynamically adjust the contributions of different modalities for different drug-target combinations. To address these issues, we propose DQHTFI, a fine-grained interaction prediction framework for drug-target interaction classification and binding affinity regression. DQHTFI employs BRICS fragments and Pfam functional domains as the basic interaction units and jointly learns semantic and structural representations. We design a dynamic-query hypergraph Transformer framework in which hyperedges are constructed among the multimodal features of fragment-domain pairs. Dynamic queries are generated from the cross-conditioned features of fragment-domain pairs to adaptively adjust the contribution of each modality, thereby modeling higher-order interactions between local units. Our proposed model achieves competitive results on multiple benchmark datasets.",
+      "summary_zh": "DQHTFI将药物BRICS片段与蛋白Pfam结构域作为局部相互作用单元，用动态查询超图Transformer整合语义和结构特征，同时预测药物—靶标相互作用及结合亲和力。",
+      "why_it_matters_zh": "局部片段—结构域建模可弥补全局表征忽略细粒度作用的不足，并在多个基准上取得有竞争力的结果；摘要未给出外部实验验证和具体效应量，实际泛化能力仍待检验。",
+      "quality_score": 75.0,
+      "tags": [
+        "方法与模型",
+        "bioinformatics",
+        "deep learning",
+        "transformer",
+        "drug",
+        "protein"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.08.743505",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Tao, K.",
+        "Chai, H.",
+        "Chen, Z.",
+        "Gao, X.",
+        "Yu, B."
+      ],
+      "abstract": "Drug-target interaction prediction and binding affinity prediction are two key tasks in drug discovery and drug repurposing. Although deep learning methods have made significant progress, existing models typically rely on global representations of drugs and proteins, making it difficult to adequately model fine-grained interactions between their local units. Fixed multimodal fusion strategies also struggle to dynamically adjust the contributions of different modalities for different drug-target combinations. To address these issues, we propose DQHTFI, a fine-grained interaction prediction framework for drug-target interaction classification and binding affinity regression. DQHTFI employs BRICS fragments and Pfam functional domains as the basic interaction units and jointly learns semantic and structural representations. We design a dynamic-query hypergraph Transformer framework in which hyperedges are constructed among the multimodal features of fragment-domain pairs. Dynamic queries are generated from the cross-conditioned features of fragment-domain pairs to adaptively adjust the contribution of each modality, thereby modeling higher-order interactions between local units. Our proposed model achieves competitive results on multiple benchmark datasets.",
+      "published": "2026-08-14",
+      "author_line": "Tao, K., Chai, H., Chen, Z. 等 5 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.02.15.705956",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Physically Grounded Generative Modeling of All-Atom Biomolecular Dynamics",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.02.15.705956",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Feng, B.",
+        "Zhang, J.",
+        "Zhang, X.",
+        "Cao, H.",
+        "Zhang, M.",
+        "Barth, P.",
+        "Liu, Z.",
+        "Li, Y."
+      ],
+      "language": "en",
+      "abstract_or_text": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
+      "summary_zh": "BioKinema采用受朗之万动力学启发的时空扩散架构，并以分层预测和插值生成连续时间、全原子生物分子轨迹；作者报告其能复现蛋白构象热力学和动力学，并用于蛋白—配体体系及稀有解离事件。",
+      "why_it_matters_zh": "若动力学保真度成立，该方法可显著降低长时间尺度分子动力学模拟成本，适用于构象机制和药物解离研究；现有证据来自计算验证，跨体系可靠性及对真实实验动力学的预测能力仍需独立比较。",
+      "quality_score": 80.0,
+      "tags": [
+        "方法与模型",
+        "bioinformatics",
+        "deep learning",
+        "diffusion",
+        "molecul",
+        "drug"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 5,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.02.15.705956",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Feng, B.",
+        "Zhang, J.",
+        "Zhang, X.",
+        "Cao, H.",
+        "Zhang, M.",
+        "Barth, P.",
+        "Liu, Z.",
+        "Li, Y."
+      ],
+      "abstract": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
+      "published": "2026-08-15",
+      "author_line": "Feng, B., Zhang, J., Zhang, X. 等 8 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007443/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Neural Networks Accelerate Ab Initio Multiple Spawning Simulations: A Case Study of Using Machine Learning Potentials for Excited State Dynamics",
+      "url": "https://doi.org/10.26434/chemrxiv.15007443/v1",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Pablo A. Unzueta",
+        "Yuanheng Wang",
+        "Todd J. Martinez"
+      ],
+      "language": "en",
+      "abstract_or_text": "Nonadiabatic simulations are critical for understanding photochemical reactions but are often computationally prohibitive, limiting their application to relatively small molecules and short timescales. Machine learning interatomic potentials (MLIPs) promise to remove most of the cost by replacing the electronic structure calls that dominate these simulations, while retaining chemical accuracy. We evaluate independent MLIPs fit to the ground and first excited state for two prototypical photochemical molecules — ethylene and the deprotonated green fluorescent protein chromophore. Despite sub-chemical-accuracy errors on held-out test data, the MLIPs predict qualitatively wrong potential energy surfaces (PESs) near conical intersections: artificial gaps, spurious near-degeneracies, and even reordering of the adiabatic states. We repair this with a hybrid “holey-ML” approach that switches from the MLIPs to ab initio quantum chemistry (QM) wherever the ML-predicted gap between states is small. This hybrid approach reduces the computational cost by an order of magnitude while reproducing the excited state population decay of reference fully ab initio QM simulations. Therefore, hybrid QM/ML schemes are a practical route to routine nonadiabatic dynamics.",
+      "summary_zh": "该研究检验机器学习原子间势在激发态非绝热动力学中的失效模式，发现即使测试误差很低，模型在锥形交叉附近仍可能给出错误势能面；随后以小能隙区域调用从头算量子化学的混合方案恢复参考动力学。",
+      "why_it_matters_zh": "结果明确揭示了仅看能量误差不足以保证光化学动力学正确，并给出约一个数量级加速的实用途径；验证目前限于乙烯和GFP发色团，复杂反应网络的适用范围尚待扩展。",
+      "quality_score": 76.0,
+      "tags": [
+        "方法与模型",
+        "ChemRxiv",
+        "machine learning",
+        "neural",
+        "chem",
+        "molecul"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 6,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007443/v1",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Pablo A. Unzueta",
+        "Yuanheng Wang",
+        "Todd J. Martinez"
+      ],
+      "abstract": "Nonadiabatic simulations are critical for understanding photochemical reactions but are often computationally prohibitive, limiting their application to relatively small molecules and short timescales. Machine learning interatomic potentials (MLIPs) promise to remove most of the cost by replacing the electronic structure calls that dominate these simulations, while retaining chemical accuracy. We evaluate independent MLIPs fit to the ground and first excited state for two prototypical photochemical molecules — ethylene and the deprotonated green fluorescent protein chromophore. Despite sub-chemical-accuracy errors on held-out test data, the MLIPs predict qualitatively wrong potential energy surfaces (PESs) near conical intersections: artificial gaps, spurious near-degeneracies, and even reordering of the adiabatic states. We repair this with a hybrid “holey-ML” approach that switches from the MLIPs to ab initio quantum chemistry (QM) wherever the ML-predicted gap between states is small. This hybrid approach reduces the computational cost by an order of magnitude while reproducing the excited state population decay of reference fully ab initio QM simulations. Therefore, hybrid QM/ML schemes are a practical route to routine nonadiabatic dynamics.",
+      "published": "2026-08-14",
+      "author_line": "Pablo A. Unzueta, Yuanheng Wang, Todd J. Martinez"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007436/v1",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "SafeChem: A Benchmark Dataset for Multi-Label Chemical Hazard Prediction and LLM Safety Hallucination Evaluation",
+      "url": "https://doi.org/10.26434/chemrxiv.15007436/v1",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Ran Elgedawy",
+        "Sanjay Das",
+        "Ethan Seefried",
+        "Ryan Burchfield",
+        "Gavin Wiggins",
+        "Kimberly Jeskie",
+        "Chrissi Schnell",
+        "Susan Fiscor",
+        "Subhamay Pramanik",
+        "Billey Thomas",
+        "Sudarshan Srinivasan",
+        "Tirthankar Ghosal"
+      ],
+      "language": "en",
+      "abstract_or_text": "We introduce SafeChem, a regulatory-grounded benchmark of 32,211 chemical substances annotated with molecular structure representations, physicochemical descriptors, and 30 binary Globally Harmonized System (GHS) hazard labels. Unlike prior molecular benchmarks queried from pharmaceutical databases, SafeChem is seeded from a curated hazardous materials registry (HMMIS), ensuring coverage of real-world industrial and safety-critical chemicals. We position it as a unified benchmark for chemical safety reasoning across two complementary regimes: predictive performance, measuring multi-label hazard classification from molecular structure, and safety reliability, measuring omission-prone hazard assessment by large language models (LLMs). Under predictive evaluation, a scaffold-split benchmark over 20 GHS categories reveals that all six baseline models achieve meaningful performance on high-prevalence labels (macro-AUPRC 0.45–0.55), while mid-prevalence labels remain substantially harder (macro-AUPRC 0.08–0.28), establishing a difficulty gradient that motivates future work on low-resource hazard prediction. Under reliability evaluation, a 500-substance high-hazard LLM stress test shows that all eight evaluated LLMs exhibit omission hallucination rates above 0.21, with the dominant failure mode being silent abstention: empty predictions indistinguishable from confirmed negatives in automated pipelines, disproportionately targeting the rarest and most dangerous hazard classes. Together, these regimes make SafeChem a benchmark resource for both task-specific molecular models and general-purpose LLMs in chemical safety workflows.",
+      "summary_zh": "SafeChem建立含32,211种物质、分子结构与30项GHS危险标签的化学安全基准，同时评估多标签危险预测和大语言模型的危险信息遗漏。支架划分测试显示低频标签明显更难，500种高危物质压力测试中全部八个LLM均出现较高遗漏率。",
+      "why_it_matters_zh": "该数据集把分子建模性能与LLM安全可靠性放入同一真实工业危险化学品场景，尤其突出了稀有高危标签的风险；标签覆盖、注册表偏倚及自动化流程中空预测的处理方式会影响外部应用。",
+      "quality_score": 82.0,
+      "tags": [
+        "方法与模型",
+        "ChemRxiv",
+        "language model",
+        "llm",
+        "chem",
+        "molecul"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "dataset",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 7,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007436/v1",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Ran Elgedawy",
+        "Sanjay Das",
+        "Ethan Seefried",
+        "Ryan Burchfield",
+        "Gavin Wiggins",
+        "Kimberly Jeskie",
+        "Chrissi Schnell",
+        "Susan Fiscor",
+        "Subhamay Pramanik",
+        "Billey Thomas",
+        "Sudarshan Srinivasan",
+        "Tirthankar Ghosal"
+      ],
+      "abstract": "We introduce SafeChem, a regulatory-grounded benchmark of 32,211 chemical substances annotated with molecular structure representations, physicochemical descriptors, and 30 binary Globally Harmonized System (GHS) hazard labels. Unlike prior molecular benchmarks queried from pharmaceutical databases, SafeChem is seeded from a curated hazardous materials registry (HMMIS), ensuring coverage of real-world industrial and safety-critical chemicals. We position it as a unified benchmark for chemical safety reasoning across two complementary regimes: predictive performance, measuring multi-label hazard classification from molecular structure, and safety reliability, measuring omission-prone hazard assessment by large language models (LLMs). Under predictive evaluation, a scaffold-split benchmark over 20 GHS categories reveals that all six baseline models achieve meaningful performance on high-prevalence labels (macro-AUPRC 0.45–0.55), while mid-prevalence labels remain substantially harder (macro-AUPRC 0.08–0.28), establishing a difficulty gradient that motivates future work on low-resource hazard prediction. Under reliability evaluation, a 500-substance high-hazard LLM stress test shows that all eight evaluated LLMs exhibit omission hallucination rates above 0.21, with the dominant failure mode being silent abstention: empty predictions indistinguishable from confirmed negatives in automated pipelines, disproportionately targeting the rarest and most dangerous hazard classes. Together, these regimes make SafeChem a benchmark resource for both task-specific molecular models and general-purpose LLMs in chemical safety workflows.",
+      "published": "2026-08-14",
+      "author_line": "Ran Elgedawy, Sanjay Das, Ethan Seefried 等 12 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744759",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "LEN-Seek: Fast and scalable ligand binding-site similarity search in the latent space of an SE(3)-invariant graph VAE",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744759",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Yeo, K.",
+        "Kim, D.",
+        "Sim, J.",
+        "Lee, J."
+      ],
+      "language": "en",
+      "abstract_or_text": "Motivation: Ligand binding-site similarity search is a crucial step in drug discovery that reduces the conformational search space for docking and other downstream tasks by comparing a target protein against experimentally identified binding sites. Existing methods rely on either direct structural alignment or lossy compression of structural information, producing a trade-off between scalability and precision. Results: We propose LEN-Seek, a ligand binding-site search method based on a graph neural network (GNN)-driven variational autoencoder (VAE) that encodes the 3D structural and physicochemical context of a binding site into a probabilistic latent space, enabling similarity search within a low-dimensional vector space. A binding site is modeled as a graph of amino acid residues, with node features adopted from the protein language model, Ankh, and edges encoded as SE(3)-invariant (roto-translational invariant) geometric relationships, thereby avoiding expensive data augmentation or SE(3)-equivariant models. Compared to ProBiS, the purely geometric graph-clique based method, LEN-Seek successfully retrieves a substantial portion of similar binding sites with a roughly 3,400-fold lower per-comparison cost, demonstrating its potential as a scalable approach to template-based ligand binding-site search in large-scale protein structure databases.",
+      "summary_zh": "LEN-Seek以SE(3)不变图变分自编码器将蛋白配体结合位点的三维几何和理化环境编码至低维潜空间，用于大规模相似位点检索；相较ProBiS，作者报告单次比较成本约降低3,400倍。",
+      "why_it_matters_zh": "快速位点相似性检索可缩小对接与药物再定位的搜索空间，方法也兼顾了几何不变性和可扩展性；其检索精度、结构数据库覆盖与下游命中率仍需在更多独立任务中验证。",
+      "quality_score": 75.0,
+      "tags": [
+        "分子与药物发现",
+        "bioinformatics",
+        "language model",
+        "neural",
+        "chem",
+        "drug"
+      ],
+      "evidence_flags": [
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 8,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744759",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Yeo, K.",
+        "Kim, D.",
+        "Sim, J.",
+        "Lee, J."
+      ],
+      "abstract": "Motivation: Ligand binding-site similarity search is a crucial step in drug discovery that reduces the conformational search space for docking and other downstream tasks by comparing a target protein against experimentally identified binding sites. Existing methods rely on either direct structural alignment or lossy compression of structural information, producing a trade-off between scalability and precision. Results: We propose LEN-Seek, a ligand binding-site search method based on a graph neural network (GNN)-driven variational autoencoder (VAE) that encodes the 3D structural and physicochemical context of a binding site into a probabilistic latent space, enabling similarity search within a low-dimensional vector space. A binding site is modeled as a graph of amino acid residues, with node features adopted from the protein language model, Ankh, and edges encoded as SE(3)-invariant (roto-translational invariant) geometric relationships, thereby avoiding expensive data augmentation or SE(3)-equivariant models. Compared to ProBiS, the purely geometric graph-clique based method, LEN-Seek successfully retrieves a substantial portion of similar binding sites with a roughly 3,400-fold lower per-comparison cost, demonstrating its potential as a scalable approach to template-based ligand binding-site search in large-scale protein structure databases.",
+      "published": "2026-08-15",
+      "author_line": "Yeo, K., Kim, D., Sim, J. 等 4 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007454/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Predictive Synthesis of InSb Quantum Dots: Zerovalent Intermediates, Surface Chemistry, and Optical Tunability",
+      "url": "https://doi.org/10.26434/chemrxiv.15007454/v1",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Yun Hai",
+        "Xavier Kirchherr",
+        "Riccardo Nardin",
+        "Wouter Smans",
+        "Sofia Iosifidi",
+        "Jacopo Pedrini",
+        "Chiara Trevisan",
+        "Darius A. Pacurar",
+        "Julia Kraft",
+        "Gabor Ersek",
+        "Dominic Gerlach",
+        "Majid Ahmadi",
+        "Antonija Grubišić-Čabo",
+        "Giuseppe Portale",
+        "Fabio Pezzoli",
+        "Loredana Protesescu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Indium antimonide (InSb) colloidal quantum dots (QDs) are transformative for short-wave infrared (SWIR) to mid-infrared (MIR) optoelectronics due to their narrow bandgap (0.17 eV for bulk) and exceptional electronic properties and carrier mobilities. Here, we quantitatively refine the mechanistic framework of InSb QDs formation by demonstrating the the zise of zerovalent In0 and Sb0 intermediate nanoparticles strictly governs intermetallic diffusion and subsequent growth kinetics By systematically tuning precursor halide choice (Cl-, Br-, I-), reducing agent ratios, In/Sb ratios (2:1 – 5:1), and reaction time (15-180 min), we achived monodisperse InSb QDs with tunable absorption from 1160 to 2200 nm, and exceptional optical and colloidal stability. Temperature-dependent studies reveal that Sb0 nanoparticles (NPs, 3-4 nm) template InSb QD nucleation at 140-160 ºC, while larger In0 NPs (50 nm) facilitate In diffusion. Validation experiments using pre-synthetised In0 and Sb0 NPs confirm that size-matched intermediates (14-17 nm) enable complete conversion to phase-pure zinc-blende InSb QDs. Spectroscopic analysis identifies a dominant non-radiative decay channel (τ1 ≈ 0.12 ns, for 9.6 nm InSb QDs) at room temperature, attributed to surface trapping, alongside a preserved radiative lifetime, consistent with the presence of In and Sb surface oxides. This diffusion-mediated kinetic framework transforms transient metallic intermediates into predictive descriptors for nanocrystal synthesis, enabling scalable, reproducible, and size-tunable InSb QDs with distinct excitonic features, achieving 80–100 mg of purified product per batch for next-generation SWIR technologies.",
+      "summary_zh": "研究通过改变卤化物前体、还原剂比例、In/Sb比例和反应时间，阐明零价Sb与In纳米颗粒的尺寸如何控制InSb量子点成核与扩散生长；预合成中间体实验支持该机制，并制得吸收可调的单分散量子点。",
+      "why_it_matters_zh": "将瞬态金属中间体转化为可操作的合成描述符，有望提高窄带隙InSb量子点的可重复制备和红外光电应用可调性；表面氧化导致的非辐射损失仍是器件性能的重要限制。",
+      "quality_score": 79.0,
+      "tags": [
+        "方法与模型",
+        "ChemRxiv",
+        "diffusion",
+        "agent",
+        "chem",
+        "reaction"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 9,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007454/v1",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Yun Hai",
+        "Xavier Kirchherr",
+        "Riccardo Nardin",
+        "Wouter Smans",
+        "Sofia Iosifidi",
+        "Jacopo Pedrini",
+        "Chiara Trevisan",
+        "Darius A. Pacurar",
+        "Julia Kraft",
+        "Gabor Ersek",
+        "Dominic Gerlach",
+        "Majid Ahmadi",
+        "Antonija Grubišić-Čabo",
+        "Giuseppe Portale",
+        "Fabio Pezzoli",
+        "Loredana Protesescu"
+      ],
+      "abstract": "Indium antimonide (InSb) colloidal quantum dots (QDs) are transformative for short-wave infrared (SWIR) to mid-infrared (MIR) optoelectronics due to their narrow bandgap (0.17 eV for bulk) and exceptional electronic properties and carrier mobilities. Here, we quantitatively refine the mechanistic framework of InSb QDs formation by demonstrating the the zise of zerovalent In0 and Sb0 intermediate nanoparticles strictly governs intermetallic diffusion and subsequent growth kinetics By systematically tuning precursor halide choice (Cl-, Br-, I-), reducing agent ratios, In/Sb ratios (2:1 – 5:1), and reaction time (15-180 min), we achived monodisperse InSb QDs with tunable absorption from 1160 to 2200 nm, and exceptional optical and colloidal stability. Temperature-dependent studies reveal that Sb0 nanoparticles (NPs, 3-4 nm) template InSb QD nucleation at 140-160 ºC, while larger In0 NPs (50 nm) facilitate In diffusion. Validation experiments using pre-synthetised In0 and Sb0 NPs confirm that size-matched intermediates (14-17 nm) enable complete conversion to phase-pure zinc-blende InSb QDs. Spectroscopic analysis identifies a dominant non-radiative decay channel (τ1 ≈ 0.12 ns, for 9.6 nm InSb QDs) at room temperature, attributed to surface trapping, alongside a preserved radiative lifetime, consistent with the presence of In and Sb surface oxides. This diffusion-mediated kinetic framework transforms transient metallic intermediates into predictive descriptors for nanocrystal synthesis, enabling scalable, reproducible, and size-tunable InSb QDs with distinct excitonic features, achieving 80–100 mg of purified product per batch for next-generation SWIR technologies.",
+      "published": "2026-08-14",
+      "author_line": "Yun Hai, Xavier Kirchherr, Riccardo Nardin 等 16 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007451/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Mechanistic Insights into Cobalt-Catalyzed Kumada C(sp2)- C(sp2) Cross-Coupling Enabled by High-Denticity Cobalt(I) Intermediates",
+      "url": "https://doi.org/10.26434/chemrxiv.15007451/v1",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Donghyun Jeong",
+        "Jinwoo Jung",
+        "Liviu M. Mirica"
+      ],
+      "language": "en",
+      "abstract_or_text": "Understanding the role of low-valent cobalt species in cross-coupling catalysis remains a central challenge, particularly in distinguishing two-electron organometallic pathways from radical-based mechanisms. Herein, we report the isolation and comprehensive characterization of cobalt(II) and cobalt(I) intermediates supported by a tetradentate diazapyridinophane (tBuN4) ligand and elucidate their roles in Kumada cross-coupling reactions. Structural, spectroscopic, and computational studies reveal partial ligand-centered reduction in the “Co(I)” species, which function as single-electron initiators for halogen atom abstraction from aryl bromides. Mechanistic investigations suggest that the resulting aryl radicals follow two distinct pathways: solvent-mediated hydrogen atom transfer leading to protodehalogenation, or interception by Grignard reagents to form C(sp2)–C(sp2) bonds through an SRN1-type mechanism (radicalnucleophilic aromatic substitution). Overall, these findings establish a radical-mediated framework for Co-catalyzed Kumada coupling and highlight ligand denticity as a key factor in governing reaction pathways.",
+      "summary_zh": "研究分离并表征四齿二氮杂吡啶环配体支持的Co(II)和形式Co(I)中间体，结合结构、光谱和计算证据，提出Co催化Kumada偶联经卤原子转移和芳基自由基的SRN1型路径进行。",
+      "why_it_matters_zh": "低价钴物种在交叉偶联中的真实电子结构与自由基路径长期难以厘清，该研究给出可检验的配体齿数—反应路径关系；机理结论仍需考察其对不同底物、配体和反应条件的普适性。",
+      "quality_score": 70.0,
+      "tags": [
+        "分子与药物发现",
+        "ChemRxiv",
+        "agent",
+        "ligand",
+        "reaction"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 10,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007451/v1",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Donghyun Jeong",
+        "Jinwoo Jung",
+        "Liviu M. Mirica"
+      ],
+      "abstract": "Understanding the role of low-valent cobalt species in cross-coupling catalysis remains a central challenge, particularly in distinguishing two-electron organometallic pathways from radical-based mechanisms. Herein, we report the isolation and comprehensive characterization of cobalt(II) and cobalt(I) intermediates supported by a tetradentate diazapyridinophane (tBuN4) ligand and elucidate their roles in Kumada cross-coupling reactions. Structural, spectroscopic, and computational studies reveal partial ligand-centered reduction in the “Co(I)” species, which function as single-electron initiators for halogen atom abstraction from aryl bromides. Mechanistic investigations suggest that the resulting aryl radicals follow two distinct pathways: solvent-mediated hydrogen atom transfer leading to protodehalogenation, or interception by Grignard reagents to form C(sp2)–C(sp2) bonds through an SRN1-type mechanism (radicalnucleophilic aromatic substitution). Overall, these findings establish a radical-mediated framework for Co-catalyzed Kumada coupling and highlight ligand denticity as a key factor in governing reaction pathways.",
+      "published": "2026-08-14",
+      "author_line": "Donghyun Jeong, Jinwoo Jung, Liviu M. Mirica"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744703",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Protein language models and the long tail of functional diversity",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744703",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Vinod, R.",
+        "Char, S.",
+        "Amini, A. P.",
+        "Crawford, L. K.",
+        "Yang, K. K."
+      ],
+      "language": "en",
+      "abstract_or_text": "Protein language model performance on downstream tasks depends on the pretraining data, motivating recent efforts to combine genomic- and metagenomic-derived protein sequences into large-scale atlases. Because these datasets are highly redundant, sequences are typically clustered by similarity and sampled during training. Sequences that do not belong to any cluster, known as ``singletons'', are typically excluded from training and evaluation because they are considered to be artifacts. However, singletons represent the long tail of functional diversity and are abundant in many large-scale atlases: nearly 43\\% of the 3.34 billion sequences in the joint genomic-metagenomic dataset GigaRef are singletons. Here, we characterize singletons derived from UniRef and GigaRef by assessing whether clustering missed homologs, how much their exclusion affects protein language model (PLM) training, and which biological domains they contain. We find that many GigaRef singletons belong to a cluster under alternative parameter settings, suggesting that genomic and metagenomic datasets may require dataset-specific clustering configurations. We also show that singletons share mutual information with clustered sequences, making them learnable by PLMs and useful for training. Finally, metagenomic singletons carry denser, more diverse domain content than clustered sequences, including domain-level homology that sequence-identity clustering misses. Together, these results support including singletons in PLM training and call for closer examination of data curation in large-scale integrated sequence atlases.",
+      "summary_zh": "研究分析大规模基因组和宏基因组蛋白库中的单例序列，指出许多单例在不同聚类参数下可归入簇，且其结构域内容更丰富多样；这些序列与聚类序列共享可供蛋白语言模型学习的信息。",
+      "why_it_matters_zh": "工作挑战了在预训练中直接丢弃单例序列的常规数据清洗做法，可能扩大蛋白功能长尾的可学习范围；单例质量和聚类标准高度依赖数据库与参数，训练收益仍需在具体下游任务中量化。",
+      "quality_score": 71.0,
+      "tags": [
+        "结构与生物",
+        "bioinformatics",
+        "language model",
+        "protein"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 11,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744703",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Vinod, R.",
+        "Char, S.",
+        "Amini, A. P.",
+        "Crawford, L. K.",
+        "Yang, K. K."
+      ],
+      "abstract": "Protein language model performance on downstream tasks depends on the pretraining data, motivating recent efforts to combine genomic- and metagenomic-derived protein sequences into large-scale atlases. Because these datasets are highly redundant, sequences are typically clustered by similarity and sampled during training. Sequences that do not belong to any cluster, known as ``singletons'', are typically excluded from training and evaluation because they are considered to be artifacts. However, singletons represent the long tail of functional diversity and are abundant in many large-scale atlases: nearly 43\\% of the 3.34 billion sequences in the joint genomic-metagenomic dataset GigaRef are singletons. Here, we characterize singletons derived from UniRef and GigaRef by assessing whether clustering missed homologs, how much their exclusion affects protein language model (PLM) training, and which biological domains they contain. We find that many GigaRef singletons belong to a cluster under alternative parameter settings, suggesting that genomic and metagenomic datasets may require dataset-specific clustering configurations. We also show that singletons share mutual information with clustered sequences, making them learnable by PLMs and useful for training. Finally, metagenomic singletons carry denser, more diverse domain content than clustered sequences, including domain-level homology that sequence-identity clustering misses. Together, these results support including singletons in PLM training and call for closer examination of data curation in large-scale integrated sequence atlases.",
+      "published": "2026-08-14",
+      "author_line": "Vinod, R., Char, S., Amini, A. P. 等 5 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.12.744314",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "AI4Loop: an Artificial Intelligence Framework Reveals Increased 3D Chromatin Interactions and Therapeutic Vulnerabilities across 12,000 Cancer Samples",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.744314",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Dao, F.",
+        "Lebeau, B.",
+        "Amuley, P.",
+        "Tan, W. K.",
+        "Li, X.",
+        "Goh, B. C.",
+        "Chng, W. J.",
+        "Kwoh, C. K.",
+        "Lin, H.",
+        "Lyu, H.",
+        "Fullwood, M."
+      ],
+      "language": "en",
+      "abstract_or_text": "Three-dimensional chromatin interactions shape gene regulation, but their large-scale analysis remains limited by the cost and complexity of experimental assays. Here we present AI4Loop, a deep learning framework that infers genome-wide gene-centered chromatin interaction networks directly from RNA-seq data. Across multiple cell types, AI4Loop recovered interaction patterns consistent with clinical samples and orthogonal chromatin conformation datasets. Applied to 12,347 transcriptomes from 32 cancer types, AI4Loop revealed pervasive increases in gene-centered chromatin interactions in tumors, particularly at oncogene-associated loci. These inferred interaction networks outperformed gene expression alone in cancer classification. Integration with more than 50,000 drug-treated transcriptomes identified compounds predicted to reverse cancer-associated interaction gains. Hi-C experiments confirmed that the oxazolidinone antibiotics eperezolid and radezolid reduce breast cancer-gain chromatin interactions. Together, these results identify increased gene-centered chromatin interactions as a pan-cancer feature and provide a scalable strategy for linking 3D genome dysregulation to therapeutic vulnerabilities.",
+      "summary_zh": "AI4Loop从RNA-seq推断基因中心的三维染色质互作网络，并用于32种癌症的12,347份转录组；整合药物处理转录组后预测可逆转异常互作的化合物，Hi-C实验验证了两种噁唑烷酮类药物的相关效应。",
+      "why_it_matters_zh": "该框架以常见转录组数据扩大三维基因组研究的样本规模，并把推断结果连接到药物脆弱性；RNA-seq并不能直接测量染色质构象，推断网络和药物因果效应仍需更多癌种及体内验证。",
+      "quality_score": 70.0,
+      "tags": [
+        "方法与模型",
+        "bioinformatics",
+        "artificial intelligence",
+        "deep learning",
+        "drug"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "experimental",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 12,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.12.744314",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Dao, F.",
+        "Lebeau, B.",
+        "Amuley, P.",
+        "Tan, W. K.",
+        "Li, X.",
+        "Goh, B. C.",
+        "Chng, W. J.",
+        "Kwoh, C. K.",
+        "Lin, H.",
+        "Lyu, H.",
+        "Fullwood, M."
+      ],
+      "abstract": "Three-dimensional chromatin interactions shape gene regulation, but their large-scale analysis remains limited by the cost and complexity of experimental assays. Here we present AI4Loop, a deep learning framework that infers genome-wide gene-centered chromatin interaction networks directly from RNA-seq data. Across multiple cell types, AI4Loop recovered interaction patterns consistent with clinical samples and orthogonal chromatin conformation datasets. Applied to 12,347 transcriptomes from 32 cancer types, AI4Loop revealed pervasive increases in gene-centered chromatin interactions in tumors, particularly at oncogene-associated loci. These inferred interaction networks outperformed gene expression alone in cancer classification. Integration with more than 50,000 drug-treated transcriptomes identified compounds predicted to reverse cancer-associated interaction gains. Hi-C experiments confirmed that the oxazolidinone antibiotics eperezolid and radezolid reduce breast cancer-gain chromatin interactions. Together, these results identify increased gene-centered chromatin interactions as a pan-cancer feature and provide a scalable strategy for linking 3D genome dysregulation to therapeutic vulnerabilities.",
+      "published": "2026-08-14",
+      "author_line": "Dao, F., Lebeau, B., Amuley, P. 等 11 人"
+    },
+    {
+      "id": "biorxiv:10.1101/2025.10.24.684491",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A machine learning framework for supervised treatment response prediction from tumor transcriptomics: A large-scale pan-cancer study",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.10.24.684491",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Pal, L. R.",
+        "Gertz, E. M.",
+        "Ulhas Nair, N.",
+        "Mukherjee, S.",
+        "Patiyal, S.",
+        "Cantore, T.",
+        "Campagnolo, E. M.",
+        "Chang, T.",
+        "Dhruba, S. R.",
+        "Kim, Y.",
+        "Shulman, E. D.",
+        "Rajagopal, P. S.",
+        "Hoang, D.-T.",
+        "Hannenhalli, S.",
+        "Schaffer, A. A.",
+        "Ruppin, E."
+      ],
+      "language": "en",
+      "abstract_or_text": "Precision oncology aims to guide treatment decisions using biomarkers. While DNA-based panels are increasingly applied, RNA transcriptomics remain underused due to limited datasets and the absence of robust models. We assembled the largest transcriptomic resource for drug response prediction to date, spanning 91 cohorts, 5,675 patients, nine cancer types, and six frontline therapies: anti-PD-1/PD-L1 immune-checkpoint inhibitors, trastuzumab, bevacizumab, BRAF inhibitors, paclitaxel, and FAC/FEC (Fluorouracil-Adriamycin-Cyclophosphamide/Fluorouracil-Epirubicin-Cyclophosphamide) chemotherapy. We developed EXPRESSO (EXpression-Profile-RESponSe-Optimizer), a supervised machine-learning framework that predicts treatment response from pre-treatment transcriptomes by integrating drug targets and context-specific biomarkers. EXPRESSO achieves mean ROC-AUCs of 0.62 - 0.73 and median odds ratios of 2.4 - 4.6 across therapies, outperforming 20 published transcriptomic signatures and other machine learning methods. Prospective validation on 22 independent cohorts confirms that performance generalizes beyond cross-validation. The EXPRESSO signature additionally stratifies progression-free survival in immune checkpoint blockade-treated cohorts, demonstrating prognostic value beyond binary response prediction. Robustness analysis reveals that predictive performance plateaued for some therapies with increasing training cohorts but continued to improve for others. These findings suggest inherent limits of supervised brute-force learning for certain treatments, but additional data and deeper mechanistic modeling may further enhance transcriptomics-based predictors.",
+      "summary_zh": "EXPRESSO汇集91个队列、5,675名患者的治疗前肿瘤转录组，结合药物靶点和情境生物标志物预测六类一线治疗响应；在22个独立队列中，模型报告优于20种既有转录组特征。",
+      "why_it_matters_zh": "大规模跨癌种数据和独立队列评估提升了转录组治疗响应预测的可信度，也坦陈部分疗法的性能随样本量增加已趋于平台；其预测能力仍属中等，临床部署需要前瞻性研究与可解释的决策评估。",
+      "quality_score": 70.0,
+      "tags": [
+        "结构与生物",
+        "cancer biology",
+        "machine learning",
+        "chem",
+        "drug"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "prospective",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 13,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2025.10.24.684491",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Pal, L. R.",
+        "Gertz, E. M.",
+        "Ulhas Nair, N.",
+        "Mukherjee, S.",
+        "Patiyal, S.",
+        "Cantore, T.",
+        "Campagnolo, E. M.",
+        "Chang, T.",
+        "Dhruba, S. R.",
+        "Kim, Y.",
+        "Shulman, E. D.",
+        "Rajagopal, P. S.",
+        "Hoang, D.-T.",
+        "Hannenhalli, S.",
+        "Schaffer, A. A.",
+        "Ruppin, E."
+      ],
+      "abstract": "Precision oncology aims to guide treatment decisions using biomarkers. While DNA-based panels are increasingly applied, RNA transcriptomics remain underused due to limited datasets and the absence of robust models. We assembled the largest transcriptomic resource for drug response prediction to date, spanning 91 cohorts, 5,675 patients, nine cancer types, and six frontline therapies: anti-PD-1/PD-L1 immune-checkpoint inhibitors, trastuzumab, bevacizumab, BRAF inhibitors, paclitaxel, and FAC/FEC (Fluorouracil-Adriamycin-Cyclophosphamide/Fluorouracil-Epirubicin-Cyclophosphamide) chemotherapy. We developed EXPRESSO (EXpression-Profile-RESponSe-Optimizer), a supervised machine-learning framework that predicts treatment response from pre-treatment transcriptomes by integrating drug targets and context-specific biomarkers. EXPRESSO achieves mean ROC-AUCs of 0.62 - 0.73 and median odds ratios of 2.4 - 4.6 across therapies, outperforming 20 published transcriptomic signatures and other machine learning methods. Prospective validation on 22 independent cohorts confirms that performance generalizes beyond cross-validation. The EXPRESSO signature additionally stratifies progression-free survival in immune checkpoint blockade-treated cohorts, demonstrating prognostic value beyond binary response prediction. Robustness analysis reveals that predictive performance plateaued for some therapies with increasing training cohorts but continued to improve for others. These findings suggest inherent limits of supervised brute-force learning for certain treatments, but additional data and deeper mechanistic modeling may further enhance transcriptomics-based predictors.",
+      "published": "2026-08-14",
+      "author_line": "Pal, L. R., Gertz, E. M., Ulhas Nair, N. 等 16 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.08.743577",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A Conversational Multi-Agent AI System for Integrated Multi-Omics Analysis and Biomedical Discovery",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.08.743577",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Rajdeo, P.",
+        "Asanuma, S.",
+        "Kouril, M.",
+        "Lu, P.",
+        "Chen, J.",
+        "Chadha, A.",
+        "Prasath, V. B. S.",
+        "Aronow, B. J.",
+        "Salomonis, N."
+      ],
+      "language": "en",
+      "abstract_or_text": "Single-cell and spatial omics offer unprecedented opportunities to decipher the mechanisms of disease, however, this process requires teams of experts, iterative trial-and-error and reasoning across modalities. Here we present LungChat (https://chat.lungmap.net), a conversational system for integrated multi-omics analysis and biomedical discovery, deployed as a hierarchical multi-agent architecture in which a supervisor decomposes natural-language questions into parallel, tool-grounded tasks spanning single-cell and spatial analyses, literature and clinical-trial synthesis, and drug repurposing. To predict new therapeutics, LungChat implements Direction-Aware Repurposing and Targeting (DART) to distinguish perturbations that reverse disease transcriptional programs from those that reinforce them, at the cell-type level, for safety prediction. Controlled architecture ablations showed that hierarchical orchestration improved grounded abstention and token efficiency and preserved strong performance on complex multi-step tasks. In pulmonary disease case studies, LungChat independently prioritized saracatinib for IPF through drug-connectivity screening, followed by DART-based cell-type analysis; the same compound has been evaluated in the STOP-IPF clinical trial (NCT04598919). The system also recovered fluticasone propionate, an established COPD therapy, through a single orchestrated analysis. This tissue-agnostic system provides a blueprint for verifiable agentic AI systems that support reproducible scientific discovery.",
+      "summary_zh": "LungChat是面向单细胞和空间多组学分析的分层多智能体系统，可将自然语言问题拆分为工具调用、文献与临床试验整合及药物再定位任务；作者以肺病案例复现了已进入IPF临床试验的saracatinib和既有COPD疗法氟替卡松丙酸酯。",
+      "why_it_matters_zh": "系统把多组学、药物再定位和可追溯工具调用组合为可复现的发现工作流，并通过架构消融评估其回答可靠性；案例多为已知药物的回溯性优先级排序，独立前瞻验证及真实研究效率仍待证明。",
+      "quality_score": 70.0,
+      "tags": [
+        "分子与药物发现",
+        "bioinformatics",
+        "agent",
+        "drug",
+        "synth"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "ablation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 14,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.08.743577",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Rajdeo, P.",
+        "Asanuma, S.",
+        "Kouril, M.",
+        "Lu, P.",
+        "Chen, J.",
+        "Chadha, A.",
+        "Prasath, V. B. S.",
+        "Aronow, B. J.",
+        "Salomonis, N."
+      ],
+      "abstract": "Single-cell and spatial omics offer unprecedented opportunities to decipher the mechanisms of disease, however, this process requires teams of experts, iterative trial-and-error and reasoning across modalities. Here we present LungChat (https://chat.lungmap.net), a conversational system for integrated multi-omics analysis and biomedical discovery, deployed as a hierarchical multi-agent architecture in which a supervisor decomposes natural-language questions into parallel, tool-grounded tasks spanning single-cell and spatial analyses, literature and clinical-trial synthesis, and drug repurposing. To predict new therapeutics, LungChat implements Direction-Aware Repurposing and Targeting (DART) to distinguish perturbations that reverse disease transcriptional programs from those that reinforce them, at the cell-type level, for safety prediction. Controlled architecture ablations showed that hierarchical orchestration improved grounded abstention and token efficiency and preserved strong performance on complex multi-step tasks. In pulmonary disease case studies, LungChat independently prioritized saracatinib for IPF through drug-connectivity screening, followed by DART-based cell-type analysis; the same compound has been evaluated in the STOP-IPF clinical trial (NCT04598919). The system also recovered fluticasone propionate, an established COPD therapy, through a single orchestrated analysis. This tissue-agnostic system provides a blueprint for verifiable agentic AI systems that support reproducible scientific discovery.",
+      "published": "2026-08-14",
+      "author_line": "Rajdeo, P., Asanuma, S., Kouril, M. 等 9 人"
+    }
+  ],
+  "papers": [
+    {
+      "id": "biorxiv:10.64898/2026.08.09.743788",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Learning from human and chemical languages to predict biological function",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.09.743788",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Kosonocky, C. W.",
+        "Kaderabkova, N.",
+        "Kim, K.",
+        "Mahmood, A. J. S.",
+        "Dunmyre, A.",
+        "Woolley, P.",
+        "Xing, K.",
+        "Winkler, D.",
+        "Babu, T.",
+        "Kaderabek, F.",
+        "Sessler, J. L.",
+        "Anslyn, E. V.",
+        "Marcotte, E. M.",
+        "Zhang, Y. J.",
+        "Ellington, A. D.",
+        "Mavridou, D. A. I."
+      ],
+      "language": "en",
+      "abstract_or_text": "Understanding how molecular structure encodes biological function remains a grand challenge in drug discovery. Here, we present PubCheF-1, a deep learning model that predicts literature-derived biological function directly from chemical structure. PubCheF-1 was trained on a dataset linking molecules to labels derived from the scientific articles in which they appear, a strategy that connects disparate compounds through the language used to describe their functionalities. When tasked with identifying inhibitors of {beta}-lactamases, including enzymes considered largely refractory to inhibition, PubCheF-1 predicted structurally distinct compounds that collectively have activity against all {beta}-lactamase classes. Furthermore, hit compounds directly bind the enzyme active site, restore antibiotic efficacy in multidrug-resistant high-priority pathogens, and demonstrate potent activity in animal infection models. Together, these findings establish that machine learning-based prediction of biological function derived from the language of scientific literature allows the identification of bioactive molecules at high hit rates, thereby accelerating therapeutic discovery.",
+      "summary_zh": "PubCheF-1将化学结构与论文文本归纳出的生物功能标签联合学习，用于从结构预测功能；作者据此发现了覆盖多类β-内酰胺酶的结构新颖抑制剂，并报告了靶点结合、耐药菌增敏和动物感染模型活性。",
+      "why_it_matters_zh": "将文献语言转化为化学功能监督信号，为跳出已知骨架的药物发现提供了新思路，并有多层级实验支撑；但功能标签的来源与偏倚、命中物的药代和安全性仍需进一步审查。",
+      "quality_score": 72.0,
+      "tags": [
+        "分子与药物发现",
+        "bioinformatics",
+        "machine learning",
+        "deep learning",
+        "chem",
+        "molecul"
+      ],
+      "evidence_flags": [
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 1,
+      "featured": true,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.09.743788",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Kosonocky, C. W.",
+        "Kaderabkova, N.",
+        "Kim, K.",
+        "Mahmood, A. J. S.",
+        "Dunmyre, A.",
+        "Woolley, P.",
+        "Xing, K.",
+        "Winkler, D.",
+        "Babu, T.",
+        "Kaderabek, F.",
+        "Sessler, J. L.",
+        "Anslyn, E. V.",
+        "Marcotte, E. M.",
+        "Zhang, Y. J.",
+        "Ellington, A. D.",
+        "Mavridou, D. A. I."
+      ],
+      "abstract": "Understanding how molecular structure encodes biological function remains a grand challenge in drug discovery. Here, we present PubCheF-1, a deep learning model that predicts literature-derived biological function directly from chemical structure. PubCheF-1 was trained on a dataset linking molecules to labels derived from the scientific articles in which they appear, a strategy that connects disparate compounds through the language used to describe their functionalities. When tasked with identifying inhibitors of {beta}-lactamases, including enzymes considered largely refractory to inhibition, PubCheF-1 predicted structurally distinct compounds that collectively have activity against all {beta}-lactamase classes. Furthermore, hit compounds directly bind the enzyme active site, restore antibiotic efficacy in multidrug-resistant high-priority pathogens, and demonstrate potent activity in animal infection models. Together, these findings establish that machine learning-based prediction of biological function derived from the language of scientific literature allows the identification of bioactive molecules at high hit rates, thereby accelerating therapeutic discovery.",
+      "published": "2026-08-14",
+      "author_line": "Kosonocky, C. W., Kaderabkova, N., Kim, K. 等 16 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.10.743877",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "CALFP-MHC: Interpretable Pan-Allelic Prediction of Peptide-MHC Binding and Presentation Using Chemically Grounded Fingerprints and Contrastive Learning",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.10.743877",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Pham, M.-D. N.",
+        "Ho, T.-K.-C.",
+        "Nguyen, H.-N.",
+        "Tran, L.-S.",
+        "Phan, M.-D.",
+        "Nguyen, V."
+      ],
+      "language": "en",
+      "abstract_or_text": "Identifying which peptides bind major histocompatibility complex (MHC) molecules is central to vaccine design, neoantigen prioritization, and precision immunotherapy. Existing deep learning predictors largely encode amino acids as discrete symbols, thereby missing the residue-level chemistry driving molecular recognition. Performance also tends to degrade under class imbalance, for rare alleles, and on peptide-MHC combinations outside the training distribution. We developed CALFP-MHC, a framework that encodes each amino acid as a set of complementary cheminformatics fingerprints capturing functional groups, atomic connectivity, and substructural features, and combines positional encoding with supervised contrastive pre-training to organize the latent space by binding class before fine-tuning a binary classifier. Peptide-MHC interactions are modeled through a hybrid convolutional-transformer backbone. In a large-scale computational benchmark covering ~18.7 million peptide-MHC pairs across 112 HLA class I and 53 class II alleles, CALFP-MHC achieved AUCs of 0.93-0.97 and PPVs of 0.66 - 0.94. Critically, performance remained above AUC 0.90 even at a 200:1 negative-to-positive ratio, where competing tools frequently collapsed toward chance. On independent experimental data containing 3,627 class I and 520 class II MS/MS-confirmed ligands and 570 validated neoantigens, the model maintained strong discrimination, correctly prioritizing immunogenic peptides and MHC-presented ligands. Attention and integrated-gradient analyses recovered established anchor positions (P2 and P{Omega}; for class I, P1, P4, P6, and P9 for class II) and highlighted chemically interpretable functional groups consistent with known binding determinants. CALFP-MHC demonstrates that grounding residue representations in molecular chemistry, rather than sequence symbols alone, improves both robustness and interpretability in peptide-MHC binding prediction.",
+      "summary_zh": "CALFP-MHC以化学指纹表征氨基酸残基，并结合对比预训练和卷积—Transformer模型预测肽-MHC结合及呈递；在大规模计算基准以及质谱配体、已验证新抗原数据上进行了评估。",
+      "why_it_matters_zh": "以残基化学特征替代纯序列符号，有助于提升罕见等位基因和类别不平衡条件下的稳健性，并给出可解释的结合位点信号；但摘要中的实验验证主要是独立数据集评测，尚不等同于前瞻性疫苗或临床验证。",
+      "quality_score": 79.0,
+      "tags": [
+        "分子与药物发现",
+        "immunology",
+        "deep learning",
+        "transformer",
+        "chem",
+        "molecul"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "experimental",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.10.743877",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Pham, M.-D. N.",
+        "Ho, T.-K.-C.",
+        "Nguyen, H.-N.",
+        "Tran, L.-S.",
+        "Phan, M.-D.",
+        "Nguyen, V."
+      ],
+      "abstract": "Identifying which peptides bind major histocompatibility complex (MHC) molecules is central to vaccine design, neoantigen prioritization, and precision immunotherapy. Existing deep learning predictors largely encode amino acids as discrete symbols, thereby missing the residue-level chemistry driving molecular recognition. Performance also tends to degrade under class imbalance, for rare alleles, and on peptide-MHC combinations outside the training distribution. We developed CALFP-MHC, a framework that encodes each amino acid as a set of complementary cheminformatics fingerprints capturing functional groups, atomic connectivity, and substructural features, and combines positional encoding with supervised contrastive pre-training to organize the latent space by binding class before fine-tuning a binary classifier. Peptide-MHC interactions are modeled through a hybrid convolutional-transformer backbone. In a large-scale computational benchmark covering ~18.7 million peptide-MHC pairs across 112 HLA class I and 53 class II alleles, CALFP-MHC achieved AUCs of 0.93-0.97 and PPVs of 0.66 - 0.94. Critically, performance remained above AUC 0.90 even at a 200:1 negative-to-positive ratio, where competing tools frequently collapsed toward chance. On independent experimental data containing 3,627 class I and 520 class II MS/MS-confirmed ligands and 570 validated neoantigens, the model maintained strong discrimination, correctly prioritizing immunogenic peptides and MHC-presented ligands. Attention and integrated-gradient analyses recovered established anchor positions (P2 and P{Omega}; for class I, P1, P4, P6, and P9 for class II) and highlighted chemically interpretable functional groups consistent with known binding determinants. CALFP-MHC demonstrates that grounding residue representations in molecular chemistry, rather than sequence symbols alone, improves both robustness and interpretability in peptide-MHC binding prediction.",
+      "published": "2026-08-14",
+      "author_line": "Pham, M.-D. N., Ho, T.-K.-C., Nguyen, H.-N. 等 6 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744826",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Activity-based chemical proteomics uncovers unexpected covalent targetsof E64d and reveals a role for cysteine cathepsins in PLD3 proteostasis.",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744826",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Hertwig, M.",
+        "Kielkowski, P."
+      ],
+      "language": "en",
+      "abstract_or_text": "Catalytic activity of 5'-3' exonuclease Phospholipase D3 (PLD3) is associated with immune signaling and neurodegeneration including Alzheimer's disease. PLD3 undergoes multiple post-translational modifications and proteolytic cleavage to establish its catalytically active form. However, the proteases catalyzing the cleavage of PLD3 have remained unidentified. To study the proteolytic cleavage of PLD3, we have evaluated the small molecule covalent inhibitor E64d that blocks proteolysis catalyzed by cysteine cathepsins. To validate the selectivity of E64d, we have designed and synthetized an E64d propargyl analogue and carried out a detailed activity-based protein profiling to reveal a broad engagement of the compound with other protein targets including bleomycin hydrolase (BLMH), Kelch-like ECH-associated protein 1 (KEAP1), transcription elongation factor SPT5 (SUPT5H) and asparagine synthetase (ASNS). The specificity of the E64d-protein interactions was confirmed by biochemical assays and mass spectrometry-based site identifications. In neurons, treatment with E64d lead to about 50-fold PLD3 accumulation and dysregulation of its proteolytic cleavage, while there was only a minor overall change on the whole proteome level. Taken together, this study provides insights into previously unknown E64d selectivity and renders cysteine cathepsins responsible for PLD3 degradation in neurons. It highlights the importance of cysteine cathepsins activity in neuronal lysosomes for proper PLD3 processing and hence it suggests that their activation might be responsible for decreased PLD3 levels in neurons of patients with Alzheimer's diseases. These findings are key for further elucidation of PLD3 function in neurodegenerative diseases.",
+      "summary_zh": "研究以E64d炔基探针开展活性基础化学蛋白组学，发现该半胱氨酸蛋白酶抑制剂还广泛结合BLMH、KEAP1、SUPT5H和ASNS等蛋白，并用生化实验和质谱定位验证；在神经元中，E64d导致PLD3显著累积并扰乱其加工。",
+      "why_it_matters_zh": "工作直接提示常用共价抑制剂E64d的选择性比预期更宽，并把半胱氨酸组织蛋白酶与PLD3稳态联系起来；其疾病机制与治疗外推仍主要来自细胞和蛋白组学证据。",
+      "quality_score": 73.0,
+      "tags": [
+        "分子与药物发现",
+        "biochemistry",
+        "generative",
+        "chem",
+        "molecul"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744826",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Hertwig, M.",
+        "Kielkowski, P."
+      ],
+      "abstract": "Catalytic activity of 5'-3' exonuclease Phospholipase D3 (PLD3) is associated with immune signaling and neurodegeneration including Alzheimer's disease. PLD3 undergoes multiple post-translational modifications and proteolytic cleavage to establish its catalytically active form. However, the proteases catalyzing the cleavage of PLD3 have remained unidentified. To study the proteolytic cleavage of PLD3, we have evaluated the small molecule covalent inhibitor E64d that blocks proteolysis catalyzed by cysteine cathepsins. To validate the selectivity of E64d, we have designed and synthetized an E64d propargyl analogue and carried out a detailed activity-based protein profiling to reveal a broad engagement of the compound with other protein targets including bleomycin hydrolase (BLMH), Kelch-like ECH-associated protein 1 (KEAP1), transcription elongation factor SPT5 (SUPT5H) and asparagine synthetase (ASNS). The specificity of the E64d-protein interactions was confirmed by biochemical assays and mass spectrometry-based site identifications. In neurons, treatment with E64d lead to about 50-fold PLD3 accumulation and dysregulation of its proteolytic cleavage, while there was only a minor overall change on the whole proteome level. Taken together, this study provides insights into previously unknown E64d selectivity and renders cysteine cathepsins responsible for PLD3 degradation in neurons. It highlights the importance of cysteine cathepsins activity in neuronal lysosomes for proper PLD3 processing and hence it suggests that their activation might be responsible for decreased PLD3 levels in neurons of patients with Alzheimer's diseases. These findings are key for further elucidation of PLD3 function in neurodegenerative diseases.",
+      "published": "2026-08-15",
+      "author_line": "Hertwig, M., Kielkowski, P."
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.08.743505",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "DQHTFI: Dynamic-Query Hypergraph Transformer for Fine-Grained Drug-Target Interaction and Affinity Prediction",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.08.743505",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Tao, K.",
+        "Chai, H.",
+        "Chen, Z.",
+        "Gao, X.",
+        "Yu, B."
+      ],
+      "language": "en",
+      "abstract_or_text": "Drug-target interaction prediction and binding affinity prediction are two key tasks in drug discovery and drug repurposing. Although deep learning methods have made significant progress, existing models typically rely on global representations of drugs and proteins, making it difficult to adequately model fine-grained interactions between their local units. Fixed multimodal fusion strategies also struggle to dynamically adjust the contributions of different modalities for different drug-target combinations. To address these issues, we propose DQHTFI, a fine-grained interaction prediction framework for drug-target interaction classification and binding affinity regression. DQHTFI employs BRICS fragments and Pfam functional domains as the basic interaction units and jointly learns semantic and structural representations. We design a dynamic-query hypergraph Transformer framework in which hyperedges are constructed among the multimodal features of fragment-domain pairs. Dynamic queries are generated from the cross-conditioned features of fragment-domain pairs to adaptively adjust the contribution of each modality, thereby modeling higher-order interactions between local units. Our proposed model achieves competitive results on multiple benchmark datasets.",
+      "summary_zh": "DQHTFI将药物BRICS片段与蛋白Pfam结构域作为局部相互作用单元，用动态查询超图Transformer整合语义和结构特征，同时预测药物—靶标相互作用及结合亲和力。",
+      "why_it_matters_zh": "局部片段—结构域建模可弥补全局表征忽略细粒度作用的不足，并在多个基准上取得有竞争力的结果；摘要未给出外部实验验证和具体效应量，实际泛化能力仍待检验。",
+      "quality_score": 75.0,
+      "tags": [
+        "方法与模型",
+        "bioinformatics",
+        "deep learning",
+        "transformer",
+        "drug",
+        "protein"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.08.743505",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Tao, K.",
+        "Chai, H.",
+        "Chen, Z.",
+        "Gao, X.",
+        "Yu, B."
+      ],
+      "abstract": "Drug-target interaction prediction and binding affinity prediction are two key tasks in drug discovery and drug repurposing. Although deep learning methods have made significant progress, existing models typically rely on global representations of drugs and proteins, making it difficult to adequately model fine-grained interactions between their local units. Fixed multimodal fusion strategies also struggle to dynamically adjust the contributions of different modalities for different drug-target combinations. To address these issues, we propose DQHTFI, a fine-grained interaction prediction framework for drug-target interaction classification and binding affinity regression. DQHTFI employs BRICS fragments and Pfam functional domains as the basic interaction units and jointly learns semantic and structural representations. We design a dynamic-query hypergraph Transformer framework in which hyperedges are constructed among the multimodal features of fragment-domain pairs. Dynamic queries are generated from the cross-conditioned features of fragment-domain pairs to adaptively adjust the contribution of each modality, thereby modeling higher-order interactions between local units. Our proposed model achieves competitive results on multiple benchmark datasets.",
+      "published": "2026-08-14",
+      "author_line": "Tao, K., Chai, H., Chen, Z. 等 5 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.02.15.705956",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Physically Grounded Generative Modeling of All-Atom Biomolecular Dynamics",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.02.15.705956",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Feng, B.",
+        "Zhang, J.",
+        "Zhang, X.",
+        "Cao, H.",
+        "Zhang, M.",
+        "Barth, P.",
+        "Liu, Z.",
+        "Li, Y."
+      ],
+      "language": "en",
+      "abstract_or_text": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
+      "summary_zh": "BioKinema采用受朗之万动力学启发的时空扩散架构，并以分层预测和插值生成连续时间、全原子生物分子轨迹；作者报告其能复现蛋白构象热力学和动力学，并用于蛋白—配体体系及稀有解离事件。",
+      "why_it_matters_zh": "若动力学保真度成立，该方法可显著降低长时间尺度分子动力学模拟成本，适用于构象机制和药物解离研究；现有证据来自计算验证，跨体系可靠性及对真实实验动力学的预测能力仍需独立比较。",
+      "quality_score": 80.0,
+      "tags": [
+        "方法与模型",
+        "bioinformatics",
+        "deep learning",
+        "diffusion",
+        "molecul",
+        "drug"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 5,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.02.15.705956",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Feng, B.",
+        "Zhang, J.",
+        "Zhang, X.",
+        "Cao, H.",
+        "Zhang, M.",
+        "Barth, P.",
+        "Liu, Z.",
+        "Li, Y."
+      ],
+      "abstract": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
+      "published": "2026-08-15",
+      "author_line": "Feng, B., Zhang, J., Zhang, X. 等 8 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007443/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Neural Networks Accelerate Ab Initio Multiple Spawning Simulations: A Case Study of Using Machine Learning Potentials for Excited State Dynamics",
+      "url": "https://doi.org/10.26434/chemrxiv.15007443/v1",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Pablo A. Unzueta",
+        "Yuanheng Wang",
+        "Todd J. Martinez"
+      ],
+      "language": "en",
+      "abstract_or_text": "Nonadiabatic simulations are critical for understanding photochemical reactions but are often computationally prohibitive, limiting their application to relatively small molecules and short timescales. Machine learning interatomic potentials (MLIPs) promise to remove most of the cost by replacing the electronic structure calls that dominate these simulations, while retaining chemical accuracy. We evaluate independent MLIPs fit to the ground and first excited state for two prototypical photochemical molecules — ethylene and the deprotonated green fluorescent protein chromophore. Despite sub-chemical-accuracy errors on held-out test data, the MLIPs predict qualitatively wrong potential energy surfaces (PESs) near conical intersections: artificial gaps, spurious near-degeneracies, and even reordering of the adiabatic states. We repair this with a hybrid “holey-ML” approach that switches from the MLIPs to ab initio quantum chemistry (QM) wherever the ML-predicted gap between states is small. This hybrid approach reduces the computational cost by an order of magnitude while reproducing the excited state population decay of reference fully ab initio QM simulations. Therefore, hybrid QM/ML schemes are a practical route to routine nonadiabatic dynamics.",
+      "summary_zh": "该研究检验机器学习原子间势在激发态非绝热动力学中的失效模式，发现即使测试误差很低，模型在锥形交叉附近仍可能给出错误势能面；随后以小能隙区域调用从头算量子化学的混合方案恢复参考动力学。",
+      "why_it_matters_zh": "结果明确揭示了仅看能量误差不足以保证光化学动力学正确，并给出约一个数量级加速的实用途径；验证目前限于乙烯和GFP发色团，复杂反应网络的适用范围尚待扩展。",
+      "quality_score": 76.0,
+      "tags": [
+        "方法与模型",
+        "ChemRxiv",
+        "machine learning",
+        "neural",
+        "chem",
+        "molecul"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 6,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007443/v1",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Pablo A. Unzueta",
+        "Yuanheng Wang",
+        "Todd J. Martinez"
+      ],
+      "abstract": "Nonadiabatic simulations are critical for understanding photochemical reactions but are often computationally prohibitive, limiting their application to relatively small molecules and short timescales. Machine learning interatomic potentials (MLIPs) promise to remove most of the cost by replacing the electronic structure calls that dominate these simulations, while retaining chemical accuracy. We evaluate independent MLIPs fit to the ground and first excited state for two prototypical photochemical molecules — ethylene and the deprotonated green fluorescent protein chromophore. Despite sub-chemical-accuracy errors on held-out test data, the MLIPs predict qualitatively wrong potential energy surfaces (PESs) near conical intersections: artificial gaps, spurious near-degeneracies, and even reordering of the adiabatic states. We repair this with a hybrid “holey-ML” approach that switches from the MLIPs to ab initio quantum chemistry (QM) wherever the ML-predicted gap between states is small. This hybrid approach reduces the computational cost by an order of magnitude while reproducing the excited state population decay of reference fully ab initio QM simulations. Therefore, hybrid QM/ML schemes are a practical route to routine nonadiabatic dynamics.",
+      "published": "2026-08-14",
+      "author_line": "Pablo A. Unzueta, Yuanheng Wang, Todd J. Martinez"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007436/v1",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "SafeChem: A Benchmark Dataset for Multi-Label Chemical Hazard Prediction and LLM Safety Hallucination Evaluation",
+      "url": "https://doi.org/10.26434/chemrxiv.15007436/v1",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Ran Elgedawy",
+        "Sanjay Das",
+        "Ethan Seefried",
+        "Ryan Burchfield",
+        "Gavin Wiggins",
+        "Kimberly Jeskie",
+        "Chrissi Schnell",
+        "Susan Fiscor",
+        "Subhamay Pramanik",
+        "Billey Thomas",
+        "Sudarshan Srinivasan",
+        "Tirthankar Ghosal"
+      ],
+      "language": "en",
+      "abstract_or_text": "We introduce SafeChem, a regulatory-grounded benchmark of 32,211 chemical substances annotated with molecular structure representations, physicochemical descriptors, and 30 binary Globally Harmonized System (GHS) hazard labels. Unlike prior molecular benchmarks queried from pharmaceutical databases, SafeChem is seeded from a curated hazardous materials registry (HMMIS), ensuring coverage of real-world industrial and safety-critical chemicals. We position it as a unified benchmark for chemical safety reasoning across two complementary regimes: predictive performance, measuring multi-label hazard classification from molecular structure, and safety reliability, measuring omission-prone hazard assessment by large language models (LLMs). Under predictive evaluation, a scaffold-split benchmark over 20 GHS categories reveals that all six baseline models achieve meaningful performance on high-prevalence labels (macro-AUPRC 0.45–0.55), while mid-prevalence labels remain substantially harder (macro-AUPRC 0.08–0.28), establishing a difficulty gradient that motivates future work on low-resource hazard prediction. Under reliability evaluation, a 500-substance high-hazard LLM stress test shows that all eight evaluated LLMs exhibit omission hallucination rates above 0.21, with the dominant failure mode being silent abstention: empty predictions indistinguishable from confirmed negatives in automated pipelines, disproportionately targeting the rarest and most dangerous hazard classes. Together, these regimes make SafeChem a benchmark resource for both task-specific molecular models and general-purpose LLMs in chemical safety workflows.",
+      "summary_zh": "SafeChem建立含32,211种物质、分子结构与30项GHS危险标签的化学安全基准，同时评估多标签危险预测和大语言模型的危险信息遗漏。支架划分测试显示低频标签明显更难，500种高危物质压力测试中全部八个LLM均出现较高遗漏率。",
+      "why_it_matters_zh": "该数据集把分子建模性能与LLM安全可靠性放入同一真实工业危险化学品场景，尤其突出了稀有高危标签的风险；标签覆盖、注册表偏倚及自动化流程中空预测的处理方式会影响外部应用。",
+      "quality_score": 82.0,
+      "tags": [
+        "方法与模型",
+        "ChemRxiv",
+        "language model",
+        "llm",
+        "chem",
+        "molecul"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "dataset",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 7,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007436/v1",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Ran Elgedawy",
+        "Sanjay Das",
+        "Ethan Seefried",
+        "Ryan Burchfield",
+        "Gavin Wiggins",
+        "Kimberly Jeskie",
+        "Chrissi Schnell",
+        "Susan Fiscor",
+        "Subhamay Pramanik",
+        "Billey Thomas",
+        "Sudarshan Srinivasan",
+        "Tirthankar Ghosal"
+      ],
+      "abstract": "We introduce SafeChem, a regulatory-grounded benchmark of 32,211 chemical substances annotated with molecular structure representations, physicochemical descriptors, and 30 binary Globally Harmonized System (GHS) hazard labels. Unlike prior molecular benchmarks queried from pharmaceutical databases, SafeChem is seeded from a curated hazardous materials registry (HMMIS), ensuring coverage of real-world industrial and safety-critical chemicals. We position it as a unified benchmark for chemical safety reasoning across two complementary regimes: predictive performance, measuring multi-label hazard classification from molecular structure, and safety reliability, measuring omission-prone hazard assessment by large language models (LLMs). Under predictive evaluation, a scaffold-split benchmark over 20 GHS categories reveals that all six baseline models achieve meaningful performance on high-prevalence labels (macro-AUPRC 0.45–0.55), while mid-prevalence labels remain substantially harder (macro-AUPRC 0.08–0.28), establishing a difficulty gradient that motivates future work on low-resource hazard prediction. Under reliability evaluation, a 500-substance high-hazard LLM stress test shows that all eight evaluated LLMs exhibit omission hallucination rates above 0.21, with the dominant failure mode being silent abstention: empty predictions indistinguishable from confirmed negatives in automated pipelines, disproportionately targeting the rarest and most dangerous hazard classes. Together, these regimes make SafeChem a benchmark resource for both task-specific molecular models and general-purpose LLMs in chemical safety workflows.",
+      "published": "2026-08-14",
+      "author_line": "Ran Elgedawy, Sanjay Das, Ethan Seefried 等 12 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744759",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "LEN-Seek: Fast and scalable ligand binding-site similarity search in the latent space of an SE(3)-invariant graph VAE",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744759",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Yeo, K.",
+        "Kim, D.",
+        "Sim, J.",
+        "Lee, J."
+      ],
+      "language": "en",
+      "abstract_or_text": "Motivation: Ligand binding-site similarity search is a crucial step in drug discovery that reduces the conformational search space for docking and other downstream tasks by comparing a target protein against experimentally identified binding sites. Existing methods rely on either direct structural alignment or lossy compression of structural information, producing a trade-off between scalability and precision. Results: We propose LEN-Seek, a ligand binding-site search method based on a graph neural network (GNN)-driven variational autoencoder (VAE) that encodes the 3D structural and physicochemical context of a binding site into a probabilistic latent space, enabling similarity search within a low-dimensional vector space. A binding site is modeled as a graph of amino acid residues, with node features adopted from the protein language model, Ankh, and edges encoded as SE(3)-invariant (roto-translational invariant) geometric relationships, thereby avoiding expensive data augmentation or SE(3)-equivariant models. Compared to ProBiS, the purely geometric graph-clique based method, LEN-Seek successfully retrieves a substantial portion of similar binding sites with a roughly 3,400-fold lower per-comparison cost, demonstrating its potential as a scalable approach to template-based ligand binding-site search in large-scale protein structure databases.",
+      "summary_zh": "LEN-Seek以SE(3)不变图变分自编码器将蛋白配体结合位点的三维几何和理化环境编码至低维潜空间，用于大规模相似位点检索；相较ProBiS，作者报告单次比较成本约降低3,400倍。",
+      "why_it_matters_zh": "快速位点相似性检索可缩小对接与药物再定位的搜索空间，方法也兼顾了几何不变性和可扩展性；其检索精度、结构数据库覆盖与下游命中率仍需在更多独立任务中验证。",
+      "quality_score": 75.0,
+      "tags": [
+        "分子与药物发现",
+        "bioinformatics",
+        "language model",
+        "neural",
+        "chem",
+        "drug"
+      ],
+      "evidence_flags": [
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 8,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744759",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Yeo, K.",
+        "Kim, D.",
+        "Sim, J.",
+        "Lee, J."
+      ],
+      "abstract": "Motivation: Ligand binding-site similarity search is a crucial step in drug discovery that reduces the conformational search space for docking and other downstream tasks by comparing a target protein against experimentally identified binding sites. Existing methods rely on either direct structural alignment or lossy compression of structural information, producing a trade-off between scalability and precision. Results: We propose LEN-Seek, a ligand binding-site search method based on a graph neural network (GNN)-driven variational autoencoder (VAE) that encodes the 3D structural and physicochemical context of a binding site into a probabilistic latent space, enabling similarity search within a low-dimensional vector space. A binding site is modeled as a graph of amino acid residues, with node features adopted from the protein language model, Ankh, and edges encoded as SE(3)-invariant (roto-translational invariant) geometric relationships, thereby avoiding expensive data augmentation or SE(3)-equivariant models. Compared to ProBiS, the purely geometric graph-clique based method, LEN-Seek successfully retrieves a substantial portion of similar binding sites with a roughly 3,400-fold lower per-comparison cost, demonstrating its potential as a scalable approach to template-based ligand binding-site search in large-scale protein structure databases.",
+      "published": "2026-08-15",
+      "author_line": "Yeo, K., Kim, D., Sim, J. 等 4 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007454/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Predictive Synthesis of InSb Quantum Dots: Zerovalent Intermediates, Surface Chemistry, and Optical Tunability",
+      "url": "https://doi.org/10.26434/chemrxiv.15007454/v1",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Yun Hai",
+        "Xavier Kirchherr",
+        "Riccardo Nardin",
+        "Wouter Smans",
+        "Sofia Iosifidi",
+        "Jacopo Pedrini",
+        "Chiara Trevisan",
+        "Darius A. Pacurar",
+        "Julia Kraft",
+        "Gabor Ersek",
+        "Dominic Gerlach",
+        "Majid Ahmadi",
+        "Antonija Grubišić-Čabo",
+        "Giuseppe Portale",
+        "Fabio Pezzoli",
+        "Loredana Protesescu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Indium antimonide (InSb) colloidal quantum dots (QDs) are transformative for short-wave infrared (SWIR) to mid-infrared (MIR) optoelectronics due to their narrow bandgap (0.17 eV for bulk) and exceptional electronic properties and carrier mobilities. Here, we quantitatively refine the mechanistic framework of InSb QDs formation by demonstrating the the zise of zerovalent In0 and Sb0 intermediate nanoparticles strictly governs intermetallic diffusion and subsequent growth kinetics By systematically tuning precursor halide choice (Cl-, Br-, I-), reducing agent ratios, In/Sb ratios (2:1 – 5:1), and reaction time (15-180 min), we achived monodisperse InSb QDs with tunable absorption from 1160 to 2200 nm, and exceptional optical and colloidal stability. Temperature-dependent studies reveal that Sb0 nanoparticles (NPs, 3-4 nm) template InSb QD nucleation at 140-160 ºC, while larger In0 NPs (50 nm) facilitate In diffusion. Validation experiments using pre-synthetised In0 and Sb0 NPs confirm that size-matched intermediates (14-17 nm) enable complete conversion to phase-pure zinc-blende InSb QDs. Spectroscopic analysis identifies a dominant non-radiative decay channel (τ1 ≈ 0.12 ns, for 9.6 nm InSb QDs) at room temperature, attributed to surface trapping, alongside a preserved radiative lifetime, consistent with the presence of In and Sb surface oxides. This diffusion-mediated kinetic framework transforms transient metallic intermediates into predictive descriptors for nanocrystal synthesis, enabling scalable, reproducible, and size-tunable InSb QDs with distinct excitonic features, achieving 80–100 mg of purified product per batch for next-generation SWIR technologies.",
+      "summary_zh": "研究通过改变卤化物前体、还原剂比例、In/Sb比例和反应时间，阐明零价Sb与In纳米颗粒的尺寸如何控制InSb量子点成核与扩散生长；预合成中间体实验支持该机制，并制得吸收可调的单分散量子点。",
+      "why_it_matters_zh": "将瞬态金属中间体转化为可操作的合成描述符，有望提高窄带隙InSb量子点的可重复制备和红外光电应用可调性；表面氧化导致的非辐射损失仍是器件性能的重要限制。",
+      "quality_score": 79.0,
+      "tags": [
+        "方法与模型",
+        "ChemRxiv",
+        "diffusion",
+        "agent",
+        "chem",
+        "reaction"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 9,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007454/v1",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Yun Hai",
+        "Xavier Kirchherr",
+        "Riccardo Nardin",
+        "Wouter Smans",
+        "Sofia Iosifidi",
+        "Jacopo Pedrini",
+        "Chiara Trevisan",
+        "Darius A. Pacurar",
+        "Julia Kraft",
+        "Gabor Ersek",
+        "Dominic Gerlach",
+        "Majid Ahmadi",
+        "Antonija Grubišić-Čabo",
+        "Giuseppe Portale",
+        "Fabio Pezzoli",
+        "Loredana Protesescu"
+      ],
+      "abstract": "Indium antimonide (InSb) colloidal quantum dots (QDs) are transformative for short-wave infrared (SWIR) to mid-infrared (MIR) optoelectronics due to their narrow bandgap (0.17 eV for bulk) and exceptional electronic properties and carrier mobilities. Here, we quantitatively refine the mechanistic framework of InSb QDs formation by demonstrating the the zise of zerovalent In0 and Sb0 intermediate nanoparticles strictly governs intermetallic diffusion and subsequent growth kinetics By systematically tuning precursor halide choice (Cl-, Br-, I-), reducing agent ratios, In/Sb ratios (2:1 – 5:1), and reaction time (15-180 min), we achived monodisperse InSb QDs with tunable absorption from 1160 to 2200 nm, and exceptional optical and colloidal stability. Temperature-dependent studies reveal that Sb0 nanoparticles (NPs, 3-4 nm) template InSb QD nucleation at 140-160 ºC, while larger In0 NPs (50 nm) facilitate In diffusion. Validation experiments using pre-synthetised In0 and Sb0 NPs confirm that size-matched intermediates (14-17 nm) enable complete conversion to phase-pure zinc-blende InSb QDs. Spectroscopic analysis identifies a dominant non-radiative decay channel (τ1 ≈ 0.12 ns, for 9.6 nm InSb QDs) at room temperature, attributed to surface trapping, alongside a preserved radiative lifetime, consistent with the presence of In and Sb surface oxides. This diffusion-mediated kinetic framework transforms transient metallic intermediates into predictive descriptors for nanocrystal synthesis, enabling scalable, reproducible, and size-tunable InSb QDs with distinct excitonic features, achieving 80–100 mg of purified product per batch for next-generation SWIR technologies.",
+      "published": "2026-08-14",
+      "author_line": "Yun Hai, Xavier Kirchherr, Riccardo Nardin 等 16 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007451/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Mechanistic Insights into Cobalt-Catalyzed Kumada C(sp2)- C(sp2) Cross-Coupling Enabled by High-Denticity Cobalt(I) Intermediates",
+      "url": "https://doi.org/10.26434/chemrxiv.15007451/v1",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Donghyun Jeong",
+        "Jinwoo Jung",
+        "Liviu M. Mirica"
+      ],
+      "language": "en",
+      "abstract_or_text": "Understanding the role of low-valent cobalt species in cross-coupling catalysis remains a central challenge, particularly in distinguishing two-electron organometallic pathways from radical-based mechanisms. Herein, we report the isolation and comprehensive characterization of cobalt(II) and cobalt(I) intermediates supported by a tetradentate diazapyridinophane (tBuN4) ligand and elucidate their roles in Kumada cross-coupling reactions. Structural, spectroscopic, and computational studies reveal partial ligand-centered reduction in the “Co(I)” species, which function as single-electron initiators for halogen atom abstraction from aryl bromides. Mechanistic investigations suggest that the resulting aryl radicals follow two distinct pathways: solvent-mediated hydrogen atom transfer leading to protodehalogenation, or interception by Grignard reagents to form C(sp2)–C(sp2) bonds through an SRN1-type mechanism (radicalnucleophilic aromatic substitution). Overall, these findings establish a radical-mediated framework for Co-catalyzed Kumada coupling and highlight ligand denticity as a key factor in governing reaction pathways.",
+      "summary_zh": "研究分离并表征四齿二氮杂吡啶环配体支持的Co(II)和形式Co(I)中间体，结合结构、光谱和计算证据，提出Co催化Kumada偶联经卤原子转移和芳基自由基的SRN1型路径进行。",
+      "why_it_matters_zh": "低价钴物种在交叉偶联中的真实电子结构与自由基路径长期难以厘清，该研究给出可检验的配体齿数—反应路径关系；机理结论仍需考察其对不同底物、配体和反应条件的普适性。",
+      "quality_score": 70.0,
+      "tags": [
+        "分子与药物发现",
+        "ChemRxiv",
+        "agent",
+        "ligand",
+        "reaction"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 10,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007451/v1",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Donghyun Jeong",
+        "Jinwoo Jung",
+        "Liviu M. Mirica"
+      ],
+      "abstract": "Understanding the role of low-valent cobalt species in cross-coupling catalysis remains a central challenge, particularly in distinguishing two-electron organometallic pathways from radical-based mechanisms. Herein, we report the isolation and comprehensive characterization of cobalt(II) and cobalt(I) intermediates supported by a tetradentate diazapyridinophane (tBuN4) ligand and elucidate their roles in Kumada cross-coupling reactions. Structural, spectroscopic, and computational studies reveal partial ligand-centered reduction in the “Co(I)” species, which function as single-electron initiators for halogen atom abstraction from aryl bromides. Mechanistic investigations suggest that the resulting aryl radicals follow two distinct pathways: solvent-mediated hydrogen atom transfer leading to protodehalogenation, or interception by Grignard reagents to form C(sp2)–C(sp2) bonds through an SRN1-type mechanism (radicalnucleophilic aromatic substitution). Overall, these findings establish a radical-mediated framework for Co-catalyzed Kumada coupling and highlight ligand denticity as a key factor in governing reaction pathways.",
+      "published": "2026-08-14",
+      "author_line": "Donghyun Jeong, Jinwoo Jung, Liviu M. Mirica"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744703",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Protein language models and the long tail of functional diversity",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744703",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Vinod, R.",
+        "Char, S.",
+        "Amini, A. P.",
+        "Crawford, L. K.",
+        "Yang, K. K."
+      ],
+      "language": "en",
+      "abstract_or_text": "Protein language model performance on downstream tasks depends on the pretraining data, motivating recent efforts to combine genomic- and metagenomic-derived protein sequences into large-scale atlases. Because these datasets are highly redundant, sequences are typically clustered by similarity and sampled during training. Sequences that do not belong to any cluster, known as ``singletons'', are typically excluded from training and evaluation because they are considered to be artifacts. However, singletons represent the long tail of functional diversity and are abundant in many large-scale atlases: nearly 43\\% of the 3.34 billion sequences in the joint genomic-metagenomic dataset GigaRef are singletons. Here, we characterize singletons derived from UniRef and GigaRef by assessing whether clustering missed homologs, how much their exclusion affects protein language model (PLM) training, and which biological domains they contain. We find that many GigaRef singletons belong to a cluster under alternative parameter settings, suggesting that genomic and metagenomic datasets may require dataset-specific clustering configurations. We also show that singletons share mutual information with clustered sequences, making them learnable by PLMs and useful for training. Finally, metagenomic singletons carry denser, more diverse domain content than clustered sequences, including domain-level homology that sequence-identity clustering misses. Together, these results support including singletons in PLM training and call for closer examination of data curation in large-scale integrated sequence atlases.",
+      "summary_zh": "研究分析大规模基因组和宏基因组蛋白库中的单例序列，指出许多单例在不同聚类参数下可归入簇，且其结构域内容更丰富多样；这些序列与聚类序列共享可供蛋白语言模型学习的信息。",
+      "why_it_matters_zh": "工作挑战了在预训练中直接丢弃单例序列的常规数据清洗做法，可能扩大蛋白功能长尾的可学习范围；单例质量和聚类标准高度依赖数据库与参数，训练收益仍需在具体下游任务中量化。",
+      "quality_score": 71.0,
+      "tags": [
+        "结构与生物",
+        "bioinformatics",
+        "language model",
+        "protein"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 11,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744703",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Vinod, R.",
+        "Char, S.",
+        "Amini, A. P.",
+        "Crawford, L. K.",
+        "Yang, K. K."
+      ],
+      "abstract": "Protein language model performance on downstream tasks depends on the pretraining data, motivating recent efforts to combine genomic- and metagenomic-derived protein sequences into large-scale atlases. Because these datasets are highly redundant, sequences are typically clustered by similarity and sampled during training. Sequences that do not belong to any cluster, known as ``singletons'', are typically excluded from training and evaluation because they are considered to be artifacts. However, singletons represent the long tail of functional diversity and are abundant in many large-scale atlases: nearly 43\\% of the 3.34 billion sequences in the joint genomic-metagenomic dataset GigaRef are singletons. Here, we characterize singletons derived from UniRef and GigaRef by assessing whether clustering missed homologs, how much their exclusion affects protein language model (PLM) training, and which biological domains they contain. We find that many GigaRef singletons belong to a cluster under alternative parameter settings, suggesting that genomic and metagenomic datasets may require dataset-specific clustering configurations. We also show that singletons share mutual information with clustered sequences, making them learnable by PLMs and useful for training. Finally, metagenomic singletons carry denser, more diverse domain content than clustered sequences, including domain-level homology that sequence-identity clustering misses. Together, these results support including singletons in PLM training and call for closer examination of data curation in large-scale integrated sequence atlases.",
+      "published": "2026-08-14",
+      "author_line": "Vinod, R., Char, S., Amini, A. P. 等 5 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.12.744314",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "AI4Loop: an Artificial Intelligence Framework Reveals Increased 3D Chromatin Interactions and Therapeutic Vulnerabilities across 12,000 Cancer Samples",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.744314",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Dao, F.",
+        "Lebeau, B.",
+        "Amuley, P.",
+        "Tan, W. K.",
+        "Li, X.",
+        "Goh, B. C.",
+        "Chng, W. J.",
+        "Kwoh, C. K.",
+        "Lin, H.",
+        "Lyu, H.",
+        "Fullwood, M."
+      ],
+      "language": "en",
+      "abstract_or_text": "Three-dimensional chromatin interactions shape gene regulation, but their large-scale analysis remains limited by the cost and complexity of experimental assays. Here we present AI4Loop, a deep learning framework that infers genome-wide gene-centered chromatin interaction networks directly from RNA-seq data. Across multiple cell types, AI4Loop recovered interaction patterns consistent with clinical samples and orthogonal chromatin conformation datasets. Applied to 12,347 transcriptomes from 32 cancer types, AI4Loop revealed pervasive increases in gene-centered chromatin interactions in tumors, particularly at oncogene-associated loci. These inferred interaction networks outperformed gene expression alone in cancer classification. Integration with more than 50,000 drug-treated transcriptomes identified compounds predicted to reverse cancer-associated interaction gains. Hi-C experiments confirmed that the oxazolidinone antibiotics eperezolid and radezolid reduce breast cancer-gain chromatin interactions. Together, these results identify increased gene-centered chromatin interactions as a pan-cancer feature and provide a scalable strategy for linking 3D genome dysregulation to therapeutic vulnerabilities.",
+      "summary_zh": "AI4Loop从RNA-seq推断基因中心的三维染色质互作网络，并用于32种癌症的12,347份转录组；整合药物处理转录组后预测可逆转异常互作的化合物，Hi-C实验验证了两种噁唑烷酮类药物的相关效应。",
+      "why_it_matters_zh": "该框架以常见转录组数据扩大三维基因组研究的样本规模，并把推断结果连接到药物脆弱性；RNA-seq并不能直接测量染色质构象，推断网络和药物因果效应仍需更多癌种及体内验证。",
+      "quality_score": 70.0,
+      "tags": [
+        "方法与模型",
+        "bioinformatics",
+        "artificial intelligence",
+        "deep learning",
+        "drug"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "experimental",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 12,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.12.744314",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Dao, F.",
+        "Lebeau, B.",
+        "Amuley, P.",
+        "Tan, W. K.",
+        "Li, X.",
+        "Goh, B. C.",
+        "Chng, W. J.",
+        "Kwoh, C. K.",
+        "Lin, H.",
+        "Lyu, H.",
+        "Fullwood, M."
+      ],
+      "abstract": "Three-dimensional chromatin interactions shape gene regulation, but their large-scale analysis remains limited by the cost and complexity of experimental assays. Here we present AI4Loop, a deep learning framework that infers genome-wide gene-centered chromatin interaction networks directly from RNA-seq data. Across multiple cell types, AI4Loop recovered interaction patterns consistent with clinical samples and orthogonal chromatin conformation datasets. Applied to 12,347 transcriptomes from 32 cancer types, AI4Loop revealed pervasive increases in gene-centered chromatin interactions in tumors, particularly at oncogene-associated loci. These inferred interaction networks outperformed gene expression alone in cancer classification. Integration with more than 50,000 drug-treated transcriptomes identified compounds predicted to reverse cancer-associated interaction gains. Hi-C experiments confirmed that the oxazolidinone antibiotics eperezolid and radezolid reduce breast cancer-gain chromatin interactions. Together, these results identify increased gene-centered chromatin interactions as a pan-cancer feature and provide a scalable strategy for linking 3D genome dysregulation to therapeutic vulnerabilities.",
+      "published": "2026-08-14",
+      "author_line": "Dao, F., Lebeau, B., Amuley, P. 等 11 人"
+    },
+    {
+      "id": "biorxiv:10.1101/2025.10.24.684491",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A machine learning framework for supervised treatment response prediction from tumor transcriptomics: A large-scale pan-cancer study",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.10.24.684491",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Pal, L. R.",
+        "Gertz, E. M.",
+        "Ulhas Nair, N.",
+        "Mukherjee, S.",
+        "Patiyal, S.",
+        "Cantore, T.",
+        "Campagnolo, E. M.",
+        "Chang, T.",
+        "Dhruba, S. R.",
+        "Kim, Y.",
+        "Shulman, E. D.",
+        "Rajagopal, P. S.",
+        "Hoang, D.-T.",
+        "Hannenhalli, S.",
+        "Schaffer, A. A.",
+        "Ruppin, E."
+      ],
+      "language": "en",
+      "abstract_or_text": "Precision oncology aims to guide treatment decisions using biomarkers. While DNA-based panels are increasingly applied, RNA transcriptomics remain underused due to limited datasets and the absence of robust models. We assembled the largest transcriptomic resource for drug response prediction to date, spanning 91 cohorts, 5,675 patients, nine cancer types, and six frontline therapies: anti-PD-1/PD-L1 immune-checkpoint inhibitors, trastuzumab, bevacizumab, BRAF inhibitors, paclitaxel, and FAC/FEC (Fluorouracil-Adriamycin-Cyclophosphamide/Fluorouracil-Epirubicin-Cyclophosphamide) chemotherapy. We developed EXPRESSO (EXpression-Profile-RESponSe-Optimizer), a supervised machine-learning framework that predicts treatment response from pre-treatment transcriptomes by integrating drug targets and context-specific biomarkers. EXPRESSO achieves mean ROC-AUCs of 0.62 - 0.73 and median odds ratios of 2.4 - 4.6 across therapies, outperforming 20 published transcriptomic signatures and other machine learning methods. Prospective validation on 22 independent cohorts confirms that performance generalizes beyond cross-validation. The EXPRESSO signature additionally stratifies progression-free survival in immune checkpoint blockade-treated cohorts, demonstrating prognostic value beyond binary response prediction. Robustness analysis reveals that predictive performance plateaued for some therapies with increasing training cohorts but continued to improve for others. These findings suggest inherent limits of supervised brute-force learning for certain treatments, but additional data and deeper mechanistic modeling may further enhance transcriptomics-based predictors.",
+      "summary_zh": "EXPRESSO汇集91个队列、5,675名患者的治疗前肿瘤转录组，结合药物靶点和情境生物标志物预测六类一线治疗响应；在22个独立队列中，模型报告优于20种既有转录组特征。",
+      "why_it_matters_zh": "大规模跨癌种数据和独立队列评估提升了转录组治疗响应预测的可信度，也坦陈部分疗法的性能随样本量增加已趋于平台；其预测能力仍属中等，临床部署需要前瞻性研究与可解释的决策评估。",
+      "quality_score": 70.0,
+      "tags": [
+        "结构与生物",
+        "cancer biology",
+        "machine learning",
+        "chem",
+        "drug"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "prospective",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 13,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2025.10.24.684491",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Pal, L. R.",
+        "Gertz, E. M.",
+        "Ulhas Nair, N.",
+        "Mukherjee, S.",
+        "Patiyal, S.",
+        "Cantore, T.",
+        "Campagnolo, E. M.",
+        "Chang, T.",
+        "Dhruba, S. R.",
+        "Kim, Y.",
+        "Shulman, E. D.",
+        "Rajagopal, P. S.",
+        "Hoang, D.-T.",
+        "Hannenhalli, S.",
+        "Schaffer, A. A.",
+        "Ruppin, E."
+      ],
+      "abstract": "Precision oncology aims to guide treatment decisions using biomarkers. While DNA-based panels are increasingly applied, RNA transcriptomics remain underused due to limited datasets and the absence of robust models. We assembled the largest transcriptomic resource for drug response prediction to date, spanning 91 cohorts, 5,675 patients, nine cancer types, and six frontline therapies: anti-PD-1/PD-L1 immune-checkpoint inhibitors, trastuzumab, bevacizumab, BRAF inhibitors, paclitaxel, and FAC/FEC (Fluorouracil-Adriamycin-Cyclophosphamide/Fluorouracil-Epirubicin-Cyclophosphamide) chemotherapy. We developed EXPRESSO (EXpression-Profile-RESponSe-Optimizer), a supervised machine-learning framework that predicts treatment response from pre-treatment transcriptomes by integrating drug targets and context-specific biomarkers. EXPRESSO achieves mean ROC-AUCs of 0.62 - 0.73 and median odds ratios of 2.4 - 4.6 across therapies, outperforming 20 published transcriptomic signatures and other machine learning methods. Prospective validation on 22 independent cohorts confirms that performance generalizes beyond cross-validation. The EXPRESSO signature additionally stratifies progression-free survival in immune checkpoint blockade-treated cohorts, demonstrating prognostic value beyond binary response prediction. Robustness analysis reveals that predictive performance plateaued for some therapies with increasing training cohorts but continued to improve for others. These findings suggest inherent limits of supervised brute-force learning for certain treatments, but additional data and deeper mechanistic modeling may further enhance transcriptomics-based predictors.",
+      "published": "2026-08-14",
+      "author_line": "Pal, L. R., Gertz, E. M., Ulhas Nair, N. 等 16 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.08.743577",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A Conversational Multi-Agent AI System for Integrated Multi-Omics Analysis and Biomedical Discovery",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.08.743577",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Rajdeo, P.",
+        "Asanuma, S.",
+        "Kouril, M.",
+        "Lu, P.",
+        "Chen, J.",
+        "Chadha, A.",
+        "Prasath, V. B. S.",
+        "Aronow, B. J.",
+        "Salomonis, N."
+      ],
+      "language": "en",
+      "abstract_or_text": "Single-cell and spatial omics offer unprecedented opportunities to decipher the mechanisms of disease, however, this process requires teams of experts, iterative trial-and-error and reasoning across modalities. Here we present LungChat (https://chat.lungmap.net), a conversational system for integrated multi-omics analysis and biomedical discovery, deployed as a hierarchical multi-agent architecture in which a supervisor decomposes natural-language questions into parallel, tool-grounded tasks spanning single-cell and spatial analyses, literature and clinical-trial synthesis, and drug repurposing. To predict new therapeutics, LungChat implements Direction-Aware Repurposing and Targeting (DART) to distinguish perturbations that reverse disease transcriptional programs from those that reinforce them, at the cell-type level, for safety prediction. Controlled architecture ablations showed that hierarchical orchestration improved grounded abstention and token efficiency and preserved strong performance on complex multi-step tasks. In pulmonary disease case studies, LungChat independently prioritized saracatinib for IPF through drug-connectivity screening, followed by DART-based cell-type analysis; the same compound has been evaluated in the STOP-IPF clinical trial (NCT04598919). The system also recovered fluticasone propionate, an established COPD therapy, through a single orchestrated analysis. This tissue-agnostic system provides a blueprint for verifiable agentic AI systems that support reproducible scientific discovery.",
+      "summary_zh": "LungChat是面向单细胞和空间多组学分析的分层多智能体系统，可将自然语言问题拆分为工具调用、文献与临床试验整合及药物再定位任务；作者以肺病案例复现了已进入IPF临床试验的saracatinib和既有COPD疗法氟替卡松丙酸酯。",
+      "why_it_matters_zh": "系统把多组学、药物再定位和可追溯工具调用组合为可复现的发现工作流，并通过架构消融评估其回答可靠性；案例多为已知药物的回溯性优先级排序，独立前瞻验证及真实研究效率仍待证明。",
+      "quality_score": 70.0,
+      "tags": [
+        "分子与药物发现",
+        "bioinformatics",
+        "agent",
+        "drug",
+        "synth"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "ablation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 14,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.08.743577",
+        "arxiv_id": ""
+      },
+      "authors": [
+        "Rajdeo, P.",
+        "Asanuma, S.",
+        "Kouril, M.",
+        "Lu, P.",
+        "Chen, J.",
+        "Chadha, A.",
+        "Prasath, V. B. S.",
+        "Aronow, B. J.",
+        "Salomonis, N."
+      ],
+      "abstract": "Single-cell and spatial omics offer unprecedented opportunities to decipher the mechanisms of disease, however, this process requires teams of experts, iterative trial-and-error and reasoning across modalities. Here we present LungChat (https://chat.lungmap.net), a conversational system for integrated multi-omics analysis and biomedical discovery, deployed as a hierarchical multi-agent architecture in which a supervisor decomposes natural-language questions into parallel, tool-grounded tasks spanning single-cell and spatial analyses, literature and clinical-trial synthesis, and drug repurposing. To predict new therapeutics, LungChat implements Direction-Aware Repurposing and Targeting (DART) to distinguish perturbations that reverse disease transcriptional programs from those that reinforce them, at the cell-type level, for safety prediction. Controlled architecture ablations showed that hierarchical orchestration improved grounded abstention and token efficiency and preserved strong performance on complex multi-step tasks. In pulmonary disease case studies, LungChat independently prioritized saracatinib for IPF through drug-connectivity screening, followed by DART-based cell-type analysis; the same compound has been evaluated in the STOP-IPF clinical trial (NCT04598919). The system also recovered fluticasone propionate, an established COPD therapy, through a single orchestrated analysis. This tissue-agnostic system provides a blueprint for verifiable agentic AI systems that support reproducible scientific discovery.",
+      "published": "2026-08-14",
+      "author_line": "Rajdeo, P., Asanuma, S., Kouril, M. 等 9 人"
+    }
+  ],
   "review": {
     "model": "gpt-5.6-terra",
     "reasoning_effort": "high",
-    "note": "候选文件中的完整候选集为空（count: 0），因此无可审阅或入选条目。"
+    "note": "基于候选文件中的题名、摘要与公开元数据筛选；全部为预印本，结论仍需同行评议和复现实验检验。"
   }
 }

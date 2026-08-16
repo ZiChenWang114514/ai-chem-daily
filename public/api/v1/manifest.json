@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-16T13:41:44+00:00",
+  "generated_at": "2026-08-16T22:15:57+00:00",
   "hub": {
     "id": "aix-daily",
     "name": "AIX Daily",
@@ -30,16 +30,16 @@
         "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixchem/archive/index.json",
         "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixchem/candidates/latest.json"
       },
-      "latest_date": "2026-08-16",
+      "latest_date": "2026-08-17",
       "has_data": true,
       "stats": {
-        "fetched": 0,
-        "candidates": 0,
-        "selected": 0,
+        "fetched": 338,
+        "candidates": 50,
+        "selected": 14,
         "sources": {
           "arXiv": 0,
-          "bioRxiv": 0,
-          "ChemRxiv": 0
+          "bioRxiv": 311,
+          "ChemRxiv": 30
         }
       },
       "source_status": {
@@ -48,12 +48,12 @@
           "count": 0
         },
         "bioRxiv": {
-          "state": "empty",
-          "count": 0
+          "state": "ok",
+          "count": 311
         },
         "ChemRxiv": {
-          "state": "empty",
-          "count": 0
+          "state": "ok",
+          "count": 30
         }
       },
       "source_errors": []
@@ -80,17 +80,17 @@
         "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixbio/archive/index.json",
         "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixbio/candidates/latest.json"
       },
-      "latest_date": "2026-08-16",
+      "latest_date": "2026-08-17",
       "has_data": true,
       "stats": {
-        "fetched": 0,
-        "candidates": 0,
-        "selected": 0,
+        "fetched": 1091,
+        "candidates": 60,
+        "selected": 11,
         "sources": {
           "arXiv": 0,
-          "bioRxiv": 0,
-          "medRxiv": 0,
-          "Europe PMC": 0
+          "bioRxiv": 311,
+          "medRxiv": 79,
+          "Europe PMC": 953
         }
       },
       "source_status": {
@@ -99,16 +99,16 @@
           "count": 0
         },
         "bioRxiv": {
-          "state": "empty",
-          "count": 0
+          "state": "ok",
+          "count": 311
         },
         "medRxiv": {
-          "state": "empty",
-          "count": 0
+          "state": "ok",
+          "count": 79
         },
         "Europe PMC": {
-          "state": "empty",
-          "count": 0
+          "state": "ok",
+          "count": 953
         }
       },
       "source_errors": []
@@ -133,7 +133,7 @@
         "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixmath/archive/index.json",
         "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixmath/candidates/latest.json"
       },
-      "latest_date": "2026-08-16",
+      "latest_date": "2026-08-17",
       "has_data": true,
       "stats": {
         "fetched": 0,
@@ -178,7 +178,7 @@
         "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aivoices/archive/index.json",
         "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aivoices/candidates/latest.json"
       },
-      "latest_date": "2026-08-16",
+      "latest_date": "2026-08-17",
       "has_data": true,
       "stats": {
         "fetched": 0,
@@ -223,20 +223,20 @@
         "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/engineering/archive/index.json",
         "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/engineering/candidates/latest.json"
       },
-      "latest_date": "2026-08-16",
+      "latest_date": "2026-08-17",
       "has_data": true,
       "stats": {
-        "fetched": 3,
-        "candidates": 3,
-        "selected": 1,
+        "fetched": 0,
+        "candidates": 0,
+        "selected": 0,
         "sources": {
-          "GitHub Releases": 3
+          "GitHub Releases": 0
         }
       },
       "source_status": {
         "GitHub Releases": {
-          "state": "ok",
-          "count": 3
+          "state": "empty",
+          "count": 0
         }
       },
       "source_errors": []
