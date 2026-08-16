@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-16T01:56:09+00:00",
+  "generated_at": "2026-08-16T09:12:26+00:00",
   "hub": {
     "id": "aix-daily",
     "name": "AIX Daily",
@@ -33,18 +33,18 @@
       "latest_date": "2026-08-16",
       "has_data": true,
       "stats": {
-        "fetched": 222,
-        "candidates": 17,
-        "selected": 16,
+        "fetched": 289,
+        "candidates": 20,
+        "selected": 15,
         "sources": {
           "arXiv": 0,
-          "bioRxiv": 192,
+          "bioRxiv": 259,
           "ChemRxiv": 30
         },
         "topics": {
-          "方法与模型": 11,
-          "分子与药物发现": 3,
-          "结构与生物": 2
+          "分子与药物发现": 6,
+          "方法与模型": 5,
+          "结构与生物": 4
         }
       }
     },

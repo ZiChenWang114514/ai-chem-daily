@@ -1,16 +1,16 @@
 # AIX Daily · 每日智能研究集散中心
 
-AIX Daily 使用 GitHub Pages 发布，使用 GitHub Actions 采集、导入和部署。当前频道是 AI × Chem，数据结构已经预留 AI × Bio、AI × Math、研究者动态与工程更新。
+AIX Daily 在 Windows 本地完成每日采集与 Codex 学术复核，使用 GitHub Pages 发布。当前频道是 AI × Chem，数据结构已经预留 AI × Bio、AI × Math、研究者动态与工程更新。
 
 ## 每日流程
 
-1. 北京时间 08:12，GitHub Actions 读取 arXiv、bioRxiv 与 ChemRxiv 的公开元数据，生成候选列表和基础日报。
-2. 北京时间 08:25，`zeus_ts` 上的 systemd 定时器独立采集一份原始记录，压缩保存到 `/data3/zcwang/daily-intelligence-hub/raw/`。该流程不依赖 Windows 开机。
-3. 北京时间 09:15，ChatGPT 网页版已安排任务读取公开任务接口和候选资料，完成摘要复核。
-4. 网页版任务通过已连接的 GitHub 应用创建或更新 `scheduled-intake` Issue。导入工作流读取其中的 JSON，将资料写入频道归档并更新网站。
-5. GitHub Pages 部署公开页面、版本化 JSON 接口和年度活动日历。GitHub Issue 与 ChatGPT 通知共同提供每日提醒。
+1. 北京时间 08:00，Windows 计划任务运行 `ops/run_local_pipeline.ps1`。
+2. Python 读取 arXiv、bioRxiv 与 ChemRxiv 公开元数据，在本地保存压缩原始记录，生成当天全部候选。
+3. 本机 Codex CLI 使用 `gpt-5.6-sol` 和高推理强度逐篇复核候选，输出 10 至 16 篇中文精选。
+4. 固定程序导入精选结果、重建网站与邮件内容、运行测试，并把生成的数据提交到 GitHub。
+5. GitHub Pages 部署完成后创建当日日报 Issue 并指派给 `ZiChenWang114514`。GitHub 根据账号通知设置发送邮件。
 
-网页版任务不需要访问 Windows 文件夹，也不需要保存 GitHub Token。ChatGPT 目前不提供 scheduled-task webhook，因此仓库 Issue 是资料写入方式。
+电脑在 08:00 关机时，Windows 会在下次开机并登录后补做任务。屏幕锁定不影响已经登录的计划任务。
 
 ## 公开接口
 
@@ -30,15 +30,14 @@ AIX Daily 使用 GitHub Pages 发布，使用 GitHub Actions 采集、导入和�
 config/channels.json           频道登记与数据源规划
 backend/daily_digest.py        AI × Chem 采集、筛选、邮件与原始快照
 backend/hub_publish.py         生成公开接口、任务说明和活动数据
-backend/import_intake.py       导入网页版已安排任务提交的资料
+backend/import_intake.py       导入人工提交的结构化资料
 backend/apply_curation.py      将 AI × Chem 复核结果写入日报
-ops/sync_raw_to_zeus.ps1       把短期 Actions 原始资料复制到 Zeus
-ops/zeus_daily.sh               Zeus 每日采集程序
-ops/install_zeus_timer.sh       安装并启用 Zeus systemd 定时器
-ops/systemd/                    Zeus 服务与定时器配置
+ops/run_local_pipeline.ps1     本地采集、Codex 复核、测试与发布
+ops/install_local_task.ps1     安装 Windows 每日计划任务
+ops/codex/                     学术复核 Prompt 与结构化输出 Schema
 public/                        GitHub Pages 页面、接口与已发布数据
-.github/workflows/daily.yml    每日采集
-.github/workflows/intake.yml   已安排任务资料导入
+.github/workflows/daily.yml    手动采集工具
+.github/workflows/intake.yml   人工资料导入
 .github/workflows/deploy.yml   Pages 部署
 ```
 
@@ -51,34 +50,37 @@ python -m unittest discover -s tests -v
 python -m http.server 8000 --directory public
 ```
 
-打开 `http://localhost:8000` 查看网站。Windows 同步脚本保留为手动补充工具：
+打开 `http://localhost:8000` 查看网站。手动执行完整流程时运行：
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ops/sync_raw_to_zeus.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File ops/run_local_pipeline.ps1
 ```
 
-## Zeus 定时运行
+只测试内容、不提交 GitHub 时运行：
 
-服务器上的项目目录为 `/data3/zcwang/daily-intelligence-hub/app`。首次安装或更新定时器时运行：
-
-```bash
-bash /data3/zcwang/daily-intelligence-hub/app/ops/install_zeus_timer.sh
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File ops/run_local_pipeline.ps1 -SkipPush -SkipPull
 ```
 
-定时器名称为 `aix-daily-raw.timer`，每天北京时间 08:25 执行。`Persistent=true` 会让服务器在重启后补做错过的当日任务。日志可通过以下命令查看：
+## Windows 定时运行
 
-```bash
-systemctl --user list-timers aix-daily-raw.timer
-journalctl --user -u aix-daily-raw.service -n 100 --no-pager
+安装或更新每天 08:00 的本地任务：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File ops/install_local_task.ps1 -At 08:00
 ```
+
+任务名称为 `AIX Daily Local Academic Pipeline`。运行记录、Codex 结构化结果和本地原始资料分别保存在 `work/local-pipeline/` 与 `work/raw/`，这些目录不会提交到 GitHub。
+
+本地参数位于被 Git 忽略的 `config/local.settings.psd1`。可提交的参考文件是 `config/local.settings.example.psd1`。
 
 ## 新增频道
 
-在 `config/channels.json` 增加频道说明，并让采集器或网页版任务按照 intake schema 提交 `digest` 资料即可。通用导入程序会生成 `public/data/channels/<channel>/latest.json` 与日期归档，随后公开接口和活动日历自动纳入该频道。
+在 `config/channels.json` 增加频道说明，并为新频道增加本地采集器与 Codex Prompt。通用数据结构会生成 `public/data/channels/<channel>/latest.json` 与日期归档，随后公开接口和活动日历自动纳入该频道。
 
 ## 邮件
 
-GitHub Issue 可以通过 GitHub 通知免费发送邮件。若需要完整 HTML 邮件，可在仓库 Actions Secrets 中配置 SMTP 主机、端口、用户名、授权码与发件地址，并用仓库变量 `MAIL_TO` 设置收件地址。凭据不写入代码或 Issue。
+本地程序推送日报后，Pages 工作流创建当天唯一的 `daily-digest` Issue 并指派给你的 GitHub 账号。仓库已经订阅；请在 GitHub 的通知设置中把该仓库的邮件发送地址设为 `wangzc@stu.pku.edu.cn`。HTML 和 Markdown 邮件内容仍会生成到 `public/email/`。
 
 ## 内容说明
 

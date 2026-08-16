@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: read
+  issues: write
   pages: write
   id-token: write
 
@@ -35,3 +36,28 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  notify:
+    needs: deploy
+    if: "${{ github.event_name == 'push' && startsWith(github.event.head_commit.message, 'data: local codex curation') }}"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the published digest
+        uses: actions/checkout@v6
+
+      - name: Send the digest through GitHub notifications
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          digest_date="$(python -c 'import json; print(json.load(open("public/data/latest.json", encoding="utf-8"))["date"])')"
+          title="AI × Chem 日报 · ${digest_date}"
+          if gh issue list --state all --search "${title} in:title" --json title --jq '.[].title' | grep -Fxq "$title"; then
+            echo "Notification issue already exists."
+          else
+            gh issue create \
+              --title "$title" \
+              --body-file public/email/latest.md \
+              --assignee ZiChenWang114514 \
+              --label daily-digest
+          fi

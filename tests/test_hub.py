@@ -28,7 +28,7 @@ class HubInterfaceTests(unittest.TestCase):
 
     def test_scheduled_task_has_read_and_write_interfaces(self):
         task = self.load(API / "tasks" / "daily-brief.json")
-        self.assertEqual(task["write_interface"]["provider"], "github")
+        self.assertEqual(task["write_interface"]["provider"], "local-codex-cli")
         self.assertEqual(task["write_interface"]["label"], "scheduled-intake")
         self.assertTrue(task["write_interface"]["schema"].startswith("https://"))
 

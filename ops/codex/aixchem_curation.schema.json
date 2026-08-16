@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["date", "summary", "selected"],
+  "properties": {
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 30,
+      "maxLength": 300
+    },
+    "selected": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "category",
+          "summary_zh",
+          "why_it_matters_zh",
+          "quality_score",
+          "tags",
+          "evidence_flags"
+        ],
+        "properties": {
+          "id": { "type": "string", "minLength": 3 },
+          "category": {
+            "type": "string",
+            "enum": ["方法与模型", "分子与药物发现", "结构与生物", "材料与催化"]
+          },
+          "summary_zh": { "type": "string", "minLength": 25, "maxLength": 320 },
+          "why_it_matters_zh": { "type": "string", "minLength": 18, "maxLength": 220 },
+          "quality_score": { "type": "number", "minimum": 0, "maximum": 100 },
+          "tags": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 5,
+            "items": { "type": "string", "minLength": 1, "maxLength": 40 }
+          },
+          "evidence_flags": {
+            "type": "array",
+            "maxItems": 5,
+            "items": { "type": "string", "minLength": 1, "maxLength": 40 }
+          }
+        }
+      }
+    }
+  }
+}
