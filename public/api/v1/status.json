@@ -1,20 +1,106 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-16T09:12:26+00:00",
+  "generated_at": "2026-08-16T12:43:06+00:00",
   "timezone": "Asia/Shanghai",
   "expected_date": "2026-08-16",
   "latest_date": "2026-08-16",
   "state": "fresh",
   "active_channels": [
-    "aixchem"
-  ],
-  "channels_with_data": [
-    "aixchem"
-  ],
-  "planned_channels": [
+    "aixchem",
     "aixbio",
     "aixmath",
     "aivoices",
     "engineering"
-  ]
+  ],
+  "channels_with_data": [
+    "aixchem",
+    "aixbio",
+    "aixmath",
+    "aivoices",
+    "engineering"
+  ],
+  "planned_channels": [],
+  "channels": {
+    "aixchem": {
+      "state": "success",
+      "latest_date": "2026-08-16",
+      "updated_at": "2026-08-16T12:28:41+00:00",
+      "source_errors": [],
+      "stats": {
+        "fetched": 0,
+        "candidates": 0,
+        "selected": 0,
+        "sources": {
+          "arXiv": 0,
+          "bioRxiv": 0,
+          "ChemRxiv": 0
+        }
+      }
+    },
+    "aixbio": {
+      "state": "success",
+      "latest_date": "2026-08-16",
+      "updated_at": "2026-08-16T12:29:09+00:00",
+      "source_errors": [],
+      "stats": {
+        "fetched": 0,
+        "candidates": 0,
+        "selected": 0,
+        "sources": {
+          "arXiv": 0,
+          "bioRxiv": 0,
+          "medRxiv": 0,
+          "Europe PMC": 0
+        }
+      }
+    },
+    "aixmath": {
+      "state": "success",
+      "latest_date": "2026-08-16",
+      "updated_at": "2026-08-16T12:38:26+00:00",
+      "source_errors": [
+        "OpenReview: HTTP 403"
+      ],
+      "stats": {
+        "fetched": 0,
+        "candidates": 0,
+        "selected": 0,
+        "sources": {
+          "arXiv": 0,
+          "OpenReview": 0
+        }
+      }
+    },
+    "aivoices": {
+      "state": "success",
+      "latest_date": "2026-08-16",
+      "updated_at": "2026-08-16T12:38:27+00:00",
+      "source_errors": [
+        "X: HTTP 402"
+      ],
+      "stats": {
+        "fetched": 0,
+        "candidates": 0,
+        "selected": 0,
+        "sources": {
+          "X": 0,
+          "Research blogs": 0
+        }
+      }
+    },
+    "engineering": {
+      "state": "success",
+      "latest_date": "2026-08-16",
+      "updated_at": "2026-08-16T12:35:24+00:00",
+      "source_errors": [],
+      "stats": {
+        "fetched": 3,
+        "candidates": 3,
+        "selected": 1,
+        "sources": {
+          "GitHub Releases": 3
+        }
+      }
+    }
+  }
 }

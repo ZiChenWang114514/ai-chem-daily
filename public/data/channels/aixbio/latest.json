@@ -1,0 +1,51 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-16",
+  "channel": "aixbio",
+  "generated_at": "2026-08-16T12:29:09+00:00",
+  "title": "AI × Bio 每日精选",
+  "subtitle": "计算生物学、组学、蛋白质与生物医学模型。",
+  "window": {
+    "start": "2026-08-16",
+    "end": "2026-08-16"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 0,
+    "candidates": 0,
+    "selected": 0,
+    "sources": {
+      "arXiv": 0,
+      "bioRxiv": 0,
+      "medRxiv": 0,
+      "Europe PMC": 0
+    }
+  },
+  "source_status": {
+    "arXiv": {
+      "state": "empty",
+      "count": 0
+    },
+    "bioRxiv": {
+      "state": "empty",
+      "count": 0
+    },
+    "medRxiv": {
+      "state": "empty",
+      "count": 0
+    },
+    "Europe PMC": {
+      "state": "empty",
+      "count": 0
+    }
+  },
+  "source_errors": [],
+  "items": [],
+  "papers": [],
+  "review": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "note": "候选文件为空（count=0），无可审阅条目。"
+  }
+}

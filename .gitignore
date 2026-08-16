@@ -6,3 +6,4 @@ __pycache__/
 !.env.example
 work/
 config/local.settings.psd1
+config/local.secrets.psd1

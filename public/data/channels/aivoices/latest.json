@@ -1,0 +1,43 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-16",
+  "channel": "aivoices",
+  "generated_at": "2026-08-16T12:38:27+00:00",
+  "title": "AI Voices 每日精选",
+  "subtitle": "研究者公开观点、研究发布与重要讨论。",
+  "window": {
+    "start": "2026-08-16",
+    "end": "2026-08-16"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 0,
+    "candidates": 0,
+    "selected": 0,
+    "sources": {
+      "X": 0,
+      "Research blogs": 0
+    }
+  },
+  "source_status": {
+    "X": {
+      "state": "failed",
+      "count": 0
+    },
+    "Research blogs": {
+      "state": "empty",
+      "count": 0
+    }
+  },
+  "source_errors": [
+    "X: HTTP 402"
+  ],
+  "items": [],
+  "papers": [],
+  "review": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "note": "候选集为空，无可评选条目。"
+  }
+}

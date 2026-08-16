@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "x_accounts": [
+    "openai", "AnthropicAI", "GoogleDeepMind", "MetaAI", "MSFTResearch", "NVIDIAAI",
+    "huggingface", "allen_ai", "MistralAI", "xai", "cohere", "StanfordHAI",
+    "AndrewYNg", "karpathy", "ylecun", "demishassabis", "drfeifei", "fchollet",
+    "DrJimFan", "rasbt", "jeremyphoward", "lilianweng", "jackclarkSF", "polynoamial",
+    "tridb", "percyliang", "chelseabfinn", "AnimaAnandkumar", "MMbronstein",
+    "ReginaBarzilay", "marinkazitnik", "crcoley", "pushmeet", "tao_terence",
+    "XenaProject", "Thom_Wolf"
+  ],
+  "x_topic_queries": [
+    "(AI OR LLM OR agent OR reasoning) (paper OR model OR benchmark OR dataset OR release) lang:en -is:retweet",
+    "(theorem proving OR formal reasoning OR proof assistant OR Lean OR Coq) (AI OR model OR benchmark) lang:en -is:retweet",
+    "(AlphaFold OR protein language model OR AI drug discovery OR molecular generation) (paper OR dataset OR release) lang:en -is:retweet",
+    "(人工智能 OR 大模型 OR 智能体 OR 形式化证明) (论文 OR 模型 OR 数据集 OR 发布) lang:zh -is:retweet"
+  ],
+  "research_feeds": [
+    {"name": "OpenAI News", "url": "https://openai.com/news/rss.xml"},
+    {"name": "Anthropic News", "url": "https://www.anthropic.com/news/rss.xml"},
+    {"name": "Google DeepMind", "url": "https://deepmind.google/blog/rss.xml"},
+    {"name": "Google Research", "url": "https://research.google/blog/rss/"},
+    {"name": "Microsoft Research", "url": "https://www.microsoft.com/en-us/research/feed/"},
+    {"name": "Hugging Face", "url": "https://huggingface.co/blog/feed.xml"},
+    {"name": "NVIDIA Technical Blog", "url": "https://developer.nvidia.com/blog/feed/"},
+    {"name": "BAIR", "url": "https://bair.berkeley.edu/blog/feed.xml"},
+    {"name": "AllenAI", "url": "https://allenai.org/blog/rss.xml"}
+  ],
+  "github_repositories": [
+    "openai/codex", "openai/openai-python", "huggingface/transformers", "huggingface/diffusers",
+    "huggingface/trl", "pytorch/pytorch", "tensorflow/tensorflow", "jax-ml/jax",
+    "vllm-project/vllm", "ggml-org/llama.cpp", "ollama/ollama", "NVIDIA/TensorRT-LLM",
+    "microsoft/DeepSpeed", "Dao-AILab/flash-attention", "ray-project/ray", "mlflow/mlflow",
+    "langchain-ai/langchain", "run-llama/llama_index", "deepchem/deepchem", "chemprop/chemprop",
+    "openmm/openmm", "rdkit/rdkit", "leanprover/lean4", "leanprover-community/mathlib4"
+  ],
+  "openreview_domains": [
+    "ICLR.cc/2026/Conference", "NeurIPS.cc/2026/Conference", "ICML.cc/2026/Conference",
+    "colmweb.org/COLM/2026/Conference", "TMLR"
+  ]
+}

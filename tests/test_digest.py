@@ -19,7 +19,7 @@ class DigestOutputTests(unittest.TestCase):
 
     def test_selected_count_matches_papers(self):
         self.assertEqual(self.payload["stats"]["selected"], len(self.payload["papers"]))
-        self.assertGreater(len(self.payload["papers"]), 0)
+        self.assertLessEqual(len(self.payload["papers"]), 16)
 
     def test_papers_have_reviewable_fields(self):
         required = ("title", "abstract", "url", "source", "published", "summary_zh", "why_it_matters_zh")

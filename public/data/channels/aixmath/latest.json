@@ -1,0 +1,43 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-16",
+  "channel": "aixmath",
+  "generated_at": "2026-08-16T12:38:26+00:00",
+  "title": "AI × Math 每日精选",
+  "subtitle": "自动推理、形式化证明、数学智能与基础模型。",
+  "window": {
+    "start": "2026-08-16",
+    "end": "2026-08-16"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 0,
+    "candidates": 0,
+    "selected": 0,
+    "sources": {
+      "arXiv": 0,
+      "OpenReview": 0
+    }
+  },
+  "source_status": {
+    "arXiv": {
+      "state": "empty",
+      "count": 0
+    },
+    "OpenReview": {
+      "state": "failed",
+      "count": 0
+    }
+  },
+  "source_errors": [
+    "OpenReview: HTTP 403"
+  ],
+  "items": [],
+  "papers": [],
+  "review": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "note": "候选文件中没有条目，因此无可入选内容。"
+  }
+}

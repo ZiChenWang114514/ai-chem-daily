@@ -1,6 +1,4 @@
-param(
-    [string]$At = "08:00"
-)
+param([string]$At = "01:00")
 
 $ErrorActionPreference = "Stop"
 
@@ -20,7 +18,7 @@ $Settings = New-ScheduledTaskSettingsSet `
     -StartWhenAvailable `
     -WakeToRun `
     -MultipleInstances IgnoreNew `
-    -ExecutionTimeLimit (New-TimeSpan -Hours 3)
+    -ExecutionTimeLimit (New-TimeSpan -Hours 10)
 $Principal = New-ScheduledTaskPrincipal `
     -UserId $Identity `
     -LogonType Interactive `
@@ -32,7 +30,7 @@ Register-ScheduledTask `
     -Trigger $Trigger `
     -Settings $Settings `
     -Principal $Principal `
-    -Description "Collect, review, publish, and notify the AIX Daily AI x Chem digest." `
+    -Description "Collect, review, publish, and notify all five AIX Daily channels in a serial schedule." `
     -Force | Out-Null
 
 Get-ScheduledTask -TaskName $TaskName | Get-ScheduledTaskInfo
