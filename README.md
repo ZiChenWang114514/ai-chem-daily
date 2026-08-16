@@ -28,7 +28,7 @@ AIX Daily 在 Windows 本地完成每日采集与 Codex 学术复核，使用 Gi
 
 ```text
 config/channels.json           频道登记与数据源规划
-backend/daily_digest.py        AI × Chem 采集、筛选、邮件与原始快照
+backend/daily_digest.py        AI × Chem 采集、筛选、通知内容与原始快照
 backend/hub_publish.py         生成公开接口、任务说明和活动数据
 backend/import_intake.py       导入人工提交的结构化资料
 backend/apply_curation.py      将 AI × Chem 复核结果写入日报
@@ -36,7 +36,6 @@ ops/run_local_pipeline.ps1     本地采集、Codex 复核、测试与发布
 ops/install_local_task.ps1     安装 Windows 每日计划任务
 ops/codex/                     学术复核 Prompt 与结构化输出 Schema
 public/                        GitHub Pages 页面、接口与已发布数据
-.github/workflows/daily.yml    手动采集工具
 .github/workflows/intake.yml   人工资料导入
 .github/workflows/deploy.yml   Pages 部署
 ```

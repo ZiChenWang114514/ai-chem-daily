@@ -4,14 +4,11 @@
 from __future__ import annotations
 
 import argparse
-import email.utils
 import gzip
 import html
 import json
 import os
 import re
-import smtplib
-import ssl
 import sys
 import time
 import urllib.error
@@ -20,7 +17,6 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from dataclasses import asdict, dataclass, field
 from datetime import date, datetime, timedelta, timezone
-from email.message import EmailMessage
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -592,35 +588,6 @@ def render_email(payload: dict[str, Any], site_url: str) -> tuple[str, str]:
     return email_html, markdown
 
 
-def send_smtp_if_configured(subject: str, html_body: str, markdown_body: str) -> bool:
-    names = ["SMTP_HOST", "SMTP_USERNAME", "SMTP_PASSWORD", "MAIL_FROM", "MAIL_TO"]
-    values = {name: os.getenv(name, "").strip() for name in names}
-    if not all(values.values()):
-        log("SMTP email skipped: configure SMTP_HOST, SMTP_USERNAME, SMTP_PASSWORD, MAIL_FROM and MAIL_TO")
-        return False
-    port = int(os.getenv("SMTP_PORT", "465"))
-    message = EmailMessage()
-    message["Subject"] = subject
-    message["From"] = values["MAIL_FROM"]
-    message["To"] = values["MAIL_TO"]
-    message["Date"] = email.utils.formatdate(localtime=True)
-    message.set_content(markdown_body)
-    message.add_alternative(html_body, subtype="html")
-    context = ssl.create_default_context()
-    if port == 465:
-        with smtplib.SMTP_SSL(values["SMTP_HOST"], port, context=context, timeout=30) as smtp:
-            smtp.login(values["SMTP_USERNAME"], values["SMTP_PASSWORD"])
-            smtp.send_message(message)
-    else:
-        with smtplib.SMTP(values["SMTP_HOST"], port, timeout=30) as smtp:
-            smtp.ehlo()
-            smtp.starttls(context=context)
-            smtp.login(values["SMTP_USERNAME"], values["SMTP_PASSWORD"])
-            smtp.send_message(message)
-    log(f"SMTP email sent to {values['MAIL_TO']}")
-    return True
-
-
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--site-root", type=Path, default=Path("public"))
@@ -629,7 +596,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--date", dest="run_date", help="Digest date in YYYY-MM-DD")
     parser.add_argument("--site-url", default=os.getenv("SITE_URL", "https://zichenwang114514.github.io/ai-chem-daily/"))
     parser.add_argument("--raw-root", type=Path, help="Optional private raw snapshot directory")
-    parser.add_argument("--send-email", action="store_true")
     return parser.parse_args()
 
 
@@ -726,9 +692,6 @@ def main() -> int:
     email_root.mkdir(parents=True, exist_ok=True)
     (email_root / "latest.html").write_text(email_html, encoding="utf-8")
     (email_root / "latest.md").write_text(email_markdown, encoding="utf-8")
-    if args.send_email:
-        send_smtp_if_configured(f"AI × Chem 每日预印本精选 · {end_date.isoformat()}", email_html, email_markdown)
-
     log(f"Digest ready: {len(selected)} papers; mode={mode}")
     return 0
 
