@@ -16,6 +16,14 @@
       "candidates": 68,
       "fetched": 1449,
       "kind": "json"
+    },
+    {
+      "date": "2026-07-17",
+      "href": "data/channels/aixchem/archive/2026-07-17.json",
+      "selected": 16,
+      "candidates": 81,
+      "fetched": 522,
+      "kind": "json"
     }
   ]
 }

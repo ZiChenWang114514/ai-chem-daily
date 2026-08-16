@@ -1,0 +1,626 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-15",
+  "generated_at": "2026-08-16T13:41:44+00:00",
+  "title": "AIX Daily 每日智能研究集散中心",
+  "overview_zh": "2026年08月15日的历史日报，共 16 项精选。",
+  "channel_highlights": {
+    "aixchem": "AI × Chem 16 项"
+  },
+  "channels": [
+    {
+      "id": "aixchem",
+      "name": "AI × Chem",
+      "stats": {
+        "fetched": 1449,
+        "candidates": 68,
+        "selected": 16,
+        "sources": {
+          "arXiv": 893,
+          "bioRxiv": 479,
+          "ChemRxiv": 77
+        },
+        "topics": {
+          "方法与模型": 12,
+          "分子与药物发现": 4
+        }
+      },
+      "source_errors": [],
+      "items": [
+        {
+          "id": "biorxiv:10.64898/2026.02.15.705956",
+          "source": "bioRxiv",
+          "title": "Physically Grounded Generative Modeling of All-Atom Biomolecular Dynamics",
+          "abstract": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
+          "authors": [
+            "Feng, B.",
+            "Zhang, J.",
+            "Zhang, X.",
+            "Cao, H.",
+            "Zhang, M.",
+            "Barth, P.",
+            "Liu, Z.",
+            "Li, Y."
+          ],
+          "published": "2026-08-15",
+          "updated": "2026-08-15",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.02.15.705956",
+          "doi": "10.64898/2026.02.15.705956",
+          "category": "方法与模型",
+          "tags": [
+            "方法与模型",
+            "bioinformatics",
+            "generative model",
+            "molecular",
+            "biomolecular"
+          ],
+          "relevance_score": 64.5,
+          "quality_score": 100,
+          "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“Physically Grounded Generative Modeling of All-Atom Biomolecular Dynamics”所涉及的模型与验证结果。",
+          "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+          "evidence_flags": [],
+          "rank": 1,
+          "featured": true,
+          "author_line": "Feng, B., Zhang, J., Zhang, X. 等 8 人"
+        },
+        {
+          "id": "chemrxiv:10.26434/chemrxiv.15007443/v1",
+          "source": "ChemRxiv",
+          "title": "Neural Networks Accelerate Ab Initio Multiple Spawning Simulations: A Case Study of Using Machine Learning Potentials for Excited State Dynamics",
+          "abstract": "Nonadiabatic simulations are critical for understanding photochemical reactions but are often computationally prohibitive, limiting their application to relatively small molecules and short timescales. Machine learning interatomic potentials (MLIPs) promise to remove most of the cost by replacing the electronic structure calls that dominate these simulations, while retaining chemical accuracy. We evaluate independent MLIPs fit to the ground and first excited state for two prototypical photochemical molecules — ethylene and the deprotonated green fluorescent protein chromophore. Despite sub-chemical-accuracy errors on held-out test data, the MLIPs predict qualitatively wrong potential energy surfaces (PESs) near conical intersections: artificial gaps, spurious near-degeneracies, and even reordering of the adiabatic states. We repair this with a hybrid “holey-ML” approach that switches from the MLIPs to ab initio quantum chemistry (QM) wherever the ML-predicted gap between states is small. This hybrid approach reduces the computational cost by an order of magnitude while reproducing the excited state population decay of reference fully ab initio QM simulations. Therefore, hybrid QM/ML schemes are a practical route to routine nonadiabatic dynamics.",
+          "authors": [
+            "Pablo A. Unzueta",
+            "Yuanheng Wang",
+            "Todd J. Martinez"
+          ],
+          "published": "2026-08-14",
+          "updated": "2026-08-14",
+          "url": "https://doi.org/10.26434/chemrxiv.15007443/v1",
+          "doi": "10.26434/chemrxiv.15007443/v1",
+          "category": "方法与模型",
+          "tags": [
+            "方法与模型",
+            "ChemRxiv",
+            "machine learning",
+            "neural network",
+            "machine learning potential"
+          ],
+          "relevance_score": 64.5,
+          "quality_score": 100,
+          "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“Neural Networks Accelerate Ab Initio Multiple Spawning Simulations: A Case Study of Using Machine Learning Potentials for Excited State Dynamics”所涉及的模型与验证结果。",
+          "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+          "evidence_flags": [],
+          "rank": 2,
+          "featured": true,
+          "author_line": "Pablo A. Unzueta, Yuanheng Wang, Todd J. Martinez"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.08.743506",
+          "source": "bioRxiv",
+          "title": "PARNET: A CLIP-SEQ-BASED FOUNDATION MODEL FOR RNA SEQUENCE REPRESENTATION LEARNING",
+          "abstract": "RNA-binding proteins (RBPs) orchestrate a complex combinatorial regulatory \"code\" that governs RNA splicing, stability, localization, and translation. Learning the relationship between RNA sequences and these processes is a central challenge in genomics. Foundation models, notably RNA language models, have emerged as the dominant approach, learning general-purpose representations from unlabeled sequence at scale. While RNA language models have demonstrated impressive performance across a broad range of downstream tasks, they generally learn from sequence reconstruction objectives alone, lacking direct connections to the regulatory principles that govern RNA function. Here we introduce Parnet, an RNA foundation model trained directly and exclusively on experimental CLIP-seq data. Parnet is a multi-task foundation model trained end-to-end on 223 eCLIP-seq experiments spanning 150 RBPs to predict base-resolution RBP binding profiles directly from RNA sequence. This CLIP-seq pretraining strategy departs fundamentally from the masked-language-modeling paradigm, anchoring learned RNA representations directly in measured protein-RNA interactions rather than sequence statistics. Parnet substantially outperforms its single-task predecessor RBPNet in binding profile and motif recovery, generalizes to unseen cell types and iCLIP data, and recapitulates position-dependent splicing regulation. Frozen Parnet embeddings, without task-specific fine-tuning, match or exceed the performance of both task-specific tools, as well as larger self-supervised RNA and genomic language models across diverse downstream tasks, including RNA biotype classification, lncRNA chromatin localization, translational efficiency, splice-site recognition, intron retention, and non-coding variant effect prediction. Importantly, Parnet remains mechanistically interpretable, tracing predictions back to the specific RBPs and motifs that drive them. These results establish the RBP interactome as a compact, functionally sufficient, and interpretable basis for foundation model pretraining in RNA biology.",
+          "authors": [
+            "Moyon, L.",
+            "Tirabassi, A.",
+            "Baranowskii, A.",
+            "Capitanchik, C.",
+            "Kuret Hodnik, K.",
+            "Wilkinson, L.",
+            "Londhe, S.",
+            "Dumbovic, G.",
+            "Gagneur, J.",
+            "Ule, J.",
+            "Horlacher, M.",
+            "Marsico, A."
+          ],
+          "published": "2026-08-13",
+          "updated": "2026-08-13",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.08.743506",
+          "doi": "10.64898/2026.08.08.743506",
+          "category": "方法与模型",
+          "tags": [
+            "方法与模型",
+            "bioinformatics",
+            "foundation model",
+            "representation learning",
+            "rna"
+          ],
+          "relevance_score": 57.2,
+          "quality_score": 100,
+          "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“PARNET: A CLIP-SEQ-BASED FOUNDATION MODEL FOR RNA SEQUENCE REPRESENTATION LEARNING”所涉及的模型与验证结果。",
+          "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+          "evidence_flags": [],
+          "rank": 3,
+          "featured": true,
+          "author_line": "Moyon, L., Tirabassi, A., Baranowskii, A. 等 12 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.14.744759",
+          "source": "bioRxiv",
+          "title": "LEN-Seek: Fast and scalable ligand binding-site similarity search in the latent space of an SE(3)-invariant graph VAE",
+          "abstract": "Motivation: Ligand binding-site similarity search is a crucial step in drug discovery that reduces the conformational search space for docking and other downstream tasks by comparing a target protein against experimentally identified binding sites. Existing methods rely on either direct structural alignment or lossy compression of structural information, producing a trade-off between scalability and precision. Results: We propose LEN-Seek, a ligand binding-site search method based on a graph neural network (GNN)-driven variational autoencoder (VAE) that encodes the 3D structural and physicochemical context of a binding site into a probabilistic latent space, enabling similarity search within a low-dimensional vector space. A binding site is modeled as a graph of amino acid residues, with node features adopted from the protein language model, Ankh, and edges encoded as SE(3)-invariant (roto-translational invariant) geometric relationships, thereby avoiding expensive data augmentation or SE(3)-equivariant models. Compared to ProBiS, the purely geometric graph-clique based method, LEN-Seek successfully retrieves a substantial portion of similar binding sites with a roughly 3,400-fold lower per-comparison cost, demonstrating its potential as a scalable approach to template-based ligand binding-site search in large-scale protein structure databases.",
+          "authors": [
+            "Yeo, K.",
+            "Kim, D.",
+            "Sim, J.",
+            "Lee, J."
+          ],
+          "published": "2026-08-15",
+          "updated": "2026-08-15",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744759",
+          "doi": "10.64898/2026.08.14.744759",
+          "category": "分子与药物发现",
+          "tags": [
+            "分子与药物发现",
+            "bioinformatics",
+            "ligand",
+            "language model",
+            "graph neural"
+          ],
+          "relevance_score": 54.8,
+          "quality_score": 100,
+          "summary_zh": "该预印本提出一项用于分子设计或药物发现的新方法，重点讨论了“LEN-Seek: Fast and scalable ligand binding-site similarity search in the latent space of an SE(3)-invariant graph VAE”所涉及的模型与验证结果。",
+          "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+          "evidence_flags": [],
+          "rank": 4,
+          "featured": false,
+          "author_line": "Yeo, K., Kim, D., Sim, J. 等 4 人"
+        },
+        {
+          "id": "chemrxiv:10.26434/chemrxiv.15007436/v1",
+          "source": "ChemRxiv",
+          "title": "SafeChem: A Benchmark Dataset for Multi-Label Chemical Hazard Prediction and LLM Safety Hallucination Evaluation",
+          "abstract": "We introduce SafeChem, a regulatory-grounded benchmark of 32,211 chemical substances annotated with molecular structure representations, physicochemical descriptors, and 30 binary Globally Harmonized System (GHS) hazard labels. Unlike prior molecular benchmarks queried from pharmaceutical databases, SafeChem is seeded from a curated hazardous materials registry (HMMIS), ensuring coverage of real-world industrial and safety-critical chemicals. We position it as a unified benchmark for chemical safety reasoning across two complementary regimes: predictive performance, measuring multi-label hazard classification from molecular structure, and safety reliability, measuring omission-prone hazard assessment by large language models (LLMs). Under predictive evaluation, a scaffold-split benchmark over 20 GHS categories reveals that all six baseline models achieve meaningful performance on high-prevalence labels (macro-AUPRC 0.45–0.55), while mid-prevalence labels remain substantially harder (macro-AUPRC 0.08–0.28), establishing a difficulty gradient that motivates future work on low-resource hazard prediction. Under reliability evaluation, a 500-substance high-hazard LLM stress test shows that all eight evaluated LLMs exhibit omission hallucination rates above 0.21, with the dominant failure mode being silent abstention: empty predictions indistinguishable from confirmed negatives in automated pipelines, disproportionately targeting the rarest and most dangerous hazard classes. Together, these regimes make SafeChem a benchmark resource for both task-specific molecular models and general-purpose LLMs in chemical safety workflows.",
+          "authors": [
+            "Ran Elgedawy",
+            "Sanjay Das",
+            "Ethan Seefried",
+            "Ryan Burchfield",
+            "Gavin Wiggins",
+            "Kimberly Jeskie",
+            "Chrissi Schnell",
+            "Susan Fiscor",
+            "Subhamay Pramanik",
+            "Billey Thomas",
+            "Sudarshan Srinivasan",
+            "Tirthankar Ghosal"
+          ],
+          "published": "2026-08-14",
+          "updated": "2026-08-14",
+          "url": "https://doi.org/10.26434/chemrxiv.15007436/v1",
+          "doi": "10.26434/chemrxiv.15007436/v1",
+          "category": "方法与模型",
+          "tags": [
+            "方法与模型",
+            "ChemRxiv",
+            "llm",
+            "chemical",
+            "large language model"
+          ],
+          "relevance_score": 53.5,
+          "quality_score": 100,
+          "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“SafeChem: A Benchmark Dataset for Multi-Label Chemical Hazard Prediction and LLM Safety Hallucination Evaluation”所涉及的模型与验证结果。",
+          "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+          "evidence_flags": [
+            "benchmark",
+            "dataset"
+          ],
+          "rank": 5,
+          "featured": false,
+          "author_line": "Ran Elgedawy, Sanjay Das, Ethan Seefried 等 12 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.10.743877",
+          "source": "bioRxiv",
+          "title": "CALFP-MHC: Interpretable Pan-Allelic Prediction of Peptide-MHC Binding and Presentation Using Chemically Grounded Fingerprints and Contrastive Learning",
+          "abstract": "Identifying which peptides bind major histocompatibility complex (MHC) molecules is central to vaccine design, neoantigen prioritization, and precision immunotherapy. Existing deep learning predictors largely encode amino acids as discrete symbols, thereby missing the residue-level chemistry driving molecular recognition. Performance also tends to degrade under class imbalance, for rare alleles, and on peptide-MHC combinations outside the training distribution. We developed CALFP-MHC, a framework that encodes each amino acid as a set of complementary cheminformatics fingerprints capturing functional groups, atomic connectivity, and substructural features, and combines positional encoding with supervised contrastive pre-training to organize the latent space by binding class before fine-tuning a binary classifier. Peptide-MHC interactions are modeled through a hybrid convolutional-transformer backbone. In a large-scale computational benchmark covering ~18.7 million peptide-MHC pairs across 112 HLA class I and 53 class II alleles, CALFP-MHC achieved AUCs of 0.93-0.97 and PPVs of 0.66 - 0.94. Critically, performance remained above AUC 0.90 even at a 200:1 negative-to-positive ratio, where competing tools frequently collapsed toward chance. On independent experimental data containing 3,627 class I and 520 class II MS/MS-confirmed ligands and 570 validated neoantigens, the model maintained strong discrimination, correctly prioritizing immunogenic peptides and MHC-presented ligands. Attention and integrated-gradient analyses recovered established anchor positions (P2 and P{Omega}; for class I, P1, P4, P6, and P9 for class II) and highlighted chemically interpretable functional groups consistent with known binding determinants. CALFP-MHC demonstrates that grounding residue representations in molecular chemistry, rather than sequence symbols alone, improves both robustness and interpretability in peptide-MHC binding prediction.",
+          "authors": [
+            "Pham, M.-D. N.",
+            "Ho, T.-K.-C.",
+            "Nguyen, H.-N.",
+            "Tran, L.-S.",
+            "Phan, M.-D.",
+            "Nguyen, V."
+          ],
+          "published": "2026-08-14",
+          "updated": "2026-08-14",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.10.743877",
+          "doi": "10.64898/2026.08.10.743877",
+          "category": "方法与模型",
+          "tags": [
+            "方法与模型",
+            "immunology",
+            "chemical",
+            "peptide",
+            "deep learning"
+          ],
+          "relevance_score": 52.0,
+          "quality_score": 100,
+          "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“CALFP-MHC: Interpretable Pan-Allelic Prediction of Peptide-MHC Binding and Presentation Using Chemically Grounded Fingerprints and Contrastive Learning”所涉及的模型与验证结果。",
+          "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+          "evidence_flags": [
+            "benchmark"
+          ],
+          "rank": 6,
+          "featured": false,
+          "author_line": "Pham, M.-D. N., Ho, T.-K.-C., Nguyen, H.-N. 等 6 人"
+        },
+        {
+          "id": "arxiv:2608.12906v1",
+          "source": "arXiv",
+          "title": "EGRL: Edge generation-guided relation-aware learning for RNA-protein interaction prediction",
+          "abstract": "RNA-Protein Interactions (RPIs) are critical for regulating cellular functions. While traditional wet-lab experiments for RPI detection are costly and time-consuming, Deep Learning (DL) methods provide an efficient computational alternative for RPI Prediction (RPIP). In particular, Graph Neural Networks (GNNs) are promising, as they naturally model RPI networks. However, existing GNN-based methods often rely on homogeneous graphs or predefined meta-paths, which limit their ability to handle data sparsity and to generalize to cold-start scenarios involving unknown molecules. To address these limitations, we propose Edge Generation-guided Relation-aware Learning (EGRL), a novel framework with several key components: implicit meta-path learning to capture relational semantics without handcrafted paths; a multi-relation-aware attention mechanism for adaptive fusion of interaction patterns; a graph generator that predicts potential (\"soft\") edges to support cold-start nodes; and a multi-feature fusion predictor for final interaction scoring. EGRL is jointly trained with a primary task loss and an auxiliary generator loss. Comprehensive evaluations on four benchmark datasets demonstrate that EGRL achieves competitive overall performance. More importantly, it exhibits superior generalization in cold-start settings, achieving an Area Under the Receiver Operating Characteristic curve (AUROC) of 0.867 and an Area Under the Precision-Recall curve (AUPR) of 0.861 on unknown molecules, corresponding to improvements of 8.6% in AUROC and 5.0% in AUPR over prior state-of-the-art methods. The code will be released soon.",
+          "authors": [
+            "Danyu Li",
+            "Ling Zhou",
+            "Rubing Huang",
+            "Xian Zhong",
+            "Bin Zou",
+            "Kui Jiang"
+          ],
+          "published": "2026-08-13",
+          "updated": "2026-08-13",
+          "url": "https://arxiv.org/abs/2608.12906v1",
+          "doi": "",
+          "category": "方法与模型",
+          "tags": [
+            "方法与模型",
+            "cs.LG",
+            "cs.AI",
+            "protein",
+            "rna"
+          ],
+          "relevance_score": 49.2,
+          "quality_score": 100,
+          "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“EGRL: Edge generation-guided relation-aware learning for RNA-protein interaction prediction”所涉及的模型与验证结果。",
+          "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+          "evidence_flags": [
+            "benchmark",
+            "dataset"
+          ],
+          "rank": 7,
+          "featured": false,
+          "author_line": "Danyu Li, Ling Zhou, Rubing Huang 等 6 人"
+        },
+        {
+          "id": "arxiv:2608.12741v1",
+          "source": "arXiv",
+          "title": "Knowledge Synthesis Review Framework: Task-Level Benchmarking of LLM-Based Systems for Multi-Source Evidence Synthesis",
+          "abstract": "Evidence in rapidly evolving fields is fragmented across academic studies, industry reports, policy documents, and media sources that differ in quality, structure, and purpose, making timely synthesis difficult. Large language models (LLMs) may accelerate this work, but their reliability across the distinct cognitive tasks of a review remains uncertain. We introduce the Knowledge Synthesis Review (KSR), a human-in-the-loop framework that decomposes evidence synthesis into screening, extraction, analysis, and synthesis, benchmarks LLM-based systems on each task against expert reference standards, and routes each task to the best-performing system under continuous expert validation. We evaluated GPT-5, Claude Sonnet 4, Gemini 2.5 Pro, and NotebookLM on a 244-document benchmark subset drawn from a 1,893-document corpus on AI and work spanning four source types, against a gold standard with high inter-rater reliability (92.2% agreement, kappa = 0.80). No system led on all tasks. Claude Sonnet 4 achieved the highest screening accuracy (82.8%) and GPT-5 the highest recall (91.8%) at the expense of lower specificity. Extraction exceeded 90% agreement for titles and sources but degraded in author and reference fields. Performance declined most in interpretive analysis and cross-source synthesis, where expert judgment remained essential. A contamination check on post-cutoff documents showed no evidence that prior exposure inflated results. Applied to the full corpus, the routed workflow surfaced cross-source asymmetries and blind spots that single-source synthesis would miss, including worker well-being, small firms, and the Global South. KSR offers a transparent, auditable, model-agnostic framework for governing LLM assistance in research synthesis while preserving human accountability.",
+          "authors": [
+            "Wafa Shafqat",
+            "Mark Patterson",
+            "Steven N. Liss"
+          ],
+          "published": "2026-08-13",
+          "updated": "2026-08-13",
+          "url": "https://arxiv.org/abs/2608.12741v1",
+          "doi": "",
+          "category": "方法与模型",
+          "tags": [
+            "方法与模型",
+            "cs.IR",
+            "llm",
+            "synthesis",
+            "large language model"
+          ],
+          "relevance_score": 48.2,
+          "quality_score": 100,
+          "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“Knowledge Synthesis Review Framework: Task-Level Benchmarking of LLM-Based Systems for Multi-Source Evidence Synthesis”所涉及的模型与验证结果。",
+          "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+          "evidence_flags": [
+            "benchmark"
+          ],
+          "rank": 8,
+          "featured": false,
+          "author_line": "Wafa Shafqat, Mark Patterson, Steven N. Liss"
+        },
+        {
+          "id": "arxiv:2608.12751v1",
+          "source": "arXiv",
+          "title": "SynAct: A Reasoning-Acting Large Language Model Agent for Adaptive Synthesis Optimization",
+          "abstract": "Logic synthesis transforms RTL designs into gate-level netlists, where PPA results are highly sensitive to the choice of optimization commands, making synthesis tuning both high-dimensional and expensive. Previous approaches fall into two categories: automated methods, which perform black-box search over fixed action spaces with limited decision-level interpretability, and LLM-based methods, which typically generate static scripts upfront and cannot adapt to evolving circuit states. We present SynAct, an adaptive closed-loop LLM reasoning--acting agent that iteratively diagnoses live synthesis reports and reasons over the current circuit state, retrieved tool knowledge, and historical optimization experience to issue targeted commands. SynAct focuses on improving timing, particularly worst negative slack (WNS), while maintaining balanced area and power trade-offs. Experiments on a commercial synthesis tool across 14 designs show that SynAct reduces average WNS to 27% of that from bootstrap synthesis.",
+          "authors": [
+            "Fangzhou Liu",
+            "Peiyi Han",
+            "Jiawei Liu",
+            "Yuan Pu",
+            "Zhuolun He",
+            "Rongliang Fu",
+            "Tsung-Yi Ho",
+            "Bei Yu"
+          ],
+          "published": "2026-08-13",
+          "updated": "2026-08-13",
+          "url": "https://arxiv.org/abs/2608.12751v1",
+          "doi": "",
+          "category": "方法与模型",
+          "tags": [
+            "方法与模型",
+            "cs.AR",
+            "cs.AI",
+            "large language model",
+            "language model"
+          ],
+          "relevance_score": 46.8,
+          "quality_score": 100,
+          "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“SynAct: A Reasoning-Acting Large Language Model Agent for Adaptive Synthesis Optimization”所涉及的模型与验证结果。",
+          "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+          "evidence_flags": [],
+          "rank": 9,
+          "featured": false,
+          "author_line": "Fangzhou Liu, Peiyi Han, Jiawei Liu 等 8 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.09.743788",
+          "source": "bioRxiv",
+          "title": "Learning from human and chemical languages to predict biological function",
+          "abstract": "Understanding how molecular structure encodes biological function remains a grand challenge in drug discovery. Here, we present PubCheF-1, a deep learning model that predicts literature-derived biological function directly from chemical structure. PubCheF-1 was trained on a dataset linking molecules to labels derived from the scientific articles in which they appear, a strategy that connects disparate compounds through the language used to describe their functionalities. When tasked with identifying inhibitors of {beta}-lactamases, including enzymes considered largely refractory to inhibition, PubCheF-1 predicted structurally distinct compounds that collectively have activity against all {beta}-lactamase classes. Furthermore, hit compounds directly bind the enzyme active site, restore antibiotic efficacy in multidrug-resistant high-priority pathogens, and demonstrate potent activity in animal infection models. Together, these findings establish that machine learning-based prediction of biological function derived from the language of scientific literature allows the identification of bioactive molecules at high hit rates, thereby accelerating therapeutic discovery.",
+          "authors": [
+            "Kosonocky, C. W.",
+            "Kaderabkova, N.",
+            "Kim, K.",
+            "Mahmood, A. J. S.",
+            "Dunmyre, A.",
+            "Woolley, P.",
+            "Xing, K.",
+            "Winkler, D.",
+            "Babu, T.",
+            "Kaderabek, F.",
+            "Sessler, J. L.",
+            "Anslyn, E. V.",
+            "Marcotte, E. M.",
+            "Zhang, Y. J.",
+            "Ellington, A. D.",
+            "Mavridou, D. A. I."
+          ],
+          "published": "2026-08-14",
+          "updated": "2026-08-14",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.09.743788",
+          "doi": "10.64898/2026.08.09.743788",
+          "category": "方法与模型",
+          "tags": [
+            "方法与模型",
+            "bioinformatics",
+            "chemical",
+            "machine learning",
+            "deep learning"
+          ],
+          "relevance_score": 46.0,
+          "quality_score": 100,
+          "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“Learning from human and chemical languages to predict biological function”所涉及的模型与验证结果。",
+          "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+          "evidence_flags": [
+            "dataset"
+          ],
+          "rank": 10,
+          "featured": false,
+          "author_line": "Kosonocky, C. W., Kaderabkova, N., Kim, K. 等 16 人"
+        },
+        {
+          "id": "chemrxiv:10.26434/chemrxiv.15007383/v1",
+          "source": "ChemRxiv",
+          "title": "Controllable molecular graph generation from natural-language chemical constraints",
+          "abstract": "Designing molecules under user-specified constraints is central to drug design, catalyst development and materials discovery. Deep generative models have advanced conditional molecule generation, but many controllable systems still rely on structured numerical or categorical inputs, limiting their ability to capture the qualitative, compositional and often ambiguous design intents used by chemists. Here, we report MolWeaver, a text-guided molecular graph generation framework that translates qualitative and quantitative natural-language prompts into chemically valid 2D molecular graphs. MolWeaver combines a frozen language-model backbone with explicit constraint grounding, graph-level control and scaffold-aware graph decoding. We evaluate MolWeaver on ZINC22-derived prompt-conditioned generation and downstream control tasks including ring-size specification, Lipinski rule-of-five-guided generation and phosphine ligand generation under specified steric demands. Across these settings, MolWeaver shows that natural language can serve as a practical interface for controllable molecular graph generation.",
+          "authors": [
+            "Li-Cheng Xu",
+            "Yu-Duo Qian",
+            "Fenglei Cao",
+            "Yuan Qi"
+          ],
+          "published": "2026-08-13",
+          "updated": "2026-08-13",
+          "url": "https://doi.org/10.26434/chemrxiv.15007383/v1",
+          "doi": "10.26434/chemrxiv.15007383/v1",
+          "category": "分子与药物发现",
+          "tags": [
+            "分子与药物发现",
+            "ChemRxiv",
+            "molecular",
+            "chemical",
+            "generative model"
+          ],
+          "relevance_score": 46.0,
+          "quality_score": 99.5,
+          "summary_zh": "该预印本提出一项用于分子设计或药物发现的新方法，重点讨论了“Controllable molecular graph generation from natural-language chemical constraints”所涉及的模型与验证结果。",
+          "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+          "evidence_flags": [],
+          "rank": 11,
+          "featured": false,
+          "author_line": "Li-Cheng Xu, Yu-Duo Qian, Fenglei Cao 等 4 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.09.743676",
+          "source": "bioRxiv",
+          "title": "FP8 Inference in Genomic Foundation Models: Theoretical vs. Realized Speedups on GenomeOcean",
+          "abstract": "Genomic Foundation Models (GFMs) are increasingly used for large-scale sequence analysis and generation. Compared with frontier language models, GFMs are typically smaller and frequently operate on long genomic sequences, with evaluation often requiring preservation of biologically meaningful structure and sequence-level relationships. Although low-precision post-training quantization (PTQ) has shown substantial memory and throughput benefits for general-purpose language models, it remains unclear whether these benefits transfer to GFMs given their distinct model scales, sequence characteristics, and evaluation requirements. We present an empirical case study of FP8 post-training quantization applied to GenomeOcean, a computationally efficient genomic foundation model with strong reported performance across diverse genomics tasks. Its range of model scales, from 100M to 4B parameters, provides a useful setting for examining how quantization effects vary with model size. We evaluate FP8 across two primary GFM inference regimes - embedding extraction and autoregressive generation - and assess its impact along two dimensions: biological fidelity relative to BF16 baselines and system-level efficiency in terms of throughput, memory usage, and energy efficiency. We find that FP8 largely preserves biological fidelity across the evaluated scales and inference regimes, while reducing GPU memory footprint at 4B scale and improving energy efficiency during autoregressive generation. However, realized throughput gains remain substantially below FP8's theoretical 2x hardware ceiling, with a best-case improvement of 19.3% in autoregressive generation and benefits varying strongly by model scale and workload. Autoregressive generation shows the clearest gains, driven largely by KV-cache compression, whereas embedding extraction provides limited or negative throughput benefits at smaller model scales. We attribute this theory-practice gap to the interaction of model-scale effects, memory-system bottlenecks, and software-stack limitations. These findings highlight the need for workload-specific empirical evaluation before adopting low-precision inference in scientific foundation models.",
+          "authors": [
+            "Yu, M.",
+            "Egan, R.",
+            "Liu, F.",
+            "Wang, Z.",
+            "Shi, L."
+          ],
+          "published": "2026-08-14",
+          "updated": "2026-08-14",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.09.743676",
+          "doi": "10.64898/2026.08.09.743676",
+          "category": "方法与模型",
+          "tags": [
+            "方法与模型",
+            "bioinformatics",
+            "foundation model",
+            "genome",
+            "language model"
+          ],
+          "relevance_score": 45.5,
+          "quality_score": 100,
+          "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“FP8 Inference in Genomic Foundation Models: Theoretical vs. Realized Speedups on GenomeOcean”所涉及的模型与验证结果。",
+          "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+          "evidence_flags": [],
+          "rank": 12,
+          "featured": false,
+          "author_line": "Yu, M., Egan, R., Liu, F. 等 5 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.12.744314",
+          "source": "bioRxiv",
+          "title": "AI4Loop: an Artificial Intelligence Framework Reveals Increased 3D Chromatin Interactions and Therapeutic Vulnerabilities across 12,000 Cancer Samples",
+          "abstract": "Three-dimensional chromatin interactions shape gene regulation, but their large-scale analysis remains limited by the cost and complexity of experimental assays. Here we present AI4Loop, a deep learning framework that infers genome-wide gene-centered chromatin interaction networks directly from RNA-seq data. Across multiple cell types, AI4Loop recovered interaction patterns consistent with clinical samples and orthogonal chromatin conformation datasets. Applied to 12,347 transcriptomes from 32 cancer types, AI4Loop revealed pervasive increases in gene-centered chromatin interactions in tumors, particularly at oncogene-associated loci. These inferred interaction networks outperformed gene expression alone in cancer classification. Integration with more than 50,000 drug-treated transcriptomes identified compounds predicted to reverse cancer-associated interaction gains. Hi-C experiments confirmed that the oxazolidinone antibiotics eperezolid and radezolid reduce breast cancer-gain chromatin interactions. Together, these results identify increased gene-centered chromatin interactions as a pan-cancer feature and provide a scalable strategy for linking 3D genome dysregulation to therapeutic vulnerabilities.",
+          "authors": [
+            "Dao, F.",
+            "Lebeau, B.",
+            "Amuley, P.",
+            "Tan, W. K.",
+            "Li, X.",
+            "Goh, B. C.",
+            "Chng, W. J.",
+            "Kwoh, C. K.",
+            "Lin, H.",
+            "Lyu, H.",
+            "Fullwood, M."
+          ],
+          "published": "2026-08-14",
+          "updated": "2026-08-14",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.744314",
+          "doi": "10.64898/2026.08.12.744314",
+          "category": "分子与药物发现",
+          "tags": [
+            "分子与药物发现",
+            "bioinformatics",
+            "artificial intelligence",
+            "therapeutic",
+            "deep learning"
+          ],
+          "relevance_score": 45.5,
+          "quality_score": 100,
+          "summary_zh": "该预印本提出一项用于分子设计或药物发现的新方法，重点讨论了“AI4Loop: an Artificial Intelligence Framework Reveals Increased 3D Chromatin Interactions and Therapeutic Vulnerabilities across 12,000 Cancer Samples”所涉及的模型与验证结果。",
+          "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+          "evidence_flags": [
+            "dataset"
+          ],
+          "rank": 13,
+          "featured": false,
+          "author_line": "Dao, F., Lebeau, B., Amuley, P. 等 11 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.12.744533",
+          "source": "bioRxiv",
+          "title": "A comprehensive phage-bacteria interaction atlas links phage lineage and capsule serotype to genome-guided machine learning prediction in Klebsiella pneumoniae",
+          "abstract": "Klebsiella pneumoniae is a WHO critical-priority pathogen for which strain-specific bacteriophages are being explored as precision antimicrobials, yet rapid phage-host matching remains a major barrier to therapeutic deployment. We constructed a comprehensive interaction atlas comprising 84 taxonomically diverse phages and 101 globally sourced, clinically representative K. pneumoniae strains, including multidrug-resistant isolates. Systematic pairwise profiling produced 8,484 interaction measurements, of which 2,656 (31.3%) scored positive for bacterial clearance. Genus was the dominant phage-side determinant of host range, while capsule K-serotype was the strongest host-side determinant of susceptibility; aggregate defense, prophage, plasmid, and antimicrobial-resistance features contributed comparatively little. A genome-guided machine learning model predicted interactions without curated host annotations (AUROC, 0.882; AUPR, 0.765), outperforming a model based only on phage genus and K-serotype and modestly exceeding a curated genomic baseline. The model recovered capsule- and lipopolysaccharide-biosynthesis genes, canonical receptors and defense-associated features as major predictors using SHAP analysis. Feasibility tests of expert- and model-selected cocktails exposed a translational constraint. Although all formulations suppressed growth in vitro, only the specific cocktail whose phages replicated robustly within the murine gut reduced colonization, suggesting in vivo amplification rather than predicted host range as the limiting factor for therapeutic efficacy. Together with the activity of a model-selected cocktail built for an isolate completely excluded from training, these results provide a species-wide resource for K. pneumoniae phage matching and support a hybrid workflow combining genome-based ranking with targeted phenotypic validation.",
+          "authors": [
+            "Selvakumar, H.",
+            "Noonan, A. J. C.",
+            "Rotman, E.",
+            "Alayouni, M.",
+            "Piya, D.",
+            "Maucourt, F.",
+            "Koderi Valappil, S.",
+            "Svab, M.",
+            "Orihuela, B.",
+            "Cowser, G.",
+            "Murray, I.",
+            "Bousliman, C.",
+            "Kazakov, A.",
+            "Deutschbauer, A. M.",
+            "Roux, S.",
+            "Mimee, M.",
+            "Arkin, A. P.",
+            "Mutalik, V. K."
+          ],
+          "published": "2026-08-13",
+          "updated": "2026-08-13",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.744533",
+          "doi": "10.64898/2026.08.12.744533",
+          "category": "分子与药物发现",
+          "tags": [
+            "分子与药物发现",
+            "microbiology",
+            "machine learning",
+            "genome",
+            "synthesis"
+          ],
+          "relevance_score": 44.8,
+          "quality_score": 100,
+          "summary_zh": "该预印本提出一项用于分子设计或药物发现的新方法，重点讨论了“A comprehensive phage-bacteria interaction atlas links phage lineage and capsule serotype to genome-guided machine learning prediction in Klebsiella pneumoniae”所涉及的模型与验证结果。",
+          "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+          "evidence_flags": [
+            "in vivo"
+          ],
+          "rank": 14,
+          "featured": false,
+          "author_line": "Selvakumar, H., Noonan, A. J. C., Rotman, E. 等 18 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.08.743505",
+          "source": "bioRxiv",
+          "title": "DQHTFI: Dynamic-Query Hypergraph Transformer for Fine-Grained Drug-Target Interaction and Affinity Prediction",
+          "abstract": "Drug-target interaction prediction and binding affinity prediction are two key tasks in drug discovery and drug repurposing. Although deep learning methods have made significant progress, existing models typically rely on global representations of drugs and proteins, making it difficult to adequately model fine-grained interactions between their local units. Fixed multimodal fusion strategies also struggle to dynamically adjust the contributions of different modalities for different drug-target combinations. To address these issues, we propose DQHTFI, a fine-grained interaction prediction framework for drug-target interaction classification and binding affinity regression. DQHTFI employs BRICS fragments and Pfam functional domains as the basic interaction units and jointly learns semantic and structural representations. We design a dynamic-query hypergraph Transformer framework in which hyperedges are constructed among the multimodal features of fragment-domain pairs. Dynamic queries are generated from the cross-conditioned features of fragment-domain pairs to adaptively adjust the contribution of each modality, thereby modeling higher-order interactions between local units. Our proposed model achieves competitive results on multiple benchmark datasets.",
+          "authors": [
+            "Tao, K.",
+            "Chai, H.",
+            "Chen, Z.",
+            "Gao, X.",
+            "Yu, B."
+          ],
+          "published": "2026-08-14",
+          "updated": "2026-08-14",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.08.743505",
+          "doi": "10.64898/2026.08.08.743505",
+          "category": "方法与模型",
+          "tags": [
+            "方法与模型",
+            "bioinformatics",
+            "transformer",
+            "drug",
+            "deep learning"
+          ],
+          "relevance_score": 44.5,
+          "quality_score": 100,
+          "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“DQHTFI: Dynamic-Query Hypergraph Transformer for Fine-Grained Drug-Target Interaction and Affinity Prediction”所涉及的模型与验证结果。",
+          "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+          "evidence_flags": [
+            "benchmark",
+            "dataset"
+          ],
+          "rank": 15,
+          "featured": false,
+          "author_line": "Tao, K., Chai, H., Chen, Z. 等 5 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.14.744831",
+          "source": "bioRxiv",
+          "title": "A Two-Stage ESM-Based Machine Learning Pipeline for Robust Hierarchical Enzyme Function Prediction",
+          "abstract": "Accurate enzyme annotation remains a major bottleneck in translating rapidly growing protein sequence data into biological knowledge. Enzyme Commission (EC) prediction is particularly challenging because enzyme functions are organized hierarchically, annotations are often imbalanced across classes, and sequence similarity alone may be insufficient to resolve functional differences. To address these challenges, we developed ESM-ECForest, a two-stage framework that combines protein embeddings generated by the pretrained language model ESM-2 (Evolutionary Scale Modeling 2) with Random Forest classifiers. The first stage distinguishes enzymes from non-enzymes, whereas the second assigns one or more EC numbers to proteins predicted to be enzymatic. On an external benchmark comprising 25,778 protein sequences, ESM-ECForest achieved the highest weighted F1 score among the evaluated methods at all four EC levels, decreasing from 0.94 at Level 1 to 0.90 at Level 4. The largest relative improvements were observed for lyases (EC 4), ligases (EC 6), and translocases (EC 7), although EC 6 and EC 7 remained the most difficult classes internally. Visualization of the ESM-2 embedding space using Uniform Manifold Approximation and Projection (UMAP) revealed clustering patterns consistent with enzyme functional relationships, indicating that biologically relevant information is retained in the pretrained representations prior to supervised classification. These results support the use of pretrained protein language model embeddings as an effective foundation for enzyme annotation. By combining large-scale sequence representations with a lightweight supervised classifier, ESM-ECForest provides a scalable approach for EC prediction and may facilitate functional annotation of protein sequences derived from large genomic and metagenomic datasets.",
+          "authors": [
+            "Hua, X.",
+            "Grimaud, G."
+          ],
+          "published": "2026-08-14",
+          "updated": "2026-08-14",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744831",
+          "doi": "10.64898/2026.08.14.744831",
+          "category": "方法与模型",
+          "tags": [
+            "方法与模型",
+            "bioinformatics",
+            "machine learning",
+            "enzyme",
+            "language model"
+          ],
+          "relevance_score": 43.5,
+          "quality_score": 100,
+          "summary_zh": "该预印本提出一项用于化学研究中的建模与计算的新方法，重点讨论了“A Two-Stage ESM-Based Machine Learning Pipeline for Robust Hierarchical Enzyme Function Prediction”所涉及的模型与验证结果。",
+          "why_it_matters_zh": "入选依据来自题名、摘要中的方法相关性、验证信息与发布时间；建议阅读全文后再判断其适用范围。",
+          "evidence_flags": [
+            "benchmark",
+            "dataset"
+          ],
+          "rank": 16,
+          "featured": false,
+          "author_line": "Hua, X., Grimaud, G."
+        }
+      ]
+    }
+  ]
+}

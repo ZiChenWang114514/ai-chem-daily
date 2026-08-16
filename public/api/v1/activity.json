@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-16T12:43:06+00:00",
+  "generated_at": "2026-08-16T13:41:44+00:00",
   "timezone": "Asia/Shanghai",
   "metrics": [
     "selected",
@@ -8,6 +8,15 @@
     "fetched"
   ],
   "items": [
+    {
+      "date": "2026-07-17",
+      "channel": "aixchem",
+      "fetched": 522,
+      "candidates": 81,
+      "selected": 16,
+      "kind": "json",
+      "href": "data/channels/aixchem/archive/2026-07-17.json"
+    },
     {
       "date": "2026-08-15",
       "channel": "aixchem",

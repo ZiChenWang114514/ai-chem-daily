@@ -50,6 +50,17 @@ class FiveChannelConfigurationTests(unittest.TestCase):
         tracked_text = "\n".join(path.read_text(encoding="utf-8", errors="ignore") for path in ROOT.rglob("*") if path.is_file() and ".git" not in path.parts and path.name != "local.secrets.psd1")
         self.assertNotRegex(tracked_text, re.compile(r"AAAAAAAAAAAAAAAAAAAAA[A-Za-z0-9%]+"))
 
+    def test_legacy_html_is_imported_into_chem_archive(self):
+        archive = json.loads((ROOT / "public" / "data" / "channels" / "aixchem" / "archive" / "2026-07-17.json").read_text(encoding="utf-8"))
+        self.assertEqual(archive["date"], "2026-07-17")
+        self.assertGreaterEqual(len(archive.get("items") or archive.get("papers") or []), 16)
+        daily = json.loads((ROOT / "public" / "data" / "daily" / "archive" / "2026-07-17.json").read_text(encoding="utf-8"))
+        self.assertEqual(daily["date"], "2026-07-17")
+        activity = json.loads((ROOT / "public" / "api" / "v1" / "activity.json").read_text(encoding="utf-8"))
+        dates = {item["date"] for item in activity["items"] if item["channel"] == "aixchem"}
+        self.assertIn("2026-07-17", dates)
+        self.assertIn("2026-08-15", dates)
+
     def test_channel_pages_exist(self):
         for channel in CHANNELS:
             page = ROOT / "public" / "channels" / channel / "index.html"

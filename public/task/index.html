@@ -3,69 +3,75 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AIX Daily 本地自动学术复核流程与运行状态。">
-  <meta name="theme-color" content="#172333">
-  <title>本地自动流程 · AIX Daily</title>
+  <meta name="description" content="AIX Daily 的本地运行说明与当日状态。">
+  <meta name="theme-color" content="#122033">
+  <title>运行说明 · AIX Daily</title>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <style>
-    :root { color-scheme: light; --ink:#172333; --sub:#667286; --line:#dfe5e9; --teal:#0d7c78; --canvas:#f2f5f6; }
-    * { box-sizing:border-box; }
-    body { margin:0; color:var(--ink); background:var(--canvas); font-family:Inter,"Noto Sans SC","Microsoft YaHei",system-ui,sans-serif; line-height:1.7; }
-    a { color:inherit; }
-    .shell { width:min(860px,calc(100% - 32px)); margin:0 auto; }
-    header { padding:28px 0 72px; color:#fff; background:linear-gradient(135deg,#111c31,#173d4b); }
-    nav { display:flex; align-items:center; justify-content:space-between; }
-    nav a { font-size:12px; text-decoration:none; }
-    .brand { font-weight:800; letter-spacing:.16em; }
-    .eyebrow { margin-top:70px; color:#83cbc4; font-size:11px; font-weight:800; letter-spacing:.18em; }
-    h1 { max-width:720px; margin:9px 0 13px; font-family:"Noto Serif SC","Songti SC",serif; font-size:clamp(34px,7vw,58px); line-height:1.2; }
-    header p { max-width:680px; margin:0; color:rgba(255,255,255,.7); }
-    main { padding:34px 0 80px; }
-    .status { display:grid; grid-template-columns:repeat(3,1fr); margin-bottom:16px; overflow:hidden; background:#fff; border:1px solid var(--line); border-radius:13px; }
-    .status div { padding:16px 18px; }
-    .status div + div { border-left:1px solid var(--line); }
-    .status span,.status strong { display:block; }
-    .status span { color:var(--sub); font-size:10px; }
-    .status strong { margin-top:2px; font-size:14px; }
-    article { padding:26px 28px; background:#fff; border:1px solid var(--line); border-radius:13px; }
-    h2 { margin:0 0 7px; font-family:"Noto Serif SC","Songti SC",serif; font-size:23px; }
-    article > p { margin:0 0 18px; color:var(--sub); font-size:13px; }
-    pre { max-height:380px; margin:0; padding:18px; overflow:auto; color:#dce8e8; background:#172333; border-radius:10px; white-space:pre-wrap; font:12px/1.75 ui-monospace,SFMono-Regular,Consolas,monospace; }
-    .actions { display:flex; gap:9px; flex-wrap:wrap; margin-top:16px; }
-    button,.button { padding:9px 14px; color:#fff; background:var(--teal); border:0; border-radius:8px; cursor:pointer; font:700 12px inherit; text-decoration:none; }
-    .button.secondary { color:var(--ink); background:#edf1f2; }
-    .note { margin-top:16px; padding:15px 17px; color:#4a5668; background:#e8f1f0; border-radius:9px; font-size:12px; }
-    code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; }
-    @media(max-width:600px){ .status{grid-template-columns:1fr}.status div+div{border-top:1px solid var(--line);border-left:0}article{padding:21px 18px}.eyebrow{margin-top:48px} }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/styles.css">
 </head>
-<body>
-  <header>
-    <div class="shell">
-      <nav><a class="brand" href="../">AIX DAILY</a><a href="../">返回日报</a></nav>
-      <div class="eyebrow">LOCAL ACADEMIC PIPELINE</div>
-      <h1>本地完成采集、复核与发布</h1>
-      <p>Windows 每日运行采集程序与 Codex 学术复核，测试通过后推送 GitHub，Pages 随后更新网站并发送 GitHub 通知。</p>
+<body class="task-page" data-page="task" data-root="../">
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <nav class="topbar" aria-label="主要导航">
+        <a class="brand" href="../" aria-label="AIX Daily 首页">
+          <img class="brand__mark" src="../assets/logo.svg" width="36" height="36" alt="">
+          <span class="brand__name">AIX Daily</span>
+        </a>
+        <div class="topbar__actions">
+          <a class="history-button" href="../">返回日报</a>
+        </div>
+      </nav>
     </div>
   </header>
-  <main class="shell">
-    <section class="status" aria-label="接口状态">
+
+  <section class="hero">
+    <div class="shell hero__inner">
+      <div class="hero__copy">
+        <p class="hero__kicker">运行说明</p>
+        <h1>本地完成采集、复核与发布</h1>
+        <p class="hero__lead">Windows 计划任务在每日清晨依次处理五个频道，测试通过后发布网站，并由 GitHub 发送当日通知。</p>
+      </div>
+      <figure class="hero__art">
+        <img src="../assets/art/hero.jpg" width="960" height="540" alt="">
+      </figure>
+    </div>
+  </section>
+
+  <main class="shell main-content">
+    <section class="task-status" aria-label="接口状态">
       <div><span>接口状态</span><strong id="status-state">正在检查</strong></div>
       <div><span>最近一期</span><strong id="status-date">—</strong></div>
-      <div><span>计划时间</span><strong>每日 08:00 · 北京时间</strong></div>
+      <div><span>计划时间</span><strong>北京时间每日清晨</strong></div>
     </section>
-    <article>
+    <article class="task-card">
       <h2>本地运行说明</h2>
-      <p>下面显示当前发布流程。实际执行由 Windows 计划任务和本机 Codex CLI 完成。</p>
+      <p>下面显示当前发布流程。实际执行由 Windows 计划任务和本机复核程序完成。</p>
       <pre id="task-prompt">正在载入任务说明…</pre>
       <div class="actions">
         <button id="copy-button" type="button">复制运行说明</button>
         <a class="button secondary" href="../api/v1/manifest.json">查看接口清单</a>
         <a class="button secondary" href="../api/v1/status.json">查看运行状态</a>
       </div>
-      <div class="note">Pages 部署完成后会创建带有 <code>daily-digest</code> 标签的当日日报 Issue。GitHub 根据你的通知设置把邮件发送到指定邮箱。</div>
+      <div class="task-note">Pages 部署完成后会创建带有 <code>daily-digest</code> 标签的当日日报 Issue。GitHub 根据账号通知设置把邮件发送到指定邮箱。</div>
     </article>
   </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <strong>AIX Daily</strong>
+        <p>化学、生物、数学、公开观点与工程更新的每日精选。</p>
+      </div>
+      <div class="footer-note">
+        <p>预印本、公开观点与软件发布均请结合原始来源判断。</p>
+        <p class="footer-links"><a href="../">返回日报</a></p>
+      </div>
+    </div>
+  </footer>
+
   <script>
     const promptElement = document.getElementById("task-prompt");
     Promise.all([

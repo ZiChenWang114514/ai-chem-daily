@@ -13,7 +13,8 @@ def main() -> int:
     for channel in CHANNELS:
         page = source.replace('data-page="home" data-root=""', f'data-page="channel" data-channel="{channel}" data-root="../../"')
         page = page.replace('href="assets/', 'href="../../assets/').replace('src="assets/', 'src="../../assets/')
-        page = page.replace('href="task/"', 'href="../../task/"').replace('href="./" aria-label="AIX Daily 首页"', 'href="../../" aria-label="AIX Daily 首页"')
+        page = page.replace('href="task/"', 'href="../../task/"').replace('href="api/', 'href="../../api/')
+        page = page.replace('href="./" aria-label="AIX Daily 首页"', 'href="../../" aria-label="AIX Daily 首页"')
         page = page.replace('href="./" aria-current="page"', 'href="../../"')
         page = page.replace('href="channels/', 'href="../')
         target = ROOT / "public" / "channels" / channel / "index.html"
