@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-15T16:58:56+00:00",
+  "generated_at": "2026-08-16T01:56:09+00:00",
   "hub": {
     "id": "aix-daily",
     "name": "AIX Daily",
@@ -33,12 +33,12 @@
       "latest_date": "2026-08-16",
       "has_data": true,
       "stats": {
-        "fetched": 289,
-        "candidates": 20,
+        "fetched": 222,
+        "candidates": 17,
         "selected": 16,
         "sources": {
           "arXiv": 0,
-          "bioRxiv": 259,
+          "bioRxiv": 192,
           "ChemRxiv": 30
         },
         "topics": {
