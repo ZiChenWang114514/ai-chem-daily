@@ -2,7 +2,7 @@
   "schema_version": "2.0",
   "date": "2026-08-17",
   "channel": "aixmath",
-  "generated_at": "2026-08-16T19:00:01+00:00",
+  "generated_at": "2026-08-17T03:52:27+00:00",
   "title": "AI × Math 每日精选",
   "subtitle": "自动推理、形式化证明、数学智能与基础模型。",
   "window": {
@@ -38,6 +38,6 @@
   "review": {
     "model": "gpt-5.6-terra",
     "reasoning_effort": "high",
-    "note": "候选文件中没有条目（count: 0），因此本期不选入内容。"
+    "note": "候选文件中的完整候选集为空（count 为 0），因此没有可审阅或入选的项目。"
   }
 }

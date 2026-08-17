@@ -2,7 +2,7 @@
   "schema_version": "2.0",
   "date": "2026-08-17",
   "channel": "engineering",
-  "generated_at": "2026-08-16T21:02:29+00:00",
+  "generated_at": "2026-08-17T03:52:38+00:00",
   "title": "Engineering 每日精选",
   "subtitle": "重要框架、模型与工具链的发布说明。",
   "window": {
@@ -31,6 +31,6 @@
   "review": {
     "model": "gpt-5.6-terra",
     "reasoning_effort": "high",
-    "note": "候选文件为空，未选择条目。"
+    "note": "候选文件中 count 为 0，未发现可审阅条目。"
   }
 }

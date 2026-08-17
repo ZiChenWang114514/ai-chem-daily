@@ -1,15 +1,15 @@
 {
   "schema_version": "2.0",
   "date": "2026-08-17",
-  "generated_at": "2026-08-16T22:15:56+00:00",
+  "generated_at": "2026-08-17T04:00:01+00:00",
   "title": "AIX Daily 每日智能研究集散中心",
-  "overview_zh": "8月17日的精选以AI驱动的化学与生物医学研究为主。AIX Chem关注将文献语言和化学表征用于功能预测、免疫肽筛选及化学蛋白组学；AIX Bio收录冠脉造影视觉语言模型、泛癌治疗响应预测与三维染色质分析。上述均为预印本，尚未经过同行评议；今日未有入选的同行评议论文、研究者公开观点或软件发布，数学、观点与工程频道均无足够高质量更新。",
+  "overview_zh": "今日AI×化学与AI×生物各有16项精选，前三项均为预印本。化学侧涵盖文献语义辅助分子功能预测、全原子动力学生成与肽-MHC识别；生物侧聚焦冠脉造影视觉语言、三维染色质互作和转录组疗效预测。部分工作报告了实验、外部队列或独立数据评估，但均尚待同行评议；今日未见入选的同行评议论文、研究者公开观点或软件发布。数学、工程和AI Voices缺少足够高质量更新。",
   "channel_highlights": {
-    "aixchem": "三项均为bioRxiv预印本：PubCheF-1将文献功能标签接入结构预测，CALFP-MHC和E64d蛋白组学分别提供免疫肽与共价靶点研究线索。",
-    "aixbio": "三项均为预印本：CAG-MIND的冠脉造影多模态模型、EXPRESSO的泛癌响应预测与AI4Loop的染色质互作推断均报告大规模或独立验证。",
-    "aixmath": "今日没有足够高质量更新：候选集为空，未收录预印本、同行评议论文或其他精选。",
-    "aivoices": "今日没有足够高质量更新：未形成可入选的研究者公开观点或研究发布，故不作延伸解读。",
-    "engineering": "今日没有足够高质量更新：GitHub Releases未提供可入选条目，本频道没有软件发布精选。"
+    "aixchem": "三项精选均为bioRxiv预印本：PubCheF-1以文献语义辅助活性预测，并报告从命中到动物感染模型的实验结果；跨靶点泛化仍需检验。",
+    "aixbio": "三项均为预印本：CAG-MIND报告冠脉造影视觉语言模型的内外部评估；AI4Loop与EXPRESSO分别聚焦三维基因组和疗效预测，临床价值仍需前瞻性验证。",
+    "aixmath": "今日没有足够高质量更新：候选集为空，未形成可供审阅的自动推理、形式化证明或数学智能精选。",
+    "aivoices": "今日没有足够高质量更新：公开观点与研究博客候选均为空，因此未列出研究者观点或讨论。",
+    "engineering": "今日没有足够高质量更新：GitHub Releases未发现候选条目，故无可确认的软件发布或工具链更新。"
   },
   "channels": [
     {
@@ -18,7 +18,7 @@
       "stats": {
         "fetched": 338,
         "candidates": 50,
-        "selected": 14,
+        "selected": 16,
         "sources": {
           "arXiv": 0,
           "bioRxiv": 311,
@@ -59,8 +59,8 @@
           ],
           "language": "en",
           "abstract_or_text": "Understanding how molecular structure encodes biological function remains a grand challenge in drug discovery. Here, we present PubCheF-1, a deep learning model that predicts literature-derived biological function directly from chemical structure. PubCheF-1 was trained on a dataset linking molecules to labels derived from the scientific articles in which they appear, a strategy that connects disparate compounds through the language used to describe their functionalities. When tasked with identifying inhibitors of {beta}-lactamases, including enzymes considered largely refractory to inhibition, PubCheF-1 predicted structurally distinct compounds that collectively have activity against all {beta}-lactamase classes. Furthermore, hit compounds directly bind the enzyme active site, restore antibiotic efficacy in multidrug-resistant high-priority pathogens, and demonstrate potent activity in animal infection models. Together, these findings establish that machine learning-based prediction of biological function derived from the language of scientific literature allows the identification of bioactive molecules at high hit rates, thereby accelerating therapeutic discovery.",
-          "summary_zh": "PubCheF-1将化学结构与论文文本归纳出的生物功能标签联合学习，用于从结构预测功能；作者据此发现了覆盖多类β-内酰胺酶的结构新颖抑制剂，并报告了靶点结合、耐药菌增敏和动物感染模型活性。",
-          "why_it_matters_zh": "将文献语言转化为化学功能监督信号，为跳出已知骨架的药物发现提供了新思路，并有多层级实验支撑；但功能标签的来源与偏倚、命中物的药代和安全性仍需进一步审查。",
+          "summary_zh": "PubCheF-1将化学结构与论文文本中归纳的生物功能标签联合学习，用于预测分子的生物活性；研究据此发现了结构新颖的β-内酰胺酶抑制剂，并报告其靶点结合、耐药菌增敏及动物感染模型活性。",
+          "why_it_matters_zh": "它尝试把文献语言转为可用于分子发现的监督信号，并给出从计算命中到动物模型的实验链条。需留意功能标签来自文献叙述，可能带有发表偏倚和语义噪声，跨靶点泛化仍待更广泛验证。",
           "quality_score": 72.0,
           "tags": [
             "分子与药物发现",
@@ -105,6 +105,65 @@
           "author_line": "Kosonocky, C. W., Kaderabkova, N., Kim, K. 等 16 人"
         },
         {
+          "id": "biorxiv:10.64898/2026.02.15.705956",
+          "channel": "aixchem",
+          "related_channels": [
+            "aixbio"
+          ],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "Physically Grounded Generative Modeling of All-Atom Biomolecular Dynamics",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.02.15.705956",
+          "published_at": "2026-08-15",
+          "updated_at": "2026-08-15",
+          "creators": [
+            "Feng, B.",
+            "Zhang, J.",
+            "Zhang, X.",
+            "Cao, H.",
+            "Zhang, M.",
+            "Barth, P.",
+            "Liu, Z.",
+            "Li, Y."
+          ],
+          "language": "en",
+          "abstract_or_text": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
+          "summary_zh": "BioKinema以时空扩散模型生成连续时间、全原子生物分子轨迹，并以动力学和热力学约束训练；作者报告其可复现蛋白构象集合与转换动力学，并用于蛋白—配体体系及稀有解离事件分析。",
+          "why_it_matters_zh": "若动力学保真度经受住检验，该方法可显著降低长时间尺度分子动力学模拟的成本，服务药物作用机制研究。摘要未提供跨体系的定量误差、训练数据规模与独立盲测细节，结论仍需谨慎评估。",
+          "quality_score": 80.0,
+          "tags": [
+            "方法与模型",
+            "bioinformatics",
+            "deep learning",
+            "diffusion",
+            "molecul",
+            "drug"
+          ],
+          "evidence_flags": [],
+          "publication_status": "preprint",
+          "rank": 2,
+          "featured": true,
+          "category": "结构与生物",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.02.15.705956",
+            "arxiv_id": ""
+          },
+          "authors": [
+            "Feng, B.",
+            "Zhang, J.",
+            "Zhang, X.",
+            "Cao, H.",
+            "Zhang, M.",
+            "Barth, P.",
+            "Liu, Z.",
+            "Li, Y."
+          ],
+          "abstract": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
+          "published": "2026-08-15",
+          "author_line": "Feng, B., Zhang, J., Zhang, X. 等 8 人"
+        },
+        {
           "id": "biorxiv:10.64898/2026.08.10.743877",
           "channel": "aixchem",
           "related_channels": [],
@@ -124,8 +183,8 @@
           ],
           "language": "en",
           "abstract_or_text": "Identifying which peptides bind major histocompatibility complex (MHC) molecules is central to vaccine design, neoantigen prioritization, and precision immunotherapy. Existing deep learning predictors largely encode amino acids as discrete symbols, thereby missing the residue-level chemistry driving molecular recognition. Performance also tends to degrade under class imbalance, for rare alleles, and on peptide-MHC combinations outside the training distribution. We developed CALFP-MHC, a framework that encodes each amino acid as a set of complementary cheminformatics fingerprints capturing functional groups, atomic connectivity, and substructural features, and combines positional encoding with supervised contrastive pre-training to organize the latent space by binding class before fine-tuning a binary classifier. Peptide-MHC interactions are modeled through a hybrid convolutional-transformer backbone. In a large-scale computational benchmark covering ~18.7 million peptide-MHC pairs across 112 HLA class I and 53 class II alleles, CALFP-MHC achieved AUCs of 0.93-0.97 and PPVs of 0.66 - 0.94. Critically, performance remained above AUC 0.90 even at a 200:1 negative-to-positive ratio, where competing tools frequently collapsed toward chance. On independent experimental data containing 3,627 class I and 520 class II MS/MS-confirmed ligands and 570 validated neoantigens, the model maintained strong discrimination, correctly prioritizing immunogenic peptides and MHC-presented ligands. Attention and integrated-gradient analyses recovered established anchor positions (P2 and P{Omega}; for class I, P1, P4, P6, and P9 for class II) and highlighted chemically interpretable functional groups consistent with known binding determinants. CALFP-MHC demonstrates that grounding residue representations in molecular chemistry, rather than sequence symbols alone, improves both robustness and interpretability in peptide-MHC binding prediction.",
-          "summary_zh": "CALFP-MHC以化学指纹表征氨基酸残基，并结合对比预训练和卷积—Transformer模型预测肽-MHC结合及呈递；在大规模计算基准以及质谱配体、已验证新抗原数据上进行了评估。",
-          "why_it_matters_zh": "以残基化学特征替代纯序列符号，有助于提升罕见等位基因和类别不平衡条件下的稳健性，并给出可解释的结合位点信号；但摘要中的实验验证主要是独立数据集评测，尚不等同于前瞻性疫苗或临床验证。",
+          "summary_zh": "CALFP-MHC用化学指纹表征氨基酸残基的官能团、连接关系和子结构，再结合对比学习及卷积—Transformer模型预测肽-MHC结合与呈递。研究在大规模计算基准和独立MS/MS配体、验证新抗原数据上报告了较强性能与可解释位点。",
+          "why_it_matters_zh": "把残基化学性质显式纳入免疫肽预测，有望改善罕见等位基因和类别失衡条件下的稳健性，并有助于疫苗和新抗原排序。独立实验集规模在不同MHC类别间不均衡，模型在真正未见等位基因上的表现仍值得关注。",
           "quality_score": 79.0,
           "tags": [
             "分子与药物发现",
@@ -141,7 +200,7 @@
             "performance"
           ],
           "publication_status": "preprint",
-          "rank": 2,
+          "rank": 3,
           "featured": true,
           "category": "分子与药物发现",
           "metrics": {},
@@ -160,52 +219,6 @@
           "abstract": "Identifying which peptides bind major histocompatibility complex (MHC) molecules is central to vaccine design, neoantigen prioritization, and precision immunotherapy. Existing deep learning predictors largely encode amino acids as discrete symbols, thereby missing the residue-level chemistry driving molecular recognition. Performance also tends to degrade under class imbalance, for rare alleles, and on peptide-MHC combinations outside the training distribution. We developed CALFP-MHC, a framework that encodes each amino acid as a set of complementary cheminformatics fingerprints capturing functional groups, atomic connectivity, and substructural features, and combines positional encoding with supervised contrastive pre-training to organize the latent space by binding class before fine-tuning a binary classifier. Peptide-MHC interactions are modeled through a hybrid convolutional-transformer backbone. In a large-scale computational benchmark covering ~18.7 million peptide-MHC pairs across 112 HLA class I and 53 class II alleles, CALFP-MHC achieved AUCs of 0.93-0.97 and PPVs of 0.66 - 0.94. Critically, performance remained above AUC 0.90 even at a 200:1 negative-to-positive ratio, where competing tools frequently collapsed toward chance. On independent experimental data containing 3,627 class I and 520 class II MS/MS-confirmed ligands and 570 validated neoantigens, the model maintained strong discrimination, correctly prioritizing immunogenic peptides and MHC-presented ligands. Attention and integrated-gradient analyses recovered established anchor positions (P2 and P{Omega}; for class I, P1, P4, P6, and P9 for class II) and highlighted chemically interpretable functional groups consistent with known binding determinants. CALFP-MHC demonstrates that grounding residue representations in molecular chemistry, rather than sequence symbols alone, improves both robustness and interpretability in peptide-MHC binding prediction.",
           "published": "2026-08-14",
           "author_line": "Pham, M.-D. N., Ho, T.-K.-C., Nguyen, H.-N. 等 6 人"
-        },
-        {
-          "id": "biorxiv:10.64898/2026.08.14.744826",
-          "channel": "aixchem",
-          "related_channels": [
-            "aixbio"
-          ],
-          "item_type": "paper",
-          "source": "bioRxiv",
-          "title": "Activity-based chemical proteomics uncovers unexpected covalent targetsof E64d and reveals a role for cysteine cathepsins in PLD3 proteostasis.",
-          "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744826",
-          "published_at": "2026-08-15",
-          "updated_at": "2026-08-15",
-          "creators": [
-            "Hertwig, M.",
-            "Kielkowski, P."
-          ],
-          "language": "en",
-          "abstract_or_text": "Catalytic activity of 5'-3' exonuclease Phospholipase D3 (PLD3) is associated with immune signaling and neurodegeneration including Alzheimer's disease. PLD3 undergoes multiple post-translational modifications and proteolytic cleavage to establish its catalytically active form. However, the proteases catalyzing the cleavage of PLD3 have remained unidentified. To study the proteolytic cleavage of PLD3, we have evaluated the small molecule covalent inhibitor E64d that blocks proteolysis catalyzed by cysteine cathepsins. To validate the selectivity of E64d, we have designed and synthetized an E64d propargyl analogue and carried out a detailed activity-based protein profiling to reveal a broad engagement of the compound with other protein targets including bleomycin hydrolase (BLMH), Kelch-like ECH-associated protein 1 (KEAP1), transcription elongation factor SPT5 (SUPT5H) and asparagine synthetase (ASNS). The specificity of the E64d-protein interactions was confirmed by biochemical assays and mass spectrometry-based site identifications. In neurons, treatment with E64d lead to about 50-fold PLD3 accumulation and dysregulation of its proteolytic cleavage, while there was only a minor overall change on the whole proteome level. Taken together, this study provides insights into previously unknown E64d selectivity and renders cysteine cathepsins responsible for PLD3 degradation in neurons. It highlights the importance of cysteine cathepsins activity in neuronal lysosomes for proper PLD3 processing and hence it suggests that their activation might be responsible for decreased PLD3 levels in neurons of patients with Alzheimer's diseases. These findings are key for further elucidation of PLD3 function in neurodegenerative diseases.",
-          "summary_zh": "研究以E64d炔基探针开展活性基础化学蛋白组学，发现该半胱氨酸蛋白酶抑制剂还广泛结合BLMH、KEAP1、SUPT5H和ASNS等蛋白，并用生化实验和质谱定位验证；在神经元中，E64d导致PLD3显著累积并扰乱其加工。",
-          "why_it_matters_zh": "工作直接提示常用共价抑制剂E64d的选择性比预期更宽，并把半胱氨酸组织蛋白酶与PLD3稳态联系起来；其疾病机制与治疗外推仍主要来自细胞和蛋白组学证据。",
-          "quality_score": 73.0,
-          "tags": [
-            "分子与药物发现",
-            "biochemistry",
-            "generative",
-            "chem",
-            "molecul"
-          ],
-          "evidence_flags": [],
-          "publication_status": "preprint",
-          "rank": 3,
-          "featured": true,
-          "category": "分子与药物发现",
-          "metrics": {},
-          "metadata": {
-            "doi": "10.64898/2026.08.14.744826",
-            "arxiv_id": ""
-          },
-          "authors": [
-            "Hertwig, M.",
-            "Kielkowski, P."
-          ],
-          "abstract": "Catalytic activity of 5'-3' exonuclease Phospholipase D3 (PLD3) is associated with immune signaling and neurodegeneration including Alzheimer's disease. PLD3 undergoes multiple post-translational modifications and proteolytic cleavage to establish its catalytically active form. However, the proteases catalyzing the cleavage of PLD3 have remained unidentified. To study the proteolytic cleavage of PLD3, we have evaluated the small molecule covalent inhibitor E64d that blocks proteolysis catalyzed by cysteine cathepsins. To validate the selectivity of E64d, we have designed and synthetized an E64d propargyl analogue and carried out a detailed activity-based protein profiling to reveal a broad engagement of the compound with other protein targets including bleomycin hydrolase (BLMH), Kelch-like ECH-associated protein 1 (KEAP1), transcription elongation factor SPT5 (SUPT5H) and asparagine synthetase (ASNS). The specificity of the E64d-protein interactions was confirmed by biochemical assays and mass spectrometry-based site identifications. In neurons, treatment with E64d lead to about 50-fold PLD3 accumulation and dysregulation of its proteolytic cleavage, while there was only a minor overall change on the whole proteome level. Taken together, this study provides insights into previously unknown E64d selectivity and renders cysteine cathepsins responsible for PLD3 degradation in neurons. It highlights the importance of cysteine cathepsins activity in neuronal lysosomes for proper PLD3 processing and hence it suggests that their activation might be responsible for decreased PLD3 levels in neurons of patients with Alzheimer's diseases. These findings are key for further elucidation of PLD3 function in neurodegenerative diseases.",
-          "published": "2026-08-15",
-          "author_line": "Hertwig, M., Kielkowski, P."
         }
       ]
     },
@@ -215,7 +228,7 @@
       "stats": {
         "fetched": 1091,
         "candidates": 60,
-        "selected": 11,
+        "selected": 10,
         "sources": {
           "arXiv": 0,
           "bioRxiv": 311,
@@ -263,22 +276,24 @@
           ],
           "language": "en",
           "abstract_or_text": "BACKGROUND: Coronary angiography remains the reference standard for diagnosing coronary artery disease and guiding revascularization, yet its interpretation requires expert integration of multi-view anatomy, lesion morphology and procedural context. Existing artificial intelligence approaches are largely task-specific, annotation-dependent and limited in capturing the semantic relationship between angiographic findings and interventional decision-making. Whether large-scale vision-language pretraining can enable transferable foundation-model representations for invasive coronary imaging remains unknown. METHODS We developed CAG-MIND, a domain-specific vision-language foundation model for coronary angiography, using 135,475 CAG examinations paired with procedural reports, comprising 812,850 angiographic videos from Zhongshan Hospital and Shanghai Geriatric Medical Center. Each case consisted of standardized six-view angiographic acquisitions paired with structured procedural semantics extracted from routine reports using a large language model-assisted pipeline. The model was pretrained by aligning multi-view angiographic representations with report-derived semantic embeddings through bidirectional contrastive learning. Performance was evaluated under zero-shot and supervised fine-tuning settings across 11 downstream tasks grouped into structural abnormality detection, atherosclerotic plaque assessment, and interventional decision prediction, using both an internal validation cohort and an independent external test cohort. RESULTS CAG-MIND demonstrated robust performance across all three task categories. In the zero-shot setting, the model achieved mean AUROCs of 0.686 in the internal validation cohort and 0.745 in the external test cohort, indicating transferable multimodal representations without task-specific supervision. Following supervised fine-tuning, the mean AUROC increased to 0.827 and 0.846, respectively, with excellent performance for coronary stenosis detection (AUROC 0.940 in both cohorts), balloon/stent prediction (0.900 and 0.907), and CABG recommendation (0.877 and 0.875). Compared with representative biomedical vision-language models and conventional image-based architectures, CAG-MIND consistently achieved superior performance in both zero-shot and supervised settings and remained superior to fully fine-tuned competing models when trained with only 10% of the labelled data. Grad-CAM visualization demonstrated anatomically plausible lesion-focused attention, supporting the interpretability of the learned representations. CONCLUSIONS CAG-MIND is, to our knowledge, the first large-scale vision-language foundation model for coronary angiography trained at more than 100,000-patient scale. By aligning standardized multi-view angiographic videos with report-derived procedural semantics, CAG-MIND enables robust zero-shot transfer, data-efficient fine-tuning and cross-center generalization. These findings support domain-aligned multimodal pretraining as a scalable foundation-model paradigm for invasive cardiovascular imaging and future cath-lab decision support.",
-          "summary_zh": "CAG-MIND以135,475例冠脉造影检查、812,850段视频及操作报告训练视觉语言基础模型，并在内部与独立外部队列的11项任务中评估零样本和微调性能。",
-          "why_it_matters_zh": "这是大规模侵入性心血管影像多模态建模，兼有跨中心测试和数据效率结果；其临床决策预测仍属预印本阶段，不能替代临床判断。",
+          "summary_zh": "CAG-MIND以13.5万例冠脉造影检查、81.3万段视频及手术报告训练视觉—语言基础模型，并在内部和独立外部队列的11项任务上评估。",
+          "why_it_matters_zh": "该工作展示了多视角侵入性心血管影像与临床语义对齐的规模化路径；外部测试结果支持其诊断和决策支持潜力，但临床部署价值仍待前瞻性验证。",
           "quality_score": 90.0,
           "tags": [
-            "生物医学与临床",
             "preprint",
-            "clinical",
-            "foundation model",
-            "multimodal imaging",
-            "medRxiv"
+            "临床影像",
+            "视觉语言模型",
+            "冠脉造影",
+            "外部测试",
+            "生物医学与临床"
           ],
           "evidence_flags": [
             "preprint",
-            "clinical",
-            "performance",
-            "external_validation"
+            "临床队列",
+            "大规模数据集",
+            "独立外部测试",
+            "模型性能",
+            "clinical"
           ],
           "publication_status": "preprint",
           "rank": 1,
@@ -320,154 +335,125 @@
           "author_line": "Li, Z., Sun, Y., Jiang, C. 等 24 人"
         },
         {
-          "id": "medrxiv:10.64898/2026.08.11.26359946",
+          "id": "biorxiv:10.64898/2026.08.13.744598",
           "channel": "aixbio",
           "related_channels": [],
           "item_type": "paper",
-          "source": "medRxiv",
-          "title": "Grounding Health AI: Architecture and Evaluation of a Domain-Expert Metabolic Health Agent",
-          "url": "https://www.medrxiv.org/content/10.64898/2026.08.11.26359946",
+          "source": "bioRxiv",
+          "title": "DNA gyrase in live bacteria forms liquid condensates through weak multivalent bonding of excess GyrB",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.13.744598",
           "published_at": "2026-08-14",
           "updated_at": "2026-08-14",
           "creators": [
-            "Diament, A.",
-            "Sapir, G.",
-            "Gorodetski, M.",
-            "Wolf, A.",
-            "Rice, A.",
-            "Azouri, D.",
-            "Etzion-Fuchs, A.",
-            "Gelbard Solodkin, D.",
-            "Talmor-Barkan, Y.",
-            "Lutsker, G.",
-            "Segal, E.",
-            "Rossman, H."
+            "Syeda, A.",
+            "Hollnds, K.",
+            "Frame, L.",
+            "Shepherd, J.",
+            "Payne-Dwyer, A. C.",
+            "Goffee, E.",
+            "Burton, N.",
+            "Basu, A.",
+            "Noy, A.",
+            "Maxwell, T.",
+            "Leake, M. C."
           ],
           "language": "en",
-          "abstract_or_text": "General-purpose language models generate fluent health reports that can fabricate derived clinical metrics. In an illustrative comparison on identical two-week CGM and meal data, leading foundation models produced reports with invented MAGE values, inflated meal counts, and unreferenced complication-risk projections: failures invisible to non-expert readers and plausible enough to mislead clinicians. We describe the HPP Personal Health Agent (PHA), a metabolic health agent that grounds generation in four layers: the Human Phenotype Project (HPP), a deep-phenotyped cohort of 13,000+ participants supplying population references and trained predictive models; 21 domain-expert tools and trained-model wrappers that compute clinical metrics and risk predictions; declarative behavioural skills that constrain what the model may claim; and 21 automated evals across 8 categories developed via a test-driven cycle in which each eval encodes a failure mode discovered during iterative development. In a 210-report matrix (14 participants x 3 prompts x 5 system conditions), the gains are largest on the system's primary use case (meal-grounded metabolic reports, the report it was designed for), where the full system raises a deterministic form/provenance score from 0.37 (the same foundation model with no tools or skills) to 0.91; this score measures structural completeness, numerical accuracy, tool grounding, and clinical-language compliance: a necessary condition for trustworthy health reporting, with clinical quality as a complementary axis examined qualitatively. A skills-vs-tools decomposition shows the two layers act on different axes: tools drive numerical accuracy (from about 14% to 90% of reported metrics correct), while the declarative skills add most of the remaining gain in citations, completeness, and structure (tools alone recover only part of the gap, 0.49 from the same 0.37 baseline). The lift generalises beyond the primary use case: to a second metabolic prompt (0.72) and a cardiovascular extension (0.70), each from a 0.37-0.39 baseline. The architecture extends across clinical domains: adding a SCORE2 cardiovascular risk tool and a corresponding skill (with no changes to orchestration, eval harness, or existing tools) produced a cardiovascular risk report from the same system. Trustworthy domain-specialised health AI is a systems design problem: deep-phenotyped cohort data, domain-expert tools and models, and eval-driven development together form a replicable pattern.",
-          "summary_zh": "HPP个人健康智能体结合13,000余人深度表型队列、21个专家工具及自动化评测，在210份代谢健康报告中检验数值正确性、来源追溯和临床语言合规性。",
-          "why_it_matters_zh": "以工具计算、声明式约束和可执行评测降低健康报告中的虚构指标，为专科健康AI的可复现实证评估提供了具体范式。",
+          "abstract_or_text": "Type IIA bacterial topoisomerase DNA gyrase, a GyrA/GyrB heterotetramer, has crucial roles maintaining transcription and DNA replication by relaxing positive DNA supercoils through introducing negative supercoils. However, rates of gyrase-catalysed supercoiling in vitro cannot explain much higher rates required in vivo. To address this puzzle, we used high-speed single-molecule fluorescence imaging of GyrA/GyrB reporters in live Escherichia coli, indicating that cells contain ~40% more GyrB than GyrA expressed in a diffuse pool or in clusters whose mobility depends on whether they are bound to DNA. Unexpectedly, we discovered that clusters are non-stoichiometric containing ~150% more GyrB than GyrA, significantly greater than the cellular average, with fluorescence recovery after photobleaching revealing that clustered GyrA and GyrB behave as a liquid whose abundance can be increased by applying gyrase-targeting antibiotics. Structural docking indicates that the liquid state is stabilised through excess GyrB progressively binding to existing clusters via weak, multivalent interactions. By operating in liquid condensates, A2B2 that dissociates from DNA can rebind rapidly instead of diffusing away, increasing enzyme processivity to enable multiple rounds of catalysis that can keep pace with transcription and DNA replication in vivo. This demonstrates a new role for condensates of overcoming kinetic limitations imposed by diffusion.",
+          "summary_zh": "活细胞单分子荧光成像显示，大肠杆菌DNA旋转酶簇中GyrB相对富集，并呈现液体样动态；结构对接提出弱多价相互作用机制。",
+          "why_it_matters_zh": "研究把细菌拓扑异构酶的空间组织与体内高通量超螺旋调控联系起来，提供了可检验的生物物理机制模型。",
           "quality_score": 78.0,
           "tags": [
-            "方法与模型",
             "preprint",
-            "health AI",
-            "agent",
-            "evaluation",
-            "medRxiv"
+            "细菌生物物理",
+            "单分子成像",
+            "DNA旋转酶",
+            "凝聚体",
+            "组学与细胞"
           ],
           "evidence_flags": [
             "preprint",
-            "clinical",
-            "evaluation",
-            "reproducibility"
+            "活细胞实验",
+            "单分子成像",
+            "结构建模",
+            "in vivo"
           ],
           "publication_status": "preprint",
-          "rank": 5,
+          "rank": 4,
           "featured": false,
-          "category": "方法与模型",
+          "category": "组学与细胞",
           "metrics": {},
           "metadata": {
-            "doi": "10.64898/2026.08.11.26359946",
+            "doi": "10.64898/2026.08.13.744598",
             "arxiv_id": ""
           },
           "authors": [
-            "Diament, A.",
-            "Sapir, G.",
-            "Gorodetski, M.",
-            "Wolf, A.",
-            "Rice, A.",
-            "Azouri, D.",
-            "Etzion-Fuchs, A.",
-            "Gelbard Solodkin, D.",
-            "Talmor-Barkan, Y.",
-            "Lutsker, G.",
-            "Segal, E.",
-            "Rossman, H."
+            "Syeda, A.",
+            "Hollnds, K.",
+            "Frame, L.",
+            "Shepherd, J.",
+            "Payne-Dwyer, A. C.",
+            "Goffee, E.",
+            "Burton, N.",
+            "Basu, A.",
+            "Noy, A.",
+            "Maxwell, T.",
+            "Leake, M. C."
           ],
-          "abstract": "General-purpose language models generate fluent health reports that can fabricate derived clinical metrics. In an illustrative comparison on identical two-week CGM and meal data, leading foundation models produced reports with invented MAGE values, inflated meal counts, and unreferenced complication-risk projections: failures invisible to non-expert readers and plausible enough to mislead clinicians. We describe the HPP Personal Health Agent (PHA), a metabolic health agent that grounds generation in four layers: the Human Phenotype Project (HPP), a deep-phenotyped cohort of 13,000+ participants supplying population references and trained predictive models; 21 domain-expert tools and trained-model wrappers that compute clinical metrics and risk predictions; declarative behavioural skills that constrain what the model may claim; and 21 automated evals across 8 categories developed via a test-driven cycle in which each eval encodes a failure mode discovered during iterative development. In a 210-report matrix (14 participants x 3 prompts x 5 system conditions), the gains are largest on the system's primary use case (meal-grounded metabolic reports, the report it was designed for), where the full system raises a deterministic form/provenance score from 0.37 (the same foundation model with no tools or skills) to 0.91; this score measures structural completeness, numerical accuracy, tool grounding, and clinical-language compliance: a necessary condition for trustworthy health reporting, with clinical quality as a complementary axis examined qualitatively. A skills-vs-tools decomposition shows the two layers act on different axes: tools drive numerical accuracy (from about 14% to 90% of reported metrics correct), while the declarative skills add most of the remaining gain in citations, completeness, and structure (tools alone recover only part of the gap, 0.49 from the same 0.37 baseline). The lift generalises beyond the primary use case: to a second metabolic prompt (0.72) and a cardiovascular extension (0.70), each from a 0.37-0.39 baseline. The architecture extends across clinical domains: adding a SCORE2 cardiovascular risk tool and a corresponding skill (with no changes to orchestration, eval harness, or existing tools) produced a cardiovascular risk report from the same system. Trustworthy domain-specialised health AI is a systems design problem: deep-phenotyped cohort data, domain-expert tools and models, and eval-driven development together form a replicable pattern.",
+          "abstract": "Type IIA bacterial topoisomerase DNA gyrase, a GyrA/GyrB heterotetramer, has crucial roles maintaining transcription and DNA replication by relaxing positive DNA supercoils through introducing negative supercoils. However, rates of gyrase-catalysed supercoiling in vitro cannot explain much higher rates required in vivo. To address this puzzle, we used high-speed single-molecule fluorescence imaging of GyrA/GyrB reporters in live Escherichia coli, indicating that cells contain ~40% more GyrB than GyrA expressed in a diffuse pool or in clusters whose mobility depends on whether they are bound to DNA. Unexpectedly, we discovered that clusters are non-stoichiometric containing ~150% more GyrB than GyrA, significantly greater than the cellular average, with fluorescence recovery after photobleaching revealing that clustered GyrA and GyrB behave as a liquid whose abundance can be increased by applying gyrase-targeting antibiotics. Structural docking indicates that the liquid state is stabilised through excess GyrB progressively binding to existing clusters via weak, multivalent interactions. By operating in liquid condensates, A2B2 that dissociates from DNA can rebind rapidly instead of diffusing away, increasing enzyme processivity to enable multiple rounds of catalysis that can keep pace with transcription and DNA replication in vivo. This demonstrates a new role for condensates of overcoming kinetic limitations imposed by diffusion.",
           "published": "2026-08-14",
-          "author_line": "Diament, A., Sapir, G., Gorodetski, M. 等 12 人"
+          "author_line": "Syeda, A., Hollnds, K., Frame, L. 等 11 人"
         },
         {
-          "id": "medrxiv:10.64898/2026.08.12.26360210",
+          "id": "biorxiv:10.64898/2026.08.14.744831",
           "channel": "aixbio",
-          "related_channels": [
-            "aixmath"
-          ],
+          "related_channels": [],
           "item_type": "paper",
-          "source": "medRxiv",
-          "title": "Large Language Models Generate Stigmatizing Language During Reasoning Over Real-World Clinical Data",
-          "url": "https://www.medrxiv.org/content/10.64898/2026.08.12.26360210",
+          "source": "bioRxiv",
+          "title": "A Two-Stage ESM-Based Machine Learning Pipeline for Robust Hierarchical Enzyme Function Prediction",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744831",
           "published_at": "2026-08-14",
           "updated_at": "2026-08-14",
           "creators": [
-            "Yang, Y.",
-            "Gu, B.",
-            "Hathaway, D. B.",
-            "Wyss, R.",
-            "Marengo, L.",
-            "Gibbons, J. B.",
-            "Lyndon, S.",
-            "Wu, J.",
-            "Chen, Q.",
-            "Liu, N.",
-            "Wang, P. S.",
-            "Celi, L. A.",
-            "Bates, D. W.",
-            "Lin, J.",
-            "Zhou, L.",
-            "Yang, J."
+            "Hua, X.",
+            "Grimaud, G."
           ],
           "language": "en",
-          "abstract_or_text": "Stigmatizing language in clinical documentation, which conveys negative stereotypes, attitudes, or judgments toward patients, is a recognized source of documentation bias and is associated with poorer care and adverse health outcomes. Although prior stigma-related research has focused on clinician-written EHR notes, the increasing use of large language model (LLM)-generated documentation in clinical workflows raises new concerns about its potential to reproduce or amplify bias and affect patient safety. In this study, we conducted a large-scale assessment of stigmatizing language in LLM-generated reasoning text on 35 real-world clinical tasks across 107 LLMs. We applied a psychiatrist-validated, natural language processing (NLP) system to detect stigma terms in LLM reasoning text and quantified stigma rates of LLM-generated reasoning texts across 3,745 model-task pairs. Results showed that stigma rates ranged from 0% to 33.33%, with 84.06% of pairs containing stigma terms. Open-source models and reasoning models showed statistically higher stigma rates than proprietary (1.97% vs. 1.60%; p < 0.01) and non-reasoning models (2.35% vs. 1.70%; p < 0.0001), while the stigma rate difference between the general and medical models is not statistically significant (2.00% vs. 1.80%; p = 0.26). Stigma rates of LLM outputs correlated negatively with task accuracy (r = -0.304; p < 0.001) and positively with input clinical-text stigma (r = 0.569; p < 0.001), with 19.76% of model-task pairs amplifying stigma in the original input notes. Applying prompt engineering as a destigmatizing approach helped reduce model stigma rates by as much as 91.91% without affecting the model performance. This study shows that stigmatizing language generation is common but reducible during LLMs' reasoning traces, suggesting that well-implemented approaches for LLM monitoring and destigmatizing will be essential for healthcare systems to implement.",
-          "summary_zh": "研究在35项真实临床任务、107个大语言模型和3,745个模型—任务组合中，用精神科医师验证的NLP系统量化推理文本中的污名化语言。",
-          "why_it_matters_zh": "其大规模比较显示临床文本偏见可被提示策略显著降低，提示医疗AI评测应同时考察任务准确性与语言伤害风险。",
-          "quality_score": 78.0,
+          "abstract_or_text": "Accurate enzyme annotation remains a major bottleneck in translating rapidly growing protein sequence data into biological knowledge. Enzyme Commission (EC) prediction is particularly challenging because enzyme functions are organized hierarchically, annotations are often imbalanced across classes, and sequence similarity alone may be insufficient to resolve functional differences. To address these challenges, we developed ESM-ECForest, a two-stage framework that combines protein embeddings generated by the pretrained language model ESM-2 (Evolutionary Scale Modeling 2) with Random Forest classifiers. The first stage distinguishes enzymes from non-enzymes, whereas the second assigns one or more EC numbers to proteins predicted to be enzymatic. On an external benchmark comprising 25,778 protein sequences, ESM-ECForest achieved the highest weighted F1 score among the evaluated methods at all four EC levels, decreasing from 0.94 at Level 1 to 0.90 at Level 4. The largest relative improvements were observed for lyases (EC 4), ligases (EC 6), and translocases (EC 7), although EC 6 and EC 7 remained the most difficult classes internally. Visualization of the ESM-2 embedding space using Uniform Manifold Approximation and Projection (UMAP) revealed clustering patterns consistent with enzyme functional relationships, indicating that biologically relevant information is retained in the pretrained representations prior to supervised classification. These results support the use of pretrained protein language model embeddings as an effective foundation for enzyme annotation. By combining large-scale sequence representations with a lightweight supervised classifier, ESM-ECForest provides a scalable approach for EC prediction and may facilitate functional annotation of protein sequences derived from large genomic and metagenomic datasets.",
+          "summary_zh": "ESM-ECForest将ESM-2蛋白表征与两阶段随机森林结合，在25,778条蛋白质的外部基准上进行层级EC酶学功能预测。",
+          "why_it_matters_zh": "轻量监督模型与蛋白语言模型表征的组合，为大规模基因组和宏基因组注释提供了实用方案；仍需在真实新颖蛋白发现任务中检验。",
+          "quality_score": 84.0,
           "tags": [
-            "生物医学与临床",
             "preprint",
-            "clinical AI",
-            "LLM",
-            "health equity",
-            "medRxiv"
+            "蛋白语言模型",
+            "酶功能注释",
+            "外部基准",
+            "宏基因组",
+            "蛋白质与结构"
           ],
           "evidence_flags": [
             "preprint",
-            "clinical",
-            "performance",
-            "safety_evaluation"
+            "外部基准",
+            "数据集",
+            "模型性能",
+            "benchmark",
+            "dataset"
           ],
           "publication_status": "preprint",
           "rank": 6,
           "featured": false,
-          "category": "生物医学与临床",
+          "category": "蛋白质与结构",
           "metrics": {},
           "metadata": {
-            "doi": "10.64898/2026.08.12.26360210",
+            "doi": "10.64898/2026.08.14.744831",
             "arxiv_id": ""
           },
           "authors": [
-            "Yang, Y.",
-            "Gu, B.",
-            "Hathaway, D. B.",
-            "Wyss, R.",
-            "Marengo, L.",
-            "Gibbons, J. B.",
-            "Lyndon, S.",
-            "Wu, J.",
-            "Chen, Q.",
-            "Liu, N.",
-            "Wang, P. S.",
-            "Celi, L. A.",
-            "Bates, D. W.",
-            "Lin, J.",
-            "Zhou, L.",
-            "Yang, J."
+            "Hua, X.",
+            "Grimaud, G."
           ],
-          "abstract": "Stigmatizing language in clinical documentation, which conveys negative stereotypes, attitudes, or judgments toward patients, is a recognized source of documentation bias and is associated with poorer care and adverse health outcomes. Although prior stigma-related research has focused on clinician-written EHR notes, the increasing use of large language model (LLM)-generated documentation in clinical workflows raises new concerns about its potential to reproduce or amplify bias and affect patient safety. In this study, we conducted a large-scale assessment of stigmatizing language in LLM-generated reasoning text on 35 real-world clinical tasks across 107 LLMs. We applied a psychiatrist-validated, natural language processing (NLP) system to detect stigma terms in LLM reasoning text and quantified stigma rates of LLM-generated reasoning texts across 3,745 model-task pairs. Results showed that stigma rates ranged from 0% to 33.33%, with 84.06% of pairs containing stigma terms. Open-source models and reasoning models showed statistically higher stigma rates than proprietary (1.97% vs. 1.60%; p < 0.01) and non-reasoning models (2.35% vs. 1.70%; p < 0.0001), while the stigma rate difference between the general and medical models is not statistically significant (2.00% vs. 1.80%; p = 0.26). Stigma rates of LLM outputs correlated negatively with task accuracy (r = -0.304; p < 0.001) and positively with input clinical-text stigma (r = 0.569; p < 0.001), with 19.76% of model-task pairs amplifying stigma in the original input notes. Applying prompt engineering as a destigmatizing approach helped reduce model stigma rates by as much as 91.91% without affecting the model performance. This study shows that stigmatizing language generation is common but reducible during LLMs' reasoning traces, suggesting that well-implemented approaches for LLM monitoring and destigmatizing will be essential for healthcare systems to implement.",
+          "abstract": "Accurate enzyme annotation remains a major bottleneck in translating rapidly growing protein sequence data into biological knowledge. Enzyme Commission (EC) prediction is particularly challenging because enzyme functions are organized hierarchically, annotations are often imbalanced across classes, and sequence similarity alone may be insufficient to resolve functional differences. To address these challenges, we developed ESM-ECForest, a two-stage framework that combines protein embeddings generated by the pretrained language model ESM-2 (Evolutionary Scale Modeling 2) with Random Forest classifiers. The first stage distinguishes enzymes from non-enzymes, whereas the second assigns one or more EC numbers to proteins predicted to be enzymatic. On an external benchmark comprising 25,778 protein sequences, ESM-ECForest achieved the highest weighted F1 score among the evaluated methods at all four EC levels, decreasing from 0.94 at Level 1 to 0.90 at Level 4. The largest relative improvements were observed for lyases (EC 4), ligases (EC 6), and translocases (EC 7), although EC 6 and EC 7 remained the most difficult classes internally. Visualization of the ESM-2 embedding space using Uniform Manifold Approximation and Projection (UMAP) revealed clustering patterns consistent with enzyme functional relationships, indicating that biologically relevant information is retained in the pretrained representations prior to supervised classification. These results support the use of pretrained protein language model embeddings as an effective foundation for enzyme annotation. By combining large-scale sequence representations with a lightweight supervised classifier, ESM-ECForest provides a scalable approach for EC prediction and may facilitate functional annotation of protein sequences derived from large genomic and metagenomic datasets.",
           "published": "2026-08-14",
-          "author_line": "Yang, Y., Gu, B., Hathaway, D. B. 等 16 人"
+          "author_line": "Hua, X., Grimaud, G."
         }
       ]
     },

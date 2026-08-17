@@ -2,7 +2,7 @@
   "schema_version": "2.0",
   "date": "2026-08-17",
   "channel": "aixbio",
-  "generated_at": "2026-08-16T18:00:44+00:00",
+  "generated_at": "2026-08-17T03:52:26+00:00",
   "count": 60,
   "items": [
     {
@@ -2057,8 +2057,8 @@
       "id": "europepmc:ppr1298355",
       "channel": "aixbio",
       "related_channels": [
-        "aixmath",
-        "aixchem"
+        "aixchem",
+        "aixmath"
       ],
       "item_type": "paper",
       "source": "Europe PMC",

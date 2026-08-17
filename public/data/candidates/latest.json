@@ -2,7 +2,7 @@
   "schema_version": "2.0",
   "date": "2026-08-17",
   "channel": "aixchem",
-  "generated_at": "2026-08-16T17:17:22+00:00",
+  "generated_at": "2026-08-17T03:52:25+00:00",
   "count": 50,
   "items": [
     {
@@ -1338,8 +1338,8 @@
       "id": "biorxiv:10.64898/2026.08.14.744760",
       "channel": "aixchem",
       "related_channels": [
-        "aixbio",
-        "aixmath"
+        "aixmath",
+        "aixbio"
       ],
       "item_type": "paper",
       "source": "bioRxiv",

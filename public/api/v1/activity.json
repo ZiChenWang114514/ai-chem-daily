@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-16T22:15:57+00:00",
+  "generated_at": "2026-08-17T04:00:01+00:00",
   "timezone": "Asia/Shanghai",
   "metrics": [
     "selected",
@@ -94,7 +94,7 @@
       "channel": "aixchem",
       "fetched": 338,
       "candidates": 50,
-      "selected": 14,
+      "selected": 16,
       "kind": "json",
       "href": "data/channels/aixchem/archive/2026-08-17.json"
     },

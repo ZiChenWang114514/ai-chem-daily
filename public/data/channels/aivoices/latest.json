@@ -2,7 +2,7 @@
   "schema_version": "2.0",
   "date": "2026-08-17",
   "channel": "aivoices",
-  "generated_at": "2026-08-16T20:00:49+00:00",
+  "generated_at": "2026-08-17T03:52:37+00:00",
   "title": "AI Voices 每日精选",
   "subtitle": "研究者公开观点、研究发布与重要讨论。",
   "window": {
@@ -38,6 +38,6 @@
   "review": {
     "model": "gpt-5.6-terra",
     "reasoning_effort": "high",
-    "note": "候选文件中没有任何条目，故本期未选取内容。"
+    "note": "候选集为空，未选择内容。"
   }
 }

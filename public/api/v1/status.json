@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-16T22:15:57+00:00",
+  "generated_at": "2026-08-17T04:00:01+00:00",
   "timezone": "Asia/Shanghai",
   "expected_date": "2026-08-17",
   "latest_date": "2026-08-17",
@@ -24,12 +24,12 @@
     "aixchem": {
       "state": "success",
       "latest_date": "2026-08-17",
-      "updated_at": "2026-08-16T17:17:22+00:00",
+      "updated_at": "2026-08-17T03:52:25+00:00",
       "source_errors": [],
       "stats": {
         "fetched": 338,
         "candidates": 50,
-        "selected": 14,
+        "selected": 16,
         "sources": {
           "arXiv": 0,
           "bioRxiv": 311,
@@ -40,12 +40,12 @@
     "aixbio": {
       "state": "success",
       "latest_date": "2026-08-17",
-      "updated_at": "2026-08-16T18:00:44+00:00",
+      "updated_at": "2026-08-17T03:52:26+00:00",
       "source_errors": [],
       "stats": {
         "fetched": 1091,
         "candidates": 60,
-        "selected": 11,
+        "selected": 10,
         "sources": {
           "arXiv": 0,
           "bioRxiv": 311,
@@ -57,7 +57,7 @@
     "aixmath": {
       "state": "success",
       "latest_date": "2026-08-17",
-      "updated_at": "2026-08-16T19:00:01+00:00",
+      "updated_at": "2026-08-17T03:52:27+00:00",
       "source_errors": [
         "OpenReview: HTTP 403"
       ],
@@ -74,7 +74,7 @@
     "aivoices": {
       "state": "success",
       "latest_date": "2026-08-17",
-      "updated_at": "2026-08-16T20:00:49+00:00",
+      "updated_at": "2026-08-17T03:52:37+00:00",
       "source_errors": [
         "X: HTTP 402"
       ],
@@ -91,7 +91,7 @@
     "engineering": {
       "state": "success",
       "latest_date": "2026-08-17",
-      "updated_at": "2026-08-16T21:02:29+00:00",
+      "updated_at": "2026-08-17T03:52:38+00:00",
       "source_errors": [],
       "stats": {
         "fetched": 0,

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-16T22:15:57+00:00",
+  "generated_at": "2026-08-17T04:00:01+00:00",
   "hub": {
     "id": "aix-daily",
     "name": "AIX Daily",
@@ -35,7 +35,7 @@
       "stats": {
         "fetched": 338,
         "candidates": 50,
-        "selected": 14,
+        "selected": 16,
         "sources": {
           "arXiv": 0,
           "bioRxiv": 311,
@@ -85,7 +85,7 @@
       "stats": {
         "fetched": 1091,
         "candidates": 60,
-        "selected": 11,
+        "selected": 10,
         "sources": {
           "arXiv": 0,
           "bioRxiv": 311,
