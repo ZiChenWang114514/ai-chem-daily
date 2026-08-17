@@ -1,5 +1,4 @@
 param(
-    [switch]$RunNow,
     [switch]$SkipPush,
     [switch]$SkipPull,
     [string]$Date
@@ -14,9 +13,7 @@ $StatusRoot = Join-Path $RunRoot "status"
 $Settings = @{
     Model = "gpt-5.6-terra"
     ReasoningEffort = "high"
-    RunSlots = @{ aixchem = "01:00"; aixbio = "02:00"; aixmath = "03:00"; aivoices = "04:00"; engineering = "05:00" }
-    RetryTime = "07:15"
-    PublishDeadline = "07:45"
+    ScheduleTime = "07:00"
 }
 if (Test-Path -LiteralPath $SettingsPath) {
     $LocalSettings = Import-PowerShellDataFile -LiteralPath $SettingsPath
@@ -40,16 +37,6 @@ $Git = (Get-Command git -ErrorAction Stop).Source
 $Channels = @("aixchem", "aixbio", "aixmath", "aivoices", "engineering")
 $RunDate = if ($Date) { $Date } else { (Get-Date).ToString("yyyy-MM-dd") }
 New-Item -ItemType Directory -Force -Path $RunRoot, $StatusRoot | Out-Null
-
-function Wait-ForSlot([string]$Clock) {
-    if ($RunNow) { return }
-    $Target = [datetime]::ParseExact("$RunDate $Clock", "yyyy-MM-dd HH:mm", [System.Globalization.CultureInfo]::InvariantCulture)
-    $Delay = $Target - (Get-Date)
-    if ($Delay.TotalSeconds -gt 0) {
-        Write-Host "Waiting until $Clock for the next serial channel."
-        Start-Sleep -Seconds ([math]::Ceiling($Delay.TotalSeconds))
-    }
-}
 
 function Write-ChannelStatus([string]$Channel, [string]$State, [string]$Message) {
     $Value = [ordered]@{
@@ -77,11 +64,24 @@ function Invoke-CodexJson([string]$PromptPath, [string]$SchemaPath, [string]$Out
     if ($Process.ExitCode -ne 0) { throw "Codex review failed with exit code $($Process.ExitCode)" }
 }
 
-function Invoke-Channel([string]$Channel) {
+function Invoke-Collection([string]$Channel) {
     Write-ChannelStatus $Channel "running" "Collection started"
     try {
         & $Python backend/aix_pipeline.py $Channel --root $RepoRoot --site-root public --date $RunDate
         if ($LASTEXITCODE -ne 0) { throw "Collection failed" }
+        Write-ChannelStatus $Channel "collected" "Collection completed; awaiting channel review"
+        return $true
+    }
+    catch {
+        Write-ChannelStatus $Channel "failed" $_.Exception.Message
+        Write-Warning "$Channel collection failed: $($_.Exception.Message)"
+        return $false
+    }
+}
+
+function Invoke-Curation([string]$Channel) {
+    Write-ChannelStatus $Channel "reviewing" "Collection completed; channel review started"
+    try {
         $PromptPath = Join-Path $RepoRoot "ops\codex\${Channel}_prompt.md"
         $SchemaPath = Join-Path $RepoRoot "ops\codex\channel_curation.schema.json"
         $CurationPath = Join-Path $RunRoot "$RunDate-$Channel-curation.json"
@@ -93,7 +93,7 @@ function Invoke-Channel([string]$Channel) {
     }
     catch {
         Write-ChannelStatus $Channel "failed" $_.Exception.Message
-        Write-Warning "$Channel failed: $($_.Exception.Message)"
+        Write-Warning "$Channel review failed: $($_.Exception.Message)"
         return $false
     }
 }
@@ -126,21 +126,20 @@ try {
         & $Git pull --ff-only origin main
         if ($LASTEXITCODE -ne 0) { throw "git pull failed" }
     }
+    $CollectedChannels = @{}
     foreach ($Channel in $Channels) {
-        Wait-ForSlot ([string]$Settings.RunSlots[$Channel])
-        [void](Invoke-Channel $Channel)
+        $CollectedChannels[$Channel] = Invoke-Collection $Channel
     }
-    Wait-ForSlot "06:15"
+    foreach ($Channel in $Channels) {
+        if ($CollectedChannels[$Channel]) { [void](Invoke-Curation $Channel) }
+    }
     $Failed = @(Get-FailedChannels)
-    if ($Failed.Count -eq 0) {
-        Publish-Daily
+    if ($Failed.Count -gt 0) {
+        foreach ($Channel in $Failed) {
+            if (Invoke-Collection $Channel) { [void](Invoke-Curation $Channel) }
+        }
     }
-    else {
-        Wait-ForSlot ([string]$Settings.RetryTime)
-        foreach ($Channel in $Failed) { [void](Invoke-Channel $Channel) }
-        Wait-ForSlot ([string]$Settings.PublishDeadline)
-        Publish-Daily
-    }
+    Publish-Daily
     if (-not $SkipPush) {
         & $Git add -- public/data public/email public/api public/channels public/index.html public/assets
         & $Git diff --cached --quiet

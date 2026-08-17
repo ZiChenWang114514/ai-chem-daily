@@ -28,13 +28,17 @@ class FiveChannelConfigurationTests(unittest.TestCase):
         self.assertIn('model_reasoning_effort=', runner)
         self.assertNotIn("gpt-5.6-sol", runner)
 
-    def test_serial_slots_and_retry_times_are_configured(self):
+    def test_unified_morning_run_is_configured(self):
         settings = (ROOT / "config" / "local.settings.example.psd1").read_text(encoding="utf-8")
-        for clock in ("01:00", "02:00", "03:00", "04:00", "05:00", "07:15", "07:45"):
-            self.assertIn(clock, settings)
+        self.assertIn('ScheduleTime = "07:00"', settings)
+        self.assertNotIn("RunSlots", settings)
+        self.assertNotIn("RetryTime", settings)
+        self.assertNotIn("PublishDeadline", settings)
         runner = (ROOT / "ops" / "run_local_pipeline.ps1").read_text(encoding="utf-8")
         self.assertNotIn("Start-Job", runner)
         self.assertNotIn("ForEach-Object -Parallel", runner)
+        self.assertNotIn("Wait-ForSlot", runner)
+        self.assertLess(runner.index("Invoke-Collection"), runner.index("Invoke-Curation"))
 
     def test_watchlists_are_editable_configuration(self):
         watchlists = json.loads((ROOT / "config" / "watchlists.json").read_text(encoding="utf-8"))

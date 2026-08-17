@@ -4,13 +4,13 @@ AIX Daily 在 Windows 本地完成每日采集与 Codex 审阅，使用 GitHub P
 
 ## 每日流程
 
-1. 北京时间 01:00 至 05:00，Windows 计划任务依次处理五个频道，全程串行。
-2. arXiv 与 bioRxiv 每天只采集一次，Chem、Bio、Math 共用本地 source cache；同一主机的请求保持间隔。
-3. 本机 Codex CLI 每个频道都显式使用 `gpt-5.6-terra` 和 `high` 推理强度，按独立评分标准审阅完整候选集。
-4. 06:15 检查五频道状态；07:15 只再次处理失败频道；07:45 生成综合日报、测试网站并发布。
-5. GitHub Pages 部署完成后只创建一个五频道日报 Issue，并指派给 `ZiChenWang114514`。GitHub 根据账号通知设置发送邮件。
+1. Codex 已安排任务每天北京时间 07:00 启动一次完整流程。
+2. 先依次收集五个频道的当日内容。arXiv 与 bioRxiv 每天只采集一次，Chem、Bio、Math 共用本地 source cache；同一主机的请求保持间隔。
+3. 收集完成后，依次进行五套独立的 `gpt-5.6-terra` / `high` 审阅，并更新各频道日报。
+4. 对失败频道立即再执行一次采集与审阅，随后生成综合日报、运行测试并发布 GitHub Pages。
+5. Pages 部署完成后只创建一个五频道日报 Issue，并指派给 `ZiChenWang114514`。GitHub 根据账号通知设置发送邮件。
 
-电脑在 01:00 关机时，Windows 会在下次开机并登录后执行当天任务。屏幕锁定不影响已经登录的计划任务。
+本地文件型已安排任务需要电脑保持开机，并保持 ChatGPT/Codex 桌面应用运行。
 
 ## 公开接口
 
@@ -39,7 +39,6 @@ backend/publish_daily.py       生成综合日报与通知内容
 backend/hub_publish.py         生成公开接口、任务说明和活动数据
 backend/import_intake.py       导入人工提交的结构化资料
 ops/run_local_pipeline.ps1     本地采集、Codex 复核、测试与发布
-ops/install_local_task.ps1     安装 Windows 每日计划任务
 ops/codex/                     学术复核 Prompt 与结构化输出 Schema
 public/                        GitHub Pages 页面、接口与已发布数据
 .github/workflows/intake.yml   人工资料导入
@@ -49,30 +48,24 @@ public/                        GitHub Pages 页面、接口与已发布数据
 ## 本地运行
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ops/run_local_pipeline.ps1 -RunNow -SkipPush -SkipPull
+pwsh -NoProfile -File ops/run_local_pipeline.ps1 -SkipPush -SkipPull
 ```
 
 打开 `http://localhost:8000` 查看网站。手动执行完整流程时运行：
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ops/run_local_pipeline.ps1 -RunNow
+pwsh -NoProfile -File ops/run_local_pipeline.ps1
 ```
 
 只测试内容、不提交 GitHub 时运行：
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ops/run_local_pipeline.ps1 -RunNow -SkipPush -SkipPull
+pwsh -NoProfile -File ops/run_local_pipeline.ps1 -SkipPush -SkipPull
 ```
 
-## Windows 定时运行
+## Codex 已安排任务
 
-安装或更新每天 01:00 的本地任务：
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ops/install_local_task.ps1 -At 01:00
-```
-
-任务名称为 `AIX Daily Local Academic Pipeline`。运行记录、Codex 结构化结果、本地原始资料与共享缓存分别保存在 `work/local-pipeline/`、`work/raw/` 与 `work/source-cache/`，这些目录不会提交到 GitHub。
+任务名称为 `AIX Daily 五频道每日研究日报`，每天北京时间 07:00 运行一次。它先完成五频道采集，再完成五套审阅和统一发布。运行记录、Codex 结构化结果、本地原始资料与共享缓存分别保存在 `work/local-pipeline/`、`work/raw/` 与 `work/source-cache/`，这些目录不会提交到 GitHub。
 
 本地参数位于被 Git 忽略的 `config/local.settings.psd1`。X Bearer Token 与 OpenReview 账号位于 `config/local.secrets.psd1`。可提交的参考文件分别是 `config/local.settings.example.psd1` 与 `config/local.secrets.example.psd1`。
 
