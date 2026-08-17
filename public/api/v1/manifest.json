@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-17T04:00:01+00:00",
+  "generated_at": "2026-08-17T23:18:29+00:00",
   "hub": {
     "id": "aix-daily",
     "name": "AIX Daily",
@@ -30,16 +30,16 @@
         "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixchem/archive/index.json",
         "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixchem/candidates/latest.json"
       },
-      "latest_date": "2026-08-17",
+      "latest_date": "2026-08-18",
       "has_data": true,
       "stats": {
-        "fetched": 338,
-        "candidates": 50,
-        "selected": 16,
+        "fetched": 415,
+        "candidates": 60,
+        "selected": 10,
         "sources": {
           "arXiv": 0,
-          "bioRxiv": 311,
-          "ChemRxiv": 30
+          "bioRxiv": 354,
+          "ChemRxiv": 67
         }
       },
       "source_status": {
@@ -49,11 +49,11 @@
         },
         "bioRxiv": {
           "state": "ok",
-          "count": 311
+          "count": 354
         },
         "ChemRxiv": {
           "state": "ok",
-          "count": 30
+          "count": 67
         }
       },
       "source_errors": []
@@ -80,17 +80,17 @@
         "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixbio/archive/index.json",
         "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixbio/candidates/latest.json"
       },
-      "latest_date": "2026-08-17",
+      "latest_date": "2026-08-18",
       "has_data": true,
       "stats": {
-        "fetched": 1091,
+        "fetched": 620,
         "candidates": 60,
-        "selected": 10,
+        "selected": 13,
         "sources": {
           "arXiv": 0,
-          "bioRxiv": 311,
-          "medRxiv": 79,
-          "Europe PMC": 953
+          "bioRxiv": 354,
+          "medRxiv": 116,
+          "Europe PMC": 236
         }
       },
       "source_status": {
@@ -100,15 +100,15 @@
         },
         "bioRxiv": {
           "state": "ok",
-          "count": 311
+          "count": 354
         },
         "medRxiv": {
           "state": "ok",
-          "count": 79
+          "count": 116
         },
         "Europe PMC": {
           "state": "ok",
-          "count": 953
+          "count": 236
         }
       },
       "source_errors": []
@@ -133,7 +133,7 @@
         "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixmath/archive/index.json",
         "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixmath/candidates/latest.json"
       },
-      "latest_date": "2026-08-17",
+      "latest_date": "2026-08-18",
       "has_data": true,
       "stats": {
         "fetched": 0,
@@ -155,7 +155,7 @@
         }
       },
       "source_errors": [
-        "OpenReview: HTTP 403"
+        "OpenReview: RuntimeError: 未配置 OpenReview 账号"
       ]
     },
     {
@@ -178,15 +178,15 @@
         "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aivoices/archive/index.json",
         "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aivoices/candidates/latest.json"
       },
-      "latest_date": "2026-08-17",
+      "latest_date": "2026-08-18",
       "has_data": true,
       "stats": {
-        "fetched": 0,
-        "candidates": 0,
+        "fetched": 7,
+        "candidates": 7,
         "selected": 0,
         "sources": {
           "X": 0,
-          "Research blogs": 0
+          "Research blogs": 7
         }
       },
       "source_status": {
@@ -195,12 +195,12 @@
           "count": 0
         },
         "Research blogs": {
-          "state": "empty",
-          "count": 0
+          "state": "ok",
+          "count": 7
         }
       },
       "source_errors": [
-        "X: HTTP 402"
+        "X: RuntimeError: HTTP 402 额度不足，请在 X Developer Console 充值 credits"
       ]
     },
     {
@@ -223,20 +223,20 @@
         "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/engineering/archive/index.json",
         "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/engineering/candidates/latest.json"
       },
-      "latest_date": "2026-08-17",
+      "latest_date": "2026-08-18",
       "has_data": true,
       "stats": {
-        "fetched": 0,
-        "candidates": 0,
-        "selected": 0,
+        "fetched": 35,
+        "candidates": 35,
+        "selected": 8,
         "sources": {
-          "GitHub Releases": 0
+          "GitHub Releases": 35
         }
       },
       "source_status": {
         "GitHub Releases": {
-          "state": "empty",
-          "count": 0
+          "state": "ok",
+          "count": 35
         }
       },
       "source_errors": []

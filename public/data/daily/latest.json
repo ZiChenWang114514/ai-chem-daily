@@ -1,77 +1,74 @@
 {
   "schema_version": "2.0",
-  "date": "2026-08-17",
-  "generated_at": "2026-08-17T04:00:01+00:00",
+  "date": "2026-08-18",
+  "generated_at": "2026-08-17T23:18:28+00:00",
   "title": "AIX Daily 每日智能研究集散中心",
-  "overview_zh": "今日AI×化学与AI×生物各有16项精选，前三项均为预印本。化学侧涵盖文献语义辅助分子功能预测、全原子动力学生成与肽-MHC识别；生物侧聚焦冠脉造影视觉语言、三维染色质互作和转录组疗效预测。部分工作报告了实验、外部队列或独立数据评估，但均尚待同行评议；今日未见入选的同行评议论文、研究者公开观点或软件发布。数学、工程和AI Voices缺少足够高质量更新。",
+  "overview_zh": "今日精选以尚待同行评议的预印本和可直接采用的软件正式发布为主，未见入选的同行评议论文或公开观点。AI×化学关注药物发现、电解液微观结构与天然产物酶学；AI×生物呈现临床影像、罕见病电子病历和肿瘤分化研究。工程频道聚焦 llama.cpp 与 JAX 的兼容、模型支持和性能改进。AI×数学与 AI Voices 暂无足够高质量更新，预印本结果不应视为定论。",
   "channel_highlights": {
-    "aixchem": "三项精选均为bioRxiv预印本：PubCheF-1以文献语义辅助活性预测，并报告从命中到动物感染模型的实验结果；跨靶点泛化仍需检验。",
-    "aixbio": "三项均为预印本：CAG-MIND报告冠脉造影视觉语言模型的内外部评估；AI4Loop与EXPRESSO分别聚焦三维基因组和疗效预测，临床价值仍需前瞻性验证。",
-    "aixmath": "今日没有足够高质量更新：候选集为空，未形成可供审阅的自动推理、形式化证明或数学智能精选。",
-    "aivoices": "今日没有足够高质量更新：公开观点与研究博客候选均为空，因此未列出研究者观点或讨论。",
-    "engineering": "今日没有足够高质量更新：GitHub Releases未发现候选条目，故无可确认的软件发布或工具链更新。"
+    "aixchem": "三项均为预印本：AI虚拟筛选结合实验发现 SV2C 配体，机器学习模拟提出电解液多 Li+ 团簇，TRACER 用于萜类骨架发现；结论仍待后续验证。",
+    "aixbio": "三项均为预印本：3D-CNN 用于脊柱转移灶 CT 分型，时序模型提示罕见病风险，VRK1 研究关联神经母细胞瘤未分化状态；临床转化仍需验证。",
+    "aixmath": "今日没有足够高质量更新：完整候选集为空，因而未选入可供推荐的数学与 AI 研究条目。",
+    "aivoices": "今日没有足够高质量更新：研究博客候选未达精选阈值，且 X 来源采集未成功，因此不推荐公开观点或研究发布。",
+    "engineering": "三项均为软件正式发布：llama.cpp 新增 Kimi-K3 支持并优化 SYCL，JAX 修复相关路径并调整兼容性；部署前应核查历史导出与硬件条件。"
   },
   "channels": [
     {
       "id": "aixchem",
       "name": "AI × Chem",
       "stats": {
-        "fetched": 338,
-        "candidates": 50,
-        "selected": 16,
+        "fetched": 415,
+        "candidates": 60,
+        "selected": 10,
         "sources": {
           "arXiv": 0,
-          "bioRxiv": 311,
-          "ChemRxiv": 30
+          "bioRxiv": 354,
+          "ChemRxiv": 67
         }
       },
       "source_errors": [],
       "items": [
         {
-          "id": "biorxiv:10.64898/2026.08.09.743788",
+          "id": "biorxiv:10.64898/2026.08.11.744237",
           "channel": "aixchem",
           "related_channels": [
             "aixbio"
           ],
           "item_type": "paper",
           "source": "bioRxiv",
-          "title": "Learning from human and chemical languages to predict biological function",
-          "url": "https://www.biorxiv.org/content/10.64898/2026.08.09.743788",
-          "published_at": "2026-08-14",
-          "updated_at": "2026-08-14",
+          "title": "Discovery of Selective Small-Molecule Ligands of SV2C by AI-Enhanced Virtual Screening and Experimental Validation",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.11.744237",
+          "published_at": "2026-08-16",
+          "updated_at": "2026-08-16",
           "creators": [
-            "Kosonocky, C. W.",
-            "Kaderabkova, N.",
-            "Kim, K.",
-            "Mahmood, A. J. S.",
-            "Dunmyre, A.",
-            "Woolley, P.",
-            "Xing, K.",
-            "Winkler, D.",
-            "Babu, T.",
-            "Kaderabek, F.",
-            "Sessler, J. L.",
-            "Anslyn, E. V.",
-            "Marcotte, E. M.",
-            "Zhang, Y. J.",
-            "Ellington, A. D.",
-            "Mavridou, D. A. I."
+            "Brueckner, A. C.",
+            "Martin, M. F.",
+            "Khuttan, S.",
+            "Shields, B.",
+            "Mittal, A.",
+            "Schreiber, J. A.",
+            "Salomon-Ferrer, R.",
+            "Bortolato, A.",
+            "Salahpour, A.",
+            "Bucher, M. L.",
+            "Coleman, J. A.",
+            "Miller, G. W."
           ],
           "language": "en",
-          "abstract_or_text": "Understanding how molecular structure encodes biological function remains a grand challenge in drug discovery. Here, we present PubCheF-1, a deep learning model that predicts literature-derived biological function directly from chemical structure. PubCheF-1 was trained on a dataset linking molecules to labels derived from the scientific articles in which they appear, a strategy that connects disparate compounds through the language used to describe their functionalities. When tasked with identifying inhibitors of {beta}-lactamases, including enzymes considered largely refractory to inhibition, PubCheF-1 predicted structurally distinct compounds that collectively have activity against all {beta}-lactamase classes. Furthermore, hit compounds directly bind the enzyme active site, restore antibiotic efficacy in multidrug-resistant high-priority pathogens, and demonstrate potent activity in animal infection models. Together, these findings establish that machine learning-based prediction of biological function derived from the language of scientific literature allows the identification of bioactive molecules at high hit rates, thereby accelerating therapeutic discovery.",
-          "summary_zh": "PubCheF-1将化学结构与论文文本中归纳的生物功能标签联合学习，用于预测分子的生物活性；研究据此发现了结构新颖的β-内酰胺酶抑制剂，并报告其靶点结合、耐药菌增敏及动物感染模型活性。",
-          "why_it_matters_zh": "它尝试把文献语言转为可用于分子发现的监督信号，并给出从计算命中到动物模型的实验链条。需留意功能标签来自文献叙述，可能带有发表偏倚和语义噪声，跨靶点泛化仍待更广泛验证。",
-          "quality_score": 72.0,
+          "abstract_or_text": "Synaptic vesicle glycoprotein 2C (SV2C) is a vesicular protein enriched in dopaminergic neurons of the basal ganglia that modulates dopamine storage and release, and its disruption is implicated in Parkinson's disease (PD). Despite strong genetic and pathological links to PD, there are no selective small-molecule probes for SV2C. Here, we describe an AI-enhanced virtual screening (VS) and experimental campaign that identified multiple novel chemotypes with low-micromolar affinity and marked selectivity for SV2C over SV2A and SV2B, starting from a large, general-purpose commercial library. Because no full-length high-resolution SV2C structure was available, we built a homology model using SV2A cryo-EM structures as templates and characterized its conformational landscape by molecular dynamics (MD) and Gaussian accelerated MD (GaMD) simulations in apo form and in complex with known SV2 ligands (plosaracetam, levetiracetam, brivaracetam, and padsevonil). A convolutional neural network-based scoring function (CNN_VS), retrospectively validated on a manually curated 39-ligand SV2A benchmark (r = 0.72 vs experimental pIC50), was then applied in a multi-stage funnel to 5.96 million Mcule in-stock compounds, which were sequentially filtered to 3.19 million CNS-relevant molecules before docking and rescoring. From 94 VS-prioritized candidates, 71 compounds were experimentally profiled in an orthogonal primary assay cascade combining a thermal shift assay (TSA) with a [3H]-padsevonil scintillation proximity assay (SPA), followed by Ki determination and isoform selectivity profiling for key hits. This campaign yielded 22 active molecules (31% hit rate) that naturally segregated into two categories: compounds that showed primary site competition, and compounds that did not show primary site competition with [3H]-padsevonil. A subset of competitor compounds also showed thermostabilization activity. Among these, compounds 36 and 56 emerged as particularly attractive leads, with Ki values of 24.6 uM and 3.25 uM at SV2C, respectively, and greater than 10-fold selectivity versus SV2A; compound 56 also maintained approximately 12-fold selectivity relative to SV2B. A complementary subset of SV2C-selective hits behaved as padsevonil-site competitors, providing a lead set that will serve as a template for functional characterization and future drug development for conditions that affect dopaminergic signaling. Docking analysis suggests a common binding mode anchored by conserved tryptophan residues in the SV2 pocket, a prediction independently confirmed by an unpublished SV2A-plosaracetam cryo-EM structure showing 0.76 Angstrom binding-site C-alpha RMSD relative to the SV2C model and complete conservation of the tryptophan cage. Subtle differences in the luminal domain and transmembrane region point to the structural determinants underlying isoform selectivity. Collectively, these results demonstrate that an AI-driven VS pipeline, tightly integrated with medium-throughput biophysical assays, can deliver selective SV2C binders from a general chemical library on a structurally under-characterized membrane target. The identified hits provide multiple starting points for hit-to-lead optimization and tools for probing SV2C biology and its role in PD.",
+          "summary_zh": "研究以SV2A冷冻电镜结构为模板构建SV2C同源模型，结合MD、GaMD、卷积神经网络评分和虚拟筛选，从596万化合物中筛得候选，并对71个化合物进行热稳定性、放射性配体竞争、Ki和亚型选择性实验。共发现22个活性分子，其中化合物56对SV2C的Ki为3.25 μM，且相对SV2A、SV2B均表现出十倍以上选择性。",
+          "why_it_matters_zh": "这是AI筛选与正交生物物理实验紧密结合的膜蛋白先导发现案例，为结构信息有限靶点提供了可检验的发现路线。当前命中物仍以低微摩尔活性为主，结合模式依赖同源模型，后续仍需功能实验、结构验证和优化研究。",
+          "quality_score": 79.0,
           "tags": [
             "分子与药物发现",
-            "bioinformatics",
-            "machine learning",
-            "deep learning",
+            "neuroscience",
+            "neural",
             "chem",
             "molecul"
           ],
           "evidence_flags": [
-            "dataset"
+            "benchmark",
+            "experimental",
+            "release"
           ],
           "publication_status": "preprint",
           "rank": 1,
@@ -79,146 +76,178 @@
           "category": "分子与药物发现",
           "metrics": {},
           "metadata": {
-            "doi": "10.64898/2026.08.09.743788",
+            "doi": "10.64898/2026.08.11.744237",
             "arxiv_id": ""
           },
           "authors": [
-            "Kosonocky, C. W.",
-            "Kaderabkova, N.",
-            "Kim, K.",
-            "Mahmood, A. J. S.",
-            "Dunmyre, A.",
-            "Woolley, P.",
-            "Xing, K.",
-            "Winkler, D.",
-            "Babu, T.",
-            "Kaderabek, F.",
-            "Sessler, J. L.",
-            "Anslyn, E. V.",
-            "Marcotte, E. M.",
-            "Zhang, Y. J.",
-            "Ellington, A. D.",
-            "Mavridou, D. A. I."
+            "Brueckner, A. C.",
+            "Martin, M. F.",
+            "Khuttan, S.",
+            "Shields, B.",
+            "Mittal, A.",
+            "Schreiber, J. A.",
+            "Salomon-Ferrer, R.",
+            "Bortolato, A.",
+            "Salahpour, A.",
+            "Bucher, M. L.",
+            "Coleman, J. A.",
+            "Miller, G. W."
           ],
-          "abstract": "Understanding how molecular structure encodes biological function remains a grand challenge in drug discovery. Here, we present PubCheF-1, a deep learning model that predicts literature-derived biological function directly from chemical structure. PubCheF-1 was trained on a dataset linking molecules to labels derived from the scientific articles in which they appear, a strategy that connects disparate compounds through the language used to describe their functionalities. When tasked with identifying inhibitors of {beta}-lactamases, including enzymes considered largely refractory to inhibition, PubCheF-1 predicted structurally distinct compounds that collectively have activity against all {beta}-lactamase classes. Furthermore, hit compounds directly bind the enzyme active site, restore antibiotic efficacy in multidrug-resistant high-priority pathogens, and demonstrate potent activity in animal infection models. Together, these findings establish that machine learning-based prediction of biological function derived from the language of scientific literature allows the identification of bioactive molecules at high hit rates, thereby accelerating therapeutic discovery.",
-          "published": "2026-08-14",
-          "author_line": "Kosonocky, C. W., Kaderabkova, N., Kim, K. 等 16 人"
+          "abstract": "Synaptic vesicle glycoprotein 2C (SV2C) is a vesicular protein enriched in dopaminergic neurons of the basal ganglia that modulates dopamine storage and release, and its disruption is implicated in Parkinson's disease (PD). Despite strong genetic and pathological links to PD, there are no selective small-molecule probes for SV2C. Here, we describe an AI-enhanced virtual screening (VS) and experimental campaign that identified multiple novel chemotypes with low-micromolar affinity and marked selectivity for SV2C over SV2A and SV2B, starting from a large, general-purpose commercial library. Because no full-length high-resolution SV2C structure was available, we built a homology model using SV2A cryo-EM structures as templates and characterized its conformational landscape by molecular dynamics (MD) and Gaussian accelerated MD (GaMD) simulations in apo form and in complex with known SV2 ligands (plosaracetam, levetiracetam, brivaracetam, and padsevonil). A convolutional neural network-based scoring function (CNN_VS), retrospectively validated on a manually curated 39-ligand SV2A benchmark (r = 0.72 vs experimental pIC50), was then applied in a multi-stage funnel to 5.96 million Mcule in-stock compounds, which were sequentially filtered to 3.19 million CNS-relevant molecules before docking and rescoring. From 94 VS-prioritized candidates, 71 compounds were experimentally profiled in an orthogonal primary assay cascade combining a thermal shift assay (TSA) with a [3H]-padsevonil scintillation proximity assay (SPA), followed by Ki determination and isoform selectivity profiling for key hits. This campaign yielded 22 active molecules (31% hit rate) that naturally segregated into two categories: compounds that showed primary site competition, and compounds that did not show primary site competition with [3H]-padsevonil. A subset of competitor compounds also showed thermostabilization activity. Among these, compounds 36 and 56 emerged as particularly attractive leads, with Ki values of 24.6 uM and 3.25 uM at SV2C, respectively, and greater than 10-fold selectivity versus SV2A; compound 56 also maintained approximately 12-fold selectivity relative to SV2B. A complementary subset of SV2C-selective hits behaved as padsevonil-site competitors, providing a lead set that will serve as a template for functional characterization and future drug development for conditions that affect dopaminergic signaling. Docking analysis suggests a common binding mode anchored by conserved tryptophan residues in the SV2 pocket, a prediction independently confirmed by an unpublished SV2A-plosaracetam cryo-EM structure showing 0.76 Angstrom binding-site C-alpha RMSD relative to the SV2C model and complete conservation of the tryptophan cage. Subtle differences in the luminal domain and transmembrane region point to the structural determinants underlying isoform selectivity. Collectively, these results demonstrate that an AI-driven VS pipeline, tightly integrated with medium-throughput biophysical assays, can deliver selective SV2C binders from a general chemical library on a structurally under-characterized membrane target. The identified hits provide multiple starting points for hit-to-lead optimization and tools for probing SV2C biology and its role in PD.",
+          "published": "2026-08-16",
+          "author_line": "Brueckner, A. C., Martin, M. F., Khuttan, S. 等 12 人"
         },
         {
-          "id": "biorxiv:10.64898/2026.02.15.705956",
+          "id": "chemrxiv:10.26434/chemrxiv-2025-ndqzk/v4",
           "channel": "aixchem",
-          "related_channels": [
-            "aixbio"
-          ],
+          "related_channels": [],
           "item_type": "paper",
-          "source": "bioRxiv",
-          "title": "Physically Grounded Generative Modeling of All-Atom Biomolecular Dynamics",
-          "url": "https://www.biorxiv.org/content/10.64898/2026.02.15.705956",
-          "published_at": "2026-08-15",
-          "updated_at": "2026-08-15",
+          "source": "ChemRxiv",
+          "title": "Evidence for significant multi-Li+ clustering in common lithium-ion battery electrolytes",
+          "url": "https://doi.org/10.26434/chemrxiv-2025-ndqzk/v4",
+          "published_at": "2026-08-16",
+          "updated_at": "2026-08-17",
           "creators": [
-            "Feng, B.",
-            "Zhang, J.",
-            "Zhang, X.",
-            "Cao, H.",
-            "Zhang, M.",
-            "Barth, P.",
-            "Liu, Z.",
-            "Li, Y."
+            "James M. Stevenson",
+            "Garvit Agarwal",
+            "Sibali Debnath",
+            "Zachary K. Goldsmith",
+            "Monosij Mondal",
+            "Asya Svirinovsky-Arbeli",
+            "Inwon Yeu",
+            "Amy S. Metlay",
+            "Yongbeom Kwon",
+            "Lakshmi Bhai",
+            "Rishabh D. Guha",
+            "Eric G. Keeler",
+            "John L. Weber",
+            "Daniel Steingart",
+            "Lauren Marbella",
+            "Alexander Urban",
+            "Leif D. Jacobson",
+            "Mathew David Halls",
+            "Richard A. Friesner"
           ],
           "language": "en",
-          "abstract_or_text": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
-          "summary_zh": "BioKinema以时空扩散模型生成连续时间、全原子生物分子轨迹，并以动力学和热力学约束训练；作者报告其可复现蛋白构象集合与转换动力学，并用于蛋白—配体体系及稀有解离事件分析。",
-          "why_it_matters_zh": "若动力学保真度经受住检验，该方法可显著降低长时间尺度分子动力学模拟的成本，服务药物作用机制研究。摘要未提供跨体系的定量误差、训练数据规模与独立盲测细节，结论仍需谨慎评估。",
-          "quality_score": 80.0,
+          "abstract_or_text": "Lithium-ion battery (LIB) electrolytes have been empirically optimized to maximize battery lifetime and charge rate, but a detailed understanding of how their atomic-scale structure controls their electrochemical behaviors remains lacking. Here, we combine machine-learning-enabled atomistic simulations, nuclear magnetic resonance measurements, electrochemical data, and quantum-chemical calculations to reveal previously unstudied multi-Li+ complexes without anions that are uniquely facile for reduction. This surprising insight explains the success of empirically-chosen ethylene carbonate (EC) containing solvent mixtures and provides a foundation for the rational design of improved electrolytes. Furthermore, our machine learning force field (MLFF) based LIB electrolyte simulations accurately reproduce a wide range of condensed phase experiments, despite being parameterized only to quantum chemical gas phase cluster calculations, and hence provide a compelling demonstration that MLFF models developed from first principles can robustly represent a complex chemical system to atomic resolution.",
+          "summary_zh": "研究将机器学习原子级模拟、核磁共振、电化学测量和量子化学计算结合起来，提出常见锂离子电池电解液中存在无阴离子参与的多Li+团簇，并认为这类易被还原的结构有助于解释含碳酸乙烯酯混合溶剂的经验优势。其机器学习力场仅由气相团簇量子化学数据参数化，却能再现多种凝聚相实验现象。",
+          "why_it_matters_zh": "工作把数据驱动势能面与谱学、电化学证据并置，直接服务于电解液分子设计，也展示了第一性原理机器学习力场在复杂液相体系中的潜力。多Li+团簇与实际电池寿命和倍率性能之间的因果联系，以及结论对配方范围的适用性，仍需更广泛验证。",
+          "quality_score": 70.0,
           "tags": [
-            "方法与模型",
-            "bioinformatics",
-            "deep learning",
-            "diffusion",
-            "molecul",
-            "drug"
+            "材料与催化",
+            "ChemRxiv",
+            "machine learning",
+            "chem",
+            "quantum"
           ],
           "evidence_flags": [],
           "publication_status": "preprint",
           "rank": 2,
           "featured": true,
-          "category": "结构与生物",
+          "category": "材料与催化",
           "metrics": {},
           "metadata": {
-            "doi": "10.64898/2026.02.15.705956",
+            "doi": "10.26434/chemrxiv-2025-ndqzk/v4",
             "arxiv_id": ""
           },
           "authors": [
-            "Feng, B.",
-            "Zhang, J.",
-            "Zhang, X.",
-            "Cao, H.",
-            "Zhang, M.",
-            "Barth, P.",
-            "Liu, Z.",
-            "Li, Y."
+            "James M. Stevenson",
+            "Garvit Agarwal",
+            "Sibali Debnath",
+            "Zachary K. Goldsmith",
+            "Monosij Mondal",
+            "Asya Svirinovsky-Arbeli",
+            "Inwon Yeu",
+            "Amy S. Metlay",
+            "Yongbeom Kwon",
+            "Lakshmi Bhai",
+            "Rishabh D. Guha",
+            "Eric G. Keeler",
+            "John L. Weber",
+            "Daniel Steingart",
+            "Lauren Marbella",
+            "Alexander Urban",
+            "Leif D. Jacobson",
+            "Mathew David Halls",
+            "Richard A. Friesner"
           ],
-          "abstract": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
-          "published": "2026-08-15",
-          "author_line": "Feng, B., Zhang, J., Zhang, X. 等 8 人"
+          "abstract": "Lithium-ion battery (LIB) electrolytes have been empirically optimized to maximize battery lifetime and charge rate, but a detailed understanding of how their atomic-scale structure controls their electrochemical behaviors remains lacking. Here, we combine machine-learning-enabled atomistic simulations, nuclear magnetic resonance measurements, electrochemical data, and quantum-chemical calculations to reveal previously unstudied multi-Li+ complexes without anions that are uniquely facile for reduction. This surprising insight explains the success of empirically-chosen ethylene carbonate (EC) containing solvent mixtures and provides a foundation for the rational design of improved electrolytes. Furthermore, our machine learning force field (MLFF) based LIB electrolyte simulations accurately reproduce a wide range of condensed phase experiments, despite being parameterized only to quantum chemical gas phase cluster calculations, and hence provide a compelling demonstration that MLFF models developed from first principles can robustly represent a complex chemical system to atomic resolution.",
+          "published": "2026-08-16",
+          "author_line": "James M. Stevenson, Garvit Agarwal, Sibali Debnath 等 19 人"
         },
         {
-          "id": "biorxiv:10.64898/2026.08.10.743877",
+          "id": "biorxiv:10.64898/2026.08.16.745124",
           "channel": "aixchem",
           "related_channels": [],
           "item_type": "paper",
           "source": "bioRxiv",
-          "title": "CALFP-MHC: Interpretable Pan-Allelic Prediction of Peptide-MHC Binding and Presentation Using Chemically Grounded Fingerprints and Contrastive Learning",
-          "url": "https://www.biorxiv.org/content/10.64898/2026.08.10.743877",
-          "published_at": "2026-08-14",
-          "updated_at": "2026-08-14",
+          "title": "TRACER navigates rearrangement-driven sesterterpene chemical space via multimodal enzyme-product representation learning",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.16.745124",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
           "creators": [
-            "Pham, M.-D. N.",
-            "Ho, T.-K.-C.",
-            "Nguyen, H.-N.",
-            "Tran, L.-S.",
-            "Phan, M.-D.",
-            "Nguyen, V."
+            "Xing, C.",
+            "Lv, K.",
+            "Zhang, W.",
+            "Chen, Y.",
+            "Lan, K.",
+            "Zhu, G.",
+            "Zhu, B.",
+            "Shen, S.-M.",
+            "Zhang, X.",
+            "Gu, Y.",
+            "Guo, Y.-W.",
+            "Oikawa, H.",
+            "Hsiang, T.",
+            "Zhang, L.",
+            "Li, Y.",
+            "Jiang, L.",
+            "Liu, X."
           ],
           "language": "en",
-          "abstract_or_text": "Identifying which peptides bind major histocompatibility complex (MHC) molecules is central to vaccine design, neoantigen prioritization, and precision immunotherapy. Existing deep learning predictors largely encode amino acids as discrete symbols, thereby missing the residue-level chemistry driving molecular recognition. Performance also tends to degrade under class imbalance, for rare alleles, and on peptide-MHC combinations outside the training distribution. We developed CALFP-MHC, a framework that encodes each amino acid as a set of complementary cheminformatics fingerprints capturing functional groups, atomic connectivity, and substructural features, and combines positional encoding with supervised contrastive pre-training to organize the latent space by binding class before fine-tuning a binary classifier. Peptide-MHC interactions are modeled through a hybrid convolutional-transformer backbone. In a large-scale computational benchmark covering ~18.7 million peptide-MHC pairs across 112 HLA class I and 53 class II alleles, CALFP-MHC achieved AUCs of 0.93-0.97 and PPVs of 0.66 - 0.94. Critically, performance remained above AUC 0.90 even at a 200:1 negative-to-positive ratio, where competing tools frequently collapsed toward chance. On independent experimental data containing 3,627 class I and 520 class II MS/MS-confirmed ligands and 570 validated neoantigens, the model maintained strong discrimination, correctly prioritizing immunogenic peptides and MHC-presented ligands. Attention and integrated-gradient analyses recovered established anchor positions (P2 and P{Omega}; for class I, P1, P4, P6, and P9 for class II) and highlighted chemically interpretable functional groups consistent with known binding determinants. CALFP-MHC demonstrates that grounding residue representations in molecular chemistry, rather than sequence symbols alone, improves both robustness and interpretability in peptide-MHC binding prediction.",
-          "summary_zh": "CALFP-MHC用化学指纹表征氨基酸残基的官能团、连接关系和子结构，再结合对比学习及卷积—Transformer模型预测肽-MHC结合与呈递。研究在大规模计算基准和独立MS/MS配体、验证新抗原数据上报告了较强性能与可解释位点。",
-          "why_it_matters_zh": "把残基化学性质显式纳入免疫肽预测，有望改善罕见等位基因和类别失衡条件下的稳健性，并有助于疫苗和新抗原排序。独立实验集规模在不同MHC类别间不均衡，模型在真正未见等位基因上的表现仍值得关注。",
-          "quality_score": 79.0,
+          "abstract_or_text": "Skeletal rearrangement drives the immense structural complexity of terpene, yet predicting it remains a formidable challenge due to sequence-function decoupling in terpene synthases. Here, we established TRACER (terpene rearrangement annotation via co-attentive enzyme-product representation), a multimodal framework mapping the latent associations between sequence-derived enzyme representations and product chemotypes. Retrospective validation proved TRACER's exceptional precision in predicting compound classes and discriminating skeletal rearrangement (SR) from non-skeletal rearrangement (NSR) pathways. TRACER-guided genome mining characterized two bifunctional synthases, FsPS and AcPS, uncovering four unprecedented carbon skeletons. Density functional theory calculations deciphered these cyclization cascades, pinpointing a critical 5/6/11 tricyclic intermediate as the key branching node for scaffold diversification. Mutagenesis and molecular dynamics simulations suggested that E305 in FsPS enables rearrangement by maintaining active-site water exclusion, whereas its alanine mutation causes premature carbocation quenching. Collectively, this work establishes a predictive paradigm for the rational discovery and mechanistic elucidation of complex terpene architectures.",
+          "summary_zh": "TRACER将酶序列表征与萜类产物化学型共同学习，用于预测倍半萜合酶的骨架重排。模型指导基因组挖掘发现两种双功能合酶及四种此前未报道的碳骨架，并以密度泛函计算、定点突变和分子动力学分析环化级联及关键位点E305的作用。",
+          "why_it_matters_zh": "它把表征学习用于天然产物骨架发现，并由新产物和机制实验形成较强支撑，可加速复杂萜类化学空间的探索。现有结论聚焦倍半萜体系，模型向其他萜类家族和更大序列空间推广时的性能仍待检验。",
+          "quality_score": 71.0,
           "tags": [
-            "分子与药物发现",
-            "immunology",
-            "deep learning",
-            "transformer",
+            "结构与生物",
+            "synthetic biology",
+            "representation learning",
             "chem",
             "molecul"
           ],
-          "evidence_flags": [
-            "benchmark",
-            "experimental",
-            "performance"
-          ],
+          "evidence_flags": [],
           "publication_status": "preprint",
           "rank": 3,
           "featured": true,
-          "category": "分子与药物发现",
+          "category": "结构与生物",
           "metrics": {},
           "metadata": {
-            "doi": "10.64898/2026.08.10.743877",
+            "doi": "10.64898/2026.08.16.745124",
             "arxiv_id": ""
           },
           "authors": [
-            "Pham, M.-D. N.",
-            "Ho, T.-K.-C.",
-            "Nguyen, H.-N.",
-            "Tran, L.-S.",
-            "Phan, M.-D.",
-            "Nguyen, V."
+            "Xing, C.",
+            "Lv, K.",
+            "Zhang, W.",
+            "Chen, Y.",
+            "Lan, K.",
+            "Zhu, G.",
+            "Zhu, B.",
+            "Shen, S.-M.",
+            "Zhang, X.",
+            "Gu, Y.",
+            "Guo, Y.-W.",
+            "Oikawa, H.",
+            "Hsiang, T.",
+            "Zhang, L.",
+            "Li, Y.",
+            "Jiang, L.",
+            "Liu, X."
           ],
-          "abstract": "Identifying which peptides bind major histocompatibility complex (MHC) molecules is central to vaccine design, neoantigen prioritization, and precision immunotherapy. Existing deep learning predictors largely encode amino acids as discrete symbols, thereby missing the residue-level chemistry driving molecular recognition. Performance also tends to degrade under class imbalance, for rare alleles, and on peptide-MHC combinations outside the training distribution. We developed CALFP-MHC, a framework that encodes each amino acid as a set of complementary cheminformatics fingerprints capturing functional groups, atomic connectivity, and substructural features, and combines positional encoding with supervised contrastive pre-training to organize the latent space by binding class before fine-tuning a binary classifier. Peptide-MHC interactions are modeled through a hybrid convolutional-transformer backbone. In a large-scale computational benchmark covering ~18.7 million peptide-MHC pairs across 112 HLA class I and 53 class II alleles, CALFP-MHC achieved AUCs of 0.93-0.97 and PPVs of 0.66 - 0.94. Critically, performance remained above AUC 0.90 even at a 200:1 negative-to-positive ratio, where competing tools frequently collapsed toward chance. On independent experimental data containing 3,627 class I and 520 class II MS/MS-confirmed ligands and 570 validated neoantigens, the model maintained strong discrimination, correctly prioritizing immunogenic peptides and MHC-presented ligands. Attention and integrated-gradient analyses recovered established anchor positions (P2 and P{Omega}; for class I, P1, P4, P6, and P9 for class II) and highlighted chemically interpretable functional groups consistent with known binding determinants. CALFP-MHC demonstrates that grounding residue representations in molecular chemistry, rather than sequence symbols alone, improves both robustness and interpretability in peptide-MHC binding prediction.",
-          "published": "2026-08-14",
-          "author_line": "Pham, M.-D. N., Ho, T.-K.-C., Nguyen, H.-N. 等 6 人"
+          "abstract": "Skeletal rearrangement drives the immense structural complexity of terpene, yet predicting it remains a formidable challenge due to sequence-function decoupling in terpene synthases. Here, we established TRACER (terpene rearrangement annotation via co-attentive enzyme-product representation), a multimodal framework mapping the latent associations between sequence-derived enzyme representations and product chemotypes. Retrospective validation proved TRACER's exceptional precision in predicting compound classes and discriminating skeletal rearrangement (SR) from non-skeletal rearrangement (NSR) pathways. TRACER-guided genome mining characterized two bifunctional synthases, FsPS and AcPS, uncovering four unprecedented carbon skeletons. Density functional theory calculations deciphered these cyclization cascades, pinpointing a critical 5/6/11 tricyclic intermediate as the key branching node for scaffold diversification. Mutagenesis and molecular dynamics simulations suggested that E305 in FsPS enables rearrangement by maintaining active-site water exclusion, whereas its alanine mutation causes premature carbocation quenching. Collectively, this work establishes a predictive paradigm for the rational discovery and mechanistic elucidation of complex terpene architectures.",
+          "published": "2026-08-17",
+          "author_line": "Xing, C., Lv, K., Zhang, W. 等 17 人"
         }
       ]
     },
@@ -226,74 +255,65 @@
       "id": "aixbio",
       "name": "AI × Bio",
       "stats": {
-        "fetched": 1091,
+        "fetched": 620,
         "candidates": 60,
-        "selected": 10,
+        "selected": 13,
         "sources": {
           "arXiv": 0,
-          "bioRxiv": 311,
-          "medRxiv": 79,
-          "Europe PMC": 953
+          "bioRxiv": 354,
+          "medRxiv": 116,
+          "Europe PMC": 236
         }
       },
       "source_errors": [],
       "items": [
         {
-          "id": "medrxiv:10.64898/2026.08.11.26360095",
+          "id": "medrxiv:10.64898/2026.08.13.26360407",
           "channel": "aixbio",
-          "related_channels": [],
+          "related_channels": [
+            "aixchem"
+          ],
           "item_type": "paper",
           "source": "medRxiv",
-          "title": "A Vision-Language Model for Coronary Angiography Interpretation and Clinical Decision Support",
-          "url": "https://www.medrxiv.org/content/10.64898/2026.08.11.26360095",
-          "published_at": "2026-08-14",
-          "updated_at": "2026-08-14",
+          "title": "Deep Learning-Based Classification of Bone Lesions on CT Scans of Metastatic Spine Disease Patients: A 3D-Convolutional Neural Network Approach",
+          "url": "https://www.medrxiv.org/content/10.64898/2026.08.13.26360407",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
           "creators": [
-            "Li, Z.",
-            "Sun, Y.",
-            "Jiang, C.",
-            "Pan, T.",
-            "Zhou, Y.",
-            "Wang, C.",
-            "Pan, L.",
-            "Zhang, X.",
-            "Yang, Z.",
-            "Yu, Z.",
-            "Xiao, Z.",
-            "Chen, J.",
-            "Huang, Y.",
-            "Sun, R.",
-            "Gan, Y.",
-            "Li, X.",
-            "Zhang, B.",
-            "Zhang, Z.",
-            "Wang, X.",
-            "Han, L.",
-            "Qi, Y.",
-            "Cheng, Y.",
-            "Liang, Y.",
-            "Ge, J."
+            "Hong, V.",
+            "Bulent, A.",
+            "Haouchine, N.",
+            "Pieper, S.",
+            "Wells, S.",
+            "Keko, M.",
+            "Kozono, D.",
+            "Doyle, P. F.",
+            "Balboni, T.",
+            "Spektor, A.",
+            "Huynh, M. A.",
+            "Hackney, D. B.",
+            "Alkalay, R. N."
           ],
           "language": "en",
-          "abstract_or_text": "BACKGROUND: Coronary angiography remains the reference standard for diagnosing coronary artery disease and guiding revascularization, yet its interpretation requires expert integration of multi-view anatomy, lesion morphology and procedural context. Existing artificial intelligence approaches are largely task-specific, annotation-dependent and limited in capturing the semantic relationship between angiographic findings and interventional decision-making. Whether large-scale vision-language pretraining can enable transferable foundation-model representations for invasive coronary imaging remains unknown. METHODS We developed CAG-MIND, a domain-specific vision-language foundation model for coronary angiography, using 135,475 CAG examinations paired with procedural reports, comprising 812,850 angiographic videos from Zhongshan Hospital and Shanghai Geriatric Medical Center. Each case consisted of standardized six-view angiographic acquisitions paired with structured procedural semantics extracted from routine reports using a large language model-assisted pipeline. The model was pretrained by aligning multi-view angiographic representations with report-derived semantic embeddings through bidirectional contrastive learning. Performance was evaluated under zero-shot and supervised fine-tuning settings across 11 downstream tasks grouped into structural abnormality detection, atherosclerotic plaque assessment, and interventional decision prediction, using both an internal validation cohort and an independent external test cohort. RESULTS CAG-MIND demonstrated robust performance across all three task categories. In the zero-shot setting, the model achieved mean AUROCs of 0.686 in the internal validation cohort and 0.745 in the external test cohort, indicating transferable multimodal representations without task-specific supervision. Following supervised fine-tuning, the mean AUROC increased to 0.827 and 0.846, respectively, with excellent performance for coronary stenosis detection (AUROC 0.940 in both cohorts), balloon/stent prediction (0.900 and 0.907), and CABG recommendation (0.877 and 0.875). Compared with representative biomedical vision-language models and conventional image-based architectures, CAG-MIND consistently achieved superior performance in both zero-shot and supervised settings and remained superior to fully fine-tuned competing models when trained with only 10% of the labelled data. Grad-CAM visualization demonstrated anatomically plausible lesion-focused attention, supporting the interpretability of the learned representations. CONCLUSIONS CAG-MIND is, to our knowledge, the first large-scale vision-language foundation model for coronary angiography trained at more than 100,000-patient scale. By aligning standardized multi-view angiographic videos with report-derived procedural semantics, CAG-MIND enables robust zero-shot transfer, data-efficient fine-tuning and cross-center generalization. These findings support domain-aligned multimodal pretraining as a scalable foundation-model paradigm for invasive cardiovascular imaging and future cath-lab decision support.",
-          "summary_zh": "CAG-MIND以13.5万例冠脉造影检查、81.3万段视频及手术报告训练视觉—语言基础模型，并在内部和独立外部队列的11项任务上评估。",
-          "why_it_matters_zh": "该工作展示了多视角侵入性心血管影像与临床语义对齐的规模化路径；外部测试结果支持其诊断和决策支持潜力，但临床部署价值仍待前瞻性验证。",
-          "quality_score": 90.0,
+          "abstract_or_text": "Purpose: Clinical assessment of vertebral lesion quality (osteolytic, osteoblastic, mixed) remains subjective, with limited interobserver reliability. This study evaluated a novel application of 3D convolutional neural networks (3D-CNNs) for classifying lesion quality from CT volumes in metastatic cancer patients. Materials and Methods: This retrospective study used CT data from 151 cancer patients planned for radiotherapy for metastatic spine disease (September 2020-July 2024). Leveraging vertebra-level expert annotations, we introduced an unconventional U-Net-based strategy converting coarse voxel-wise predictions into vertebra-level lesion classifications. The final dataset comprised 2,125 vertebrae across four classes (no lesion, osteolytic, osteoblastic, mixed), split into a 3-fold cross-validation set and an independent holdout test set. Model performance was benchmarked against a DenseNet121 baseline and a musculoskeletal radiologist, with Cohen's kappa assessing inter-rater agreement. Results: The 3D model achieved an ensemble accuracy of 84.7%, outperforming DenseNet121 (72.1%), with substantial gains in F1 score, precision, and balanced accuracy. It showed high concordance with the radiologist (Cohen's kappa = 0.76) and comparable sensitivity and specificity across all lesion subtypes. We found both models and the radiologist to struggle with osteolytic lesions, reflecting the difficulty of distinguishing this class from age-related changes in vertebral bone density and architecture caused by benign bone lesions, age-related systemic skeletal disorders and cancer treatments. Conclusions: 3D-CNNs trained with vertebra-level labels can accurately and reliably classify vertebral metastatic lesion quality from CT scans, offering a scalable path toward automated characterization of metastatic spine disease to support clinical decision-making and large-scale radiomics research.",
+          "summary_zh": "回顾性纳入 151 名转移性脊柱肿瘤患者、2,125 个椎体，以 3D-CNN 将粗粒度体素预测转为椎体病灶类型判定；三折验证和独立留出集上，集成模型准确率为 84.7%。",
+          "why_it_matters_zh": "将 CT 病灶分型标准化可辅助放疗规划与影像组学研究；溶骨性病灶仍较难区分，且需多中心前瞻性检验后才能评估临床应用。",
+          "quality_score": 82.0,
           "tags": [
             "preprint",
             "临床影像",
-            "视觉语言模型",
-            "冠脉造影",
-            "外部测试",
-            "生物医学与临床"
+            "3D-CNN",
+            "转移性肿瘤",
+            "生物医学与临床",
+            "medRxiv"
           ],
           "evidence_flags": [
             "preprint",
-            "临床队列",
-            "大规模数据集",
-            "独立外部测试",
-            "模型性能",
-            "clinical"
+            "retrospective_clinical_cohort",
+            "2125_vertebrae",
+            "independent_holdout",
+            "radiologist_comparison",
+            "benchmark"
           ],
           "publication_status": "preprint",
           "rank": 1,
@@ -301,159 +321,149 @@
           "category": "生物医学与临床",
           "metrics": {},
           "metadata": {
-            "doi": "10.64898/2026.08.11.26360095",
+            "doi": "10.64898/2026.08.13.26360407",
             "arxiv_id": ""
           },
           "authors": [
-            "Li, Z.",
-            "Sun, Y.",
-            "Jiang, C.",
-            "Pan, T.",
-            "Zhou, Y.",
-            "Wang, C.",
-            "Pan, L.",
-            "Zhang, X.",
-            "Yang, Z.",
-            "Yu, Z.",
-            "Xiao, Z.",
-            "Chen, J.",
-            "Huang, Y.",
-            "Sun, R.",
-            "Gan, Y.",
-            "Li, X.",
-            "Zhang, B.",
-            "Zhang, Z.",
-            "Wang, X.",
-            "Han, L.",
-            "Qi, Y.",
-            "Cheng, Y.",
-            "Liang, Y.",
-            "Ge, J."
+            "Hong, V.",
+            "Bulent, A.",
+            "Haouchine, N.",
+            "Pieper, S.",
+            "Wells, S.",
+            "Keko, M.",
+            "Kozono, D.",
+            "Doyle, P. F.",
+            "Balboni, T.",
+            "Spektor, A.",
+            "Huynh, M. A.",
+            "Hackney, D. B.",
+            "Alkalay, R. N."
           ],
-          "abstract": "BACKGROUND: Coronary angiography remains the reference standard for diagnosing coronary artery disease and guiding revascularization, yet its interpretation requires expert integration of multi-view anatomy, lesion morphology and procedural context. Existing artificial intelligence approaches are largely task-specific, annotation-dependent and limited in capturing the semantic relationship between angiographic findings and interventional decision-making. Whether large-scale vision-language pretraining can enable transferable foundation-model representations for invasive coronary imaging remains unknown. METHODS We developed CAG-MIND, a domain-specific vision-language foundation model for coronary angiography, using 135,475 CAG examinations paired with procedural reports, comprising 812,850 angiographic videos from Zhongshan Hospital and Shanghai Geriatric Medical Center. Each case consisted of standardized six-view angiographic acquisitions paired with structured procedural semantics extracted from routine reports using a large language model-assisted pipeline. The model was pretrained by aligning multi-view angiographic representations with report-derived semantic embeddings through bidirectional contrastive learning. Performance was evaluated under zero-shot and supervised fine-tuning settings across 11 downstream tasks grouped into structural abnormality detection, atherosclerotic plaque assessment, and interventional decision prediction, using both an internal validation cohort and an independent external test cohort. RESULTS CAG-MIND demonstrated robust performance across all three task categories. In the zero-shot setting, the model achieved mean AUROCs of 0.686 in the internal validation cohort and 0.745 in the external test cohort, indicating transferable multimodal representations without task-specific supervision. Following supervised fine-tuning, the mean AUROC increased to 0.827 and 0.846, respectively, with excellent performance for coronary stenosis detection (AUROC 0.940 in both cohorts), balloon/stent prediction (0.900 and 0.907), and CABG recommendation (0.877 and 0.875). Compared with representative biomedical vision-language models and conventional image-based architectures, CAG-MIND consistently achieved superior performance in both zero-shot and supervised settings and remained superior to fully fine-tuned competing models when trained with only 10% of the labelled data. Grad-CAM visualization demonstrated anatomically plausible lesion-focused attention, supporting the interpretability of the learned representations. CONCLUSIONS CAG-MIND is, to our knowledge, the first large-scale vision-language foundation model for coronary angiography trained at more than 100,000-patient scale. By aligning standardized multi-view angiographic videos with report-derived procedural semantics, CAG-MIND enables robust zero-shot transfer, data-efficient fine-tuning and cross-center generalization. These findings support domain-aligned multimodal pretraining as a scalable foundation-model paradigm for invasive cardiovascular imaging and future cath-lab decision support.",
-          "published": "2026-08-14",
-          "author_line": "Li, Z., Sun, Y., Jiang, C. 等 24 人"
+          "abstract": "Purpose: Clinical assessment of vertebral lesion quality (osteolytic, osteoblastic, mixed) remains subjective, with limited interobserver reliability. This study evaluated a novel application of 3D convolutional neural networks (3D-CNNs) for classifying lesion quality from CT volumes in metastatic cancer patients. Materials and Methods: This retrospective study used CT data from 151 cancer patients planned for radiotherapy for metastatic spine disease (September 2020-July 2024). Leveraging vertebra-level expert annotations, we introduced an unconventional U-Net-based strategy converting coarse voxel-wise predictions into vertebra-level lesion classifications. The final dataset comprised 2,125 vertebrae across four classes (no lesion, osteolytic, osteoblastic, mixed), split into a 3-fold cross-validation set and an independent holdout test set. Model performance was benchmarked against a DenseNet121 baseline and a musculoskeletal radiologist, with Cohen's kappa assessing inter-rater agreement. Results: The 3D model achieved an ensemble accuracy of 84.7%, outperforming DenseNet121 (72.1%), with substantial gains in F1 score, precision, and balanced accuracy. It showed high concordance with the radiologist (Cohen's kappa = 0.76) and comparable sensitivity and specificity across all lesion subtypes. We found both models and the radiologist to struggle with osteolytic lesions, reflecting the difficulty of distinguishing this class from age-related changes in vertebral bone density and architecture caused by benign bone lesions, age-related systemic skeletal disorders and cancer treatments. Conclusions: 3D-CNNs trained with vertebra-level labels can accurately and reliably classify vertebral metastatic lesion quality from CT scans, offering a scalable path toward automated characterization of metastatic spine disease to support clinical decision-making and large-scale radiomics research.",
+          "published": "2026-08-17",
+          "author_line": "Hong, V., Bulent, A., Haouchine, N. 等 13 人"
         },
         {
-          "id": "biorxiv:10.64898/2026.08.13.744598",
+          "id": "medrxiv:10.64898/2026.08.15.26360514",
           "channel": "aixbio",
           "related_channels": [],
           "item_type": "paper",
-          "source": "bioRxiv",
-          "title": "DNA gyrase in live bacteria forms liquid condensates through weak multivalent bonding of excess GyrB",
-          "url": "https://www.biorxiv.org/content/10.64898/2026.08.13.744598",
-          "published_at": "2026-08-14",
-          "updated_at": "2026-08-14",
+          "source": "medRxiv",
+          "title": "Early Detection of Erythropoietic Protoporphyria Using Sequential Machine Learning on Longitudinal Electronic Health Records",
+          "url": "https://www.medrxiv.org/content/10.64898/2026.08.15.26360514",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
           "creators": [
-            "Syeda, A.",
-            "Hollnds, K.",
-            "Frame, L.",
-            "Shepherd, J.",
-            "Payne-Dwyer, A. C.",
-            "Goffee, E.",
-            "Burton, N.",
-            "Basu, A.",
-            "Noy, A.",
-            "Maxwell, T.",
-            "Leake, M. C."
+            "Ayati, A.",
+            "Onal, G.",
+            "Sur, A.",
+            "Azzam, S.",
+            "Wang, B.",
+            "Rudrapatna, V. A."
           ],
           "language": "en",
-          "abstract_or_text": "Type IIA bacterial topoisomerase DNA gyrase, a GyrA/GyrB heterotetramer, has crucial roles maintaining transcription and DNA replication by relaxing positive DNA supercoils through introducing negative supercoils. However, rates of gyrase-catalysed supercoiling in vitro cannot explain much higher rates required in vivo. To address this puzzle, we used high-speed single-molecule fluorescence imaging of GyrA/GyrB reporters in live Escherichia coli, indicating that cells contain ~40% more GyrB than GyrA expressed in a diffuse pool or in clusters whose mobility depends on whether they are bound to DNA. Unexpectedly, we discovered that clusters are non-stoichiometric containing ~150% more GyrB than GyrA, significantly greater than the cellular average, with fluorescence recovery after photobleaching revealing that clustered GyrA and GyrB behave as a liquid whose abundance can be increased by applying gyrase-targeting antibiotics. Structural docking indicates that the liquid state is stabilised through excess GyrB progressively binding to existing clusters via weak, multivalent interactions. By operating in liquid condensates, A2B2 that dissociates from DNA can rebind rapidly instead of diffusing away, increasing enzyme processivity to enable multiple rounds of catalysis that can keep pace with transcription and DNA replication in vivo. This demonstrates a new role for condensates of overcoming kinetic limitations imposed by diffusion.",
-          "summary_zh": "活细胞单分子荧光成像显示，大肠杆菌DNA旋转酶簇中GyrB相对富集，并呈现液体样动态；结构对接提出弱多价相互作用机制。",
-          "why_it_matters_zh": "研究把细菌拓扑异构酶的空间组织与体内高通量超螺旋调控联系起来，提供了可检验的生物物理机制模型。",
-          "quality_score": 78.0,
+          "abstract_or_text": "Objective: Erythropoietic protoporphyria (EPP) is a rare photodermatosis marked by multi-year diagnostic delays. We developed and externally validated machine learning models to identify patients with EPP earlier from longitudinal electronic health record (EHR) data and estimate undiagnosed disease burden. Materials and Methods: In a retrospective case-control study at two San Francisco health systems, an academic referral center (UCSF) and a safety-net hospital (ZSFG) we identified 74 confirmed EPP cases using combined diagnostic coding, biochemical criteria, and specialty chart review. Symptom-enriched controls were sampled at a 40:1 ratio. Longitudinal diagnoses, laboratory results, medications, procedures, and encounters preceding the outcome date were modeled with a gradient-boosting classifier (CatBoost) and a state-space sequence model (MAMBA). The best model was deployed across the UCSF population and externally validated at ZSFG without retraining. Results: On the UCSF held-out test set (n=1,865; 43 cases), MAMBA outperformed CatBoost (AUC ROC 0.91 vs 0.89; average precision 0.42 vs 0.27; precision 65% vs 20%), flagging cases a median of 229 days before documented diagnosis. Deployed across 297,967 symptom-compatible patients, it identified 310 high-risk individuals, implying a prevalence approaching genetic estimates. External validation at ZSFG showed attenuated performance (AUC ROC 0.72; average precision 0.10) while preserving early detection (median 264 days). Discussion: A sequence model integrating temporal EHR signals detected EPP months before clinical recognition, corroborating genetic evidence of substantial underdiagnosis. Cross-site attenuation reflects population and documentation differences and underscores the need for local recalibration. Conclusion: Longitudinal EHR-based machine learning can shorten EPP diagnostic delay and prioritize patients for confirmatory testing, supporting proactive rare-disease case finding.",
+          "summary_zh": "在两家旧金山医疗系统的纵向电子病历中，以 74 例确诊红细胞生成性原卟啉症训练时序模型，并在未重训的外部医院检验。外部 AUC 为 0.72，模型可在记录诊断前中位 264 天提示高风险。",
+          "why_it_matters_zh": "少见病的诊断延迟是实际临床问题；跨院性能下降提示模型可用于提示后续确证检查，部署前仍需本地校准。",
+          "quality_score": 81.0,
           "tags": [
             "preprint",
-            "细菌生物物理",
-            "单分子成像",
-            "DNA旋转酶",
-            "凝聚体",
-            "组学与细胞"
+            "电子病历",
+            "罕见病",
+            "时序模型",
+            "生物医学与临床",
+            "medRxiv"
           ],
           "evidence_flags": [
             "preprint",
-            "活细胞实验",
-            "单分子成像",
-            "结构建模",
-            "in vivo"
+            "74_confirmed_cases",
+            "external_validation",
+            "retrospective_case_control",
+            "clinical_cohort",
+            "clinical"
           ],
           "publication_status": "preprint",
-          "rank": 4,
-          "featured": false,
-          "category": "组学与细胞",
+          "rank": 2,
+          "featured": true,
+          "category": "生物医学与临床",
           "metrics": {},
           "metadata": {
-            "doi": "10.64898/2026.08.13.744598",
+            "doi": "10.64898/2026.08.15.26360514",
             "arxiv_id": ""
           },
           "authors": [
-            "Syeda, A.",
-            "Hollnds, K.",
-            "Frame, L.",
-            "Shepherd, J.",
-            "Payne-Dwyer, A. C.",
-            "Goffee, E.",
-            "Burton, N.",
-            "Basu, A.",
-            "Noy, A.",
-            "Maxwell, T.",
-            "Leake, M. C."
+            "Ayati, A.",
+            "Onal, G.",
+            "Sur, A.",
+            "Azzam, S.",
+            "Wang, B.",
+            "Rudrapatna, V. A."
           ],
-          "abstract": "Type IIA bacterial topoisomerase DNA gyrase, a GyrA/GyrB heterotetramer, has crucial roles maintaining transcription and DNA replication by relaxing positive DNA supercoils through introducing negative supercoils. However, rates of gyrase-catalysed supercoiling in vitro cannot explain much higher rates required in vivo. To address this puzzle, we used high-speed single-molecule fluorescence imaging of GyrA/GyrB reporters in live Escherichia coli, indicating that cells contain ~40% more GyrB than GyrA expressed in a diffuse pool or in clusters whose mobility depends on whether they are bound to DNA. Unexpectedly, we discovered that clusters are non-stoichiometric containing ~150% more GyrB than GyrA, significantly greater than the cellular average, with fluorescence recovery after photobleaching revealing that clustered GyrA and GyrB behave as a liquid whose abundance can be increased by applying gyrase-targeting antibiotics. Structural docking indicates that the liquid state is stabilised through excess GyrB progressively binding to existing clusters via weak, multivalent interactions. By operating in liquid condensates, A2B2 that dissociates from DNA can rebind rapidly instead of diffusing away, increasing enzyme processivity to enable multiple rounds of catalysis that can keep pace with transcription and DNA replication in vivo. This demonstrates a new role for condensates of overcoming kinetic limitations imposed by diffusion.",
-          "published": "2026-08-14",
-          "author_line": "Syeda, A., Hollnds, K., Frame, L. 等 11 人"
+          "abstract": "Objective: Erythropoietic protoporphyria (EPP) is a rare photodermatosis marked by multi-year diagnostic delays. We developed and externally validated machine learning models to identify patients with EPP earlier from longitudinal electronic health record (EHR) data and estimate undiagnosed disease burden. Materials and Methods: In a retrospective case-control study at two San Francisco health systems, an academic referral center (UCSF) and a safety-net hospital (ZSFG) we identified 74 confirmed EPP cases using combined diagnostic coding, biochemical criteria, and specialty chart review. Symptom-enriched controls were sampled at a 40:1 ratio. Longitudinal diagnoses, laboratory results, medications, procedures, and encounters preceding the outcome date were modeled with a gradient-boosting classifier (CatBoost) and a state-space sequence model (MAMBA). The best model was deployed across the UCSF population and externally validated at ZSFG without retraining. Results: On the UCSF held-out test set (n=1,865; 43 cases), MAMBA outperformed CatBoost (AUC ROC 0.91 vs 0.89; average precision 0.42 vs 0.27; precision 65% vs 20%), flagging cases a median of 229 days before documented diagnosis. Deployed across 297,967 symptom-compatible patients, it identified 310 high-risk individuals, implying a prevalence approaching genetic estimates. External validation at ZSFG showed attenuated performance (AUC ROC 0.72; average precision 0.10) while preserving early detection (median 264 days). Discussion: A sequence model integrating temporal EHR signals detected EPP months before clinical recognition, corroborating genetic evidence of substantial underdiagnosis. Cross-site attenuation reflects population and documentation differences and underscores the need for local recalibration. Conclusion: Longitudinal EHR-based machine learning can shorten EPP diagnostic delay and prioritize patients for confirmatory testing, supporting proactive rare-disease case finding.",
+          "published": "2026-08-17",
+          "author_line": "Ayati, A., Onal, G., Sur, A. 等 6 人"
         },
         {
-          "id": "biorxiv:10.64898/2026.08.14.744831",
+          "id": "biorxiv:10.64898/2026.08.05.742965",
           "channel": "aixbio",
           "related_channels": [],
           "item_type": "paper",
           "source": "bioRxiv",
-          "title": "A Two-Stage ESM-Based Machine Learning Pipeline for Robust Hierarchical Enzyme Function Prediction",
-          "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744831",
-          "published_at": "2026-08-14",
-          "updated_at": "2026-08-14",
+          "title": "VRK1 kinase maintains an undifferentiated proliferative state in neuroblastoma tumor cells",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.05.742965",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
           "creators": [
-            "Hua, X.",
-            "Grimaud, G."
+            "Ojeda-Puertas, M.",
+            "Gomez Munoz, M. d. l. A.",
+            "Colmenero-Repiso, A.",
+            "Amador-Alvarez, A.",
+            "Rodriguez-Prieto, I.",
+            "Pardal, R.",
+            "Vega, F. M."
           ],
           "language": "en",
-          "abstract_or_text": "Accurate enzyme annotation remains a major bottleneck in translating rapidly growing protein sequence data into biological knowledge. Enzyme Commission (EC) prediction is particularly challenging because enzyme functions are organized hierarchically, annotations are often imbalanced across classes, and sequence similarity alone may be insufficient to resolve functional differences. To address these challenges, we developed ESM-ECForest, a two-stage framework that combines protein embeddings generated by the pretrained language model ESM-2 (Evolutionary Scale Modeling 2) with Random Forest classifiers. The first stage distinguishes enzymes from non-enzymes, whereas the second assigns one or more EC numbers to proteins predicted to be enzymatic. On an external benchmark comprising 25,778 protein sequences, ESM-ECForest achieved the highest weighted F1 score among the evaluated methods at all four EC levels, decreasing from 0.94 at Level 1 to 0.90 at Level 4. The largest relative improvements were observed for lyases (EC 4), ligases (EC 6), and translocases (EC 7), although EC 6 and EC 7 remained the most difficult classes internally. Visualization of the ESM-2 embedding space using Uniform Manifold Approximation and Projection (UMAP) revealed clustering patterns consistent with enzyme functional relationships, indicating that biologically relevant information is retained in the pretrained representations prior to supervised classification. These results support the use of pretrained protein language model embeddings as an effective foundation for enzyme annotation. By combining large-scale sequence representations with a lightweight supervised classifier, ESM-ECForest provides a scalable approach for EC prediction and may facilitate functional annotation of protein sequences derived from large genomic and metagenomic datasets.",
-          "summary_zh": "ESM-ECForest将ESM-2蛋白表征与两阶段随机森林结合，在25,778条蛋白质的外部基准上进行层级EC酶学功能预测。",
-          "why_it_matters_zh": "轻量监督模型与蛋白语言模型表征的组合，为大规模基因组和宏基因组注释提供了实用方案；仍需在真实新颖蛋白发现任务中检验。",
-          "quality_score": 84.0,
+          "abstract_or_text": "Neuroblastoma is a neural crest-derived pediatric malignancy characterized by marked cellular heterogeneity and variable differentiation status. Undifferentiated tumors are associated with aggressive clinical behavior, treatment resistance and poor outcome, highlighting the need to identify molecular mechanisms that sustain tumor cell plasticity and prevent differentiation. Vaccinia-related kinase 1 (VRK1) is a serine/threonine kinase involved in cell-cycle progression, DNA-damage responses and transcriptional regulation, and has previously been associated with neuroblastoma progression. However, its role in the control of neuroblastoma differentiation remains unclear. Here, we investigated the relationship between VRK1 expression, tumor differentiation and stem-like properties in human neuroblastoma. Analysis of patient tumor datasets and tissue microarrays showed that VRK1 expression is enriched in undifferentiated neuroblastoma and stage 4 tumors, and inversely correlates with established differentiation markers, including DDC, NCAM1 and S100B. This association was maintained in MYCN-non-amplified tumors, indicating that the relationship between VRK1 and differentiation is not dependent on MYCN status. Single-cell transcriptomic analyses further demonstrated elevated VRK1 expression in developmentally immature neural crest progenitor and Schwann cell precursor-like populations. Induction of neuronal or mesenchymal differentiation consistently reduced VRK1 expression in neuroblastoma cell lines and patient-derived cells. Conversely, VRK1 silencing promoted differentiation-marker expression, reduced nestin and Ki67 expression, and produced sustained differentiation-associated changes in xenograft tumors. VRK1 was also enriched in tumorsphere cultures that select for undifferentiated stem-like neuroblastoma cells. VRK1 depletion impaired tumorsphere growth, reduced intratumoral proliferation and altered the balance between undifferentiated cells and differentiated progeny, supporting a role for VRK1 in self-renewal and maintenance of progenitor-like tumor cells. Mechanistically, VRK1 expression positively correlated with the core stemness transcription factor SOX2 in neuroblastoma tumor cells. VRK1 knockdown reduced nuclear SOX2 abundance, whereas VRK1 overexpression increased SOX2 protein levels. In addition, analysis of the VRK1 locus identified an active chromatin configuration and potential SOX2-binding sites, consistent with a regulatory relationship between these factors. Together, these findings identify VRK1 as a regulator of the undifferentiated, proliferative and stem-like state in neuroblastoma. The VRK1-SOX2 axis may contribute to stabilizing tumor-cell immaturity and represents a potential target for differentiation based therapeutic strategies in high-risk neuroblastoma.",
+          "summary_zh": "结合患者肿瘤数据、组织芯片、单细胞转录组、细胞系与患者来源细胞以及异种移植模型，研究显示抑制 VRK1 会伴随神经母细胞瘤分化标志上升与增殖降低。",
+          "why_it_matters_zh": "多层实验将未分化肿瘤状态与 VRK1 联系起来，为研究分化治疗提供了可检验的分子线索；治疗靶点价值仍待进一步药理学验证。",
+          "quality_score": 80.0,
           "tags": [
             "preprint",
-            "蛋白语言模型",
-            "酶功能注释",
-            "外部基准",
-            "宏基因组",
-            "蛋白质与结构"
+            "神经母细胞瘤",
+            "单细胞",
+            "肿瘤分化",
+            "组学与细胞",
+            "cancer biology"
           ],
           "evidence_flags": [
             "preprint",
-            "外部基准",
-            "数据集",
-            "模型性能",
-            "benchmark",
+            "patient_data",
+            "single_cell",
+            "patient_derived_cells",
+            "xenograft",
             "dataset"
           ],
           "publication_status": "preprint",
-          "rank": 6,
-          "featured": false,
-          "category": "蛋白质与结构",
+          "rank": 3,
+          "featured": true,
+          "category": "组学与细胞",
           "metrics": {},
           "metadata": {
-            "doi": "10.64898/2026.08.14.744831",
+            "doi": "10.64898/2026.08.05.742965",
             "arxiv_id": ""
           },
           "authors": [
-            "Hua, X.",
-            "Grimaud, G."
+            "Ojeda-Puertas, M.",
+            "Gomez Munoz, M. d. l. A.",
+            "Colmenero-Repiso, A.",
+            "Amador-Alvarez, A.",
+            "Rodriguez-Prieto, I.",
+            "Pardal, R.",
+            "Vega, F. M."
           ],
-          "abstract": "Accurate enzyme annotation remains a major bottleneck in translating rapidly growing protein sequence data into biological knowledge. Enzyme Commission (EC) prediction is particularly challenging because enzyme functions are organized hierarchically, annotations are often imbalanced across classes, and sequence similarity alone may be insufficient to resolve functional differences. To address these challenges, we developed ESM-ECForest, a two-stage framework that combines protein embeddings generated by the pretrained language model ESM-2 (Evolutionary Scale Modeling 2) with Random Forest classifiers. The first stage distinguishes enzymes from non-enzymes, whereas the second assigns one or more EC numbers to proteins predicted to be enzymatic. On an external benchmark comprising 25,778 protein sequences, ESM-ECForest achieved the highest weighted F1 score among the evaluated methods at all four EC levels, decreasing from 0.94 at Level 1 to 0.90 at Level 4. The largest relative improvements were observed for lyases (EC 4), ligases (EC 6), and translocases (EC 7), although EC 6 and EC 7 remained the most difficult classes internally. Visualization of the ESM-2 embedding space using Uniform Manifold Approximation and Projection (UMAP) revealed clustering patterns consistent with enzyme functional relationships, indicating that biologically relevant information is retained in the pretrained representations prior to supervised classification. These results support the use of pretrained protein language model embeddings as an effective foundation for enzyme annotation. By combining large-scale sequence representations with a lightweight supervised classifier, ESM-ECForest provides a scalable approach for EC prediction and may facilitate functional annotation of protein sequences derived from large genomic and metagenomic datasets.",
-          "published": "2026-08-14",
-          "author_line": "Hua, X., Grimaud, G."
+          "abstract": "Neuroblastoma is a neural crest-derived pediatric malignancy characterized by marked cellular heterogeneity and variable differentiation status. Undifferentiated tumors are associated with aggressive clinical behavior, treatment resistance and poor outcome, highlighting the need to identify molecular mechanisms that sustain tumor cell plasticity and prevent differentiation. Vaccinia-related kinase 1 (VRK1) is a serine/threonine kinase involved in cell-cycle progression, DNA-damage responses and transcriptional regulation, and has previously been associated with neuroblastoma progression. However, its role in the control of neuroblastoma differentiation remains unclear. Here, we investigated the relationship between VRK1 expression, tumor differentiation and stem-like properties in human neuroblastoma. Analysis of patient tumor datasets and tissue microarrays showed that VRK1 expression is enriched in undifferentiated neuroblastoma and stage 4 tumors, and inversely correlates with established differentiation markers, including DDC, NCAM1 and S100B. This association was maintained in MYCN-non-amplified tumors, indicating that the relationship between VRK1 and differentiation is not dependent on MYCN status. Single-cell transcriptomic analyses further demonstrated elevated VRK1 expression in developmentally immature neural crest progenitor and Schwann cell precursor-like populations. Induction of neuronal or mesenchymal differentiation consistently reduced VRK1 expression in neuroblastoma cell lines and patient-derived cells. Conversely, VRK1 silencing promoted differentiation-marker expression, reduced nestin and Ki67 expression, and produced sustained differentiation-associated changes in xenograft tumors. VRK1 was also enriched in tumorsphere cultures that select for undifferentiated stem-like neuroblastoma cells. VRK1 depletion impaired tumorsphere growth, reduced intratumoral proliferation and altered the balance between undifferentiated cells and differentiated progeny, supporting a role for VRK1 in self-renewal and maintenance of progenitor-like tumor cells. Mechanistically, VRK1 expression positively correlated with the core stemness transcription factor SOX2 in neuroblastoma tumor cells. VRK1 knockdown reduced nuclear SOX2 abundance, whereas VRK1 overexpression increased SOX2 protein levels. In addition, analysis of the VRK1 locus identified an active chromatin configuration and potential SOX2-binding sites, consistent with a regulatory relationship between these factors. Together, these findings identify VRK1 as a regulator of the undifferentiated, proliferative and stem-like state in neuroblastoma. The VRK1-SOX2 axis may contribute to stabilizing tumor-cell immaturity and represents a potential target for differentiation based therapeutic strategies in high-risk neuroblastoma.",
+          "published": "2026-08-17",
+          "author_line": "Ojeda-Puertas, M., Gomez Munoz, M. d. l. A., Colmenero-Repiso, A. 等 7 人"
         }
       ]
     },
@@ -470,7 +480,7 @@
         }
       },
       "source_errors": [
-        "OpenReview: HTTP 403"
+        "OpenReview: RuntimeError: 未配置 OpenReview 账号"
       ],
       "items": []
     },
@@ -478,16 +488,16 @@
       "id": "aivoices",
       "name": "AI Voices",
       "stats": {
-        "fetched": 0,
-        "candidates": 0,
+        "fetched": 7,
+        "candidates": 7,
         "selected": 0,
         "sources": {
           "X": 0,
-          "Research blogs": 0
+          "Research blogs": 7
         }
       },
       "source_errors": [
-        "X: HTTP 402"
+        "X: RuntimeError: HTTP 402 额度不足，请在 X Developer Console 充值 credits"
       ],
       "items": []
     },
@@ -495,15 +505,155 @@
       "id": "engineering",
       "name": "Engineering",
       "stats": {
-        "fetched": 0,
-        "candidates": 0,
-        "selected": 0,
+        "fetched": 35,
+        "candidates": 35,
+        "selected": 8,
         "sources": {
-          "GitHub Releases": 0
+          "GitHub Releases": 35
         }
       },
       "source_errors": [],
-      "items": []
+      "items": [
+        {
+          "id": "github:371154159",
+          "channel": "engineering",
+          "related_channels": [],
+          "item_type": "software_release",
+          "source": "GitHub Releases",
+          "title": "b10448",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10448",
+          "published_at": "2026-08-15T20:48:35Z",
+          "updated_at": "2026-08-15T15:11:05Z",
+          "creators": [
+            "ggml-org/llama.cpp"
+          ],
+          "language": "en",
+          "abstract_or_text": "model: add Kimi-K3 text model (#26185) * model: add Kimi-K3 text model Hybrid KDA (linear) + MLA (full) attention as in Kimi-Linear-48B, plus five things that architecture does not have: 1. cross-layer residual attention (attn_res_block_size) 2. latent MoE (routed experts run at n_expert_latent) 3. situ activation (replaces SwiGLU everywhere) 4. MLA output gate (sigmoid gate before o_proj) 5. full-rank KDA gate (single ssm_g instead of ssm_g_a/ssm_g_b) K3's text_config reports KimiLinearForCausalLM - the older 48B architecture - so get_model_architecture routes on the top-level name instead. The KDA decay gate has two forms, selected by linear_attn_config's gate_lower_bound. It is not a clamp: when set it swaps the activation entirely (fla/ops/kda/gate.py), from -exp(A_log)*softplus(x) to lower_bound*sigmoid(exp(A_log)*x). K3 sets it to -5.0; kimi-linear leaves it unset, so that path is unchanged. Cross-layer residuals reuse ggml_dsv4_hc_pre for the weighted sum. That op is CPU + CUDA only, so Metal/Vulkan will fall back per-node until those kernels exist. The routed experts ship as compressed-tensors \"mxfp4-pack-quantized\". That is bit-compatible with ggml's MXFP4 - same E2M1 code assignment, same E8M0 scale byte, only the nibble positions within a block differ - so they are repacked rather than dequantized, losslessly and without a ~5.5 TB bf16 round-trip. The repack is built lazily because gguf_writer holds every added tensor until the final write. DeepSeek-V4 was already doing the identical bit-shuffling, so it now shares the helper. Verified against Moonshot's own code path (transformers + fla's Triton KDA kernels) on a tiny model exercising every K3-specific feature. Final-position logits vs the fp32 reference: 6.7e-05 rel / corr 1.00000000 for both the chunked and the recurrent delta-net path. MXFP4 blocks dequantize to the source weights with 0.0e+00 error. Assisted-By: Claude Opus 5 (1M context) * model: fix ty errors in the Kimi-K3 converter - `_res_parts` buffers (kind, tensor) pairs, not bare tensors - `get_tensors` must return an Iterator, matching ModelBase - LazyBase's `func` takes one argument, so pass the expert loaders through `args` instead of the closure - borrowing KimiLinearModel.set_vocab from an unrelated TextModel is deliberate and safe, but not expressible in the signature No behaviour change: the MXFP4 repack still dequantizes to the source weights with 0.0e+00 error and end-to-end logits are unchanged (8.386e-03 rel, corr 0.99996630). Assisted-By: Claude Opus 5 (1M context) * Update conversion/kimi_k3.py Co-authored-by: Boris Dvorkin * Increase LLAMA_MAX_EXPERTS from 512 to 1024 * tests : support for Kimi K3 in archs test * chat : add Kimi K3 chat format (reasoning, content, typed tool calls) K3's assistant output is an XTML-ish tagged format built by the template's open_tag/close_tag macros. Two properties break generic parsing: 1. The generation prompt ends with open_tag('think'), so the completion starts inside the think section with no opening marker in the output (thinking_forced_open). 2. Only / / / are special tokens; tag names (\"think\", \"response\", \"message\") are ordinary text tokens. Adds common_chat_params_init_kimi_k3 (PEG_NATIVE) with detection on the marker trio, reasoning extraction, response unwrapping, and tool-call parsing of the tools/call/argument tag structure with argument types taken from the tool schema. Includes the K3 chat template fixture and 9 test-chat cases derived from real generations of the full 2.8T model. Verified end-to-end against Kimi-K3-Q2_K (GrEarl/Kimi-K3-GGUF) on 8x B200: content, reasoning_content, streaming deltas, and tool_calls all correct; finish_reason stop/tool_calls as appropriate. Co-Authored-By: Claude Fable 5 * chat : add message_delimiters for Kimi K3 Per-role message-start markers for token-level span splitting. User and assistant messages carry only the role attribute, so their full opener (through ) is used; system and tool messages continue with more attributes (type=/tool=/index=), so those delimiters stop after the role's closing quote. Verified against the K3 tiktoken vocabulary that the closing quote is always a standalone token across all attribute variants, so the token-level prefix match stays exact. Co-Authored-By: Claude Fable 5 * fix: apply nits from @ngxson and text fixes from @danielhanchen * tests : added missing hyperparameters and tensors for Kimi K3 in test-llama-archs * chore : move overly verbose header file comments to Kimi K3 source file * tests : re-enabled KIMI_K3 in test-llama-archs for WebGPU backend * model-saver : emit kda_gate_lower_bound for Kimi K3 Quick fix. The Kimi K3 loader reads kda_gate_lower_bound and gates a graph branch on it (it scales the KDA gate when the bound is above -INFINITY), but the model saver never wrote the key, so a save->load roundtrip silently dropped it back to the -INFINITY default and changed the model's output. The real K3 config sets gate_lower_bound = -5.0. I propose to emit it from the saver, and set it to -5.0 in the test-llama-archs K3 case so the roundtrip check exercises it (the roundtrip fails without the saver line). * Refactor conditional for model architecture check * tests : re-enabled (again) KIMI_K3 and MINIMAX_M3 in test-llama-archs for WebGPU backend * fix code comments * add template on conversion * move repack_mxfp4_blocks to model base * nits * add_value_length * optimize res_stack construction * nits --------- Co-authored-by: Boris Dvorkin Co-authored-by: Stanisław Szymczyk Co-authored-by: Deepankar Singh Co-authored-by: Claude Fable 5 Co-authored-by: Caleb DeLeeuw Co-authored-by: Xuan Son Nguyen **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10448/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10448/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10448/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-ui.tar.gz)",
+          "summary_zh": "ggml-org/llama.cpp b10448 正式加入 Kimi-K3 文本模型的转换、推理与聊天模板支持，涵盖推理内容、流式输出和工具调用解析，并修复模型保存后会丢失 KDA 门限参数的问题。",
+          "why_it_matters_zh": "本地部署 Kimi-K3 的团队可直接在 llama.cpp 工作流中转换和调用该模型；该修复也避免模型经过保存再加载后输出发生变化。",
+          "quality_score": 72.0,
+          "tags": [
+            "工具链更新",
+            "ggml-org/llama.cpp",
+            "b10448",
+            "llm",
+            "transformer"
+          ],
+          "evidence_flags": [
+            "github",
+            "release"
+          ],
+          "publication_status": "release",
+          "rank": 1,
+          "featured": true,
+          "category": "工具链更新",
+          "metrics": {},
+          "metadata": {
+            "repository": "ggml-org/llama.cpp",
+            "version": "b10448",
+            "release_id": "371154159",
+            "release_type": "release"
+          },
+          "authors": [
+            "ggml-org/llama.cpp"
+          ],
+          "abstract": "model: add Kimi-K3 text model (#26185) * model: add Kimi-K3 text model Hybrid KDA (linear) + MLA (full) attention as in Kimi-Linear-48B, plus five things that architecture does not have: 1. cross-layer residual attention (attn_res_block_size) 2. latent MoE (routed experts run at n_expert_latent) 3. situ activation (replaces SwiGLU everywhere) 4. MLA output gate (sigmoid gate before o_proj) 5. full-rank KDA gate (single ssm_g instead of ssm_g_a/ssm_g_b) K3's text_config reports KimiLinearForCausalLM - the older 48B architecture - so get_model_architecture routes on the top-level name instead. The KDA decay gate has two forms, selected by linear_attn_config's gate_lower_bound. It is not a clamp: when set it swaps the activation entirely (fla/ops/kda/gate.py), from -exp(A_log)*softplus(x) to lower_bound*sigmoid(exp(A_log)*x). K3 sets it to -5.0; kimi-linear leaves it unset, so that path is unchanged. Cross-layer residuals reuse ggml_dsv4_hc_pre for the weighted sum. That op is CPU + CUDA only, so Metal/Vulkan will fall back per-node until those kernels exist. The routed experts ship as compressed-tensors \"mxfp4-pack-quantized\". That is bit-compatible with ggml's MXFP4 - same E2M1 code assignment, same E8M0 scale byte, only the nibble positions within a block differ - so they are repacked rather than dequantized, losslessly and without a ~5.5 TB bf16 round-trip. The repack is built lazily because gguf_writer holds every added tensor until the final write. DeepSeek-V4 was already doing the identical bit-shuffling, so it now shares the helper. Verified against Moonshot's own code path (transformers + fla's Triton KDA kernels) on a tiny model exercising every K3-specific feature. Final-position logits vs the fp32 reference: 6.7e-05 rel / corr 1.00000000 for both the chunked and the recurrent delta-net path. MXFP4 blocks dequantize to the source weights with 0.0e+00 error. Assisted-By: Claude Opus 5 (1M context) * model: fix ty errors in the Kimi-K3 converter - `_res_parts` buffers (kind, tensor) pairs, not bare tensors - `get_tensors` must return an Iterator, matching ModelBase - LazyBase's `func` takes one argument, so pass the expert loaders through `args` instead of the closure - borrowing KimiLinearModel.set_vocab from an unrelated TextModel is deliberate and safe, but not expressible in the signature No behaviour change: the MXFP4 repack still dequantizes to the source weights with 0.0e+00 error and end-to-end logits are unchanged (8.386e-03 rel, corr 0.99996630). Assisted-By: Claude Opus 5 (1M context) * Update conversion/kimi_k3.py Co-authored-by: Boris Dvorkin * Increase LLAMA_MAX_EXPERTS from 512 to 1024 * tests : support for Kimi K3 in archs test * chat : add Kimi K3 chat format (reasoning, content, typed tool calls) K3's assistant output is an XTML-ish tagged format built by the template's open_tag/close_tag macros. Two properties break generic parsing: 1. The generation prompt ends with open_tag('think'), so the completion starts inside the think section with no opening marker in the output (thinking_forced_open). 2. Only / / / are special tokens; tag names (\"think\", \"response\", \"message\") are ordinary text tokens. Adds common_chat_params_init_kimi_k3 (PEG_NATIVE) with detection on the marker trio, reasoning extraction, response unwrapping, and tool-call parsing of the tools/call/argument tag structure with argument types taken from the tool schema. Includes the K3 chat template fixture and 9 test-chat cases derived from real generations of the full 2.8T model. Verified end-to-end against Kimi-K3-Q2_K (GrEarl/Kimi-K3-GGUF) on 8x B200: content, reasoning_content, streaming deltas, and tool_calls all correct; finish_reason stop/tool_calls as appropriate. Co-Authored-By: Claude Fable 5 * chat : add message_delimiters for Kimi K3 Per-role message-start markers for token-level span splitting. User and assistant messages carry only the role attribute, so their full opener (through ) is used; system and tool messages continue with more attributes (type=/tool=/index=), so those delimiters stop after the role's closing quote. Verified against the K3 tiktoken vocabulary that the closing quote is always a standalone token across all attribute variants, so the token-level prefix match stays exact. Co-Authored-By: Claude Fable 5 * fix: apply nits from @ngxson and text fixes from @danielhanchen * tests : added missing hyperparameters and tensors for Kimi K3 in test-llama-archs * chore : move overly verbose header file comments to Kimi K3 source file * tests : re-enabled KIMI_K3 in test-llama-archs for WebGPU backend * model-saver : emit kda_gate_lower_bound for Kimi K3 Quick fix. The Kimi K3 loader reads kda_gate_lower_bound and gates a graph branch on it (it scales the KDA gate when the bound is above -INFINITY), but the model saver never wrote the key, so a save->load roundtrip silently dropped it back to the -INFINITY default and changed the model's output. The real K3 config sets gate_lower_bound = -5.0. I propose to emit it from the saver, and set it to -5.0 in the test-llama-archs K3 case so the roundtrip check exercises it (the roundtrip fails without the saver line). * Refactor conditional for model architecture check * tests : re-enabled (again) KIMI_K3 and MINIMAX_M3 in test-llama-archs for WebGPU backend * fix code comments * add template on conversion * move repack_mxfp4_blocks to model base * nits * add_value_length * optimize res_stack construction * nits --------- Co-authored-by: Boris Dvorkin Co-authored-by: Stanisław Szymczyk Co-authored-by: Deepankar Singh Co-authored-by: Claude Fable 5 Co-authored-by: Caleb DeLeeuw Co-authored-by: Xuan Son Nguyen **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10448/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10448/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10448/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-ui.tar.gz)",
+          "published": "2026-08-15",
+          "author_line": "ggml-org/llama.cpp"
+        },
+        {
+          "id": "github:371942335",
+          "channel": "engineering",
+          "related_channels": [],
+          "item_type": "software_release",
+          "source": "GitHub Releases",
+          "title": "JAX v0.11.1",
+          "url": "https://github.com/jax-ml/jax/releases/tag/jax-v0.11.1",
+          "published_at": "2026-08-17T20:45:31Z",
+          "updated_at": "2026-08-17T17:32:23Z",
+          "creators": [
+            "jax-ml/jax"
+          ],
+          "language": "en",
+          "abstract_or_text": "* New features * Added an error check for trying to deserialize JAX exports that are older than the backwards compatibility window. Without this check the deserialization of expired artifacts may succeed and then result in obscure downstream errors. Added a configuration flag `--jax_export_deserialize_expired_versions` to temporarily bypass the error check. See https://docs.jax.dev/en/latest/export/export.html#compatibility-guarantees. * Added `jax.numpy.top_k`, which implements `numpy.top_k`, added in in NumPy v2.6.0 (#39729). * Breaking changes * The `exec_time_optimization_effort` and `memory_fitting_effort` flags have been removed in favor of the `EffortLevel` enum. * JAX does not support anymore deserialization of Exported modules from before January 15th, 2026 because they are beyond the backwards compatibility window. On that date we added support to serialize shardings as NamedSharding, and now that is the only sharding serialization that is supported. * jnp.take_along_axis now always defaults wrap_negative_indices to True. It used to default to False for mode=promise_in_bounds and True otherwise. (This also means None is no longer a valid value for wrap_negative_indices.) * Deprecations * The fields `in_shardings_hlo` and `out_shardings_hlo` of `jax.export.Exported` have been deprecated for a while. Now accessing them raises a warning. Use `in_shardings_jax` and `out_shardings_jax` instead. * Changes * The cuDNN fused attention backward pass (used by `jax.nn.dot_product_attention` with `implementation='cudnn'`) no longer computes a bias gradient when the only attention bias comes from a boolean `mask`, whose gradient no caller can request. Bias gradients for an explicit `bias` or a non-boolean `mask` are unchanged (#34685). * `jax.numpy.meshgrid`, `jax.numpy.ogrid`, and `jax.numpy.broadcast_arrays` now return tuples rather than lists in order to align with NumPy>2.0 and the Array API specification. (#39783, #39789, #39802) * When `jax.grad` or `jax.value_and_grad` rejects a function with a non-scalar output, the error message now suggests reducing the output to a scalar (e.g. with `output.sum()`), using `jax.jacobian`, or reshaping size-1 outputs (#2303). * When indexing with non-static or traced slice indices, the error message now suggests using `jax.lax.dynamic_slice`, `jax.lax.dynamic_update_slice`, or `jax.ds`, and shows tracer provenance (#7222). * PyTree metadata equality comparison failures now report the specific registered pytree type that caused the error (#13027). * Bug fixes * `jax.numpy.linalg.det` and `jax.numpy.linalg.slogdet` now use a closed-form LU decomposition with row pivoting for 2x2 and 3x3 matrices instead of closed-form polynomial expansions to avoid numerical instability and catastrophic cancellation (#39905). * The batching rules of the cuDNN fused attention primitives (used by `jax.nn.dot_product_attention` with `implementation='cudnn'`) now support operands that do not carry the vmap axis, including a shared bias or `mask`. Previously `jax.jacobian`, `jax.vmap` with partial `in_axes`, and `jax.vmap` of a VJP or of `jax.grad` failed with a reshape `TypeError` (#38495). * `jax.vmap` of fp8 cuDNN fused attention now works: its batching rules additionally mislabeled or dropped the amax outputs and restored output shapes incorrectly, so previously no vmap of the fp8 path succeeded at all. The amax outputs are whole-batch statistics and do not carry the vmap axis; vmap over the scale/descale operands raises a clear `NotImplementedError`. * Setting `jax_compiler_enable_remat_pass` to `False` now adds `rematerialization` to the set of disabled XLA passes instead of overwriting it, so HLO passes disabled via `XLA_FLAGS=--xla_disable_hlo_passes=...` stay disabled (#37391). * `jax.numpy.split`, `jax.numpy.array_split`, and the `hsplit`/`vsplit`/`dsplit` variants once again accept negative entries in `indices_or_sections`, resolving them against the axis size as NumPy does (#6599). Out-of-bound indices are now clipped to the axis bounds and produce empty sections, also matching NumPy, instead of raising `ValueError: Sizes passed to split must be nonnegative`. * Fixed abstract evaluation in `jax.lax.scan` to only check `.mat` equivalency when the abstract value is a `ShapedArray` (#39700). * Fixed propagation of singleton sharded dimensions in `jax.lax.reshape` when reshaping arrays with sharding constraints (#39309). * Fixed `jax.tree_util.flatten_one_level_with_keys` for `namedtuple` instances (#39297). * Fixed `_get_prime_factors` in `jax.experimental.mesh_utils` (#38286).",
+          "summary_zh": "jax-ml/jax jax-v0.11.1 停止反序列化 2026-01-15 前导出的模块，移除两项旧优化配置并改用 EffortLevel；同时修复 cuDNN 融合注意力的 vmap/FP8 路径及小矩阵行列式的数值稳定性。",
+          "why_it_matters_zh": "依赖 JAX Export 的训练、部署和模型交换流程需检查历史产物并更新配置；使用 cuDNN 注意力或 FP8 批量变换的用户可获得可用性和结果稳定性改善。",
+          "quality_score": 69.0,
+          "tags": [
+            "兼容与安全",
+            "jax-ml/jax",
+            "jax-v0.11.1"
+          ],
+          "evidence_flags": [
+            "experimental",
+            "evaluation",
+            "breaking"
+          ],
+          "publication_status": "release",
+          "rank": 2,
+          "featured": true,
+          "category": "兼容与安全",
+          "metrics": {},
+          "metadata": {
+            "repository": "jax-ml/jax",
+            "version": "jax-v0.11.1",
+            "release_id": "371942335",
+            "release_type": "release"
+          },
+          "authors": [
+            "jax-ml/jax"
+          ],
+          "abstract": "* New features * Added an error check for trying to deserialize JAX exports that are older than the backwards compatibility window. Without this check the deserialization of expired artifacts may succeed and then result in obscure downstream errors. Added a configuration flag `--jax_export_deserialize_expired_versions` to temporarily bypass the error check. See https://docs.jax.dev/en/latest/export/export.html#compatibility-guarantees. * Added `jax.numpy.top_k`, which implements `numpy.top_k`, added in in NumPy v2.6.0 (#39729). * Breaking changes * The `exec_time_optimization_effort` and `memory_fitting_effort` flags have been removed in favor of the `EffortLevel` enum. * JAX does not support anymore deserialization of Exported modules from before January 15th, 2026 because they are beyond the backwards compatibility window. On that date we added support to serialize shardings as NamedSharding, and now that is the only sharding serialization that is supported. * jnp.take_along_axis now always defaults wrap_negative_indices to True. It used to default to False for mode=promise_in_bounds and True otherwise. (This also means None is no longer a valid value for wrap_negative_indices.) * Deprecations * The fields `in_shardings_hlo` and `out_shardings_hlo` of `jax.export.Exported` have been deprecated for a while. Now accessing them raises a warning. Use `in_shardings_jax` and `out_shardings_jax` instead. * Changes * The cuDNN fused attention backward pass (used by `jax.nn.dot_product_attention` with `implementation='cudnn'`) no longer computes a bias gradient when the only attention bias comes from a boolean `mask`, whose gradient no caller can request. Bias gradients for an explicit `bias` or a non-boolean `mask` are unchanged (#34685). * `jax.numpy.meshgrid`, `jax.numpy.ogrid`, and `jax.numpy.broadcast_arrays` now return tuples rather than lists in order to align with NumPy>2.0 and the Array API specification. (#39783, #39789, #39802) * When `jax.grad` or `jax.value_and_grad` rejects a function with a non-scalar output, the error message now suggests reducing the output to a scalar (e.g. with `output.sum()`), using `jax.jacobian`, or reshaping size-1 outputs (#2303). * When indexing with non-static or traced slice indices, the error message now suggests using `jax.lax.dynamic_slice`, `jax.lax.dynamic_update_slice`, or `jax.ds`, and shows tracer provenance (#7222). * PyTree metadata equality comparison failures now report the specific registered pytree type that caused the error (#13027). * Bug fixes * `jax.numpy.linalg.det` and `jax.numpy.linalg.slogdet` now use a closed-form LU decomposition with row pivoting for 2x2 and 3x3 matrices instead of closed-form polynomial expansions to avoid numerical instability and catastrophic cancellation (#39905). * The batching rules of the cuDNN fused attention primitives (used by `jax.nn.dot_product_attention` with `implementation='cudnn'`) now support operands that do not carry the vmap axis, including a shared bias or `mask`. Previously `jax.jacobian`, `jax.vmap` with partial `in_axes`, and `jax.vmap` of a VJP or of `jax.grad` failed with a reshape `TypeError` (#38495). * `jax.vmap` of fp8 cuDNN fused attention now works: its batching rules additionally mislabeled or dropped the amax outputs and restored output shapes incorrectly, so previously no vmap of the fp8 path succeeded at all. The amax outputs are whole-batch statistics and do not carry the vmap axis; vmap over the scale/descale operands raises a clear `NotImplementedError`. * Setting `jax_compiler_enable_remat_pass` to `False` now adds `rematerialization` to the set of disabled XLA passes instead of overwriting it, so HLO passes disabled via `XLA_FLAGS=--xla_disable_hlo_passes=...` stay disabled (#37391). * `jax.numpy.split`, `jax.numpy.array_split`, and the `hsplit`/`vsplit`/`dsplit` variants once again accept negative entries in `indices_or_sections`, resolving them against the axis size as NumPy does (#6599). Out-of-bound indices are now clipped to the axis bounds and produce empty sections, also matching NumPy, instead of raising `ValueError: Sizes passed to split must be nonnegative`. * Fixed abstract evaluation in `jax.lax.scan` to only check `.mat` equivalency when the abstract value is a `ShapedArray` (#39700). * Fixed propagation of singleton sharded dimensions in `jax.lax.reshape` when reshaping arrays with sharding constraints (#39309). * Fixed `jax.tree_util.flatten_one_level_with_keys` for `namedtuple` instances (#39297). * Fixed `_get_prime_factors` in `jax.experimental.mesh_utils` (#38286).",
+          "published": "2026-08-17",
+          "author_line": "jax-ml/jax"
+        },
+        {
+          "id": "github:371561378",
+          "channel": "engineering",
+          "related_channels": [],
+          "item_type": "software_release",
+          "source": "GitHub Releases",
+          "title": "b10456",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10456",
+          "published_at": "2026-08-17T06:29:29Z",
+          "updated_at": "2026-08-17T04:32:16Z",
+          "creators": [
+            "ggml-org/llama.cpp"
+          ],
+          "language": "en",
+          "abstract_or_text": "sycl: fix thread/block count in quantized cpy kernel launches (#27160) Adjusts the thread/block count to be proportional to the size of the quant, reducing under/over subscription. Largest perf improvement is the q4_0 -> f32 path, with, on a Arc 70, throughput goes from 20.21 GB/s to 158.19 GB/s The rest of the quants are flat in performance uplift. **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10456/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10456/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10456/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-ui.tar.gz)",
+          "summary_zh": "ggml-org/llama.cpp b10456 调整 SYCL 量化复制内核的线程和线程块配置。在 Intel Arc 70 的 q4_0→f32 路径上，官方发布说明的吞吐量由 20.21 GB/s 提升至 158.19 GB/s。",
+          "why_it_matters_zh": "使用 SYCL 后端在 Intel GPU 上运行量化模型的本地推理用户，特定数据转换路径的吞吐可显著提高，从而缩短相关预处理和推理工作。",
+          "quality_score": 69.0,
+          "tags": [
+            "性能与部署",
+            "ggml-org/llama.cpp",
+            "b10456"
+          ],
+          "evidence_flags": [
+            "github",
+            "release",
+            "performance"
+          ],
+          "publication_status": "release",
+          "rank": 3,
+          "featured": true,
+          "category": "性能与部署",
+          "metrics": {},
+          "metadata": {
+            "repository": "ggml-org/llama.cpp",
+            "version": "b10456",
+            "release_id": "371561378",
+            "release_type": "release"
+          },
+          "authors": [
+            "ggml-org/llama.cpp"
+          ],
+          "abstract": "sycl: fix thread/block count in quantized cpy kernel launches (#27160) Adjusts the thread/block count to be proportional to the size of the quant, reducing under/over subscription. Largest perf improvement is the q4_0 -> f32 path, with, on a Arc 70, throughput goes from 20.21 GB/s to 158.19 GB/s The rest of the quants are flat in performance uplift. **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10456/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10456/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10456/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-ui.tar.gz)",
+          "published": "2026-08-17",
+          "author_line": "ggml-org/llama.cpp"
+        }
+      ]
     }
   ]
 }

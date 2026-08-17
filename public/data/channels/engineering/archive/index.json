@@ -2,6 +2,14 @@
   "schema_version": "2.0",
   "items": [
     {
+      "date": "2026-08-18",
+      "href": "data/channels/engineering/archive/2026-08-18.json",
+      "selected": 8,
+      "candidates": 35,
+      "fetched": 35,
+      "kind": "json"
+    },
+    {
       "date": "2026-08-17",
       "href": "data/channels/engineering/archive/2026-08-17.json",
       "selected": 0,

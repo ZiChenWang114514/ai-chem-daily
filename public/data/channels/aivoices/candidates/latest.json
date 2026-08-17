@@ -1,8 +1,235 @@
 {
   "schema_version": "2.0",
-  "date": "2026-08-17",
+  "date": "2026-08-18",
   "channel": "aivoices",
-  "generated_at": "2026-08-17T03:52:37+00:00",
-  "count": 0,
-  "items": []
+  "generated_at": "2026-08-17T23:07:11+00:00",
+  "count": 7,
+  "items": [
+    {
+      "id": "feed:https://openai.com/index/the-defenders-window",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "research_blog",
+      "source": "OpenAI News",
+      "title": "The Defender’s Window",
+      "url": "https://openai.com/index/the-defenders-window",
+      "published_at": "Mon, 17 Aug 2026 05:30:00 GMT",
+      "updated_at": "Mon, 17 Aug 2026 05:30:00 GMT",
+      "creators": [
+        "OpenAI News"
+      ],
+      "language": "en",
+      "abstract_or_text": "AI is reshaping cybersecurity for attackers and defenders alike. Learn how OpenAI is strengthening its defenses and what security teams can do now.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 64,
+      "tags": [
+        "研究发布",
+        "official blog"
+      ],
+      "evidence_flags": [
+        "security"
+      ],
+      "publication_status": "official_update",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "id": "feed:https://huggingface.co/blog/dharma-ai/gpu-management-pt2",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "research_blog",
+      "source": "Hugging Face",
+      "title": "Same Cluster, 33 Points More Utilization: What Changed Was the Order",
+      "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
+      "published_at": "Mon, 17 Aug 2026 19:46:21 GMT",
+      "updated_at": "Mon, 17 Aug 2026 19:46:21 GMT",
+      "creators": [
+        "Hugging Face"
+      ],
+      "language": "en",
+      "abstract_or_text": "",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 62,
+      "tags": [
+        "研究发布",
+        "official blog"
+      ],
+      "evidence_flags": [],
+      "publication_status": "official_update",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://huggingface.co/blog/feed.xml"
+      }
+    },
+    {
+      "id": "feed:https://importai.substack.com/p/import-ai-469-science-ai-rsi-simulator",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "research_blog",
+      "source": "Import AI",
+      "title": "Import AI 469: Science AI; RSI simulator; and Zuck's technological pessimism",
+      "url": "https://importai.substack.com/p/import-ai-469-science-ai-rsi-simulator",
+      "published_at": "Mon, 17 Aug 2026 13:05:36 GMT",
+      "updated_at": "Mon, 17 Aug 2026 13:05:36 GMT",
+      "creators": [
+        "Import AI"
+      ],
+      "language": "en",
+      "abstract_or_text": "The new frontier of AI is developing capable autonomous researchers",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 62,
+      "tags": [
+        "研究发布",
+        "official blog"
+      ],
+      "evidence_flags": [],
+      "publication_status": "official_update",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://importai.substack.com/feed"
+      }
+    },
+    {
+      "id": "feed:https://research.google/blog/seeing-beyond-bmi-estimating-cardiometabolic-risk-with-smartphone-imagery/",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "research_blog",
+      "source": "Google Research",
+      "title": "Seeing beyond BMI: Estimating cardiometabolic risk with smartphone imagery",
+      "url": "https://research.google/blog/seeing-beyond-bmi-estimating-cardiometabolic-risk-with-smartphone-imagery/",
+      "published_at": "Mon, 17 Aug 2026 10:34:00 +0000",
+      "updated_at": "Mon, 17 Aug 2026 10:34:00 +0000",
+      "creators": [
+        "Google Research"
+      ],
+      "language": "en",
+      "abstract_or_text": "General Science",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 62,
+      "tags": [
+        "研究发布",
+        "official blog"
+      ],
+      "evidence_flags": [],
+      "publication_status": "official_update",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://research.google/blog/rss/"
+      }
+    },
+    {
+      "id": "feed:https://openai.com/index/openai-joins-ports-pike-project",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "research_blog",
+      "source": "OpenAI News",
+      "title": "OpenAI joins PORTS-Pike project",
+      "url": "https://openai.com/index/openai-joins-ports-pike-project",
+      "published_at": "Mon, 17 Aug 2026 05:00:00 GMT",
+      "updated_at": "Mon, 17 Aug 2026 05:00:00 GMT",
+      "creators": [
+        "OpenAI News"
+      ],
+      "language": "en",
+      "abstract_or_text": "OpenAI joins PORTS-Pike project, expanding community investment and supporting thousands of Southern Ohio jobs",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 62,
+      "tags": [
+        "研究发布",
+        "official blog"
+      ],
+      "evidence_flags": [],
+      "publication_status": "official_update",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "id": "feed:https://openai.com/index/new-policy-ideas-for-the-intelligence-age",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "research_blog",
+      "source": "OpenAI News",
+      "title": "New policy ideas for the Intelligence Age",
+      "url": "https://openai.com/index/new-policy-ideas-for-the-intelligence-age",
+      "published_at": "Mon, 17 Aug 2026 03:15:00 GMT",
+      "updated_at": "Mon, 17 Aug 2026 03:15:00 GMT",
+      "creators": [
+        "OpenAI News"
+      ],
+      "language": "en",
+      "abstract_or_text": "OpenAI funds 14 independent projects exploring new AI policy ideas to expand economic opportunity and strengthen societal resilience in the Intelligence Age.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 62,
+      "tags": [
+        "研究发布",
+        "official blog"
+      ],
+      "evidence_flags": [],
+      "publication_status": "official_update",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "id": "feed:https://developer.nvidia.com/blog/developing-nemotron-3-5-lightning-nvfp4-with-qad-using-nvidia-model-optimizer/",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "research_blog",
+      "source": "NVIDIA Technical Blog",
+      "title": "Developing Nemotron 3.5 Lightning NVFP4 with QAD Using NVIDIA Model Optimizer",
+      "url": "https://developer.nvidia.com/blog/developing-nemotron-3-5-lightning-nvfp4-with-qad-using-nvidia-model-optimizer/",
+      "published_at": "2026-08-17T18:12:48Z",
+      "updated_at": "2026-08-17T18:12:48Z",
+      "creators": [
+        "NVIDIA Technical Blog"
+      ],
+      "language": "en",
+      "abstract_or_text": "Teams customize their models to hit their targets for latency, speed, memory, and compute. With the open NVIDIA Nemotron family of models, developers can find...",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 62,
+      "tags": [
+        "研究发布",
+        "official blog"
+      ],
+      "evidence_flags": [],
+      "publication_status": "official_update",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://developer.nvidia.com/blog/feed/"
+      }
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-17T04:00:01+00:00",
+  "generated_at": "2026-08-17T23:18:29+00:00",
   "timezone": "Asia/Shanghai",
   "metrics": [
     "selected",
@@ -115,6 +115,51 @@
       "selected": 0,
       "kind": "json",
       "href": "data/channels/engineering/archive/2026-08-17.json"
+    },
+    {
+      "date": "2026-08-18",
+      "channel": "aivoices",
+      "fetched": 7,
+      "candidates": 7,
+      "selected": 0,
+      "kind": "json",
+      "href": "data/channels/aivoices/archive/2026-08-18.json"
+    },
+    {
+      "date": "2026-08-18",
+      "channel": "aixbio",
+      "fetched": 620,
+      "candidates": 60,
+      "selected": 16,
+      "kind": "json",
+      "href": "data/channels/aixbio/archive/2026-08-18.json"
+    },
+    {
+      "date": "2026-08-18",
+      "channel": "aixchem",
+      "fetched": 415,
+      "candidates": 60,
+      "selected": 10,
+      "kind": "json",
+      "href": "data/channels/aixchem/archive/2026-08-18.json"
+    },
+    {
+      "date": "2026-08-18",
+      "channel": "aixmath",
+      "fetched": 0,
+      "candidates": 0,
+      "selected": 0,
+      "kind": "json",
+      "href": "data/channels/aixmath/archive/2026-08-18.json"
+    },
+    {
+      "date": "2026-08-18",
+      "channel": "engineering",
+      "fetched": 35,
+      "candidates": 35,
+      "selected": 8,
+      "kind": "json",
+      "href": "data/channels/engineering/archive/2026-08-18.json"
     }
   ]
 }

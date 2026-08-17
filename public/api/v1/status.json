@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-17T04:00:01+00:00",
+  "generated_at": "2026-08-17T23:18:29+00:00",
   "timezone": "Asia/Shanghai",
-  "expected_date": "2026-08-17",
-  "latest_date": "2026-08-17",
+  "expected_date": "2026-08-18",
+  "latest_date": "2026-08-18",
   "state": "fresh",
   "active_channels": [
     "aixchem",
@@ -23,43 +23,43 @@
   "channels": {
     "aixchem": {
       "state": "success",
-      "latest_date": "2026-08-17",
-      "updated_at": "2026-08-17T03:52:25+00:00",
+      "latest_date": "2026-08-18",
+      "updated_at": "2026-08-17T23:07:06+00:00",
       "source_errors": [],
       "stats": {
-        "fetched": 338,
-        "candidates": 50,
-        "selected": 16,
+        "fetched": 415,
+        "candidates": 60,
+        "selected": 10,
         "sources": {
           "arXiv": 0,
-          "bioRxiv": 311,
-          "ChemRxiv": 30
+          "bioRxiv": 354,
+          "ChemRxiv": 67
         }
       }
     },
     "aixbio": {
       "state": "success",
-      "latest_date": "2026-08-17",
-      "updated_at": "2026-08-17T03:52:26+00:00",
+      "latest_date": "2026-08-18",
+      "updated_at": "2026-08-17T23:07:08+00:00",
       "source_errors": [],
       "stats": {
-        "fetched": 1091,
+        "fetched": 620,
         "candidates": 60,
-        "selected": 10,
+        "selected": 13,
         "sources": {
           "arXiv": 0,
-          "bioRxiv": 311,
-          "medRxiv": 79,
-          "Europe PMC": 953
+          "bioRxiv": 354,
+          "medRxiv": 116,
+          "Europe PMC": 236
         }
       }
     },
     "aixmath": {
       "state": "success",
-      "latest_date": "2026-08-17",
-      "updated_at": "2026-08-17T03:52:27+00:00",
+      "latest_date": "2026-08-18",
+      "updated_at": "2026-08-17T23:14:54+00:00",
       "source_errors": [
-        "OpenReview: HTTP 403"
+        "OpenReview: RuntimeError: 未配置 OpenReview 账号"
       ],
       "stats": {
         "fetched": 0,
@@ -73,32 +73,32 @@
     },
     "aivoices": {
       "state": "success",
-      "latest_date": "2026-08-17",
-      "updated_at": "2026-08-17T03:52:37+00:00",
+      "latest_date": "2026-08-18",
+      "updated_at": "2026-08-17T23:07:11+00:00",
       "source_errors": [
-        "X: HTTP 402"
+        "X: RuntimeError: HTTP 402 额度不足，请在 X Developer Console 充值 credits"
       ],
       "stats": {
-        "fetched": 0,
-        "candidates": 0,
+        "fetched": 7,
+        "candidates": 7,
         "selected": 0,
         "sources": {
           "X": 0,
-          "Research blogs": 0
+          "Research blogs": 7
         }
       }
     },
     "engineering": {
       "state": "success",
-      "latest_date": "2026-08-17",
-      "updated_at": "2026-08-17T03:52:38+00:00",
+      "latest_date": "2026-08-18",
+      "updated_at": "2026-08-17T23:09:49+00:00",
       "source_errors": [],
       "stats": {
-        "fetched": 0,
-        "candidates": 0,
-        "selected": 0,
+        "fetched": 35,
+        "candidates": 35,
+        "selected": 8,
         "sources": {
-          "GitHub Releases": 0
+          "GitHub Releases": 35
         }
       }
     }
