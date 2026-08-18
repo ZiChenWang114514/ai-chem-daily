@@ -270,7 +270,8 @@ def shared_papers(runtime: Runtime, source: str) -> list[dict[str, Any]]:
 
     def create() -> list[dict[str, Any]]:
         values = [asdict(paper) for paper in fetcher(start, end)]
-        runtime.record_request("export.arxiv.org" if source == "arxiv" else "api.biorxiv.org", display, "ok", len(values))
+        status = "ok" if values else "empty"
+        runtime.record_request("export.arxiv.org" if source == "arxiv" else "api.biorxiv.org", display, status, len(values))
         runtime.mark_success(source, len(values))
         return values
 

@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="本机收藏的研究条目，按标签归类，并支持笔记。">
+  <meta name="description" content="本机收藏的研究条目，按频道和标签整理，并支持笔记。">
   <meta name="theme-color" content="#122033">
   <title>收藏 · AIX每日精读</title>
+  <script src="../assets/theme.js"></script>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -20,6 +21,7 @@
           <span class="brand__name">AIX每日精读</span>
         </a>
         <div class="topbar__actions">
+          <button class="theme-button" data-theme-button type="button" aria-label="外观：跟随系统">外观</button>
           <a class="library-link is-active" href="./" aria-current="page">收藏<span class="library-count" data-library-count hidden></span></a>
           <a class="history-button" href="../">返回日报</a>
         </div>
@@ -73,7 +75,7 @@
           <div class="search-box">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.3-4.3m2.3-5.2a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
             <label class="sr-only" for="library-search">搜索收藏</label>
-            <input id="library-search" type="search" placeholder="搜索题名、笔记或标签">
+            <input id="library-search" type="search" placeholder="搜索题名、笔记、摘要或标签" autocomplete="off" spellcheck="false" enterkeyhint="search">
           </div>
           <div class="library-actions">
             <button class="button secondary" id="export-collection" type="button">导出备份</button>
@@ -120,7 +122,10 @@
         <div class="paper-card__topline">
           <span class="source-badge"></span>
           <span class="topic-label"></span>
-          <button class="save-button" type="button" aria-pressed="false" aria-label="取消收藏">已收藏</button>
+          <div class="paper-card__actions">
+            <button class="copy-link" type="button">复制链接</button>
+            <button class="save-button" type="button" aria-pressed="false" aria-label="取消收藏">已收藏</button>
+          </div>
         </div>
         <h3><a class="paper-title" target="_blank" rel="noopener noreferrer"></a></h3>
         <p class="paper-meta"></p>
@@ -128,11 +133,11 @@
         <p class="summary-zh"></p>
         <p class="why-it-matters"></p>
         <details class="abstract-details">
-          <summary>查看摘要</summary>
+          <summary><span class="abstract-summary-label">查看摘要</span></summary>
           <div class="abstract-toolbar">
             <div class="abstract-lang" role="group" aria-label="摘要语言">
-              <button type="button" class="abstract-lang__btn" data-lang="zh">中文</button>
-              <button type="button" class="abstract-lang__btn" data-lang="en">原文</button>
+              <button type="button" class="abstract-lang__btn" data-lang="zh" aria-pressed="true">中文</button>
+              <button type="button" class="abstract-lang__btn" data-lang="en" aria-pressed="false">原文</button>
             </div>
           </div>
           <p class="abstract-text"></p>

@@ -104,6 +104,25 @@ class PublishDailyTests(unittest.TestCase):
             index = json.loads((site / "data" / "daily" / "archive" / "index.json").read_text(encoding="utf-8"))
             self.assertEqual(index["items"][0]["date"], "2026-08-16")
 
+    def test_stale_channel_items_are_not_leaked_into_today(self):
+        today = sample_item("arxiv:today", "Today paper", "https://arxiv.org/abs/today")
+        stale = sample_item("arxiv:stale", "Yesterday paper", "https://arxiv.org/abs/stale")
+        with tempfile.TemporaryDirectory() as directory:
+            site = Path(directory)
+            for channel in CHANNELS:
+                day = "2026-08-17" if channel == "aixmath" else "2026-08-18"
+                item = stale if channel == "aixmath" else today
+                write_json(site / "data" / "channels" / channel / "latest.json", channel_payload(channel, day, [item]))
+            payload = build_daily(site, None, "https://example.com/")
+            self.assertEqual(payload["date"], "2026-08-18")
+            by_id = {channel["id"]: channel for channel in payload["channels"]}
+            self.assertEqual(by_id["aixmath"]["items"], [])
+            self.assertEqual(by_id["aixmath"]["stats"]["selected"], 0)
+            self.assertIn("当日未更新，未纳入本期", by_id["aixmath"]["source_errors"])
+            home_ids = [item["id"] for channel in payload["channels"] for item in channel["items"]]
+            self.assertNotIn("arxiv:stale", home_ids)
+            self.assertIn("arxiv:today", home_ids)
+
 
 class ApplyCurationTests(unittest.TestCase):
     def _prepare(self, site: Path, candidate_key: str = "items", selected_count: int = 6) -> Path:
@@ -378,6 +397,16 @@ class ChannelPageTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             render_channel_page("<body></body>", "aixmath")
 
+    def test_real_home_shell_marks_current_channel_before_js(self):
+        source = (ROOT / "public" / "index.html").read_text(encoding="utf-8")
+        page = render_channel_page(source, "aixchem")
+        self.assertIn('data-channel="aixchem"', page)
+        self.assertIn('id="eyebrow">AI × Chem', page)
+        self.assertIn('id="hero-title">化学', page)
+        self.assertIn('class="channel-nav__item is-active" href="../aixchem/" aria-current="page"', page)
+        self.assertNotIn('class="channel-nav__item is-active" href="../../"', page)
+        self.assertIn("abstract-summary-label", page)
+
 
 class LibraryPageTests(unittest.TestCase):
     def test_library_page_is_local_first_and_linked(self):
@@ -401,6 +430,15 @@ class LibraryPageTests(unittest.TestCase):
         self.assertIn("已取消收藏，笔记仍留在本机", script)
         self.assertIn("全部收藏", script)
         self.assertIn("hydrateHomeAbstracts", script)
+        self.assertIn("window.displayTitle", script)
+        self.assertIn("bindDebouncedSearch", script)
+        self.assertIn("收起摘要", script)
+        self.assertIn("itemAnchor", script)
+        self.assertIn("copyItemLink", script)
+        self.assertIn("ArrowLeft", script)
+        self.assertIn("copy-link", home)
+        self.assertIn("data-theme-button", home)
+        self.assertIn("assets/theme.js", home)
         self.assertIn("item.summary_zh", script)
         self.assertIn("channel_name", script)
         self.assertNotIn("item.category = channel.name", script)

@@ -131,6 +131,7 @@ function displayTitle(item) {
   }
   return title || "未命名条目";
 }
+window.displayTitle = displayTitle;
 
 function sameText(left, right) {
   return String(left || "").replace(/\s+/g, "") === String(right || "").replace(/\s+/g, "");
@@ -138,6 +139,48 @@ function sameText(left, right) {
 
 function collectionItemKey(item) {
   return AixCollection.key(item);
+}
+
+function itemAnchor(item) {
+  return `item-${collectionItemKey(item).replace(/[^A-Za-z0-9]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "")}`;
+}
+
+function itemPermalink(item) {
+  const url = new URL(location.href);
+  url.hash = itemAnchor(item);
+  return url.toString();
+}
+
+async function copyItemLink(item) {
+  const text = itemPermalink(item);
+  try {
+    await navigator.clipboard.writeText(text);
+    showToast("已复制本页链接");
+    return;
+  } catch {
+    /* fall through to a selection-based copy */
+  }
+  const field = document.createElement("textarea");
+  field.value = text;
+  field.setAttribute("readonly", "");
+  field.style.position = "fixed";
+  field.style.left = "-9999px";
+  document.body.appendChild(field);
+  field.select();
+  const ok = document.execCommand("copy");
+  field.remove();
+  showToast(ok ? "已复制本页链接" : "复制失败，请手动复制地址栏");
+}
+
+function focusItemFromHash() {
+  const id = decodeURIComponent((location.hash || "").replace(/^#/, ""));
+  if (!id) return false;
+  const card = document.getElementById(id);
+  if (!card) return false;
+  document.querySelectorAll(".paper-card.is-target").forEach((node) => node.classList.remove("is-target"));
+  card.classList.add("is-target");
+  card.scrollIntoView({ block: "start", behavior: "smooth" });
+  return true;
 }
 
 function savedRecord(item) {
@@ -172,6 +215,8 @@ function showToast(message, action) {
     toast.id = "site-toast";
     toast.className = "site-toast";
     toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    toast.setAttribute("aria-atomic", "true");
     document.body.appendChild(toast);
   }
   toast.replaceChildren();
@@ -330,11 +375,17 @@ function renderHeatmap() {
     cell.setAttribute("aria-label", label);
     if (key === viewing) cell.classList.add("is-current");
     if (clickable) cell.type = "button";
+    cell.tabIndex = -1;
     fragment.appendChild(cell);
     if (value > 0) populatedDays += 1;
     total += value;
   }
   container.replaceChildren(fragment);
+  const days = [...container.querySelectorAll(".heatmap__day")];
+  const currentIndex = days.findIndex((cell) => cell.classList.contains("is-current"));
+  const fallback = days.findLastIndex((cell) => cell.tagName === "BUTTON");
+  const focusIndex = currentIndex >= 0 ? currentIndex : Math.max(0, fallback);
+  if (days[focusIndex]) days[focusIndex].tabIndex = 0;
   setText("activity-summary", `有记录 ${populatedDays} 天，合计 ${total.toLocaleString("zh-CN")} 项精选`);
   const scroller = container.closest(".heatmap-scroll");
   if (scroller) scroller.scrollLeft = scroller.scrollWidth;
@@ -438,8 +489,15 @@ function applyAbstractLanguage(root, item, lang) {
   const text = root.querySelector(".abstract-text");
   if (text) text.textContent = chosen || "该来源未提供摘要或正文。";
   root.querySelectorAll(".abstract-lang__btn").forEach((button) => {
-    button.classList.toggle("is-active", button.dataset.lang === lang);
+    const active = button.dataset.lang === lang;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
   });
+}
+
+function syncAbstractSummary(details) {
+  const label = details.querySelector(".abstract-summary-label") || details.querySelector("summary");
+  if (label) label.textContent = details.open ? "收起摘要" : "查看摘要";
 }
 
 function bindAbstract(fragment, item) {
@@ -458,6 +516,8 @@ function bindAbstract(fragment, item) {
   const preferred = AixCollection.abstractLang();
   const initial = preferred === "en" && pair.en ? "en" : (pair.zh ? "zh" : "en");
   applyAbstractLanguage(details, item, initial);
+  syncAbstractSummary(details);
+  details.addEventListener("toggle", () => syncAbstractSummary(details));
   details.querySelectorAll(".abstract-lang__btn").forEach((button) => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
@@ -476,16 +536,28 @@ function createItemCard(item, groupName) {
   const fragment = document.getElementById("paper-template").content.cloneNode(true);
   const card = fragment.querySelector(".paper-card");
   const key = collectionItemKey(item);
-  if (card && key) card.dataset.id = key;
+  if (card && key) {
+    card.dataset.id = key;
+    card.id = itemAnchor(item);
+  }
   const saved = savedRecord(item);
   setSaveButton(fragment.querySelector(".save-button"), Boolean(saved));
   const noteBlock = fragment.querySelector(".note-block");
   const noteField = fragment.querySelector(".note-field");
   if (noteBlock) {
     noteBlock.hidden = page !== "library" && !saved;
-    if (noteField) noteField.value = saved?.note || "";
+    if (noteField) {
+      noteField.value = saved?.note || "";
+      if (key) {
+        noteField.id = `note-${key}`;
+        const noteLabel = fragment.querySelector(".note-label");
+        if (noteLabel) noteLabel.setAttribute("for", noteField.id);
+      }
+    }
   }
-  fragment.querySelector(".rank").textContent = String(item.rank || 0).padStart(2, "0");
+  const rank = fragment.querySelector(".rank");
+  if (!item.rank) rank.remove();
+  else rank.textContent = String(item.rank).padStart(2, "0");
   fragment.querySelector(".source-badge").textContent = item.source;
   const topic = fragment.querySelector(".topic-label");
   if (!item.category || item.category === groupName) topic.remove();
@@ -493,6 +565,10 @@ function createItemCard(item, groupName) {
   const title = fragment.querySelector(".paper-title");
   title.href = item.url;
   title.textContent = displayTitle(item);
+  const openHint = document.createElement("span");
+  openHint.className = "sr-only";
+  openHint.textContent = "（在新窗口打开）";
+  title.appendChild(openHint);
   const creators = item.author_line || (item.creators || []).slice(0, 3).join(", ") || "作者信息暂缺";
   fragment.querySelector(".paper-meta").textContent = `${creators} · ${(item.published_at || item.published || "日期暂缺").slice(0, 10)}`;
   const summary = item.summary_zh || "中文说明暂缺，请查看原始内容。";
@@ -509,10 +585,16 @@ function createItemCard(item, groupName) {
     .filter((tag) => tag && tag !== item.category && tag !== item.source)
     .slice(0, 6)
     .forEach((tag) => {
-      const span = document.createElement("span");
-      span.className = "tag";
-      span.textContent = tag;
-      tags.appendChild(span);
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "tag";
+      button.textContent = tag;
+      button.setAttribute("aria-label", `按标签筛选：${tag}`);
+      const active = page === "library"
+        ? state.libraryTag === tag
+        : state.query.trim() === tag;
+      button.classList.toggle("is-active", active);
+      tags.appendChild(button);
     });
   return fragment;
 }
@@ -577,6 +659,7 @@ function renderItems() {
     fragment.appendChild(section);
   });
   container.replaceChildren(fragment);
+  focusItemFromHash();
 }
 
 function renderSourceFilters() {
@@ -606,6 +689,11 @@ function markChannelNav() {
     const base = href.split("?")[0];
     link.href = withDate(base, date);
   });
+  const activeLink = document.querySelector(".channel-nav__item.is-active");
+  const nav = activeLink?.closest(".channel-nav");
+  if (activeLink && nav) {
+    nav.scrollLeft = activeLink.offsetLeft - Math.max(0, (nav.clientWidth - activeLink.offsetWidth) / 2);
+  }
 }
 
 function renderHero(payload) {
@@ -743,12 +831,16 @@ async function loadHomeDigest(date) {
   }
 }
 
-async function hydrateHomeAbstracts() {
-  if (page !== "home") return;
-  const items = payloadItems();
-  if (!items.length || items.some((item) => item.abstract_or_text || item.abstract_zh)) return;
-  const date = currentDate();
-  if (!date) return;
+function homeNeedsAbstractHydration(payload) {
+  if (page !== "home") return false;
+  const items = payloadItems(payload);
+  return Boolean(items.length && !items.some((item) => item.abstract_or_text || item.abstract_zh));
+}
+
+async function hydrateHomeAbstracts(payload = state.payload) {
+  if (!homeNeedsAbstractHydration(payload)) return false;
+  const date = payload?.date || currentDate();
+  if (!date) return false;
   try {
     const archive = await loadJSON(`data/daily/archive/${encodeURIComponent(date)}.json`);
     const byId = new Map();
@@ -758,7 +850,7 @@ async function hydrateHomeAbstracts() {
       });
     });
     let changed = false;
-    items.forEach((item) => {
+    payloadItems(payload).forEach((item) => {
       const full = byId.get(item.id);
       if (!full) return;
       if (full.abstract_or_text) {
@@ -774,13 +866,24 @@ async function hydrateHomeAbstracts() {
         AixCollection.save(item, saved);
       }
     });
-    if (changed) {
-      state.searchIndex = new WeakMap();
-      renderItems();
-    }
+    if (changed) state.searchIndex = new WeakMap();
+    return changed;
   } catch {
-    /* keep the slim homepage if the archive is unavailable */
+    return false;
   }
+}
+
+function mountAbstract(card, item) {
+  if (!card || !item || card.querySelector(".abstract-details")) return;
+  const template = document.getElementById("paper-template")?.content.querySelector(".abstract-details");
+  if (!template) return;
+  const details = template.cloneNode(true);
+  const body = card.querySelector(".paper-card__body");
+  const note = card.querySelector(".note-block");
+  if (!body) return;
+  if (note) body.insertBefore(details, note);
+  else body.appendChild(details);
+  bindAbstract(card, item);
 }
 
 async function loadDigest() {
@@ -791,7 +894,12 @@ async function loadDigest() {
       ? `data/channels/${channelId}/archive/${encodeURIComponent(date)}.json`
       : `data/channels/${channelId}/latest.json`);
   renderPayload(payload);
-  hydrateHomeAbstracts();
+  if (await hydrateHomeAbstracts(payload)) {
+    document.querySelectorAll(".paper-card[data-id]").forEach((card) => {
+      mountAbstract(card, findRenderableItem(card.dataset.id));
+    });
+  }
+  focusItemFromHash();
 }
 
 function findRenderableItem(id) {
@@ -802,6 +910,28 @@ function bindCollectionEvents(rootId) {
   const rootNode = document.getElementById(rootId);
   if (!rootNode) return;
   rootNode.addEventListener("click", (event) => {
+    const copy = event.target.closest(".copy-link");
+    if (copy) {
+      const card = copy.closest(".paper-card");
+      const item = findRenderableItem(card?.dataset.id);
+      if (item) copyItemLink(item);
+      return;
+    }
+    const tag = event.target.closest("button.tag");
+    if (tag) {
+      const value = tag.textContent.trim();
+      if (!value) return;
+      if (page === "library") {
+        state.libraryTag = state.libraryTag === value ? "all" : value;
+        renderLibrary();
+        return;
+      }
+      const input = document.getElementById("search-input");
+      state.query = state.query.trim() === value ? "" : value;
+      if (input) input.value = state.query;
+      renderItems();
+      return;
+    }
     const button = event.target.closest(".save-button");
     if (!button) return;
     const card = button.closest(".paper-card");
@@ -970,14 +1100,34 @@ function renderLibrary() {
     fragment.appendChild(section);
   });
   groups.replaceChildren(fragment);
+  focusItemFromHash();
+}
+
+function bindDebouncedSearch(inputId, apply) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+  let timer = 0;
+  const run = () => {
+    window.clearTimeout(timer);
+    timer = window.setTimeout(apply, 120);
+  };
+  input.addEventListener("compositionstart", () => {
+    input.dataset.composing = "1";
+  });
+  input.addEventListener("compositionend", () => {
+    delete input.dataset.composing;
+    apply();
+  });
+  input.addEventListener("input", (event) => {
+    if (event.isComposing || input.dataset.composing === "1") return;
+    run();
+  });
 }
 
 function bindLibraryPage() {
-  let searchTimer = 0;
-  document.getElementById("library-search")?.addEventListener("input", (event) => {
-    state.libraryQuery = event.target.value;
-    window.clearTimeout(searchTimer);
-    searchTimer = window.setTimeout(renderLibrary, 120);
+  bindDebouncedSearch("library-search", () => {
+    state.libraryQuery = document.getElementById("library-search")?.value || "";
+    renderLibrary();
   });
   document.getElementById("channel-rail")?.addEventListener("click", (event) => {
     const button = event.target.closest("button[data-channel]");
@@ -992,7 +1142,10 @@ function bindLibraryPage() {
     state.libraryTag = button.dataset.tag;
     renderLibrary();
   });
-  document.getElementById("export-collection")?.addEventListener("click", AixCollection.exportBackup);
+  document.getElementById("export-collection")?.addEventListener("click", () => {
+    AixCollection.exportBackup();
+    showToast("已下载收藏备份");
+  });
   document.getElementById("import-collection")?.addEventListener("change", async (event) => {
     const file = event.target.files?.[0];
     const status = document.getElementById("library-status");
@@ -1017,12 +1170,48 @@ function bindLibraryPage() {
   bindCollectionEvents("library-groups");
 }
 
+function bindGlobalShortcuts() {
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      const historyButton = document.getElementById("history-button");
+      const historyPanel = document.getElementById("history-panel");
+      if (historyPanel && !historyPanel.hidden) {
+        historyButton?.setAttribute("aria-expanded", "false");
+        historyPanel.hidden = true;
+        historyButton?.focus();
+        return;
+      }
+      const active = document.activeElement;
+      if (active && (active.id === "search-input" || active.id === "library-search")) {
+        if (active.value) {
+          active.value = "";
+          active.dispatchEvent(new Event("input", { bubbles: true }));
+        } else {
+          active.blur();
+        }
+      }
+      return;
+    }
+    if (event.key !== "/" || event.ctrlKey || event.metaKey || event.altKey) return;
+    const target = event.target;
+    const typing = target && (
+      target.tagName === "INPUT"
+      || target.tagName === "TEXTAREA"
+      || target.isContentEditable
+    );
+    if (typing) return;
+    const input = document.getElementById("search-input") || document.getElementById("library-search");
+    if (!input) return;
+    event.preventDefault();
+    input.focus();
+    input.select();
+  });
+}
+
 function bindEvents() {
-  let searchTimer = 0;
-  document.getElementById("search-input")?.addEventListener("input", (event) => {
-    state.query = event.target.value;
-    window.clearTimeout(searchTimer);
-    searchTimer = window.setTimeout(renderItems, 120);
+  bindDebouncedSearch("search-input", () => {
+    state.query = document.getElementById("search-input")?.value || "";
+    renderItems();
   });
   document.getElementById("source-filters")?.addEventListener("click", (event) => {
     const button = event.target.closest("button[data-source]");
@@ -1036,6 +1225,44 @@ function bindEvents() {
     if (!cell) return;
     location.href = `?date=${encodeURIComponent(cell.dataset.date)}`;
   });
+  document.getElementById("activity-heatmap")?.addEventListener("keydown", (event) => {
+    const cells = [...document.querySelectorAll("#activity-heatmap .heatmap__day")];
+    const current = cells.indexOf(document.activeElement);
+    if (current < 0) return;
+    const delta = { ArrowUp: -1, ArrowDown: 1, ArrowLeft: -7, ArrowRight: 7 }[event.key];
+    if (delta) {
+      event.preventDefault();
+      const next = Math.max(0, Math.min(cells.length - 1, current + delta));
+      cells.forEach((cell, index) => {
+        cell.tabIndex = index === next ? 0 : -1;
+      });
+      cells[next].focus();
+      cells[next].scrollIntoView({ block: "nearest", inline: "nearest" });
+      return;
+    }
+    if (event.key === "Home") {
+      event.preventDefault();
+      const start = current - (current % 7);
+      cells.forEach((cell, index) => {
+        cell.tabIndex = index === start ? 0 : -1;
+      });
+      cells[start]?.focus();
+      return;
+    }
+    if (event.key === "End") {
+      event.preventDefault();
+      const end = Math.min(cells.length - 1, current - (current % 7) + 6);
+      cells.forEach((cell, index) => {
+        cell.tabIndex = index === end ? 0 : -1;
+      });
+      cells[end]?.focus();
+      return;
+    }
+    if ((event.key === "Enter" || event.key === " ") && document.activeElement?.tagName === "BUTTON") {
+      event.preventDefault();
+      document.activeElement.click();
+    }
+  });
   const historyButton = document.getElementById("history-button");
   const historyPanel = document.getElementById("history-panel");
   const closeHistory = () => {
@@ -1047,14 +1274,16 @@ function bindEvents() {
     const open = historyButton.getAttribute("aria-expanded") === "true";
     historyButton.setAttribute("aria-expanded", String(!open));
     historyPanel.hidden = open;
+    if (!open) {
+      window.requestAnimationFrame(() => {
+        historyPanel.querySelector(".is-current")?.scrollIntoView({ block: "nearest" });
+      });
+    }
   });
   document.addEventListener("click", (event) => {
     if (!historyPanel || historyPanel.hidden) return;
     if (historyPanel.contains(event.target) || historyButton.contains(event.target)) return;
     closeHistory();
-  });
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeHistory();
   });
   bindCollectionEvents("paper-groups");
 }
@@ -1075,6 +1304,8 @@ function showLoadError(error) {
 
 markHomeOnlySections();
 updateLibraryBadge();
+bindGlobalShortcuts();
+window.addEventListener("hashchange", focusItemFromHash);
 window.addEventListener("aix-collection-change", updateLibraryBadge);
 if (page === "library") {
   bindLibraryPage();

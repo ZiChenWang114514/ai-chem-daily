@@ -9,6 +9,7 @@
   <meta property="og:description" content="化学、生物、数学、公开观点与工程更新的每日精选。">
   <meta property="og:image" content="https://zichenwang114514.github.io/ai-x-daily/assets/art/engineering.jpg">
   <title>AIX每日精读</title>
+  <script src="../../assets/theme.js"></script>
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/styles.css">
   <link rel="preload" as="image" href="../../assets/art/engineering.webp" type="image/webp" fetchpriority="high">
@@ -26,6 +27,7 @@
           <span class="brand__name">AIX每日精读</span>
         </a>
         <div class="topbar__actions">
+          <button class="theme-button" data-theme-button type="button" aria-label="外观：跟随系统">外观</button>
           <a class="library-link" href="../../library/">收藏<span class="library-count" data-library-count hidden></span></a>
           <div class="history-anchor">
             <button class="history-button" id="history-button" type="button" aria-expanded="false" aria-controls="history-panel">
@@ -37,19 +39,19 @@
                 <strong>历史日报</strong>
                 <span>按日期查阅已发布内容</span>
               </div>
-              <div id="history-list" class="history-list" aria-live="polite"></div>
+              <div id="history-list" class="history-list" aria-live="polite">正在载入历史日报…</div>
             </div>
           </div>
         </div>
       </nav>
 
       <nav class="channel-nav" id="channel-nav" aria-label="信息频道">
-        <a class="channel-nav__item is-active" href="../../">总览</a>
+        <a class="channel-nav__item" href="../../">总览</a>
         <a class="channel-nav__item" href="../aixchem/">AI × Chem</a>
         <a class="channel-nav__item" href="../aixbio/">AI × Bio</a>
         <a class="channel-nav__item" href="../aixmath/">AI × Math</a>
         <a class="channel-nav__item" href="../aivoices/">AI Voices</a>
-        <a class="channel-nav__item" href="../engineering/">Engineering</a>
+        <a class="channel-nav__item is-active" href="../engineering/" aria-current="page">Engineering</a>
       </nav>
     </div>
   </header>
@@ -61,8 +63,8 @@
           <time id="digest-date" datetime="">载入中</time>
           <span id="hero-weekday"></span>
         </p>
-        <p class="hero__kicker" id="eyebrow">今日精选</p>
-        <h1 id="hero-title">五个频道的研究更新</h1>
+        <p class="hero__kicker" id="eyebrow">Engineering</p>
+        <h1 id="hero-title">工程更新</h1>
         <p id="subtitle" class="hero__lead">正在读取今日内容…</p>
         <p class="hero__meta">
           <span id="stat-selected">—</span> 项精选
@@ -100,7 +102,7 @@
         <div class="search-box">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.3-4.3m2.3-5.2a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
           <label class="sr-only" for="search-input">搜索题名、作者与摘要</label>
-          <input id="search-input" type="search" placeholder="搜索题名、作者、摘要或标签">
+          <input id="search-input" type="search" placeholder="搜索题名、作者、摘要或标签" autocomplete="off" spellcheck="false" enterkeyhint="search">
         </div>
         <div class="filter-group" id="source-filters" aria-label="按来源筛选">
           <button class="filter-chip is-active" type="button" data-source="all">全部来源</button>
@@ -163,7 +165,10 @@
         <div class="paper-card__topline">
           <span class="source-badge"></span>
           <span class="topic-label"></span>
-          <button class="save-button" type="button" aria-pressed="false" aria-label="收藏这篇">收藏</button>
+          <div class="paper-card__actions">
+            <button class="copy-link" type="button">复制链接</button>
+            <button class="save-button" type="button" aria-pressed="false" aria-label="收藏这篇">收藏</button>
+          </div>
         </div>
         <h3><a class="paper-title" target="_blank" rel="noopener noreferrer"></a></h3>
         <p class="paper-meta"></p>
@@ -171,11 +176,11 @@
         <p class="summary-zh"></p>
         <p class="why-it-matters"></p>
         <details class="abstract-details">
-          <summary>查看摘要</summary>
+          <summary><span class="abstract-summary-label">查看摘要</span></summary>
           <div class="abstract-toolbar">
             <div class="abstract-lang" role="group" aria-label="摘要语言">
-              <button type="button" class="abstract-lang__btn" data-lang="zh">中文</button>
-              <button type="button" class="abstract-lang__btn" data-lang="en">原文</button>
+              <button type="button" class="abstract-lang__btn" data-lang="zh" aria-pressed="true">中文</button>
+              <button type="button" class="abstract-lang__btn" data-lang="en" aria-pressed="false">原文</button>
             </div>
           </div>
           <p class="abstract-text"></p>

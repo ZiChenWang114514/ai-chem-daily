@@ -70,39 +70,48 @@ def upsert_daily_archive(site_root: Path, payload: dict[str, Any]) -> None:
 
 def build(site_root: Path, summary_path: Path | None, site_url: str, *, write_payload: bool = True) -> dict[str, Any]:
     summary = load_json(summary_path, {}) if summary_path else {}
-    channels = []
-    archive_channels = []
-    seen: set[str] = set()
+    latest_by_channel: dict[str, dict[str, Any]] = {}
     channel_dates: list[str] = []
     for channel_id in CHANNELS:
         latest = load_json(site_root / "data" / "channels" / channel_id / "latest.json", {})
         if not latest:
             raise RuntimeError(f"Missing latest data for {channel_id}")
-        items = []
-        for item in latest.get("items") or latest.get("papers") or []:
-            key = natural_key(item)
-            if key in seen:
-                continue
-            seen.add(key)
-            items.append(item)
-        stats = dict(latest.get("stats") or {})
-        stats["selected"] = len(items)
-        name = CHANNEL_META[channel_id][0].replace(" 每日精选", "")
-        entry = {
-            "id": channel_id,
-            "name": name,
-            "stats": stats,
-            "source_errors": latest.get("source_errors", []),
-        }
-        home_items = [slim_public_item(item, include_abstract=False) for item in items]
-        archive_items = [slim_public_item(item, include_abstract=True, clip_release=True) for item in items]
-        channels.append({**entry, "items": home_items})
-        archive_channels.append({**entry, "items": archive_items})
+        latest_by_channel[channel_id] = latest
         if latest.get("date"):
             channel_dates.append(str(latest["date"]))
     if not channel_dates:
         raise RuntimeError("No channel dates available")
     run_date = max(channel_dates)
+    channels = []
+    archive_channels = []
+    seen: set[str] = set()
+    for channel_id in CHANNELS:
+        latest = latest_by_channel[channel_id]
+        stale = str(latest.get("date") or "") != run_date
+        items = []
+        if not stale:
+            for item in latest.get("items") or latest.get("papers") or []:
+                key = natural_key(item)
+                if key in seen:
+                    continue
+                seen.add(key)
+                items.append(item)
+        stats = dict(latest.get("stats") or {})
+        stats["selected"] = len(items)
+        name = CHANNEL_META[channel_id][0].replace(" 每日精选", "")
+        errors = list(latest.get("source_errors") or [])
+        if stale:
+            errors.append("当日未更新，未纳入本期")
+        entry = {
+            "id": channel_id,
+            "name": name,
+            "stats": stats,
+            "source_errors": errors,
+        }
+        home_items = [slim_public_item(item, include_abstract=False) for item in items]
+        archive_items = [slim_public_item(item, include_abstract=True, clip_release=True) for item in items]
+        channels.append({**entry, "items": home_items})
+        archive_channels.append({**entry, "items": archive_items})
     existing = load_json(site_root / "data" / "daily" / "latest.json", {})
     overview = summary.get("overview_zh") or existing.get("overview_zh") or ""
     highlights = summary.get("channel_highlights") or existing.get("channel_highlights") or {}

@@ -409,6 +409,8 @@ def fetch_arxiv(start_date: date, end_date: date, categories: tuple[str, ...] = 
         root = ET.fromstring(http_get(f"{ARXIV_API}?{params}"))
         entries = root.findall("a:entry", namespace)
         if not entries:
+            if start == 0:
+                raise RuntimeError("arXiv API returned no entries")
             break
         page_old = 0
         for entry in entries:
