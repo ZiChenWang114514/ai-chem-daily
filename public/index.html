@@ -9,12 +9,23 @@
   <meta property="og:description" content="化学、生物、数学、公开观点与工程更新的每日精选。">
   <meta property="og:image" content="https://zichenwang114514.github.io/ai-x-daily/assets/art/hero.jpg">
   <title>AIX每日精读</title>
-  <script src="assets/theme.js"></script>
+  <script>
+    try {
+      var pref = localStorage.getItem("aix-daily.theme.v1");
+      var dark = pref === "dark" || (pref !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+      document.documentElement.dataset.theme = dark ? "dark" : "light";
+      document.documentElement.dataset.themePref = pref === "light" || pref === "dark" ? pref : "system";
+      document.documentElement.style.colorScheme = dark ? "dark" : "light";
+    } catch (e) {}
+  </script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="preload" as="image" href="assets/art/hero.webp" type="image/webp" fetchpriority="high">
   <link rel="preload" as="fetch" href="data/daily/latest.json" crossorigin>
   <link rel="preload" as="fetch" href="api/v1/manifest.json" crossorigin>
+  <link rel="preload" as="script" href="assets/collection.js">
+  <link rel="preload" as="script" href="assets/app.js">
+  <script src="assets/theme.js" defer></script>
 </head>
 <body data-page="home" data-root="">
   <a class="skip-link" href="#papers">跳到日报内容</a>

@@ -6,9 +6,18 @@
   <meta name="description" content="AIX每日精读的本地运行说明与当日状态。">
   <meta name="theme-color" content="#122033">
   <title>运行说明 · AIX每日精读</title>
-  <script src="../assets/theme.js"></script>
+  <script>
+    try {
+      var pref = localStorage.getItem("aix-daily.theme.v1");
+      var dark = pref === "dark" || (pref !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+      document.documentElement.dataset.theme = dark ? "dark" : "light";
+      document.documentElement.dataset.themePref = pref === "light" || pref === "dark" ? pref : "system";
+      document.documentElement.style.colorScheme = dark ? "dark" : "light";
+    } catch (e) {}
+  </script>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/styles.css">
+  <script src="../assets/theme.js" defer></script>
 </head>
 <body class="task-page" data-page="task" data-root="../">
   <a class="skip-link" href="#task-main">跳到运行说明</a>

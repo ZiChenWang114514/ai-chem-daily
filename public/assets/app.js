@@ -17,6 +17,9 @@ const state = {
   noteTimers: {},
   toastTimer: 0,
   undoSnapshot: null,
+  fetchCache: new Map(),
+  abstractsPromise: null,
+  activityScheduled: false,
 };
 const SITE_NAME = "AIX每日精读";
 const COLLECTION_KEY = AixCollection.KEY;
@@ -49,10 +52,20 @@ function path(value) {
   return `${root}${value}`;
 }
 
-async function loadJSON(url) {
-  const response = await fetch(path(url));
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  return response.json();
+async function loadJSON(url, options = {}) {
+  const href = path(url);
+  if (!options.fresh && state.fetchCache.has(href)) return state.fetchCache.get(href);
+  const init = {};
+  if (options.priority) init.priority = options.priority;
+  const pending = fetch(href, init).then((response) => {
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return response.json();
+  }).catch((error) => {
+    state.fetchCache.delete(href);
+    throw error;
+  });
+  state.fetchCache.set(href, pending);
+  return pending;
 }
 
 function requestedDate() {
@@ -418,6 +431,7 @@ function renderChannels() {
     art.alt = "";
     art.loading = "lazy";
     art.decoding = "async";
+    art.fetchPriority = "low";
     art.width = 640;
     art.height = 360;
     picture.append(webp, art);
@@ -500,24 +514,9 @@ function syncAbstractSummary(details) {
   if (label) label.textContent = details.open ? "收起摘要" : "查看摘要";
 }
 
-function bindAbstract(fragment, item) {
-  const details = fragment.querySelector(".abstract-details");
-  const abstract = fragment.querySelector(".abstract-text");
-  if (!details || !abstract) return;
-  const pair = abstractPair(item);
-  if (!pair.zh && !pair.en) {
-    details.remove();
-    return;
-  }
-  const toolbar = details.querySelector(".abstract-toolbar");
-  if (toolbar && !(pair.zh && pair.en && pair.zh !== pair.en)) {
-    toolbar.remove();
-  }
-  const preferred = AixCollection.abstractLang();
-  const initial = preferred === "en" && pair.en ? "en" : (pair.zh ? "zh" : "en");
-  applyAbstractLanguage(details, item, initial);
-  syncAbstractSummary(details);
-  details.addEventListener("toggle", () => syncAbstractSummary(details));
+function bindLangButtons(details) {
+  if (!details || details.dataset.langBound === "1") return;
+  details.dataset.langBound = "1";
   details.querySelectorAll(".abstract-lang__btn").forEach((button) => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
@@ -530,6 +529,42 @@ function bindAbstract(fragment, item) {
       });
     });
   });
+}
+
+function bindPendingAbstract(details, abstract) {
+  abstract.textContent = "正在载入摘要…";
+  const toolbar = details.querySelector(".abstract-toolbar");
+  if (toolbar) toolbar.hidden = true;
+  details.addEventListener("toggle", () => {
+    syncAbstractSummary(details);
+    if (details.open) ensureHomeAbstracts();
+  });
+  syncAbstractSummary(details);
+}
+
+function bindAbstract(fragment, item) {
+  const details = fragment.querySelector(".abstract-details");
+  const abstract = fragment.querySelector(".abstract-text");
+  if (!details || !abstract) return;
+  const pair = abstractPair(item);
+  if (!pair.zh && !pair.en) {
+    if (page === "home" && homeNeedsAbstractHydration()) {
+      bindPendingAbstract(details, abstract);
+      return;
+    }
+    details.remove();
+    return;
+  }
+  const toolbar = details.querySelector(".abstract-toolbar");
+  if (toolbar && !(pair.zh && pair.en && pair.zh !== pair.en)) {
+    toolbar.remove();
+  }
+  const preferred = AixCollection.abstractLang();
+  const initial = preferred === "en" && pair.en ? "en" : (pair.zh ? "zh" : "en");
+  applyAbstractLanguage(details, item, initial);
+  syncAbstractSummary(details);
+  details.addEventListener("toggle", () => syncAbstractSummary(details));
+  bindLangButtons(details);
 }
 
 function createItemCard(item, groupName) {
@@ -753,6 +788,7 @@ function renderPayload(payload) {
   renderItems();
   renderHeatmap();
   markChannelNav();
+  scheduleActivityLoad();
 }
 
 function markHomeOnlySections() {
@@ -761,16 +797,35 @@ function markHomeOnlySections() {
   });
 }
 
-async function loadManifestAndActivity() {
-  const [manifest, activity] = await Promise.all([
-    loadJSON("api/v1/manifest.json"),
-    loadJSON("api/v1/activity.json"),
-  ]);
-  state.manifest = manifest;
-  state.activity = activity.items || [];
+async function loadManifest() {
+  state.manifest = await loadJSON("api/v1/manifest.json", { priority: "high" });
   renderChannels();
-  renderHeatmap();
   markChannelNav();
+}
+
+function scheduleActivityLoad() {
+  if (state.activityScheduled) return;
+  state.activityScheduled = true;
+  const run = () => {
+    loadJSON("api/v1/activity.json", { priority: "low" }).then((activity) => {
+      state.activity = activity.items || [];
+      renderHeatmap();
+    }).catch((error) => {
+      const summary = document.getElementById("activity-summary");
+      if (summary) summary.textContent = `活动数据读取失败：${error.message}`;
+    });
+  };
+  const target = document.querySelector(".activity-panel") || document.getElementById("activity-heatmap");
+  if (!target || !("IntersectionObserver" in window)) {
+    run();
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    observer.disconnect();
+    run();
+  }, { rootMargin: "240px" });
+  observer.observe(target);
 }
 
 async function loadArchive() {
@@ -825,7 +880,7 @@ function flattenHomeItems(payload) {
 async function loadHomeDigest(date) {
   const url = date ? `data/daily/archive/${encodeURIComponent(date)}.json` : "data/daily/latest.json";
   try {
-    return flattenHomeItems(await loadJSON(url));
+    return flattenHomeItems(await loadJSON(url, { priority: "high" }));
   } catch (error) {
     throw new Error(date ? `没有 ${date} 的综合日报` : error.message);
   }
@@ -842,7 +897,7 @@ async function hydrateHomeAbstracts(payload = state.payload) {
   const date = payload?.date || currentDate();
   if (!date) return false;
   try {
-    const archive = await loadJSON(`data/daily/archive/${encodeURIComponent(date)}.json`);
+    const archive = await loadJSON(`data/daily/archive/${encodeURIComponent(date)}.json`, { priority: "low" });
     const byId = new Map();
     (archive.channels || []).forEach((channel) => {
       (channel.items || channel.papers || []).forEach((item) => {
@@ -886,19 +941,66 @@ function mountAbstract(card, item) {
   bindAbstract(card, item);
 }
 
+function refreshRenderedAbstracts() {
+  document.querySelectorAll(".paper-card[data-id]").forEach((card) => {
+    const item = findRenderableItem(card.dataset.id);
+    if (!item) return;
+    const pair = abstractPair(item);
+    const details = card.querySelector(".abstract-details");
+    if (!pair.zh && !pair.en) {
+      const text = details?.querySelector(".abstract-text");
+      if (text && text.textContent === "正在载入摘要…") {
+        text.textContent = "该来源未提供摘要或正文。";
+      }
+      return;
+    }
+    if (!details) {
+      mountAbstract(card, item);
+      return;
+    }
+    const toolbar = details.querySelector(".abstract-toolbar");
+    if (toolbar) {
+      if (pair.zh && pair.en && pair.zh !== pair.en) toolbar.hidden = false;
+      else toolbar.remove();
+    }
+    const preferred = AixCollection.abstractLang();
+    applyAbstractLanguage(details, item, preferred === "en" && pair.en ? "en" : (pair.zh ? "zh" : "en"));
+    bindLangButtons(details);
+    if (details.open) syncAbstractSummary(details);
+  });
+}
+
+function ensureHomeAbstracts() {
+  if (!homeNeedsAbstractHydration()) return Promise.resolve(false);
+  if (state.abstractsPromise) return state.abstractsPromise;
+  state.abstractsPromise = hydrateHomeAbstracts().then((changed) => {
+    refreshRenderedAbstracts();
+    if (state.query.trim()) renderItems();
+    if (!changed && homeNeedsAbstractHydration()) state.abstractsPromise = null;
+    return changed;
+  });
+  return state.abstractsPromise;
+}
+
+function scheduleAbstractHydration() {
+  if (page !== "home" || !homeNeedsAbstractHydration()) return;
+  if (navigator.connection?.saveData) return;
+  const start = () => ensureHomeAbstracts();
+  window.setTimeout(() => {
+    if (window.requestIdleCallback) window.requestIdleCallback(start, { timeout: 1500 });
+    else start();
+  }, 800);
+}
+
 async function loadDigest() {
   const date = requestedDate();
   const payload = page === "home"
     ? await loadHomeDigest(date)
     : await loadJSON(date
       ? `data/channels/${channelId}/archive/${encodeURIComponent(date)}.json`
-      : `data/channels/${channelId}/latest.json`);
+      : `data/channels/${channelId}/latest.json`, { priority: "high" });
   renderPayload(payload);
-  if (await hydrateHomeAbstracts(payload)) {
-    document.querySelectorAll(".paper-card[data-id]").forEach((card) => {
-      mountAbstract(card, findRenderableItem(card.dataset.id));
-    });
-  }
+  scheduleAbstractHydration();
   focusItemFromHash();
 }
 
@@ -1211,6 +1313,7 @@ function bindGlobalShortcuts() {
 function bindEvents() {
   bindDebouncedSearch("search-input", () => {
     state.query = document.getElementById("search-input")?.value || "";
+    if (state.query.trim()) ensureHomeAbstracts();
     renderItems();
   });
   document.getElementById("source-filters")?.addEventListener("click", (event) => {
@@ -1313,9 +1416,6 @@ if (page === "library") {
 } else {
   bindEvents();
   loadDigest().catch(showLoadError);
-  loadManifestAndActivity().catch((error) => {
-    const summary = document.getElementById("activity-summary");
-    if (summary) summary.textContent = `活动数据读取失败：${error.message}`;
-  });
+  loadManifest().catch(() => {});
   loadArchive();
 }

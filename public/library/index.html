@@ -6,9 +6,18 @@
   <meta name="description" content="本机收藏的研究条目，按频道和标签整理，并支持笔记。">
   <meta name="theme-color" content="#122033">
   <title>收藏 · AIX每日精读</title>
-  <script src="../assets/theme.js"></script>
+  <script>
+    try {
+      var pref = localStorage.getItem("aix-daily.theme.v1");
+      var dark = pref === "dark" || (pref !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+      document.documentElement.dataset.theme = dark ? "dark" : "light";
+      document.documentElement.dataset.themePref = pref === "light" || pref === "dark" ? pref : "system";
+      document.documentElement.style.colorScheme = dark ? "dark" : "light";
+    } catch (e) {}
+  </script>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/styles.css">
+  <script src="../assets/theme.js" defer></script>
 </head>
 <body class="library-page" data-page="library" data-root="../">
   <a class="skip-link" href="#library">跳到收藏内容</a>

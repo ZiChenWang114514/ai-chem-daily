@@ -551,7 +551,14 @@ body:not([data-page="home"]) [data-home-only] { display: none !important; }
   border: 1px solid var(--line);
   border-radius: 16px;
   box-shadow: 0 1px 2px rgba(20, 34, 56, 0.03);
+  content-visibility: auto;
+  contain-intrinsic-height: 240px;
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.paper-card:has(.abstract-details[open]),
+.paper-card:has(.note-block:not([hidden])),
+.paper-card.is-target {
+  content-visibility: visible;
 }
 .paper-card:focus-within {
   border-color: var(--card-hover-line);
@@ -864,7 +871,7 @@ body:not([data-page="home"]) [data-home-only] { display: none !important; }
   border: 1px solid var(--line);
   border-radius: 16px;
   content-visibility: auto;
-  contain-intrinsic-size: auto 240px;
+  contain-intrinsic-height: 240px;
 }
 .activity-panel__head {
   display: flex;
