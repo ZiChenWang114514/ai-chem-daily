@@ -39,8 +39,8 @@
     <div class="shell hero__inner">
       <div class="hero__copy">
         <p class="hero__kicker">本机收藏</p>
-        <h1 id="hero-title">按标签整理的阅读清单</h1>
-        <p class="hero__lead">收藏与笔记只存在这台浏览器里，不经过服务器，也不需要登录。换电脑前可先导出备份。</p>
+        <h1 id="hero-title">按频道整理的阅读清单</h1>
+        <p class="hero__lead">收藏按五个频道归位，再按原有标签细分。条目与笔记只存在这台浏览器里，不经过服务器，也不需要登录。换电脑前可先导出备份。</p>
         <p class="hero__meta">
           <span id="library-total">0</span> 篇收藏
           <span class="hero__dot" aria-hidden="true">·</span>
@@ -52,9 +52,15 @@
 
   <main class="shell main-content" id="library">
     <div class="library-layout">
-      <aside class="tag-rail" aria-label="按标签筛选">
-        <h2>标签</h2>
-        <div id="tag-rail" class="tag-rail__list"></div>
+      <aside class="tag-rail" aria-label="按频道和标签筛选">
+        <section>
+          <h2>频道</h2>
+          <div id="channel-rail" class="tag-rail__list"></div>
+        </section>
+        <section>
+          <h2>标签</h2>
+          <div id="tag-rail" class="tag-rail__list"></div>
+        </section>
       </aside>
       <section aria-labelledby="library-title">
         <div class="section-heading">
@@ -84,7 +90,7 @@
           </picture>
           <div>
             <strong id="empty-title">还没有收藏</strong>
-            <p id="empty-text">在日报条目右上角点「收藏」，条目会按原有标签自动归入这里。笔记只保存在本机。</p>
+            <p id="empty-text">在日报条目右上角点「收藏」，条目会按所属频道归入这里，并保留原来的标签。笔记只保存在本机。</p>
           </div>
         </div>
       </section>
@@ -114,13 +120,23 @@
         <div class="paper-card__topline">
           <span class="source-badge"></span>
           <span class="topic-label"></span>
-          <button class="save-button" type="button" aria-pressed="false">收藏</button>
+          <button class="save-button" type="button" aria-pressed="false" aria-label="取消收藏">已收藏</button>
         </div>
         <h3><a class="paper-title" target="_blank" rel="noopener noreferrer"></a></h3>
         <p class="paper-meta"></p>
         <div class="tag-list"></div>
         <p class="summary-zh"></p>
         <p class="why-it-matters"></p>
+        <details class="abstract-details">
+          <summary>查看摘要</summary>
+          <div class="abstract-toolbar">
+            <div class="abstract-lang" role="group" aria-label="摘要语言">
+              <button type="button" class="abstract-lang__btn" data-lang="zh">中文</button>
+              <button type="button" class="abstract-lang__btn" data-lang="en">原文</button>
+            </div>
+          </div>
+          <p class="abstract-text"></p>
+        </details>
         <div class="note-block">
           <label class="note-label">笔记</label>
           <textarea class="note-field" rows="4" placeholder="记下要核对的实验、可复用的方法，或下次精读时要看的部分。"></textarea>
@@ -130,6 +146,7 @@
     </article>
   </template>
 
+  <script src="../assets/collection.js" defer></script>
   <script src="../assets/app.js" defer></script>
 </body>
 </html>

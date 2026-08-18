@@ -7,7 +7,7 @@ import argparse
 from pathlib import Path
 
 from aix_pipeline import CHANNELS, LIMITS, THRESHOLDS, natural_key
-from daily_digest import archive_index_entry, clean_text, load_json, publish_tags, slim_public_item, write_json
+from daily_digest import archive_index_entry, clean_text, load_json, looks_cjk, publish_tags, slim_public_item, write_json
 from publish_daily import SITE_URL, build as build_daily
 
 
@@ -72,12 +72,19 @@ def main() -> int:
             raise ValueError(f"Selected item score is below threshold: {current_id}")
         summary = clean_text(review.get("summary_zh"))
         reason = clean_text(review.get("why_it_matters_zh"))
+        source_abstract = clean_text(item.get("abstract_or_text") or item.get("abstract"))
+        abstract_zh = clean_text(review.get("abstract_zh"))
+        if looks_cjk(source_abstract) and not abstract_zh:
+            abstract_zh = source_abstract
         if len(summary) < 20 or len(reason) < 16:
             raise ValueError(f"Review text is too short: {current_id}")
+        if source_abstract and not abstract_zh:
+            raise ValueError(f"Missing Chinese abstract: {current_id}")
         rank = len(output) + 1
         item.update({
             "summary_zh": summary,
             "why_it_matters_zh": reason,
+            "abstract_zh": abstract_zh,
             "quality_score": min(100, score),
             "category": clean_text(review.get("category")) or item.get("category"),
             "tags": publish_tags(clean_text(review.get("category")) or item.get("category"), review.get("tags", [])),

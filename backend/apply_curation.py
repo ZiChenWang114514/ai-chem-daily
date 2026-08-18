@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 
 from aix_pipeline import LIMITS
-from daily_digest import archive_index_entry, clean_text, load_json, publish_tags, render_email, slim_public_item, upsert_archive_index, write_json
+from daily_digest import archive_index_entry, clean_text, load_json, looks_cjk, publish_tags, render_email, slim_public_item, upsert_archive_index, write_json
 
 
 ALLOWED_CATEGORIES = {"方法与模型", "分子与药物发现", "结构与生物", "材料与催化"}
@@ -53,13 +53,20 @@ def main() -> int:
             raise ValueError(f"Unsupported category for {paper_id}: {category}")
         summary = clean_text(item.get("summary_zh"))
         reason = clean_text(item.get("why_it_matters_zh"))
+        source_abstract = clean_text(paper.get("abstract_or_text") or paper.get("abstract"))
+        abstract_zh = clean_text(item.get("abstract_zh"))
+        if looks_cjk(source_abstract) and not abstract_zh:
+            abstract_zh = source_abstract
         if len(summary) < 25 or len(reason) < 18:
             raise ValueError(f"Curation text is too short for {paper_id}")
+        if source_abstract and not abstract_zh:
+            raise ValueError(f"Missing Chinese abstract for {paper_id}")
         paper["rank"] = rank
         paper["featured"] = rank <= 3
         paper["category"] = category
         paper["summary_zh"] = summary
         paper["why_it_matters_zh"] = reason
+        paper["abstract_zh"] = abstract_zh
         paper["quality_score"] = max(0, min(100, float(item.get("quality_score", paper.get("quality_score", 0)))))
         reviewed_tags = [clean_text(value) for value in (item.get("tags") or []) if clean_text(value)]
         paper["tags"] = publish_tags(category, reviewed_tags)

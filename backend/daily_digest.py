@@ -171,6 +171,17 @@ def clean_text(value: Any) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+CJK_RE = re.compile(r"[\u3400-\u9fff]")
+
+
+def looks_cjk(value: Any) -> bool:
+    text = clean_text(value)
+    if not text:
+        return False
+    marks = len(CJK_RE.findall(text))
+    return marks >= 8 and marks / max(len(text), 1) >= 0.18
+
+
 SITE_NAME = "AIX每日精读"
 SITE_TITLE = "AIX每日精读"
 RELEASE_ABSTRACT_LIMIT = 500
@@ -248,6 +259,8 @@ def is_release_item(item: dict[str, Any]) -> bool:
 
 HOME_ITEM_DROP = {
     "abstract",
+    "abstract_or_text",
+    "abstract_zh",
     "authors",
     "creators",
     "evidence_flags",
@@ -262,6 +275,15 @@ HOME_ITEM_DROP = {
 }
 
 
+def resolved_abstract_zh(item: dict[str, Any], source: str) -> str:
+    text = clean_text(item.get("abstract_zh"))
+    if text:
+        return text
+    if looks_cjk(source):
+        return clean_text(source)
+    return ""
+
+
 def slim_public_item(item: dict[str, Any], *, include_abstract: bool = True, clip_release: bool = False) -> dict[str, Any]:
     drop = {"abstract"} if include_abstract else HOME_ITEM_DROP
     out = {key: value for key, value in item.items() if key not in drop}
@@ -269,11 +291,18 @@ def slim_public_item(item: dict[str, Any], *, include_abstract: bool = True, cli
     out["tags"] = publish_tags(category, out.get("tags") or [])
     if include_abstract:
         text = out.get("abstract_or_text") or item.get("abstract") or ""
+        zh = resolved_abstract_zh(item, text)
         if clip_release and is_release_item(out):
             text = clip_release_text(text)
+            zh = clip_release_text(zh)
         out["abstract_or_text"] = text
+        if zh:
+            out["abstract_zh"] = zh
+        else:
+            out.pop("abstract_zh", None)
     else:
         out.pop("abstract_or_text", None)
+        out.pop("abstract_zh", None)
     return out
 
 

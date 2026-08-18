@@ -67,7 +67,8 @@
         "ggml-org/llama.cpp"
       ],
       "published": "2026-08-15",
-      "author_line": "ggml-org/llama.cpp"
+      "author_line": "ggml-org/llama.cpp",
+      "abstract_zh": "model：添加 Kimi-K3 文本模型（#26185） * model：添加 Kimi-K3 文本模型 混合 KDA（线性）+ MLA（全注意力），与 Kimi-Linear-48B 相同，并额外包含该架构所没有的五项特性：1. 跨层残差注意力（attn_res_block_size）2. 潜在 MoE（路由专家在 n_expert_latent 上运行）3. situ 激活（全面替代 SwiGLU）4. MLA 输出门控（o_proj 前的 sigmoid 门）5. 全秩 KDA 门控（单个 ssm_g，而非 ssm_g_a/ssm_g_b）K3 的 text_config 报告为 KimiLinearForCausa…"
     },
     {
       "id": "github:371942335",
@@ -110,7 +111,8 @@
         "jax-ml/jax"
       ],
       "published": "2026-08-17",
-      "author_line": "jax-ml/jax"
+      "author_line": "jax-ml/jax",
+      "abstract_zh": "* 新功能 * 增加了对尝试反序列化超出向后兼容窗口的旧 JAX exports 的错误检查。若无此检查，过期产物的反序列化可能成功，随后导致难以理解的下游错误。新增配置标志 `--jax_export_deserialize_expired_versions` 以临时绕过该错误检查。参见 https://docs.jax.dev/en/latest/export/export.html#compatibility-guarantees。 * 添加了 `jax.numpy.top_k`，实现 `numpy.top_k`，a…"
     },
     {
       "id": "github:371561378",
@@ -153,7 +155,8 @@
         "ggml-org/llama.cpp"
       ],
       "published": "2026-08-17",
-      "author_line": "ggml-org/llama.cpp"
+      "author_line": "ggml-org/llama.cpp",
+      "abstract_zh": "sycl：修复量化 cpy kernel 启动中的线程/块数量（#27160） 将线程/块数量调整为与量化大小成比例，以减少欠订阅/过订阅。最大性能提升出现在 q4_0 -> f32 路径，在 Arc 70 上吞吐量从 20.21 GB/s 提升至 158.19 GB/s。其余量化类型的性能提升持平。**Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-macos-…"
     },
     {
       "id": "github:370966730",
@@ -195,7 +198,8 @@
         "ggml-org/llama.cpp"
       ],
       "published": "2026-08-15",
-      "author_line": "ggml-org/llama.cpp"
+      "author_line": "ggml-org/llama.cpp",
+      "abstract_zh": "model：添加对 MiniMaxText01ForCausalLM 和 MiniMaxM1ForCausalLM 的支持（#27018） * llama：支持 MiniMax-Text-01 模型 * chore：重命名以匹配其他 MiniMax 模型 * model：添加 logits mask，因为 MiniMax-Text-01 的 embeddings 张量对 tokens >= 200032 具有零值 embeddings，会产生零 logits 并干扰 token 采样过程 * llama：用 hparams.is_recr() 替换硬编码条件 * model：使用 build_rs() 进行循环状态管理 * chore：代码清理 * mod…"
     },
     {
       "id": "github:370667638",
@@ -237,7 +241,8 @@
         "ollama/ollama"
       ],
       "published": "2026-08-14",
-      "author_line": "ollama/ollama"
+      "author_line": "ollama/ollama",
+      "abstract_zh": "## Qwen 3.8 27B 本版本新增对 [Qwen 3.8 27B](https://ollama.com/library/qwen3.8) 的支持。Qwen3.8 在编程、专业工作、研究及长时程智能体任务方面取得了显著提升。``` ollama run qwen3.8:27b ``` 针对 Apple Silicon 设备，Ollama 特别进行了优化，以实现适合重复任务和编程智能体的最大性能与输出质量。``` ollama run qwen3.8:27b-mlx ```"
     },
     {
       "id": "github:371260055",
@@ -279,7 +284,8 @@
         "ggml-org/llama.cpp"
       ],
       "published": "2026-08-16",
-      "author_line": "ggml-org/llama.cpp"
+      "author_line": "ggml-org/llama.cpp",
+      "abstract_zh": "llama：检查 LoRA 张量数据是否在文件边界内（#27056） * llama：检查 LoRA 张量数据是否在文件边界内 * 更新 src/llama-adapter.cpp Co-authored-by: Sigbjørn Skjæret --------- Co-authored-by: Sigbjørn Skjæret **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [ma…"
     },
     {
       "id": "github:371032005",
@@ -321,7 +327,8 @@
         "ggml-org/llama.cpp"
       ],
       "published": "2026-08-15",
-      "author_line": "ggml-org/llama.cpp"
+      "author_line": "ggml-org/llama.cpp",
+      "abstract_zh": "common：将已弃用的 --mmap/--no-mmap 迁移至 --load-mode（#26934） 用统一的 --load-mode 参数替换已弃用的 --mmap、--no-mmap、--mlock 和 --direct-io 标志，覆盖脚本、示例和文档。内部警告信息与环境变量文档已相应更新。Signed-off-by: Fathi Boudra **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10441/llama-b10441-bin-macos-arm64.tar.gz) - macOS Apple Silic…"
     },
     {
       "id": "github:370777838",
@@ -363,7 +370,8 @@
         "ggml-org/llama.cpp"
       ],
       "published": "2026-08-14",
-      "author_line": "ggml-org/llama.cpp"
+      "author_line": "ggml-org/llama.cpp",
+      "abstract_zh": "chat：将 reasoning_effort 传递给模板 * chat：将 reasoning_effort 添加到 common_chat_templates_inputs 存储 OpenAI Chat Completions 的 reasoning_effort 并使其可用于 jinja 模板（在需要时进行模型特定转换）。Assisted-by: llama.cpp:Muse-Glimmer-30B * server：修复从请求体读取 reasoning effort server_chat_convert_responses_to_chatcmpl 已处理将 Responses API 的 reasoning.effort 转换为 reasoning_effort * chat：对外暴露 reasoning effort Assisted-by…"
     }
   ],
   "review": {

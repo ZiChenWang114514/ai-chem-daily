@@ -11,13 +11,16 @@ const state = {
   query: "",
   heatmapSignature: "",
   searchIndex: new WeakMap(),
+  libraryChannel: "all",
   libraryTag: "all",
   libraryQuery: "",
   noteTimers: {},
+  toastTimer: 0,
+  undoSnapshot: null,
 };
 const SITE_NAME = "AIX每日精读";
-const COLLECTION_KEY = "aix-daily.collection.v1";
-const UNTAGGED_LABEL = "未分类";
+const COLLECTION_KEY = AixCollection.KEY;
+const UNTAGGED_LABEL = AixCollection.UNTAGGED;
 const channelNames = {
   aixchem: "AI × Chem",
   aixbio: "AI × Bio",
@@ -133,107 +136,20 @@ function sameText(left, right) {
   return String(left || "").replace(/\s+/g, "") === String(right || "").replace(/\s+/g, "");
 }
 
-function emptyCollection() {
-  return { schema_version: 1, updated_at: "", items: {}, notes: {} };
-}
-
-function readCollection() {
-  try {
-    const value = JSON.parse(localStorage.getItem(COLLECTION_KEY) || "");
-    if (!value || typeof value.items !== "object" || Array.isArray(value.items)) return emptyCollection();
-    if (!value.notes || typeof value.notes !== "object" || Array.isArray(value.notes)) value.notes = {};
-    Object.entries(value.items).forEach(([key, item]) => {
-      if (item?.note && !value.notes[key]) {
-        value.notes[key] = { note: item.note, note_updated_at: item.note_updated_at || "" };
-      }
-    });
-    return value;
-  } catch {
-    return emptyCollection();
-  }
-}
-
-function writeCollection(collection) {
-  try {
-    collection.updated_at = new Date().toISOString();
-    localStorage.setItem(COLLECTION_KEY, JSON.stringify(collection));
-    updateLibraryBadge();
-    return true;
-  } catch {
-    return false;
-  }
-}
-
 function collectionItemKey(item) {
-  return String(item?.id || item?.url || "").trim();
+  return AixCollection.key(item);
 }
 
 function savedRecord(item) {
-  return readCollection().items[collectionItemKey(item)] || null;
+  return AixCollection.record(item);
 }
 
 function recordTags(record) {
-  const tags = [];
-  if (record.category) tags.push(record.category);
-  (record.tags || []).forEach((tag) => {
-    if (tag && !tags.includes(tag)) tags.push(tag);
-  });
-  return tags;
-}
-
-function toSavedRecord(item, existing) {
-  return {
-    id: collectionItemKey(item),
-    title: displayTitle(item),
-    url: item.url || existing?.url || "",
-    source: item.source || existing?.source || "",
-    channel: item.channel || existing?.channel || channelId || "",
-    category: item.category || existing?.category || "",
-    tags: [...new Set((item.tags || existing?.tags || []).filter(Boolean))],
-    author_line: item.author_line || existing?.author_line || "",
-    published: String(item.published_at || item.published || existing?.published || "").slice(0, 10),
-    summary_zh: item.summary_zh || existing?.summary_zh || "",
-    saved_at: existing?.saved_at || new Date().toISOString(),
-    note: existing?.note || "",
-    note_updated_at: existing?.note_updated_at || "",
-  };
-}
-
-function toggleSaved(item) {
-  const key = collectionItemKey(item);
-  if (!key) return false;
-  const collection = readCollection();
-  if (collection.items[key]) {
-    const current = collection.items[key];
-    const noteText = (current.note || collection.notes[key]?.note || "").trim();
-    if (noteText && !window.confirm("这篇有笔记。取消收藏后笔记仍保留在本机，再次收藏时会恢复。确定取消？")) {
-      return true;
-    }
-    if (current.note) {
-      collection.notes[key] = { note: current.note, note_updated_at: current.note_updated_at || "" };
-    }
-    delete collection.items[key];
-    writeCollection(collection);
-    return false;
-  }
-  const kept = collection.notes[key];
-  collection.items[key] = toSavedRecord(item, kept ? { ...item, note: kept.note, note_updated_at: kept.note_updated_at } : null);
-  writeCollection(collection);
-  return true;
-}
-
-function saveNote(id, note) {
-  const collection = readCollection();
-  const current = collection.items[id];
-  if (!current) return false;
-  current.note = note;
-  current.note_updated_at = new Date().toISOString();
-  collection.notes[id] = { note: current.note, note_updated_at: current.note_updated_at };
-  return writeCollection(collection);
+  return AixCollection.tagsOf(record);
 }
 
 function collectionRecords() {
-  return Object.values(readCollection().items).sort((left, right) => String(right.saved_at || "").localeCompare(String(left.saved_at || "")));
+  return AixCollection.records();
 }
 
 function tagCounts(records) {
@@ -249,8 +165,66 @@ function tagCounts(records) {
   return [...counts.entries()].sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0], "zh-CN"));
 }
 
+function showToast(message, action) {
+  let toast = document.getElementById("site-toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "site-toast";
+    toast.className = "site-toast";
+    toast.setAttribute("role", "status");
+    document.body.appendChild(toast);
+  }
+  toast.replaceChildren();
+  const text = document.createElement("span");
+  text.textContent = message;
+  toast.appendChild(text);
+  if (action?.label && action.onClick) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = action.label;
+    button.addEventListener("click", () => {
+      action.onClick();
+      toast.hidden = true;
+    });
+    toast.appendChild(button);
+  }
+  toast.hidden = false;
+  window.clearTimeout(state.toastTimer);
+  state.toastTimer = window.setTimeout(() => {
+    toast.hidden = true;
+    state.undoSnapshot = null;
+  }, 5000);
+}
+
+function toggleSaved(item) {
+  const current = savedRecord(item);
+  if (current) {
+    const removed = AixCollection.remove(item);
+    if (!removed) {
+      showToast("本机存储写入失败，收藏未更新");
+      return true;
+    }
+    state.undoSnapshot = removed;
+    showToast(removed.note ? "已取消收藏，笔记仍留在本机。" : "已取消收藏。", {
+      label: "撤销",
+      onClick: () => {
+        AixCollection.restore(state.undoSnapshot);
+        state.undoSnapshot = null;
+        refreshAfterCollectionChange();
+      },
+    });
+    return false;
+  }
+  if (!AixCollection.save(item)) {
+    showToast("本机存储已满，收藏未写入");
+    return false;
+  }
+  showToast("已加入收藏");
+  return true;
+}
+
 function updateLibraryBadge() {
-  const count = Object.keys(readCollection().items).length;
+  const count = collectionRecords().length;
   document.querySelectorAll("[data-library-count]").forEach((node) => {
     node.hidden = count === 0;
     node.textContent = String(count);
@@ -261,50 +235,34 @@ function setSaveButton(button, saved) {
   if (!button) return;
   button.classList.toggle("is-saved", saved);
   button.setAttribute("aria-pressed", String(saved));
+  button.setAttribute("aria-label", saved ? "取消收藏" : "收藏这篇");
   button.textContent = saved ? "已收藏" : "收藏";
+}
+
+function refreshAfterCollectionChange() {
+  updateLibraryBadge();
+  if (page === "library") {
+    renderLibrary();
+    return;
+  }
+  document.querySelectorAll(".paper-card[data-id]").forEach((card) => {
+    const item = findRenderableItem(card.dataset.id);
+    if (!item) return;
+    const saved = Boolean(savedRecord(item));
+    setSaveButton(card.querySelector(".save-button"), saved);
+    const noteBlock = card.querySelector(".note-block");
+    if (noteBlock) noteBlock.hidden = !saved;
+  });
 }
 
 function scheduleNoteSave(id, note, status) {
   window.clearTimeout(state.noteTimers[id]);
   if (status) status.textContent = "正在保存…";
   state.noteTimers[id] = window.setTimeout(() => {
-    const saved = saveNote(id, note);
+    const saved = AixCollection.saveNote(id, note);
     if (status) status.textContent = saved === false ? "本机存储已满，笔记未写入" : "已保存在本机";
     if (page === "library") renderLibraryHero();
   }, 280);
-}
-
-function exportCollection() {
-  const payload = readCollection();
-  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
-  const link = document.createElement("a");
-  const stamp = dateKey(new Date());
-  link.href = URL.createObjectURL(blob);
-  link.download = `aix-daily-collection-${stamp}.json`;
-  link.click();
-  URL.revokeObjectURL(link.href);
-}
-
-function mergeImportedCollection(payload) {
-  const incoming = payload?.items && !Array.isArray(payload.items) ? payload.items : {};
-  const collection = readCollection();
-  Object.values(incoming).forEach((item) => {
-    const key = collectionItemKey(item);
-    if (!key) return;
-    const previous = collection.items[key];
-    if (!previous) {
-      collection.items[key] = toSavedRecord(item, item);
-      return;
-    }
-    const keepIncomingNote = String(item.note_updated_at || "") >= String(previous.note_updated_at || "");
-    collection.items[key] = {
-      ...toSavedRecord(item, previous),
-      saved_at: previous.saved_at || item.saved_at,
-      note: keepIncomingNote ? String(item.note || "") : previous.note,
-      note_updated_at: keepIncomingNote ? (item.note_updated_at || previous.note_updated_at) : previous.note_updated_at,
-    };
-  });
-  writeCollection(collection);
 }
 
 function renderHeatmap() {
@@ -446,6 +404,7 @@ function paperSearchText(item) {
     displayTitle(item),
     item.summary_zh,
     item.why_it_matters_zh,
+    item.abstract_zh,
     item.abstract_or_text,
     item.abstract,
     item.author_line,
@@ -464,6 +423,53 @@ function visibleItems() {
     (state.source === "all" || item.source === state.source)
     && (!query || paperSearchText(item).includes(query))
   ));
+}
+
+function abstractPair(item) {
+  return {
+    zh: (item.abstract_zh || "").trim(),
+    en: (item.abstract_or_text || item.abstract || "").trim(),
+  };
+}
+
+function applyAbstractLanguage(root, item, lang) {
+  const pair = abstractPair(item);
+  const chosen = lang === "en" ? (pair.en || pair.zh) : (pair.zh || pair.en);
+  const text = root.querySelector(".abstract-text");
+  if (text) text.textContent = chosen || "该来源未提供摘要或正文。";
+  root.querySelectorAll(".abstract-lang__btn").forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.lang === lang);
+  });
+}
+
+function bindAbstract(fragment, item) {
+  const details = fragment.querySelector(".abstract-details");
+  const abstract = fragment.querySelector(".abstract-text");
+  if (!details || !abstract) return;
+  const pair = abstractPair(item);
+  if (!pair.zh && !pair.en) {
+    details.remove();
+    return;
+  }
+  const toolbar = details.querySelector(".abstract-toolbar");
+  if (toolbar && !(pair.zh && pair.en && pair.zh !== pair.en)) {
+    toolbar.remove();
+  }
+  const preferred = AixCollection.abstractLang();
+  const initial = preferred === "en" && pair.en ? "en" : (pair.zh ? "zh" : "en");
+  applyAbstractLanguage(details, item, initial);
+  details.querySelectorAll(".abstract-lang__btn").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const lang = AixCollection.setAbstractLang(button.dataset.lang);
+      document.querySelectorAll(".abstract-details").forEach((node) => {
+        const card = node.closest(".paper-card");
+        const current = findRenderableItem(card?.dataset.id);
+        if (current) applyAbstractLanguage(node, current, lang);
+      });
+    });
+  });
 }
 
 function createItemCard(item, groupName) {
@@ -497,14 +503,7 @@ function createItemCard(item, groupName) {
   } else {
     why.remove();
   }
-  const abstract = fragment.querySelector(".abstract-text");
-  const details = fragment.querySelector(".abstract-details");
-  if (details && abstract) {
-    const abstractText = item.abstract_or_text || item.abstract || "该来源未提供摘要或正文。";
-    details.addEventListener("toggle", () => {
-      if (details.open) abstract.textContent = abstractText;
-    }, { once: true });
-  }
+  bindAbstract(fragment, item);
   const tags = fragment.querySelector(".tag-list");
   [...new Set(item.tags || [])]
     .filter((tag) => tag && tag !== item.category && tag !== item.source)
@@ -744,6 +743,46 @@ async function loadHomeDigest(date) {
   }
 }
 
+async function hydrateHomeAbstracts() {
+  if (page !== "home") return;
+  const items = payloadItems();
+  if (!items.length || items.some((item) => item.abstract_or_text || item.abstract_zh)) return;
+  const date = currentDate();
+  if (!date) return;
+  try {
+    const archive = await loadJSON(`data/daily/archive/${encodeURIComponent(date)}.json`);
+    const byId = new Map();
+    (archive.channels || []).forEach((channel) => {
+      (channel.items || channel.papers || []).forEach((item) => {
+        if (item?.id) byId.set(item.id, item);
+      });
+    });
+    let changed = false;
+    items.forEach((item) => {
+      const full = byId.get(item.id);
+      if (!full) return;
+      if (full.abstract_or_text) {
+        item.abstract_or_text = full.abstract_or_text;
+        changed = true;
+      }
+      if (full.abstract_zh) {
+        item.abstract_zh = full.abstract_zh;
+        changed = true;
+      }
+      const saved = savedRecord(item);
+      if (saved && (item.abstract_or_text || item.abstract_zh)) {
+        AixCollection.save(item, saved);
+      }
+    });
+    if (changed) {
+      state.searchIndex = new WeakMap();
+      renderItems();
+    }
+  } catch {
+    /* keep the slim homepage if the archive is unavailable */
+  }
+}
+
 async function loadDigest() {
   const date = requestedDate();
   const payload = page === "home"
@@ -752,10 +791,11 @@ async function loadDigest() {
       ? `data/channels/${channelId}/archive/${encodeURIComponent(date)}.json`
       : `data/channels/${channelId}/latest.json`);
   renderPayload(payload);
+  hydrateHomeAbstracts();
 }
 
 function findRenderableItem(id) {
-  return payloadItems().find((item) => collectionItemKey(item) === id) || readCollection().items[id] || null;
+  return payloadItems().find((item) => collectionItemKey(item) === id) || AixCollection.read().items[id] || null;
 }
 
 function bindCollectionEvents(rootId) {
@@ -770,7 +810,14 @@ function bindCollectionEvents(rootId) {
     const saved = toggleSaved(item);
     setSaveButton(button, saved);
     const noteBlock = card.querySelector(".note-block");
-    if (noteBlock && page !== "library") noteBlock.hidden = !saved;
+    const noteField = card.querySelector(".note-field");
+    if (noteBlock && page !== "library") {
+      noteBlock.hidden = !saved;
+      if (saved && noteField && !noteField.value) {
+        noteField.value = savedRecord(item)?.note || "";
+        noteField.focus();
+      }
+    }
     if (page === "library") renderLibrary();
   });
   rootNode.addEventListener("input", (event) => {
@@ -786,13 +833,23 @@ function visibleLibraryRecords() {
   const query = state.libraryQuery.trim().toLocaleLowerCase("zh-CN");
   return collectionRecords().filter((record) => {
     const tags = recordTags(record);
+    const channelMatch = state.libraryChannel === "all" || record.channel === state.libraryChannel;
     const tagMatch = state.libraryTag === "all"
       || (state.libraryTag === UNTAGGED_LABEL ? tags.length === 0 : tags.includes(state.libraryTag));
-    if (!tagMatch) return false;
+    if (!channelMatch || !tagMatch) return false;
     if (!query) return true;
-    const haystack = [record.title, record.note, record.source, record.author_line, record.category, ...(record.tags || [])]
-      .join(" ")
-      .toLocaleLowerCase("zh-CN");
+    const haystack = [
+      record.title,
+      record.note,
+      record.summary_zh,
+      record.abstract_zh,
+      record.abstract_or_text,
+      record.source,
+      record.author_line,
+      record.category,
+      record.channel_name,
+      ...(record.tags || []),
+    ].join(" ").toLocaleLowerCase("zh-CN");
     return haystack.includes(query);
   });
 }
@@ -803,17 +860,16 @@ function renderLibraryHero() {
   setText("library-note-count", String(records.filter((record) => (record.note || "").trim()).length));
 }
 
-function renderTagRail(records) {
-  const container = document.getElementById("tag-rail");
+function renderRail(containerId, options, selected, dataKey) {
+  const container = document.getElementById(containerId);
   if (!container) return;
   const fragment = document.createDocumentFragment();
-  const options = [["all", records.length], ...tagCounts(records)];
-  options.forEach(([tag, count]) => {
+  options.forEach(([value, label, count]) => {
     const button = document.createElement("button");
     button.type = "button";
-    button.className = `tag-rail__item${state.libraryTag === tag ? " is-active" : ""}`;
-    button.dataset.tag = tag;
-    button.append(document.createTextNode(tag === "all" ? "全部" : tag));
+    button.className = `tag-rail__item${selected === value ? " is-active" : ""}`;
+    button.dataset[dataKey] = value;
+    button.append(document.createTextNode(label));
     const badge = document.createElement("span");
     badge.textContent = String(count);
     button.appendChild(badge);
@@ -822,14 +878,52 @@ function renderTagRail(records) {
   container.replaceChildren(fragment);
 }
 
+function renderLibraryRails(records) {
+  const channelOptions = [["all", "全部", records.length]];
+  AixCollection.CHANNEL_ORDER.forEach((id) => {
+    const count = records.filter((record) => record.channel === id).length;
+    if (count) channelOptions.push([id, AixCollection.channelName(id), count]);
+  });
+  const extras = [...new Set(records.map((record) => record.channel).filter((id) => id && !AixCollection.CHANNEL_ORDER.includes(id)))];
+  extras.forEach((id) => {
+    const count = records.filter((record) => record.channel === id).length;
+    channelOptions.push([id, AixCollection.channelName(id, id), count]);
+  });
+  renderRail("channel-rail", channelOptions, state.libraryChannel, "channel");
+  const scoped = state.libraryChannel === "all"
+    ? records
+    : records.filter((record) => record.channel === state.libraryChannel);
+  const tagOptions = [["all", "全部", scoped.length], ...tagCounts(scoped).map(([tag, count]) => [tag, tag, count])];
+  renderRail("tag-rail", tagOptions, state.libraryTag, "tag");
+}
+
+function libraryHeading() {
+  if (state.libraryTag !== "all") return state.libraryTag;
+  if (state.libraryChannel !== "all") return AixCollection.channelName(state.libraryChannel);
+  return "全部收藏";
+}
+
 function renderLibrary() {
   const records = collectionRecords();
+  if (state.libraryChannel !== "all" && !records.some((record) => record.channel === state.libraryChannel)) {
+    state.libraryChannel = "all";
+  }
+  if (state.libraryTag !== "all") {
+    const scoped = state.libraryChannel === "all"
+      ? records
+      : records.filter((record) => record.channel === state.libraryChannel);
+    const tags = new Set(scoped.flatMap((record) => {
+      const values = recordTags(record);
+      return values.length ? values : [UNTAGGED_LABEL];
+    }));
+    if (!tags.has(state.libraryTag)) state.libraryTag = "all";
+  }
   const visible = visibleLibraryRecords();
   renderLibraryHero();
-  renderTagRail(records);
+  renderLibraryRails(records);
   updateLibraryBadge();
   const title = document.getElementById("library-title");
-  if (title) title.textContent = state.libraryTag === "all" ? "全部收藏" : state.libraryTag;
+  if (title) title.textContent = libraryHeading();
   setText("library-result-count", records.length ? `显示 ${visible.length} / ${records.length} 篇` : "");
   const empty = document.getElementById("library-empty");
   const groups = document.getElementById("library-groups");
@@ -839,8 +933,8 @@ function renderLibrary() {
       ensureEmptyArt();
       setText("empty-title", records.length ? "没有匹配的收藏" : "还没有收藏");
       setText("empty-text", records.length
-        ? "请更换标签或搜索词。"
-        : "在日报条目右上角点「收藏」，条目会按原有标签自动归入这里。笔记只保存在本机。");
+        ? "请更换频道、标签或搜索词。"
+        : "在日报条目右上角点「收藏」，条目会按所属频道归入这里。笔记只保存在本机。");
     }
   }
   if (!groups) return;
@@ -849,10 +943,15 @@ function renderLibrary() {
     return;
   }
   const grouped = new Map();
-  if (state.libraryTag === "all") {
-    grouped.set("全部收藏", visible);
+  if (state.libraryChannel === "all" && state.libraryTag === "all") {
+    AixCollection.CHANNEL_ORDER.forEach((id) => {
+      const values = visible.filter((record) => record.channel === id);
+      if (values.length) grouped.set(AixCollection.channelName(id), values);
+    });
+    const leftover = visible.filter((record) => !AixCollection.CHANNEL_ORDER.includes(record.channel));
+    if (leftover.length) grouped.set("其他更新", leftover);
   } else {
-    grouped.set(state.libraryTag, visible);
+    grouped.set(libraryHeading(), visible);
   }
   const fragment = document.createDocumentFragment();
   grouped.forEach((values, name) => {
@@ -880,25 +979,33 @@ function bindLibraryPage() {
     window.clearTimeout(searchTimer);
     searchTimer = window.setTimeout(renderLibrary, 120);
   });
+  document.getElementById("channel-rail")?.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-channel]");
+    if (!button) return;
+    state.libraryChannel = button.dataset.channel;
+    state.libraryTag = "all";
+    renderLibrary();
+  });
   document.getElementById("tag-rail")?.addEventListener("click", (event) => {
     const button = event.target.closest("button[data-tag]");
     if (!button) return;
     state.libraryTag = button.dataset.tag;
     renderLibrary();
   });
-  document.getElementById("export-collection")?.addEventListener("click", exportCollection);
+  document.getElementById("export-collection")?.addEventListener("click", AixCollection.exportBackup);
   document.getElementById("import-collection")?.addEventListener("change", async (event) => {
     const file = event.target.files?.[0];
     const status = document.getElementById("library-status");
     if (!file) return;
     try {
       const payload = JSON.parse(await file.text());
-      mergeImportedCollection(payload);
+      if (!AixCollection.mergeBackup(payload)) throw new Error("write failed");
       renderLibrary();
       if (status) {
         status.hidden = false;
         status.textContent = "备份已合并到本机收藏。";
       }
+      showToast("备份已合并到本机收藏");
     } catch {
       if (status) {
         status.hidden = false;
@@ -968,6 +1075,7 @@ function showLoadError(error) {
 
 markHomeOnlySections();
 updateLibraryBadge();
+window.addEventListener("aix-collection-change", updateLibraryBadge);
 if (page === "library") {
   bindLibraryPage();
   renderLibrary();

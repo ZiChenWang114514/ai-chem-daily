@@ -25,6 +25,9 @@ AIX每日精读在 Windows 本地完成每日采集与 Codex 审阅，使用 Git
 - `public/data/channels/<channel>/candidates/latest.json`：各频道候选集
 - `public/data/channels/<channel>/archive/`：各频道日期归档
 - `public/data/daily/latest.json`：五频道综合日报
+- `public/library/`：本机收藏。按频道归位，支持笔记、导出导入；不经过服务器
+
+审阅入选条目时会同时写入 `abstract_zh`。页面上的「查看摘要」可在中文译文和原文之间切换。
 
 任务连接页位于 `public/task/index.html`，线上地址是 <https://zichenwang114514.github.io/ai-x-daily/task/>。
 
@@ -38,8 +41,11 @@ backend/apply_channel_curation.py 导入单频道模型审阅结果
 backend/publish_daily.py       生成综合日报与通知内容
 backend/hub_publish.py         生成公开接口、任务说明和活动数据
 backend/import_intake.py       导入人工提交的结构化资料
+backend/fill_abstract_zh.py    把已准备好的中文摘要写回已发布 JSON
 ops/run_local_pipeline.ps1     本地采集、Codex 复核、测试与发布
 ops/codex/                     学术复核 Prompt 与结构化输出 Schema
+public/library/                本机收藏页，按频道归位，笔记保存在浏览器
+public/assets/collection.js    收藏、笔记与摘要语言偏好
 public/                        GitHub Pages 页面、接口与已发布数据
 .github/workflows/intake.yml   人工资料导入
 .github/workflows/deploy.yml   Pages 部署

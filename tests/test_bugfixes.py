@@ -17,7 +17,7 @@ from aix_pipeline import CHANNELS, LIMITS, Runtime, fetch_openreview, fetch_x, p
 from apply_channel_curation import earlier_channel_keys, main as apply_channel_curation_main  # noqa: E402
 from apply_curation import main as apply_curation_main  # noqa: E402
 from build_channel_pages import render_channel_page  # noqa: E402
-from daily_digest import archive_index_entry, parse_date, publish_tags, slim_public_item, upsert_archive_index  # noqa: E402
+from daily_digest import archive_index_entry, looks_cjk, parse_date, publish_tags, slim_public_item, upsert_archive_index  # noqa: E402
 from hub_publish import build_hub_interfaces  # noqa: E402
 from import_intake import publish_generic_digest, safe_channel, safe_date  # noqa: E402
 from import_legacy import item_id  # noqa: E402
@@ -43,6 +43,7 @@ def sample_item(item_id_value: str, title: str, url: str) -> dict:
         "creators": ["Ada"],
         "language": "en",
         "abstract_or_text": "abstract",
+        "abstract_zh": "这是用于测试的中文摘要译文，长度足够通过校验。",
         "summary_zh": "This Chinese summary is long enough to pass the curation validator.",
         "why_it_matters_zh": "This reason is also long enough to pass.",
         "quality_score": 80,
@@ -125,6 +126,7 @@ class ApplyCurationTests(unittest.TestCase):
                 "category": "方法与模型",
                 "summary_zh": paper["summary_zh"],
                 "why_it_matters_zh": paper["why_it_matters_zh"],
+                "abstract_zh": paper["abstract_zh"],
                 "quality_score": 80,
                 "tags": ["方法与模型"],
             }
@@ -230,12 +232,16 @@ class DailyArchiveContractTests(unittest.TestCase):
             for item in channel.get("items") or []:
                 self.assertNotIn("abstract", item)
                 self.assertNotIn("abstract_or_text", item)
+                self.assertNotIn("abstract_zh", item)
                 self.assertNotIn("papers", channel)
         for channel in today_archive["channels"]:
             for item in channel.get("items") or []:
                 self.assertNotIn("abstract", item)
+                if item.get("abstract_or_text"):
+                    self.assertTrue(item.get("abstract_zh"), item.get("id"))
                 if item.get("item_type") == "software_release":
                     self.assertLessEqual(len(item.get("abstract_or_text") or ""), 520)
+                    self.assertLessEqual(len(item.get("abstract_zh") or ""), 520)
 
 
 class LegacyImportTests(unittest.TestCase):
@@ -304,8 +310,8 @@ class ChannelCurationDedupTests(unittest.TestCase):
                 "date": "2026-08-18",
                 "channel": "aixbio",
                 "selected": [
-                    {"id": "arxiv:shared", "category": "方法与模型", "summary_zh": shared["summary_zh"], "why_it_matters_zh": shared["why_it_matters_zh"], "quality_score": 80, "tags": []},
-                    {"id": "arxiv:bio", "category": "方法与模型", "summary_zh": bio_only["summary_zh"], "why_it_matters_zh": bio_only["why_it_matters_zh"], "quality_score": 80, "tags": []},
+                    {"id": "arxiv:shared", "category": "方法与模型", "summary_zh": shared["summary_zh"], "why_it_matters_zh": shared["why_it_matters_zh"], "abstract_zh": shared["abstract_zh"], "quality_score": 80, "tags": []},
+                    {"id": "arxiv:bio", "category": "方法与模型", "summary_zh": bio_only["summary_zh"], "why_it_matters_zh": bio_only["why_it_matters_zh"], "abstract_zh": bio_only["abstract_zh"], "quality_score": 80, "tags": []},
                 ],
             })
             claimed = earlier_channel_keys(site, "aixbio", "2026-08-18")
@@ -338,6 +344,7 @@ class ChannelCurationDedupTests(unittest.TestCase):
                     "category": "方法与模型",
                     "summary_zh": item["summary_zh"],
                     "why_it_matters_zh": item["why_it_matters_zh"],
+                    "abstract_zh": item["abstract_zh"],
                     "quality_score": 80,
                     "tags": ["方法与模型"],
                 }],
@@ -365,6 +372,7 @@ class ChannelPageTests(unittest.TestCase):
         self.assertIn('href="../../assets/x.css"', page)
         self.assertIn("assets/art/aixmath.webp", page)
         self.assertIn("../../data/channels/aixmath/latest.json", page)
+        self.assertIn("../../assets/collection.js", render_channel_page('<body data-page="home" data-root=""><script src="assets/collection.js"></script>', "aixmath"))
         self.assertIn("../../library/", render_channel_page('<body data-page="home" data-root=""><a href="library/">收藏</a>', "aixmath"))
         self.assertIn('aria-label="AIX每日精读首页"', render_channel_page('<body data-page="home" data-root=""><a href="./" aria-label="AIX每日精读首页">AIX每日精读</a>', "aixmath"))
         with self.assertRaises(ValueError):
@@ -376,19 +384,27 @@ class LibraryPageTests(unittest.TestCase):
         library = (ROOT / "public" / "library" / "index.html").read_text(encoding="utf-8")
         home = (ROOT / "public" / "index.html").read_text(encoding="utf-8")
         script = (ROOT / "public" / "assets" / "app.js").read_text(encoding="utf-8")
+        collection = (ROOT / "public" / "assets" / "collection.js").read_text(encoding="utf-8")
         self.assertIn('data-page="library"', library)
         self.assertIn("本机", library)
         self.assertIn("不需要登录", library)
+        self.assertIn('id="channel-rail"', library)
+        self.assertIn("按频道", library)
         self.assertIn('href="library/"', home)
         self.assertIn("save-button", home)
         self.assertIn("note-field", home)
-        self.assertIn("aix-daily.collection.v1", script)
+        self.assertIn("abstract-lang", home)
+        self.assertIn("assets/collection.js", home)
+        self.assertIn("aix-daily.collection.v1", collection)
+        self.assertIn("CHANNEL_ORDER", collection)
         self.assertIn("UNTAGGED_LABEL", script)
-        self.assertIn("这篇有笔记", script)
+        self.assertIn("已取消收藏，笔记仍留在本机", script)
         self.assertIn("全部收藏", script)
+        self.assertIn("hydrateHomeAbstracts", script)
         self.assertIn("item.summary_zh", script)
         self.assertIn("channel_name", script)
         self.assertNotIn("item.category = channel.name", script)
+        self.assertNotIn("window.confirm", script)
 
 
 class FrontendPerformanceTests(unittest.TestCase):
@@ -435,6 +451,38 @@ class ArchiveIndexContractTests(unittest.TestCase):
 
 
 class PublishTagAndPayloadTests(unittest.TestCase):
+    def test_looks_cjk_requires_enough_han_characters(self):
+        self.assertFalse(looks_cjk("abstract"))
+        self.assertFalse(looks_cjk("This English abstract mentions 模型 once."))
+        self.assertTrue(looks_cjk("这是一段足够长的中文摘要，用于判断文本是否已经是中文。"))
+
+    def test_channel_curation_requires_chinese_abstract(self):
+        shared = sample_item("arxiv:need-zh", "Need zh", "https://arxiv.org/abs/need-zh")
+        with tempfile.TemporaryDirectory() as directory:
+            site = Path(directory)
+            write_json(site / "data" / "channels" / "aixchem" / "latest.json", channel_payload("aixchem", "2026-08-18", []))
+            write_json(site / "data" / "channels" / "aixchem" / "candidates" / "latest.json", {"items": [shared]})
+            curation = site / "chem.json"
+            write_json(curation, {
+                "date": "2026-08-18",
+                "channel": "aixchem",
+                "selected": [{
+                    "id": "arxiv:need-zh",
+                    "category": "方法与模型",
+                    "summary_zh": shared["summary_zh"],
+                    "why_it_matters_zh": shared["why_it_matters_zh"],
+                    "quality_score": 80,
+                    "tags": ["方法与模型"],
+                }],
+            })
+            previous = sys.argv
+            sys.argv = ["apply_channel_curation.py", "aixchem", str(curation), "--site-root", str(site)]
+            try:
+                with self.assertRaises(ValueError):
+                    apply_channel_curation_main()
+            finally:
+                sys.argv = previous
+
     def test_publish_tags_keep_chinese_and_drop_stems(self):
         self.assertEqual(
             publish_tags("分子与药物发现", ["chem", "molecul", "神经母细胞瘤", "ggml-org/llama.cpp", "b10448", "jax-v0.11.1"]),
@@ -447,6 +495,7 @@ class PublishTagAndPayloadTests(unittest.TestCase):
                 "title": "b10448",
                 "abstract": "dup",
                 "abstract_or_text": "a" * 900,
+                "abstract_zh": "这是软件发布说明的中文译文。" + ("甲" * 600),
                 "category": "工具链更新",
                 "tags": ["ggml-org/llama.cpp", "b10448"],
                 "item_type": "software_release",
@@ -457,9 +506,11 @@ class PublishTagAndPayloadTests(unittest.TestCase):
         )
         self.assertNotIn("abstract", item)
         self.assertLessEqual(len(item["abstract_or_text"]), 520)
+        self.assertLessEqual(len(item["abstract_zh"]), 520)
         self.assertEqual(item["tags"], ["工具链更新"])
         home_item = slim_public_item(item, include_abstract=False)
         self.assertNotIn("abstract_or_text", home_item)
+        self.assertNotIn("abstract_zh", home_item)
 
     def test_pipeline_commits_library(self):
         runner = (ROOT / "ops" / "run_local_pipeline.ps1").read_text(encoding="utf-8")
@@ -471,6 +522,8 @@ class PublishTagAndPayloadTests(unittest.TestCase):
         self.assertNotIn("papers", latest)
         for item in latest.get("items") or []:
             self.assertNotIn("abstract", item)
+            if item.get("abstract_or_text"):
+                self.assertTrue(item.get("abstract_zh"), item.get("id"))
 
 
 class HubFreshnessTests(unittest.TestCase):

@@ -12,13 +12,14 @@
       "maxItems": 16,
       "items": {
         "type": "object",
-        "required": ["id", "category", "summary_zh", "why_it_matters_zh", "quality_score", "tags", "evidence_flags", "related_channels"],
+        "required": ["id", "category", "summary_zh", "why_it_matters_zh", "abstract_zh", "quality_score", "tags", "evidence_flags", "related_channels"],
         "additionalProperties": false,
         "properties": {
           "id": {"type": "string"},
           "category": {"type": "string"},
           "summary_zh": {"type": "string"},
           "why_it_matters_zh": {"type": "string"},
+          "abstract_zh": {"type": "string", "minLength": 8, "maxLength": 8000},
           "quality_score": {"type": "number", "minimum": 0, "maximum": 100},
           "tags": {"type": "array", "items": {"type": "string"}, "maxItems": 6},
           "evidence_flags": {"type": "array", "items": {"type": "string"}, "maxItems": 6},

@@ -163,7 +163,7 @@
         <div class="paper-card__topline">
           <span class="source-badge"></span>
           <span class="topic-label"></span>
-          <button class="save-button" type="button" aria-pressed="false">收藏</button>
+          <button class="save-button" type="button" aria-pressed="false" aria-label="收藏这篇">收藏</button>
         </div>
         <h3><a class="paper-title" target="_blank" rel="noopener noreferrer"></a></h3>
         <p class="paper-meta"></p>
@@ -171,7 +171,13 @@
         <p class="summary-zh"></p>
         <p class="why-it-matters"></p>
         <details class="abstract-details">
-          <summary>查看原文摘要</summary>
+          <summary>查看摘要</summary>
+          <div class="abstract-toolbar">
+            <div class="abstract-lang" role="group" aria-label="摘要语言">
+              <button type="button" class="abstract-lang__btn" data-lang="zh">中文</button>
+              <button type="button" class="abstract-lang__btn" data-lang="en">原文</button>
+            </div>
+          </div>
           <p class="abstract-text"></p>
         </details>
         <div class="note-block" hidden>
@@ -183,6 +189,7 @@
     </article>
   </template>
 
+  <script src="../../assets/collection.js" defer></script>
   <script src="../../assets/app.js" defer></script>
 </body>
 </html>

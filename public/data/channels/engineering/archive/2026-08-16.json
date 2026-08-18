@@ -67,7 +67,8 @@
         "ggml-org/llama.cpp"
       ],
       "published": "2026-08-16",
-      "author_line": "ggml-org/llama.cpp"
+      "author_line": "ggml-org/llama.cpp",
+      "abstract_zh": "llama：检查 LoRA 张量数据是否在文件边界内（#27056） * llama：检查 LoRA 张量数据是否在文件边界内 * 更新 src/llama-adapter.cpp Co-authored-by: Sigbjørn Skjæret --------- Co-authored-by: Sigbjørn Skjæret **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [ma…"
     }
   ],
   "review": {

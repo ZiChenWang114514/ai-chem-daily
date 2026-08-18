@@ -25,6 +25,7 @@
           "category",
           "summary_zh",
           "why_it_matters_zh",
+          "abstract_zh",
           "quality_score",
           "tags",
           "evidence_flags"
@@ -37,6 +38,7 @@
           },
           "summary_zh": { "type": "string", "minLength": 25, "maxLength": 320 },
           "why_it_matters_zh": { "type": "string", "minLength": 18, "maxLength": 220 },
+          "abstract_zh": { "type": "string", "minLength": 8, "maxLength": 8000 },
           "quality_score": { "type": "number", "minimum": 0, "maximum": 100 },
           "tags": {
             "type": "array",

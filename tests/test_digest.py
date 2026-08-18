@@ -24,7 +24,7 @@ class DigestOutputTests(unittest.TestCase):
         self.assertLessEqual(len(items), 16)
 
     def test_items_have_reviewable_fields(self):
-        required = ("title", "abstract_or_text", "url", "source", "published", "summary_zh", "why_it_matters_zh")
+        required = ("title", "abstract_or_text", "abstract_zh", "url", "source", "published", "summary_zh", "why_it_matters_zh")
         for paper in self.payload.get("items") or []:
             for key in required:
                 self.assertTrue(paper.get(key), f"missing {key} in {paper.get('id')}")
