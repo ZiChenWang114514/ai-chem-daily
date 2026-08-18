@@ -70,10 +70,7 @@
       "quality_score": 79.0,
       "tags": [
         "分子与药物发现",
-        "neuroscience",
-        "neural",
-        "chem",
-        "molecul"
+        "neuroscience"
       ],
       "evidence_flags": [
         "benchmark",
@@ -103,7 +100,6 @@
         "Coleman, J. A.",
         "Miller, G. W."
       ],
-      "abstract": "Synaptic vesicle glycoprotein 2C (SV2C) is a vesicular protein enriched in dopaminergic neurons of the basal ganglia that modulates dopamine storage and release, and its disruption is implicated in Parkinson's disease (PD). Despite strong genetic and pathological links to PD, there are no selective small-molecule probes for SV2C. Here, we describe an AI-enhanced virtual screening (VS) and experimental campaign that identified multiple novel chemotypes with low-micromolar affinity and marked selectivity for SV2C over SV2A and SV2B, starting from a large, general-purpose commercial library. Because no full-length high-resolution SV2C structure was available, we built a homology model using SV2A cryo-EM structures as templates and characterized its conformational landscape by molecular dynamics (MD) and Gaussian accelerated MD (GaMD) simulations in apo form and in complex with known SV2 ligands (plosaracetam, levetiracetam, brivaracetam, and padsevonil). A convolutional neural network-based scoring function (CNN_VS), retrospectively validated on a manually curated 39-ligand SV2A benchmark (r = 0.72 vs experimental pIC50), was then applied in a multi-stage funnel to 5.96 million Mcule in-stock compounds, which were sequentially filtered to 3.19 million CNS-relevant molecules before docking and rescoring. From 94 VS-prioritized candidates, 71 compounds were experimentally profiled in an orthogonal primary assay cascade combining a thermal shift assay (TSA) with a [3H]-padsevonil scintillation proximity assay (SPA), followed by Ki determination and isoform selectivity profiling for key hits. This campaign yielded 22 active molecules (31% hit rate) that naturally segregated into two categories: compounds that showed primary site competition, and compounds that did not show primary site competition with [3H]-padsevonil. A subset of competitor compounds also showed thermostabilization activity. Among these, compounds 36 and 56 emerged as particularly attractive leads, with Ki values of 24.6 uM and 3.25 uM at SV2C, respectively, and greater than 10-fold selectivity versus SV2A; compound 56 also maintained approximately 12-fold selectivity relative to SV2B. A complementary subset of SV2C-selective hits behaved as padsevonil-site competitors, providing a lead set that will serve as a template for functional characterization and future drug development for conditions that affect dopaminergic signaling. Docking analysis suggests a common binding mode anchored by conserved tryptophan residues in the SV2 pocket, a prediction independently confirmed by an unpublished SV2A-plosaracetam cryo-EM structure showing 0.76 Angstrom binding-site C-alpha RMSD relative to the SV2C model and complete conservation of the tryptophan cage. Subtle differences in the luminal domain and transmembrane region point to the structural determinants underlying isoform selectivity. Collectively, these results demonstrate that an AI-driven VS pipeline, tightly integrated with medium-throughput biophysical assays, can deliver selective SV2C binders from a general chemical library on a structurally under-characterized membrane target. The identified hits provide multiple starting points for hit-to-lead optimization and tools for probing SV2C biology and its role in PD.",
       "published": "2026-08-16",
       "author_line": "Brueckner, A. C., Martin, M. F., Khuttan, S. 等 12 人"
     },
@@ -145,10 +141,7 @@
       "quality_score": 70.0,
       "tags": [
         "材料与催化",
-        "ChemRxiv",
-        "machine learning",
-        "chem",
-        "quantum"
+        "machine learning"
       ],
       "evidence_flags": [],
       "publication_status": "preprint",
@@ -181,7 +174,6 @@
         "Mathew David Halls",
         "Richard A. Friesner"
       ],
-      "abstract": "Lithium-ion battery (LIB) electrolytes have been empirically optimized to maximize battery lifetime and charge rate, but a detailed understanding of how their atomic-scale structure controls their electrochemical behaviors remains lacking. Here, we combine machine-learning-enabled atomistic simulations, nuclear magnetic resonance measurements, electrochemical data, and quantum-chemical calculations to reveal previously unstudied multi-Li+ complexes without anions that are uniquely facile for reduction. This surprising insight explains the success of empirically-chosen ethylene carbonate (EC) containing solvent mixtures and provides a foundation for the rational design of improved electrolytes. Furthermore, our machine learning force field (MLFF) based LIB electrolyte simulations accurately reproduce a wide range of condensed phase experiments, despite being parameterized only to quantum chemical gas phase cluster calculations, and hence provide a compelling demonstration that MLFF models developed from first principles can robustly represent a complex chemical system to atomic resolution.",
       "published": "2026-08-16",
       "author_line": "James M. Stevenson, Garvit Agarwal, Sibali Debnath 等 19 人"
     },
@@ -222,9 +214,7 @@
       "tags": [
         "结构与生物",
         "synthetic biology",
-        "representation learning",
-        "chem",
-        "molecul"
+        "representation learning"
       ],
       "evidence_flags": [],
       "publication_status": "preprint",
@@ -255,7 +245,6 @@
         "Jiang, L.",
         "Liu, X."
       ],
-      "abstract": "Skeletal rearrangement drives the immense structural complexity of terpene, yet predicting it remains a formidable challenge due to sequence-function decoupling in terpene synthases. Here, we established TRACER (terpene rearrangement annotation via co-attentive enzyme-product representation), a multimodal framework mapping the latent associations between sequence-derived enzyme representations and product chemotypes. Retrospective validation proved TRACER's exceptional precision in predicting compound classes and discriminating skeletal rearrangement (SR) from non-skeletal rearrangement (NSR) pathways. TRACER-guided genome mining characterized two bifunctional synthases, FsPS and AcPS, uncovering four unprecedented carbon skeletons. Density functional theory calculations deciphered these cyclization cascades, pinpointing a critical 5/6/11 tricyclic intermediate as the key branching node for scaffold diversification. Mutagenesis and molecular dynamics simulations suggested that E305 in FsPS enables rearrangement by maintaining active-site water exclusion, whereas its alanine mutation causes premature carbocation quenching. Collectively, this work establishes a predictive paradigm for the rational discovery and mechanistic elucidation of complex terpene architectures.",
       "published": "2026-08-17",
       "author_line": "Xing, C., Lv, K., Zhang, W. 等 17 人"
     },
@@ -288,9 +277,7 @@
       "tags": [
         "方法与模型",
         "bioinformatics",
-        "language model",
-        "transformer",
-        "molecul"
+        "language model"
       ],
       "evidence_flags": [
         "benchmark",
@@ -315,7 +302,6 @@
         "Cijsouw, T.",
         "Payne, J. L."
       ],
-      "abstract": "Codon optimization uses synonymous sequence changes to improve the expression and therapeutic performance of nucleic acid-based medicines. Masked language models (MLMs) have recently been proposed as alternatives to traditional, frequency-based codon optimization approaches, yet whether they offer a meaningful advantage over such simpler methods remains unclear. Here we benchmark three prominent MLMs --- CaLM, EnCodon and CodonTransformer --- across backtranslation fidelity, sequence generation and nine molecular phenotype prediction tasks, and experimentally evaluate model-designed sequences using a secreted embryonic alkaline phosphatase (SEAP) reporter. The models differed markedly in amino-acid fidelity and generated distinct synonymous sequence variants. However, no single model performed best across all benchmark tasks and simple sequence features remained competitive in several settings. Our interpretability analysis revealed that the models integrate a large window of codon context for making predictions, as opposed to frequency-based approaches. Our in vitro data showed that MLM-designed variants outperformed conventional and commercial vendor-derived sequences in both transient and stably integrated expression, supporting the models' ability to capture translational context beyond codon frequency. Together, our results establish MLMs as effective and complementary tools for codon optimization and suggest that sampling across multiple models may improve the likelihood of identifying high-performing therapeutic sequences.",
       "published": "2026-08-16",
       "author_line": "Toneyan, S., Scholz, K., De Donno, C. 等 7 人"
     },
@@ -349,10 +335,7 @@
       "tags": [
         "方法与模型",
         "bioinformatics",
-        "deep learning",
-        "diffusion",
-        "molecul",
-        "drug"
+        "deep learning"
       ],
       "evidence_flags": [],
       "publication_status": "preprint",
@@ -374,7 +357,6 @@
         "Liu, Z.",
         "Li, Y."
       ],
-      "abstract": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
       "published": "2026-08-15",
       "author_line": "Feng, B., Zhang, J., Zhang, X. 等 8 人"
     },
@@ -413,9 +395,7 @@
         "方法与模型",
         "microbiology",
         "foundation model",
-        "language model",
-        "protein",
-        "synth"
+        "language model"
       ],
       "evidence_flags": [
         "experimental"
@@ -443,7 +423,6 @@
         "Weimann, A.",
         "Floto, R. A."
       ],
-      "abstract": "Bacteria have evolved a vast diversity of functions and behaviours that are currently incompletely understood and poorly predicted from DNA sequence alone. To understand the syntax of bacterial evolution and discover genome-to-phenotype relationships, we curated over 1.3 million genomes spanning bacterial phylogenetic space, represented each as an ordered sequence of proteins, and used these sequences to train a transformer-based, contextualised protein language model, Bacformer. By pretraining on genome-wide evolutionary patterns, Bacformer captures the compositional and positional relationships of proteins and thereby provides a whole-genome framework for linking genomic organisation and content to measurable bacterial traits. We demonstrate the ability of Bacformer to accurately predict protein-protein interactions; uncover operon structure, which we validated experimentally; infer important phenotypic traits, including antimicrobial resistance, while revealing likely causal genes; and design template synthetic proteomes with desirable properties. Thus, Bacformer establishes a genomic foundation model that reveals the evolutionary rules governing bacterial gene organisation, function, and phenotype, opening a route to systematic whole-genome engineering.",
       "published": "2026-08-17",
       "author_line": "Wiatrak, M., Abelson, D. C., Mikhaylenko, R. 等 12 人"
     },
@@ -471,10 +450,7 @@
       "tags": [
         "分子与药物发现",
         "bioinformatics",
-        "language model",
-        "neural",
-        "chem",
-        "drug"
+        "language model"
       ],
       "evidence_flags": [
         "experimental"
@@ -494,7 +470,6 @@
         "Sim, J.",
         "Lee, J."
       ],
-      "abstract": "Motivation: Ligand binding-site similarity search is a crucial step in drug discovery that reduces the conformational search space for docking and other downstream tasks by comparing a target protein against experimentally identified binding sites. Existing methods rely on either direct structural alignment or lossy compression of structural information, producing a trade-off between scalability and precision. Results: We propose LEN-Seek, a ligand binding-site search method based on a graph neural network (GNN)-driven variational autoencoder (VAE) that encodes the 3D structural and physicochemical context of a binding site into a probabilistic latent space, enabling similarity search within a low-dimensional vector space. A binding site is modeled as a graph of amino acid residues, with node features adopted from the protein language model, Ankh, and edges encoded as SE(3)-invariant (roto-translational invariant) geometric relationships, thereby avoiding expensive data augmentation or SE(3)-equivariant models. Compared to ProBiS, the purely geometric graph-clique based method, LEN-Seek successfully retrieves a substantial portion of similar binding sites with a roughly 3,400-fold lower per-comparison cost, demonstrating its potential as a scalable approach to template-based ligand binding-site search in large-scale protein structure databases.",
       "published": "2026-08-15",
       "author_line": "Yeo, K., Kim, D., Sim, J. 等 4 人"
     },
@@ -520,10 +495,7 @@
       "quality_score": 73.0,
       "tags": [
         "方法与模型",
-        "ChemRxiv",
-        "language model",
-        "llm",
-        "chem"
+        "language model"
       ],
       "evidence_flags": [
         "benchmark"
@@ -542,7 +514,6 @@
         "Luise F. Kaven",
         "Philippe Schwaller"
       ],
-      "abstract": "Modern manufacturing in chemical and pharmaceutical industries increasingly depends on real-time analytical insight to maintain quality, safety, and flexibility. Yet, turning process measurements into actionable analyses still depends on scarce chemometric expertise and manual workflows. Herein, we adapt agentic AI to the process analytical technology (PAT) domain by developing PAT agents that combine large language models (LLMs) with validated open-source and commercial chemometric software, including RamanSPy, SpectroChemPy and PEAXACT, under a multi-agent orchestrator. We benchmark the agents on nine real-world Raman data-analytics tasks of varying complexity, across three user personas, and several LLM backbones. The PAT agents with frontier LLMs solve analytical tasks at 93–96% pass rate, while numerical claims are grounded in actual tool outputs, and are thus physically consistent and reliable. The agents translate individual user requests into adaptive analytical workflows, halt and request clarification on inconsistent inputs, and remain reviewable through structured logs of every tool call and state transition. These results establish PAT agents as transparent digital coworkers that expand access to advanced process analytics and support more adaptive, data-rich manufacturing, while expert chemometric oversight remains critical for industrial deployment.",
       "published": "2026-08-17",
       "author_line": "Jan G. Rittig, Luise F. Kaven, Philippe Schwaller"
     },
@@ -570,10 +541,7 @@
       "quality_score": 75.0,
       "tags": [
         "分子与药物发现",
-        "bioinformatics",
-        "agent",
-        "chem",
-        "drug"
+        "bioinformatics"
       ],
       "evidence_flags": [
         "benchmark",
@@ -595,7 +563,6 @@
         "Wang, J.",
         "Wan, S."
       ],
-      "abstract": "Antimicrobial resistance reduces the effectiveness of conventional antibiotics and has become a major global health threat, highlighting the need for new anti-infective agents. Antimicrobial peptides (AMPs), a diverse class of innate immune effectors with broad-spectrum antimicrobial activity, are promising candidates for combating drug-resistant infections. Identifying AMPs by wet-lab experiments, however, remains costly and time-consuming, creating a strong demand for computational identification methods. Our recently developed method, SAMP, captures region-specific residue distributions based on proportionalized split amino acid composition. However, SAMP might ignore key biochemical information and sequence order information. Here we present SAMP V2, a stacking ensemble learning framework based on biochemical and sequence-order information augmented split amino acid composition (BIA-SAAC), which extends SAMP by integrating pseudo-amino acid composition features with biochemical and sequence-order information into split peptide regions. Specifically, each peptide is divided into N-terminal, middle, and C-terminal regions, and pseudo amino acid composition is calculated within each region. Benchmarking tests on six independent test datasets, SAMP V2 outperformed multiple state-of-the-art models, including AMPpred-MFA and iAMP-Attenpred, in terms of accuracy, MCC, G-measure and F1-score. Given its high and robust performance, SAMP V2 could significantly accelerate the discovery of next-generation antimicrobial therapeutics for addressing the global threat of multidrug-resistant pathogens.",
       "published": "2026-08-15",
       "author_line": "Sun, M., Wang, J., Wan, S."
     },
@@ -619,10 +586,7 @@
       "quality_score": 82.0,
       "tags": [
         "分子与药物发现",
-        "ChemRxiv",
-        "machine learning",
-        "chem",
-        "molecul"
+        "machine learning"
       ],
       "evidence_flags": [
         "performance"
@@ -639,615 +603,6 @@
       "authors": [
         "Chengze Yang"
       ],
-      "abstract": "The accurate calculation of Gibbs free energy is a cornerstone of modern computational chemistry, essential for predicting the spontaneity of chemical reactions and the stability of molecular systems. Solvation free energy change is a fundamental thermodynamic quantity that describes the free energy change associated with transferring a solute from the gas phase into a solvent. It is particularly useful for estimating reaction rates and pathways of organic reactions, most of which occur in the liquid phase, and has important applications in organic synthesis, biochemistry, and drug discovery. 1 Central and persistent challenges are the choice of implicit and explicit models, delicate balance between achieving high accuracy in quantum mechanical descriptions of electronic structure and performing the extensive configurational sampling required to capture entropic effects, continual evolving of foundational statistical mechanics methods such as Free Energy Perturbation (FEP) and Thermodynamic Integration (TI) to more sophisticated multiscale and hybrid approaches for higher computational efficiency. 2,3,4 This report provides an overview of the theoretical frameworks, implementations, and predictive accuracy of commonly used methods for calculating solvation free energy , assessing classical alchemical methods, quantum chemistry based methods, and hybrid QM/MM approaches, while also addressing practical considerations. Finally, we examine the potential transformative role of emerging methods such as machine learning, which are poised to accelerate these calculations, making rigorous, large-scale free energy simulations feasible and better balancing the cost-accuracy trade-off that has long constrained the field. 5,6",
-      "published": "2026-08-16",
-      "author_line": "Chengze Yang"
-    }
-  ],
-  "papers": [
-    {
-      "id": "biorxiv:10.64898/2026.08.11.744237",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixbio"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Discovery of Selective Small-Molecule Ligands of SV2C by AI-Enhanced Virtual Screening and Experimental Validation",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.11.744237",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-16",
-      "creators": [
-        "Brueckner, A. C.",
-        "Martin, M. F.",
-        "Khuttan, S.",
-        "Shields, B.",
-        "Mittal, A.",
-        "Schreiber, J. A.",
-        "Salomon-Ferrer, R.",
-        "Bortolato, A.",
-        "Salahpour, A.",
-        "Bucher, M. L.",
-        "Coleman, J. A.",
-        "Miller, G. W."
-      ],
-      "language": "en",
-      "abstract_or_text": "Synaptic vesicle glycoprotein 2C (SV2C) is a vesicular protein enriched in dopaminergic neurons of the basal ganglia that modulates dopamine storage and release, and its disruption is implicated in Parkinson's disease (PD). Despite strong genetic and pathological links to PD, there are no selective small-molecule probes for SV2C. Here, we describe an AI-enhanced virtual screening (VS) and experimental campaign that identified multiple novel chemotypes with low-micromolar affinity and marked selectivity for SV2C over SV2A and SV2B, starting from a large, general-purpose commercial library. Because no full-length high-resolution SV2C structure was available, we built a homology model using SV2A cryo-EM structures as templates and characterized its conformational landscape by molecular dynamics (MD) and Gaussian accelerated MD (GaMD) simulations in apo form and in complex with known SV2 ligands (plosaracetam, levetiracetam, brivaracetam, and padsevonil). A convolutional neural network-based scoring function (CNN_VS), retrospectively validated on a manually curated 39-ligand SV2A benchmark (r = 0.72 vs experimental pIC50), was then applied in a multi-stage funnel to 5.96 million Mcule in-stock compounds, which were sequentially filtered to 3.19 million CNS-relevant molecules before docking and rescoring. From 94 VS-prioritized candidates, 71 compounds were experimentally profiled in an orthogonal primary assay cascade combining a thermal shift assay (TSA) with a [3H]-padsevonil scintillation proximity assay (SPA), followed by Ki determination and isoform selectivity profiling for key hits. This campaign yielded 22 active molecules (31% hit rate) that naturally segregated into two categories: compounds that showed primary site competition, and compounds that did not show primary site competition with [3H]-padsevonil. A subset of competitor compounds also showed thermostabilization activity. Among these, compounds 36 and 56 emerged as particularly attractive leads, with Ki values of 24.6 uM and 3.25 uM at SV2C, respectively, and greater than 10-fold selectivity versus SV2A; compound 56 also maintained approximately 12-fold selectivity relative to SV2B. A complementary subset of SV2C-selective hits behaved as padsevonil-site competitors, providing a lead set that will serve as a template for functional characterization and future drug development for conditions that affect dopaminergic signaling. Docking analysis suggests a common binding mode anchored by conserved tryptophan residues in the SV2 pocket, a prediction independently confirmed by an unpublished SV2A-plosaracetam cryo-EM structure showing 0.76 Angstrom binding-site C-alpha RMSD relative to the SV2C model and complete conservation of the tryptophan cage. Subtle differences in the luminal domain and transmembrane region point to the structural determinants underlying isoform selectivity. Collectively, these results demonstrate that an AI-driven VS pipeline, tightly integrated with medium-throughput biophysical assays, can deliver selective SV2C binders from a general chemical library on a structurally under-characterized membrane target. The identified hits provide multiple starting points for hit-to-lead optimization and tools for probing SV2C biology and its role in PD.",
-      "summary_zh": "研究以SV2A冷冻电镜结构为模板构建SV2C同源模型，结合MD、GaMD、卷积神经网络评分和虚拟筛选，从596万化合物中筛得候选，并对71个化合物进行热稳定性、放射性配体竞争、Ki和亚型选择性实验。共发现22个活性分子，其中化合物56对SV2C的Ki为3.25 μM，且相对SV2A、SV2B均表现出十倍以上选择性。",
-      "why_it_matters_zh": "这是AI筛选与正交生物物理实验紧密结合的膜蛋白先导发现案例，为结构信息有限靶点提供了可检验的发现路线。当前命中物仍以低微摩尔活性为主，结合模式依赖同源模型，后续仍需功能实验、结构验证和优化研究。",
-      "quality_score": 79.0,
-      "tags": [
-        "分子与药物发现",
-        "neuroscience",
-        "neural",
-        "chem",
-        "molecul"
-      ],
-      "evidence_flags": [
-        "benchmark",
-        "experimental",
-        "release"
-      ],
-      "publication_status": "preprint",
-      "rank": 1,
-      "featured": true,
-      "category": "分子与药物发现",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.11.744237",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Brueckner, A. C.",
-        "Martin, M. F.",
-        "Khuttan, S.",
-        "Shields, B.",
-        "Mittal, A.",
-        "Schreiber, J. A.",
-        "Salomon-Ferrer, R.",
-        "Bortolato, A.",
-        "Salahpour, A.",
-        "Bucher, M. L.",
-        "Coleman, J. A.",
-        "Miller, G. W."
-      ],
-      "abstract": "Synaptic vesicle glycoprotein 2C (SV2C) is a vesicular protein enriched in dopaminergic neurons of the basal ganglia that modulates dopamine storage and release, and its disruption is implicated in Parkinson's disease (PD). Despite strong genetic and pathological links to PD, there are no selective small-molecule probes for SV2C. Here, we describe an AI-enhanced virtual screening (VS) and experimental campaign that identified multiple novel chemotypes with low-micromolar affinity and marked selectivity for SV2C over SV2A and SV2B, starting from a large, general-purpose commercial library. Because no full-length high-resolution SV2C structure was available, we built a homology model using SV2A cryo-EM structures as templates and characterized its conformational landscape by molecular dynamics (MD) and Gaussian accelerated MD (GaMD) simulations in apo form and in complex with known SV2 ligands (plosaracetam, levetiracetam, brivaracetam, and padsevonil). A convolutional neural network-based scoring function (CNN_VS), retrospectively validated on a manually curated 39-ligand SV2A benchmark (r = 0.72 vs experimental pIC50), was then applied in a multi-stage funnel to 5.96 million Mcule in-stock compounds, which were sequentially filtered to 3.19 million CNS-relevant molecules before docking and rescoring. From 94 VS-prioritized candidates, 71 compounds were experimentally profiled in an orthogonal primary assay cascade combining a thermal shift assay (TSA) with a [3H]-padsevonil scintillation proximity assay (SPA), followed by Ki determination and isoform selectivity profiling for key hits. This campaign yielded 22 active molecules (31% hit rate) that naturally segregated into two categories: compounds that showed primary site competition, and compounds that did not show primary site competition with [3H]-padsevonil. A subset of competitor compounds also showed thermostabilization activity. Among these, compounds 36 and 56 emerged as particularly attractive leads, with Ki values of 24.6 uM and 3.25 uM at SV2C, respectively, and greater than 10-fold selectivity versus SV2A; compound 56 also maintained approximately 12-fold selectivity relative to SV2B. A complementary subset of SV2C-selective hits behaved as padsevonil-site competitors, providing a lead set that will serve as a template for functional characterization and future drug development for conditions that affect dopaminergic signaling. Docking analysis suggests a common binding mode anchored by conserved tryptophan residues in the SV2 pocket, a prediction independently confirmed by an unpublished SV2A-plosaracetam cryo-EM structure showing 0.76 Angstrom binding-site C-alpha RMSD relative to the SV2C model and complete conservation of the tryptophan cage. Subtle differences in the luminal domain and transmembrane region point to the structural determinants underlying isoform selectivity. Collectively, these results demonstrate that an AI-driven VS pipeline, tightly integrated with medium-throughput biophysical assays, can deliver selective SV2C binders from a general chemical library on a structurally under-characterized membrane target. The identified hits provide multiple starting points for hit-to-lead optimization and tools for probing SV2C biology and its role in PD.",
-      "published": "2026-08-16",
-      "author_line": "Brueckner, A. C., Martin, M. F., Khuttan, S. 等 12 人"
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv-2025-ndqzk/v4",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "ChemRxiv",
-      "title": "Evidence for significant multi-Li+ clustering in common lithium-ion battery electrolytes",
-      "url": "https://doi.org/10.26434/chemrxiv-2025-ndqzk/v4",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "James M. Stevenson",
-        "Garvit Agarwal",
-        "Sibali Debnath",
-        "Zachary K. Goldsmith",
-        "Monosij Mondal",
-        "Asya Svirinovsky-Arbeli",
-        "Inwon Yeu",
-        "Amy S. Metlay",
-        "Yongbeom Kwon",
-        "Lakshmi Bhai",
-        "Rishabh D. Guha",
-        "Eric G. Keeler",
-        "John L. Weber",
-        "Daniel Steingart",
-        "Lauren Marbella",
-        "Alexander Urban",
-        "Leif D. Jacobson",
-        "Mathew David Halls",
-        "Richard A. Friesner"
-      ],
-      "language": "en",
-      "abstract_or_text": "Lithium-ion battery (LIB) electrolytes have been empirically optimized to maximize battery lifetime and charge rate, but a detailed understanding of how their atomic-scale structure controls their electrochemical behaviors remains lacking. Here, we combine machine-learning-enabled atomistic simulations, nuclear magnetic resonance measurements, electrochemical data, and quantum-chemical calculations to reveal previously unstudied multi-Li+ complexes without anions that are uniquely facile for reduction. This surprising insight explains the success of empirically-chosen ethylene carbonate (EC) containing solvent mixtures and provides a foundation for the rational design of improved electrolytes. Furthermore, our machine learning force field (MLFF) based LIB electrolyte simulations accurately reproduce a wide range of condensed phase experiments, despite being parameterized only to quantum chemical gas phase cluster calculations, and hence provide a compelling demonstration that MLFF models developed from first principles can robustly represent a complex chemical system to atomic resolution.",
-      "summary_zh": "研究将机器学习原子级模拟、核磁共振、电化学测量和量子化学计算结合起来，提出常见锂离子电池电解液中存在无阴离子参与的多Li+团簇，并认为这类易被还原的结构有助于解释含碳酸乙烯酯混合溶剂的经验优势。其机器学习力场仅由气相团簇量子化学数据参数化，却能再现多种凝聚相实验现象。",
-      "why_it_matters_zh": "工作把数据驱动势能面与谱学、电化学证据并置，直接服务于电解液分子设计，也展示了第一性原理机器学习力场在复杂液相体系中的潜力。多Li+团簇与实际电池寿命和倍率性能之间的因果联系，以及结论对配方范围的适用性，仍需更广泛验证。",
-      "quality_score": 70.0,
-      "tags": [
-        "材料与催化",
-        "ChemRxiv",
-        "machine learning",
-        "chem",
-        "quantum"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 2,
-      "featured": true,
-      "category": "材料与催化",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.26434/chemrxiv-2025-ndqzk/v4",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "James M. Stevenson",
-        "Garvit Agarwal",
-        "Sibali Debnath",
-        "Zachary K. Goldsmith",
-        "Monosij Mondal",
-        "Asya Svirinovsky-Arbeli",
-        "Inwon Yeu",
-        "Amy S. Metlay",
-        "Yongbeom Kwon",
-        "Lakshmi Bhai",
-        "Rishabh D. Guha",
-        "Eric G. Keeler",
-        "John L. Weber",
-        "Daniel Steingart",
-        "Lauren Marbella",
-        "Alexander Urban",
-        "Leif D. Jacobson",
-        "Mathew David Halls",
-        "Richard A. Friesner"
-      ],
-      "abstract": "Lithium-ion battery (LIB) electrolytes have been empirically optimized to maximize battery lifetime and charge rate, but a detailed understanding of how their atomic-scale structure controls their electrochemical behaviors remains lacking. Here, we combine machine-learning-enabled atomistic simulations, nuclear magnetic resonance measurements, electrochemical data, and quantum-chemical calculations to reveal previously unstudied multi-Li+ complexes without anions that are uniquely facile for reduction. This surprising insight explains the success of empirically-chosen ethylene carbonate (EC) containing solvent mixtures and provides a foundation for the rational design of improved electrolytes. Furthermore, our machine learning force field (MLFF) based LIB electrolyte simulations accurately reproduce a wide range of condensed phase experiments, despite being parameterized only to quantum chemical gas phase cluster calculations, and hence provide a compelling demonstration that MLFF models developed from first principles can robustly represent a complex chemical system to atomic resolution.",
-      "published": "2026-08-16",
-      "author_line": "James M. Stevenson, Garvit Agarwal, Sibali Debnath 等 19 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.16.745124",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "TRACER navigates rearrangement-driven sesterterpene chemical space via multimodal enzyme-product representation learning",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.16.745124",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Xing, C.",
-        "Lv, K.",
-        "Zhang, W.",
-        "Chen, Y.",
-        "Lan, K.",
-        "Zhu, G.",
-        "Zhu, B.",
-        "Shen, S.-M.",
-        "Zhang, X.",
-        "Gu, Y.",
-        "Guo, Y.-W.",
-        "Oikawa, H.",
-        "Hsiang, T.",
-        "Zhang, L.",
-        "Li, Y.",
-        "Jiang, L.",
-        "Liu, X."
-      ],
-      "language": "en",
-      "abstract_or_text": "Skeletal rearrangement drives the immense structural complexity of terpene, yet predicting it remains a formidable challenge due to sequence-function decoupling in terpene synthases. Here, we established TRACER (terpene rearrangement annotation via co-attentive enzyme-product representation), a multimodal framework mapping the latent associations between sequence-derived enzyme representations and product chemotypes. Retrospective validation proved TRACER's exceptional precision in predicting compound classes and discriminating skeletal rearrangement (SR) from non-skeletal rearrangement (NSR) pathways. TRACER-guided genome mining characterized two bifunctional synthases, FsPS and AcPS, uncovering four unprecedented carbon skeletons. Density functional theory calculations deciphered these cyclization cascades, pinpointing a critical 5/6/11 tricyclic intermediate as the key branching node for scaffold diversification. Mutagenesis and molecular dynamics simulations suggested that E305 in FsPS enables rearrangement by maintaining active-site water exclusion, whereas its alanine mutation causes premature carbocation quenching. Collectively, this work establishes a predictive paradigm for the rational discovery and mechanistic elucidation of complex terpene architectures.",
-      "summary_zh": "TRACER将酶序列表征与萜类产物化学型共同学习，用于预测倍半萜合酶的骨架重排。模型指导基因组挖掘发现两种双功能合酶及四种此前未报道的碳骨架，并以密度泛函计算、定点突变和分子动力学分析环化级联及关键位点E305的作用。",
-      "why_it_matters_zh": "它把表征学习用于天然产物骨架发现，并由新产物和机制实验形成较强支撑，可加速复杂萜类化学空间的探索。现有结论聚焦倍半萜体系，模型向其他萜类家族和更大序列空间推广时的性能仍待检验。",
-      "quality_score": 71.0,
-      "tags": [
-        "结构与生物",
-        "synthetic biology",
-        "representation learning",
-        "chem",
-        "molecul"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 3,
-      "featured": true,
-      "category": "结构与生物",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.16.745124",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Xing, C.",
-        "Lv, K.",
-        "Zhang, W.",
-        "Chen, Y.",
-        "Lan, K.",
-        "Zhu, G.",
-        "Zhu, B.",
-        "Shen, S.-M.",
-        "Zhang, X.",
-        "Gu, Y.",
-        "Guo, Y.-W.",
-        "Oikawa, H.",
-        "Hsiang, T.",
-        "Zhang, L.",
-        "Li, Y.",
-        "Jiang, L.",
-        "Liu, X."
-      ],
-      "abstract": "Skeletal rearrangement drives the immense structural complexity of terpene, yet predicting it remains a formidable challenge due to sequence-function decoupling in terpene synthases. Here, we established TRACER (terpene rearrangement annotation via co-attentive enzyme-product representation), a multimodal framework mapping the latent associations between sequence-derived enzyme representations and product chemotypes. Retrospective validation proved TRACER's exceptional precision in predicting compound classes and discriminating skeletal rearrangement (SR) from non-skeletal rearrangement (NSR) pathways. TRACER-guided genome mining characterized two bifunctional synthases, FsPS and AcPS, uncovering four unprecedented carbon skeletons. Density functional theory calculations deciphered these cyclization cascades, pinpointing a critical 5/6/11 tricyclic intermediate as the key branching node for scaffold diversification. Mutagenesis and molecular dynamics simulations suggested that E305 in FsPS enables rearrangement by maintaining active-site water exclusion, whereas its alanine mutation causes premature carbocation quenching. Collectively, this work establishes a predictive paradigm for the rational discovery and mechanistic elucidation of complex terpene architectures.",
-      "published": "2026-08-17",
-      "author_line": "Xing, C., Lv, K., Zhang, W. 等 17 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.11.744178",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixbio"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Assessing Codon Language Models for Context-Aware Codon Optimization in Nucleic Acid-Based Medicines",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.11.744178",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-16",
-      "creators": [
-        "Toneyan, S.",
-        "Scholz, K.",
-        "De Donno, C.",
-        "Noack, F.",
-        "Auslaender, S.",
-        "Cijsouw, T.",
-        "Payne, J. L."
-      ],
-      "language": "en",
-      "abstract_or_text": "Codon optimization uses synonymous sequence changes to improve the expression and therapeutic performance of nucleic acid-based medicines. Masked language models (MLMs) have recently been proposed as alternatives to traditional, frequency-based codon optimization approaches, yet whether they offer a meaningful advantage over such simpler methods remains unclear. Here we benchmark three prominent MLMs --- CaLM, EnCodon and CodonTransformer --- across backtranslation fidelity, sequence generation and nine molecular phenotype prediction tasks, and experimentally evaluate model-designed sequences using a secreted embryonic alkaline phosphatase (SEAP) reporter. The models differed markedly in amino-acid fidelity and generated distinct synonymous sequence variants. However, no single model performed best across all benchmark tasks and simple sequence features remained competitive in several settings. Our interpretability analysis revealed that the models integrate a large window of codon context for making predictions, as opposed to frequency-based approaches. Our in vitro data showed that MLM-designed variants outperformed conventional and commercial vendor-derived sequences in both transient and stably integrated expression, supporting the models' ability to capture translational context beyond codon frequency. Together, our results establish MLMs as effective and complementary tools for codon optimization and suggest that sampling across multiple models may improve the likelihood of identifying high-performing therapeutic sequences.",
-      "summary_zh": "研究系统比较CaLM、EnCodon和CodonTransformer三种密码子语言模型在回译、序列生成和九类分子表型预测任务上的表现，并用SEAP报告基因进行体外表达验证。模型设计的同义序列在瞬时表达和稳定整合条件下均优于传统方法及商业供应商序列。",
-      "why_it_matters_zh": "该研究把核酸药物密码子优化从基准比较推进到湿实验检验，并指出不同模型各有所长，支持多模型采样策略。实验主要采用单一报告体系，能否普遍改善治疗性转录本的表达、稳定性和安全性仍需扩大验证。",
-      "quality_score": 70.0,
-      "tags": [
-        "方法与模型",
-        "bioinformatics",
-        "language model",
-        "transformer",
-        "molecul"
-      ],
-      "evidence_flags": [
-        "benchmark",
-        "experimental",
-        "performance"
-      ],
-      "publication_status": "preprint",
-      "rank": 4,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.11.744178",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Toneyan, S.",
-        "Scholz, K.",
-        "De Donno, C.",
-        "Noack, F.",
-        "Auslaender, S.",
-        "Cijsouw, T.",
-        "Payne, J. L."
-      ],
-      "abstract": "Codon optimization uses synonymous sequence changes to improve the expression and therapeutic performance of nucleic acid-based medicines. Masked language models (MLMs) have recently been proposed as alternatives to traditional, frequency-based codon optimization approaches, yet whether they offer a meaningful advantage over such simpler methods remains unclear. Here we benchmark three prominent MLMs --- CaLM, EnCodon and CodonTransformer --- across backtranslation fidelity, sequence generation and nine molecular phenotype prediction tasks, and experimentally evaluate model-designed sequences using a secreted embryonic alkaline phosphatase (SEAP) reporter. The models differed markedly in amino-acid fidelity and generated distinct synonymous sequence variants. However, no single model performed best across all benchmark tasks and simple sequence features remained competitive in several settings. Our interpretability analysis revealed that the models integrate a large window of codon context for making predictions, as opposed to frequency-based approaches. Our in vitro data showed that MLM-designed variants outperformed conventional and commercial vendor-derived sequences in both transient and stably integrated expression, supporting the models' ability to capture translational context beyond codon frequency. Together, our results establish MLMs as effective and complementary tools for codon optimization and suggest that sampling across multiple models may improve the likelihood of identifying high-performing therapeutic sequences.",
-      "published": "2026-08-16",
-      "author_line": "Toneyan, S., Scholz, K., De Donno, C. 等 7 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.02.15.705956",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixbio"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Physically Grounded Generative Modeling of All-Atom Biomolecular Dynamics",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.02.15.705956",
-      "published_at": "2026-08-15",
-      "updated_at": "2026-08-15",
-      "creators": [
-        "Feng, B.",
-        "Zhang, J.",
-        "Zhang, X.",
-        "Cao, H.",
-        "Zhang, M.",
-        "Barth, P.",
-        "Liu, Z.",
-        "Li, Y."
-      ],
-      "language": "en",
-      "abstract_or_text": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
-      "summary_zh": "BioKinema采用受朗之万动力学相关性启发的时空扩散架构，生成连续时间、全原子生物分子轨迹，并以分级预测与插值降低长时程误差。作者报告其可重现蛋白构象集合的热力学与动力学，并用于蛋白—配体体系的变构过程和稀有解离事件分析。",
-      "why_it_matters_zh": "如果动力学准确性经得起更广泛测试，该方法可显著降低高通量结构生物学和药物发现中的轨迹采样成本。摘要未给出与传统MD的统一定量误差和外部体系表现，且结果依赖增强采样数据，应用时需审慎比较。",
-      "quality_score": 80.0,
-      "tags": [
-        "方法与模型",
-        "bioinformatics",
-        "deep learning",
-        "diffusion",
-        "molecul",
-        "drug"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 5,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.02.15.705956",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Feng, B.",
-        "Zhang, J.",
-        "Zhang, X.",
-        "Cao, H.",
-        "Zhang, M.",
-        "Barth, P.",
-        "Liu, Z.",
-        "Li, Y."
-      ],
-      "abstract": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
-      "published": "2026-08-15",
-      "author_line": "Feng, B., Zhang, J., Zhang, X. 等 8 人"
-    },
-    {
-      "id": "biorxiv:10.1101/2025.07.20.665723",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixbio"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "A contextualised protein language model reveals the functional syntax of bacterial evolution",
-      "url": "https://www.biorxiv.org/content/10.1101/2025.07.20.665723",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Wiatrak, M.",
-        "Abelson, D. C.",
-        "Mikhaylenko, R.",
-        "Vinas Torne, R.",
-        "Ntemourtsidou, M.",
-        "Dinan, A. M.",
-        "Arora, D.",
-        "Horsfield, S. T.",
-        "Lees, J.",
-        "Brbic, M.",
-        "Weimann, A.",
-        "Floto, R. A."
-      ],
-      "language": "en",
-      "abstract_or_text": "Bacteria have evolved a vast diversity of functions and behaviours that are currently incompletely understood and poorly predicted from DNA sequence alone. To understand the syntax of bacterial evolution and discover genome-to-phenotype relationships, we curated over 1.3 million genomes spanning bacterial phylogenetic space, represented each as an ordered sequence of proteins, and used these sequences to train a transformer-based, contextualised protein language model, Bacformer. By pretraining on genome-wide evolutionary patterns, Bacformer captures the compositional and positional relationships of proteins and thereby provides a whole-genome framework for linking genomic organisation and content to measurable bacterial traits. We demonstrate the ability of Bacformer to accurately predict protein-protein interactions; uncover operon structure, which we validated experimentally; infer important phenotypic traits, including antimicrobial resistance, while revealing likely causal genes; and design template synthetic proteomes with desirable properties. Thus, Bacformer establishes a genomic foundation model that reveals the evolutionary rules governing bacterial gene organisation, function, and phenotype, opening a route to systematic whole-genome engineering.",
-      "summary_zh": "Bacformer以超过130万细菌基因组中按顺序排列的蛋白序列训练上下文化蛋白语言模型，学习基因组范围的组成和位置关系。研究显示该模型可预测蛋白互作、推断操纵子和耐药等表型相关基因，并对操纵子预测进行实验验证，还生成了具有目标属性的合成蛋白组模板。",
-      "why_it_matters_zh": "该工作将蛋白语言模型从单序列扩展到全基因组组织信息，为微生物功能预测和合成生物学设计提供了新表征。表型关联及因果基因推断仍可能受系统发育和数据分布影响，更多独立实验验证十分关键。",
-      "quality_score": 76.0,
-      "tags": [
-        "方法与模型",
-        "microbiology",
-        "foundation model",
-        "language model",
-        "protein",
-        "synth"
-      ],
-      "evidence_flags": [
-        "experimental"
-      ],
-      "publication_status": "preprint",
-      "rank": 6,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.1101/2025.07.20.665723",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Wiatrak, M.",
-        "Abelson, D. C.",
-        "Mikhaylenko, R.",
-        "Vinas Torne, R.",
-        "Ntemourtsidou, M.",
-        "Dinan, A. M.",
-        "Arora, D.",
-        "Horsfield, S. T.",
-        "Lees, J.",
-        "Brbic, M.",
-        "Weimann, A.",
-        "Floto, R. A."
-      ],
-      "abstract": "Bacteria have evolved a vast diversity of functions and behaviours that are currently incompletely understood and poorly predicted from DNA sequence alone. To understand the syntax of bacterial evolution and discover genome-to-phenotype relationships, we curated over 1.3 million genomes spanning bacterial phylogenetic space, represented each as an ordered sequence of proteins, and used these sequences to train a transformer-based, contextualised protein language model, Bacformer. By pretraining on genome-wide evolutionary patterns, Bacformer captures the compositional and positional relationships of proteins and thereby provides a whole-genome framework for linking genomic organisation and content to measurable bacterial traits. We demonstrate the ability of Bacformer to accurately predict protein-protein interactions; uncover operon structure, which we validated experimentally; infer important phenotypic traits, including antimicrobial resistance, while revealing likely causal genes; and design template synthetic proteomes with desirable properties. Thus, Bacformer establishes a genomic foundation model that reveals the evolutionary rules governing bacterial gene organisation, function, and phenotype, opening a route to systematic whole-genome engineering.",
-      "published": "2026-08-17",
-      "author_line": "Wiatrak, M., Abelson, D. C., Mikhaylenko, R. 等 12 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.14.744759",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "LEN-Seek: Fast and scalable ligand binding-site similarity search in the latent space of an SE(3)-invariant graph VAE",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744759",
-      "published_at": "2026-08-15",
-      "updated_at": "2026-08-15",
-      "creators": [
-        "Yeo, K.",
-        "Kim, D.",
-        "Sim, J.",
-        "Lee, J."
-      ],
-      "language": "en",
-      "abstract_or_text": "Motivation: Ligand binding-site similarity search is a crucial step in drug discovery that reduces the conformational search space for docking and other downstream tasks by comparing a target protein against experimentally identified binding sites. Existing methods rely on either direct structural alignment or lossy compression of structural information, producing a trade-off between scalability and precision. Results: We propose LEN-Seek, a ligand binding-site search method based on a graph neural network (GNN)-driven variational autoencoder (VAE) that encodes the 3D structural and physicochemical context of a binding site into a probabilistic latent space, enabling similarity search within a low-dimensional vector space. A binding site is modeled as a graph of amino acid residues, with node features adopted from the protein language model, Ankh, and edges encoded as SE(3)-invariant (roto-translational invariant) geometric relationships, thereby avoiding expensive data augmentation or SE(3)-equivariant models. Compared to ProBiS, the purely geometric graph-clique based method, LEN-Seek successfully retrieves a substantial portion of similar binding sites with a roughly 3,400-fold lower per-comparison cost, demonstrating its potential as a scalable approach to template-based ligand binding-site search in large-scale protein structure databases.",
-      "summary_zh": "LEN-Seek以SE(3)不变图变分自编码器编码蛋白配体结合位点的三维几何和理化环境，在低维潜在空间完成相似位点检索。相较基于图团匹配的ProBiS，作者报告其保留大量相似位点检索能力，同时将单次比较成本降低约3400倍。",
-      "why_it_matters_zh": "快速结合位点检索可为模板化虚拟筛选和大规模结构库分析节省计算资源，且方法将蛋白语言模型特征与几何表示结合。摘要未充分交代不同靶标类别上的召回和精度细节，也缺少前瞻性药物发现验证。",
-      "quality_score": 75.0,
-      "tags": [
-        "分子与药物发现",
-        "bioinformatics",
-        "language model",
-        "neural",
-        "chem",
-        "drug"
-      ],
-      "evidence_flags": [
-        "experimental"
-      ],
-      "publication_status": "preprint",
-      "rank": 7,
-      "featured": false,
-      "category": "分子与药物发现",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.14.744759",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Yeo, K.",
-        "Kim, D.",
-        "Sim, J.",
-        "Lee, J."
-      ],
-      "abstract": "Motivation: Ligand binding-site similarity search is a crucial step in drug discovery that reduces the conformational search space for docking and other downstream tasks by comparing a target protein against experimentally identified binding sites. Existing methods rely on either direct structural alignment or lossy compression of structural information, producing a trade-off between scalability and precision. Results: We propose LEN-Seek, a ligand binding-site search method based on a graph neural network (GNN)-driven variational autoencoder (VAE) that encodes the 3D structural and physicochemical context of a binding site into a probabilistic latent space, enabling similarity search within a low-dimensional vector space. A binding site is modeled as a graph of amino acid residues, with node features adopted from the protein language model, Ankh, and edges encoded as SE(3)-invariant (roto-translational invariant) geometric relationships, thereby avoiding expensive data augmentation or SE(3)-equivariant models. Compared to ProBiS, the purely geometric graph-clique based method, LEN-Seek successfully retrieves a substantial portion of similar binding sites with a roughly 3,400-fold lower per-comparison cost, demonstrating its potential as a scalable approach to template-based ligand binding-site search in large-scale protein structure databases.",
-      "published": "2026-08-15",
-      "author_line": "Yeo, K., Kim, D., Sim, J. 等 4 人"
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv.15007499/v1",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "ChemRxiv",
-      "title": "Agentic AI in Process Analytical Technology: LLM Assistants for Chemometric Workflows",
-      "url": "https://doi.org/10.26434/chemrxiv.15007499/v1",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Jan G. Rittig",
-        "Luise F. Kaven",
-        "Philippe Schwaller"
-      ],
-      "language": "en",
-      "abstract_or_text": "Modern manufacturing in chemical and pharmaceutical industries increasingly depends on real-time analytical insight to maintain quality, safety, and flexibility. Yet, turning process measurements into actionable analyses still depends on scarce chemometric expertise and manual workflows. Herein, we adapt agentic AI to the process analytical technology (PAT) domain by developing PAT agents that combine large language models (LLMs) with validated open-source and commercial chemometric software, including RamanSPy, SpectroChemPy and PEAXACT, under a multi-agent orchestrator. We benchmark the agents on nine real-world Raman data-analytics tasks of varying complexity, across three user personas, and several LLM backbones. The PAT agents with frontier LLMs solve analytical tasks at 93–96% pass rate, while numerical claims are grounded in actual tool outputs, and are thus physically consistent and reliable. The agents translate individual user requests into adaptive analytical workflows, halt and request clarification on inconsistent inputs, and remain reviewable through structured logs of every tool call and state transition. These results establish PAT agents as transparent digital coworkers that expand access to advanced process analytics and support more adaptive, data-rich manufacturing, while expert chemometric oversight remains critical for industrial deployment.",
-      "summary_zh": "研究构建面向过程分析技术的LLM智能体，将RamanSPy、SpectroChemPy和PEAXACT等化学计量学软件接入多智能体编排系统。在九项真实拉曼数据分析任务、三类用户角色和多种模型的测试中，前沿模型的通过率为93%至96%，数值结论由工具输出生成，并保留工具调用与状态记录。",
-      "why_it_matters_zh": "工作展示了语言模型如何在受工具约束的条件下参与化学与制药制造分析，强调可审查的数值工作流。基准任务规模较小，工业现场的仪器漂移、异常样本、合规要求与长期可靠性尚未得到充分覆盖。",
-      "quality_score": 73.0,
-      "tags": [
-        "方法与模型",
-        "ChemRxiv",
-        "language model",
-        "llm",
-        "chem"
-      ],
-      "evidence_flags": [
-        "benchmark"
-      ],
-      "publication_status": "preprint",
-      "rank": 8,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.26434/chemrxiv.15007499/v1",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Jan G. Rittig",
-        "Luise F. Kaven",
-        "Philippe Schwaller"
-      ],
-      "abstract": "Modern manufacturing in chemical and pharmaceutical industries increasingly depends on real-time analytical insight to maintain quality, safety, and flexibility. Yet, turning process measurements into actionable analyses still depends on scarce chemometric expertise and manual workflows. Herein, we adapt agentic AI to the process analytical technology (PAT) domain by developing PAT agents that combine large language models (LLMs) with validated open-source and commercial chemometric software, including RamanSPy, SpectroChemPy and PEAXACT, under a multi-agent orchestrator. We benchmark the agents on nine real-world Raman data-analytics tasks of varying complexity, across three user personas, and several LLM backbones. The PAT agents with frontier LLMs solve analytical tasks at 93–96% pass rate, while numerical claims are grounded in actual tool outputs, and are thus physically consistent and reliable. The agents translate individual user requests into adaptive analytical workflows, halt and request clarification on inconsistent inputs, and remain reviewable through structured logs of every tool call and state transition. These results establish PAT agents as transparent digital coworkers that expand access to advanced process analytics and support more adaptive, data-rich manufacturing, while expert chemometric oversight remains critical for industrial deployment.",
-      "published": "2026-08-17",
-      "author_line": "Jan G. Rittig, Luise F. Kaven, Philippe Schwaller"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.12.744552",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixbio"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "SAMP V2: A novel stacking ensemble learning model for antimicrobial peptides identification based on augmented split amino acid composition with biochemical-sequence-order information",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.744552",
-      "published_at": "2026-08-15",
-      "updated_at": "2026-08-15",
-      "creators": [
-        "Sun, M.",
-        "Wang, J.",
-        "Wan, S."
-      ],
-      "language": "en",
-      "abstract_or_text": "Antimicrobial resistance reduces the effectiveness of conventional antibiotics and has become a major global health threat, highlighting the need for new anti-infective agents. Antimicrobial peptides (AMPs), a diverse class of innate immune effectors with broad-spectrum antimicrobial activity, are promising candidates for combating drug-resistant infections. Identifying AMPs by wet-lab experiments, however, remains costly and time-consuming, creating a strong demand for computational identification methods. Our recently developed method, SAMP, captures region-specific residue distributions based on proportionalized split amino acid composition. However, SAMP might ignore key biochemical information and sequence order information. Here we present SAMP V2, a stacking ensemble learning framework based on biochemical and sequence-order information augmented split amino acid composition (BIA-SAAC), which extends SAMP by integrating pseudo-amino acid composition features with biochemical and sequence-order information into split peptide regions. Specifically, each peptide is divided into N-terminal, middle, and C-terminal regions, and pseudo amino acid composition is calculated within each region. Benchmarking tests on six independent test datasets, SAMP V2 outperformed multiple state-of-the-art models, including AMPpred-MFA and iAMP-Attenpred, in terms of accuracy, MCC, G-measure and F1-score. Given its high and robust performance, SAMP V2 could significantly accelerate the discovery of next-generation antimicrobial therapeutics for addressing the global threat of multidrug-resistant pathogens.",
-      "summary_zh": "SAMP V2将肽序列按N端、中段和C端拆分，融合伪氨基酸组成、理化性质和序列顺序信息，并以堆叠集成模型识别抗菌肽。作者在六个独立测试集上比较多种现有模型，报告该方法在准确率、MCC、G-measure和F1等指标上表现更优。",
-      "why_it_matters_zh": "抗菌肽优先级排序有望缩小后续合成和活性测试的候选范围，研究也采用多个独立测试集而非单一划分。证据仍主要来自计算基准，数据集同源性、任务定义和候选肽的实测抗菌活性将决定其实际发现价值。",
-      "quality_score": 75.0,
-      "tags": [
-        "分子与药物发现",
-        "bioinformatics",
-        "agent",
-        "chem",
-        "drug"
-      ],
-      "evidence_flags": [
-        "benchmark",
-        "dataset",
-        "state-of-the-art",
-        "performance"
-      ],
-      "publication_status": "preprint",
-      "rank": 9,
-      "featured": false,
-      "category": "分子与药物发现",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.12.744552",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Sun, M.",
-        "Wang, J.",
-        "Wan, S."
-      ],
-      "abstract": "Antimicrobial resistance reduces the effectiveness of conventional antibiotics and has become a major global health threat, highlighting the need for new anti-infective agents. Antimicrobial peptides (AMPs), a diverse class of innate immune effectors with broad-spectrum antimicrobial activity, are promising candidates for combating drug-resistant infections. Identifying AMPs by wet-lab experiments, however, remains costly and time-consuming, creating a strong demand for computational identification methods. Our recently developed method, SAMP, captures region-specific residue distributions based on proportionalized split amino acid composition. However, SAMP might ignore key biochemical information and sequence order information. Here we present SAMP V2, a stacking ensemble learning framework based on biochemical and sequence-order information augmented split amino acid composition (BIA-SAAC), which extends SAMP by integrating pseudo-amino acid composition features with biochemical and sequence-order information into split peptide regions. Specifically, each peptide is divided into N-terminal, middle, and C-terminal regions, and pseudo amino acid composition is calculated within each region. Benchmarking tests on six independent test datasets, SAMP V2 outperformed multiple state-of-the-art models, including AMPpred-MFA and iAMP-Attenpred, in terms of accuracy, MCC, G-measure and F1-score. Given its high and robust performance, SAMP V2 could significantly accelerate the discovery of next-generation antimicrobial therapeutics for addressing the global threat of multidrug-resistant pathogens.",
-      "published": "2026-08-15",
-      "author_line": "Sun, M., Wang, J., Wan, S."
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv-2025-t1gtk/v6",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "ChemRxiv",
-      "title": "Advances in Machine Learning, Limitations, and Performance Insight of Commonly used Computation Chemistry Methods for Solvation Free Energy Estimation",
-      "url": "https://doi.org/10.26434/chemrxiv-2025-t1gtk/v6",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Chengze Yang"
-      ],
-      "language": "en",
-      "abstract_or_text": "The accurate calculation of Gibbs free energy is a cornerstone of modern computational chemistry, essential for predicting the spontaneity of chemical reactions and the stability of molecular systems. Solvation free energy change is a fundamental thermodynamic quantity that describes the free energy change associated with transferring a solute from the gas phase into a solvent. It is particularly useful for estimating reaction rates and pathways of organic reactions, most of which occur in the liquid phase, and has important applications in organic synthesis, biochemistry, and drug discovery. 1 Central and persistent challenges are the choice of implicit and explicit models, delicate balance between achieving high accuracy in quantum mechanical descriptions of electronic structure and performing the extensive configurational sampling required to capture entropic effects, continual evolving of foundational statistical mechanics methods such as Free Energy Perturbation (FEP) and Thermodynamic Integration (TI) to more sophisticated multiscale and hybrid approaches for higher computational efficiency. 2,3,4 This report provides an overview of the theoretical frameworks, implementations, and predictive accuracy of commonly used methods for calculating solvation free energy , assessing classical alchemical methods, quantum chemistry based methods, and hybrid QM/MM approaches, while also addressing practical considerations. Finally, we examine the potential transformative role of emerging methods such as machine learning, which are poised to accelerate these calculations, making rigorous, large-scale free energy simulations feasible and better balancing the cost-accuracy trade-off that has long constrained the field. 5,6",
-      "summary_zh": "该综述梳理溶剂化自由能计算中的经典炼金方法、量子化学方法和QM/MM混合策略，讨论隐式与显式溶剂模型、构象采样和计算精度之间的关系，并评估机器学习在加速大规模自由能计算中的潜在作用。",
-      "why_it_matters_zh": "溶剂化自由能是反应预测、合成、生物化学和药物设计的重要基础量，综述有助于比较不同计算路线的适用条件。其主要贡献是方法整合而非新的基准或实验数据，文中对机器学习方法的实际增益仍应结合原始研究逐项判断。",
-      "quality_score": 82.0,
-      "tags": [
-        "分子与药物发现",
-        "ChemRxiv",
-        "machine learning",
-        "chem",
-        "molecul"
-      ],
-      "evidence_flags": [
-        "performance"
-      ],
-      "publication_status": "preprint",
-      "rank": 10,
-      "featured": false,
-      "category": "分子与药物发现",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.26434/chemrxiv-2025-t1gtk/v6",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Chengze Yang"
-      ],
-      "abstract": "The accurate calculation of Gibbs free energy is a cornerstone of modern computational chemistry, essential for predicting the spontaneity of chemical reactions and the stability of molecular systems. Solvation free energy change is a fundamental thermodynamic quantity that describes the free energy change associated with transferring a solute from the gas phase into a solvent. It is particularly useful for estimating reaction rates and pathways of organic reactions, most of which occur in the liquid phase, and has important applications in organic synthesis, biochemistry, and drug discovery. 1 Central and persistent challenges are the choice of implicit and explicit models, delicate balance between achieving high accuracy in quantum mechanical descriptions of electronic structure and performing the extensive configurational sampling required to capture entropic effects, continual evolving of foundational statistical mechanics methods such as Free Energy Perturbation (FEP) and Thermodynamic Integration (TI) to more sophisticated multiscale and hybrid approaches for higher computational efficiency. 2,3,4 This report provides an overview of the theoretical frameworks, implementations, and predictive accuracy of commonly used methods for calculating solvation free energy , assessing classical alchemical methods, quantum chemistry based methods, and hybrid QM/MM approaches, while also addressing practical considerations. Finally, we examine the potential transformative role of emerging methods such as machine learning, which are poised to accelerate these calculations, making rigorous, large-scale free energy simulations feasible and better balancing the cost-accuracy trade-off that has long constrained the field. 5,6",
       "published": "2026-08-16",
       "author_line": "Chengze Yang"
     }

@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from daily_digest import load_json, write_json
+from daily_digest import archive_index_entry, load_json, upsert_archive_index, write_json
 from hub_publish import build_hub_interfaces
 
 
@@ -49,7 +49,9 @@ def source_from_url(url: str) -> str:
 
 def item_id(url: str, source: str) -> str:
     if "arxiv.org/abs/" in url:
-        return "arxiv:" + url.rsplit("/abs/", 1)[-1].split("v")[0]
+        arxiv_id = url.rsplit("/abs/", 1)[-1].split("?", 1)[0].strip("/")
+        arxiv_id = re.sub(r"v\d+$", "", arxiv_id)
+        return "arxiv:" + arxiv_id
     doi = ""
     if "doi.org/" in url:
         doi = url.split("doi.org/", 1)[-1]
@@ -160,36 +162,23 @@ def parse_legacy_html(path: Path) -> dict[str, Any]:
     return payload
 
 
-def upsert_index(path: Path, entry: dict[str, Any]) -> None:
-    index = load_json(path, {"schema_version": "2.0", "items": []})
-    items = [item for item in index.get("items", []) if item.get("date") != entry["date"]]
-    items.append(entry)
-    index["schema_version"] = index.get("schema_version") or "2.0"
-    index["items"] = sorted(items, key=lambda item: item["date"], reverse=True)
-    write_json(path, index)
-
-
 def write_chem_archive(payload: dict[str, Any]) -> None:
     day = payload["date"]
     chem_root = SITE / "data" / "channels" / "aixchem"
     write_json(chem_root / "archive" / f"{day}.json", payload)
     write_json(SITE / "data" / "archive" / f"{day}.json", payload)
-    entry = {
-        "date": day,
-        "href": f"data/channels/aixchem/archive/{day}.json",
-        "selected": payload["stats"]["selected"],
-        "candidates": payload["stats"]["candidates"],
-        "fetched": payload["stats"]["fetched"],
-        "kind": "json",
-    }
-    upsert_index(chem_root / "archive" / "index.json", entry)
-    upsert_index(SITE / "data" / "archive" / "index.json", entry)
+    entry = archive_index_entry(
+        day,
+        selected=payload["stats"]["selected"],
+        candidates=payload["stats"]["candidates"],
+        fetched=payload["stats"]["fetched"],
+    )
+    upsert_archive_index(chem_root / "archive" / "index.json", entry)
+    upsert_archive_index(SITE / "data" / "archive" / "index.json", entry)
 
 
 def compose_daily(day: str) -> dict[str, Any]:
     latest = load_json(SITE / "data" / "daily" / "latest.json", {})
-    if latest.get("date") == day:
-        return latest
     channels = []
     total = 0
     for channel_id in CHANNELS:
@@ -208,16 +197,23 @@ def compose_daily(day: str) -> dict[str, Any]:
         total += int(stats.get("selected") or len(items) or 0)
     if not channels:
         raise FileNotFoundError(f"No channel archive for {day}")
-    overview = latest.get("overview_zh") if latest.get("date") == day else f"{day.replace('-', '年', 1).replace('-', '月', 1)}日的历史日报，共 {total} 项精选。"
+    existing = load_json(SITE / "data" / "daily" / "archive" / f"{day}.json", {})
+    generic_overview = f"{day.replace('-', '年', 1).replace('-', '月', 1)}日的历史日报，共 {total} 项精选。"
     if day == "2026-07-17":
-        overview = "2026 年 7 月 17 日的 AI × Chem 历史日报，收录 16 项精选。"
+        generic_overview = "2026 年 7 月 17 日的 AI × Chem 历史日报，收录 16 项精选。"
+    overview = existing.get("overview_zh") or (latest.get("overview_zh") if latest.get("date") == day else generic_overview)
+    highlights = existing.get("channel_highlights") or (
+        latest.get("channel_highlights") if latest.get("date") == day else {
+            channel["id"]: f"{channel['name']} {channel['stats'].get('selected', 0)} 项" for channel in channels
+        }
+    )
     return {
         "schema_version": "2.0",
         "date": day,
-        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "title": "AIX Daily 每日智能研究集散中心",
+        "generated_at": existing.get("generated_at") or datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "title": "AIX每日精读",
         "overview_zh": overview,
-        "channel_highlights": {channel["id"]: f"{channel['name']} {channel['stats'].get('selected', 0)} 项" for channel in channels},
+        "channel_highlights": highlights,
         "channels": channels,
     }
 
@@ -253,7 +249,7 @@ def main() -> int:
         write_chem_archive(payload)
         imported.append(f"{payload['date']}:{len(payload['items'])}")
     days = rebuild_daily_archives()
-    build_hub_interfaces(SITE, ROOT / "config" / "channels.json", "https://zichenwang114514.github.io/ai-chem-daily/")
+    build_hub_interfaces(SITE, ROOT / "config" / "channels.json", "https://zichenwang114514.github.io/ai-x-daily/")
     print("imported " + ", ".join(imported) if imported else "no legacy html")
     print("daily archives " + ", ".join(days))
     return 0

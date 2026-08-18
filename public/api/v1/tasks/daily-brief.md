@@ -8,4 +8,4 @@
 4. 07:15 只再次处理失败频道；07:45 生成综合日报并完成最终发布。
 5. GitHub Pages 部署后创建一个综合日报 Issue，由 GitHub 通知发送邮件。
 
-运行状态：https://zichenwang114514.github.io/ai-chem-daily/api/v1/status.json
+运行状态：https://zichenwang114514.github.io/ai-x-daily/api/v1/status.json

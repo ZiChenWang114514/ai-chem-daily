@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Collect, normalize, score and publish the five AIX Daily channels."""
+"""Collect, normalize, score and publish the five AIX每日精读 channels."""
 
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any, Callable
 
-from daily_digest import Paper, clean_text, fetch_arxiv, fetch_biorxiv, fetch_chemrxiv, load_json, write_json
+from daily_digest import Paper, clean_text, fetch_arxiv, fetch_biorxiv, fetch_chemrxiv, load_json, publish_tags, slim_public_item, write_json
 
 
 SHANGHAI = timezone(timedelta(hours=8))
@@ -53,8 +53,71 @@ CATEGORIES = {
 }
 
 
+X_ACCOUNT_BATCH = 15
+X_TOPIC_LIMIT = 2
+X_MAX_RESULTS = 25
+
+
 def utc_now() -> datetime:
     return datetime.now(timezone.utc)
+
+
+def http_error_message(exc: urllib.error.HTTPError) -> str:
+    body = ""
+    try:
+        body = exc.read().decode("utf-8", errors="replace")[:400]
+    except Exception:
+        body = ""
+    name = ""
+    try:
+        payload = json.loads(body) if body else {}
+        name = str(payload.get("name") or payload.get("title") or payload.get("message") or "")
+    except json.JSONDecodeError:
+        name = ""
+    if exc.code == 402:
+        return "HTTP 402 额度不足，请在 X Developer Console 充值 credits"
+    if exc.code == 429:
+        return "HTTP 429 请求过于频繁"
+    if "ChallengeRequired" in body or "ChallengeRequired" in name:
+        return f"HTTP {exc.code} 需要人机验证"
+    if name:
+        return f"HTTP {exc.code} {name}"
+    return f"HTTP {exc.code}"
+
+
+def within_window(value: str, start: date, end: date) -> bool:
+    parsed = publication_date(value)
+    return parsed is not None and start <= parsed <= end
+
+
+def openreview_invitation(domain: str) -> str:
+    text = clean_text(domain)
+    if "/-/" in text:
+        return text
+    return f"{text}/-/Submission"
+
+
+def collection_window(run_date: date, last_success: str | None = None) -> tuple[date, date]:
+    minimum = 4 if run_date.weekday() == 0 else 3
+    start = run_date - timedelta(days=minimum)
+    if last_success:
+        try:
+            prior = datetime.fromisoformat(last_success).astimezone(SHANGHAI).date() - timedelta(days=2)
+            start = min(start, prior)
+        except ValueError:
+            pass
+    return start, run_date
+
+
+def build_x_queries(watchlists: dict[str, Any], account_batch: int = X_ACCOUNT_BATCH, topic_limit: int = X_TOPIC_LIMIT) -> list[tuple[str, str]]:
+    queries: list[tuple[str, str]] = []
+    handles = watchlists.get("x_accounts", [])
+    for index in range(0, len(handles), account_batch):
+        batch = handles[index:index + account_batch]
+        queries.append(("accounts", f"({' OR '.join(f'from:{name}' for name in batch)}) -is:retweet"))
+    for query in watchlists.get("x_topic_queries", [])[:topic_limit]:
+        queries.append(("topics", query))
+    return queries
 
 
 def log(message: str) -> None:
@@ -153,7 +216,7 @@ def score_item(item: dict[str, Any], channel: str) -> float:
         score += 5 if release_type == "release" else 0
     item["quality_score"] = min(100, round(score, 1))
     item["category"] = choose_category(channel, text)
-    item["tags"] = list(dict.fromkeys([item["category"], *(item.get("tags") or []), *ai[:2], *domain[:2]]))[:6]
+    item["tags"] = publish_tags(item["category"])
     item["evidence_flags"] = list(dict.fromkeys([*(item.get("evidence_flags") or []), *quality]))[:6]
     return item["quality_score"]
 
@@ -177,8 +240,12 @@ class Runtime:
         path = self.cache_root / source / f"{self.run_date.isoformat()}.json.gz"
         if path.exists():
             with gzip.open(path, "rt", encoding="utf-8") as stream:
-                return json.load(stream)
+                values = json.load(stream)
+            if values:
+                return values
         values = factory()
+        if not values:
+            return values
         path.parent.mkdir(parents=True, exist_ok=True)
         with gzip.open(path, "wt", encoding="utf-8") as stream:
             json.dump(values, stream, ensure_ascii=False)
@@ -186,16 +253,11 @@ class Runtime:
 
     def window(self, source: str) -> tuple[date, date]:
         state = load_json(self.state_path, {})
-        stamp = state.get(source)
-        if not stamp:
-            return self.run_date, self.run_date
-        try:
-            prior = datetime.fromisoformat(stamp).astimezone(SHANGHAI).date() - timedelta(days=2)
-        except ValueError:
-            prior = self.run_date
-        return min(prior, self.run_date), self.run_date
+        return collection_window(self.run_date, state.get(source))
 
-    def mark_success(self, source: str) -> None:
+    def mark_success(self, source: str, count: int | None = None) -> None:
+        if count == 0:
+            return
         state = load_json(self.state_path, {})
         state[source] = utc_now().isoformat(timespec="seconds")
         write_json(self.state_path, state)
@@ -209,7 +271,7 @@ def shared_papers(runtime: Runtime, source: str) -> list[dict[str, Any]]:
     def create() -> list[dict[str, Any]]:
         values = [asdict(paper) for paper in fetcher(start, end)]
         runtime.record_request("export.arxiv.org" if source == "arxiv" else "api.biorxiv.org", display, "ok", len(values))
-        runtime.mark_success(source)
+        runtime.mark_success(source, len(values))
         return values
 
     return runtime.cache(source, create)
@@ -241,7 +303,7 @@ def fetch_medrxiv(runtime: Runtime) -> list[dict[str, Any]]:
                 break
             time.sleep(4)
         runtime.record_request("api.biorxiv.org", "medRxiv", "ok", len(results))
-        runtime.mark_success("medrxiv")
+        runtime.mark_success("medrxiv", len(results))
         return results
 
     return runtime.cache("medrxiv", create)
@@ -275,7 +337,7 @@ def fetch_europe_pmc(runtime: Runtime) -> list[dict[str, Any]]:
                 "metadata": {"doi": clean_text(value.get("doi")), "pmid": clean_text(value.get("pmid"))},
             })
         runtime.record_request("www.ebi.ac.uk", "Europe PMC", "ok", len(results))
-        runtime.mark_success("europepmc")
+        runtime.mark_success("europepmc", len(results))
         return results
 
     return runtime.cache("europepmc", create)
@@ -285,26 +347,55 @@ def unwrap(value: Any) -> Any:
     return value.get("value") if isinstance(value, dict) and "value" in value else value
 
 
+def resolve_openreview_invitation(domain: str, headers: dict[str, str]) -> str:
+    invitation = openreview_invitation(domain)
+    try:
+        payload, _ = request_json(f"https://api2.openreview.net/groups?id={urllib.parse.quote(domain)}", headers=headers)
+        groups = payload.get("groups") or []
+        if groups:
+            content = groups[0].get("content") or {}
+            submission = unwrap(content.get("submission_id"))
+            if submission:
+                return clean_text(submission)
+    except urllib.error.HTTPError:
+        return invitation
+    return invitation
+
+
 def fetch_openreview(runtime: Runtime, watchlists: dict[str, Any]) -> list[dict[str, Any]]:
-    start, _ = runtime.window("openreview")
-    username = os.getenv("OPENREVIEW_USERNAME", "")
-    password = os.getenv("OPENREVIEW_PASSWORD", "")
+    start, end = runtime.window("openreview")
 
     def create() -> list[dict[str, Any]]:
-        token = ""
-        if username and password:
-            body = json.dumps({"id": username, "password": password, "expiresIn": 86400}).encode()
+        username = os.getenv("OPENREVIEW_USERNAME", "")
+        password = os.getenv("OPENREVIEW_PASSWORD", "")
+        if not username or not password:
+            raise RuntimeError("未配置 OpenReview 账号")
+        body = json.dumps({"id": username, "password": password, "expiresIn": 86400}).encode()
+        try:
             login, _ = request_json("https://api2.openreview.net/login", method="POST", body=body, headers={"Content-Type": "application/json"})
-            token = str(login.get("token") or "")
-        headers = {"Authorization": f"Bearer {token}"} if token else {}
+        except urllib.error.HTTPError as exc:
+            raise RuntimeError(http_error_message(exc)) from exc
+        token = str(login.get("token") or "")
+        if not token:
+            raise RuntimeError("登录未返回 token")
+        headers = {"Authorization": f"Bearer {token}"}
         results: list[dict[str, Any]] = []
         after = ""
         for domain in watchlists.get("openreview_domains", []):
+            invitation = resolve_openreview_invitation(domain, headers)
             while True:
-                params: dict[str, Any] = {"domain": domain, "limit": 1000, "sort": "tcdate:desc", "mintcdate": int(datetime.combine(start, datetime.min.time(), tzinfo=SHANGHAI).timestamp() * 1000)}
+                params: dict[str, Any] = {
+                    "invitation": invitation,
+                    "limit": 200,
+                    "sort": "tcdate:desc",
+                    "mintcdate": int(datetime.combine(start, datetime.min.time(), tzinfo=SHANGHAI).timestamp() * 1000),
+                }
                 if after:
                     params["after"] = after
-                payload, _ = request_json(f"https://api2.openreview.net/notes?{urllib.parse.urlencode(params)}", headers=headers)
+                try:
+                    payload, _ = request_json(f"https://api2.openreview.net/notes?{urllib.parse.urlencode(params)}", headers=headers)
+                except urllib.error.HTTPError as exc:
+                    raise RuntimeError(f"{domain}: {http_error_message(exc)}") from exc
                 notes = payload.get("notes") or []
                 for note in notes:
                     content = note.get("content") or {}
@@ -313,50 +404,50 @@ def fetch_openreview(runtime: Runtime, watchlists: dict[str, Any]) -> list[dict[
                     status_text = clean_text(unwrap(content.get("withdrawal_confirmation")) or unwrap(content.get("venue"))).lower()
                     if not title or "withdraw" in status_text:
                         continue
+                    published_at = datetime.fromtimestamp((note.get("cdate") or note.get("tcdate") or 0) / 1000, SHANGHAI).date().isoformat()
+                    if not within_window(published_at, start, end):
+                        continue
                     forum = str(note.get("forum") or note.get("id") or "")
                     results.append({
                         "id": item_id("openreview", forum), "channel": "aixmath", "related_channels": [], "item_type": "paper",
                         "source": "OpenReview", "title": title, "url": f"https://openreview.net/forum?id={forum}",
-                        "published_at": datetime.fromtimestamp((note.get("cdate") or note.get("tcdate") or 0) / 1000, SHANGHAI).date().isoformat(),
+                        "published_at": published_at,
                         "updated_at": datetime.fromtimestamp((note.get("mdate") or note.get("tmdate") or note.get("tcdate") or 0) / 1000, SHANGHAI).date().isoformat(),
                         "creators": list(unwrap(content.get("authors")) or []), "language": "en", "abstract_or_text": abstract,
                         "summary_zh": "", "why_it_matters_zh": "", "quality_score": 0, "tags": [domain], "evidence_flags": [],
                         "publication_status": clean_text(unwrap(content.get("venue"))) or "public_submission", "rank": 0, "featured": False,
-                        "category": "方法与模型", "metrics": {}, "metadata": {"forum_id": forum, "domain": domain},
+                        "category": "方法与模型", "metrics": {}, "metadata": {"forum_id": forum, "domain": domain, "invitation": invitation},
                     })
-                if len(notes) < 1000:
+                if len(notes) < 200:
                     break
                 after = str(notes[-1].get("id") or "")
                 time.sleep(12)
             after = ""
-            time.sleep(12)
+            time.sleep(8)
         runtime.record_request("api2.openreview.net", "OpenReview", "ok", len(results))
-        runtime.mark_success("openreview")
+        runtime.mark_success("openreview", len(results))
         return results
 
     return runtime.cache("openreview", create)
 
 
 def fetch_x(runtime: Runtime, watchlists: dict[str, Any]) -> list[dict[str, Any]]:
-    bearer = os.getenv("X_BEARER_TOKEN", "")
-    if not bearer:
-        raise RuntimeError("X Bearer Token 未配置")
-
     def create() -> list[dict[str, Any]]:
-        queries = []
-        handles = watchlists.get("x_accounts", [])
-        for start in range(0, len(handles), 10):
-            batch = handles[start:start + 10]
-            queries.append(("accounts", f"({' OR '.join(f'from:{name}' for name in batch)}) -is:retweet"))
-        queries.extend(("topics", query) for query in watchlists.get("x_topic_queries", []))
+        bearer = os.getenv("X_BEARER_TOKEN", "")
+        if not bearer:
+            raise RuntimeError("X Bearer Token 未配置")
+        queries = build_x_queries(watchlists)
         results: list[dict[str, Any]] = []
         for index, (kind, query) in enumerate(queries):
             params = urllib.parse.urlencode({
-                "query": query, "max_results": 100,
+                "query": query, "max_results": X_MAX_RESULTS,
                 "tweet.fields": "created_at,public_metrics,author_id,lang,entities",
                 "expansions": "author_id", "user.fields": "username,name,verified",
             })
-            payload, headers = request_json(f"https://api.x.com/2/tweets/search/recent?{params}", headers={"Authorization": f"Bearer {bearer}"})
+            try:
+                payload, headers = request_json(f"https://api.x.com/2/tweets/search/recent?{params}", headers={"Authorization": f"Bearer {bearer}"})
+            except urllib.error.HTTPError as exc:
+                raise RuntimeError(http_error_message(exc)) from exc
             users = {user["id"]: user for user in payload.get("includes", {}).get("users", [])}
             for post in payload.get("data") or []:
                 author = users.get(post.get("author_id"), {})
@@ -376,7 +467,7 @@ def fetch_x(runtime: Runtime, watchlists: dict[str, Any]) -> list[dict[str, Any]
             retry = int(headers.get("retry-after", "0") or 0)
             if index + 1 < len(queries):
                 time.sleep(max(10, min(20, retry or 10)))
-        runtime.mark_success("x")
+        runtime.mark_success("x", len(results))
         return results
 
     return runtime.cache("x", create)
@@ -391,7 +482,8 @@ def parse_feed(raw: bytes, source: str, url: str) -> list[dict[str, Any]]:
             for name in names:
                 node = entry.find(name)
                 if node is not None:
-                    return clean_text(node.text or node.attrib.get("href"))
+                    href = node.attrib.get("href")
+                    return clean_text(href or node.text)
             return ""
         title = text_of("title", "{http://www.w3.org/2005/Atom}title")
         link = text_of("link", "{http://www.w3.org/2005/Atom}link")
@@ -411,17 +503,33 @@ def parse_feed(raw: bytes, source: str, url: str) -> list[dict[str, Any]]:
 def publication_date(value: str) -> date | None:
     if not value:
         return None
+    text = str(value).strip()
     try:
-        parsed = parsedate_to_datetime(value)
+        iso = text[:-1] + "+00:00" if text.endswith("Z") else text
+        parsed = datetime.fromisoformat(iso)
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        return parsed.astimezone(SHANGHAI).date()
+    except ValueError:
+        pass
+    try:
+        parsed = parsedate_to_datetime(text)
         if parsed.tzinfo is None:
             parsed = parsed.replace(tzinfo=timezone.utc)
         return parsed.astimezone(SHANGHAI).date()
     except (TypeError, ValueError, OverflowError):
-        match = re.search(r"\d{4}-\d{2}-\d{2}", value)
-        return date.fromisoformat(match.group(0)) if match else None
+        match = re.search(r"\d{4}-\d{2}-\d{2}", text)
+        if not match:
+            return None
+        try:
+            return date.fromisoformat(match.group(0))
+        except ValueError:
+            return None
 
 
 def fetch_feeds(runtime: Runtime, watchlists: dict[str, Any]) -> list[dict[str, Any]]:
+    start, end = runtime.window("feeds")
+
     def create() -> list[dict[str, Any]]:
         results = []
         for index, feed in enumerate(watchlists.get("research_feeds", [])):
@@ -429,19 +537,21 @@ def fetch_feeds(runtime: Runtime, watchlists: dict[str, Any]) -> list[dict[str, 
             request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml"})
             try:
                 with urllib.request.urlopen(request, timeout=45) as response:
-                    batch = [item for item in parse_feed(response.read(), name, url) if publication_date(item.get("published_at", "")) == runtime.run_date]
+                    batch = [item for item in parse_feed(response.read(), name, url) if within_window(item.get("published_at", ""), start, end)]
                 results.extend(batch)
                 runtime.record_request(urllib.parse.urlsplit(url).netloc, name, "ok", len(batch))
             except Exception as exc:  # source status is retained while other feeds continue
                 runtime.record_request(urllib.parse.urlsplit(url).netloc, name, f"error:{type(exc).__name__}")
             if index + 1 < len(watchlists.get("research_feeds", [])):
                 time.sleep(4)
-        runtime.mark_success("feeds")
+        runtime.mark_success("feeds", len(results))
         return results
     return runtime.cache("feeds", create)
 
 
 def fetch_github(runtime: Runtime, watchlists: dict[str, Any]) -> list[dict[str, Any]]:
+    start, end = runtime.window("github")
+
     def create() -> list[dict[str, Any]]:
         results = []
         token = os.getenv("GITHUB_TOKEN", "")
@@ -450,7 +560,7 @@ def fetch_github(runtime: Runtime, watchlists: dict[str, Any]) -> list[dict[str,
             payload, response_headers = request_json(f"https://api.github.com/repos/{repo}/releases?per_page=30", headers=headers)
             for release in payload if isinstance(payload, list) else []:
                 published = clean_text(release.get("published_at"))
-                if published[:10] != runtime.run_date.isoformat():
+                if not within_window(published, start, end):
                     continue
                 prerelease = bool(release.get("prerelease"))
                 body = clean_text(release.get("body"))
@@ -471,7 +581,7 @@ def fetch_github(runtime: Runtime, watchlists: dict[str, Any]) -> list[dict[str,
             retry = int(response_headers.get("retry-after", "0") or 0)
             if index + 1 < len(watchlists.get("github_repositories", [])):
                 time.sleep(max(4, min(30, retry or 4)))
-        runtime.mark_success("github")
+        runtime.mark_success("github", len(results))
         return results
     return runtime.cache("github", create)
 
@@ -505,7 +615,7 @@ def collect_channel(root: Path, site_root: Path, channel: str, run_date: date) -
         try:
             sources[name] = factory()
         except urllib.error.HTTPError as exc:
-            errors.append(f"{name}: HTTP {exc.code}")
+            errors.append(f"{name}: {http_error_message(exc)}")
             runtime.record_request(urllib.parse.urlsplit(exc.url).netloc, name, f"http:{exc.code}")
             sources[name] = []
         except Exception as exc:
@@ -522,7 +632,7 @@ def collect_channel(root: Path, site_root: Path, channel: str, run_date: date) -
             def create() -> list[dict[str, Any]]:
                 values = [asdict(value) for value in fetch_chemrxiv(start, end)]
                 runtime.record_request("api.crossref.org", "ChemRxiv", "ok", len(values))
-                runtime.mark_success("chemrxiv")
+                runtime.mark_success("chemrxiv", len(values))
                 return values
             return [paper_to_item(Paper(**value), channel) for value in runtime.cache("chemrxiv", create)]
         attempt("ChemRxiv", chem_items)
@@ -544,7 +654,10 @@ def collect_channel(root: Path, site_root: Path, channel: str, run_date: date) -
         score = score_item(item, channel)
         if score >= max(45, THRESHOLDS[channel] - 15):
             candidates.append(item)
-    candidates.sort(key=lambda item: (item["quality_score"], item.get("published_at", "")), reverse=True)
+    candidates.sort(
+        key=lambda item: (item["quality_score"], publication_date(item.get("published_at", "")) or date.min),
+        reverse=True,
+    )
     candidates = candidates[:60]
     for item in candidates:
         item["related_channels"] = [other for other in RESEARCH_CHANNELS if other != channel and score_item(dict(item), other) >= THRESHOLDS[other]]
@@ -560,7 +673,7 @@ def collect_channel(root: Path, site_root: Path, channel: str, run_date: date) -
     payload = {
         "schema_version": "2.0", "date": str(run_date), "channel": channel,
         "generated_at": utc_now().isoformat(timespec="seconds"), "title": title, "subtitle": subtitle,
-        "window": {"start": str(runtime.window(channel)[0]), "end": str(run_date)},
+        "window": {"start": str(collection_window(run_date)[0]), "end": str(run_date)},
         "method": "公开来源采集、规则筛选与模型审阅", "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
         "stats": {"fetched": len(raw), "candidates": len(candidates), "selected": len(preliminary), "sources": {name: len(batch) for name, batch in sources.items()}},
         "source_status": {
@@ -570,7 +683,8 @@ def collect_channel(root: Path, site_root: Path, channel: str, run_date: date) -
             }
             for name, batch in sources.items()
         },
-        "source_errors": errors, "items": preliminary, "papers": preliminary,
+        "source_errors": errors,
+        "items": [slim_public_item(item, include_abstract=True, clip_release=True) for item in preliminary],
     }
     write_json(channel_root / "latest.json", payload)
     write_json(root / "work" / "local-pipeline" / "status" / f"{channel}.json", {"channel": channel, "date": str(run_date), "state": "collected", "updated_at": utc_now().isoformat(timespec="seconds"), "stats": payload["stats"], "source_errors": errors})

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://zichenwang114514.github.io/ai-chem-daily/api/v1/schemas/intake.json",
-  "title": "AIX Daily scheduled intake",
+  "$id": "https://zichenwang114514.github.io/ai-x-daily/api/v1/schemas/intake.json",
+  "title": "AIX每日精读 scheduled intake",
   "description": "网页版 ChatGPT 已安排任务提交每日资料时使用的通用格式。",
   "type": "object",
   "required": ["schema_version", "intake_type", "channel", "date"],

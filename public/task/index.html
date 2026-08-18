@@ -3,22 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AIX Daily 的本地运行说明与当日状态。">
+  <meta name="description" content="AIX每日精读的本地运行说明与当日状态。">
   <meta name="theme-color" content="#122033">
-  <title>运行说明 · AIX Daily</title>
+  <title>运行说明 · AIX每日精读</title>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body class="task-page" data-page="task" data-root="../">
   <header class="site-header">
     <div class="shell site-header__inner">
       <nav class="topbar" aria-label="主要导航">
-        <a class="brand" href="../" aria-label="AIX Daily 首页">
+        <a class="brand" href="../" aria-label="AIX每日精读首页">
           <img class="brand__mark" src="../assets/logo.svg" width="36" height="36" alt="">
-          <span class="brand__name">AIX Daily</span>
+          <span class="brand__name">AIX每日精读</span>
         </a>
         <div class="topbar__actions">
           <a class="history-button" href="../">返回日报</a>
@@ -35,7 +32,10 @@
         <p class="hero__lead">Windows 计划任务在每日清晨依次处理五个频道，测试通过后发布网站，并由 GitHub 发送当日通知。</p>
       </div>
       <figure class="hero__art">
-        <img src="../assets/art/hero.jpg" width="960" height="540" alt="">
+        <picture>
+          <source srcset="../assets/art/hero.webp" type="image/webp">
+          <img src="../assets/art/hero.jpg" width="960" height="540" alt="" decoding="async">
+        </picture>
       </figure>
     </div>
   </section>
@@ -62,12 +62,12 @@
   <footer class="site-footer">
     <div class="shell footer-grid">
       <div>
-        <strong>AIX Daily</strong>
+        <strong>AIX每日精读</strong>
         <p>化学、生物、数学、公开观点与工程更新的每日精选。</p>
       </div>
       <div class="footer-note">
         <p>预印本、公开观点与软件发布均请结合原始来源判断。</p>
-        <p class="footer-links"><a href="../">返回日报</a></p>
+        <p class="footer-links"><a href="../">返回日报</a><a href="../library/">收藏</a></p>
       </div>
     </div>
   </footer>
@@ -75,11 +75,12 @@
   <script>
     const promptElement = document.getElementById("task-prompt");
     Promise.all([
-      fetch("../api/v1/tasks/daily-brief.md", { cache: "no-store" }).then((response) => response.text()),
-      fetch("../api/v1/status.json", { cache: "no-store" }).then((response) => response.json()),
+      fetch("../api/v1/tasks/daily-brief.md").then((response) => response.text()),
+      fetch("../api/v1/status.json").then((response) => response.json()),
     ]).then(([prompt, status]) => {
       promptElement.textContent = prompt;
-      document.getElementById("status-state").textContent = status.state === "fresh" ? "今日数据已就绪" : "等待今日更新";
+      const labels = { fresh: "今日数据已就绪", partial: "部分频道已更新", stale: "等待今日更新" };
+      document.getElementById("status-state").textContent = labels[status.state] || status.state || "未知状态";
       document.getElementById("status-date").textContent = status.latest_date || "尚无数据";
     }).catch(() => { promptElement.textContent = "任务说明暂时无法读取，请稍后刷新。"; });
     document.getElementById("copy-button").addEventListener("click", async (event) => {

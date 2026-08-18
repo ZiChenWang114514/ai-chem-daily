@@ -34,7 +34,6 @@
     "X: RuntimeError: HTTP 402 额度不足，请在 X Developer Console 充值 credits"
   ],
   "items": [],
-  "papers": [],
   "review": {
     "model": "gpt-5.6-terra",
     "reasoning_effort": "high",

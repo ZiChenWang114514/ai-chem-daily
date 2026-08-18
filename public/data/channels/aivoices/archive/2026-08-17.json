@@ -34,7 +34,6 @@
     "X: HTTP 402"
   ],
   "items": [],
-  "papers": [],
   "review": {
     "model": "gpt-5.6-terra",
     "reasoning_effort": "high",

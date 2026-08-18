@@ -9,11 +9,16 @@ import os
 import re
 import subprocess
 import sys
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from aix_pipeline import CHANNELS
 from daily_digest import load_json, write_json
+
+
+CHANNEL_NAME = re.compile(r"^[a-z0-9][a-z0-9_-]{0,31}$")
+KNOWN_CHANNELS = set(CHANNELS)
 
 
 def parse_args() -> argparse.Namespace:
@@ -31,9 +36,26 @@ def extract_payload(text: str) -> dict[str, Any]:
     return json.loads(candidate)
 
 
+def safe_channel(value: str) -> str:
+    channel = str(value or "").strip().lower()
+    if not CHANNEL_NAME.fullmatch(channel):
+        raise ValueError(f"Invalid channel: {value}")
+    return channel
+
+
+def safe_date(value: str) -> str:
+    text = str(value or "").strip()
+    try:
+        return date.fromisoformat(text).isoformat()
+    except ValueError as exc:
+        raise ValueError(f"Invalid date: {value}") from exc
+
+
 def publish_generic_digest(site_root: Path, payload: dict[str, Any], issue: dict[str, str]) -> None:
-    channel = payload["channel"]
-    day = payload["date"]
+    channel = safe_channel(payload.get("channel") or "")
+    if channel not in KNOWN_CHANNELS:
+        raise ValueError(f"Unknown digest channel: {channel}")
+    day = safe_date(payload.get("date") or datetime.now(timezone.utc).date().isoformat())
     items = payload.get("items") or []
     digest = {
         "schema_version": 1,
@@ -51,7 +73,7 @@ def publish_generic_digest(site_root: Path, payload: dict[str, Any], issue: dict
             "topics": payload.get("topics") or {},
         },
         "source_errors": payload.get("source_errors") or [],
-        "papers": items,
+        "items": items,
         "intake": issue,
     }
     channel_root = site_root / "data" / "channels" / channel
@@ -78,13 +100,17 @@ def main() -> int:
     args = parse_args()
     payload = extract_payload(args.issue_body.read_text(encoding="utf-8"))
     inferred_curation = bool(payload.get("selected"))
-    channel = str(payload.get("channel") or ("aixchem" if inferred_curation else "notes"))
-    day = str(payload.get("date") or datetime.now(timezone.utc).date().isoformat())
+    channel = safe_channel(payload.get("channel") or ("aixchem" if inferred_curation else "notes"))
+    day = safe_date(payload.get("date") or datetime.now(timezone.utc).date().isoformat())
     intake_type = str(payload.get("intake_type") or ("curation" if inferred_curation else "notes"))
+    if intake_type == "digest" and channel not in KNOWN_CHANNELS:
+        raise ValueError(f"Unknown digest channel: {channel}")
     issue = {"number": str(args.issue_number), "url": args.issue_url}
 
     stored = {
         **payload,
+        "channel": channel,
+        "date": day,
         "imported_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "issue": issue,
     }
@@ -99,7 +125,7 @@ def main() -> int:
         )
         result = "aixchem curation applied"
     elif intake_type == "digest":
-        publish_generic_digest(args.site_root, payload, issue)
+        publish_generic_digest(args.site_root, {**payload, "channel": channel, "date": day}, issue)
         result = f"{channel} digest published"
     else:
         result = f"{channel} notes stored"

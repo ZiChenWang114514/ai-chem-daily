@@ -14,7 +14,7 @@
   "stats": {
     "fetched": 620,
     "candidates": 60,
-    "selected": 16,
+    "selected": 13,
     "sources": {
       "arXiv": 0,
       "bioRxiv": 354,
@@ -75,12 +75,10 @@
       "why_it_matters_zh": "将 CT 病灶分型标准化可辅助放疗规划与影像组学研究；溶骨性病灶仍较难区分，且需多中心前瞻性检验后才能评估临床应用。",
       "quality_score": 82.0,
       "tags": [
-        "preprint",
+        "生物医学与临床",
         "临床影像",
         "3D-CNN",
-        "转移性肿瘤",
-        "生物医学与临床",
-        "medRxiv"
+        "转移性肿瘤"
       ],
       "evidence_flags": [
         "preprint",
@@ -114,7 +112,6 @@
         "Hackney, D. B.",
         "Alkalay, R. N."
       ],
-      "abstract": "Purpose: Clinical assessment of vertebral lesion quality (osteolytic, osteoblastic, mixed) remains subjective, with limited interobserver reliability. This study evaluated a novel application of 3D convolutional neural networks (3D-CNNs) for classifying lesion quality from CT volumes in metastatic cancer patients. Materials and Methods: This retrospective study used CT data from 151 cancer patients planned for radiotherapy for metastatic spine disease (September 2020-July 2024). Leveraging vertebra-level expert annotations, we introduced an unconventional U-Net-based strategy converting coarse voxel-wise predictions into vertebra-level lesion classifications. The final dataset comprised 2,125 vertebrae across four classes (no lesion, osteolytic, osteoblastic, mixed), split into a 3-fold cross-validation set and an independent holdout test set. Model performance was benchmarked against a DenseNet121 baseline and a musculoskeletal radiologist, with Cohen's kappa assessing inter-rater agreement. Results: The 3D model achieved an ensemble accuracy of 84.7%, outperforming DenseNet121 (72.1%), with substantial gains in F1 score, precision, and balanced accuracy. It showed high concordance with the radiologist (Cohen's kappa = 0.76) and comparable sensitivity and specificity across all lesion subtypes. We found both models and the radiologist to struggle with osteolytic lesions, reflecting the difficulty of distinguishing this class from age-related changes in vertebral bone density and architecture caused by benign bone lesions, age-related systemic skeletal disorders and cancer treatments. Conclusions: 3D-CNNs trained with vertebra-level labels can accurately and reliably classify vertebral metastatic lesion quality from CT scans, offering a scalable path toward automated characterization of metastatic spine disease to support clinical decision-making and large-scale radiomics research.",
       "published": "2026-08-17",
       "author_line": "Hong, V., Bulent, A., Haouchine, N. 等 13 人"
     },
@@ -142,12 +139,10 @@
       "why_it_matters_zh": "少见病的诊断延迟是实际临床问题；跨院性能下降提示模型可用于提示后续确证检查，部署前仍需本地校准。",
       "quality_score": 81.0,
       "tags": [
-        "preprint",
+        "生物医学与临床",
         "电子病历",
         "罕见病",
-        "时序模型",
-        "生物医学与临床",
-        "medRxiv"
+        "时序模型"
       ],
       "evidence_flags": [
         "preprint",
@@ -174,7 +169,6 @@
         "Wang, B.",
         "Rudrapatna, V. A."
       ],
-      "abstract": "Objective: Erythropoietic protoporphyria (EPP) is a rare photodermatosis marked by multi-year diagnostic delays. We developed and externally validated machine learning models to identify patients with EPP earlier from longitudinal electronic health record (EHR) data and estimate undiagnosed disease burden. Materials and Methods: In a retrospective case-control study at two San Francisco health systems, an academic referral center (UCSF) and a safety-net hospital (ZSFG) we identified 74 confirmed EPP cases using combined diagnostic coding, biochemical criteria, and specialty chart review. Symptom-enriched controls were sampled at a 40:1 ratio. Longitudinal diagnoses, laboratory results, medications, procedures, and encounters preceding the outcome date were modeled with a gradient-boosting classifier (CatBoost) and a state-space sequence model (MAMBA). The best model was deployed across the UCSF population and externally validated at ZSFG without retraining. Results: On the UCSF held-out test set (n=1,865; 43 cases), MAMBA outperformed CatBoost (AUC ROC 0.91 vs 0.89; average precision 0.42 vs 0.27; precision 65% vs 20%), flagging cases a median of 229 days before documented diagnosis. Deployed across 297,967 symptom-compatible patients, it identified 310 high-risk individuals, implying a prevalence approaching genetic estimates. External validation at ZSFG showed attenuated performance (AUC ROC 0.72; average precision 0.10) while preserving early detection (median 264 days). Discussion: A sequence model integrating temporal EHR signals detected EPP months before clinical recognition, corroborating genetic evidence of substantial underdiagnosis. Cross-site attenuation reflects population and documentation differences and underscores the need for local recalibration. Conclusion: Longitudinal EHR-based machine learning can shorten EPP diagnostic delay and prioritize patients for confirmatory testing, supporting proactive rare-disease case finding.",
       "published": "2026-08-17",
       "author_line": "Ayati, A., Onal, G., Sur, A. 等 6 人"
     },
@@ -203,11 +197,10 @@
       "why_it_matters_zh": "多层实验将未分化肿瘤状态与 VRK1 联系起来，为研究分化治疗提供了可检验的分子线索；治疗靶点价值仍待进一步药理学验证。",
       "quality_score": 80.0,
       "tags": [
-        "preprint",
+        "组学与细胞",
         "神经母细胞瘤",
         "单细胞",
         "肿瘤分化",
-        "组学与细胞",
         "cancer biology"
       ],
       "evidence_flags": [
@@ -236,82 +229,8 @@
         "Pardal, R.",
         "Vega, F. M."
       ],
-      "abstract": "Neuroblastoma is a neural crest-derived pediatric malignancy characterized by marked cellular heterogeneity and variable differentiation status. Undifferentiated tumors are associated with aggressive clinical behavior, treatment resistance and poor outcome, highlighting the need to identify molecular mechanisms that sustain tumor cell plasticity and prevent differentiation. Vaccinia-related kinase 1 (VRK1) is a serine/threonine kinase involved in cell-cycle progression, DNA-damage responses and transcriptional regulation, and has previously been associated with neuroblastoma progression. However, its role in the control of neuroblastoma differentiation remains unclear. Here, we investigated the relationship between VRK1 expression, tumor differentiation and stem-like properties in human neuroblastoma. Analysis of patient tumor datasets and tissue microarrays showed that VRK1 expression is enriched in undifferentiated neuroblastoma and stage 4 tumors, and inversely correlates with established differentiation markers, including DDC, NCAM1 and S100B. This association was maintained in MYCN-non-amplified tumors, indicating that the relationship between VRK1 and differentiation is not dependent on MYCN status. Single-cell transcriptomic analyses further demonstrated elevated VRK1 expression in developmentally immature neural crest progenitor and Schwann cell precursor-like populations. Induction of neuronal or mesenchymal differentiation consistently reduced VRK1 expression in neuroblastoma cell lines and patient-derived cells. Conversely, VRK1 silencing promoted differentiation-marker expression, reduced nestin and Ki67 expression, and produced sustained differentiation-associated changes in xenograft tumors. VRK1 was also enriched in tumorsphere cultures that select for undifferentiated stem-like neuroblastoma cells. VRK1 depletion impaired tumorsphere growth, reduced intratumoral proliferation and altered the balance between undifferentiated cells and differentiated progeny, supporting a role for VRK1 in self-renewal and maintenance of progenitor-like tumor cells. Mechanistically, VRK1 expression positively correlated with the core stemness transcription factor SOX2 in neuroblastoma tumor cells. VRK1 knockdown reduced nuclear SOX2 abundance, whereas VRK1 overexpression increased SOX2 protein levels. In addition, analysis of the VRK1 locus identified an active chromatin configuration and potential SOX2-binding sites, consistent with a regulatory relationship between these factors. Together, these findings identify VRK1 as a regulator of the undifferentiated, proliferative and stem-like state in neuroblastoma. The VRK1-SOX2 axis may contribute to stabilizing tumor-cell immaturity and represents a potential target for differentiation based therapeutic strategies in high-risk neuroblastoma.",
       "published": "2026-08-17",
       "author_line": "Ojeda-Puertas, M., Gomez Munoz, M. d. l. A., Colmenero-Repiso, A. 等 7 人"
-    },
-    {
-      "id": "biorxiv:10.1101/2025.07.20.665723",
-      "channel": "aixbio",
-      "related_channels": [
-        "aixchem"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "A contextualised protein language model reveals the functional syntax of bacterial evolution",
-      "url": "https://www.biorxiv.org/content/10.1101/2025.07.20.665723",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Wiatrak, M.",
-        "Abelson, D. C.",
-        "Mikhaylenko, R.",
-        "Vinas Torne, R.",
-        "Ntemourtsidou, M.",
-        "Dinan, A. M.",
-        "Arora, D.",
-        "Horsfield, S. T.",
-        "Lees, J.",
-        "Brbic, M.",
-        "Weimann, A.",
-        "Floto, R. A."
-      ],
-      "language": "en",
-      "abstract_or_text": "Bacteria have evolved a vast diversity of functions and behaviours that are currently incompletely understood and poorly predicted from DNA sequence alone. To understand the syntax of bacterial evolution and discover genome-to-phenotype relationships, we curated over 1.3 million genomes spanning bacterial phylogenetic space, represented each as an ordered sequence of proteins, and used these sequences to train a transformer-based, contextualised protein language model, Bacformer. By pretraining on genome-wide evolutionary patterns, Bacformer captures the compositional and positional relationships of proteins and thereby provides a whole-genome framework for linking genomic organisation and content to measurable bacterial traits. We demonstrate the ability of Bacformer to accurately predict protein-protein interactions; uncover operon structure, which we validated experimentally; infer important phenotypic traits, including antimicrobial resistance, while revealing likely causal genes; and design template synthetic proteomes with desirable properties. Thus, Bacformer establishes a genomic foundation model that reveals the evolutionary rules governing bacterial gene organisation, function, and phenotype, opening a route to systematic whole-genome engineering.",
-      "summary_zh": "Bacformer 将 130 余万细菌基因组表示为有序蛋白序列并训练 Transformer，可预测蛋白互作、推断操纵子结构和表型；其中操纵子推断有实验验证。",
-      "why_it_matters_zh": "模型将蛋白的基因组位置与组合关系纳入表征，为细菌功能注释和基因组工程提供了大规模基础模型；表型相关基因仍应逐项实验确认。",
-      "quality_score": 79.0,
-      "tags": [
-        "preprint",
-        "蛋白语言模型",
-        "微生物基因组",
-        "基础模型",
-        "方法与模型",
-        "microbiology"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "1.3_million_genomes",
-        "experimental_operon_validation",
-        "computational_benchmark",
-        "experimental"
-      ],
-      "publication_status": "preprint",
-      "rank": 4,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.1101/2025.07.20.665723",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Wiatrak, M.",
-        "Abelson, D. C.",
-        "Mikhaylenko, R.",
-        "Vinas Torne, R.",
-        "Ntemourtsidou, M.",
-        "Dinan, A. M.",
-        "Arora, D.",
-        "Horsfield, S. T.",
-        "Lees, J.",
-        "Brbic, M.",
-        "Weimann, A.",
-        "Floto, R. A."
-      ],
-      "abstract": "Bacteria have evolved a vast diversity of functions and behaviours that are currently incompletely understood and poorly predicted from DNA sequence alone. To understand the syntax of bacterial evolution and discover genome-to-phenotype relationships, we curated over 1.3 million genomes spanning bacterial phylogenetic space, represented each as an ordered sequence of proteins, and used these sequences to train a transformer-based, contextualised protein language model, Bacformer. By pretraining on genome-wide evolutionary patterns, Bacformer captures the compositional and positional relationships of proteins and thereby provides a whole-genome framework for linking genomic organisation and content to measurable bacterial traits. We demonstrate the ability of Bacformer to accurately predict protein-protein interactions; uncover operon structure, which we validated experimentally; infer important phenotypic traits, including antimicrobial resistance, while revealing likely causal genes; and design template synthetic proteomes with desirable properties. Thus, Bacformer establishes a genomic foundation model that reveals the evolutionary rules governing bacterial gene organisation, function, and phenotype, opening a route to systematic whole-genome engineering.",
-      "published": "2026-08-17",
-      "author_line": "Wiatrak, M., Abelson, D. C., Mikhaylenko, R. 等 12 人"
     },
     {
       "id": "biorxiv:10.64898/2026.08.07.743610",
@@ -344,11 +263,10 @@
       "why_it_matters_zh": "可为未测扰动条件提出转录响应假设，并在不同数据规模中检验泛化；生成结果适合作为实验优先级依据，不能替代实际扰动测量。",
       "quality_score": 79.0,
       "tags": [
-        "preprint",
+        "组学与细胞",
         "单细胞组学",
         "扰动预测",
         "扩散模型",
-        "组学与细胞",
         "bioinformatics"
       ],
       "evidence_flags": [
@@ -359,7 +277,7 @@
         "dataset"
       ],
       "publication_status": "preprint",
-      "rank": 5,
+      "rank": 4,
       "featured": false,
       "category": "组学与细胞",
       "metrics": {},
@@ -382,7 +300,6 @@
         "Jiang, X.",
         "Dai, Y."
       ],
-      "abstract": "Single-cell perturbation profiling maps intervention-induced phenotypes, yet experiments measure only a fraction of the perturbation-context space. Learning context-dependent perturbation effects could enable response prediction beyond measured conditions. Here we introduce PerturbLDM, a latent-diffusion framework for conditional generation of single-cell transcriptional responses. Following Tahoe-100M pretraining, it outperformed leading methods across 13,942 held-out combinations of observed drugs, doses and cell lines, with higher matched-control effect correlation than an additive marginal baseline in 95.2% of conditions. The Tahoe-100M-pretrained model was further used to rank PANACEA compounds by pathway similarity, placing shared-mechanism pairs among nearest neighbours. In smaller datasets, PerturbLDM generated a mid-gestational fetal-colon state with 67% lower gene-wise error than Squidiff, retaining the balance between absorptive and BEST4/OTOP2-like epithelial programmes. In PBMCs, it captured six of seven interferon and antiviral programmes and the interferon-associated FAO- OXPHOS programme more accurately than scGen. Together, these results support conditional response generation across data scales and biological settings.",
       "published": "2026-08-16",
       "author_line": "Yu, L., Hsieh, K.-L., Chu, Y. 等 13 人"
     },
@@ -409,11 +326,10 @@
       "why_it_matters_zh": "细胞系与患者肿瘤的蛋白质组可比性是转化研究中的关键问题；该方法有望帮助选择更贴近肿瘤状态的模型，临床外推仍需独立研究确认。",
       "quality_score": 77.0,
       "tags": [
-        "preprint",
+        "组学与细胞",
         "蛋白质组学",
         "癌症模型",
         "深度学习",
-        "组学与细胞",
         "bioinformatics"
       ],
       "evidence_flags": [
@@ -425,7 +341,7 @@
         "clinical"
       ],
       "publication_status": "preprint",
-      "rank": 6,
+      "rank": 5,
       "featured": false,
       "category": "组学与细胞",
       "metrics": {},
@@ -440,74 +356,8 @@
         "Klingmueller, U.",
         "Raue, A."
       ],
-      "abstract": "Cancer cell lines are widely used in preclinical research, yet the clinical translation of findings from cell lines remains limited. Identifying cell lines that best resemble patient tumors requires integration of molecular profiles across biologically distinct sample types. Recent advances in transcriptomic integration have demonstrated the potential of deep learning for aligning data across different sample types. However, comparable approaches for proteomic data integration remain lacking, potentially because of the prevalence of missing values in proteomic datasets. Here, we introduce ProtInt, a deep learning-based framework that integrates proteomic data from cell lines and patient tumors by combining principles from proteomic imputation and transcriptomic integration methods. We applied ProtInt to integrate label-free proteomic profiles from 771 cancer cell lines and 550 treatment-naive tumors. ProtInt outperformed batch correction and transcriptomic integration methods in aligning cell line and tumor proteomes. Comparison of the cell line proteomes before and after integration revealed recurrent increase of proteins associated with immune reaction, cell-cell communication, and interaction with the extracellular matrix, and reduction of proteins involved in transcription, post-transcriptional processing, and mitochondrial gene expression as proteomes of cell lines were adapted to resemble tumors. These results establish ProtInt as a framework for joint analysis of proteomic datasets across distinct sample types and may facilitate the identification of cell lines best suited for clinically relevant studies.",
       "published": "2026-08-17",
       "author_line": "Ta, C. Q., Auth, J. M., Schilling, M. 等 5 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.02.15.705956",
-      "channel": "aixbio",
-      "related_channels": [
-        "aixchem"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Physically Grounded Generative Modeling of All-Atom Biomolecular Dynamics",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.02.15.705956",
-      "published_at": "2026-08-15",
-      "updated_at": "2026-08-15",
-      "creators": [
-        "Feng, B.",
-        "Zhang, J.",
-        "Zhang, X.",
-        "Cao, H.",
-        "Zhang, M.",
-        "Barth, P.",
-        "Liu, Z.",
-        "Li, Y."
-      ],
-      "language": "en",
-      "abstract_or_text": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
-      "summary_zh": "BioKinema 提出受朗之万动力学启发的时空扩散模型，生成连续时间、全原子级生物分子轨迹，并报告可重现蛋白构象热力学、动力学及配体解离相关过程。",
-      "why_it_matters_zh": "若动力学保真度经独立基准确认，可补足静态结构预测与传统分子动力学之间的空缺，支持高通量构象与结合过程研究。",
-      "quality_score": 77.0,
-      "tags": [
-        "preprint",
-        "全原子动力学",
-        "生成模型",
-        "结构生物学",
-        "方法与模型",
-        "bioinformatics"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "claimed_thermodynamic_validation",
-        "claimed_kinetic_validation",
-        "computational_method",
-        "limited_public_metrics_in_abstract"
-      ],
-      "publication_status": "preprint",
-      "rank": 7,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.02.15.705956",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Feng, B.",
-        "Zhang, J.",
-        "Zhang, X.",
-        "Cao, H.",
-        "Zhang, M.",
-        "Barth, P.",
-        "Liu, Z.",
-        "Li, Y."
-      ],
-      "abstract": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
-      "published": "2026-08-15",
-      "author_line": "Feng, B., Zhang, J., Zhang, X. 等 8 人"
     },
     {
       "id": "biorxiv:10.1101/2025.09.30.679553",
@@ -552,11 +402,10 @@
       "why_it_matters_zh": "长读长和多祖源训练有助于改善传统外周血、单一祖源时钟的局限；其对脑衰老机制和个体层面预测的增益仍须更多队列复现。",
       "quality_score": 76.0,
       "tags": [
-        "preprint",
+        "组学与细胞",
         "表观基因组",
         "长读长测序",
         "脑衰老",
-        "组学与细胞",
         "bioinformatics"
       ],
       "evidence_flags": [
@@ -566,949 +415,6 @@
         "external_validation",
         "dataset",
         "performance"
-      ],
-      "publication_status": "preprint",
-      "rank": 8,
-      "featured": false,
-      "category": "组学与细胞",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.1101/2025.09.30.679553",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Grant, S. M.",
-        "Eger, S. J.",
-        "Makarious, M. B.",
-        "Meredith, M.",
-        "Moller, A.",
-        "Grant-Peters, M.",
-        "Hicks, A.",
-        "Mandal, A.",
-        "Auluck, P.",
-        "Villegas-Lanau, A.",
-        "Mejia-Cupajita, B.",
-        "Acosta-Uribe, J.",
-        "Aguillon, D.",
-        "Leonard, H.",
-        "Kuznetsov, N.",
-        "Weller, C.",
-        "Reed, X.",
-        "Catching, A.",
-        "Jain, M.",
-        "Ferrucci, L.",
-        "Kosik, K. S.",
-        "Cookson, M. R.",
-        "Ryten, M.",
-        "Nalls, M. A.",
-        "Billingsley, K. J."
-      ],
-      "abstract": "Epigenetic clocks are widely used to estimate biological aging, yet most are built from array-based data from peripheral tissues of predominantly European-ancestry individuals, limiting their generalizability. Here, we present aging clocks on DNA methylation from Oxford Nanopore long-read sequencing (LRS), leveraging over 28 million CpG sites from prefrontal cortex samples across individuals of African and European ancestry. These models were developed using GenoML, an automated machine learning platform for multi-omics data that leverages a diverse catalog of existing model architectures. Our long-read-informed clocks were developed using promoter-based and whole-genome window-based features, yielding models for each individual cohort as well as a combined-cohort clock. Each of these models demonstrated favorable performance compared to existing methylation clocks and was externally validated in a cohort of Colombian individuals. We further performed enrichment analyses and nominated both shared and cohort-specific pathways, cell types, and transcription factor binding motifs which may be implicated in aging and were not fully explained by cell type proportions or postmortem interval. Altogether, our findings highlight the power of long-read methylation data for constructing accurate, ancestry-aware aging clocks and emphasize the importance of inclusive training datasets.",
-      "published": "2026-08-17",
-      "author_line": "Grant, S. M., Eger, S. J., Makarious, M. B. 等 25 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.14.744906",
-      "channel": "aixbio",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Bioprinted Human Primary Arteries Recapitulate Inflammatory Activation and Pharmacologic Rescue",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744906",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Fu, Z.",
-        "Fastiggi, V. A.",
-        "Phelan, A.",
-        "Bell, K.",
-        "Lucarelli, S.",
-        "Wilson, S. S.",
-        "Lindner, J. M.",
-        "Cutler, A. A."
-      ],
-      "language": "en",
-      "abstract_or_text": "Chronic inflammation drives persistent systemic cytokine signaling that contributes to vascular dysfunction and secondary vasculitis, yet mechanistic studies are limited by models that fail to capture the multicellular architecture and dynamics of human arteries. In contrast, perfusing intact vessels ex vivo has limited tractability because of material availability and difficulty of genetic or biochemical manipulation. We developed a modular, perfused artery-on-a-chip platform by tri-axially bioprinting primary human vascular cells to recapitulate the concentric organization of the intimal, medial, and adventitial layers. The engineered vessels are viable longer than 21 days, with functional endothelial barriers, contractile smooth muscle behavior, and actively remodeled extracellular matrices bearing hallmarks of native vascular tissue. Addition of tumor necrosis factor alpha (TNF) induces altered transcript levels of proinflammatory mediators and secretion of cytokines and matrix-remodeling enzymes without compromising vessel viability. Importantly, this secretory response is effectively attenuated by both a small-molecule JAK1 inhibitor (ABT-317) and anti-TNF antibody (Infliximab), demonstrating model utility for therapeutic evaluation.",
-      "summary_zh": "利用原代人血管细胞三轴生物打印构建灌流动脉芯片，维持超过 21 天的屏障、收缩和基质重塑特征；TNF-α 诱导的炎症分泌可被 JAK1 抑制剂或英夫利昔单抗减弱。",
-      "why_it_matters_zh": "该人源多层血管模型可用于研究炎症性血管反应与候选干预；药物反应来自体外系统，尚不能推及患者疗效。",
-      "quality_score": 75.0,
-      "tags": [
-        "preprint",
-        "血管芯片",
-        "生物打印",
-        "原代人细胞",
-        "蛋白质与结构",
-        "bioengineering"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "human_primary_cells",
-        "perfusion_model",
-        "pharmacologic_perturbation",
-        "21_day_viability",
-        "evaluation"
-      ],
-      "publication_status": "preprint",
-      "rank": 9,
-      "featured": false,
-      "category": "蛋白质与结构",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.14.744906",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Fu, Z.",
-        "Fastiggi, V. A.",
-        "Phelan, A.",
-        "Bell, K.",
-        "Lucarelli, S.",
-        "Wilson, S. S.",
-        "Lindner, J. M.",
-        "Cutler, A. A."
-      ],
-      "abstract": "Chronic inflammation drives persistent systemic cytokine signaling that contributes to vascular dysfunction and secondary vasculitis, yet mechanistic studies are limited by models that fail to capture the multicellular architecture and dynamics of human arteries. In contrast, perfusing intact vessels ex vivo has limited tractability because of material availability and difficulty of genetic or biochemical manipulation. We developed a modular, perfused artery-on-a-chip platform by tri-axially bioprinting primary human vascular cells to recapitulate the concentric organization of the intimal, medial, and adventitial layers. The engineered vessels are viable longer than 21 days, with functional endothelial barriers, contractile smooth muscle behavior, and actively remodeled extracellular matrices bearing hallmarks of native vascular tissue. Addition of tumor necrosis factor alpha (TNF) induces altered transcript levels of proinflammatory mediators and secretion of cytokines and matrix-remodeling enzymes without compromising vessel viability. Importantly, this secretory response is effectively attenuated by both a small-molecule JAK1 inhibitor (ABT-317) and anti-TNF antibody (Infliximab), demonstrating model utility for therapeutic evaluation.",
-      "published": "2026-08-17",
-      "author_line": "Fu, Z., Fastiggi, V. A., Phelan, A. 等 8 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.17.745187",
-      "channel": "aixbio",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "FluoroFate: A generalisable platform for time-resolved single-cell analysis of cell fate enables quantification of cell death dynamics",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.17.745187",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Preedy, M. K.",
-        "Taylor-Hearn, I.",
-        "Ying, C.",
-        "Ford, M. J.",
-        "Jackson, I. J.",
-        "Gilmore, A.",
-        "Tergaonkar, V.",
-        "Mort, R. L."
-      ],
-      "language": "en",
-      "abstract_or_text": "Fundamental cellular decisions of life and death are governed by intricate and tightly regulated intracellular signalling pathways that determine whether cells proliferate, enter quiescence, or undergo programmed cell death (apoptosis). Live-cell fluorescence imaging enables these processes to be observed in real time at single-cell resolution, but two problems limit their study. First, existing biosensors do not allow apoptotic status and cell cycle progression to be resolved in tandem within the same cell. Second, interpreting live-cell imaging data is challenging even where multiplex reporters exist, as the biological meaning of fluorescent signals depends on their temporal ordering, and large-scale imaging experiments generate complex, multidimensional data that are difficult to analyse systematically and at scale. Here we address both problems. We present FluoroFate, a generalisable and user-friendly graphical interface-driven tool for time-resolved single-cell analysis of multiplex live-cell imaging datasets, which integrates existing, robust deep learning-based segmentation, cell tracking, and temporal classification methods to quantify fluorescent reporter dynamics in individual cells across time without the need for specialist computational expertise. Alongside FluoroFate, we develop tricistronic Fluorescent Ubiquitination-based Cell Cycle Indicator (Fucci) and apoptosis biosensors, enabling simultaneous monitoring of cell cycle progression and caspase activation within the same cell. Applying FluoroFate, we resolve apoptotic and non-apoptotic cell death at the single-cell level based on the temporal ordering of Annexin V and propidium iodide signals, identifying distinct kinetic and phenotypic cell death profiles in response to pharmacological perturbation. We highlight divergent temporal dynamics and modes of cell death between birinapant and cycloheximide treatment, reflecting differences in how TNF/TNFR1 signalling is disrupted by these agents. At the single-cell level, we uncover parallel, independently regulated death programmes, demonstrating that loss of RIPK1 selectively impairs apoptotic cell death whilst leaving non-apoptotic death largely unaffected. We then use FluoroFate to analyse timelapse images of our combined Fucci-apoptosis reporters, resolving cell cycle progression and caspase activation within the same cell over time. Together, FluoroFate and our new cell cycle and apoptosis biosensors represent a broadly applicable platform for extracting mechanistic insight from live-cell imaging data.",
-      "summary_zh": "FluoroFate 将细胞分割、追踪和时间分类整合为图形化单细胞活细胞成像分析平台，并配套细胞周期与凋亡双报告系统，量化药物扰动下不同死亡过程。",
-      "why_it_matters_zh": "该工具使非专门计算用户也能分析大规模时序成像，并把细胞周期、半胱天冬酶激活和死亡顺序置于同一读出中。",
-      "quality_score": 75.0,
-      "tags": [
-        "preprint",
-        "活细胞成像",
-        "单细胞",
-        "细胞死亡",
-        "分析软件",
-        "组学与细胞"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "multiplex_biosensors",
-        "pharmacologic_perturbation",
-        "RIPK1_genetic_perturbation",
-        "single_cell_time_series",
-        "dataset"
-      ],
-      "publication_status": "preprint",
-      "rank": 10,
-      "featured": false,
-      "category": "组学与细胞",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.17.745187",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Preedy, M. K.",
-        "Taylor-Hearn, I.",
-        "Ying, C.",
-        "Ford, M. J.",
-        "Jackson, I. J.",
-        "Gilmore, A.",
-        "Tergaonkar, V.",
-        "Mort, R. L."
-      ],
-      "abstract": "Fundamental cellular decisions of life and death are governed by intricate and tightly regulated intracellular signalling pathways that determine whether cells proliferate, enter quiescence, or undergo programmed cell death (apoptosis). Live-cell fluorescence imaging enables these processes to be observed in real time at single-cell resolution, but two problems limit their study. First, existing biosensors do not allow apoptotic status and cell cycle progression to be resolved in tandem within the same cell. Second, interpreting live-cell imaging data is challenging even where multiplex reporters exist, as the biological meaning of fluorescent signals depends on their temporal ordering, and large-scale imaging experiments generate complex, multidimensional data that are difficult to analyse systematically and at scale. Here we address both problems. We present FluoroFate, a generalisable and user-friendly graphical interface-driven tool for time-resolved single-cell analysis of multiplex live-cell imaging datasets, which integrates existing, robust deep learning-based segmentation, cell tracking, and temporal classification methods to quantify fluorescent reporter dynamics in individual cells across time without the need for specialist computational expertise. Alongside FluoroFate, we develop tricistronic Fluorescent Ubiquitination-based Cell Cycle Indicator (Fucci) and apoptosis biosensors, enabling simultaneous monitoring of cell cycle progression and caspase activation within the same cell. Applying FluoroFate, we resolve apoptotic and non-apoptotic cell death at the single-cell level based on the temporal ordering of Annexin V and propidium iodide signals, identifying distinct kinetic and phenotypic cell death profiles in response to pharmacological perturbation. We highlight divergent temporal dynamics and modes of cell death between birinapant and cycloheximide treatment, reflecting differences in how TNF/TNFR1 signalling is disrupted by these agents. At the single-cell level, we uncover parallel, independently regulated death programmes, demonstrating that loss of RIPK1 selectively impairs apoptotic cell death whilst leaving non-apoptotic death largely unaffected. We then use FluoroFate to analyse timelapse images of our combined Fucci-apoptosis reporters, resolving cell cycle progression and caspase activation within the same cell over time. Together, FluoroFate and our new cell cycle and apoptosis biosensors represent a broadly applicable platform for extracting mechanistic insight from live-cell imaging data.",
-      "published": "2026-08-17",
-      "author_line": "Preedy, M. K., Taylor-Hearn, I., Ying, C. 等 8 人"
-    },
-    {
-      "id": "medrxiv:10.64898/2026.08.13.26360395",
-      "channel": "aixbio",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "medRxiv",
-      "title": "Prospective Validation of a Deep Learning Model to Detect Structural Heart Disease from Apple Watch ECGs: The WATCH-SHD Study",
-      "url": "https://www.medrxiv.org/content/10.64898/2026.08.13.26360395",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Aminorroaya, A.",
-        "Vasisht Shankar, S.",
-        "Carter, M.",
-        "Khan, M.",
-        "Dhingra, L. S.",
-        "Khunte, A.",
-        "Croon, P. M.",
-        "Lombo, B.",
-        "McNamara, R. L.",
-        "Oikonomou, E. K.",
-        "Pedroso, A. F.",
-        "Khera, R."
-      ],
-      "language": "en",
-      "abstract_or_text": "Importance: Consumer wearables such as the Apple Watch can record single-lead electrocardiograms (ECGs) but are used mainly to detect rhythm disorders. Artificial intelligence-enhanced ECG (AI-ECG) could extend these real-world recordings for detecting structural heart disease (SHD), yet prospective validation remains limited. Objective: To prospectively validate a previously developed, noise-adapted AI-ECG model for detecting severe SHD from single-lead Apple Watch ECGs. Design: Prospective cohort study. Setting: Yale New Haven Hospital echocardiography laboratory. Participants: Adults aged >=18 years undergoing outpatient transthoracic echocardiography (TTE) as part of routine clinical care. Exposure: A 30-second, single-lead Apple Watch ECG recorded during the TTE visit and processed through an end-to-end, HIPAA-compliant platform for real-time AI-ECG inference. Main Outcomes and Measures: The primary outcome was discrimination for TTE-defined severe SHD, a composite of left ventricular systolic dysfunction (left ventricular ejection fraction <40%), severe left-sided valvular disease, and/or severe left ventricular hypertrophy, assessed by the area under the receiver operating characteristic curve (AUROC). Secondary measures were sensitivity, specificity, negative predictive value (NPV), and positive predictive value (PPV) at prespecified thresholds, and screening efficiency, assessed by the number needed to test (NNT) under usual-care versus AI-ECG-guided strategies. Results: Among 596 participants with analyzable Apple Watch ECGs (median age, 62 years [IQR, 46-72]; 51.2% women), severe SHD was present in 30 (5.1%). The model discriminated severe SHD well (AUROC, 0.841; 95% CI, 0.761-0.921), with a sensitivity of 76.7% (59.1-88.2), specificity of 83.2% (79.9-86.1), NPV of 98.5% (97.0-99.3), and PPV of 19.7% (13.5-27.8) at the prespecified threshold. An AI-ECG-guided strategy reduced the NNT to identify one case by more than 60% versus usual care across the composite and individual SHD phenotypes. Conclusions and Relevance: In this prospective cohort, a noise-adapted AI-ECG algorithm identified SHD phenotypes from real-world single-lead Apple Watch ECGs and improved screening efficiency. These findings support a potential role for wearable ECG-based screening in the scalable identification of clinically actionable SHD.",
-      "summary_zh": "WATCH-SHD 在 596 名接受超声心动图的成人中前瞻性检验单导联 Apple Watch ECG 模型；30 例重度结构性心脏病的 AUROC 为 0.841，阴性预测值为 98.5%。",
-      "why_it_matters_zh": "真实可穿戴设备数据的前瞻性检验是临床 AI 证据的重要补充；阳性预测值为 19.7%，更适合作为进一步超声评估的筛查提示。",
-      "quality_score": 75.0,
-      "tags": [
-        "preprint",
-        "可穿戴设备",
-        "心电图",
-        "前瞻性队列",
-        "生物医学与临床",
-        "medRxiv"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "prospective_clinical_cohort",
-        "596_participants",
-        "30_primary_events",
-        "prespecified_threshold",
-        "prospective"
-      ],
-      "publication_status": "preprint",
-      "rank": 11,
-      "featured": false,
-      "category": "生物医学与临床",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.13.26360395",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Aminorroaya, A.",
-        "Vasisht Shankar, S.",
-        "Carter, M.",
-        "Khan, M.",
-        "Dhingra, L. S.",
-        "Khunte, A.",
-        "Croon, P. M.",
-        "Lombo, B.",
-        "McNamara, R. L.",
-        "Oikonomou, E. K.",
-        "Pedroso, A. F.",
-        "Khera, R."
-      ],
-      "abstract": "Importance: Consumer wearables such as the Apple Watch can record single-lead electrocardiograms (ECGs) but are used mainly to detect rhythm disorders. Artificial intelligence-enhanced ECG (AI-ECG) could extend these real-world recordings for detecting structural heart disease (SHD), yet prospective validation remains limited. Objective: To prospectively validate a previously developed, noise-adapted AI-ECG model for detecting severe SHD from single-lead Apple Watch ECGs. Design: Prospective cohort study. Setting: Yale New Haven Hospital echocardiography laboratory. Participants: Adults aged >=18 years undergoing outpatient transthoracic echocardiography (TTE) as part of routine clinical care. Exposure: A 30-second, single-lead Apple Watch ECG recorded during the TTE visit and processed through an end-to-end, HIPAA-compliant platform for real-time AI-ECG inference. Main Outcomes and Measures: The primary outcome was discrimination for TTE-defined severe SHD, a composite of left ventricular systolic dysfunction (left ventricular ejection fraction <40%), severe left-sided valvular disease, and/or severe left ventricular hypertrophy, assessed by the area under the receiver operating characteristic curve (AUROC). Secondary measures were sensitivity, specificity, negative predictive value (NPV), and positive predictive value (PPV) at prespecified thresholds, and screening efficiency, assessed by the number needed to test (NNT) under usual-care versus AI-ECG-guided strategies. Results: Among 596 participants with analyzable Apple Watch ECGs (median age, 62 years [IQR, 46-72]; 51.2% women), severe SHD was present in 30 (5.1%). The model discriminated severe SHD well (AUROC, 0.841; 95% CI, 0.761-0.921), with a sensitivity of 76.7% (59.1-88.2), specificity of 83.2% (79.9-86.1), NPV of 98.5% (97.0-99.3), and PPV of 19.7% (13.5-27.8) at the prespecified threshold. An AI-ECG-guided strategy reduced the NNT to identify one case by more than 60% versus usual care across the composite and individual SHD phenotypes. Conclusions and Relevance: In this prospective cohort, a noise-adapted AI-ECG algorithm identified SHD phenotypes from real-world single-lead Apple Watch ECGs and improved screening efficiency. These findings support a potential role for wearable ECG-based screening in the scalable identification of clinically actionable SHD.",
-      "published": "2026-08-17",
-      "author_line": "Aminorroaya, A., Vasisht Shankar, S., Carter, M. 等 12 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.16.745112",
-      "channel": "aixbio",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Efficient exploration of sequence space enables rapid generation of functional genome editors",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.16.745112",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Hughes, N. W.",
-        "Kulkarni, S.",
-        "Goldman, G.",
-        "Marsiglia, J.",
-        "Jain, S.",
-        "Spees, K.",
-        "Fu, B. X. H.",
-        "Vaalavirta, K.",
-        "Nakamura, M."
-      ],
-      "language": "en",
-      "abstract_or_text": "The problem of how protein sequences translate into defined functions remains largely unsolved despite decades of progress. New methods to efficiently explore protein sequence space will help to shed light on these sequence-function relationships, particularly for complex protein function. Here, we describe an approach to create novel, functional proteins through the integration of deep mutational scanning, structural analysis, and evolutionary mining within prompts for a generative protein language model (PLM). We demonstrate the utility of this approach with the generation of novel compact RNA-guided nucleases. This approach is highly efficient, resulting in active nucleases with ~40% sequence divergence relative to natural proteins and activity equivalent to or exceeding by up to ~3X that of other compact nucleases at multiple endogenous loci in human cells. The approach described here is rapidly deployable and produces new sequences that will serve as scaffolds for further exploration of complex protein functionality, as well as substrates for novel genome engineering applications.",
-      "summary_zh": "研究把深度突变扫描、结构分析和进化挖掘结果用于生成式蛋白语言模型提示，获得与天然蛋白约 40% 序列差异的紧凑 RNA 引导核酸酶，并在人细胞内源位点检验活性。",
-      "why_it_matters_zh": "在实验反馈和生成设计之间建立高效迭代，可扩展基因编辑器的序列空间；编辑效率、安全性和特异性仍需系统比较。",
-      "quality_score": 73.0,
-      "tags": [
-        "preprint",
-        "基因编辑",
-        "生成式蛋白设计",
-        "深度突变扫描",
-        "组学与细胞",
-        "synthetic biology"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "deep_mutational_scanning",
-        "human_endogenous_loci",
-        "experimental_activity_assay"
-      ],
-      "publication_status": "preprint",
-      "rank": 12,
-      "featured": false,
-      "category": "组学与细胞",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.16.745112",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Hughes, N. W.",
-        "Kulkarni, S.",
-        "Goldman, G.",
-        "Marsiglia, J.",
-        "Jain, S.",
-        "Spees, K.",
-        "Fu, B. X. H.",
-        "Vaalavirta, K.",
-        "Nakamura, M."
-      ],
-      "abstract": "The problem of how protein sequences translate into defined functions remains largely unsolved despite decades of progress. New methods to efficiently explore protein sequence space will help to shed light on these sequence-function relationships, particularly for complex protein function. Here, we describe an approach to create novel, functional proteins through the integration of deep mutational scanning, structural analysis, and evolutionary mining within prompts for a generative protein language model (PLM). We demonstrate the utility of this approach with the generation of novel compact RNA-guided nucleases. This approach is highly efficient, resulting in active nucleases with ~40% sequence divergence relative to natural proteins and activity equivalent to or exceeding by up to ~3X that of other compact nucleases at multiple endogenous loci in human cells. The approach described here is rapidly deployable and produces new sequences that will serve as scaffolds for further exploration of complex protein functionality, as well as substrates for novel genome engineering applications.",
-      "published": "2026-08-17",
-      "author_line": "Hughes, N. W., Kulkarni, S., Goldman, G. 等 9 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.14.744826",
-      "channel": "aixbio",
-      "related_channels": [
-        "aixchem"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Activity-based chemical proteomics uncovers unexpected covalent targetsof E64d and reveals a role for cysteine cathepsins in PLD3 proteostasis.",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744826",
-      "published_at": "2026-08-15",
-      "updated_at": "2026-08-15",
-      "creators": [
-        "Hertwig, M.",
-        "Kielkowski, P."
-      ],
-      "language": "en",
-      "abstract_or_text": "Catalytic activity of 5'-3' exonuclease Phospholipase D3 (PLD3) is associated with immune signaling and neurodegeneration including Alzheimer's disease. PLD3 undergoes multiple post-translational modifications and proteolytic cleavage to establish its catalytically active form. However, the proteases catalyzing the cleavage of PLD3 have remained unidentified. To study the proteolytic cleavage of PLD3, we have evaluated the small molecule covalent inhibitor E64d that blocks proteolysis catalyzed by cysteine cathepsins. To validate the selectivity of E64d, we have designed and synthetized an E64d propargyl analogue and carried out a detailed activity-based protein profiling to reveal a broad engagement of the compound with other protein targets including bleomycin hydrolase (BLMH), Kelch-like ECH-associated protein 1 (KEAP1), transcription elongation factor SPT5 (SUPT5H) and asparagine synthetase (ASNS). The specificity of the E64d-protein interactions was confirmed by biochemical assays and mass spectrometry-based site identifications. In neurons, treatment with E64d lead to about 50-fold PLD3 accumulation and dysregulation of its proteolytic cleavage, while there was only a minor overall change on the whole proteome level. Taken together, this study provides insights into previously unknown E64d selectivity and renders cysteine cathepsins responsible for PLD3 degradation in neurons. It highlights the importance of cysteine cathepsins activity in neuronal lysosomes for proper PLD3 processing and hence it suggests that their activation might be responsible for decreased PLD3 levels in neurons of patients with Alzheimer's diseases. These findings are key for further elucidation of PLD3 function in neurodegenerative diseases.",
-      "summary_zh": "以活性基化学蛋白质组学、竞争实验和质谱位点鉴定分析 E64d，发现其结合谱广于预期；在神经元中，该化合物处理伴随约 50 倍 PLD3 积累与加工改变。",
-      "why_it_matters_zh": "结果提示常用半胱氨酸组织蛋白酶抑制剂具有重要脱靶作用，并为 PLD3 蛋白稳态研究提出可检验的酶学机制。",
-      "quality_score": 73.0,
-      "tags": [
-        "preprint",
-        "化学蛋白质组学",
-        "神经退行性疾病",
-        "PLD3",
-        "组学与细胞",
-        "biochemistry"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "activity_based_protein_profiling",
-        "mass_spectrometry",
-        "neuronal_experiment",
-        "orthogonal_biochemical_assays"
-      ],
-      "publication_status": "preprint",
-      "rank": 13,
-      "featured": false,
-      "category": "组学与细胞",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.14.744826",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Hertwig, M.",
-        "Kielkowski, P."
-      ],
-      "abstract": "Catalytic activity of 5'-3' exonuclease Phospholipase D3 (PLD3) is associated with immune signaling and neurodegeneration including Alzheimer's disease. PLD3 undergoes multiple post-translational modifications and proteolytic cleavage to establish its catalytically active form. However, the proteases catalyzing the cleavage of PLD3 have remained unidentified. To study the proteolytic cleavage of PLD3, we have evaluated the small molecule covalent inhibitor E64d that blocks proteolysis catalyzed by cysteine cathepsins. To validate the selectivity of E64d, we have designed and synthetized an E64d propargyl analogue and carried out a detailed activity-based protein profiling to reveal a broad engagement of the compound with other protein targets including bleomycin hydrolase (BLMH), Kelch-like ECH-associated protein 1 (KEAP1), transcription elongation factor SPT5 (SUPT5H) and asparagine synthetase (ASNS). The specificity of the E64d-protein interactions was confirmed by biochemical assays and mass spectrometry-based site identifications. In neurons, treatment with E64d lead to about 50-fold PLD3 accumulation and dysregulation of its proteolytic cleavage, while there was only a minor overall change on the whole proteome level. Taken together, this study provides insights into previously unknown E64d selectivity and renders cysteine cathepsins responsible for PLD3 degradation in neurons. It highlights the importance of cysteine cathepsins activity in neuronal lysosomes for proper PLD3 processing and hence it suggests that their activation might be responsible for decreased PLD3 levels in neurons of patients with Alzheimer's diseases. These findings are key for further elucidation of PLD3 function in neurodegenerative diseases.",
-      "published": "2026-08-15",
-      "author_line": "Hertwig, M., Kielkowski, P."
-    },
-    {
-      "id": "biorxiv:10.64898/2026.03.27.714785",
-      "channel": "aixbio",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Rise-and-fall dynamics reveal a molecular and cellular vulnerability axis in prion-like α-synuclein propagation",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.03.27.714785",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Alexandersen, C. G.",
-        "Brynildsen, J. K.",
-        "Prigent, A.",
-        "Tamborrino, M.",
-        "Mantziou, A.",
-        "Kurgat, K.",
-        "Henderson, M. X.",
-        "Bassett, D. S."
-      ],
-      "language": "en",
-      "abstract_or_text": "The spread of misfolded proteins through neuronal circuits is a defining feature of neurodegenerative disease, yet the dynamics underlying this process remain poorly understood. Most studies rely on sparsely sampled datasets that capture spatial patterns of pathology but not their temporal evolution. Here, we analyze longitudinal histopathology measurements of -synuclein pathology across hundreds of brain regions in a mouse model of Parkinson's disease. Network-based dynamical modeling shows that regional pathology does not simply accumulate but instead follows rise-and-fall trajectories across the brain. The inferred parameter landscape reveals a one-dimensional vulnerability axis along which regions with stronger fall dynamics have greater monoaminergic neuronal composition and higher expression of proteostatic and metabolic genes. This vulnerability axis replicates in an independent histopathological dataset, indicating that its dominant transcriptomic structure is preserved. Together, these results suggest that regional vulnerability collapses onto a low-dimensional molecular and cellular axis defined by rise-and-fall dynamics.",
-      "summary_zh": "对帕金森病小鼠模型中数百脑区的纵向 α-突触核蛋白病理数据进行网络动力学建模，发现病理可呈上升后下降轨迹，并在独立组织病理数据集中复现主要转录组结构。",
-      "why_it_matters_zh": "时间序列视角补充了单时点病理图谱，可提出脑区易感性与蛋白稳态、代谢特征有关的假设；该关系来自动物模型和关联分析。",
-      "quality_score": 72.0,
-      "tags": [
-        "preprint",
-        "α-突触核蛋白",
-        "帕金森病",
-        "神经网络动力学",
-        "蛋白质与结构",
-        "neuroscience"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "mouse_model",
-        "hundreds_of_brain_regions",
-        "longitudinal_histopathology",
-        "independent_replication",
-        "dataset"
-      ],
-      "publication_status": "preprint",
-      "rank": 14,
-      "featured": false,
-      "category": "蛋白质与结构",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.03.27.714785",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Alexandersen, C. G.",
-        "Brynildsen, J. K.",
-        "Prigent, A.",
-        "Tamborrino, M.",
-        "Mantziou, A.",
-        "Kurgat, K.",
-        "Henderson, M. X.",
-        "Bassett, D. S."
-      ],
-      "abstract": "The spread of misfolded proteins through neuronal circuits is a defining feature of neurodegenerative disease, yet the dynamics underlying this process remain poorly understood. Most studies rely on sparsely sampled datasets that capture spatial patterns of pathology but not their temporal evolution. Here, we analyze longitudinal histopathology measurements of -synuclein pathology across hundreds of brain regions in a mouse model of Parkinson's disease. Network-based dynamical modeling shows that regional pathology does not simply accumulate but instead follows rise-and-fall trajectories across the brain. The inferred parameter landscape reveals a one-dimensional vulnerability axis along which regions with stronger fall dynamics have greater monoaminergic neuronal composition and higher expression of proteostatic and metabolic genes. This vulnerability axis replicates in an independent histopathological dataset, indicating that its dominant transcriptomic structure is preserved. Together, these results suggest that regional vulnerability collapses onto a low-dimensional molecular and cellular axis defined by rise-and-fall dynamics.",
-      "published": "2026-08-17",
-      "author_line": "Alexandersen, C. G., Brynildsen, J. K., Prigent, A. 等 8 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.11.744237",
-      "channel": "aixbio",
-      "related_channels": [
-        "aixchem"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Discovery of Selective Small-Molecule Ligands of SV2C by AI-Enhanced Virtual Screening and Experimental Validation",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.11.744237",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-16",
-      "creators": [
-        "Brueckner, A. C.",
-        "Martin, M. F.",
-        "Khuttan, S.",
-        "Shields, B.",
-        "Mittal, A.",
-        "Schreiber, J. A.",
-        "Salomon-Ferrer, R.",
-        "Bortolato, A.",
-        "Salahpour, A.",
-        "Bucher, M. L.",
-        "Coleman, J. A.",
-        "Miller, G. W."
-      ],
-      "language": "en",
-      "abstract_or_text": "Synaptic vesicle glycoprotein 2C (SV2C) is a vesicular protein enriched in dopaminergic neurons of the basal ganglia that modulates dopamine storage and release, and its disruption is implicated in Parkinson's disease (PD). Despite strong genetic and pathological links to PD, there are no selective small-molecule probes for SV2C. Here, we describe an AI-enhanced virtual screening (VS) and experimental campaign that identified multiple novel chemotypes with low-micromolar affinity and marked selectivity for SV2C over SV2A and SV2B, starting from a large, general-purpose commercial library. Because no full-length high-resolution SV2C structure was available, we built a homology model using SV2A cryo-EM structures as templates and characterized its conformational landscape by molecular dynamics (MD) and Gaussian accelerated MD (GaMD) simulations in apo form and in complex with known SV2 ligands (plosaracetam, levetiracetam, brivaracetam, and padsevonil). A convolutional neural network-based scoring function (CNN_VS), retrospectively validated on a manually curated 39-ligand SV2A benchmark (r = 0.72 vs experimental pIC50), was then applied in a multi-stage funnel to 5.96 million Mcule in-stock compounds, which were sequentially filtered to 3.19 million CNS-relevant molecules before docking and rescoring. From 94 VS-prioritized candidates, 71 compounds were experimentally profiled in an orthogonal primary assay cascade combining a thermal shift assay (TSA) with a [3H]-padsevonil scintillation proximity assay (SPA), followed by Ki determination and isoform selectivity profiling for key hits. This campaign yielded 22 active molecules (31% hit rate) that naturally segregated into two categories: compounds that showed primary site competition, and compounds that did not show primary site competition with [3H]-padsevonil. A subset of competitor compounds also showed thermostabilization activity. Among these, compounds 36 and 56 emerged as particularly attractive leads, with Ki values of 24.6 uM and 3.25 uM at SV2C, respectively, and greater than 10-fold selectivity versus SV2A; compound 56 also maintained approximately 12-fold selectivity relative to SV2B. A complementary subset of SV2C-selective hits behaved as padsevonil-site competitors, providing a lead set that will serve as a template for functional characterization and future drug development for conditions that affect dopaminergic signaling. Docking analysis suggests a common binding mode anchored by conserved tryptophan residues in the SV2 pocket, a prediction independently confirmed by an unpublished SV2A-plosaracetam cryo-EM structure showing 0.76 Angstrom binding-site C-alpha RMSD relative to the SV2C model and complete conservation of the tryptophan cage. Subtle differences in the luminal domain and transmembrane region point to the structural determinants underlying isoform selectivity. Collectively, these results demonstrate that an AI-driven VS pipeline, tightly integrated with medium-throughput biophysical assays, can deliver selective SV2C binders from a general chemical library on a structurally under-characterized membrane target. The identified hits provide multiple starting points for hit-to-lead optimization and tools for probing SV2C biology and its role in PD.",
-      "summary_zh": "针对结构信息有限的 SV2C，研究以 AI 虚拟筛选和分子动力学处理 596 万商业化合物，并对 71 个候选物进行正交生物物理检测，获得具 SV2C 选择性的微摩尔级先导物。",
-      "why_it_matters_zh": "为多巴胺能神经元相关膜蛋白提供了可进一步优化的化学探针起点，并展示计算筛选与实验检测的协同；这些先导物尚未证明疾病修饰作用。",
-      "quality_score": 72.0,
-      "tags": [
-        "preprint",
-        "虚拟筛选",
-        "膜蛋白",
-        "小分子配体",
-        "帕金森病",
-        "蛋白质与结构"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "5.96_million_compounds",
-        "71_experimentally_profiled",
-        "orthogonal_binding_assays",
-        "isoform_selectivity",
-        "benchmark"
-      ],
-      "publication_status": "preprint",
-      "rank": 15,
-      "featured": false,
-      "category": "蛋白质与结构",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.11.744237",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Brueckner, A. C.",
-        "Martin, M. F.",
-        "Khuttan, S.",
-        "Shields, B.",
-        "Mittal, A.",
-        "Schreiber, J. A.",
-        "Salomon-Ferrer, R.",
-        "Bortolato, A.",
-        "Salahpour, A.",
-        "Bucher, M. L.",
-        "Coleman, J. A.",
-        "Miller, G. W."
-      ],
-      "abstract": "Synaptic vesicle glycoprotein 2C (SV2C) is a vesicular protein enriched in dopaminergic neurons of the basal ganglia that modulates dopamine storage and release, and its disruption is implicated in Parkinson's disease (PD). Despite strong genetic and pathological links to PD, there are no selective small-molecule probes for SV2C. Here, we describe an AI-enhanced virtual screening (VS) and experimental campaign that identified multiple novel chemotypes with low-micromolar affinity and marked selectivity for SV2C over SV2A and SV2B, starting from a large, general-purpose commercial library. Because no full-length high-resolution SV2C structure was available, we built a homology model using SV2A cryo-EM structures as templates and characterized its conformational landscape by molecular dynamics (MD) and Gaussian accelerated MD (GaMD) simulations in apo form and in complex with known SV2 ligands (plosaracetam, levetiracetam, brivaracetam, and padsevonil). A convolutional neural network-based scoring function (CNN_VS), retrospectively validated on a manually curated 39-ligand SV2A benchmark (r = 0.72 vs experimental pIC50), was then applied in a multi-stage funnel to 5.96 million Mcule in-stock compounds, which were sequentially filtered to 3.19 million CNS-relevant molecules before docking and rescoring. From 94 VS-prioritized candidates, 71 compounds were experimentally profiled in an orthogonal primary assay cascade combining a thermal shift assay (TSA) with a [3H]-padsevonil scintillation proximity assay (SPA), followed by Ki determination and isoform selectivity profiling for key hits. This campaign yielded 22 active molecules (31% hit rate) that naturally segregated into two categories: compounds that showed primary site competition, and compounds that did not show primary site competition with [3H]-padsevonil. A subset of competitor compounds also showed thermostabilization activity. Among these, compounds 36 and 56 emerged as particularly attractive leads, with Ki values of 24.6 uM and 3.25 uM at SV2C, respectively, and greater than 10-fold selectivity versus SV2A; compound 56 also maintained approximately 12-fold selectivity relative to SV2B. A complementary subset of SV2C-selective hits behaved as padsevonil-site competitors, providing a lead set that will serve as a template for functional characterization and future drug development for conditions that affect dopaminergic signaling. Docking analysis suggests a common binding mode anchored by conserved tryptophan residues in the SV2 pocket, a prediction independently confirmed by an unpublished SV2A-plosaracetam cryo-EM structure showing 0.76 Angstrom binding-site C-alpha RMSD relative to the SV2C model and complete conservation of the tryptophan cage. Subtle differences in the luminal domain and transmembrane region point to the structural determinants underlying isoform selectivity. Collectively, these results demonstrate that an AI-driven VS pipeline, tightly integrated with medium-throughput biophysical assays, can deliver selective SV2C binders from a general chemical library on a structurally under-characterized membrane target. The identified hits provide multiple starting points for hit-to-lead optimization and tools for probing SV2C biology and its role in PD.",
-      "published": "2026-08-16",
-      "author_line": "Brueckner, A. C., Martin, M. F., Khuttan, S. 等 12 人"
-    },
-    {
-      "id": "medrxiv:10.64898/2026.07.24.26358843",
-      "channel": "aixbio",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "medRxiv",
-      "title": "Genetic regulation of right ventricular trabeculation identifies developmental and cardiopulmonary pathways",
-      "url": "https://www.medrxiv.org/content/10.64898/2026.07.24.26358843",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "McGurk, K. A.",
-        "Sedlacik, J.",
-        "Janan, R.",
-        "Sau, A.",
-        "Ng, F. S.",
-        "Bai, W.",
-        "Ware, J. S.",
-        "O'Regan, D. P."
-      ],
-      "language": "en",
-      "abstract_or_text": "Right ventricular (RV) trabeculation may reflect adaptation to loading conditions and imprinting of early developmental processes, yet its genetic determinants and clinical relevance in adults remain poorly understood. In contrast to the left ventricle, the RV has distinct developmental origins, geometry and loading conditions, suggesting chamber-specific mechanisms of trabecular remodelling. Using deep learning-based image segmentation and fractal dimension analysis, we quantified RV trabecular complexity in diastole and systole in 48,118 UK Biobank participants with genetic data. RV trabecular morphology was associated with systolic function, as well as cardiometabolic and respiratory conditions. Genetic analyses across the allele frequency spectrum identified 52 common loci and 45 genes with a burden of protein-altering variants, implicating sarcomeric function, cytoskeletal organisation, and early cardiac patterning. Although many loci showed shared effects across both ventricles, we also identified RV-specific genetic associations linked to congenital heart disease and respiratory phenotypes. Notably, associations at CFTR suggest a connection between airway-associated mucus regulation and RV remodelling, whereas MYH6 implicates sarcomeric and developmental mechanisms in adult RV patterning. Together, these findings establish RV trabeculation as a trait that captures both shared and chamber-specific mechanisms relevant to cardiovascular health and disease.",
-      "summary_zh": "利用 UK Biobank 中 48,118 名具有遗传数据的参与者，以深度学习分割和分形分析量化右心室小梁复杂度，并识别 52 个常见位点和 45 个蛋白改变变异负荷相关基因。",
-      "why_it_matters_zh": "大样本人群遗传学把右心室形态与发育、肌节和心肺相关通路联系起来，为理解心室特异性重塑提供资源；遗传关联本身不能确定具体致病机制。",
-      "quality_score": 71.0,
-      "tags": [
-        "preprint",
-        "UK Biobank",
-        "心血管遗传学",
-        "医学影像",
-        "右心室",
-        "生物医学与临床"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "48118_participants",
-        "genetic_association",
-        "deep_learning_segmentation",
-        "population_cohort",
-        "clinical"
-      ],
-      "publication_status": "preprint",
-      "rank": 16,
-      "featured": false,
-      "category": "生物医学与临床",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.07.24.26358843",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "McGurk, K. A.",
-        "Sedlacik, J.",
-        "Janan, R.",
-        "Sau, A.",
-        "Ng, F. S.",
-        "Bai, W.",
-        "Ware, J. S.",
-        "O'Regan, D. P."
-      ],
-      "abstract": "Right ventricular (RV) trabeculation may reflect adaptation to loading conditions and imprinting of early developmental processes, yet its genetic determinants and clinical relevance in adults remain poorly understood. In contrast to the left ventricle, the RV has distinct developmental origins, geometry and loading conditions, suggesting chamber-specific mechanisms of trabecular remodelling. Using deep learning-based image segmentation and fractal dimension analysis, we quantified RV trabecular complexity in diastole and systole in 48,118 UK Biobank participants with genetic data. RV trabecular morphology was associated with systolic function, as well as cardiometabolic and respiratory conditions. Genetic analyses across the allele frequency spectrum identified 52 common loci and 45 genes with a burden of protein-altering variants, implicating sarcomeric function, cytoskeletal organisation, and early cardiac patterning. Although many loci showed shared effects across both ventricles, we also identified RV-specific genetic associations linked to congenital heart disease and respiratory phenotypes. Notably, associations at CFTR suggest a connection between airway-associated mucus regulation and RV remodelling, whereas MYH6 implicates sarcomeric and developmental mechanisms in adult RV patterning. Together, these findings establish RV trabeculation as a trait that captures both shared and chamber-specific mechanisms relevant to cardiovascular health and disease.",
-      "published": "2026-08-17",
-      "author_line": "McGurk, K. A., Sedlacik, J., Janan, R. 等 8 人"
-    }
-  ],
-  "papers": [
-    {
-      "id": "medrxiv:10.64898/2026.08.13.26360407",
-      "channel": "aixbio",
-      "related_channels": [
-        "aixchem"
-      ],
-      "item_type": "paper",
-      "source": "medRxiv",
-      "title": "Deep Learning-Based Classification of Bone Lesions on CT Scans of Metastatic Spine Disease Patients: A 3D-Convolutional Neural Network Approach",
-      "url": "https://www.medrxiv.org/content/10.64898/2026.08.13.26360407",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Hong, V.",
-        "Bulent, A.",
-        "Haouchine, N.",
-        "Pieper, S.",
-        "Wells, S.",
-        "Keko, M.",
-        "Kozono, D.",
-        "Doyle, P. F.",
-        "Balboni, T.",
-        "Spektor, A.",
-        "Huynh, M. A.",
-        "Hackney, D. B.",
-        "Alkalay, R. N."
-      ],
-      "language": "en",
-      "abstract_or_text": "Purpose: Clinical assessment of vertebral lesion quality (osteolytic, osteoblastic, mixed) remains subjective, with limited interobserver reliability. This study evaluated a novel application of 3D convolutional neural networks (3D-CNNs) for classifying lesion quality from CT volumes in metastatic cancer patients. Materials and Methods: This retrospective study used CT data from 151 cancer patients planned for radiotherapy for metastatic spine disease (September 2020-July 2024). Leveraging vertebra-level expert annotations, we introduced an unconventional U-Net-based strategy converting coarse voxel-wise predictions into vertebra-level lesion classifications. The final dataset comprised 2,125 vertebrae across four classes (no lesion, osteolytic, osteoblastic, mixed), split into a 3-fold cross-validation set and an independent holdout test set. Model performance was benchmarked against a DenseNet121 baseline and a musculoskeletal radiologist, with Cohen's kappa assessing inter-rater agreement. Results: The 3D model achieved an ensemble accuracy of 84.7%, outperforming DenseNet121 (72.1%), with substantial gains in F1 score, precision, and balanced accuracy. It showed high concordance with the radiologist (Cohen's kappa = 0.76) and comparable sensitivity and specificity across all lesion subtypes. We found both models and the radiologist to struggle with osteolytic lesions, reflecting the difficulty of distinguishing this class from age-related changes in vertebral bone density and architecture caused by benign bone lesions, age-related systemic skeletal disorders and cancer treatments. Conclusions: 3D-CNNs trained with vertebra-level labels can accurately and reliably classify vertebral metastatic lesion quality from CT scans, offering a scalable path toward automated characterization of metastatic spine disease to support clinical decision-making and large-scale radiomics research.",
-      "summary_zh": "回顾性纳入 151 名转移性脊柱肿瘤患者、2,125 个椎体，以 3D-CNN 将粗粒度体素预测转为椎体病灶类型判定；三折验证和独立留出集上，集成模型准确率为 84.7%。",
-      "why_it_matters_zh": "将 CT 病灶分型标准化可辅助放疗规划与影像组学研究；溶骨性病灶仍较难区分，且需多中心前瞻性检验后才能评估临床应用。",
-      "quality_score": 82.0,
-      "tags": [
-        "preprint",
-        "临床影像",
-        "3D-CNN",
-        "转移性肿瘤",
-        "生物医学与临床",
-        "medRxiv"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "retrospective_clinical_cohort",
-        "2125_vertebrae",
-        "independent_holdout",
-        "radiologist_comparison",
-        "benchmark"
-      ],
-      "publication_status": "preprint",
-      "rank": 1,
-      "featured": true,
-      "category": "生物医学与临床",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.13.26360407",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Hong, V.",
-        "Bulent, A.",
-        "Haouchine, N.",
-        "Pieper, S.",
-        "Wells, S.",
-        "Keko, M.",
-        "Kozono, D.",
-        "Doyle, P. F.",
-        "Balboni, T.",
-        "Spektor, A.",
-        "Huynh, M. A.",
-        "Hackney, D. B.",
-        "Alkalay, R. N."
-      ],
-      "abstract": "Purpose: Clinical assessment of vertebral lesion quality (osteolytic, osteoblastic, mixed) remains subjective, with limited interobserver reliability. This study evaluated a novel application of 3D convolutional neural networks (3D-CNNs) for classifying lesion quality from CT volumes in metastatic cancer patients. Materials and Methods: This retrospective study used CT data from 151 cancer patients planned for radiotherapy for metastatic spine disease (September 2020-July 2024). Leveraging vertebra-level expert annotations, we introduced an unconventional U-Net-based strategy converting coarse voxel-wise predictions into vertebra-level lesion classifications. The final dataset comprised 2,125 vertebrae across four classes (no lesion, osteolytic, osteoblastic, mixed), split into a 3-fold cross-validation set and an independent holdout test set. Model performance was benchmarked against a DenseNet121 baseline and a musculoskeletal radiologist, with Cohen's kappa assessing inter-rater agreement. Results: The 3D model achieved an ensemble accuracy of 84.7%, outperforming DenseNet121 (72.1%), with substantial gains in F1 score, precision, and balanced accuracy. It showed high concordance with the radiologist (Cohen's kappa = 0.76) and comparable sensitivity and specificity across all lesion subtypes. We found both models and the radiologist to struggle with osteolytic lesions, reflecting the difficulty of distinguishing this class from age-related changes in vertebral bone density and architecture caused by benign bone lesions, age-related systemic skeletal disorders and cancer treatments. Conclusions: 3D-CNNs trained with vertebra-level labels can accurately and reliably classify vertebral metastatic lesion quality from CT scans, offering a scalable path toward automated characterization of metastatic spine disease to support clinical decision-making and large-scale radiomics research.",
-      "published": "2026-08-17",
-      "author_line": "Hong, V., Bulent, A., Haouchine, N. 等 13 人"
-    },
-    {
-      "id": "medrxiv:10.64898/2026.08.15.26360514",
-      "channel": "aixbio",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "medRxiv",
-      "title": "Early Detection of Erythropoietic Protoporphyria Using Sequential Machine Learning on Longitudinal Electronic Health Records",
-      "url": "https://www.medrxiv.org/content/10.64898/2026.08.15.26360514",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Ayati, A.",
-        "Onal, G.",
-        "Sur, A.",
-        "Azzam, S.",
-        "Wang, B.",
-        "Rudrapatna, V. A."
-      ],
-      "language": "en",
-      "abstract_or_text": "Objective: Erythropoietic protoporphyria (EPP) is a rare photodermatosis marked by multi-year diagnostic delays. We developed and externally validated machine learning models to identify patients with EPP earlier from longitudinal electronic health record (EHR) data and estimate undiagnosed disease burden. Materials and Methods: In a retrospective case-control study at two San Francisco health systems, an academic referral center (UCSF) and a safety-net hospital (ZSFG) we identified 74 confirmed EPP cases using combined diagnostic coding, biochemical criteria, and specialty chart review. Symptom-enriched controls were sampled at a 40:1 ratio. Longitudinal diagnoses, laboratory results, medications, procedures, and encounters preceding the outcome date were modeled with a gradient-boosting classifier (CatBoost) and a state-space sequence model (MAMBA). The best model was deployed across the UCSF population and externally validated at ZSFG without retraining. Results: On the UCSF held-out test set (n=1,865; 43 cases), MAMBA outperformed CatBoost (AUC ROC 0.91 vs 0.89; average precision 0.42 vs 0.27; precision 65% vs 20%), flagging cases a median of 229 days before documented diagnosis. Deployed across 297,967 symptom-compatible patients, it identified 310 high-risk individuals, implying a prevalence approaching genetic estimates. External validation at ZSFG showed attenuated performance (AUC ROC 0.72; average precision 0.10) while preserving early detection (median 264 days). Discussion: A sequence model integrating temporal EHR signals detected EPP months before clinical recognition, corroborating genetic evidence of substantial underdiagnosis. Cross-site attenuation reflects population and documentation differences and underscores the need for local recalibration. Conclusion: Longitudinal EHR-based machine learning can shorten EPP diagnostic delay and prioritize patients for confirmatory testing, supporting proactive rare-disease case finding.",
-      "summary_zh": "在两家旧金山医疗系统的纵向电子病历中，以 74 例确诊红细胞生成性原卟啉症训练时序模型，并在未重训的外部医院检验。外部 AUC 为 0.72，模型可在记录诊断前中位 264 天提示高风险。",
-      "why_it_matters_zh": "少见病的诊断延迟是实际临床问题；跨院性能下降提示模型可用于提示后续确证检查，部署前仍需本地校准。",
-      "quality_score": 81.0,
-      "tags": [
-        "preprint",
-        "电子病历",
-        "罕见病",
-        "时序模型",
-        "生物医学与临床",
-        "medRxiv"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "74_confirmed_cases",
-        "external_validation",
-        "retrospective_case_control",
-        "clinical_cohort",
-        "clinical"
-      ],
-      "publication_status": "preprint",
-      "rank": 2,
-      "featured": true,
-      "category": "生物医学与临床",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.15.26360514",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Ayati, A.",
-        "Onal, G.",
-        "Sur, A.",
-        "Azzam, S.",
-        "Wang, B.",
-        "Rudrapatna, V. A."
-      ],
-      "abstract": "Objective: Erythropoietic protoporphyria (EPP) is a rare photodermatosis marked by multi-year diagnostic delays. We developed and externally validated machine learning models to identify patients with EPP earlier from longitudinal electronic health record (EHR) data and estimate undiagnosed disease burden. Materials and Methods: In a retrospective case-control study at two San Francisco health systems, an academic referral center (UCSF) and a safety-net hospital (ZSFG) we identified 74 confirmed EPP cases using combined diagnostic coding, biochemical criteria, and specialty chart review. Symptom-enriched controls were sampled at a 40:1 ratio. Longitudinal diagnoses, laboratory results, medications, procedures, and encounters preceding the outcome date were modeled with a gradient-boosting classifier (CatBoost) and a state-space sequence model (MAMBA). The best model was deployed across the UCSF population and externally validated at ZSFG without retraining. Results: On the UCSF held-out test set (n=1,865; 43 cases), MAMBA outperformed CatBoost (AUC ROC 0.91 vs 0.89; average precision 0.42 vs 0.27; precision 65% vs 20%), flagging cases a median of 229 days before documented diagnosis. Deployed across 297,967 symptom-compatible patients, it identified 310 high-risk individuals, implying a prevalence approaching genetic estimates. External validation at ZSFG showed attenuated performance (AUC ROC 0.72; average precision 0.10) while preserving early detection (median 264 days). Discussion: A sequence model integrating temporal EHR signals detected EPP months before clinical recognition, corroborating genetic evidence of substantial underdiagnosis. Cross-site attenuation reflects population and documentation differences and underscores the need for local recalibration. Conclusion: Longitudinal EHR-based machine learning can shorten EPP diagnostic delay and prioritize patients for confirmatory testing, supporting proactive rare-disease case finding.",
-      "published": "2026-08-17",
-      "author_line": "Ayati, A., Onal, G., Sur, A. 等 6 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.05.742965",
-      "channel": "aixbio",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "VRK1 kinase maintains an undifferentiated proliferative state in neuroblastoma tumor cells",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.05.742965",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Ojeda-Puertas, M.",
-        "Gomez Munoz, M. d. l. A.",
-        "Colmenero-Repiso, A.",
-        "Amador-Alvarez, A.",
-        "Rodriguez-Prieto, I.",
-        "Pardal, R.",
-        "Vega, F. M."
-      ],
-      "language": "en",
-      "abstract_or_text": "Neuroblastoma is a neural crest-derived pediatric malignancy characterized by marked cellular heterogeneity and variable differentiation status. Undifferentiated tumors are associated with aggressive clinical behavior, treatment resistance and poor outcome, highlighting the need to identify molecular mechanisms that sustain tumor cell plasticity and prevent differentiation. Vaccinia-related kinase 1 (VRK1) is a serine/threonine kinase involved in cell-cycle progression, DNA-damage responses and transcriptional regulation, and has previously been associated with neuroblastoma progression. However, its role in the control of neuroblastoma differentiation remains unclear. Here, we investigated the relationship between VRK1 expression, tumor differentiation and stem-like properties in human neuroblastoma. Analysis of patient tumor datasets and tissue microarrays showed that VRK1 expression is enriched in undifferentiated neuroblastoma and stage 4 tumors, and inversely correlates with established differentiation markers, including DDC, NCAM1 and S100B. This association was maintained in MYCN-non-amplified tumors, indicating that the relationship between VRK1 and differentiation is not dependent on MYCN status. Single-cell transcriptomic analyses further demonstrated elevated VRK1 expression in developmentally immature neural crest progenitor and Schwann cell precursor-like populations. Induction of neuronal or mesenchymal differentiation consistently reduced VRK1 expression in neuroblastoma cell lines and patient-derived cells. Conversely, VRK1 silencing promoted differentiation-marker expression, reduced nestin and Ki67 expression, and produced sustained differentiation-associated changes in xenograft tumors. VRK1 was also enriched in tumorsphere cultures that select for undifferentiated stem-like neuroblastoma cells. VRK1 depletion impaired tumorsphere growth, reduced intratumoral proliferation and altered the balance between undifferentiated cells and differentiated progeny, supporting a role for VRK1 in self-renewal and maintenance of progenitor-like tumor cells. Mechanistically, VRK1 expression positively correlated with the core stemness transcription factor SOX2 in neuroblastoma tumor cells. VRK1 knockdown reduced nuclear SOX2 abundance, whereas VRK1 overexpression increased SOX2 protein levels. In addition, analysis of the VRK1 locus identified an active chromatin configuration and potential SOX2-binding sites, consistent with a regulatory relationship between these factors. Together, these findings identify VRK1 as a regulator of the undifferentiated, proliferative and stem-like state in neuroblastoma. The VRK1-SOX2 axis may contribute to stabilizing tumor-cell immaturity and represents a potential target for differentiation based therapeutic strategies in high-risk neuroblastoma.",
-      "summary_zh": "结合患者肿瘤数据、组织芯片、单细胞转录组、细胞系与患者来源细胞以及异种移植模型，研究显示抑制 VRK1 会伴随神经母细胞瘤分化标志上升与增殖降低。",
-      "why_it_matters_zh": "多层实验将未分化肿瘤状态与 VRK1 联系起来，为研究分化治疗提供了可检验的分子线索；治疗靶点价值仍待进一步药理学验证。",
-      "quality_score": 80.0,
-      "tags": [
-        "preprint",
-        "神经母细胞瘤",
-        "单细胞",
-        "肿瘤分化",
-        "组学与细胞",
-        "cancer biology"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "patient_data",
-        "single_cell",
-        "patient_derived_cells",
-        "xenograft",
-        "dataset"
-      ],
-      "publication_status": "preprint",
-      "rank": 3,
-      "featured": true,
-      "category": "组学与细胞",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.05.742965",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Ojeda-Puertas, M.",
-        "Gomez Munoz, M. d. l. A.",
-        "Colmenero-Repiso, A.",
-        "Amador-Alvarez, A.",
-        "Rodriguez-Prieto, I.",
-        "Pardal, R.",
-        "Vega, F. M."
-      ],
-      "abstract": "Neuroblastoma is a neural crest-derived pediatric malignancy characterized by marked cellular heterogeneity and variable differentiation status. Undifferentiated tumors are associated with aggressive clinical behavior, treatment resistance and poor outcome, highlighting the need to identify molecular mechanisms that sustain tumor cell plasticity and prevent differentiation. Vaccinia-related kinase 1 (VRK1) is a serine/threonine kinase involved in cell-cycle progression, DNA-damage responses and transcriptional regulation, and has previously been associated with neuroblastoma progression. However, its role in the control of neuroblastoma differentiation remains unclear. Here, we investigated the relationship between VRK1 expression, tumor differentiation and stem-like properties in human neuroblastoma. Analysis of patient tumor datasets and tissue microarrays showed that VRK1 expression is enriched in undifferentiated neuroblastoma and stage 4 tumors, and inversely correlates with established differentiation markers, including DDC, NCAM1 and S100B. This association was maintained in MYCN-non-amplified tumors, indicating that the relationship between VRK1 and differentiation is not dependent on MYCN status. Single-cell transcriptomic analyses further demonstrated elevated VRK1 expression in developmentally immature neural crest progenitor and Schwann cell precursor-like populations. Induction of neuronal or mesenchymal differentiation consistently reduced VRK1 expression in neuroblastoma cell lines and patient-derived cells. Conversely, VRK1 silencing promoted differentiation-marker expression, reduced nestin and Ki67 expression, and produced sustained differentiation-associated changes in xenograft tumors. VRK1 was also enriched in tumorsphere cultures that select for undifferentiated stem-like neuroblastoma cells. VRK1 depletion impaired tumorsphere growth, reduced intratumoral proliferation and altered the balance between undifferentiated cells and differentiated progeny, supporting a role for VRK1 in self-renewal and maintenance of progenitor-like tumor cells. Mechanistically, VRK1 expression positively correlated with the core stemness transcription factor SOX2 in neuroblastoma tumor cells. VRK1 knockdown reduced nuclear SOX2 abundance, whereas VRK1 overexpression increased SOX2 protein levels. In addition, analysis of the VRK1 locus identified an active chromatin configuration and potential SOX2-binding sites, consistent with a regulatory relationship between these factors. Together, these findings identify VRK1 as a regulator of the undifferentiated, proliferative and stem-like state in neuroblastoma. The VRK1-SOX2 axis may contribute to stabilizing tumor-cell immaturity and represents a potential target for differentiation based therapeutic strategies in high-risk neuroblastoma.",
-      "published": "2026-08-17",
-      "author_line": "Ojeda-Puertas, M., Gomez Munoz, M. d. l. A., Colmenero-Repiso, A. 等 7 人"
-    },
-    {
-      "id": "biorxiv:10.1101/2025.07.20.665723",
-      "channel": "aixbio",
-      "related_channels": [
-        "aixchem"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "A contextualised protein language model reveals the functional syntax of bacterial evolution",
-      "url": "https://www.biorxiv.org/content/10.1101/2025.07.20.665723",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Wiatrak, M.",
-        "Abelson, D. C.",
-        "Mikhaylenko, R.",
-        "Vinas Torne, R.",
-        "Ntemourtsidou, M.",
-        "Dinan, A. M.",
-        "Arora, D.",
-        "Horsfield, S. T.",
-        "Lees, J.",
-        "Brbic, M.",
-        "Weimann, A.",
-        "Floto, R. A."
-      ],
-      "language": "en",
-      "abstract_or_text": "Bacteria have evolved a vast diversity of functions and behaviours that are currently incompletely understood and poorly predicted from DNA sequence alone. To understand the syntax of bacterial evolution and discover genome-to-phenotype relationships, we curated over 1.3 million genomes spanning bacterial phylogenetic space, represented each as an ordered sequence of proteins, and used these sequences to train a transformer-based, contextualised protein language model, Bacformer. By pretraining on genome-wide evolutionary patterns, Bacformer captures the compositional and positional relationships of proteins and thereby provides a whole-genome framework for linking genomic organisation and content to measurable bacterial traits. We demonstrate the ability of Bacformer to accurately predict protein-protein interactions; uncover operon structure, which we validated experimentally; infer important phenotypic traits, including antimicrobial resistance, while revealing likely causal genes; and design template synthetic proteomes with desirable properties. Thus, Bacformer establishes a genomic foundation model that reveals the evolutionary rules governing bacterial gene organisation, function, and phenotype, opening a route to systematic whole-genome engineering.",
-      "summary_zh": "Bacformer 将 130 余万细菌基因组表示为有序蛋白序列并训练 Transformer，可预测蛋白互作、推断操纵子结构和表型；其中操纵子推断有实验验证。",
-      "why_it_matters_zh": "模型将蛋白的基因组位置与组合关系纳入表征，为细菌功能注释和基因组工程提供了大规模基础模型；表型相关基因仍应逐项实验确认。",
-      "quality_score": 79.0,
-      "tags": [
-        "preprint",
-        "蛋白语言模型",
-        "微生物基因组",
-        "基础模型",
-        "方法与模型",
-        "microbiology"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "1.3_million_genomes",
-        "experimental_operon_validation",
-        "computational_benchmark",
-        "experimental"
-      ],
-      "publication_status": "preprint",
-      "rank": 4,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.1101/2025.07.20.665723",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Wiatrak, M.",
-        "Abelson, D. C.",
-        "Mikhaylenko, R.",
-        "Vinas Torne, R.",
-        "Ntemourtsidou, M.",
-        "Dinan, A. M.",
-        "Arora, D.",
-        "Horsfield, S. T.",
-        "Lees, J.",
-        "Brbic, M.",
-        "Weimann, A.",
-        "Floto, R. A."
-      ],
-      "abstract": "Bacteria have evolved a vast diversity of functions and behaviours that are currently incompletely understood and poorly predicted from DNA sequence alone. To understand the syntax of bacterial evolution and discover genome-to-phenotype relationships, we curated over 1.3 million genomes spanning bacterial phylogenetic space, represented each as an ordered sequence of proteins, and used these sequences to train a transformer-based, contextualised protein language model, Bacformer. By pretraining on genome-wide evolutionary patterns, Bacformer captures the compositional and positional relationships of proteins and thereby provides a whole-genome framework for linking genomic organisation and content to measurable bacterial traits. We demonstrate the ability of Bacformer to accurately predict protein-protein interactions; uncover operon structure, which we validated experimentally; infer important phenotypic traits, including antimicrobial resistance, while revealing likely causal genes; and design template synthetic proteomes with desirable properties. Thus, Bacformer establishes a genomic foundation model that reveals the evolutionary rules governing bacterial gene organisation, function, and phenotype, opening a route to systematic whole-genome engineering.",
-      "published": "2026-08-17",
-      "author_line": "Wiatrak, M., Abelson, D. C., Mikhaylenko, R. 等 12 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.07.743610",
-      "channel": "aixbio",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "PerturbLDM: conditional latent diffusion for modelling single-cell perturbation responses",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.07.743610",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-16",
-      "creators": [
-        "Yu, L.",
-        "Hsieh, K.-L.",
-        "Chu, Y.",
-        "Lan, Q.",
-        "Zhao, X.",
-        "Hsu, Y.-C.",
-        "Wood, C. S.",
-        "Rasmy, L.",
-        "Pilie, P. G.",
-        "Zhi, D.",
-        "Zhao, Z.",
-        "Jiang, X.",
-        "Dai, Y."
-      ],
-      "language": "en",
-      "abstract_or_text": "Single-cell perturbation profiling maps intervention-induced phenotypes, yet experiments measure only a fraction of the perturbation-context space. Learning context-dependent perturbation effects could enable response prediction beyond measured conditions. Here we introduce PerturbLDM, a latent-diffusion framework for conditional generation of single-cell transcriptional responses. Following Tahoe-100M pretraining, it outperformed leading methods across 13,942 held-out combinations of observed drugs, doses and cell lines, with higher matched-control effect correlation than an additive marginal baseline in 95.2% of conditions. The Tahoe-100M-pretrained model was further used to rank PANACEA compounds by pathway similarity, placing shared-mechanism pairs among nearest neighbours. In smaller datasets, PerturbLDM generated a mid-gestational fetal-colon state with 67% lower gene-wise error than Squidiff, retaining the balance between absorptive and BEST4/OTOP2-like epithelial programmes. In PBMCs, it captured six of seven interferon and antiviral programmes and the interferon-associated FAO- OXPHOS programme more accurately than scGen. Together, these results support conditional response generation across data scales and biological settings.",
-      "summary_zh": "PerturbLDM 以潜空间扩散模型生成单细胞转录扰动响应；经 Tahoe-100M 预训练后，在 13,942 个药物、剂量和细胞系留出组合中优于比较方法。",
-      "why_it_matters_zh": "可为未测扰动条件提出转录响应假设，并在不同数据规模中检验泛化；生成结果适合作为实验优先级依据，不能替代实际扰动测量。",
-      "quality_score": 79.0,
-      "tags": [
-        "preprint",
-        "单细胞组学",
-        "扰动预测",
-        "扩散模型",
-        "组学与细胞",
-        "bioinformatics"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "Tahoe_100M_pretraining",
-        "13942_heldout_combinations",
-        "multi_dataset_evaluation",
-        "dataset"
-      ],
-      "publication_status": "preprint",
-      "rank": 5,
-      "featured": false,
-      "category": "组学与细胞",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.07.743610",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Yu, L.",
-        "Hsieh, K.-L.",
-        "Chu, Y.",
-        "Lan, Q.",
-        "Zhao, X.",
-        "Hsu, Y.-C.",
-        "Wood, C. S.",
-        "Rasmy, L.",
-        "Pilie, P. G.",
-        "Zhi, D.",
-        "Zhao, Z.",
-        "Jiang, X.",
-        "Dai, Y."
-      ],
-      "abstract": "Single-cell perturbation profiling maps intervention-induced phenotypes, yet experiments measure only a fraction of the perturbation-context space. Learning context-dependent perturbation effects could enable response prediction beyond measured conditions. Here we introduce PerturbLDM, a latent-diffusion framework for conditional generation of single-cell transcriptional responses. Following Tahoe-100M pretraining, it outperformed leading methods across 13,942 held-out combinations of observed drugs, doses and cell lines, with higher matched-control effect correlation than an additive marginal baseline in 95.2% of conditions. The Tahoe-100M-pretrained model was further used to rank PANACEA compounds by pathway similarity, placing shared-mechanism pairs among nearest neighbours. In smaller datasets, PerturbLDM generated a mid-gestational fetal-colon state with 67% lower gene-wise error than Squidiff, retaining the balance between absorptive and BEST4/OTOP2-like epithelial programmes. In PBMCs, it captured six of seven interferon and antiviral programmes and the interferon-associated FAO- OXPHOS programme more accurately than scGen. Together, these results support conditional response generation across data scales and biological settings.",
-      "published": "2026-08-16",
-      "author_line": "Yu, L., Hsieh, K.-L., Chu, Y. 等 13 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.11.743858",
-      "channel": "aixbio",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Integration of proteomic data from cell lines and tumors",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.11.743858",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Ta, C. Q.",
-        "Auth, J. M.",
-        "Schilling, M.",
-        "Klingmueller, U.",
-        "Raue, A."
-      ],
-      "language": "en",
-      "abstract_or_text": "Cancer cell lines are widely used in preclinical research, yet the clinical translation of findings from cell lines remains limited. Identifying cell lines that best resemble patient tumors requires integration of molecular profiles across biologically distinct sample types. Recent advances in transcriptomic integration have demonstrated the potential of deep learning for aligning data across different sample types. However, comparable approaches for proteomic data integration remain lacking, potentially because of the prevalence of missing values in proteomic datasets. Here, we introduce ProtInt, a deep learning-based framework that integrates proteomic data from cell lines and patient tumors by combining principles from proteomic imputation and transcriptomic integration methods. We applied ProtInt to integrate label-free proteomic profiles from 771 cancer cell lines and 550 treatment-naive tumors. ProtInt outperformed batch correction and transcriptomic integration methods in aligning cell line and tumor proteomes. Comparison of the cell line proteomes before and after integration revealed recurrent increase of proteins associated with immune reaction, cell-cell communication, and interaction with the extracellular matrix, and reduction of proteins involved in transcription, post-transcriptional processing, and mitochondrial gene expression as proteomes of cell lines were adapted to resemble tumors. These results establish ProtInt as a framework for joint analysis of proteomic datasets across distinct sample types and may facilitate the identification of cell lines best suited for clinically relevant studies.",
-      "summary_zh": "ProtInt 将蛋白质组缺失值处理与跨样本类型整合结合，用于对齐 771 个癌细胞系和 550 例治疗前肿瘤的无标记蛋白质组。",
-      "why_it_matters_zh": "细胞系与患者肿瘤的蛋白质组可比性是转化研究中的关键问题；该方法有望帮助选择更贴近肿瘤状态的模型，临床外推仍需独立研究确认。",
-      "quality_score": 77.0,
-      "tags": [
-        "preprint",
-        "蛋白质组学",
-        "癌症模型",
-        "深度学习",
-        "组学与细胞",
-        "bioinformatics"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "771_cell_lines",
-        "550_treatment_naive_tumors",
-        "method_comparison",
-        "dataset",
-        "clinical"
       ],
       "publication_status": "preprint",
       "rank": 6,
@@ -1516,149 +422,6 @@
       "category": "组学与细胞",
       "metrics": {},
       "metadata": {
-        "doi": "10.64898/2026.08.11.743858",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Ta, C. Q.",
-        "Auth, J. M.",
-        "Schilling, M.",
-        "Klingmueller, U.",
-        "Raue, A."
-      ],
-      "abstract": "Cancer cell lines are widely used in preclinical research, yet the clinical translation of findings from cell lines remains limited. Identifying cell lines that best resemble patient tumors requires integration of molecular profiles across biologically distinct sample types. Recent advances in transcriptomic integration have demonstrated the potential of deep learning for aligning data across different sample types. However, comparable approaches for proteomic data integration remain lacking, potentially because of the prevalence of missing values in proteomic datasets. Here, we introduce ProtInt, a deep learning-based framework that integrates proteomic data from cell lines and patient tumors by combining principles from proteomic imputation and transcriptomic integration methods. We applied ProtInt to integrate label-free proteomic profiles from 771 cancer cell lines and 550 treatment-naive tumors. ProtInt outperformed batch correction and transcriptomic integration methods in aligning cell line and tumor proteomes. Comparison of the cell line proteomes before and after integration revealed recurrent increase of proteins associated with immune reaction, cell-cell communication, and interaction with the extracellular matrix, and reduction of proteins involved in transcription, post-transcriptional processing, and mitochondrial gene expression as proteomes of cell lines were adapted to resemble tumors. These results establish ProtInt as a framework for joint analysis of proteomic datasets across distinct sample types and may facilitate the identification of cell lines best suited for clinically relevant studies.",
-      "published": "2026-08-17",
-      "author_line": "Ta, C. Q., Auth, J. M., Schilling, M. 等 5 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.02.15.705956",
-      "channel": "aixbio",
-      "related_channels": [
-        "aixchem"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Physically Grounded Generative Modeling of All-Atom Biomolecular Dynamics",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.02.15.705956",
-      "published_at": "2026-08-15",
-      "updated_at": "2026-08-15",
-      "creators": [
-        "Feng, B.",
-        "Zhang, J.",
-        "Zhang, X.",
-        "Cao, H.",
-        "Zhang, M.",
-        "Barth, P.",
-        "Liu, Z.",
-        "Li, Y."
-      ],
-      "language": "en",
-      "abstract_or_text": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
-      "summary_zh": "BioKinema 提出受朗之万动力学启发的时空扩散模型，生成连续时间、全原子级生物分子轨迹，并报告可重现蛋白构象热力学、动力学及配体解离相关过程。",
-      "why_it_matters_zh": "若动力学保真度经独立基准确认，可补足静态结构预测与传统分子动力学之间的空缺，支持高通量构象与结合过程研究。",
-      "quality_score": 77.0,
-      "tags": [
-        "preprint",
-        "全原子动力学",
-        "生成模型",
-        "结构生物学",
-        "方法与模型",
-        "bioinformatics"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "claimed_thermodynamic_validation",
-        "claimed_kinetic_validation",
-        "computational_method",
-        "limited_public_metrics_in_abstract"
-      ],
-      "publication_status": "preprint",
-      "rank": 7,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.02.15.705956",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Feng, B.",
-        "Zhang, J.",
-        "Zhang, X.",
-        "Cao, H.",
-        "Zhang, M.",
-        "Barth, P.",
-        "Liu, Z.",
-        "Li, Y."
-      ],
-      "abstract": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
-      "published": "2026-08-15",
-      "author_line": "Feng, B., Zhang, J., Zhang, X. 等 8 人"
-    },
-    {
-      "id": "biorxiv:10.1101/2025.09.30.679553",
-      "channel": "aixbio",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Long-Read epigenetic clocks identify improved brain aging predictions",
-      "url": "https://www.biorxiv.org/content/10.1101/2025.09.30.679553",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Grant, S. M.",
-        "Eger, S. J.",
-        "Makarious, M. B.",
-        "Meredith, M.",
-        "Moller, A.",
-        "Grant-Peters, M.",
-        "Hicks, A.",
-        "Mandal, A.",
-        "Auluck, P.",
-        "Villegas-Lanau, A.",
-        "Mejia-Cupajita, B.",
-        "Acosta-Uribe, J.",
-        "Aguillon, D.",
-        "Leonard, H.",
-        "Kuznetsov, N.",
-        "Weller, C.",
-        "Reed, X.",
-        "Catching, A.",
-        "Jain, M.",
-        "Ferrucci, L.",
-        "Kosik, K. S.",
-        "Cookson, M. R.",
-        "Ryten, M.",
-        "Nalls, M. A.",
-        "Billingsley, K. J."
-      ],
-      "language": "en",
-      "abstract_or_text": "Epigenetic clocks are widely used to estimate biological aging, yet most are built from array-based data from peripheral tissues of predominantly European-ancestry individuals, limiting their generalizability. Here, we present aging clocks on DNA methylation from Oxford Nanopore long-read sequencing (LRS), leveraging over 28 million CpG sites from prefrontal cortex samples across individuals of African and European ancestry. These models were developed using GenoML, an automated machine learning platform for multi-omics data that leverages a diverse catalog of existing model architectures. Our long-read-informed clocks were developed using promoter-based and whole-genome window-based features, yielding models for each individual cohort as well as a combined-cohort clock. Each of these models demonstrated favorable performance compared to existing methylation clocks and was externally validated in a cohort of Colombian individuals. We further performed enrichment analyses and nominated both shared and cohort-specific pathways, cell types, and transcription factor binding motifs which may be implicated in aging and were not fully explained by cell type proportions or postmortem interval. Altogether, our findings highlight the power of long-read methylation data for constructing accurate, ancestry-aware aging clocks and emphasize the importance of inclusive training datasets.",
-      "summary_zh": "研究以牛津纳米孔长读长甲基化数据构建脑衰老时钟，覆盖逾 2,800 万 CpG 位点、非洲与欧洲祖源前额叶样本，并在哥伦比亚队列进行外部检验。",
-      "why_it_matters_zh": "长读长和多祖源训练有助于改善传统外周血、单一祖源时钟的局限；其对脑衰老机制和个体层面预测的增益仍须更多队列复现。",
-      "quality_score": 76.0,
-      "tags": [
-        "preprint",
-        "表观基因组",
-        "长读长测序",
-        "脑衰老",
-        "组学与细胞",
-        "bioinformatics"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "28_million_CpGs",
-        "multi_ancestry_training",
-        "external_validation",
-        "dataset",
-        "performance"
-      ],
-      "publication_status": "preprint",
-      "rank": 8,
-      "featured": false,
-      "category": "组学与细胞",
-      "metrics": {},
-      "metadata": {
         "doi": "10.1101/2025.09.30.679553",
         "arxiv_id": ""
       },
@@ -1689,7 +452,6 @@
         "Nalls, M. A.",
         "Billingsley, K. J."
       ],
-      "abstract": "Epigenetic clocks are widely used to estimate biological aging, yet most are built from array-based data from peripheral tissues of predominantly European-ancestry individuals, limiting their generalizability. Here, we present aging clocks on DNA methylation from Oxford Nanopore long-read sequencing (LRS), leveraging over 28 million CpG sites from prefrontal cortex samples across individuals of African and European ancestry. These models were developed using GenoML, an automated machine learning platform for multi-omics data that leverages a diverse catalog of existing model architectures. Our long-read-informed clocks were developed using promoter-based and whole-genome window-based features, yielding models for each individual cohort as well as a combined-cohort clock. Each of these models demonstrated favorable performance compared to existing methylation clocks and was externally validated in a cohort of Colombian individuals. We further performed enrichment analyses and nominated both shared and cohort-specific pathways, cell types, and transcription factor binding motifs which may be implicated in aging and were not fully explained by cell type proportions or postmortem interval. Altogether, our findings highlight the power of long-read methylation data for constructing accurate, ancestry-aware aging clocks and emphasize the importance of inclusive training datasets.",
       "published": "2026-08-17",
       "author_line": "Grant, S. M., Eger, S. J., Makarious, M. B. 等 25 人"
     },
@@ -1719,11 +481,10 @@
       "why_it_matters_zh": "该人源多层血管模型可用于研究炎症性血管反应与候选干预；药物反应来自体外系统，尚不能推及患者疗效。",
       "quality_score": 75.0,
       "tags": [
-        "preprint",
+        "蛋白质与结构",
         "血管芯片",
         "生物打印",
         "原代人细胞",
-        "蛋白质与结构",
         "bioengineering"
       ],
       "evidence_flags": [
@@ -1735,7 +496,7 @@
         "evaluation"
       ],
       "publication_status": "preprint",
-      "rank": 9,
+      "rank": 7,
       "featured": false,
       "category": "蛋白质与结构",
       "metrics": {},
@@ -1753,7 +514,6 @@
         "Lindner, J. M.",
         "Cutler, A. A."
       ],
-      "abstract": "Chronic inflammation drives persistent systemic cytokine signaling that contributes to vascular dysfunction and secondary vasculitis, yet mechanistic studies are limited by models that fail to capture the multicellular architecture and dynamics of human arteries. In contrast, perfusing intact vessels ex vivo has limited tractability because of material availability and difficulty of genetic or biochemical manipulation. We developed a modular, perfused artery-on-a-chip platform by tri-axially bioprinting primary human vascular cells to recapitulate the concentric organization of the intimal, medial, and adventitial layers. The engineered vessels are viable longer than 21 days, with functional endothelial barriers, contractile smooth muscle behavior, and actively remodeled extracellular matrices bearing hallmarks of native vascular tissue. Addition of tumor necrosis factor alpha (TNF) induces altered transcript levels of proinflammatory mediators and secretion of cytokines and matrix-remodeling enzymes without compromising vessel viability. Importantly, this secretory response is effectively attenuated by both a small-molecule JAK1 inhibitor (ABT-317) and anti-TNF antibody (Infliximab), demonstrating model utility for therapeutic evaluation.",
       "published": "2026-08-17",
       "author_line": "Fu, Z., Fastiggi, V. A., Phelan, A. 等 8 人"
     },
@@ -1783,12 +543,11 @@
       "why_it_matters_zh": "该工具使非专门计算用户也能分析大规模时序成像，并把细胞周期、半胱天冬酶激活和死亡顺序置于同一读出中。",
       "quality_score": 75.0,
       "tags": [
-        "preprint",
+        "组学与细胞",
         "活细胞成像",
         "单细胞",
         "细胞死亡",
-        "分析软件",
-        "组学与细胞"
+        "分析软件"
       ],
       "evidence_flags": [
         "preprint",
@@ -1799,7 +558,7 @@
         "dataset"
       ],
       "publication_status": "preprint",
-      "rank": 10,
+      "rank": 8,
       "featured": false,
       "category": "组学与细胞",
       "metrics": {},
@@ -1817,7 +576,6 @@
         "Tergaonkar, V.",
         "Mort, R. L."
       ],
-      "abstract": "Fundamental cellular decisions of life and death are governed by intricate and tightly regulated intracellular signalling pathways that determine whether cells proliferate, enter quiescence, or undergo programmed cell death (apoptosis). Live-cell fluorescence imaging enables these processes to be observed in real time at single-cell resolution, but two problems limit their study. First, existing biosensors do not allow apoptotic status and cell cycle progression to be resolved in tandem within the same cell. Second, interpreting live-cell imaging data is challenging even where multiplex reporters exist, as the biological meaning of fluorescent signals depends on their temporal ordering, and large-scale imaging experiments generate complex, multidimensional data that are difficult to analyse systematically and at scale. Here we address both problems. We present FluoroFate, a generalisable and user-friendly graphical interface-driven tool for time-resolved single-cell analysis of multiplex live-cell imaging datasets, which integrates existing, robust deep learning-based segmentation, cell tracking, and temporal classification methods to quantify fluorescent reporter dynamics in individual cells across time without the need for specialist computational expertise. Alongside FluoroFate, we develop tricistronic Fluorescent Ubiquitination-based Cell Cycle Indicator (Fucci) and apoptosis biosensors, enabling simultaneous monitoring of cell cycle progression and caspase activation within the same cell. Applying FluoroFate, we resolve apoptotic and non-apoptotic cell death at the single-cell level based on the temporal ordering of Annexin V and propidium iodide signals, identifying distinct kinetic and phenotypic cell death profiles in response to pharmacological perturbation. We highlight divergent temporal dynamics and modes of cell death between birinapant and cycloheximide treatment, reflecting differences in how TNF/TNFR1 signalling is disrupted by these agents. At the single-cell level, we uncover parallel, independently regulated death programmes, demonstrating that loss of RIPK1 selectively impairs apoptotic cell death whilst leaving non-apoptotic death largely unaffected. We then use FluoroFate to analyse timelapse images of our combined Fucci-apoptosis reporters, resolving cell cycle progression and caspase activation within the same cell over time. Together, FluoroFate and our new cell cycle and apoptosis biosensors represent a broadly applicable platform for extracting mechanistic insight from live-cell imaging data.",
       "published": "2026-08-17",
       "author_line": "Preedy, M. K., Taylor-Hearn, I., Ying, C. 等 8 人"
     },
@@ -1851,12 +609,10 @@
       "why_it_matters_zh": "真实可穿戴设备数据的前瞻性检验是临床 AI 证据的重要补充；阳性预测值为 19.7%，更适合作为进一步超声评估的筛查提示。",
       "quality_score": 75.0,
       "tags": [
-        "preprint",
+        "生物医学与临床",
         "可穿戴设备",
         "心电图",
-        "前瞻性队列",
-        "生物医学与临床",
-        "medRxiv"
+        "前瞻性队列"
       ],
       "evidence_flags": [
         "preprint",
@@ -1867,7 +623,7 @@
         "prospective"
       ],
       "publication_status": "preprint",
-      "rank": 11,
+      "rank": 9,
       "featured": false,
       "category": "生物医学与临床",
       "metrics": {},
@@ -1889,7 +645,6 @@
         "Pedroso, A. F.",
         "Khera, R."
       ],
-      "abstract": "Importance: Consumer wearables such as the Apple Watch can record single-lead electrocardiograms (ECGs) but are used mainly to detect rhythm disorders. Artificial intelligence-enhanced ECG (AI-ECG) could extend these real-world recordings for detecting structural heart disease (SHD), yet prospective validation remains limited. Objective: To prospectively validate a previously developed, noise-adapted AI-ECG model for detecting severe SHD from single-lead Apple Watch ECGs. Design: Prospective cohort study. Setting: Yale New Haven Hospital echocardiography laboratory. Participants: Adults aged >=18 years undergoing outpatient transthoracic echocardiography (TTE) as part of routine clinical care. Exposure: A 30-second, single-lead Apple Watch ECG recorded during the TTE visit and processed through an end-to-end, HIPAA-compliant platform for real-time AI-ECG inference. Main Outcomes and Measures: The primary outcome was discrimination for TTE-defined severe SHD, a composite of left ventricular systolic dysfunction (left ventricular ejection fraction <40%), severe left-sided valvular disease, and/or severe left ventricular hypertrophy, assessed by the area under the receiver operating characteristic curve (AUROC). Secondary measures were sensitivity, specificity, negative predictive value (NPV), and positive predictive value (PPV) at prespecified thresholds, and screening efficiency, assessed by the number needed to test (NNT) under usual-care versus AI-ECG-guided strategies. Results: Among 596 participants with analyzable Apple Watch ECGs (median age, 62 years [IQR, 46-72]; 51.2% women), severe SHD was present in 30 (5.1%). The model discriminated severe SHD well (AUROC, 0.841; 95% CI, 0.761-0.921), with a sensitivity of 76.7% (59.1-88.2), specificity of 83.2% (79.9-86.1), NPV of 98.5% (97.0-99.3), and PPV of 19.7% (13.5-27.8) at the prespecified threshold. An AI-ECG-guided strategy reduced the NNT to identify one case by more than 60% versus usual care across the composite and individual SHD phenotypes. Conclusions and Relevance: In this prospective cohort, a noise-adapted AI-ECG algorithm identified SHD phenotypes from real-world single-lead Apple Watch ECGs and improved screening efficiency. These findings support a potential role for wearable ECG-based screening in the scalable identification of clinically actionable SHD.",
       "published": "2026-08-17",
       "author_line": "Aminorroaya, A., Vasisht Shankar, S., Carter, M. 等 12 人"
     },
@@ -1920,11 +675,10 @@
       "why_it_matters_zh": "在实验反馈和生成设计之间建立高效迭代，可扩展基因编辑器的序列空间；编辑效率、安全性和特异性仍需系统比较。",
       "quality_score": 73.0,
       "tags": [
-        "preprint",
+        "组学与细胞",
         "基因编辑",
         "生成式蛋白设计",
         "深度突变扫描",
-        "组学与细胞",
         "synthetic biology"
       ],
       "evidence_flags": [
@@ -1934,7 +688,7 @@
         "experimental_activity_assay"
       ],
       "publication_status": "preprint",
-      "rank": 12,
+      "rank": 10,
       "featured": false,
       "category": "组学与细胞",
       "metrics": {},
@@ -1953,7 +707,6 @@
         "Vaalavirta, K.",
         "Nakamura, M."
       ],
-      "abstract": "The problem of how protein sequences translate into defined functions remains largely unsolved despite decades of progress. New methods to efficiently explore protein sequence space will help to shed light on these sequence-function relationships, particularly for complex protein function. Here, we describe an approach to create novel, functional proteins through the integration of deep mutational scanning, structural analysis, and evolutionary mining within prompts for a generative protein language model (PLM). We demonstrate the utility of this approach with the generation of novel compact RNA-guided nucleases. This approach is highly efficient, resulting in active nucleases with ~40% sequence divergence relative to natural proteins and activity equivalent to or exceeding by up to ~3X that of other compact nucleases at multiple endogenous loci in human cells. The approach described here is rapidly deployable and produces new sequences that will serve as scaffolds for further exploration of complex protein functionality, as well as substrates for novel genome engineering applications.",
       "published": "2026-08-17",
       "author_line": "Hughes, N. W., Kulkarni, S., Goldman, G. 等 9 人"
     },
@@ -1979,11 +732,10 @@
       "why_it_matters_zh": "结果提示常用半胱氨酸组织蛋白酶抑制剂具有重要脱靶作用，并为 PLD3 蛋白稳态研究提出可检验的酶学机制。",
       "quality_score": 73.0,
       "tags": [
-        "preprint",
+        "组学与细胞",
         "化学蛋白质组学",
         "神经退行性疾病",
         "PLD3",
-        "组学与细胞",
         "biochemistry"
       ],
       "evidence_flags": [
@@ -1994,7 +746,7 @@
         "orthogonal_biochemical_assays"
       ],
       "publication_status": "preprint",
-      "rank": 13,
+      "rank": 11,
       "featured": false,
       "category": "组学与细胞",
       "metrics": {},
@@ -2006,7 +758,6 @@
         "Hertwig, M.",
         "Kielkowski, P."
       ],
-      "abstract": "Catalytic activity of 5'-3' exonuclease Phospholipase D3 (PLD3) is associated with immune signaling and neurodegeneration including Alzheimer's disease. PLD3 undergoes multiple post-translational modifications and proteolytic cleavage to establish its catalytically active form. However, the proteases catalyzing the cleavage of PLD3 have remained unidentified. To study the proteolytic cleavage of PLD3, we have evaluated the small molecule covalent inhibitor E64d that blocks proteolysis catalyzed by cysteine cathepsins. To validate the selectivity of E64d, we have designed and synthetized an E64d propargyl analogue and carried out a detailed activity-based protein profiling to reveal a broad engagement of the compound with other protein targets including bleomycin hydrolase (BLMH), Kelch-like ECH-associated protein 1 (KEAP1), transcription elongation factor SPT5 (SUPT5H) and asparagine synthetase (ASNS). The specificity of the E64d-protein interactions was confirmed by biochemical assays and mass spectrometry-based site identifications. In neurons, treatment with E64d lead to about 50-fold PLD3 accumulation and dysregulation of its proteolytic cleavage, while there was only a minor overall change on the whole proteome level. Taken together, this study provides insights into previously unknown E64d selectivity and renders cysteine cathepsins responsible for PLD3 degradation in neurons. It highlights the importance of cysteine cathepsins activity in neuronal lysosomes for proper PLD3 processing and hence it suggests that their activation might be responsible for decreased PLD3 levels in neurons of patients with Alzheimer's diseases. These findings are key for further elucidation of PLD3 function in neurodegenerative diseases.",
       "published": "2026-08-15",
       "author_line": "Hertwig, M., Kielkowski, P."
     },
@@ -2036,11 +787,10 @@
       "why_it_matters_zh": "时间序列视角补充了单时点病理图谱，可提出脑区易感性与蛋白稳态、代谢特征有关的假设；该关系来自动物模型和关联分析。",
       "quality_score": 72.0,
       "tags": [
-        "preprint",
+        "蛋白质与结构",
         "α-突触核蛋白",
         "帕金森病",
         "神经网络动力学",
-        "蛋白质与结构",
         "neuroscience"
       ],
       "evidence_flags": [
@@ -2052,7 +802,7 @@
         "dataset"
       ],
       "publication_status": "preprint",
-      "rank": 14,
+      "rank": 12,
       "featured": false,
       "category": "蛋白质与结构",
       "metrics": {},
@@ -2070,83 +820,8 @@
         "Henderson, M. X.",
         "Bassett, D. S."
       ],
-      "abstract": "The spread of misfolded proteins through neuronal circuits is a defining feature of neurodegenerative disease, yet the dynamics underlying this process remain poorly understood. Most studies rely on sparsely sampled datasets that capture spatial patterns of pathology but not their temporal evolution. Here, we analyze longitudinal histopathology measurements of -synuclein pathology across hundreds of brain regions in a mouse model of Parkinson's disease. Network-based dynamical modeling shows that regional pathology does not simply accumulate but instead follows rise-and-fall trajectories across the brain. The inferred parameter landscape reveals a one-dimensional vulnerability axis along which regions with stronger fall dynamics have greater monoaminergic neuronal composition and higher expression of proteostatic and metabolic genes. This vulnerability axis replicates in an independent histopathological dataset, indicating that its dominant transcriptomic structure is preserved. Together, these results suggest that regional vulnerability collapses onto a low-dimensional molecular and cellular axis defined by rise-and-fall dynamics.",
       "published": "2026-08-17",
       "author_line": "Alexandersen, C. G., Brynildsen, J. K., Prigent, A. 等 8 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.11.744237",
-      "channel": "aixbio",
-      "related_channels": [
-        "aixchem"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Discovery of Selective Small-Molecule Ligands of SV2C by AI-Enhanced Virtual Screening and Experimental Validation",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.11.744237",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-16",
-      "creators": [
-        "Brueckner, A. C.",
-        "Martin, M. F.",
-        "Khuttan, S.",
-        "Shields, B.",
-        "Mittal, A.",
-        "Schreiber, J. A.",
-        "Salomon-Ferrer, R.",
-        "Bortolato, A.",
-        "Salahpour, A.",
-        "Bucher, M. L.",
-        "Coleman, J. A.",
-        "Miller, G. W."
-      ],
-      "language": "en",
-      "abstract_or_text": "Synaptic vesicle glycoprotein 2C (SV2C) is a vesicular protein enriched in dopaminergic neurons of the basal ganglia that modulates dopamine storage and release, and its disruption is implicated in Parkinson's disease (PD). Despite strong genetic and pathological links to PD, there are no selective small-molecule probes for SV2C. Here, we describe an AI-enhanced virtual screening (VS) and experimental campaign that identified multiple novel chemotypes with low-micromolar affinity and marked selectivity for SV2C over SV2A and SV2B, starting from a large, general-purpose commercial library. Because no full-length high-resolution SV2C structure was available, we built a homology model using SV2A cryo-EM structures as templates and characterized its conformational landscape by molecular dynamics (MD) and Gaussian accelerated MD (GaMD) simulations in apo form and in complex with known SV2 ligands (plosaracetam, levetiracetam, brivaracetam, and padsevonil). A convolutional neural network-based scoring function (CNN_VS), retrospectively validated on a manually curated 39-ligand SV2A benchmark (r = 0.72 vs experimental pIC50), was then applied in a multi-stage funnel to 5.96 million Mcule in-stock compounds, which were sequentially filtered to 3.19 million CNS-relevant molecules before docking and rescoring. From 94 VS-prioritized candidates, 71 compounds were experimentally profiled in an orthogonal primary assay cascade combining a thermal shift assay (TSA) with a [3H]-padsevonil scintillation proximity assay (SPA), followed by Ki determination and isoform selectivity profiling for key hits. This campaign yielded 22 active molecules (31% hit rate) that naturally segregated into two categories: compounds that showed primary site competition, and compounds that did not show primary site competition with [3H]-padsevonil. A subset of competitor compounds also showed thermostabilization activity. Among these, compounds 36 and 56 emerged as particularly attractive leads, with Ki values of 24.6 uM and 3.25 uM at SV2C, respectively, and greater than 10-fold selectivity versus SV2A; compound 56 also maintained approximately 12-fold selectivity relative to SV2B. A complementary subset of SV2C-selective hits behaved as padsevonil-site competitors, providing a lead set that will serve as a template for functional characterization and future drug development for conditions that affect dopaminergic signaling. Docking analysis suggests a common binding mode anchored by conserved tryptophan residues in the SV2 pocket, a prediction independently confirmed by an unpublished SV2A-plosaracetam cryo-EM structure showing 0.76 Angstrom binding-site C-alpha RMSD relative to the SV2C model and complete conservation of the tryptophan cage. Subtle differences in the luminal domain and transmembrane region point to the structural determinants underlying isoform selectivity. Collectively, these results demonstrate that an AI-driven VS pipeline, tightly integrated with medium-throughput biophysical assays, can deliver selective SV2C binders from a general chemical library on a structurally under-characterized membrane target. The identified hits provide multiple starting points for hit-to-lead optimization and tools for probing SV2C biology and its role in PD.",
-      "summary_zh": "针对结构信息有限的 SV2C，研究以 AI 虚拟筛选和分子动力学处理 596 万商业化合物，并对 71 个候选物进行正交生物物理检测，获得具 SV2C 选择性的微摩尔级先导物。",
-      "why_it_matters_zh": "为多巴胺能神经元相关膜蛋白提供了可进一步优化的化学探针起点，并展示计算筛选与实验检测的协同；这些先导物尚未证明疾病修饰作用。",
-      "quality_score": 72.0,
-      "tags": [
-        "preprint",
-        "虚拟筛选",
-        "膜蛋白",
-        "小分子配体",
-        "帕金森病",
-        "蛋白质与结构"
-      ],
-      "evidence_flags": [
-        "preprint",
-        "5.96_million_compounds",
-        "71_experimentally_profiled",
-        "orthogonal_binding_assays",
-        "isoform_selectivity",
-        "benchmark"
-      ],
-      "publication_status": "preprint",
-      "rank": 15,
-      "featured": false,
-      "category": "蛋白质与结构",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.11.744237",
-        "arxiv_id": ""
-      },
-      "authors": [
-        "Brueckner, A. C.",
-        "Martin, M. F.",
-        "Khuttan, S.",
-        "Shields, B.",
-        "Mittal, A.",
-        "Schreiber, J. A.",
-        "Salomon-Ferrer, R.",
-        "Bortolato, A.",
-        "Salahpour, A.",
-        "Bucher, M. L.",
-        "Coleman, J. A.",
-        "Miller, G. W."
-      ],
-      "abstract": "Synaptic vesicle glycoprotein 2C (SV2C) is a vesicular protein enriched in dopaminergic neurons of the basal ganglia that modulates dopamine storage and release, and its disruption is implicated in Parkinson's disease (PD). Despite strong genetic and pathological links to PD, there are no selective small-molecule probes for SV2C. Here, we describe an AI-enhanced virtual screening (VS) and experimental campaign that identified multiple novel chemotypes with low-micromolar affinity and marked selectivity for SV2C over SV2A and SV2B, starting from a large, general-purpose commercial library. Because no full-length high-resolution SV2C structure was available, we built a homology model using SV2A cryo-EM structures as templates and characterized its conformational landscape by molecular dynamics (MD) and Gaussian accelerated MD (GaMD) simulations in apo form and in complex with known SV2 ligands (plosaracetam, levetiracetam, brivaracetam, and padsevonil). A convolutional neural network-based scoring function (CNN_VS), retrospectively validated on a manually curated 39-ligand SV2A benchmark (r = 0.72 vs experimental pIC50), was then applied in a multi-stage funnel to 5.96 million Mcule in-stock compounds, which were sequentially filtered to 3.19 million CNS-relevant molecules before docking and rescoring. From 94 VS-prioritized candidates, 71 compounds were experimentally profiled in an orthogonal primary assay cascade combining a thermal shift assay (TSA) with a [3H]-padsevonil scintillation proximity assay (SPA), followed by Ki determination and isoform selectivity profiling for key hits. This campaign yielded 22 active molecules (31% hit rate) that naturally segregated into two categories: compounds that showed primary site competition, and compounds that did not show primary site competition with [3H]-padsevonil. A subset of competitor compounds also showed thermostabilization activity. Among these, compounds 36 and 56 emerged as particularly attractive leads, with Ki values of 24.6 uM and 3.25 uM at SV2C, respectively, and greater than 10-fold selectivity versus SV2A; compound 56 also maintained approximately 12-fold selectivity relative to SV2B. A complementary subset of SV2C-selective hits behaved as padsevonil-site competitors, providing a lead set that will serve as a template for functional characterization and future drug development for conditions that affect dopaminergic signaling. Docking analysis suggests a common binding mode anchored by conserved tryptophan residues in the SV2 pocket, a prediction independently confirmed by an unpublished SV2A-plosaracetam cryo-EM structure showing 0.76 Angstrom binding-site C-alpha RMSD relative to the SV2C model and complete conservation of the tryptophan cage. Subtle differences in the luminal domain and transmembrane region point to the structural determinants underlying isoform selectivity. Collectively, these results demonstrate that an AI-driven VS pipeline, tightly integrated with medium-throughput biophysical assays, can deliver selective SV2C binders from a general chemical library on a structurally under-characterized membrane target. The identified hits provide multiple starting points for hit-to-lead optimization and tools for probing SV2C biology and its role in PD.",
-      "published": "2026-08-16",
-      "author_line": "Brueckner, A. C., Martin, M. F., Khuttan, S. 等 12 人"
     },
     {
       "id": "medrxiv:10.64898/2026.07.24.26358843",
@@ -2174,12 +849,11 @@
       "why_it_matters_zh": "大样本人群遗传学把右心室形态与发育、肌节和心肺相关通路联系起来，为理解心室特异性重塑提供资源；遗传关联本身不能确定具体致病机制。",
       "quality_score": 71.0,
       "tags": [
-        "preprint",
+        "生物医学与临床",
         "UK Biobank",
         "心血管遗传学",
         "医学影像",
-        "右心室",
-        "生物医学与临床"
+        "右心室"
       ],
       "evidence_flags": [
         "preprint",
@@ -2190,7 +864,7 @@
         "clinical"
       ],
       "publication_status": "preprint",
-      "rank": 16,
+      "rank": 13,
       "featured": false,
       "category": "生物医学与临床",
       "metrics": {},
@@ -2208,7 +882,6 @@
         "Ware, J. S.",
         "O'Regan, D. P."
       ],
-      "abstract": "Right ventricular (RV) trabeculation may reflect adaptation to loading conditions and imprinting of early developmental processes, yet its genetic determinants and clinical relevance in adults remain poorly understood. In contrast to the left ventricle, the RV has distinct developmental origins, geometry and loading conditions, suggesting chamber-specific mechanisms of trabecular remodelling. Using deep learning-based image segmentation and fractal dimension analysis, we quantified RV trabecular complexity in diastole and systole in 48,118 UK Biobank participants with genetic data. RV trabecular morphology was associated with systolic function, as well as cardiometabolic and respiratory conditions. Genetic analyses across the allele frequency spectrum identified 52 common loci and 45 genes with a burden of protein-altering variants, implicating sarcomeric function, cytoskeletal organisation, and early cardiac patterning. Although many loci showed shared effects across both ventricles, we also identified RV-specific genetic associations linked to congenital heart disease and respiratory phenotypes. Notably, associations at CFTR suggest a connection between airway-associated mucus regulation and RV remodelling, whereas MYH6 implicates sarcomeric and developmental mechanisms in adult RV patterning. Together, these findings establish RV trabeculation as a trait that captures both shared and chamber-specific mechanisms relevant to cardiovascular health and disease.",
       "published": "2026-08-17",
       "author_line": "McGurk, K. A., Sedlacik, J., Janan, R. 等 8 人"
     }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build stable public interfaces for the AIX Daily information hub."""
+"""Build stable public interfaces for AIX每日精读."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any
 
 
-DEFAULT_SITE_URL = "https://zichenwang114514.github.io/ai-chem-daily/"
+DEFAULT_SITE_URL = "https://zichenwang114514.github.io/ai-x-daily/"
 
 
 def load_json(path: Path, default: Any) -> Any:
@@ -98,7 +98,14 @@ def build_hub_interfaces(site_root: Path, config_path: Path, site_url: str) -> d
         channels.append(item)
 
     latest_date = max(latest_dates, default=None)
-    freshness = "fresh" if latest_date == local_today else "stale"
+    active_ids = [channel["id"] for channel in config["channels"] if channel.get("status") == "active"]
+    active_dates = [channel_states.get(channel_id, {}).get("latest_date") for channel_id in active_ids]
+    if active_dates and all(value == local_today for value in active_dates):
+        freshness = "fresh"
+    elif any(value == local_today for value in active_dates):
+        freshness = "partial"
+    else:
+        freshness = "stale"
     manifest = {
         "schema_version": "1.0",
         "generated_at": now.isoformat(timespec="seconds"),
@@ -139,7 +146,7 @@ def build_hub_interfaces(site_root: Path, config_path: Path, site_url: str) -> d
         "endpoints": manifest["endpoints"],
         "write_interface": {
             "provider": "local-codex-cli",
-            "repository": "ZiChenWang114514/ai-chem-daily",
+            "repository": "ZiChenWang114514/ai-x-daily",
             "label": "scheduled-intake",
             "issue_title_template": "AIX Intake · {channel} · {date}",
             "schema": absolute_url(site_url, "api/v1/schemas/intake.json"),

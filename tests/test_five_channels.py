@@ -72,6 +72,9 @@ class FiveChannelConfigurationTests(unittest.TestCase):
             text = page.read_text(encoding="utf-8")
             self.assertIn(f'data-channel="{channel}"', text)
             self.assertIn('data-root="../../"', text)
+            self.assertIn(f"assets/art/{channel}.webp", text)
+            self.assertIn(f"data/channels/{channel}/latest.json", text)
+            self.assertIn("../../library/", text)
 
 
 class UnifiedOutputTests(unittest.TestCase):
@@ -92,7 +95,7 @@ class UnifiedOutputTests(unittest.TestCase):
             for item in payload.get("items", []):
                 self.assertTrue(required.issubset(item))
                 key = (item.get("metadata") or {}).get("doi") or item["url"].split("?", 1)[0].rstrip("/").lower()
-                self.assertNotIn(key, seen)
+                self.assertNotIn(key, seen, f"duplicate across channels: {key} in {channel}")
                 seen.add(key)
 
 

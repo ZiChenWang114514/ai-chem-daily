@@ -21,11 +21,29 @@ from pathlib import Path
 from typing import Any, Iterable
 
 
-USER_AGENT = "ai-chem-daily/1.0 (mailto:wangzc@stu.pku.edu.cn)"
+USER_AGENT = "ai-x-daily/1.0 (mailto:wangzc@stu.pku.edu.cn)"
 ARXIV_API = "https://export.arxiv.org/api/query"
 BIORXIV_API = "https://api.biorxiv.org/details/biorxiv"
 CROSSREF_API = "https://api.crossref.org/prefixes/10.26434/works"
 EUROPE_PMC_API = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
+ARXIV_CATEGORIES = (
+    "cs.LG",
+    "cs.AI",
+    "cs.CL",
+    "cs.NE",
+    "stat.ML",
+    "cs.LO",
+    "cs.FL",
+    "cs.SC",
+    "math.LO",
+    "cs.CE",
+    "physics.chem-ph",
+    "q-bio.BM",
+    "q-bio.GN",
+    "q-bio.MN",
+    "q-bio.QM",
+    "q-bio.NC",
+)
 
 AI_TERMS = {
     "artificial intelligence": 6,
@@ -153,6 +171,139 @@ def clean_text(value: Any) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+SITE_NAME = "AIX每日精读"
+SITE_TITLE = "AIX每日精读"
+RELEASE_ABSTRACT_LIMIT = 500
+JUNK_TAG_STEMS = {
+    "chem",
+    "molecul",
+    "neural",
+    "synth",
+    "bio",
+    "protein",
+    "drug",
+    "llm",
+    "transformer",
+    "agent",
+    "diffusion",
+    "quantum",
+    "cell",
+    "formal",
+    "proof",
+    "lean",
+    "release",
+    "model",
+    "framework",
+    "github",
+    "preprint",
+    "chemrxiv",
+    "medrxiv",
+    "biorxiv",
+    "arxiv",
+    "peer_reviewed",
+    "official blog",
+    "accounts",
+    "topics",
+}
+
+
+def keep_publish_tag(tag: str, *, category: str = "") -> bool:
+    text = clean_text(tag)
+    if not text:
+        return False
+    if category and text == category:
+        return True
+    if re.search(r"[\u4e00-\u9fff]", text):
+        return True
+    lower = text.lower()
+    if lower in JUNK_TAG_STEMS:
+        return False
+    if "/" in text:
+        return False
+    if re.search(r"(?:^|[-_ ])(?:v?\d+\.\d+|\bb\d{3,}\b)", lower):
+        return False
+    return True
+
+
+def publish_tags(category: str, reviewed: list[str] | None = None) -> list[str]:
+    tags: list[str] = []
+    for tag in [category, *(reviewed or [])]:
+        text = clean_text(tag)
+        if not text or text in tags or not keep_publish_tag(text, category=category or ""):
+            continue
+        tags.append(text)
+    return tags[:6]
+
+
+def clip_release_text(text: str, limit: int = RELEASE_ABSTRACT_LIMIT) -> str:
+    value = clean_text(text)
+    if len(value) <= limit:
+        return value
+    return value[:limit].rstrip() + "…"
+
+
+def is_release_item(item: dict[str, Any]) -> bool:
+    return item.get("item_type") == "software_release" or item.get("source") == "GitHub Releases"
+
+
+HOME_ITEM_DROP = {
+    "abstract",
+    "authors",
+    "creators",
+    "evidence_flags",
+    "featured",
+    "language",
+    "metadata",
+    "metrics",
+    "publication_status",
+    "quality_score",
+    "related_channels",
+    "updated_at",
+}
+
+
+def slim_public_item(item: dict[str, Any], *, include_abstract: bool = True, clip_release: bool = False) -> dict[str, Any]:
+    drop = {"abstract"} if include_abstract else HOME_ITEM_DROP
+    out = {key: value for key, value in item.items() if key not in drop}
+    category = clean_text(out.get("category"))
+    out["tags"] = publish_tags(category, out.get("tags") or [])
+    if include_abstract:
+        text = out.get("abstract_or_text") or item.get("abstract") or ""
+        if clip_release and is_release_item(out):
+            text = clip_release_text(text)
+        out["abstract_or_text"] = text
+    else:
+        out.pop("abstract_or_text", None)
+    return out
+
+
+def slim_channel_payload(payload: dict[str, Any], *, include_abstract: bool = True, clip_release: bool = True) -> dict[str, Any]:
+    items = [
+        slim_public_item(item, include_abstract=include_abstract, clip_release=clip_release)
+        for item in (payload.get("items") or payload.get("papers") or [])
+    ]
+    out = dict(payload)
+    out["items"] = items
+    out.pop("papers", None)
+    return out
+
+
+def slim_daily_payload(payload: dict[str, Any], *, include_abstract: bool, clip_release: bool = True) -> dict[str, Any]:
+    out = dict(payload)
+    out["title"] = SITE_TITLE
+    channels = []
+    for channel in out.get("channels") or []:
+        entry = dict(channel)
+        entry["items"] = [
+            slim_public_item(item, include_abstract=include_abstract, clip_release=clip_release)
+            for item in (channel.get("items") or channel.get("papers") or [])
+        ]
+        entry.pop("papers", None)
+        channels.append(entry)
+    out["channels"] = channels
+    return out
+
+
 def http_get(url: str, *, timeout: int = 45, attempts: int = 4) -> bytes:
     last_error: Exception | None = None
     for attempt in range(attempts):
@@ -184,19 +335,38 @@ def parse_date(value: Any) -> str:
         return ""
     if isinstance(value, dict):
         parts = value.get("date-parts", [[]])[0]
-        if parts:
-            return "-".join(f"{int(part):02d}" if i else f"{int(part):04d}" for i, part in enumerate(parts[:3]))
+        if len(parts) >= 3:
+            try:
+                return date(int(parts[0]), int(parts[1]), int(parts[2])).isoformat()
+            except (TypeError, ValueError):
+                return ""
+        return ""
     text = str(value)
     match = re.search(r"\d{4}-\d{2}-\d{2}", text)
-    return match.group(0) if match else text[:10]
+    if not match:
+        return ""
+    candidate = match.group(0)
+    try:
+        return date.fromisoformat(candidate).isoformat()
+    except ValueError:
+        return ""
 
 
-def fetch_arxiv(start_date: date, end_date: date) -> list[Paper]:
+def arxiv_category_query(categories: tuple[str, ...] = ARXIV_CATEGORIES) -> str:
+    return "(" + " OR ".join(f"cat:{category}" for category in categories) + ")"
+
+
+def fetch_arxiv(start_date: date, end_date: date, categories: tuple[str, ...] = ARXIV_CATEGORIES) -> list[Paper]:
+    """Pull recent category listings, then keep papers inside the local date window.
+
+    Date-only submittedDate queries currently return zero hits from the arXiv API.
+    """
     papers: list[Paper] = []
     start = 0
-    page_size = 200
+    page_size = 100
     namespace = {"a": "http://www.w3.org/2005/Atom", "o": "http://a9.com/-/spec/opensearch/1.1/"}
-    query = f"submittedDate:[{start_date:%Y%m%d}0000 TO {end_date:%Y%m%d}2359]"
+    query = arxiv_category_query(categories)
+    reached_old = False
     while True:
         params = urllib.parse.urlencode(
             {
@@ -209,12 +379,26 @@ def fetch_arxiv(start_date: date, end_date: date) -> list[Paper]:
         )
         root = ET.fromstring(http_get(f"{ARXIV_API}?{params}"))
         entries = root.findall("a:entry", namespace)
-        total_node = root.find("o:totalResults", namespace)
-        total = int(total_node.text or 0) if total_node is not None else len(entries)
+        if not entries:
+            break
+        page_old = 0
         for entry in entries:
+            published = parse_date(entry.findtext("a:published", default="", namespaces=namespace))
+            try:
+                published_day = date.fromisoformat(published[:10]) if published else None
+            except ValueError:
+                published_day = None
+            if published_day is None:
+                continue
+            if published_day < start_date:
+                page_old += 1
+                reached_old = True
+                continue
+            if published_day > end_date:
+                continue
             arxiv_id = (entry.findtext("a:id", default="", namespaces=namespace).rstrip("/").split("/")[-1])
             authors = [clean_text(author.findtext("a:name", default="", namespaces=namespace)) for author in entry.findall("a:author", namespace)]
-            categories = [node.attrib.get("term", "") for node in entry.findall("a:category", namespace)]
+            paper_categories = [node.attrib.get("term", "") for node in entry.findall("a:category", namespace)]
             papers.append(
                 Paper(
                     id=f"arxiv:{arxiv_id}",
@@ -222,15 +406,17 @@ def fetch_arxiv(start_date: date, end_date: date) -> list[Paper]:
                     title=clean_text(entry.findtext("a:title", default="", namespaces=namespace)),
                     abstract=clean_text(entry.findtext("a:summary", default="", namespaces=namespace)),
                     authors=[author for author in authors if author],
-                    published=parse_date(entry.findtext("a:published", default="", namespaces=namespace)),
+                    published=published,
                     updated=parse_date(entry.findtext("a:updated", default="", namespaces=namespace)),
                     url=f"https://arxiv.org/abs/{arxiv_id}",
-                    category=categories[0] if categories else "",
-                    tags=categories[:3],
+                    category=paper_categories[0] if paper_categories else "",
+                    tags=paper_categories[:3],
                 )
             )
         start += len(entries)
-        if not entries or start >= total:
+        if reached_old and page_old >= max(1, len(entries) // 2):
+            break
+        if len(entries) < page_size or start >= 2000:
             break
         time.sleep(3)
     log(f"arXiv: {len(papers)} records")
@@ -246,7 +432,14 @@ def fetch_biorxiv(start_date: date, end_date: date) -> list[Paper]:
         if not raw.strip():
             log("bioRxiv API returned an empty body; using Europe PMC metadata")
             return fetch_biorxiv_europe_pmc(start_date, end_date)
-        payload = json.loads(raw.decode("utf-8"))
+        try:
+            payload = json.loads(raw.decode("utf-8"))
+        except (UnicodeDecodeError, json.JSONDecodeError, ValueError):
+            log("bioRxiv API returned invalid JSON; using Europe PMC metadata")
+            return fetch_biorxiv_europe_pmc(start_date, end_date)
+        if not isinstance(payload, dict):
+            log("bioRxiv API returned unexpected payload; using Europe PMC metadata")
+            return fetch_biorxiv_europe_pmc(start_date, end_date)
         collection = payload.get("collection") or []
         for item in collection:
             doi = clean_text(item.get("doi"))
@@ -517,6 +710,35 @@ def write_json(path: Path, value: Any) -> None:
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+CHEM_ARCHIVE_HREF = "data/channels/aixchem/archive/{day}.json"
+
+
+def archive_index_entry(day: str, *, selected: int, candidates: int = 0, fetched: int = 0, href: str | None = None) -> dict[str, Any]:
+    return {
+        "date": day,
+        "href": href or CHEM_ARCHIVE_HREF.format(day=day),
+        "selected": int(selected or 0),
+        "candidates": int(candidates or 0),
+        "fetched": int(fetched or 0),
+        "kind": "json",
+    }
+
+
+def upsert_archive_index(path: Path, entry: dict[str, Any], *, schema_version: str = "2.0") -> None:
+    index = load_json(path, {"schema_version": schema_version, "items": []})
+    items = [item for item in index.get("items", []) if item.get("date") != entry["date"]]
+    items.append(archive_index_entry(
+        entry["date"],
+        selected=entry.get("selected", 0),
+        candidates=entry.get("candidates", 0),
+        fetched=entry.get("fetched", 0),
+        href=entry.get("href"),
+    ))
+    index["schema_version"] = schema_version
+    index["items"] = sorted(items, key=lambda item: item.get("date", ""), reverse=True)
+    write_json(path, index)
+
+
 def write_raw_snapshot(
     raw_root: Path,
     papers: list[Paper],
@@ -552,7 +774,7 @@ def write_raw_snapshot(
 def render_email(payload: dict[str, Any], site_url: str) -> tuple[str, str]:
     day = payload["date"]
     stats = payload["stats"]
-    selected = payload["papers"]
+    selected = payload.get("items") or payload.get("papers") or []
     list_items = []
     markdown_items = []
     for paper in selected[:10]:
@@ -594,7 +816,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--days", type=int, default=3, help="Inclusive rolling date window")
     parser.add_argument("--limit", type=int, default=16)
     parser.add_argument("--date", dest="run_date", help="Digest date in YYYY-MM-DD")
-    parser.add_argument("--site-url", default=os.getenv("SITE_URL", "https://zichenwang114514.github.io/ai-chem-daily/"))
+    parser.add_argument("--site-url", default=os.getenv("SITE_URL", "https://zichenwang114514.github.io/ai-x-daily/"))
     parser.add_argument("--raw-root", type=Path, help="Optional private raw snapshot directory")
     return parser.parse_args()
 
@@ -668,24 +890,19 @@ def main() -> int:
     )
 
     archive_root = data_root / "archive"
+    day = end_date.isoformat()
     write_json(data_root / "latest.json", payload)
-    write_json(archive_root / f"{end_date.isoformat()}.json", payload)
-
-    archive_index_path = archive_root / "index.json"
-    archive_index = load_json(archive_index_path, {"schema_version": 1, "items": []})
-    items = [item for item in archive_index.get("items", []) if item.get("date") != end_date.isoformat()]
-    items.append(
-        {
-            "date": end_date.isoformat(),
-            "href": f"data/archive/{end_date.isoformat()}.json",
-            "selected": len(selected),
-            "fetched": sum(source_counts.values()),
-            "candidates": len(candidates),
-            "kind": "json",
-        }
+    write_json(archive_root / f"{day}.json", payload)
+    chem_archive = data_root / "channels" / "aixchem" / "archive"
+    write_json(chem_archive / f"{day}.json", payload)
+    entry = archive_index_entry(
+        day,
+        selected=len(selected),
+        candidates=len(candidates),
+        fetched=sum(source_counts.values()),
     )
-    archive_index["items"] = sorted(items, key=lambda item: item.get("date", ""), reverse=True)
-    write_json(archive_index_path, archive_index)
+    upsert_archive_index(archive_root / "index.json", entry)
+    upsert_archive_index(chem_archive / "index.json", entry)
 
     email_html, email_markdown = render_email(payload, args.site_url)
     email_root = args.site_root / "email"

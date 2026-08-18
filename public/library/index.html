@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="本机收藏的研究条目，按标签归类，并支持笔记。">
+  <meta name="theme-color" content="#122033">
+  <title>收藏 · AIX每日精读</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body class="library-page" data-page="library" data-root="../">
+  <a class="skip-link" href="#library">跳到收藏内容</a>
+
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <nav class="topbar" aria-label="主要导航">
+        <a class="brand" href="../" aria-label="AIX每日精读首页">
+          <img class="brand__mark" src="../assets/logo.svg" width="36" height="36" alt="">
+          <span class="brand__name">AIX每日精读</span>
+        </a>
+        <div class="topbar__actions">
+          <a class="library-link is-active" href="./" aria-current="page">收藏<span class="library-count" data-library-count hidden></span></a>
+          <a class="history-button" href="../">返回日报</a>
+        </div>
+      </nav>
+      <nav class="channel-nav" aria-label="信息频道">
+        <a class="channel-nav__item" href="../">总览</a>
+        <a class="channel-nav__item" href="../channels/aixchem/">AI × Chem</a>
+        <a class="channel-nav__item" href="../channels/aixbio/">AI × Bio</a>
+        <a class="channel-nav__item" href="../channels/aixmath/">AI × Math</a>
+        <a class="channel-nav__item" href="../channels/aivoices/">AI Voices</a>
+        <a class="channel-nav__item" href="../channels/engineering/">Engineering</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="shell hero__inner">
+      <div class="hero__copy">
+        <p class="hero__kicker">本机收藏</p>
+        <h1 id="hero-title">按标签整理的阅读清单</h1>
+        <p class="hero__lead">收藏与笔记只存在这台浏览器里，不经过服务器，也不需要登录。换电脑前可先导出备份。</p>
+        <p class="hero__meta">
+          <span id="library-total">0</span> 篇收藏
+          <span class="hero__dot" aria-hidden="true">·</span>
+          <span id="library-note-count">0</span> 篇有笔记
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <main class="shell main-content" id="library">
+    <div class="library-layout">
+      <aside class="tag-rail" aria-label="按标签筛选">
+        <h2>标签</h2>
+        <div id="tag-rail" class="tag-rail__list"></div>
+      </aside>
+      <section aria-labelledby="library-title">
+        <div class="section-heading">
+          <div>
+            <h2 id="library-title">全部收藏</h2>
+            <p id="library-result-count"></p>
+          </div>
+        </div>
+        <section class="toolbar library-toolbar" aria-label="搜索与备份">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.3-4.3m2.3-5.2a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+            <label class="sr-only" for="library-search">搜索收藏</label>
+            <input id="library-search" type="search" placeholder="搜索题名、笔记或标签">
+          </div>
+          <div class="library-actions">
+            <button class="button secondary" id="export-collection" type="button">导出备份</button>
+            <label class="button secondary" for="import-collection">导入备份</label>
+            <input id="import-collection" type="file" accept="application/json,.json" hidden>
+          </div>
+        </section>
+        <p class="source-note" id="library-status" hidden></p>
+        <div id="library-groups" class="paper-groups"></div>
+        <div id="library-empty" class="empty-state" hidden>
+          <picture>
+            <source id="empty-art-webp" type="image/webp">
+            <img id="empty-art" width="320" height="320" alt="" loading="lazy" decoding="async">
+          </picture>
+          <div>
+            <strong id="empty-title">还没有收藏</strong>
+            <p id="empty-text">在日报条目右上角点「收藏」，条目会按原有标签自动归入这里。笔记只保存在本机。</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <strong>AIX每日精读</strong>
+        <p>收藏与笔记保存在本机浏览器，不会上传。</p>
+      </div>
+      <div class="footer-note">
+        <p>换设备前请先导出备份。</p>
+        <p class="footer-links">
+          <a href="../">返回日报</a>
+          <a href="../task/">运行说明</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <template id="paper-template">
+    <article class="paper-card">
+      <span class="rank"></span>
+      <div class="paper-card__body">
+        <div class="paper-card__topline">
+          <span class="source-badge"></span>
+          <span class="topic-label"></span>
+          <button class="save-button" type="button" aria-pressed="false">收藏</button>
+        </div>
+        <h3><a class="paper-title" target="_blank" rel="noopener noreferrer"></a></h3>
+        <p class="paper-meta"></p>
+        <div class="tag-list"></div>
+        <p class="summary-zh"></p>
+        <p class="why-it-matters"></p>
+        <div class="note-block">
+          <label class="note-label">笔记</label>
+          <textarea class="note-field" rows="4" placeholder="记下要核对的实验、可复用的方法，或下次精读时要看的部分。"></textarea>
+          <p class="note-status" aria-live="polite"></p>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="../assets/app.js" defer></script>
+</body>
+</html>

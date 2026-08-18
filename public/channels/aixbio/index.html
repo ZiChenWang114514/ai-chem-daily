@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="化学、生物、数学、公开观点与工程更新的每日精选。">
+  <meta name="description" content="AIX每日精读：化学、生物、数学、公开观点与工程更新的每日精选。">
   <meta name="theme-color" content="#122033">
-  <meta property="og:title" content="AIX Daily">
+  <meta property="og:title" content="AIX每日精读">
   <meta property="og:description" content="化学、生物、数学、公开观点与工程更新的每日精选。">
-  <meta property="og:image" content="https://zichenwang114514.github.io/ai-chem-daily/assets/art/hero.jpg">
-  <title>AIX Daily</title>
+  <meta property="og:image" content="https://zichenwang114514.github.io/ai-x-daily/assets/art/aixbio.jpg">
+  <title>AIX每日精读</title>
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/styles.css">
+  <link rel="preload" as="image" href="../../assets/art/aixbio.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="fetch" href="../../data/channels/aixbio/latest.json" crossorigin>
+  <link rel="preload" as="fetch" href="../../api/v1/manifest.json" crossorigin>
 </head>
 <body data-page="channel" data-channel="aixbio" data-root="../../">
   <a class="skip-link" href="#papers">跳到日报内容</a>
@@ -21,21 +21,24 @@
   <header class="site-header">
     <div class="shell site-header__inner">
       <nav class="topbar" aria-label="主要导航">
-        <a class="brand" href="../../" aria-label="AIX Daily 首页">
+        <a class="brand" href="../../" aria-label="AIX每日精读首页">
           <img class="brand__mark" src="../../assets/logo.svg" width="36" height="36" alt="">
-          <span class="brand__name">AIX Daily</span>
+          <span class="brand__name">AIX每日精读</span>
         </a>
         <div class="topbar__actions">
-          <button class="history-button" id="history-button" type="button" aria-expanded="false" aria-controls="history-panel">
-            历史日报
-            <span aria-hidden="true">⌄</span>
-          </button>
-          <div class="history-panel" id="history-panel" hidden>
-            <div class="history-panel__head">
-              <strong>历史日报</strong>
-              <span>按日期查阅已发布内容</span>
+          <a class="library-link" href="../../library/">收藏<span class="library-count" data-library-count hidden></span></a>
+          <div class="history-anchor">
+            <button class="history-button" id="history-button" type="button" aria-expanded="false" aria-controls="history-panel">
+              历史日报
+              <span aria-hidden="true">⌄</span>
+            </button>
+            <div class="history-panel" id="history-panel" hidden>
+              <div class="history-panel__head">
+                <strong>历史日报</strong>
+                <span>按日期查阅已发布内容</span>
+              </div>
+              <div id="history-list" class="history-list" aria-live="polite"></div>
             </div>
-            <div id="history-list" class="history-list" aria-live="polite"></div>
           </div>
         </div>
       </nav>
@@ -69,7 +72,10 @@
         </p>
       </div>
       <figure class="hero__art">
-        <img id="hero-art" src="../../assets/art/hero.jpg" width="960" height="540" alt="">
+        <picture>
+          <source id="hero-art-webp" srcset="../../assets/art/aixbio.webp" type="image/webp">
+          <img id="hero-art" src="../../assets/art/aixbio.jpg" width="960" height="540" alt="" fetchpriority="high" decoding="async">
+        </picture>
       </figure>
     </div>
   </section>
@@ -104,7 +110,10 @@
       <p class="source-note" id="source-note" hidden></p>
       <div id="paper-groups" class="paper-groups" aria-live="polite"></div>
       <div id="empty-state" class="empty-state" hidden>
-        <img src="../../assets/art/empty.jpg" width="320" height="320" alt="">
+        <picture>
+          <source id="empty-art-webp" type="image/webp">
+          <img id="empty-art" width="320" height="320" alt="" loading="lazy" decoding="async">
+        </picture>
         <div>
           <strong id="empty-title">今日暂无精选</strong>
           <p id="empty-text">这一天没有达到收录标准的更新。可在上方打开历史日报。</p>
@@ -132,13 +141,14 @@
   <footer class="site-footer">
     <div class="shell footer-grid">
       <div>
-        <strong>AIX Daily</strong>
+        <strong>AIX每日精读</strong>
         <p>化学、生物、数学、公开观点与工程更新的每日精选。</p>
       </div>
       <div class="footer-note">
         <p>预印本、公开观点与软件发布均请结合原始来源判断。</p>
         <p id="footer-date">—</p>
         <p class="footer-links">
+          <a href="../../library/">收藏</a>
           <a href="../../task/">运行说明</a>
           <a href="../../api/v1/manifest.json">接口清单</a>
         </p>
@@ -153,6 +163,7 @@
         <div class="paper-card__topline">
           <span class="source-badge"></span>
           <span class="topic-label"></span>
+          <button class="save-button" type="button" aria-pressed="false">收藏</button>
         </div>
         <h3><a class="paper-title" target="_blank" rel="noopener noreferrer"></a></h3>
         <p class="paper-meta"></p>
@@ -163,6 +174,11 @@
           <summary>查看原文摘要</summary>
           <p class="abstract-text"></p>
         </details>
+        <div class="note-block" hidden>
+          <label class="note-label">笔记</label>
+          <textarea class="note-field" rows="3" placeholder="记下要核对的实验、可复用的方法，或下次精读时要看的部分。"></textarea>
+          <p class="note-status" aria-live="polite"></p>
+        </div>
       </div>
     </article>
   </template>

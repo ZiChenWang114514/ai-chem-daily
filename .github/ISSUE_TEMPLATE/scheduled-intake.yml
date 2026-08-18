@@ -11,7 +11,7 @@ body:
     id: payload
     attributes:
       label: JSON 资料
-      description: https://zichenwang114514.github.io/ai-chem-daily/api/v1/schemas/intake.json
+      description: https://zichenwang114514.github.io/ai-x-daily/api/v1/schemas/intake.json
       render: json
       placeholder: |
         {

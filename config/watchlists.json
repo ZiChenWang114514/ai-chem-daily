@@ -17,14 +17,13 @@
   ],
   "research_feeds": [
     {"name": "OpenAI News", "url": "https://openai.com/news/rss.xml"},
-    {"name": "Anthropic News", "url": "https://www.anthropic.com/news/rss.xml"},
+    {"name": "Import AI", "url": "https://importai.substack.com/feed"},
     {"name": "Google DeepMind", "url": "https://deepmind.google/blog/rss.xml"},
     {"name": "Google Research", "url": "https://research.google/blog/rss/"},
     {"name": "Microsoft Research", "url": "https://www.microsoft.com/en-us/research/feed/"},
     {"name": "Hugging Face", "url": "https://huggingface.co/blog/feed.xml"},
     {"name": "NVIDIA Technical Blog", "url": "https://developer.nvidia.com/blog/feed/"},
-    {"name": "BAIR", "url": "https://bair.berkeley.edu/blog/feed.xml"},
-    {"name": "AllenAI", "url": "https://allenai.org/blog/rss.xml"}
+    {"name": "BAIR", "url": "https://bair.berkeley.edu/blog/feed.xml"}
   ],
   "github_repositories": [
     "openai/codex", "openai/openai-python", "huggingface/transformers", "huggingface/diffusers",

@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-17T23:18:29+00:00",
+  "generated_at": "2026-08-18T06:27:47+00:00",
   "hub": {
     "id": "aix-daily",
-    "name": "AIX Daily",
-    "title": "每日智能研究集散中心",
+    "name": "AIX每日精读",
+    "title": "五个频道的每日精读",
     "timezone": "Asia/Shanghai",
-    "site_url": "https://zichenwang114514.github.io/ai-chem-daily/"
+    "site_url": "https://zichenwang114514.github.io/ai-x-daily/"
   },
   "channels": [
     {
@@ -26,9 +26,9 @@
       "archive_path": "data/channels/aixchem/archive/index.json",
       "candidate_path": "data/channels/aixchem/candidates/latest.json",
       "endpoints": {
-        "latest": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixchem/latest.json",
-        "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixchem/archive/index.json",
-        "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixchem/candidates/latest.json"
+        "latest": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aixchem/latest.json",
+        "archive": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aixchem/archive/index.json",
+        "candidates": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aixchem/candidates/latest.json"
       },
       "latest_date": "2026-08-18",
       "has_data": true,
@@ -76,9 +76,9 @@
       "archive_path": "data/channels/aixbio/archive/index.json",
       "candidate_path": "data/channels/aixbio/candidates/latest.json",
       "endpoints": {
-        "latest": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixbio/latest.json",
-        "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixbio/archive/index.json",
-        "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixbio/candidates/latest.json"
+        "latest": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aixbio/latest.json",
+        "archive": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aixbio/archive/index.json",
+        "candidates": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aixbio/candidates/latest.json"
       },
       "latest_date": "2026-08-18",
       "has_data": true,
@@ -129,9 +129,9 @@
       "archive_path": "data/channels/aixmath/archive/index.json",
       "candidate_path": "data/channels/aixmath/candidates/latest.json",
       "endpoints": {
-        "latest": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixmath/latest.json",
-        "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixmath/archive/index.json",
-        "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aixmath/candidates/latest.json"
+        "latest": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aixmath/latest.json",
+        "archive": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aixmath/archive/index.json",
+        "candidates": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aixmath/candidates/latest.json"
       },
       "latest_date": "2026-08-18",
       "has_data": true,
@@ -174,9 +174,9 @@
       "archive_path": "data/channels/aivoices/archive/index.json",
       "candidate_path": "data/channels/aivoices/candidates/latest.json",
       "endpoints": {
-        "latest": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aivoices/latest.json",
-        "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aivoices/archive/index.json",
-        "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/aivoices/candidates/latest.json"
+        "latest": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aivoices/latest.json",
+        "archive": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aivoices/archive/index.json",
+        "candidates": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aivoices/candidates/latest.json"
       },
       "latest_date": "2026-08-18",
       "has_data": true,
@@ -219,9 +219,9 @@
       "archive_path": "data/channels/engineering/archive/index.json",
       "candidate_path": "data/channels/engineering/candidates/latest.json",
       "endpoints": {
-        "latest": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/engineering/latest.json",
-        "archive": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/engineering/archive/index.json",
-        "candidates": "https://zichenwang114514.github.io/ai-chem-daily/data/channels/engineering/candidates/latest.json"
+        "latest": "https://zichenwang114514.github.io/ai-x-daily/data/channels/engineering/latest.json",
+        "archive": "https://zichenwang114514.github.io/ai-x-daily/data/channels/engineering/archive/index.json",
+        "candidates": "https://zichenwang114514.github.io/ai-x-daily/data/channels/engineering/candidates/latest.json"
       },
       "latest_date": "2026-08-18",
       "has_data": true,
@@ -243,9 +243,9 @@
     }
   ],
   "endpoints": {
-    "status": "https://zichenwang114514.github.io/ai-chem-daily/api/v1/status.json",
-    "activity": "https://zichenwang114514.github.io/ai-chem-daily/api/v1/activity.json",
-    "daily_task": "https://zichenwang114514.github.io/ai-chem-daily/api/v1/tasks/daily-brief.json",
-    "daily_task_text": "https://zichenwang114514.github.io/ai-chem-daily/api/v1/tasks/daily-brief.md"
+    "status": "https://zichenwang114514.github.io/ai-x-daily/api/v1/status.json",
+    "activity": "https://zichenwang114514.github.io/ai-x-daily/api/v1/activity.json",
+    "daily_task": "https://zichenwang114514.github.io/ai-x-daily/api/v1/tasks/daily-brief.json",
+    "daily_task_text": "https://zichenwang114514.github.io/ai-x-daily/api/v1/tasks/daily-brief.md"
   }
 }

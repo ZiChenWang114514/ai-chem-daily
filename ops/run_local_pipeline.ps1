@@ -24,9 +24,32 @@ if (Test-Path -LiteralPath $SecretsPath) {
     $LocalSecrets = Import-PowerShellDataFile -LiteralPath $SecretsPath
     foreach ($Key in $LocalSecrets.Keys) { $Secrets[$Key] = $LocalSecrets[$Key] }
 }
-$env:X_BEARER_TOKEN = [string]$Secrets.XBearerToken
-$env:OPENREVIEW_USERNAME = [string]$Secrets.OpenReviewUsername
-$env:OPENREVIEW_PASSWORD = [string]$Secrets.OpenReviewPassword
+$XBearerInjected = $false
+$OpenReviewUserInjected = $false
+$OpenReviewPassInjected = $false
+if (-not $env:X_BEARER_TOKEN -and $Secrets.XBearerToken) {
+    $env:X_BEARER_TOKEN = [string]$Secrets.XBearerToken
+    $XBearerInjected = $true
+}
+if (-not $env:OPENREVIEW_USERNAME -and $Secrets.OpenReviewUsername) {
+    $env:OPENREVIEW_USERNAME = [string]$Secrets.OpenReviewUsername
+    $OpenReviewUserInjected = $true
+}
+if (-not $env:OPENREVIEW_PASSWORD -and $Secrets.OpenReviewPassword) {
+    $env:OPENREVIEW_PASSWORD = [string]$Secrets.OpenReviewPassword
+    $OpenReviewPassInjected = $true
+}
+$GitHubTokenInjected = $false
+if (-not $env:GITHUB_TOKEN) {
+    $Gh = Get-Command gh -ErrorAction SilentlyContinue
+    if ($Gh) {
+        $Token = (& gh auth token 2>$null | Select-Object -First 1)
+        if ($Token) {
+            $env:GITHUB_TOKEN = [string]$Token
+            $GitHubTokenInjected = $true
+        }
+    }
+}
 
 $Python = (Get-Command python -ErrorAction Stop).Source
 $CodexCommand = (Get-Command codex.cmd -ErrorAction Stop).Source
@@ -64,11 +87,17 @@ function Invoke-CodexJson([string]$PromptPath, [string]$SchemaPath, [string]$Out
     if ($Process.ExitCode -ne 0) { throw "Codex review failed with exit code $($Process.ExitCode)" }
 }
 
+function Invoke-Python([string[]]$PythonArgs) {
+    $output = & $Python @PythonArgs 2>&1
+    $code = $LASTEXITCODE
+    foreach ($line in @($output)) { Write-Host $line }
+    if ($code -ne 0) { throw "python $($PythonArgs -join ' ') failed with exit code $code" }
+}
+
 function Invoke-Collection([string]$Channel) {
     Write-ChannelStatus $Channel "running" "Collection started"
     try {
-        & $Python backend/aix_pipeline.py $Channel --root $RepoRoot --site-root public --date $RunDate
-        if ($LASTEXITCODE -ne 0) { throw "Collection failed" }
+        Invoke-Python @("backend/aix_pipeline.py", $Channel, "--root", $RepoRoot, "--site-root", "public", "--date", $RunDate)
         Write-ChannelStatus $Channel "collected" "Collection completed; awaiting channel review"
         return $true
     }
@@ -86,8 +115,7 @@ function Invoke-Curation([string]$Channel) {
         $SchemaPath = Join-Path $RepoRoot "ops\codex\channel_curation.schema.json"
         $CurationPath = Join-Path $RunRoot "$RunDate-$Channel-curation.json"
         Invoke-CodexJson $PromptPath $SchemaPath $CurationPath $Channel
-        & $Python backend/apply_channel_curation.py $Channel $CurationPath --site-root public
-        if ($LASTEXITCODE -ne 0) { throw "Curation import failed" }
+        Invoke-Python @("backend/apply_channel_curation.py", $Channel, $CurationPath, "--site-root", "public")
         Write-ChannelStatus $Channel "success" "Collection and review completed"
         return $true
     }
@@ -112,12 +140,9 @@ function Get-FailedChannels {
 function Publish-Daily {
     $SummaryPath = Join-Path $RunRoot "$RunDate-daily-summary.json"
     Invoke-CodexJson (Join-Path $RepoRoot "ops\codex\daily_summary_prompt.md") (Join-Path $RepoRoot "ops\codex\daily_summary.schema.json") $SummaryPath "daily-summary"
-    & $Python backend/publish_daily.py --site-root public --summary $SummaryPath
-    if ($LASTEXITCODE -ne 0) { throw "Combined daily generation failed" }
-    & $Python backend/hub_publish.py --site-root public
-    if ($LASTEXITCODE -ne 0) { throw "Public interface generation failed" }
-    & $Python -m unittest discover -s tests -v
-    if ($LASTEXITCODE -ne 0) { throw "Project tests failed" }
+    Invoke-Python @("backend/publish_daily.py", "--site-root", "public", "--summary", $SummaryPath)
+    Invoke-Python @("backend/hub_publish.py", "--site-root", "public")
+    Invoke-Python @("-m", "unittest", "discover", "-s", "tests", "-v")
 }
 
 Push-Location $RepoRoot
@@ -139,19 +164,41 @@ try {
             if (Invoke-Collection $Channel) { [void](Invoke-Curation $Channel) }
         }
     }
+    $StillFailed = @(Get-FailedChannels)
+    if ($StillFailed.Count -gt 0) {
+        Write-Warning "Retry complete; still failed: $($StillFailed -join ', ')"
+        $Succeeded = @($Channels | Where-Object { $StillFailed -notcontains $_ })
+        if ($Succeeded.Count -eq 0) {
+            throw "All channels failed after retry; skip combined publish"
+        }
+    }
     Publish-Daily
     if (-not $SkipPush) {
-        & $Git add -- public/data public/email public/api public/channels public/index.html public/assets
+        & $Git add -- public/data public/email public/api public/channels public/index.html public/assets public/library
         & $Git diff --cached --quiet
-        if ($LASTEXITCODE -ne 0) {
+        $DiffCode = $LASTEXITCODE
+        if ($DiffCode -eq 1) {
             & $Git commit -m "data: aix daily $RunDate"
             if ($LASTEXITCODE -ne 0) { throw "git commit failed" }
             & $Git push origin main
             if ($LASTEXITCODE -ne 0) { throw "git push failed" }
+        } elseif ($DiffCode -ne 0) {
+            throw "git diff failed with exit code $DiffCode"
         }
     }
 }
 finally {
-    Remove-Item Env:X_BEARER_TOKEN, Env:OPENREVIEW_USERNAME, Env:OPENREVIEW_PASSWORD -ErrorAction SilentlyContinue
+    if ($XBearerInjected) {
+        Remove-Item Env:X_BEARER_TOKEN -ErrorAction SilentlyContinue
+    }
+    if ($OpenReviewUserInjected) {
+        Remove-Item Env:OPENREVIEW_USERNAME -ErrorAction SilentlyContinue
+    }
+    if ($OpenReviewPassInjected) {
+        Remove-Item Env:OPENREVIEW_PASSWORD -ErrorAction SilentlyContinue
+    }
+    if ($GitHubTokenInjected) {
+        Remove-Item Env:GITHUB_TOKEN -ErrorAction SilentlyContinue
+    }
     Pop-Location
 }

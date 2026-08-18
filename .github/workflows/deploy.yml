@@ -51,7 +51,7 @@ jobs:
         shell: bash
         run: |
           digest_date="$(python -c 'import json; print(json.load(open("public/data/daily/latest.json", encoding="utf-8"))["date"])')"
-          title="AIX Daily 五频道日报 · ${digest_date}"
+          title="AIX每日精读 · ${digest_date}"
           if gh issue list --state all --search "${title} in:title" --json title --jq '.[].title' | grep -Fxq "$title"; then
             echo "Notification issue already exists."
           else

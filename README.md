@@ -1,6 +1,6 @@
-# AIX Daily · 每日智能研究集散中心
+# AIX每日精读
 
-AIX Daily 在 Windows 本地完成每日采集与 Codex 审阅，使用 GitHub Pages 发布。AI × Chem、AI × Bio、AI × Math、AI Voices 与 Engineering 五个频道均已启用。
+AIX每日精读在 Windows 本地完成每日采集与 Codex 审阅，使用 GitHub Pages 发布。AI × Chem、AI × Bio、AI × Math、AI Voices 与 Engineering 五个频道均已启用。
 
 ## 每日流程
 
@@ -26,7 +26,7 @@ AIX Daily 在 Windows 本地完成每日采集与 Codex 审阅，使用 GitHub P
 - `public/data/channels/<channel>/archive/`：各频道日期归档
 - `public/data/daily/latest.json`：五频道综合日报
 
-任务连接页位于 `public/task/index.html`，线上地址是 <https://zichenwang114514.github.io/ai-chem-daily/task/>。
+任务连接页位于 `public/task/index.html`，线上地址是 <https://zichenwang114514.github.io/ai-x-daily/task/>。
 
 ## 工程目录
 
@@ -65,7 +65,7 @@ pwsh -NoProfile -File ops/run_local_pipeline.ps1 -SkipPush -SkipPull
 
 ## Codex 已安排任务
 
-任务名称为 `AIX Daily 五频道每日研究日报`，每天北京时间 07:00 运行一次。它先完成五频道采集，再完成五套审阅和统一发布。运行记录、Codex 结构化结果、本地原始资料与共享缓存分别保存在 `work/local-pipeline/`、`work/raw/` 与 `work/source-cache/`，这些目录不会提交到 GitHub。
+任务名称为 `AIX每日精读`，每天北京时间 07:00 运行一次。它先完成五频道采集，再完成五套审阅和统一发布。运行记录、Codex 结构化结果、本地原始资料与共享缓存分别保存在 `work/local-pipeline/`、`work/raw/` 与 `work/source-cache/`，这些目录不会提交到 GitHub。
 
 本地参数位于被 Git 忽略的 `config/local.settings.psd1`。X Bearer Token 与 OpenReview 账号位于 `config/local.secrets.psd1`。可提交的参考文件分别是 `config/local.settings.example.psd1` 与 `config/local.secrets.example.psd1`。
 

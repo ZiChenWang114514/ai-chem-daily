@@ -5,10 +5,19 @@ const state = {
   payload: null,
   manifest: null,
   activity: [],
+  archiveDates: new Set(),
   activityMetric: "selected",
   source: "all",
   query: "",
+  heatmapSignature: "",
+  searchIndex: new WeakMap(),
+  libraryTag: "all",
+  libraryQuery: "",
+  noteTimers: {},
 };
+const SITE_NAME = "AIX每日精读";
+const COLLECTION_KEY = "aix-daily.collection.v1";
+const UNTAGGED_LABEL = "未分类";
 const channelNames = {
   aixchem: "AI × Chem",
   aixbio: "AI × Bio",
@@ -24,9 +33,23 @@ const channelTitles = {
   engineering: "工程更新",
 };
 const weekdays = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+const generatedFormat = new Intl.DateTimeFormat("zh-CN", {
+  timeZone: "Asia/Shanghai",
+  month: "numeric",
+  day: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false,
+});
 
 function path(value) {
   return `${root}${value}`;
+}
+
+async function loadJSON(url) {
+  const response = await fetch(path(url));
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return response.json();
 }
 
 function requestedDate() {
@@ -57,14 +80,7 @@ function weekdayLabel(value) {
 function formatGeneratedAt(value) {
   const date = new Date(value);
   if (!value || Number.isNaN(date.valueOf())) return "生成时间暂缺";
-  const parts = new Intl.DateTimeFormat("zh-CN", {
-    timeZone: "Asia/Shanghai",
-    month: "numeric",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-  }).formatToParts(date);
+  const parts = generatedFormat.formatToParts(date);
   const read = (type) => parts.find((part) => part.type === type)?.value || "";
   return `${read("month")} 月 ${read("day")} 日 ${read("hour")}:${read("minute")} 更新`;
 }
@@ -117,17 +133,195 @@ function sameText(left, right) {
   return String(left || "").replace(/\s+/g, "") === String(right || "").replace(/\s+/g, "");
 }
 
+function emptyCollection() {
+  return { schema_version: 1, updated_at: "", items: {}, notes: {} };
+}
+
+function readCollection() {
+  try {
+    const value = JSON.parse(localStorage.getItem(COLLECTION_KEY) || "");
+    if (!value || typeof value.items !== "object" || Array.isArray(value.items)) return emptyCollection();
+    if (!value.notes || typeof value.notes !== "object" || Array.isArray(value.notes)) value.notes = {};
+    Object.entries(value.items).forEach(([key, item]) => {
+      if (item?.note && !value.notes[key]) {
+        value.notes[key] = { note: item.note, note_updated_at: item.note_updated_at || "" };
+      }
+    });
+    return value;
+  } catch {
+    return emptyCollection();
+  }
+}
+
+function writeCollection(collection) {
+  try {
+    collection.updated_at = new Date().toISOString();
+    localStorage.setItem(COLLECTION_KEY, JSON.stringify(collection));
+    updateLibraryBadge();
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function collectionItemKey(item) {
+  return String(item?.id || item?.url || "").trim();
+}
+
+function savedRecord(item) {
+  return readCollection().items[collectionItemKey(item)] || null;
+}
+
+function recordTags(record) {
+  const tags = [];
+  if (record.category) tags.push(record.category);
+  (record.tags || []).forEach((tag) => {
+    if (tag && !tags.includes(tag)) tags.push(tag);
+  });
+  return tags;
+}
+
+function toSavedRecord(item, existing) {
+  return {
+    id: collectionItemKey(item),
+    title: displayTitle(item),
+    url: item.url || existing?.url || "",
+    source: item.source || existing?.source || "",
+    channel: item.channel || existing?.channel || channelId || "",
+    category: item.category || existing?.category || "",
+    tags: [...new Set((item.tags || existing?.tags || []).filter(Boolean))],
+    author_line: item.author_line || existing?.author_line || "",
+    published: String(item.published_at || item.published || existing?.published || "").slice(0, 10),
+    summary_zh: item.summary_zh || existing?.summary_zh || "",
+    saved_at: existing?.saved_at || new Date().toISOString(),
+    note: existing?.note || "",
+    note_updated_at: existing?.note_updated_at || "",
+  };
+}
+
+function toggleSaved(item) {
+  const key = collectionItemKey(item);
+  if (!key) return false;
+  const collection = readCollection();
+  if (collection.items[key]) {
+    const current = collection.items[key];
+    const noteText = (current.note || collection.notes[key]?.note || "").trim();
+    if (noteText && !window.confirm("这篇有笔记。取消收藏后笔记仍保留在本机，再次收藏时会恢复。确定取消？")) {
+      return true;
+    }
+    if (current.note) {
+      collection.notes[key] = { note: current.note, note_updated_at: current.note_updated_at || "" };
+    }
+    delete collection.items[key];
+    writeCollection(collection);
+    return false;
+  }
+  const kept = collection.notes[key];
+  collection.items[key] = toSavedRecord(item, kept ? { ...item, note: kept.note, note_updated_at: kept.note_updated_at } : null);
+  writeCollection(collection);
+  return true;
+}
+
+function saveNote(id, note) {
+  const collection = readCollection();
+  const current = collection.items[id];
+  if (!current) return false;
+  current.note = note;
+  current.note_updated_at = new Date().toISOString();
+  collection.notes[id] = { note: current.note, note_updated_at: current.note_updated_at };
+  return writeCollection(collection);
+}
+
+function collectionRecords() {
+  return Object.values(readCollection().items).sort((left, right) => String(right.saved_at || "").localeCompare(String(left.saved_at || "")));
+}
+
+function tagCounts(records) {
+  const counts = new Map();
+  records.forEach((record) => {
+    const tags = recordTags(record);
+    if (!tags.length) {
+      counts.set(UNTAGGED_LABEL, (counts.get(UNTAGGED_LABEL) || 0) + 1);
+      return;
+    }
+    tags.forEach((tag) => counts.set(tag, (counts.get(tag) || 0) + 1));
+  });
+  return [...counts.entries()].sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0], "zh-CN"));
+}
+
+function updateLibraryBadge() {
+  const count = Object.keys(readCollection().items).length;
+  document.querySelectorAll("[data-library-count]").forEach((node) => {
+    node.hidden = count === 0;
+    node.textContent = String(count);
+  });
+}
+
+function setSaveButton(button, saved) {
+  if (!button) return;
+  button.classList.toggle("is-saved", saved);
+  button.setAttribute("aria-pressed", String(saved));
+  button.textContent = saved ? "已收藏" : "收藏";
+}
+
+function scheduleNoteSave(id, note, status) {
+  window.clearTimeout(state.noteTimers[id]);
+  if (status) status.textContent = "正在保存…";
+  state.noteTimers[id] = window.setTimeout(() => {
+    const saved = saveNote(id, note);
+    if (status) status.textContent = saved === false ? "本机存储已满，笔记未写入" : "已保存在本机";
+    if (page === "library") renderLibraryHero();
+  }, 280);
+}
+
+function exportCollection() {
+  const payload = readCollection();
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  const link = document.createElement("a");
+  const stamp = dateKey(new Date());
+  link.href = URL.createObjectURL(blob);
+  link.download = `aix-daily-collection-${stamp}.json`;
+  link.click();
+  URL.revokeObjectURL(link.href);
+}
+
+function mergeImportedCollection(payload) {
+  const incoming = payload?.items && !Array.isArray(payload.items) ? payload.items : {};
+  const collection = readCollection();
+  Object.values(incoming).forEach((item) => {
+    const key = collectionItemKey(item);
+    if (!key) return;
+    const previous = collection.items[key];
+    if (!previous) {
+      collection.items[key] = toSavedRecord(item, item);
+      return;
+    }
+    const keepIncomingNote = String(item.note_updated_at || "") >= String(previous.note_updated_at || "");
+    collection.items[key] = {
+      ...toSavedRecord(item, previous),
+      saved_at: previous.saved_at || item.saved_at,
+      note: keepIncomingNote ? String(item.note || "") : previous.note,
+      note_updated_at: keepIncomingNote ? (item.note_updated_at || previous.note_updated_at) : previous.note_updated_at,
+    };
+  });
+  writeCollection(collection);
+}
+
 function renderHeatmap() {
   const container = document.getElementById("activity-heatmap");
   if (!container) return;
-  container.replaceChildren();
+  const viewing = currentDate();
+  const signature = `${state.activity.length}:${[...state.archiveDates].join(",")}:${viewing}:${page}`;
+  if (signature === state.heatmapSignature && container.childElementCount) return;
+  state.heatmapSignature = signature;
+  const fragment = document.createDocumentFragment();
   const relevant = state.activity.filter((item) => page === "home" || item.channel === channelId);
   const byDate = new Map();
   relevant.forEach((item) => {
     const existing = byDate.get(item.date) || { date: item.date, fetched: 0, candidates: 0, selected: 0 };
-    ["fetched", "candidates", "selected"].forEach((metric) => {
-      existing[metric] += Number(item[metric]) || 0;
-    });
+    existing.fetched += Number(item.fetched) || 0;
+    existing.candidates += Number(item.candidates) || 0;
+    existing.selected += Number(item.selected) || 0;
     byDate.set(item.date, existing);
   });
   const metric = state.activityMetric;
@@ -143,13 +337,12 @@ function renderHeatmap() {
   let previousMonth = -1;
   let populatedDays = 0;
   let total = 0;
-  const viewing = currentDate();
 
   ["日", "一", "二", "三", "四", "五", "六"].forEach((label) => {
     const dow = document.createElement("span");
     dow.className = "heatmap__dow";
     dow.textContent = label;
-    container.appendChild(dow);
+    fragment.appendChild(dow);
   });
 
   for (let offset = 0; offset < dayCount; offset += 1) {
@@ -165,26 +358,25 @@ function renderHeatmap() {
       month.className = "heatmap__month";
       month.style.setProperty("--week", week);
       month.textContent = `${day.getUTCMonth() + 1}月`;
-      container.appendChild(month);
+      fragment.appendChild(month);
     }
-    const cell = document.createElement(item ? "button" : "span");
+    const hasArchive = page === "home" ? state.archiveDates.has(key) : Boolean(item);
+    const clickable = hasArchive && value > 0;
+    const cell = document.createElement(clickable ? "button" : "span");
     cell.className = "heatmap__day";
     cell.dataset.level = activityLevel(value, maximum);
+    cell.dataset.date = key;
     cell.setAttribute("role", "gridcell");
     const label = `${formatDate(key)}：精选 ${value}`;
     cell.title = label;
     cell.setAttribute("aria-label", label);
     if (key === viewing) cell.classList.add("is-current");
-    if (item) {
-      cell.type = "button";
-      cell.addEventListener("click", () => {
-        location.href = `?date=${encodeURIComponent(key)}`;
-      });
-    }
-    container.appendChild(cell);
+    if (clickable) cell.type = "button";
+    fragment.appendChild(cell);
     if (value > 0) populatedDays += 1;
     total += value;
   }
+  container.replaceChildren(fragment);
   setText("activity-summary", `有记录 ${populatedDays} 天，合计 ${total.toLocaleString("zh-CN")} 项精选`);
   const scroller = container.closest(".heatmap-scroll");
   if (scroller) scroller.scrollLeft = scroller.scrollWidth;
@@ -207,11 +399,19 @@ function renderChannels() {
     card.href = withDate(path(`channels/${channel.id}/`), date);
     card.style.setProperty("--channel-accent", channel.accent || "#1b7d76");
 
+    const picture = document.createElement("picture");
+    const webp = document.createElement("source");
+    webp.type = "image/webp";
+    webp.srcset = path(`assets/art/${channel.id}.webp`);
     const art = document.createElement("img");
     art.className = "channel-card__art";
     art.src = path(`assets/art/${channel.id}.jpg`);
     art.alt = "";
     art.loading = "lazy";
+    art.decoding = "async";
+    art.width = 640;
+    art.height = 360;
+    picture.append(webp, art);
 
     const body = document.createElement("div");
     body.className = "channel-card__body";
@@ -234,14 +434,18 @@ function renderChannels() {
     meta.className = "channel-card__meta";
     meta.textContent = (channel.sources || []).slice(0, 3).join(" · ");
     body.append(top, description, meta);
-    card.append(art, body);
+    card.append(picture, body);
     container.appendChild(card);
   });
 }
 
 function paperSearchText(item) {
-  return [
+  const cached = state.searchIndex.get(item);
+  if (cached) return cached;
+  const text = [
     displayTitle(item),
+    item.summary_zh,
+    item.why_it_matters_zh,
     item.abstract_or_text,
     item.abstract,
     item.author_line,
@@ -250,6 +454,8 @@ function paperSearchText(item) {
     item.category,
     ...(item.tags || []),
   ].join(" ").toLocaleLowerCase("zh-CN");
+  state.searchIndex.set(item, text);
+  return text;
 }
 
 function visibleItems() {
@@ -262,6 +468,17 @@ function visibleItems() {
 
 function createItemCard(item, groupName) {
   const fragment = document.getElementById("paper-template").content.cloneNode(true);
+  const card = fragment.querySelector(".paper-card");
+  const key = collectionItemKey(item);
+  if (card && key) card.dataset.id = key;
+  const saved = savedRecord(item);
+  setSaveButton(fragment.querySelector(".save-button"), Boolean(saved));
+  const noteBlock = fragment.querySelector(".note-block");
+  const noteField = fragment.querySelector(".note-field");
+  if (noteBlock) {
+    noteBlock.hidden = page !== "library" && !saved;
+    if (noteField) noteField.value = saved?.note || "";
+  }
   fragment.querySelector(".rank").textContent = String(item.rank || 0).padStart(2, "0");
   fragment.querySelector(".source-badge").textContent = item.source;
   const topic = fragment.querySelector(".topic-label");
@@ -280,7 +497,14 @@ function createItemCard(item, groupName) {
   } else {
     why.remove();
   }
-  fragment.querySelector(".abstract-text").textContent = item.abstract_or_text || item.abstract || "该来源未提供摘要或正文。";
+  const abstract = fragment.querySelector(".abstract-text");
+  const details = fragment.querySelector(".abstract-details");
+  if (details && abstract) {
+    const abstractText = item.abstract_or_text || item.abstract || "该来源未提供摘要或正文。";
+    details.addEventListener("toggle", () => {
+      if (details.open) abstract.textContent = abstractText;
+    }, { once: true });
+  }
   const tags = fragment.querySelector(".tag-list");
   [...new Set(item.tags || [])]
     .filter((tag) => tag && tag !== item.category && tag !== item.source)
@@ -300,11 +524,20 @@ function emptyDayText() {
   return "这一天没有达到收录标准的更新。可在上方打开历史日报。";
 }
 
+function ensureEmptyArt() {
+  const image = document.getElementById("empty-art");
+  if (!image || image.getAttribute("src")) return;
+  image.src = path("assets/art/empty.jpg");
+  const webp = document.getElementById("empty-art-webp");
+  if (webp) webp.srcset = path("assets/art/empty.webp");
+}
+
 function renderEmptyState(filteredCount) {
   const empty = document.getElementById("empty-state");
   const toolbar = document.querySelector(".toolbar");
   const allCount = payloadItems().length;
   empty.hidden = filteredCount > 0;
+  if (filteredCount === 0) ensureEmptyArt();
   if (toolbar) toolbar.hidden = allCount === 0;
   if (filteredCount > 0) return;
   if (allCount === 0) {
@@ -319,13 +552,15 @@ function renderEmptyState(filteredCount) {
 function renderItems() {
   const items = visibleItems();
   const container = document.getElementById("paper-groups");
-  container.replaceChildren();
   const total = payloadItems().length;
   setText("result-count", total ? `显示 ${items.length} / ${total} 项` : "");
   renderEmptyState(items.length);
+  const fragment = document.createDocumentFragment();
   const groups = new Map();
   items.forEach((item) => {
-    const group = item.category || (page === "home" ? "其他更新" : "当日收录");
+    const group = page === "home"
+      ? (item.channel_name || channelNames[item.channel] || "其他更新")
+      : (item.category || "当日收录");
     if (!groups.has(group)) groups.set(group, []);
     groups.get(group).push(item);
   });
@@ -340,8 +575,9 @@ function renderItems() {
     title.appendChild(count);
     section.appendChild(title);
     values.forEach((item) => section.appendChild(createItemCard(item, name)));
-    container.appendChild(section);
+    fragment.appendChild(section);
   });
+  container.replaceChildren(fragment);
 }
 
 function renderSourceFilters() {
@@ -378,8 +614,8 @@ function renderHero(payload) {
   const date = payload.date || "";
   const history = viewingHistory();
   document.title = isHome
-    ? `AIX Daily · ${date}`
-    : `${channelNames[channelId] || "AIX Daily"} · ${date}`;
+    ? `${SITE_NAME} · ${date}`
+    : `${channelNames[channelId] || SITE_NAME} · ${date}`;
   setText("digest-date", formatDate(date));
   const dateNode = document.getElementById("digest-date");
   if (dateNode) dateNode.dateTime = date;
@@ -405,8 +641,11 @@ function renderHero(payload) {
   setText("stat-selected", Number(stats).toLocaleString("zh-CN"));
   setText("footer-date", date ? `${history ? "本期日期" : "最近更新"}：${formatDate(date)}` : "—");
 
+  const artStem = isHome ? "hero" : channelId;
   const art = document.getElementById("hero-art");
-  if (art) art.src = path(isHome ? "assets/art/hero.jpg" : `assets/art/${channelId}.jpg`);
+  const artWebp = document.getElementById("hero-art-webp");
+  if (art) art.src = path(`assets/art/${artStem}.jpg`);
+  if (artWebp) artWebp.srcset = path(`assets/art/${artStem}.webp`);
 
   const note = document.getElementById("source-note");
   const errors = isHome
@@ -436,37 +675,29 @@ function markHomeOnlySections() {
 }
 
 async function loadManifestAndActivity() {
-  const [manifestResponse, activityResponse] = await Promise.all([
-    fetch(path("api/v1/manifest.json"), { cache: "no-store" }),
-    fetch(path("api/v1/activity.json"), { cache: "no-store" }),
+  const [manifest, activity] = await Promise.all([
+    loadJSON("api/v1/manifest.json"),
+    loadJSON("api/v1/activity.json"),
   ]);
-  if (!manifestResponse.ok || !activityResponse.ok) throw new Error("公共接口暂时不可用");
-  state.manifest = await manifestResponse.json();
-  state.activity = (await activityResponse.json()).items || [];
+  state.manifest = manifest;
+  state.activity = activity.items || [];
   renderChannels();
   renderHeatmap();
   markChannelNav();
 }
 
-function groupedHistory(items) {
-  const byDate = new Map();
-  items.forEach((item) => {
-    const existing = byDate.get(item.date) || { date: item.date, selected: 0 };
-    existing.selected += Number(item.selected) || 0;
-    byDate.set(item.date, existing);
-  });
-  return [...byDate.values()].sort((left, right) => right.date.localeCompare(left.date));
-}
-
 async function loadArchive() {
   const container = document.getElementById("history-list");
-  const archivePath = page === "channel" ? `data/channels/${channelId}/archive/index.json` : "api/v1/activity.json";
+  if (!container) return;
+  const archivePath = page === "channel"
+    ? `data/channels/${channelId}/archive/index.json`
+    : "data/daily/archive/index.json";
   try {
-    const response = await fetch(path(archivePath), { cache: "no-store" });
-    const value = await response.json();
-    const items = page === "channel" ? value.items || [] : groupedHistory(value.items || []);
+    const value = await loadJSON(archivePath);
+    const items = value.items || [];
+    state.archiveDates = new Set(items.map((item) => item.date).filter(Boolean));
     const viewing = currentDate();
-    container.replaceChildren();
+    const fragment = document.createDocumentFragment();
     items.forEach((item) => {
       const link = document.createElement("a");
       link.className = "history-link";
@@ -479,8 +710,10 @@ async function loadArchive() {
       const count = document.createElement("span");
       count.textContent = `${item.selected || 0} 项精选`;
       link.appendChild(count);
-      container.appendChild(link);
+      fragment.appendChild(link);
     });
+    container.replaceChildren(fragment);
+    renderHeatmap();
   } catch (error) {
     container.textContent = `历史列表读取失败：${error.message}`;
   }
@@ -491,7 +724,12 @@ function flattenHomeItems(payload) {
   payload.items = (payload.channels || []).flatMap((channel) => (
     (channel.items || channel.papers || []).map((item) => {
       rank += 1;
-      return { ...item, rank, category: channel.name };
+      return {
+        ...item,
+        rank,
+        channel: item.channel || channel.id,
+        channel_name: channel.name,
+      };
     })
   ));
   return payload;
@@ -499,31 +737,185 @@ function flattenHomeItems(payload) {
 
 async function loadHomeDigest(date) {
   const url = date ? `data/daily/archive/${encodeURIComponent(date)}.json` : "data/daily/latest.json";
-  const response = await fetch(path(url), { cache: "no-store" });
-  if (!response.ok) throw new Error(date ? `没有 ${date} 的综合日报` : `HTTP ${response.status}`);
-  return flattenHomeItems(await response.json());
+  try {
+    return flattenHomeItems(await loadJSON(url));
+  } catch (error) {
+    throw new Error(date ? `没有 ${date} 的综合日报` : error.message);
+  }
 }
 
 async function loadDigest() {
   const date = requestedDate();
   const payload = page === "home"
     ? await loadHomeDigest(date)
-    : await (async () => {
-      const url = date
-        ? `data/channels/${channelId}/archive/${encodeURIComponent(date)}.json`
-        : `data/channels/${channelId}/latest.json`;
-      const response = await fetch(path(url), { cache: "no-store" });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      return response.json();
-    })();
+    : await loadJSON(date
+      ? `data/channels/${channelId}/archive/${encodeURIComponent(date)}.json`
+      : `data/channels/${channelId}/latest.json`);
   renderPayload(payload);
-  loadArchive();
+}
+
+function findRenderableItem(id) {
+  return payloadItems().find((item) => collectionItemKey(item) === id) || readCollection().items[id] || null;
+}
+
+function bindCollectionEvents(rootId) {
+  const rootNode = document.getElementById(rootId);
+  if (!rootNode) return;
+  rootNode.addEventListener("click", (event) => {
+    const button = event.target.closest(".save-button");
+    if (!button) return;
+    const card = button.closest(".paper-card");
+    const item = findRenderableItem(card?.dataset.id);
+    if (!item) return;
+    const saved = toggleSaved(item);
+    setSaveButton(button, saved);
+    const noteBlock = card.querySelector(".note-block");
+    if (noteBlock && page !== "library") noteBlock.hidden = !saved;
+    if (page === "library") renderLibrary();
+  });
+  rootNode.addEventListener("input", (event) => {
+    const field = event.target.closest(".note-field");
+    if (!field) return;
+    const card = field.closest(".paper-card");
+    if (!card?.dataset.id || !savedRecord({ id: card.dataset.id })) return;
+    scheduleNoteSave(card.dataset.id, field.value, card.querySelector(".note-status"));
+  });
+}
+
+function visibleLibraryRecords() {
+  const query = state.libraryQuery.trim().toLocaleLowerCase("zh-CN");
+  return collectionRecords().filter((record) => {
+    const tags = recordTags(record);
+    const tagMatch = state.libraryTag === "all"
+      || (state.libraryTag === UNTAGGED_LABEL ? tags.length === 0 : tags.includes(state.libraryTag));
+    if (!tagMatch) return false;
+    if (!query) return true;
+    const haystack = [record.title, record.note, record.source, record.author_line, record.category, ...(record.tags || [])]
+      .join(" ")
+      .toLocaleLowerCase("zh-CN");
+    return haystack.includes(query);
+  });
+}
+
+function renderLibraryHero() {
+  const records = collectionRecords();
+  setText("library-total", String(records.length));
+  setText("library-note-count", String(records.filter((record) => (record.note || "").trim()).length));
+}
+
+function renderTagRail(records) {
+  const container = document.getElementById("tag-rail");
+  if (!container) return;
+  const fragment = document.createDocumentFragment();
+  const options = [["all", records.length], ...tagCounts(records)];
+  options.forEach(([tag, count]) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `tag-rail__item${state.libraryTag === tag ? " is-active" : ""}`;
+    button.dataset.tag = tag;
+    button.append(document.createTextNode(tag === "all" ? "全部" : tag));
+    const badge = document.createElement("span");
+    badge.textContent = String(count);
+    button.appendChild(badge);
+    fragment.appendChild(button);
+  });
+  container.replaceChildren(fragment);
+}
+
+function renderLibrary() {
+  const records = collectionRecords();
+  const visible = visibleLibraryRecords();
+  renderLibraryHero();
+  renderTagRail(records);
+  updateLibraryBadge();
+  const title = document.getElementById("library-title");
+  if (title) title.textContent = state.libraryTag === "all" ? "全部收藏" : state.libraryTag;
+  setText("library-result-count", records.length ? `显示 ${visible.length} / ${records.length} 篇` : "");
+  const empty = document.getElementById("library-empty");
+  const groups = document.getElementById("library-groups");
+  if (empty) {
+    empty.hidden = visible.length > 0;
+    if (visible.length === 0) {
+      ensureEmptyArt();
+      setText("empty-title", records.length ? "没有匹配的收藏" : "还没有收藏");
+      setText("empty-text", records.length
+        ? "请更换标签或搜索词。"
+        : "在日报条目右上角点「收藏」，条目会按原有标签自动归入这里。笔记只保存在本机。");
+    }
+  }
+  if (!groups) return;
+  if (!visible.length) {
+    groups.replaceChildren();
+    return;
+  }
+  const grouped = new Map();
+  if (state.libraryTag === "all") {
+    grouped.set("全部收藏", visible);
+  } else {
+    grouped.set(state.libraryTag, visible);
+  }
+  const fragment = document.createDocumentFragment();
+  grouped.forEach((values, name) => {
+    const section = document.createElement("section");
+    section.className = "paper-group";
+    const heading = document.createElement("h3");
+    heading.className = "group-title";
+    heading.append(document.createTextNode(name));
+    const count = document.createElement("span");
+    count.textContent = `${values.length} 篇`;
+    heading.appendChild(count);
+    section.appendChild(heading);
+    values.forEach((record, index) => {
+      section.appendChild(createItemCard({ ...record, rank: index + 1 }, name));
+    });
+    fragment.appendChild(section);
+  });
+  groups.replaceChildren(fragment);
+}
+
+function bindLibraryPage() {
+  let searchTimer = 0;
+  document.getElementById("library-search")?.addEventListener("input", (event) => {
+    state.libraryQuery = event.target.value;
+    window.clearTimeout(searchTimer);
+    searchTimer = window.setTimeout(renderLibrary, 120);
+  });
+  document.getElementById("tag-rail")?.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-tag]");
+    if (!button) return;
+    state.libraryTag = button.dataset.tag;
+    renderLibrary();
+  });
+  document.getElementById("export-collection")?.addEventListener("click", exportCollection);
+  document.getElementById("import-collection")?.addEventListener("change", async (event) => {
+    const file = event.target.files?.[0];
+    const status = document.getElementById("library-status");
+    if (!file) return;
+    try {
+      const payload = JSON.parse(await file.text());
+      mergeImportedCollection(payload);
+      renderLibrary();
+      if (status) {
+        status.hidden = false;
+        status.textContent = "备份已合并到本机收藏。";
+      }
+    } catch {
+      if (status) {
+        status.hidden = false;
+        status.textContent = "导入失败：请选择由本站导出的 JSON 备份。";
+      }
+    }
+    event.target.value = "";
+  });
+  bindCollectionEvents("library-groups");
 }
 
 function bindEvents() {
+  let searchTimer = 0;
   document.getElementById("search-input")?.addEventListener("input", (event) => {
     state.query = event.target.value;
-    renderItems();
+    window.clearTimeout(searchTimer);
+    searchTimer = window.setTimeout(renderItems, 120);
   });
   document.getElementById("source-filters")?.addEventListener("click", (event) => {
     const button = event.target.closest("button[data-source]");
@@ -531,6 +923,11 @@ function bindEvents() {
     state.source = button.dataset.source;
     document.querySelectorAll("button[data-source]").forEach((item) => item.classList.toggle("is-active", item === button));
     renderItems();
+  });
+  document.getElementById("activity-heatmap")?.addEventListener("click", (event) => {
+    const cell = event.target.closest("button.heatmap__day[data-date]");
+    if (!cell) return;
+    location.href = `?date=${encodeURIComponent(cell.dataset.date)}`;
   });
   const historyButton = document.getElementById("history-button");
   const historyPanel = document.getElementById("history-panel");
@@ -552,6 +949,7 @@ function bindEvents() {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeHistory();
   });
+  bindCollectionEvents("paper-groups");
 }
 
 function showLoadError(error) {
@@ -569,5 +967,16 @@ function showLoadError(error) {
 }
 
 markHomeOnlySections();
-bindEvents();
-Promise.all([loadManifestAndActivity(), loadDigest()]).catch(showLoadError);
+updateLibraryBadge();
+if (page === "library") {
+  bindLibraryPage();
+  renderLibrary();
+} else {
+  bindEvents();
+  loadDigest().catch(showLoadError);
+  loadManifestAndActivity().catch((error) => {
+    const summary = document.getElementById("activity-summary");
+    if (summary) summary.textContent = `活动数据读取失败：${error.message}`;
+  });
+  loadArchive();
+}

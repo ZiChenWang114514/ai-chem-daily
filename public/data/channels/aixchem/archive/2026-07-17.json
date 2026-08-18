@@ -51,6 +51,7 @@
       "why_it_matters_zh": "用微调 LLM 直接『写出』分子三维结构：以笛卡尔坐标或 Z-矩阵作为几何语言，在小分子与类药分子的平衡构象及构象集预测上超越专用深度学习模型，为 LLM 介入量子化学打开了一条极简路径。",
       "quality_score": 80,
       "tags": [
+        "今日精选",
         "药物",
         "physics.chem-ph"
       ],
@@ -64,7 +65,6 @@
         "Jonathan B. Arnold",
         "Giovanni Battista Alteri"
       ],
-      "abstract": "The power of Large Language Models (LLMs) has led us to investigate how they might be fine-tuned for learning the \"language of molecular geometry\". The fine-tuning of the LLMs using Cartesian coordinates or Z-matrices provides an extremely simple method for accurately predicting equilibrium structures and diverse sets of conformers of small organic and drug-like molecules with excellent accuracy and outperforming specialized deep learning models. While the most common representation of molecular geometries are Cartesian coordinates performs adequately, we find that the inherent invariances and relational nature of geometries represented as Z-matrices provides a better grammar for LLM adaptation. Finally, we show that enhancing an LLMs capabilities for robust prediction of small molecule geometries still retains nearly all of its pre-trained language abilities by randomly mixing in small quantities of natural language prompt-response pairs into the fine-tuning.",
       "published": "2026-07-15",
       "author_line": "Joseph M. Cavanagh, Jonathan B. Arnold, Giovanni Battista Alteri 等 5 人"
     },
@@ -89,6 +89,7 @@
       "why_it_matters_zh": "RetroAgent 让 LLM 智能体在结构化记忆上搜索多步逆合成路线，能够推理整条路线而非孤立打分候选，是 agentic 合成规划方向的代表性新工作。",
       "quality_score": 80,
       "tags": [
+        "今日精选",
         "基准/数据",
         "生物",
         "cs.AI"
@@ -103,7 +104,6 @@
         "Jingru Gan",
         "Xiaoqi Sun"
       ],
-      "abstract": "Multi-step retrosynthesis planning seeks to decompose a target molecule into commercially available building blocks through a sequence of feasible reactions. The vast combinatorial search space makes this task challenging even for expert chemists. Traditional methods combine tree search with offline-trained value networks that score candidates in isolation, without reasoning about complete multi-step routes. Recent work leverages Large Language Models (LLMs) for this task, but relies on simple interfaces that limit exploration of the full search space. We introduce RetroAgent, an LLM agent that bridges symbolic search and neural reasoning through a harness with structured memory. Through memory and chemistry tools, the agent observes the full search state, including explored routes, available alternatives, and properties of intermediates, enabling informed decisions grounded in both global progress and domain knowledge. Experiments on in-distribution and out-of-distribution benchmarks demonstrate that RetroAgent delivers strong performance and generalization.",
       "published": "2026-07-16",
       "author_line": "Yanqiao Zhu, Jingru Gan, Xiaoqi Sun 等 11 人"
     },
@@ -131,6 +131,7 @@
       "why_it_matters_zh": "DMS 深度突变扫描耦合深度学习，用最少突变把抗 PD-L1 抗体改造成人鼠交叉高亲和力，直接服务临床前动物模型评价，工程实用性很强。",
       "quality_score": 80,
       "tags": [
+        "今日精选",
         "生物",
         "药物",
         "molecular biology"
@@ -148,7 +149,6 @@
         "Thenier",
         "F."
       ],
-      "abstract": "Antibodies raised against human targets often fail to recognize their animal orthologs, limiting preclinical evaluation in relevant models. We developed a Deep Mutational Scanning (DMS)-coupled deep learning strategy to engineer potent cross-reactive antibodies with minimal sequence divergence. Starting from C4, a fully human anti-PD-L1 antibody with weak recognition of murine PD-L1, DMS identified substitutions that improved binding to both human and mouse antigens. Conventional recombination of beneficial mutations generated highly cross-reactive antibodies but required 13 to 15 substitutions. To reduce this mutational burden, a deep learning model trained on DMS-derived sequence-binding data was used to identify minimal mutation combinations predicted to retain high affinity. This approach yielded variants carrying only 4 to 5 substitutions, with in vitro and cellular binding properties comparable to highly mutated antibodies. Epitope mapping, structural modeling and in vivo assessment further confirmed that these engineered antibodies retained PD-1/PD-L1 blockade and demonstrated therapeutic activity in a mouse tumor model.",
       "published": "2026-07-16",
       "author_line": "Hugo, D., Grindel, A.-L., Thenier, F. 等 12 人"
     },
@@ -173,6 +173,7 @@
       "why_it_matters_zh": "SevenNet-Polar：等变图神经网络一体化预测能量、力、应力与 Born 有效电荷，在 ZrO2、Li3PO4 与钙钛矿上 BEC 的 RMSE 低至 0.0043 e，是电场响应材料模拟的利器。",
       "quality_score": 80,
       "tags": [
+        "方法与模型",
         "材料/催化",
         "cond-mat.mtrl-sci"
       ],
@@ -186,7 +187,6 @@
         "Shungo Arai",
         "Yutack Park"
       ],
-      "abstract": "Accurate prediction of the Born effective charge (BEC) tensor is crucial for modeling materials under electric fields but remains computationally expensive. To bridge this gap, we present SevenNet-Polar, an equivariant graph neural network framework based on the SevenNet architecture for fast and accurate BEC predictions. Our BEC-only predictors can achieve an RMSE as low as 0.0043 e on ZrO2, Li3PO4, and perovskites, despite the presence of high-temperature (up to 2,000 K) and defect-laden training data. Our all-in-one multitask models for predicting energy, forces, stress, and BEC in ZrO2 and Li3PO4 achieve high accuracy with an RMSE of 1.0 meV/atom for energy, 12 meV/angstrom for forces, 0.05 GPa for stress, and 0.0029 e for BEC. BEC accuracy is not degraded by multitask training. Scaling analysis reveals distinct exponents for diagonal and off-diagonal BEC components, both of which exhibit less favorable scaling than energy, force and stress errors. SevenNet-Polar generalizes robustly when tested on scenarios containing structural environments absent from the training set, such as along nudged elastic band (NEB) trajectories or grain boundaries in ZrO2. Accelerated by FlashTP, SevenNet-Polar enables simulations containing up to 1.5 million atoms on multi-GPU supercomputers and up to approximately 15,000 atoms on a single consumer-grade GPU. This makes charge-aware molecular dynamics simulations under electric fields more accessible.",
       "published": "2026-07-16",
       "author_line": "Anh Khoa Augustin Lu, Shungo Arai, Yutack Park 等 6 人"
     },
@@ -211,6 +211,7 @@
       "why_it_matters_zh": "为 10-HBQ 构建近 ab initio 精度的基态/激发态神经网络势，并结合路径积分分子动力学纳入核量子效应，定量刻画激发态分子内质子转移的自由能图景。",
       "quality_score": 80,
       "tags": [
+        "方法与模型",
         "生物"
       ],
       "evidence_flags": [],
@@ -223,7 +224,6 @@
         "Amke Nimmrich",
         "Victor M. Freixas"
       ],
-      "abstract": "Excited-state intramolecular proton transfer is a prototypical ultrafast process that forms the foundation for many chemical and biological phenomena and is highly sensitive to changes in the underlying potential energy landscape. Here, we develop neural network potentials for 10-hydroxybenzo[h]quinoline that describe ground- and excited-state dynamics with near ab initio accuracy. These neural network potentials enable efficient sampling of the proton transfer coordinate and incorporation of nuclear quantum effects through path-integral molecular dynamics. The free energy profiles show that excited-state intramolecular proton transfer proceeds on a largely barrierless excited-state surface, with nuclear quantum effects reducing and smoothing the residual barrier. Non-equilibrium simulations yield an average proton transfer time of ~11.4 fs for quantum hydrogen, consistent with experiment, and reveal a clear isotope effect, with slower dynamics for deuterium and classical nuclei. Mechanistic analysis identifies transient proton donor–acceptor contraction as the key enabling coordinate, while the proton crosses the midpoint prior to reaching the minimum of this coordinate, indicating a dynamically driven transfer. Subtle changes in the conjugated backbone precede proton transfer, reflecting early electronic reorganization and coherent coupling between proton motion and backbone vibrations. Bond-length alternation and vibrational coherence analysis reveal isotope-dependent coherence loss, with deuteration producing stronger damping and more localized proton/backbone dynamics relative to hydrogen. These results establish neural network potential-based approaches as an effective framework for simulating excited-state proton transfer with explicit nuclear quantum effects.",
       "published": "2026-07-16",
       "author_line": "Axel Gomez, Amke Nimmrich, Victor M. Freixas 等 7 人"
     },
@@ -248,6 +248,7 @@
       "why_it_matters_zh": "提出『拓扑对齐』归纳偏置：让模型结构镜像分子键图，分别实例化为变分量子线路 Iso-QGNN 与参数对齐的经典消息传递网络，面向量子化学典型的低数据场景。",
       "quality_score": 80,
       "tags": [
+        "方法与模型",
         "基准/数据",
         "生物",
         "cs.LG"
@@ -262,7 +263,6 @@
         "Hubert Okadome Valencia",
         "Ronin Wu"
       ],
-      "abstract": "For low-data and resource-constrained regimes typical of quantum chemistry, parameter-efficient learning is a key objective. Here, we propose a topology-aligned inductive bias in which the model architecture mirrors the molecular bond graph: atoms map to a fixed register of computational units, and bonds determine which pairs interact through shared learnable parameters. This principle is instantiated in two architectures: a variational quantum circuit (Iso-QGNN), and a parameter-matched classical message-passing model (Iso-CGNN). The models are benchmarked on HOMO-LUMO and dipole moment binary classification tasks over the QM9 benchmark. With 64 trainable parameters, the implementations achieve test AUCs of approximately 0.88 (quantum) and 0.91 (classical) on the gap task, and close to 0.78 (both) on the dipole task. The models reach 90% of asymptotic performance within about 250 training molecules and gradient norms remain stable throughout training. These results indicate that the topology-aligned inductive bias is the active ingredient driving parameter efficiency at QM9 scale, with implications for matched-baseline benchmarking in quantum machine learning.",
       "published": "2026-07-15",
       "author_line": "James T. Pegg, Hubert Okadome Valencia, Ronin Wu"
     },
@@ -286,6 +286,7 @@
       "why_it_matters_zh": "融合集体变量偏置与路径采样之长，无需手工描述符即可计算一般配体解离动力学，直指『结合速率远比亲和力难算』这一药物发现痛点。",
       "quality_score": 80,
       "tags": [
+        "方法与模型",
         "生物",
         "药物",
         "physics.chem-ph"
@@ -299,7 +300,6 @@
         "Simon M. Lichtinger",
         "Roberto Covino"
       ],
-      "abstract": "The kinetics of protein-ligand binding systems are increasingly recognized as a key determinant of drug efficacy, yet remain far harder to compute than binding affinities. Existing kinetics methods either bias the dynamics along a collective variable (CV), demanding careful system-specific CV design, or use path sampling, which keeps the dynamics unbiased but can struggle to converge rates out of deep free-energy wells and often relies on hand-engineered descriptors. By combining the `best of both worlds', we propose a method to compute accurate kinetics for general ligand-unbinding problems at modest computational expense and minimal fine tuning, building on the AI for Molecular Mechanism Discovery (AIMMD) path sampling framework. To avoid the need for feature engineering, we opt for modelling the committor with a single descriptor-free, equivariant graph neural network shared across all systems. We also partially flatten deep bound-state wells with a static, basin-restricted bias potential. This improves convergence by lifting the path sampling state boundary out of regions, where the committor is hard to learn, while leaving the reactive region strictly unbiased. Across host-guest and protein-ligand systems spanning roughly 17 orders of magnitude in residence time, the method robustly recovers rates in line with reference and experimental values. Simultaneously, and without further sampling, it also reconstructs the underlying unbinding mechanisms. We additionally find that accurate rates do not require globally accurate committor models, allowing for efficient kinetics estimation even in a low-data training regime. Requiring little system-specific setup, our approach offers an efficient and broadly generalizable route to binding kinetics, and its shared committor architecture lays crucial groundwork for probing structure-kinetics relationships across ligand series in drug discovery.",
       "published": "2026-07-16",
       "author_line": "Simon M. Lichtinger, Roberto Covino"
     },
@@ -324,6 +324,7 @@
       "why_it_matters_zh": "系统研究机器学习力场训练中的标签效率，给出以更少标注达到全数据精度的策略，对降低 DFT 标注成本有直接参考价值。",
       "quality_score": 80,
       "tags": [
+        "方法与模型",
         "physics.chem-ph"
       ],
       "evidence_flags": [],
@@ -336,7 +337,6 @@
         "Yi-Ze Wang",
         "Jun Cheng"
       ],
-      "abstract": "Machine-learning force fields (MLFFs) are reliable only near their training distribution, making efficient construction of diverse training sets a major bottleneck for both train-from-scratch and foundation fine-tuning workflows. Active learning can reduce this cost, but standard model-committee uncertainty is impractical for foundation MLFFs because each committee member requires a separate fine-tuning run. We present an active-learning workflow based on last-layer-projection regression (LLPR), a forward-pass-cheap per-configuration uncertainty estimator. Across molecular, condensed-phase, and electrolyte systems, LLPR identifies compact, high-value training sets that recover full-data accuracy using only a small fraction of electronic-structure labels. In foundation-model fine-tuning, LLPR-selected configurations reach the full-pool fine-tuning ceiling with substantially fewer labels than random selection. In iterative electrolyte fine-tuning, LLPR detects unphysical local coordination before DFT labelling, provides an absolute force-error threshold, and enables automatic termination of the learning loop. The resulting models reproduce reference density and ion-coordination structure, providing a scalable uncertainty-quantification strategy across MLFF training regimes.",
       "published": "2026-07-16",
       "author_line": "Sheng Bi, Yi-Ze Wang, Jun Cheng"
     },
@@ -364,6 +364,7 @@
       "why_it_matters_zh": "Medea：面向治疗推理的 AI 智能体，强调在长流程中保留生物学上下文并验证中间计算步骤，瞄准『同一靶点在不同情境效应不同』的转化医学核心难题。",
       "quality_score": 80,
       "tags": [
+        "分子与药物发现",
         "基准/数据",
         "生物",
         "bioinformatics"
@@ -381,7 +382,6 @@
         "Munson",
         "B. P."
       ],
-      "abstract": "Therapeutic hypotheses can transfer across diseases but their relevance depends on biological context. The same target, perturbation, or treatment can produce different effects across cell types, disease states, genetic backgrounds, and patients. Therapeutic reasoning therefore requires methods that preserve context, test when evidence supports transfer, and identify where context-specific effects limit it. Although AI agents can perform therapeutic analyses, existing systems often fail to preserve biological context over long workflows, verify intermediate computational steps, or reconcile conflicting evidence across datasets and literature. Here, we present Medea, an AI agent for therapeutic reasoning across biological contexts. Medea executes multi-step analyses using biological tools, machine learning models, and literature retrieval while enforcing verification during planning, execution, and evidence synthesis. We evaluate Medea across 5,673 open-ended analyses in three domains: cell type specific therapeutic target nomination in five diseases and 29 cell types, synthetic lethality prediction in 7 cancer cell lines, and immunotherapy response prediction from multimodal patient profiles. Using a previously unpublished epistatic miniarray profiling screen performed under two DNA-damaging treatments, we evaluate Medea on predicting synthetic lethality among 238,046 gene-gene pairs in yeast. Medea accurately predicts these experimentally measured synthetic lethal interactions, indicating that its performance reflects biological relevance rather than information leakage from benchmark datasets. Across these evaluations, Medea improves performance over large language models, reasoning models, biomedical agents, and specialized machine learning models while maintaining low failure rates and calibrated abstention. These results show that verifiable AI agents can perform therapeutic analyses across biological contexts.",
       "published": "2026-07-16",
       "author_line": "Sui, P., Li, M., Munson, B. P. 等 12 人"
     },
@@ -406,6 +406,7 @@
       "why_it_matters_zh": "AI 驱动设计出抗疟药 Ganaplacide 的低成本合成路线，是 AI 合成规划走向真实药物分子的落地案例。",
       "quality_score": 80,
       "tags": [
+        "分子与药物发现",
         "药物"
       ],
       "evidence_flags": [],
@@ -418,7 +419,6 @@
         "Erik Leonhardt",
         "Lianyan Xu"
       ],
-      "abstract": "Malaria is a deadly infectious disease that disproportionately affects third-world countries. Ganaplacide is a drug candidate that is highly effective against malaria, but no affordable way to produce it exists yet. Here we show how we used a combination of AI-driven design and expert chemistry knowledge to develop a novel synthetic route to ganaplacide. The AI retrosynthesis algorithm suggested a non-evident two-steps synthesis of the imidazolopiperazine core of the molecule from benzyl-protected dimethylpiperazinone through a strategic thioimidate intermediate. We also present the Synthetic Confidence Score, which assesses the level of risk associated with a given retrosynthetic disconnection and allows balancing creativity and reliability. The synergy between AI creativity, metrics such as the Synthetic Confidence Score and expert chemist knowledge has the potential to unlock non-evident efficient routes for important molecules, when expert chemists alone have explored mainstream chemistry unsuccessfully.",
       "published": "2026-07-16",
       "author_line": "Fernando Huerta, Erik Leonhardt, Lianyan Xu 等 7 人"
     },
@@ -442,6 +442,7 @@
       "why_it_matters_zh": "质疑单一全局类药性指标的系统性偏差：FamDLike 按靶点家族定制类药性打分，可同时用于虚拟筛选过滤与生成设计的奖励函数。",
       "quality_score": 80,
       "tags": [
+        "分子与药物发现",
         "开源",
         "药物"
       ],
@@ -454,7 +455,6 @@
         "Mehmet Ali Yucel",
         "Oliver Koch"
       ],
-      "abstract": "Drug-likeness is a central metric which is used to evaluate the physicochemical profile of small molecules either as a filter for virtual screening or, more recently, as a reward function in generative design tasks. Established scores such as ED are widely adopted for these purposes, although the ligands of different therapeutic target families occupy different regions of physicochemical space. Applying a single global drug-likeness criterion can therefore systematically reward some target classes while penalising others, narrowing the chemical space considered druglike in a way that may not reflect the actual requirements for a given project. In this work, we propose a target family specific drug-likeness approach, the amD ike framework, designed to distinguish target families more accurately than existing metrics and to explore family specific druglike regions of chemical space. This framework combines three complementary modelling paradigms: desirability functions, generali ed additive models and tree-based machine learning models that span the interpretability–flexibility spectrum. The three components can also be used independently, depending on whether interpretability or predictive flexibility is prioriti ed. The abilities of the proposed method have been tested on real-world use cases in computational medicinal chemistry: an independent set from DrugBank, library screening of Enamine and K I compounds, and de novo molecule generation via EI VE T4. The proposed approach therefore provides a more discriminative, interpretable and target-aware complement to existing drug-likeness scores, suitable for ranking in early discovery pipelines and as a reward function for generative chemistry. urthermore, a user-friendly web portal (https: huggingface.co spaces kochgroup amD ike) is available to obtain drug-likeness profiles of molecules.",
       "published": "2026-07-15",
       "author_line": "Mehmet Ali Yucel, Oliver Koch"
     },
@@ -484,6 +484,7 @@
       "why_it_matters_zh": "KaML-ESM2/ESMC：在 ESM 蛋白语言模型上接任务头预测 pKa，辅以潜空间采样缓解数据稀缺，四个基准上 RMSE 约 0.5 个单位，显著超越现有结构与序列方法。",
       "quality_score": 80,
       "tags": [
+        "结构与生物",
         "基准/数据",
         "生物",
         "材料/催化",
@@ -505,7 +506,6 @@
         "Shen",
         "J."
       ],
-      "abstract": "Ionization states play crucial roles in protein function, yet predicting protein pKa values remains a formidable challenge despite decades of research. Here we present KaMLESM2 and KaML-ESMC, neural network task heads built on ESM protein language models (pLMs) and trained on the PKAD-3r experimental dataset augmented via GAINES, a latent-space sampling strategy for addressing data scarcity. KaML-ESM2/ESMC significantly outperform current structure- and sequence-based approaches across four benchmarks, achieving root-mean-square errors of about 0.5 units across six titratable residue types in native proteins. Performance degradation on 89 buried engineered OBTRUDEs (iOnizable suBsTitutions foR bUrieD rEsidues) that lack evolutionary support (KaML-ESMC RMSE = 1.89) reveals a key limitation of the current framework, which may be overcome through supervised training. Based on these and other data presented in the work, we hypothesize that protein sequence, through its evolutionary context, encodes not only structure and function but indirectly also electrostatic characteristics. We applied KaML-ESM2 to the human proteome, demonstrating that predicted pKa values can potentially identify functional sites and infer catalytic mechanisms. We offer KaML, a sequence-based, end-to-end platform to support applications spanning biological exploration, drug design, protein engineering, and biomolecular simulation. Although additional research is needed, GAINES could offer a general framework for addressing data scarcity in machine learning approaches for protein-related problems.",
       "published": "2026-07-15",
       "author_line": "Shen, M., Dayhoff, G. W., Kortzak, D., Shen, J."
     },
@@ -533,6 +533,7 @@
       "why_it_matters_zh": "生成式设计可编程的非对称 β-桶纳米孔，突破天然同源寡聚体均匀孔腔的限制，面向分子传感、测序与分离应用。",
       "quality_score": 80,
       "tags": [
+        "结构与生物",
         "生物",
         "材料/催化",
         "biochemistry"
@@ -550,7 +551,6 @@
         "Majumder",
         "S."
       ],
-      "abstract": "Protein nanopores are powerful tools for molecular sensing, sequencing, and separation, but designing pores with programmable function remains challenging. Native homo-oligomeric transmembrane beta barrels (TMBs) are used for these applications, but their uniform lumens limit spatial resolution and analyte discrimination. Although monomeric TMBs can be designed using energy-based methods, these approaches remain highly manual and limited to structural design rather than function. Here, we present a generative AI framework for TMB design, with backbone and sequence design models trained on a curated distillation set. We characterized 48 designs spanning 0.7-1.5 nm in diameter, diverse lumen chemistries, and hydrophobic thicknesses. Crystal structures closely match the design models. We demonstrate that our method produces customizable nanopores for ion sensing, DNA translocation, and transport across polymer membranes.",
       "published": "2026-07-15",
       "author_line": "Philomin, A., Sonigra, R., Majumder, S. 等 17 人"
     },
@@ -578,6 +578,7 @@
       "why_it_matters_zh": "系统评测 AlphaFold 3 预测 T 细胞抗原特异性的能力边界，对 TCR 疫苗与细胞治疗设计有直接参考意义。",
       "quality_score": 80,
       "tags": [
+        "结构与生物",
         "基准/数据",
         "systems biology"
       ],
@@ -594,7 +595,6 @@
         "Ilievski",
         "I."
       ],
-      "abstract": "T cells are a key part of the adaptive immune system. Using their surface-bound T cell antigen receptors (TCRs), these cells scan peptides and other antigens pre-sented to them by major histocompatibility complex molecules (MHCs) on the sur-face of cells, searching for abnormalities. Although determining the map between TCRs and their target antigens is of vital importance for the design of safe and effective T cell-based vaccines and therapeutics, decoding these interactions is chal-lenging. Experimental methods are not scalable, and sequence-based computational methods have issues generalising to new antigens. The IMMREP25 benchmark of methods for predicting T cell antigen specificity showed that AlphaFold-based methods promise improved generalisation to novel antigens. However, the ability of structure prediction models to predict T cell antigen specificity has not been robustly evaluated previously. In this work, we characterise AlphaFolds ability to predict T cell antigen specificity. We created a pipeline for high-throughput pre-diction of TCR:peptide-MHC (pMHC) structures using AlphaFold that is > 100 fold faster than the default implementation and used it to benchmark AlphaFold 3 (AF3) and similar models at predicting T cell antigen specificity. We investigated the underlying correlates of AlphaFold-derived binding scores and found that the models predictive power is related to the positioning of TCRs over the pMHC and not chemical interactions. Furthermore, we refine the AlphaFold-derived binding scores by training a machine learning model we call the PAE Aggregator. We then investigate AF3s ability to uncover the clustering rules of TCR repertoires and re-capitulate mutational scanning experiments. These analyses show that AlphaFold3 clusters sequence-similar TCRs according to their binding mode and detects dis-rupting point mutations accurately. Our results highlight both the promise and the current limitations of structure-based approaches for predicting TCR specificity, guiding the development of more reliable immunological prediction methods.",
       "published": "2026-07-15",
       "author_line": "McMaster, B., Elmoselhy, A., Ilievski, I. 等 8 人"
     },
@@ -619,6 +619,7 @@
       "why_it_matters_zh": "Openclatura：首个开源的『结构 → IUPAC 命名』工具，规则集由智能体系统穷举构建并自动校验，补齐了 OPSIN 反向任务十余年来的空白。",
       "quality_score": 80,
       "tags": [
+        "基准、数据、综述",
         "开源",
         "基准/数据",
         "材料/催化"
@@ -633,7 +634,6 @@
         "Kevin Maik Jablonka",
         "Rostislav Fedorov"
       ],
-      "abstract": "Naming molecules systematically remains an open challenge in cheminformatics. The reverse task—converting names to structure—has been largely solved for over a decade by OPSIN, yet no open-source tool performs the forward direction. Here we introduce Openclatura, which generates IUPAC names from molecular structures. The rule set was constructed by an agentic system that exhaustively enumerates naming rules, with each candidate name checked for structural round-trip consistency against OPSIN. Across three challenging benchmarks (QM9, PubChem, and ZINC22), Openclatura produces valid names for 98% of molecules, compared to 95% for the deep-learning baseline STOUT, while running on a single CPU core (40 times faster). We further present Robomoleculographer, an extension that generates natural-language descriptions of molecular graphs, bringing to chemistry what robocrystallographer offers to materials. Openclatura is fully deterministic and exposes an inspectable decision trace for every generated name.",
       "published": "2026-07-15",
       "author_line": "Adrian Mirza, Kevin Maik Jablonka, Rostislav Fedorov"
     },
@@ -661,6 +661,7 @@
       "why_it_matters_zh": "一项基准研究追问：生成模型建模式免疫受体库时究竟学到了什么？结果显示其可能只抓住表面序列统计而遗漏受体生成的关键特征，为治疗性抗体/TCR 设计模型敲响警钟。",
       "quality_score": 80,
       "tags": [
+        "基准、数据、综述",
         "基准/数据",
         "生物",
         "immunology"
@@ -678,661 +679,6 @@
         "Kanduri",
         "C."
       ],
-      "abstract": "Generative models are increasingly used to model adaptive immune receptor repertoire (AIRR) sequence distributions, promising to decode the sequence diversity shaping immune responses and accelerate the design of therapeutic antibodies and T-cell receptors. Yet it remains unclear whether these models produce biologically meaningful outputs or merely capture surface-level sequence statistics while missing features driven by receptor generation and selection. Rigorous evaluation is needed, but the field lacks established standards, as existing machine learning metrics do not all translate directly to the AIRR domain, given the complex structure of the data and the lack of biological ground truth. Consequently, researchers face difficulties in evaluating the models and selecting appropriate ones, which can critically affect downstream clinical applications. Here, we apply a suite of evaluation metrics tailored to AIRR sequence data and present a systematic comparison of popular generative model families proposed for the AIRR field, including variational autoencoders, long short-term memory networks, antibody language models, selection models, and simple statistical baselines. We focus specifically on the task of learning individual-specific immune receptor repertoires, a clinically relevant challenge with direct implications for personalized immunotherapy, disease monitoring, and vaccine response studies. By analyzing the sequences generated by each model, we identify memorization risks, innovation capabilities, and sensitivity to hyperparameter tuning. Taken together, these results advance the understanding of how current generative models reproduce the biology of individual immune repertoires and lay the groundwork for more principled model development and evaluation.",
-      "published": "2026-07-16",
-      "author_line": "Würtzen, C., Mamica, M., Kanduri, C. 等 7 人"
-    }
-  ],
-  "papers": [
-    {
-      "id": "arxiv:2607.13350",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "preprint",
-      "source": "arXiv",
-      "title": "How Well Can Frontier Large Language Models Generate Structures? High Quality Prediction of Molecular Geometries with Help from Fine-Tuning",
-      "url": "https://arxiv.org/abs/2607.13350v1",
-      "published_at": "2026-07-15",
-      "updated_at": "2026-07-15",
-      "creators": [
-        "Joseph M. Cavanagh",
-        "Jonathan B. Arnold",
-        "Giovanni Battista Alteri"
-      ],
-      "language": "en",
-      "abstract_or_text": "The power of Large Language Models (LLMs) has led us to investigate how they might be fine-tuned for learning the \"language of molecular geometry\". The fine-tuning of the LLMs using Cartesian coordinates or Z-matrices provides an extremely simple method for accurately predicting equilibrium structures and diverse sets of conformers of small organic and drug-like molecules with excellent accuracy and outperforming specialized deep learning models. While the most common representation of molecular geometries are Cartesian coordinates performs adequately, we find that the inherent invariances and relational nature of geometries represented as Z-matrices provides a better grammar for LLM adaptation. Finally, we show that enhancing an LLMs capabilities for robust prediction of small molecule geometries still retains nearly all of its pre-trained language abilities by randomly mixing in small quantities of natural language prompt-response pairs into the fine-tuning.",
-      "summary_zh": "用微调 LLM 直接『写出』分子三维结构：以笛卡尔坐标或 Z-矩阵作为几何语言，在小分子与类药分子的平衡构象及构象集预测上超越专用深度学习模型，为 LLM 介入量子化学打开了一条极简路径。",
-      "why_it_matters_zh": "用微调 LLM 直接『写出』分子三维结构：以笛卡尔坐标或 Z-矩阵作为几何语言，在小分子与类药分子的平衡构象及构象集预测上超越专用深度学习模型，为 LLM 介入量子化学打开了一条极简路径。",
-      "quality_score": 80,
-      "tags": [
-        "药物",
-        "physics.chem-ph"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 1,
-      "featured": true,
-      "category": "今日精选",
-      "authors": [
-        "Joseph M. Cavanagh",
-        "Jonathan B. Arnold",
-        "Giovanni Battista Alteri"
-      ],
-      "abstract": "The power of Large Language Models (LLMs) has led us to investigate how they might be fine-tuned for learning the \"language of molecular geometry\". The fine-tuning of the LLMs using Cartesian coordinates or Z-matrices provides an extremely simple method for accurately predicting equilibrium structures and diverse sets of conformers of small organic and drug-like molecules with excellent accuracy and outperforming specialized deep learning models. While the most common representation of molecular geometries are Cartesian coordinates performs adequately, we find that the inherent invariances and relational nature of geometries represented as Z-matrices provides a better grammar for LLM adaptation. Finally, we show that enhancing an LLMs capabilities for robust prediction of small molecule geometries still retains nearly all of its pre-trained language abilities by randomly mixing in small quantities of natural language prompt-response pairs into the fine-tuning.",
-      "published": "2026-07-15",
-      "author_line": "Joseph M. Cavanagh, Jonathan B. Arnold, Giovanni Battista Alteri 等 5 人"
-    },
-    {
-      "id": "arxiv:2607.14512",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "preprint",
-      "source": "arXiv",
-      "title": "RetroAgent: Harnessing LLMs to Search Over Structured Memory for Agentic Retrosynthesis Planning",
-      "url": "https://arxiv.org/abs/2607.14512v1",
-      "published_at": "2026-07-16",
-      "updated_at": "2026-07-16",
-      "creators": [
-        "Yanqiao Zhu",
-        "Jingru Gan",
-        "Xiaoqi Sun"
-      ],
-      "language": "en",
-      "abstract_or_text": "Multi-step retrosynthesis planning seeks to decompose a target molecule into commercially available building blocks through a sequence of feasible reactions. The vast combinatorial search space makes this task challenging even for expert chemists. Traditional methods combine tree search with offline-trained value networks that score candidates in isolation, without reasoning about complete multi-step routes. Recent work leverages Large Language Models (LLMs) for this task, but relies on simple interfaces that limit exploration of the full search space. We introduce RetroAgent, an LLM agent that bridges symbolic search and neural reasoning through a harness with structured memory. Through memory and chemistry tools, the agent observes the full search state, including explored routes, available alternatives, and properties of intermediates, enabling informed decisions grounded in both global progress and domain knowledge. Experiments on in-distribution and out-of-distribution benchmarks demonstrate that RetroAgent delivers strong performance and generalization.",
-      "summary_zh": "RetroAgent 让 LLM 智能体在结构化记忆上搜索多步逆合成路线，能够推理整条路线而非孤立打分候选，是 agentic 合成规划方向的代表性新工作。",
-      "why_it_matters_zh": "RetroAgent 让 LLM 智能体在结构化记忆上搜索多步逆合成路线，能够推理整条路线而非孤立打分候选，是 agentic 合成规划方向的代表性新工作。",
-      "quality_score": 80,
-      "tags": [
-        "基准/数据",
-        "生物",
-        "cs.AI"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 2,
-      "featured": true,
-      "category": "今日精选",
-      "authors": [
-        "Yanqiao Zhu",
-        "Jingru Gan",
-        "Xiaoqi Sun"
-      ],
-      "abstract": "Multi-step retrosynthesis planning seeks to decompose a target molecule into commercially available building blocks through a sequence of feasible reactions. The vast combinatorial search space makes this task challenging even for expert chemists. Traditional methods combine tree search with offline-trained value networks that score candidates in isolation, without reasoning about complete multi-step routes. Recent work leverages Large Language Models (LLMs) for this task, but relies on simple interfaces that limit exploration of the full search space. We introduce RetroAgent, an LLM agent that bridges symbolic search and neural reasoning through a harness with structured memory. Through memory and chemistry tools, the agent observes the full search state, including explored routes, available alternatives, and properties of intermediates, enabling informed decisions grounded in both global progress and domain knowledge. Experiments on in-distribution and out-of-distribution benchmarks demonstrate that RetroAgent delivers strong performance and generalization.",
-      "published": "2026-07-16",
-      "author_line": "Yanqiao Zhu, Jingru Gan, Xiaoqi Sun 等 11 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.07.15.738714",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "preprint",
-      "source": "bioRxiv",
-      "title": "Machine Learning-Guided Engineering of High-Affinity Cross-Reactive Antibodies with Minimal Mutations",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.07.15.738714",
-      "published_at": "2026-07-16",
-      "updated_at": "2026-07-16",
-      "creators": [
-        "Hugo",
-        "D.",
-        "Grindel",
-        "A.-L.",
-        "Thenier",
-        "F."
-      ],
-      "language": "en",
-      "abstract_or_text": "Antibodies raised against human targets often fail to recognize their animal orthologs, limiting preclinical evaluation in relevant models. We developed a Deep Mutational Scanning (DMS)-coupled deep learning strategy to engineer potent cross-reactive antibodies with minimal sequence divergence. Starting from C4, a fully human anti-PD-L1 antibody with weak recognition of murine PD-L1, DMS identified substitutions that improved binding to both human and mouse antigens. Conventional recombination of beneficial mutations generated highly cross-reactive antibodies but required 13 to 15 substitutions. To reduce this mutational burden, a deep learning model trained on DMS-derived sequence-binding data was used to identify minimal mutation combinations predicted to retain high affinity. This approach yielded variants carrying only 4 to 5 substitutions, with in vitro and cellular binding properties comparable to highly mutated antibodies. Epitope mapping, structural modeling and in vivo assessment further confirmed that these engineered antibodies retained PD-1/PD-L1 blockade and demonstrated therapeutic activity in a mouse tumor model.",
-      "summary_zh": "DMS 深度突变扫描耦合深度学习，用最少突变把抗 PD-L1 抗体改造成人鼠交叉高亲和力，直接服务临床前动物模型评价，工程实用性很强。",
-      "why_it_matters_zh": "DMS 深度突变扫描耦合深度学习，用最少突变把抗 PD-L1 抗体改造成人鼠交叉高亲和力，直接服务临床前动物模型评价，工程实用性很强。",
-      "quality_score": 80,
-      "tags": [
-        "生物",
-        "药物",
-        "molecular biology"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 3,
-      "featured": true,
-      "category": "今日精选",
-      "authors": [
-        "Hugo",
-        "D.",
-        "Grindel",
-        "A.-L.",
-        "Thenier",
-        "F."
-      ],
-      "abstract": "Antibodies raised against human targets often fail to recognize their animal orthologs, limiting preclinical evaluation in relevant models. We developed a Deep Mutational Scanning (DMS)-coupled deep learning strategy to engineer potent cross-reactive antibodies with minimal sequence divergence. Starting from C4, a fully human anti-PD-L1 antibody with weak recognition of murine PD-L1, DMS identified substitutions that improved binding to both human and mouse antigens. Conventional recombination of beneficial mutations generated highly cross-reactive antibodies but required 13 to 15 substitutions. To reduce this mutational burden, a deep learning model trained on DMS-derived sequence-binding data was used to identify minimal mutation combinations predicted to retain high affinity. This approach yielded variants carrying only 4 to 5 substitutions, with in vitro and cellular binding properties comparable to highly mutated antibodies. Epitope mapping, structural modeling and in vivo assessment further confirmed that these engineered antibodies retained PD-1/PD-L1 blockade and demonstrated therapeutic activity in a mouse tumor model.",
-      "published": "2026-07-16",
-      "author_line": "Hugo, D., Grindel, A.-L., Thenier, F. 等 12 人"
-    },
-    {
-      "id": "arxiv:2607.14827",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "preprint",
-      "source": "arXiv",
-      "title": "SevenNet-Polar for MultiTask Prediction of Energy, Forces, Stress, and Born Effective Charges: Development and Application to ZrO2, Li3PO4, and Perovskites",
-      "url": "https://arxiv.org/abs/2607.14827v1",
-      "published_at": "2026-07-16",
-      "updated_at": "2026-07-16",
-      "creators": [
-        "Anh Khoa Augustin Lu",
-        "Shungo Arai",
-        "Yutack Park"
-      ],
-      "language": "en",
-      "abstract_or_text": "Accurate prediction of the Born effective charge (BEC) tensor is crucial for modeling materials under electric fields but remains computationally expensive. To bridge this gap, we present SevenNet-Polar, an equivariant graph neural network framework based on the SevenNet architecture for fast and accurate BEC predictions. Our BEC-only predictors can achieve an RMSE as low as 0.0043 e on ZrO2, Li3PO4, and perovskites, despite the presence of high-temperature (up to 2,000 K) and defect-laden training data. Our all-in-one multitask models for predicting energy, forces, stress, and BEC in ZrO2 and Li3PO4 achieve high accuracy with an RMSE of 1.0 meV/atom for energy, 12 meV/angstrom for forces, 0.05 GPa for stress, and 0.0029 e for BEC. BEC accuracy is not degraded by multitask training. Scaling analysis reveals distinct exponents for diagonal and off-diagonal BEC components, both of which exhibit less favorable scaling than energy, force and stress errors. SevenNet-Polar generalizes robustly when tested on scenarios containing structural environments absent from the training set, such as along nudged elastic band (NEB) trajectories or grain boundaries in ZrO2. Accelerated by FlashTP, SevenNet-Polar enables simulations containing up to 1.5 million atoms on multi-GPU supercomputers and up to approximately 15,000 atoms on a single consumer-grade GPU. This makes charge-aware molecular dynamics simulations under electric fields more accessible.",
-      "summary_zh": "SevenNet-Polar：等变图神经网络一体化预测能量、力、应力与 Born 有效电荷，在 ZrO2、Li3PO4 与钙钛矿上 BEC 的 RMSE 低至 0.0043 e，是电场响应材料模拟的利器。",
-      "why_it_matters_zh": "SevenNet-Polar：等变图神经网络一体化预测能量、力、应力与 Born 有效电荷，在 ZrO2、Li3PO4 与钙钛矿上 BEC 的 RMSE 低至 0.0043 e，是电场响应材料模拟的利器。",
-      "quality_score": 80,
-      "tags": [
-        "材料/催化",
-        "cond-mat.mtrl-sci"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 4,
-      "featured": false,
-      "category": "方法与模型",
-      "authors": [
-        "Anh Khoa Augustin Lu",
-        "Shungo Arai",
-        "Yutack Park"
-      ],
-      "abstract": "Accurate prediction of the Born effective charge (BEC) tensor is crucial for modeling materials under electric fields but remains computationally expensive. To bridge this gap, we present SevenNet-Polar, an equivariant graph neural network framework based on the SevenNet architecture for fast and accurate BEC predictions. Our BEC-only predictors can achieve an RMSE as low as 0.0043 e on ZrO2, Li3PO4, and perovskites, despite the presence of high-temperature (up to 2,000 K) and defect-laden training data. Our all-in-one multitask models for predicting energy, forces, stress, and BEC in ZrO2 and Li3PO4 achieve high accuracy with an RMSE of 1.0 meV/atom for energy, 12 meV/angstrom for forces, 0.05 GPa for stress, and 0.0029 e for BEC. BEC accuracy is not degraded by multitask training. Scaling analysis reveals distinct exponents for diagonal and off-diagonal BEC components, both of which exhibit less favorable scaling than energy, force and stress errors. SevenNet-Polar generalizes robustly when tested on scenarios containing structural environments absent from the training set, such as along nudged elastic band (NEB) trajectories or grain boundaries in ZrO2. Accelerated by FlashTP, SevenNet-Polar enables simulations containing up to 1.5 million atoms on multi-GPU supercomputers and up to approximately 15,000 atoms on a single consumer-grade GPU. This makes charge-aware molecular dynamics simulations under electric fields more accessible.",
-      "published": "2026-07-16",
-      "author_line": "Anh Khoa Augustin Lu, Shungo Arai, Yutack Park 等 6 人"
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv.15003907/v2",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "preprint",
-      "source": "ChemRxiv",
-      "title": "Excited-State Intramolecular Proton Transfer Dynamics with Neural Network Potentials and Nuclear Quantum Effects",
-      "url": "https://doi.org/10.26434/chemrxiv.15003907/v2",
-      "published_at": "2026-07-16",
-      "updated_at": "2026-07-16",
-      "creators": [
-        "Axel Gomez",
-        "Amke Nimmrich",
-        "Victor M. Freixas"
-      ],
-      "language": "en",
-      "abstract_or_text": "Excited-state intramolecular proton transfer is a prototypical ultrafast process that forms the foundation for many chemical and biological phenomena and is highly sensitive to changes in the underlying potential energy landscape. Here, we develop neural network potentials for 10-hydroxybenzo[h]quinoline that describe ground- and excited-state dynamics with near ab initio accuracy. These neural network potentials enable efficient sampling of the proton transfer coordinate and incorporation of nuclear quantum effects through path-integral molecular dynamics. The free energy profiles show that excited-state intramolecular proton transfer proceeds on a largely barrierless excited-state surface, with nuclear quantum effects reducing and smoothing the residual barrier. Non-equilibrium simulations yield an average proton transfer time of ~11.4 fs for quantum hydrogen, consistent with experiment, and reveal a clear isotope effect, with slower dynamics for deuterium and classical nuclei. Mechanistic analysis identifies transient proton donor–acceptor contraction as the key enabling coordinate, while the proton crosses the midpoint prior to reaching the minimum of this coordinate, indicating a dynamically driven transfer. Subtle changes in the conjugated backbone precede proton transfer, reflecting early electronic reorganization and coherent coupling between proton motion and backbone vibrations. Bond-length alternation and vibrational coherence analysis reveal isotope-dependent coherence loss, with deuteration producing stronger damping and more localized proton/backbone dynamics relative to hydrogen. These results establish neural network potential-based approaches as an effective framework for simulating excited-state proton transfer with explicit nuclear quantum effects.",
-      "summary_zh": "为 10-HBQ 构建近 ab initio 精度的基态/激发态神经网络势，并结合路径积分分子动力学纳入核量子效应，定量刻画激发态分子内质子转移的自由能图景。",
-      "why_it_matters_zh": "为 10-HBQ 构建近 ab initio 精度的基态/激发态神经网络势，并结合路径积分分子动力学纳入核量子效应，定量刻画激发态分子内质子转移的自由能图景。",
-      "quality_score": 80,
-      "tags": [
-        "生物"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 5,
-      "featured": false,
-      "category": "方法与模型",
-      "authors": [
-        "Axel Gomez",
-        "Amke Nimmrich",
-        "Victor M. Freixas"
-      ],
-      "abstract": "Excited-state intramolecular proton transfer is a prototypical ultrafast process that forms the foundation for many chemical and biological phenomena and is highly sensitive to changes in the underlying potential energy landscape. Here, we develop neural network potentials for 10-hydroxybenzo[h]quinoline that describe ground- and excited-state dynamics with near ab initio accuracy. These neural network potentials enable efficient sampling of the proton transfer coordinate and incorporation of nuclear quantum effects through path-integral molecular dynamics. The free energy profiles show that excited-state intramolecular proton transfer proceeds on a largely barrierless excited-state surface, with nuclear quantum effects reducing and smoothing the residual barrier. Non-equilibrium simulations yield an average proton transfer time of ~11.4 fs for quantum hydrogen, consistent with experiment, and reveal a clear isotope effect, with slower dynamics for deuterium and classical nuclei. Mechanistic analysis identifies transient proton donor–acceptor contraction as the key enabling coordinate, while the proton crosses the midpoint prior to reaching the minimum of this coordinate, indicating a dynamically driven transfer. Subtle changes in the conjugated backbone precede proton transfer, reflecting early electronic reorganization and coherent coupling between proton motion and backbone vibrations. Bond-length alternation and vibrational coherence analysis reveal isotope-dependent coherence loss, with deuteration producing stronger damping and more localized proton/backbone dynamics relative to hydrogen. These results establish neural network potential-based approaches as an effective framework for simulating excited-state proton transfer with explicit nuclear quantum effects.",
-      "published": "2026-07-16",
-      "author_line": "Axel Gomez, Amke Nimmrich, Victor M. Freixas 等 7 人"
-    },
-    {
-      "id": "arxiv:2607.13737",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "preprint",
-      "source": "arXiv",
-      "title": "Implementations of Quantum and Classical Topology-Aligned Architectures for Molecular Property Prediction",
-      "url": "https://arxiv.org/abs/2607.13737v1",
-      "published_at": "2026-07-15",
-      "updated_at": "2026-07-15",
-      "creators": [
-        "James T. Pegg",
-        "Hubert Okadome Valencia",
-        "Ronin Wu"
-      ],
-      "language": "en",
-      "abstract_or_text": "For low-data and resource-constrained regimes typical of quantum chemistry, parameter-efficient learning is a key objective. Here, we propose a topology-aligned inductive bias in which the model architecture mirrors the molecular bond graph: atoms map to a fixed register of computational units, and bonds determine which pairs interact through shared learnable parameters. This principle is instantiated in two architectures: a variational quantum circuit (Iso-QGNN), and a parameter-matched classical message-passing model (Iso-CGNN). The models are benchmarked on HOMO-LUMO and dipole moment binary classification tasks over the QM9 benchmark. With 64 trainable parameters, the implementations achieve test AUCs of approximately 0.88 (quantum) and 0.91 (classical) on the gap task, and close to 0.78 (both) on the dipole task. The models reach 90% of asymptotic performance within about 250 training molecules and gradient norms remain stable throughout training. These results indicate that the topology-aligned inductive bias is the active ingredient driving parameter efficiency at QM9 scale, with implications for matched-baseline benchmarking in quantum machine learning.",
-      "summary_zh": "提出『拓扑对齐』归纳偏置：让模型结构镜像分子键图，分别实例化为变分量子线路 Iso-QGNN 与参数对齐的经典消息传递网络，面向量子化学典型的低数据场景。",
-      "why_it_matters_zh": "提出『拓扑对齐』归纳偏置：让模型结构镜像分子键图，分别实例化为变分量子线路 Iso-QGNN 与参数对齐的经典消息传递网络，面向量子化学典型的低数据场景。",
-      "quality_score": 80,
-      "tags": [
-        "基准/数据",
-        "生物",
-        "cs.LG"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 6,
-      "featured": false,
-      "category": "方法与模型",
-      "authors": [
-        "James T. Pegg",
-        "Hubert Okadome Valencia",
-        "Ronin Wu"
-      ],
-      "abstract": "For low-data and resource-constrained regimes typical of quantum chemistry, parameter-efficient learning is a key objective. Here, we propose a topology-aligned inductive bias in which the model architecture mirrors the molecular bond graph: atoms map to a fixed register of computational units, and bonds determine which pairs interact through shared learnable parameters. This principle is instantiated in two architectures: a variational quantum circuit (Iso-QGNN), and a parameter-matched classical message-passing model (Iso-CGNN). The models are benchmarked on HOMO-LUMO and dipole moment binary classification tasks over the QM9 benchmark. With 64 trainable parameters, the implementations achieve test AUCs of approximately 0.88 (quantum) and 0.91 (classical) on the gap task, and close to 0.78 (both) on the dipole task. The models reach 90% of asymptotic performance within about 250 training molecules and gradient norms remain stable throughout training. These results indicate that the topology-aligned inductive bias is the active ingredient driving parameter efficiency at QM9 scale, with implications for matched-baseline benchmarking in quantum machine learning.",
-      "published": "2026-07-15",
-      "author_line": "James T. Pegg, Hubert Okadome Valencia, Ronin Wu"
-    },
-    {
-      "id": "arxiv:2607.15101",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "preprint",
-      "source": "arXiv",
-      "title": "Accelerated descriptor-free path sampling for protein-ligand binding kinetics",
-      "url": "https://arxiv.org/abs/2607.15101v1",
-      "published_at": "2026-07-16",
-      "updated_at": "2026-07-16",
-      "creators": [
-        "Simon M. Lichtinger",
-        "Roberto Covino"
-      ],
-      "language": "en",
-      "abstract_or_text": "The kinetics of protein-ligand binding systems are increasingly recognized as a key determinant of drug efficacy, yet remain far harder to compute than binding affinities. Existing kinetics methods either bias the dynamics along a collective variable (CV), demanding careful system-specific CV design, or use path sampling, which keeps the dynamics unbiased but can struggle to converge rates out of deep free-energy wells and often relies on hand-engineered descriptors. By combining the `best of both worlds', we propose a method to compute accurate kinetics for general ligand-unbinding problems at modest computational expense and minimal fine tuning, building on the AI for Molecular Mechanism Discovery (AIMMD) path sampling framework. To avoid the need for feature engineering, we opt for modelling the committor with a single descriptor-free, equivariant graph neural network shared across all systems. We also partially flatten deep bound-state wells with a static, basin-restricted bias potential. This improves convergence by lifting the path sampling state boundary out of regions, where the committor is hard to learn, while leaving the reactive region strictly unbiased. Across host-guest and protein-ligand systems spanning roughly 17 orders of magnitude in residence time, the method robustly recovers rates in line with reference and experimental values. Simultaneously, and without further sampling, it also reconstructs the underlying unbinding mechanisms. We additionally find that accurate rates do not require globally accurate committor models, allowing for efficient kinetics estimation even in a low-data training regime. Requiring little system-specific setup, our approach offers an efficient and broadly generalizable route to binding kinetics, and its shared committor architecture lays crucial groundwork for probing structure-kinetics relationships across ligand series in drug discovery.",
-      "summary_zh": "融合集体变量偏置与路径采样之长，无需手工描述符即可计算一般配体解离动力学，直指『结合速率远比亲和力难算』这一药物发现痛点。",
-      "why_it_matters_zh": "融合集体变量偏置与路径采样之长，无需手工描述符即可计算一般配体解离动力学，直指『结合速率远比亲和力难算』这一药物发现痛点。",
-      "quality_score": 80,
-      "tags": [
-        "生物",
-        "药物",
-        "physics.chem-ph"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 7,
-      "featured": false,
-      "category": "方法与模型",
-      "authors": [
-        "Simon M. Lichtinger",
-        "Roberto Covino"
-      ],
-      "abstract": "The kinetics of protein-ligand binding systems are increasingly recognized as a key determinant of drug efficacy, yet remain far harder to compute than binding affinities. Existing kinetics methods either bias the dynamics along a collective variable (CV), demanding careful system-specific CV design, or use path sampling, which keeps the dynamics unbiased but can struggle to converge rates out of deep free-energy wells and often relies on hand-engineered descriptors. By combining the `best of both worlds', we propose a method to compute accurate kinetics for general ligand-unbinding problems at modest computational expense and minimal fine tuning, building on the AI for Molecular Mechanism Discovery (AIMMD) path sampling framework. To avoid the need for feature engineering, we opt for modelling the committor with a single descriptor-free, equivariant graph neural network shared across all systems. We also partially flatten deep bound-state wells with a static, basin-restricted bias potential. This improves convergence by lifting the path sampling state boundary out of regions, where the committor is hard to learn, while leaving the reactive region strictly unbiased. Across host-guest and protein-ligand systems spanning roughly 17 orders of magnitude in residence time, the method robustly recovers rates in line with reference and experimental values. Simultaneously, and without further sampling, it also reconstructs the underlying unbinding mechanisms. We additionally find that accurate rates do not require globally accurate committor models, allowing for efficient kinetics estimation even in a low-data training regime. Requiring little system-specific setup, our approach offers an efficient and broadly generalizable route to binding kinetics, and its shared committor architecture lays crucial groundwork for probing structure-kinetics relationships across ligand series in drug discovery.",
-      "published": "2026-07-16",
-      "author_line": "Simon M. Lichtinger, Roberto Covino"
-    },
-    {
-      "id": "arxiv:2607.14486",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "preprint",
-      "source": "arXiv",
-      "title": "Full-data accuracy with fewer labels for training and fine-tuning machine-learning force fields",
-      "url": "https://arxiv.org/abs/2607.14486v1",
-      "published_at": "2026-07-16",
-      "updated_at": "2026-07-16",
-      "creators": [
-        "Sheng Bi",
-        "Yi-Ze Wang",
-        "Jun Cheng"
-      ],
-      "language": "en",
-      "abstract_or_text": "Machine-learning force fields (MLFFs) are reliable only near their training distribution, making efficient construction of diverse training sets a major bottleneck for both train-from-scratch and foundation fine-tuning workflows. Active learning can reduce this cost, but standard model-committee uncertainty is impractical for foundation MLFFs because each committee member requires a separate fine-tuning run. We present an active-learning workflow based on last-layer-projection regression (LLPR), a forward-pass-cheap per-configuration uncertainty estimator. Across molecular, condensed-phase, and electrolyte systems, LLPR identifies compact, high-value training sets that recover full-data accuracy using only a small fraction of electronic-structure labels. In foundation-model fine-tuning, LLPR-selected configurations reach the full-pool fine-tuning ceiling with substantially fewer labels than random selection. In iterative electrolyte fine-tuning, LLPR detects unphysical local coordination before DFT labelling, provides an absolute force-error threshold, and enables automatic termination of the learning loop. The resulting models reproduce reference density and ion-coordination structure, providing a scalable uncertainty-quantification strategy across MLFF training regimes.",
-      "summary_zh": "系统研究机器学习力场训练中的标签效率，给出以更少标注达到全数据精度的策略，对降低 DFT 标注成本有直接参考价值。",
-      "why_it_matters_zh": "系统研究机器学习力场训练中的标签效率，给出以更少标注达到全数据精度的策略，对降低 DFT 标注成本有直接参考价值。",
-      "quality_score": 80,
-      "tags": [
-        "physics.chem-ph"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 8,
-      "featured": false,
-      "category": "方法与模型",
-      "authors": [
-        "Sheng Bi",
-        "Yi-Ze Wang",
-        "Jun Cheng"
-      ],
-      "abstract": "Machine-learning force fields (MLFFs) are reliable only near their training distribution, making efficient construction of diverse training sets a major bottleneck for both train-from-scratch and foundation fine-tuning workflows. Active learning can reduce this cost, but standard model-committee uncertainty is impractical for foundation MLFFs because each committee member requires a separate fine-tuning run. We present an active-learning workflow based on last-layer-projection regression (LLPR), a forward-pass-cheap per-configuration uncertainty estimator. Across molecular, condensed-phase, and electrolyte systems, LLPR identifies compact, high-value training sets that recover full-data accuracy using only a small fraction of electronic-structure labels. In foundation-model fine-tuning, LLPR-selected configurations reach the full-pool fine-tuning ceiling with substantially fewer labels than random selection. In iterative electrolyte fine-tuning, LLPR detects unphysical local coordination before DFT labelling, provides an absolute force-error threshold, and enables automatic termination of the learning loop. The resulting models reproduce reference density and ion-coordination structure, providing a scalable uncertainty-quantification strategy across MLFF training regimes.",
-      "published": "2026-07-16",
-      "author_line": "Sheng Bi, Yi-Ze Wang, Jun Cheng"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.01.16.696667",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "preprint",
-      "source": "bioRxiv",
-      "title": "Medea: An AI agent for therapeutic reasoning across biological contexts",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.01.16.696667",
-      "published_at": "2026-07-16",
-      "updated_at": "2026-07-16",
-      "creators": [
-        "Sui",
-        "P.",
-        "Li",
-        "M.",
-        "Munson",
-        "B. P."
-      ],
-      "language": "en",
-      "abstract_or_text": "Therapeutic hypotheses can transfer across diseases but their relevance depends on biological context. The same target, perturbation, or treatment can produce different effects across cell types, disease states, genetic backgrounds, and patients. Therapeutic reasoning therefore requires methods that preserve context, test when evidence supports transfer, and identify where context-specific effects limit it. Although AI agents can perform therapeutic analyses, existing systems often fail to preserve biological context over long workflows, verify intermediate computational steps, or reconcile conflicting evidence across datasets and literature. Here, we present Medea, an AI agent for therapeutic reasoning across biological contexts. Medea executes multi-step analyses using biological tools, machine learning models, and literature retrieval while enforcing verification during planning, execution, and evidence synthesis. We evaluate Medea across 5,673 open-ended analyses in three domains: cell type specific therapeutic target nomination in five diseases and 29 cell types, synthetic lethality prediction in 7 cancer cell lines, and immunotherapy response prediction from multimodal patient profiles. Using a previously unpublished epistatic miniarray profiling screen performed under two DNA-damaging treatments, we evaluate Medea on predicting synthetic lethality among 238,046 gene-gene pairs in yeast. Medea accurately predicts these experimentally measured synthetic lethal interactions, indicating that its performance reflects biological relevance rather than information leakage from benchmark datasets. Across these evaluations, Medea improves performance over large language models, reasoning models, biomedical agents, and specialized machine learning models while maintaining low failure rates and calibrated abstention. These results show that verifiable AI agents can perform therapeutic analyses across biological contexts.",
-      "summary_zh": "Medea：面向治疗推理的 AI 智能体，强调在长流程中保留生物学上下文并验证中间计算步骤，瞄准『同一靶点在不同情境效应不同』的转化医学核心难题。",
-      "why_it_matters_zh": "Medea：面向治疗推理的 AI 智能体，强调在长流程中保留生物学上下文并验证中间计算步骤，瞄准『同一靶点在不同情境效应不同』的转化医学核心难题。",
-      "quality_score": 80,
-      "tags": [
-        "基准/数据",
-        "生物",
-        "bioinformatics"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 9,
-      "featured": false,
-      "category": "分子与药物发现",
-      "authors": [
-        "Sui",
-        "P.",
-        "Li",
-        "M.",
-        "Munson",
-        "B. P."
-      ],
-      "abstract": "Therapeutic hypotheses can transfer across diseases but their relevance depends on biological context. The same target, perturbation, or treatment can produce different effects across cell types, disease states, genetic backgrounds, and patients. Therapeutic reasoning therefore requires methods that preserve context, test when evidence supports transfer, and identify where context-specific effects limit it. Although AI agents can perform therapeutic analyses, existing systems often fail to preserve biological context over long workflows, verify intermediate computational steps, or reconcile conflicting evidence across datasets and literature. Here, we present Medea, an AI agent for therapeutic reasoning across biological contexts. Medea executes multi-step analyses using biological tools, machine learning models, and literature retrieval while enforcing verification during planning, execution, and evidence synthesis. We evaluate Medea across 5,673 open-ended analyses in three domains: cell type specific therapeutic target nomination in five diseases and 29 cell types, synthetic lethality prediction in 7 cancer cell lines, and immunotherapy response prediction from multimodal patient profiles. Using a previously unpublished epistatic miniarray profiling screen performed under two DNA-damaging treatments, we evaluate Medea on predicting synthetic lethality among 238,046 gene-gene pairs in yeast. Medea accurately predicts these experimentally measured synthetic lethal interactions, indicating that its performance reflects biological relevance rather than information leakage from benchmark datasets. Across these evaluations, Medea improves performance over large language models, reasoning models, biomedical agents, and specialized machine learning models while maintaining low failure rates and calibrated abstention. These results show that verifiable AI agents can perform therapeutic analyses across biological contexts.",
-      "published": "2026-07-16",
-      "author_line": "Sui, P., Li, M., Munson, B. P. 等 12 人"
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv.15006146/v1",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "preprint",
-      "source": "ChemRxiv",
-      "title": "AI-driven design of a cost-effective synthetic route to malaria drug Ganaplacide",
-      "url": "https://doi.org/10.26434/chemrxiv.15006146/v1",
-      "published_at": "2026-07-16",
-      "updated_at": "2026-07-16",
-      "creators": [
-        "Fernando Huerta",
-        "Erik Leonhardt",
-        "Lianyan Xu"
-      ],
-      "language": "en",
-      "abstract_or_text": "Malaria is a deadly infectious disease that disproportionately affects third-world countries. Ganaplacide is a drug candidate that is highly effective against malaria, but no affordable way to produce it exists yet. Here we show how we used a combination of AI-driven design and expert chemistry knowledge to develop a novel synthetic route to ganaplacide. The AI retrosynthesis algorithm suggested a non-evident two-steps synthesis of the imidazolopiperazine core of the molecule from benzyl-protected dimethylpiperazinone through a strategic thioimidate intermediate. We also present the Synthetic Confidence Score, which assesses the level of risk associated with a given retrosynthetic disconnection and allows balancing creativity and reliability. The synergy between AI creativity, metrics such as the Synthetic Confidence Score and expert chemist knowledge has the potential to unlock non-evident efficient routes for important molecules, when expert chemists alone have explored mainstream chemistry unsuccessfully.",
-      "summary_zh": "AI 驱动设计出抗疟药 Ganaplacide 的低成本合成路线，是 AI 合成规划走向真实药物分子的落地案例。",
-      "why_it_matters_zh": "AI 驱动设计出抗疟药 Ganaplacide 的低成本合成路线，是 AI 合成规划走向真实药物分子的落地案例。",
-      "quality_score": 80,
-      "tags": [
-        "药物"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 10,
-      "featured": false,
-      "category": "分子与药物发现",
-      "authors": [
-        "Fernando Huerta",
-        "Erik Leonhardt",
-        "Lianyan Xu"
-      ],
-      "abstract": "Malaria is a deadly infectious disease that disproportionately affects third-world countries. Ganaplacide is a drug candidate that is highly effective against malaria, but no affordable way to produce it exists yet. Here we show how we used a combination of AI-driven design and expert chemistry knowledge to develop a novel synthetic route to ganaplacide. The AI retrosynthesis algorithm suggested a non-evident two-steps synthesis of the imidazolopiperazine core of the molecule from benzyl-protected dimethylpiperazinone through a strategic thioimidate intermediate. We also present the Synthetic Confidence Score, which assesses the level of risk associated with a given retrosynthetic disconnection and allows balancing creativity and reliability. The synergy between AI creativity, metrics such as the Synthetic Confidence Score and expert chemist knowledge has the potential to unlock non-evident efficient routes for important molecules, when expert chemists alone have explored mainstream chemistry unsuccessfully.",
-      "published": "2026-07-16",
-      "author_line": "Fernando Huerta, Erik Leonhardt, Lianyan Xu 等 7 人"
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv.15006124/v1",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "preprint",
-      "source": "ChemRxiv",
-      "title": "Beyond Global Drug-Likeness: The FamDLike Framework as a Target Family-specific Druglikeness Score",
-      "url": "https://doi.org/10.26434/chemrxiv.15006124/v1",
-      "published_at": "2026-07-15",
-      "updated_at": "2026-07-15",
-      "creators": [
-        "Mehmet Ali Yucel",
-        "Oliver Koch"
-      ],
-      "language": "en",
-      "abstract_or_text": "Drug-likeness is a central metric which is used to evaluate the physicochemical profile of small molecules either as a filter for virtual screening or, more recently, as a reward function in generative design tasks. Established scores such as ED are widely adopted for these purposes, although the ligands of different therapeutic target families occupy different regions of physicochemical space. Applying a single global drug-likeness criterion can therefore systematically reward some target classes while penalising others, narrowing the chemical space considered druglike in a way that may not reflect the actual requirements for a given project. In this work, we propose a target family specific drug-likeness approach, the amD ike framework, designed to distinguish target families more accurately than existing metrics and to explore family specific druglike regions of chemical space. This framework combines three complementary modelling paradigms: desirability functions, generali ed additive models and tree-based machine learning models that span the interpretability–flexibility spectrum. The three components can also be used independently, depending on whether interpretability or predictive flexibility is prioriti ed. The abilities of the proposed method have been tested on real-world use cases in computational medicinal chemistry: an independent set from DrugBank, library screening of Enamine and K I compounds, and de novo molecule generation via EI VE T4. The proposed approach therefore provides a more discriminative, interpretable and target-aware complement to existing drug-likeness scores, suitable for ranking in early discovery pipelines and as a reward function for generative chemistry. urthermore, a user-friendly web portal (https: huggingface.co spaces kochgroup amD ike) is available to obtain drug-likeness profiles of molecules.",
-      "summary_zh": "质疑单一全局类药性指标的系统性偏差：FamDLike 按靶点家族定制类药性打分，可同时用于虚拟筛选过滤与生成设计的奖励函数。",
-      "why_it_matters_zh": "质疑单一全局类药性指标的系统性偏差：FamDLike 按靶点家族定制类药性打分，可同时用于虚拟筛选过滤与生成设计的奖励函数。",
-      "quality_score": 80,
-      "tags": [
-        "开源",
-        "药物"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 11,
-      "featured": false,
-      "category": "分子与药物发现",
-      "authors": [
-        "Mehmet Ali Yucel",
-        "Oliver Koch"
-      ],
-      "abstract": "Drug-likeness is a central metric which is used to evaluate the physicochemical profile of small molecules either as a filter for virtual screening or, more recently, as a reward function in generative design tasks. Established scores such as ED are widely adopted for these purposes, although the ligands of different therapeutic target families occupy different regions of physicochemical space. Applying a single global drug-likeness criterion can therefore systematically reward some target classes while penalising others, narrowing the chemical space considered druglike in a way that may not reflect the actual requirements for a given project. In this work, we propose a target family specific drug-likeness approach, the amD ike framework, designed to distinguish target families more accurately than existing metrics and to explore family specific druglike regions of chemical space. This framework combines three complementary modelling paradigms: desirability functions, generali ed additive models and tree-based machine learning models that span the interpretability–flexibility spectrum. The three components can also be used independently, depending on whether interpretability or predictive flexibility is prioriti ed. The abilities of the proposed method have been tested on real-world use cases in computational medicinal chemistry: an independent set from DrugBank, library screening of Enamine and K I compounds, and de novo molecule generation via EI VE T4. The proposed approach therefore provides a more discriminative, interpretable and target-aware complement to existing drug-likeness scores, suitable for ranking in early discovery pipelines and as a reward function for generative chemistry. urthermore, a user-friendly web portal (https: huggingface.co spaces kochgroup amD ike) is available to obtain drug-likeness profiles of molecules.",
-      "published": "2026-07-15",
-      "author_line": "Mehmet Ali Yucel, Oliver Koch"
-    },
-    {
-      "id": "biorxiv:10.1101/2025.04.17.649309",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "preprint",
-      "source": "bioRxiv",
-      "title": "Predicting Protein Electrostatics with Protein Language Models",
-      "url": "https://www.biorxiv.org/content/10.1101/2025.04.17.649309",
-      "published_at": "2026-07-15",
-      "updated_at": "2026-07-15",
-      "creators": [
-        "Shen",
-        "M.",
-        "Dayhoff",
-        "G. W.",
-        "Kortzak",
-        "D.",
-        "Shen",
-        "J."
-      ],
-      "language": "en",
-      "abstract_or_text": "Ionization states play crucial roles in protein function, yet predicting protein pKa values remains a formidable challenge despite decades of research. Here we present KaMLESM2 and KaML-ESMC, neural network task heads built on ESM protein language models (pLMs) and trained on the PKAD-3r experimental dataset augmented via GAINES, a latent-space sampling strategy for addressing data scarcity. KaML-ESM2/ESMC significantly outperform current structure- and sequence-based approaches across four benchmarks, achieving root-mean-square errors of about 0.5 units across six titratable residue types in native proteins. Performance degradation on 89 buried engineered OBTRUDEs (iOnizable suBsTitutions foR bUrieD rEsidues) that lack evolutionary support (KaML-ESMC RMSE = 1.89) reveals a key limitation of the current framework, which may be overcome through supervised training. Based on these and other data presented in the work, we hypothesize that protein sequence, through its evolutionary context, encodes not only structure and function but indirectly also electrostatic characteristics. We applied KaML-ESM2 to the human proteome, demonstrating that predicted pKa values can potentially identify functional sites and infer catalytic mechanisms. We offer KaML, a sequence-based, end-to-end platform to support applications spanning biological exploration, drug design, protein engineering, and biomolecular simulation. Although additional research is needed, GAINES could offer a general framework for addressing data scarcity in machine learning approaches for protein-related problems.",
-      "summary_zh": "KaML-ESM2/ESMC：在 ESM 蛋白语言模型上接任务头预测 pKa，辅以潜空间采样缓解数据稀缺，四个基准上 RMSE 约 0.5 个单位，显著超越现有结构与序列方法。",
-      "why_it_matters_zh": "KaML-ESM2/ESMC：在 ESM 蛋白语言模型上接任务头预测 pKa，辅以潜空间采样缓解数据稀缺，四个基准上 RMSE 约 0.5 个单位，显著超越现有结构与序列方法。",
-      "quality_score": 80,
-      "tags": [
-        "基准/数据",
-        "生物",
-        "材料/催化",
-        "药物",
-        "biophysics"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 12,
-      "featured": false,
-      "category": "结构与生物",
-      "authors": [
-        "Shen",
-        "M.",
-        "Dayhoff",
-        "G. W.",
-        "Kortzak",
-        "D.",
-        "Shen",
-        "J."
-      ],
-      "abstract": "Ionization states play crucial roles in protein function, yet predicting protein pKa values remains a formidable challenge despite decades of research. Here we present KaMLESM2 and KaML-ESMC, neural network task heads built on ESM protein language models (pLMs) and trained on the PKAD-3r experimental dataset augmented via GAINES, a latent-space sampling strategy for addressing data scarcity. KaML-ESM2/ESMC significantly outperform current structure- and sequence-based approaches across four benchmarks, achieving root-mean-square errors of about 0.5 units across six titratable residue types in native proteins. Performance degradation on 89 buried engineered OBTRUDEs (iOnizable suBsTitutions foR bUrieD rEsidues) that lack evolutionary support (KaML-ESMC RMSE = 1.89) reveals a key limitation of the current framework, which may be overcome through supervised training. Based on these and other data presented in the work, we hypothesize that protein sequence, through its evolutionary context, encodes not only structure and function but indirectly also electrostatic characteristics. We applied KaML-ESM2 to the human proteome, demonstrating that predicted pKa values can potentially identify functional sites and infer catalytic mechanisms. We offer KaML, a sequence-based, end-to-end platform to support applications spanning biological exploration, drug design, protein engineering, and biomolecular simulation. Although additional research is needed, GAINES could offer a general framework for addressing data scarcity in machine learning approaches for protein-related problems.",
-      "published": "2026-07-15",
-      "author_line": "Shen, M., Dayhoff, G. W., Kortzak, D., Shen, J."
-    },
-    {
-      "id": "biorxiv:10.64898/2026.06.04.729630",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "preprint",
-      "source": "bioRxiv",
-      "title": "Generative design of programmable asymmetric β-barrel nanopores",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.06.04.729630",
-      "published_at": "2026-07-15",
-      "updated_at": "2026-07-15",
-      "creators": [
-        "Philomin",
-        "A.",
-        "Sonigra",
-        "R.",
-        "Majumder",
-        "S."
-      ],
-      "language": "en",
-      "abstract_or_text": "Protein nanopores are powerful tools for molecular sensing, sequencing, and separation, but designing pores with programmable function remains challenging. Native homo-oligomeric transmembrane beta barrels (TMBs) are used for these applications, but their uniform lumens limit spatial resolution and analyte discrimination. Although monomeric TMBs can be designed using energy-based methods, these approaches remain highly manual and limited to structural design rather than function. Here, we present a generative AI framework for TMB design, with backbone and sequence design models trained on a curated distillation set. We characterized 48 designs spanning 0.7-1.5 nm in diameter, diverse lumen chemistries, and hydrophobic thicknesses. Crystal structures closely match the design models. We demonstrate that our method produces customizable nanopores for ion sensing, DNA translocation, and transport across polymer membranes.",
-      "summary_zh": "生成式设计可编程的非对称 β-桶纳米孔，突破天然同源寡聚体均匀孔腔的限制，面向分子传感、测序与分离应用。",
-      "why_it_matters_zh": "生成式设计可编程的非对称 β-桶纳米孔，突破天然同源寡聚体均匀孔腔的限制，面向分子传感、测序与分离应用。",
-      "quality_score": 80,
-      "tags": [
-        "生物",
-        "材料/催化",
-        "biochemistry"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 13,
-      "featured": false,
-      "category": "结构与生物",
-      "authors": [
-        "Philomin",
-        "A.",
-        "Sonigra",
-        "R.",
-        "Majumder",
-        "S."
-      ],
-      "abstract": "Protein nanopores are powerful tools for molecular sensing, sequencing, and separation, but designing pores with programmable function remains challenging. Native homo-oligomeric transmembrane beta barrels (TMBs) are used for these applications, but their uniform lumens limit spatial resolution and analyte discrimination. Although monomeric TMBs can be designed using energy-based methods, these approaches remain highly manual and limited to structural design rather than function. Here, we present a generative AI framework for TMB design, with backbone and sequence design models trained on a curated distillation set. We characterized 48 designs spanning 0.7-1.5 nm in diameter, diverse lumen chemistries, and hydrophobic thicknesses. Crystal structures closely match the design models. We demonstrate that our method produces customizable nanopores for ion sensing, DNA translocation, and transport across polymer membranes.",
-      "published": "2026-07-15",
-      "author_line": "Philomin, A., Sonigra, R., Majumder, S. 等 17 人"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.07.08.737208",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "preprint",
-      "source": "bioRxiv",
-      "title": "Characterising AlphaFold 3s ability to predict T cell antigen specificity",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.07.08.737208",
-      "published_at": "2026-07-15",
-      "updated_at": "2026-07-15",
-      "creators": [
-        "McMaster",
-        "B.",
-        "Elmoselhy",
-        "A.",
-        "Ilievski",
-        "I."
-      ],
-      "language": "en",
-      "abstract_or_text": "T cells are a key part of the adaptive immune system. Using their surface-bound T cell antigen receptors (TCRs), these cells scan peptides and other antigens pre-sented to them by major histocompatibility complex molecules (MHCs) on the sur-face of cells, searching for abnormalities. Although determining the map between TCRs and their target antigens is of vital importance for the design of safe and effective T cell-based vaccines and therapeutics, decoding these interactions is chal-lenging. Experimental methods are not scalable, and sequence-based computational methods have issues generalising to new antigens. The IMMREP25 benchmark of methods for predicting T cell antigen specificity showed that AlphaFold-based methods promise improved generalisation to novel antigens. However, the ability of structure prediction models to predict T cell antigen specificity has not been robustly evaluated previously. In this work, we characterise AlphaFolds ability to predict T cell antigen specificity. We created a pipeline for high-throughput pre-diction of TCR:peptide-MHC (pMHC) structures using AlphaFold that is > 100 fold faster than the default implementation and used it to benchmark AlphaFold 3 (AF3) and similar models at predicting T cell antigen specificity. We investigated the underlying correlates of AlphaFold-derived binding scores and found that the models predictive power is related to the positioning of TCRs over the pMHC and not chemical interactions. Furthermore, we refine the AlphaFold-derived binding scores by training a machine learning model we call the PAE Aggregator. We then investigate AF3s ability to uncover the clustering rules of TCR repertoires and re-capitulate mutational scanning experiments. These analyses show that AlphaFold3 clusters sequence-similar TCRs according to their binding mode and detects dis-rupting point mutations accurately. Our results highlight both the promise and the current limitations of structure-based approaches for predicting TCR specificity, guiding the development of more reliable immunological prediction methods.",
-      "summary_zh": "系统评测 AlphaFold 3 预测 T 细胞抗原特异性的能力边界，对 TCR 疫苗与细胞治疗设计有直接参考意义。",
-      "why_it_matters_zh": "系统评测 AlphaFold 3 预测 T 细胞抗原特异性的能力边界，对 TCR 疫苗与细胞治疗设计有直接参考意义。",
-      "quality_score": 80,
-      "tags": [
-        "基准/数据",
-        "systems biology"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 14,
-      "featured": false,
-      "category": "结构与生物",
-      "authors": [
-        "McMaster",
-        "B.",
-        "Elmoselhy",
-        "A.",
-        "Ilievski",
-        "I."
-      ],
-      "abstract": "T cells are a key part of the adaptive immune system. Using their surface-bound T cell antigen receptors (TCRs), these cells scan peptides and other antigens pre-sented to them by major histocompatibility complex molecules (MHCs) on the sur-face of cells, searching for abnormalities. Although determining the map between TCRs and their target antigens is of vital importance for the design of safe and effective T cell-based vaccines and therapeutics, decoding these interactions is chal-lenging. Experimental methods are not scalable, and sequence-based computational methods have issues generalising to new antigens. The IMMREP25 benchmark of methods for predicting T cell antigen specificity showed that AlphaFold-based methods promise improved generalisation to novel antigens. However, the ability of structure prediction models to predict T cell antigen specificity has not been robustly evaluated previously. In this work, we characterise AlphaFolds ability to predict T cell antigen specificity. We created a pipeline for high-throughput pre-diction of TCR:peptide-MHC (pMHC) structures using AlphaFold that is > 100 fold faster than the default implementation and used it to benchmark AlphaFold 3 (AF3) and similar models at predicting T cell antigen specificity. We investigated the underlying correlates of AlphaFold-derived binding scores and found that the models predictive power is related to the positioning of TCRs over the pMHC and not chemical interactions. Furthermore, we refine the AlphaFold-derived binding scores by training a machine learning model we call the PAE Aggregator. We then investigate AF3s ability to uncover the clustering rules of TCR repertoires and re-capitulate mutational scanning experiments. These analyses show that AlphaFold3 clusters sequence-similar TCRs according to their binding mode and detects dis-rupting point mutations accurately. Our results highlight both the promise and the current limitations of structure-based approaches for predicting TCR specificity, guiding the development of more reliable immunological prediction methods.",
-      "published": "2026-07-15",
-      "author_line": "McMaster, B., Elmoselhy, A., Ilievski, I. 等 8 人"
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv.15006114/v1",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "preprint",
-      "source": "ChemRxiv",
-      "title": "Openclatura–an Open-Source Nomenclature Framework for Rule-Based Molecule Naming",
-      "url": "https://doi.org/10.26434/chemrxiv.15006114/v1",
-      "published_at": "2026-07-15",
-      "updated_at": "2026-07-15",
-      "creators": [
-        "Adrian Mirza",
-        "Kevin Maik Jablonka",
-        "Rostislav Fedorov"
-      ],
-      "language": "en",
-      "abstract_or_text": "Naming molecules systematically remains an open challenge in cheminformatics. The reverse task—converting names to structure—has been largely solved for over a decade by OPSIN, yet no open-source tool performs the forward direction. Here we introduce Openclatura, which generates IUPAC names from molecular structures. The rule set was constructed by an agentic system that exhaustively enumerates naming rules, with each candidate name checked for structural round-trip consistency against OPSIN. Across three challenging benchmarks (QM9, PubChem, and ZINC22), Openclatura produces valid names for 98% of molecules, compared to 95% for the deep-learning baseline STOUT, while running on a single CPU core (40 times faster). We further present Robomoleculographer, an extension that generates natural-language descriptions of molecular graphs, bringing to chemistry what robocrystallographer offers to materials. Openclatura is fully deterministic and exposes an inspectable decision trace for every generated name.",
-      "summary_zh": "Openclatura：首个开源的『结构 → IUPAC 命名』工具，规则集由智能体系统穷举构建并自动校验，补齐了 OPSIN 反向任务十余年来的空白。",
-      "why_it_matters_zh": "Openclatura：首个开源的『结构 → IUPAC 命名』工具，规则集由智能体系统穷举构建并自动校验，补齐了 OPSIN 反向任务十余年来的空白。",
-      "quality_score": 80,
-      "tags": [
-        "开源",
-        "基准/数据",
-        "材料/催化"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 15,
-      "featured": false,
-      "category": "基准、数据、综述",
-      "authors": [
-        "Adrian Mirza",
-        "Kevin Maik Jablonka",
-        "Rostislav Fedorov"
-      ],
-      "abstract": "Naming molecules systematically remains an open challenge in cheminformatics. The reverse task—converting names to structure—has been largely solved for over a decade by OPSIN, yet no open-source tool performs the forward direction. Here we introduce Openclatura, which generates IUPAC names from molecular structures. The rule set was constructed by an agentic system that exhaustively enumerates naming rules, with each candidate name checked for structural round-trip consistency against OPSIN. Across three challenging benchmarks (QM9, PubChem, and ZINC22), Openclatura produces valid names for 98% of molecules, compared to 95% for the deep-learning baseline STOUT, while running on a single CPU core (40 times faster). We further present Robomoleculographer, an extension that generates natural-language descriptions of molecular graphs, bringing to chemistry what robocrystallographer offers to materials. Openclatura is fully deterministic and exposes an inspectable decision trace for every generated name.",
-      "published": "2026-07-15",
-      "author_line": "Adrian Mirza, Kevin Maik Jablonka, Rostislav Fedorov"
-    },
-    {
-      "id": "biorxiv:10.64898/2026.07.10.737788",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "preprint",
-      "source": "bioRxiv",
-      "title": "What Do Generative Models Learn About Adaptive Immune Receptor Repertoires? A Benchmark Study",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.07.10.737788",
-      "published_at": "2026-07-16",
-      "updated_at": "2026-07-16",
-      "creators": [
-        "Würtzen",
-        "C.",
-        "Mamica",
-        "M.",
-        "Kanduri",
-        "C."
-      ],
-      "language": "en",
-      "abstract_or_text": "Generative models are increasingly used to model adaptive immune receptor repertoire (AIRR) sequence distributions, promising to decode the sequence diversity shaping immune responses and accelerate the design of therapeutic antibodies and T-cell receptors. Yet it remains unclear whether these models produce biologically meaningful outputs or merely capture surface-level sequence statistics while missing features driven by receptor generation and selection. Rigorous evaluation is needed, but the field lacks established standards, as existing machine learning metrics do not all translate directly to the AIRR domain, given the complex structure of the data and the lack of biological ground truth. Consequently, researchers face difficulties in evaluating the models and selecting appropriate ones, which can critically affect downstream clinical applications. Here, we apply a suite of evaluation metrics tailored to AIRR sequence data and present a systematic comparison of popular generative model families proposed for the AIRR field, including variational autoencoders, long short-term memory networks, antibody language models, selection models, and simple statistical baselines. We focus specifically on the task of learning individual-specific immune receptor repertoires, a clinically relevant challenge with direct implications for personalized immunotherapy, disease monitoring, and vaccine response studies. By analyzing the sequences generated by each model, we identify memorization risks, innovation capabilities, and sensitivity to hyperparameter tuning. Taken together, these results advance the understanding of how current generative models reproduce the biology of individual immune repertoires and lay the groundwork for more principled model development and evaluation.",
-      "summary_zh": "一项基准研究追问：生成模型建模式免疫受体库时究竟学到了什么？结果显示其可能只抓住表面序列统计而遗漏受体生成的关键特征，为治疗性抗体/TCR 设计模型敲响警钟。",
-      "why_it_matters_zh": "一项基准研究追问：生成模型建模式免疫受体库时究竟学到了什么？结果显示其可能只抓住表面序列统计而遗漏受体生成的关键特征，为治疗性抗体/TCR 设计模型敲响警钟。",
-      "quality_score": 80,
-      "tags": [
-        "基准/数据",
-        "生物",
-        "immunology"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 16,
-      "featured": false,
-      "category": "基准、数据、综述",
-      "authors": [
-        "Würtzen",
-        "C.",
-        "Mamica",
-        "M.",
-        "Kanduri",
-        "C."
-      ],
-      "abstract": "Generative models are increasingly used to model adaptive immune receptor repertoire (AIRR) sequence distributions, promising to decode the sequence diversity shaping immune responses and accelerate the design of therapeutic antibodies and T-cell receptors. Yet it remains unclear whether these models produce biologically meaningful outputs or merely capture surface-level sequence statistics while missing features driven by receptor generation and selection. Rigorous evaluation is needed, but the field lacks established standards, as existing machine learning metrics do not all translate directly to the AIRR domain, given the complex structure of the data and the lack of biological ground truth. Consequently, researchers face difficulties in evaluating the models and selecting appropriate ones, which can critically affect downstream clinical applications. Here, we apply a suite of evaluation metrics tailored to AIRR sequence data and present a systematic comparison of popular generative model families proposed for the AIRR field, including variational autoencoders, long short-term memory networks, antibody language models, selection models, and simple statistical baselines. We focus specifically on the task of learning individual-specific immune receptor repertoires, a clinically relevant challenge with direct implications for personalized immunotherapy, disease monitoring, and vaccine response studies. By analyzing the sequences generated by each model, we identify memorization risks, innovation capabilities, and sensitivity to hyperparameter tuning. Taken together, these results advance the understanding of how current generative models reproduce the biology of individual immune repertoires and lay the groundwork for more principled model development and evaluation.",
       "published": "2026-07-16",
       "author_line": "Würtzen, C., Mamica, M., Kanduri, C. 等 7 人"
     }

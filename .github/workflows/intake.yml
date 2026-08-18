@@ -12,8 +12,6 @@ on:
 permissions:
   contents: write
   issues: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: aix-daily-content
@@ -25,9 +23,6 @@ jobs:
       github.event_name == 'workflow_dispatch' ||
       (startsWith(github.event.issue.title, 'AIX Intake') && contains(github.event.issue.labels.*.name, 'scheduled-intake'))
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
@@ -64,6 +59,9 @@ jobs:
         run: python -m unittest discover -s tests -v
 
       - name: Publish imported materials
+        env:
+          INTAKE_CHANNEL: ${{ steps.import.outputs.channel }}
+          INTAKE_DATE: ${{ steps.import.outputs.date }}
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
@@ -72,28 +70,18 @@ jobs:
           if git diff --cached --quiet; then
             echo "No content changes."
           else
-            git commit -m "data: import ${{ steps.import.outputs.channel }} ${{ steps.import.outputs.date }}"
+            git commit -m "data: import ${INTAKE_CHANNEL} ${INTAKE_DATE}"
             git pull --rebase origin main
             git push origin main
           fi
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: public
-
-      - name: Deploy updated site
-        id: deployment
-        uses: actions/deploy-pages@v4
-
       - name: Confirm import on the issue
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
+          IMPORT_RESULT: ${{ steps.import.outputs.result }}
         shell: bash
-        run: >-
-          gh issue comment "${{ steps.issue.outputs.number }}"
-          --repo "$GITHUB_REPOSITORY"
-          --body "资料已导入：${{ steps.import.outputs.result }}。网站部署将由 Pages 工作流继续完成。"
+        run: |
+          gh issue comment "$ISSUE_NUMBER" \
+            --repo "$GITHUB_REPOSITORY" \
+            --body "资料已导入：${IMPORT_RESULT}。网站部署将由 Pages 工作流继续完成。"

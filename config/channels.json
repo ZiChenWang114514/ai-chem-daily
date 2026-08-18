@@ -2,10 +2,10 @@
   "schema_version": "1.0",
   "hub": {
     "id": "aix-daily",
-    "name": "AIX Daily",
-    "title": "每日智能研究集散中心",
+    "name": "AIX每日精读",
+    "title": "五个频道的每日精读",
     "timezone": "Asia/Shanghai",
-    "site_url": "https://zichenwang114514.github.io/ai-chem-daily/"
+    "site_url": "https://zichenwang114514.github.io/ai-x-daily/"
   },
   "channels": [
     {

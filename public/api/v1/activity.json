@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-17T23:18:29+00:00",
+  "generated_at": "2026-08-18T06:27:47+00:00",
   "timezone": "Asia/Shanghai",
   "metrics": [
     "selected",
@@ -130,7 +130,7 @@
       "channel": "aixbio",
       "fetched": 620,
       "candidates": 60,
-      "selected": 16,
+      "selected": 13,
       "kind": "json",
       "href": "data/channels/aixbio/archive/2026-08-18.json"
     },
