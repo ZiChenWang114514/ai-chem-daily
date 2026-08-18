@@ -2,6 +2,14 @@
   "schema_version": "2.0",
   "items": [
     {
+      "date": "2026-08-19",
+      "href": "data/channels/aixbio/archive/2026-08-19.json",
+      "selected": 14,
+      "candidates": 60,
+      "fetched": 1183,
+      "kind": "json"
+    },
+    {
       "date": "2026-08-18",
       "href": "data/channels/aixbio/archive/2026-08-18.json",
       "selected": 13,

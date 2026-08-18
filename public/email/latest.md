@@ -1,50 +1,52 @@
-# AIX每日精读 · 2026-08-18
+# AIX每日精读 · 2026-08-19
 
-今日精选以尚待同行评议的预印本和可直接采用的软件正式发布为主，未见入选的同行评议论文或公开观点。AI×化学关注药物发现、电解液微观结构与天然产物酶学；AI×生物呈现临床影像、罕见病电子病历和肿瘤分化研究。工程频道聚焦 llama.cpp 与 JAX 的兼容、模型支持和性能改进。AI×数学与 AI Voices 暂无足够高质量更新，预印本结果不应视为定论。
+今日精选：AI × Chem 16 项，AI × Bio 14 项，AI × Math 7 项，AI Voices 1 项，Engineering 8 项。今日五频道共同日期为8月19日。科研栏目以预印本为主：化学聚焦分子生成横向评测、复杂天然产物逆合成与晶体配体坐标验证；生物关注表型—基因关联外部核验和人群级EHR模型；数学考察可机检构造、缺失前提推理及概率逻辑护栏。入选条目中未见同行评议论文。AI声音仅有一篇NVIDIA公开技术博客，缺少具体机制与评测；工程栏目集中于软件发布。
 
 ## AI × Chem
 
-采集 415，候选 60，精选 10。来源状态：各来源已完成
+采集 1078，候选 60，精选 16。来源状态：各来源已完成
 
-- [Discovery of Selective Small-Molecule Ligands of SV2C by AI-Enhanced Virtual Screening and Experimental Validation](https://www.biorxiv.org/content/10.64898/2026.08.11.744237) — 研究以SV2A冷冻电镜结构为模板构建SV2C同源模型，结合MD、GaMD、卷积神经网络评分和虚拟筛选，从596万化合物中筛得候选，并对71个化合物进行热稳定性、放射性配体竞争、Ki和亚型选择性实验。共发现22个活性分子，其中化合物56对SV2C的Ki为3.25 μM，且相对SV2A、SV2B均表现出十倍以上选择性。
-- [Evidence for significant multi-Li+ clustering in common lithium-ion battery electrolytes](https://doi.org/10.26434/chemrxiv-2025-ndqzk/v4) — 研究将机器学习原子级模拟、核磁共振、电化学测量和量子化学计算结合起来，提出常见锂离子电池电解液中存在无阴离子参与的多Li+团簇，并认为这类易被还原的结构有助于解释含碳酸乙烯酯混合溶剂的经验优势。其机器学习力场仅由气相团簇量子化学数据参数化，却能再现多种凝聚相实验现象。
-- [TRACER navigates rearrangement-driven sesterterpene chemical space via multimodal enzyme-product representation learning](https://www.biorxiv.org/content/10.64898/2026.08.16.745124) — TRACER将酶序列表征与萜类产物化学型共同学习，用于预测倍半萜合酶的骨架重排。模型指导基因组挖掘发现两种双功能合酶及四种此前未报道的碳骨架，并以密度泛函计算、定点突变和分子动力学分析环化级联及关键位点E305的作用。
+- [Systematic Benchmarking of AI-Based Molecular Generation Models for Structure-Based Drug Design](https://www.biorxiv.org/content/10.64898/2026.08.14.744939) — 该研究在176个经整理的蛋白—配体体系上比较12种分子生成与优化方法，并提出整合受体构象集合、集合对接和蛋白—配体相互作用图的SAFC功能分类器，用于对生成分子进行动力学感知的功能排序。
+- [Superhuman Centaur Retrosynthesis Through Targeted LLM-enabled Decomposition in DeepRetro2](https://doi.org/10.26434/chemrxiv.15007537/v1) — DeepRetro2将LLM逆合成与递归分子拆解、子问题迭代生成和人工化学判断结合，在maitotoxin、bryostatin 1、bryostatin 3和luvesilocin上构建了可逐步细化的合成拆解方案。
+- [Resolution-standardized evaluation of ligand atomic coordinates in crystallographic structures using machine learning](https://www.biorxiv.org/content/10.64898/2026.08.17.745351) — 研究提出原子级Box Correlation Coefficient（aBCC）及3D-CNN模型QAEmap，以分辨率标准化方式评价晶体结构中配体原子坐标与电子密度的一致性；在约3.5 Å以内预测仍可靠。
 
 [查看频道专页](https://zichenwang114514.github.io/ai-x-daily/channels/aixchem/)
 
 ## AI × Bio
 
-采集 620，候选 60，精选 13。来源状态：各来源已完成
+采集 1183，候选 60，精选 14。来源状态：各来源已完成
 
-- [Deep Learning-Based Classification of Bone Lesions on CT Scans of Metastatic Spine Disease Patients: A 3D-Convolutional Neural Network Approach](https://www.medrxiv.org/content/10.64898/2026.08.13.26360407) — 回顾性纳入 151 名转移性脊柱肿瘤患者、2,125 个椎体，以 3D-CNN 将粗粒度体素预测转为椎体病灶类型判定；三折验证和独立留出集上，集成模型准确率为 84.7%。
-- [Early Detection of Erythropoietic Protoporphyria Using Sequential Machine Learning on Longitudinal Electronic Health Records](https://www.medrxiv.org/content/10.64898/2026.08.15.26360514) — 在两家旧金山医疗系统的纵向电子病历中，以 74 例确诊红细胞生成性原卟啉症训练时序模型，并在未重训的外部医院检验。外部 AUC 为 0.72，模型可在记录诊断前中位 264 天提示高风险。
-- [VRK1 kinase maintains an undifferentiated proliferative state in neuroblastoma tumor cells](https://www.biorxiv.org/content/10.64898/2026.08.05.742965) — 结合患者肿瘤数据、组织芯片、单细胞转录组、细胞系与患者来源细胞以及异种移植模型，研究显示抑制 VRK1 会伴随神经母细胞瘤分化标志上升与增殖降低。
+- [Assessing the Reliability of LLM-Generated Phenotype-Genotype Associations Through External Validation](https://www.biorxiv.org/content/10.64898/2026.08.13.744701) — 对四个 LLM 生成表型—基因及表型—SNP 关联的能力开展外部知识库验证；4,196 条关联中 74.19% 可匹配至少一个外部基因组知识库，但强证据比例仅为 9.15%。
+- [Foresight-England: Development of a National-Scale Generative AI Model of Electronic Health Records for Medical Event Prediction across the COVID-19 Pandemic](https://arxiv.org/abs/2608.16273v1) — Foresight-E 描述了一个基于约 6,100 万人去标识化纵向 NHS 电子健康记录训练的 2.43 亿参数生成式模型；数据访问暂停，当前未报告定量结果。
+- [Phenotype-associated spatial biomarker discovery in spatial transcriptomics with spHOT](https://www.biorxiv.org/content/10.64898/2026.08.11.744312) — spHOT 利用空间基础模型嵌入、层级组织域树和师生多实例学习，从样本级标签定位与表型相关的空间转录组标志物。
 
 [查看频道专页](https://zichenwang114514.github.io/ai-x-daily/channels/aixbio/)
 
 ## AI × Math
 
-采集 0，候选 0，精选 0。来源状态：OpenReview: RuntimeError: 未配置 OpenReview 账号
+采集 452，候选 60，精选 7。来源状态：OpenReview: RuntimeError: 未配置 OpenReview 账号
 
-- 今日无足够高质量更新。
+- [ALPS: Measuring Valid Creativity in Large Language Models with Mathematical Construction](https://arxiv.org/abs/2608.15979v1) — ALPS 以等式律为题目单元，要求系统构造满足该律的无限数学结构，或证明此类结构不存在；答案由自动证明检查器验证，并以可无限生成的新题降低训练数据重合风险。
+- [Ask, Condition or Abstain: Reinforcement Learning for Missing-Premise Reasoning](https://arxiv.org/abs/2608.16554v1) — ACA-RL 将完整题目转化为带局部缺失前提标注的训练实例，训练模型在追问、条件作答和弃答之间作出选择；MPB 含 274 道经人工核验的数学、逻辑和现实文字题。
+- [PL-Guard: Probabilistic Logic Reasoning for LLM Guardrails](https://arxiv.org/abs/2608.15673v1) — PL-Guard 将提示—回答对的语义归因与策略推理拆开：本地 LLM 输出谓词概率，ProbLog 按符号规则作显式概率推理。
 
 [查看频道专页](https://zichenwang114514.github.io/ai-x-daily/channels/aixmath/)
 
 ## AI Voices
 
-采集 7，候选 7，精选 0。来源状态：X: RuntimeError: HTTP 402 额度不足，请在 X Developer Console 充值 credits
+采集 17，候选 17，精选 1。来源状态：X: RuntimeError: HTTP 402 额度不足，请在 X Developer Console 充值 credits
 
-- 今日无足够高质量更新。
+- [How AI Coding Agents Can Unlock Materials Simulation with NVIDIA ALCHEMI Toolkit](https://developer.nvidia.com/blog/how-ai-coding-agents-can-unlock-materials-simulation-with-nvidia-alchemi-toolkit/) — NVIDIA 官方技术博客探讨 AI 编程智能体如何借助 ALCHEMI Toolkit 促进材料模拟；可见导语将原子尺度模拟概括为三项要求：科学知识、计算高效的模拟实现和可访问的接口。
 
 [查看频道专页](https://zichenwang114514.github.io/ai-x-daily/channels/aivoices/)
 
 ## Engineering
 
-采集 35，候选 35，精选 8。来源状态：各来源已完成
+采集 29，候选 29，精选 8。来源状态：各来源已完成
 
-- [b10448](https://github.com/ggml-org/llama.cpp/releases/tag/b10448) — ggml-org/llama.cpp b10448 正式加入 Kimi-K3 文本模型的转换、推理与聊天模板支持，涵盖推理内容、流式输出和工具调用解析，并修复模型保存后会丢失 KDA 门限参数的问题。
-- [JAX v0.11.1](https://github.com/jax-ml/jax/releases/tag/jax-v0.11.1) — jax-ml/jax jax-v0.11.1 停止反序列化 2026-01-15 前导出的模块，移除两项旧优化配置并改用 EffortLevel；同时修复 cuDNN 融合注意力的 vmap/FP8 路径及小矩阵行列式的数值稳定性。
-- [b10456](https://github.com/ggml-org/llama.cpp/releases/tag/b10456) — ggml-org/llama.cpp b10456 调整 SYCL 量化复制内核的线程和线程块配置。在 Intel Arc 70 的 q4_0→f32 路径上，官方发布说明的吞吐量由 20.21 GB/s 提升至 158.19 GB/s。
+- [langchain-openai==1.5.2a1](https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.5.2a1) — langchain-ai/langchain 发布 langchain-openai==1.5.2a1，扩大 OpenAI SDK 与模型兼容性，并修复流式推理、上下文窗口和 MCP 凭据处理问题。
+- [0.148.0](https://github.com/openai/codex/releases/tag/rust-v0.148.0) — openai/codex 发布 rust-v0.148.0，加入会话导出、分叉和归档、Bedrock Runtime，以及异步 Hooks/MCP；同时加强跨平台沙箱限制。
+- [b10448](https://github.com/ggml-org/llama.cpp/releases/tag/b10448) — ggml-org/llama.cpp 发布 b10448，新增 Kimi-K3 text model、转换支持及带 reasoning、内容和 typed tool calls 的 Kimi-K3 chat format。
 
 [查看频道专页](https://zichenwang114514.github.io/ai-x-daily/channels/engineering/)
 

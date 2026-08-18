@@ -2,6 +2,14 @@
   "schema_version": "2.0",
   "items": [
     {
+      "date": "2026-08-19",
+      "href": "data/channels/aixmath/archive/2026-08-19.json",
+      "selected": 7,
+      "candidates": 60,
+      "fetched": 452,
+      "kind": "json"
+    },
+    {
       "date": "2026-08-18",
       "href": "data/channels/aixmath/archive/2026-08-18.json",
       "selected": 0,

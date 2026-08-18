@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-18T06:27:47+00:00",
+  "generated_at": "2026-08-18T23:26:56+00:00",
   "hub": {
     "id": "aix-daily",
     "name": "AIX每日精读",
@@ -30,30 +30,30 @@
         "archive": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aixchem/archive/index.json",
         "candidates": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aixchem/candidates/latest.json"
       },
-      "latest_date": "2026-08-18",
+      "latest_date": "2026-08-19",
       "has_data": true,
       "stats": {
-        "fetched": 415,
+        "fetched": 1078,
         "candidates": 60,
-        "selected": 10,
+        "selected": 16,
         "sources": {
-          "arXiv": 0,
-          "bioRxiv": 354,
-          "ChemRxiv": 67
+          "arXiv": 452,
+          "bioRxiv": 507,
+          "ChemRxiv": 128
         }
       },
       "source_status": {
         "arXiv": {
-          "state": "empty",
-          "count": 0
+          "state": "ok",
+          "count": 452
         },
         "bioRxiv": {
           "state": "ok",
-          "count": 354
+          "count": 507
         },
         "ChemRxiv": {
           "state": "ok",
-          "count": 67
+          "count": 128
         }
       },
       "source_errors": []
@@ -80,35 +80,35 @@
         "archive": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aixbio/archive/index.json",
         "candidates": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aixbio/candidates/latest.json"
       },
-      "latest_date": "2026-08-18",
+      "latest_date": "2026-08-19",
       "has_data": true,
       "stats": {
-        "fetched": 620,
+        "fetched": 1183,
         "candidates": 60,
-        "selected": 13,
+        "selected": 14,
         "sources": {
-          "arXiv": 0,
-          "bioRxiv": 354,
-          "medRxiv": 116,
-          "Europe PMC": 236
+          "arXiv": 452,
+          "bioRxiv": 507,
+          "medRxiv": 188,
+          "Europe PMC": 47
         }
       },
       "source_status": {
         "arXiv": {
-          "state": "empty",
-          "count": 0
+          "state": "ok",
+          "count": 452
         },
         "bioRxiv": {
           "state": "ok",
-          "count": 354
+          "count": 507
         },
         "medRxiv": {
           "state": "ok",
-          "count": 116
+          "count": 188
         },
         "Europe PMC": {
           "state": "ok",
-          "count": 236
+          "count": 47
         }
       },
       "source_errors": []
@@ -133,21 +133,21 @@
         "archive": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aixmath/archive/index.json",
         "candidates": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aixmath/candidates/latest.json"
       },
-      "latest_date": "2026-08-18",
+      "latest_date": "2026-08-19",
       "has_data": true,
       "stats": {
-        "fetched": 0,
-        "candidates": 0,
-        "selected": 0,
+        "fetched": 452,
+        "candidates": 60,
+        "selected": 7,
         "sources": {
-          "arXiv": 0,
+          "arXiv": 452,
           "OpenReview": 0
         }
       },
       "source_status": {
         "arXiv": {
-          "state": "empty",
-          "count": 0
+          "state": "ok",
+          "count": 452
         },
         "OpenReview": {
           "state": "failed",
@@ -178,15 +178,15 @@
         "archive": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aivoices/archive/index.json",
         "candidates": "https://zichenwang114514.github.io/ai-x-daily/data/channels/aivoices/candidates/latest.json"
       },
-      "latest_date": "2026-08-18",
+      "latest_date": "2026-08-19",
       "has_data": true,
       "stats": {
-        "fetched": 7,
-        "candidates": 7,
-        "selected": 0,
+        "fetched": 17,
+        "candidates": 17,
+        "selected": 1,
         "sources": {
           "X": 0,
-          "Research blogs": 7
+          "Research blogs": 17
         }
       },
       "source_status": {
@@ -196,7 +196,7 @@
         },
         "Research blogs": {
           "state": "ok",
-          "count": 7
+          "count": 17
         }
       },
       "source_errors": [
@@ -223,20 +223,20 @@
         "archive": "https://zichenwang114514.github.io/ai-x-daily/data/channels/engineering/archive/index.json",
         "candidates": "https://zichenwang114514.github.io/ai-x-daily/data/channels/engineering/candidates/latest.json"
       },
-      "latest_date": "2026-08-18",
+      "latest_date": "2026-08-19",
       "has_data": true,
       "stats": {
-        "fetched": 35,
-        "candidates": 35,
+        "fetched": 29,
+        "candidates": 29,
         "selected": 8,
         "sources": {
-          "GitHub Releases": 35
+          "GitHub Releases": 29
         }
       },
       "source_status": {
         "GitHub Releases": {
           "state": "ok",
-          "count": 35
+          "count": 29
         }
       },
       "source_errors": []

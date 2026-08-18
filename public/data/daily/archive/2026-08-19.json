@@ -1,0 +1,2218 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-19",
+  "generated_at": "2026-08-18T23:26:56+00:00",
+  "title": "AIX每日精读",
+  "overview_zh": "今日精选：AI × Chem 16 项，AI × Bio 14 项，AI × Math 7 项，AI Voices 1 项，Engineering 8 项。今日五频道共同日期为8月19日。科研栏目以预印本为主：化学聚焦分子生成横向评测、复杂天然产物逆合成与晶体配体坐标验证；生物关注表型—基因关联外部核验和人群级EHR模型；数学考察可机检构造、缺失前提推理及概率逻辑护栏。入选条目中未见同行评议论文。AI声音仅有一篇NVIDIA公开技术博客，缺少具体机制与评测；工程栏目集中于软件发布。",
+  "channel_highlights": {
+    "aixchem": "三项均为预印本：176个蛋白—配体体系的分子生成评测居首，另有DeepRetro2逆合成与晶体配体坐标验证；尚无同行评议论文入选。",
+    "aixbio": "三项均为预印本，涉及LLM生成表型—基因关联的外部核验、人群级EHR生成模型，以及空间转录组标志物发现。",
+    "aixmath": "三项均为预印本，分别讨论可机检数学构造、缺失前提下的追问或弃答策略，以及概率逻辑推理护栏。",
+    "aivoices": "今日仅一篇NVIDIA公开技术博客，讨论AI编程智能体与ALCHEMI材料模拟工具；现有材料未提供具体机制、代码或评测结果。",
+    "engineering": "前三项均为GitHub软件发布：LangChain OpenAI集成、Codex CLI与llama.cpp分别更新兼容性、会话能力和Kimi-K3本地支持。"
+  },
+  "channels": [
+    {
+      "id": "aixchem",
+      "name": "AI × Chem",
+      "stats": {
+        "fetched": 1078,
+        "candidates": 60,
+        "selected": 16,
+        "sources": {
+          "arXiv": 452,
+          "bioRxiv": 507,
+          "ChemRxiv": 128
+        }
+      },
+      "source_errors": [],
+      "items": [
+        {
+          "id": "biorxiv:10.64898/2026.08.14.744939",
+          "channel": "aixchem",
+          "related_channels": [
+            "aixbio",
+            "aixmath"
+          ],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "Systematic Benchmarking of AI-Based Molecular Generation Models for Structure-Based Drug Design",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744939",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Kumar, H.",
+            "Yang, Z.",
+            "Yu, Y.",
+            "Wen, J.",
+            "Kim, P.",
+            "zhou, X."
+          ],
+          "language": "en",
+          "abstract_or_text": "Generative artificial intelligence is accelerating molecular design, yet the relative suitability of available models for different targets and stages of preclinical drug discovery remains unclear. Here we benchmarked 12 molecular generation and optimization methods across 176 curated protein ligand systems spanning diverse therapeutic target classes, with experimentally validated ligands providing reference chemical space. The evaluated methods encompassed pocket conditioned 3D generation, diffusion and flow based modeling, autoregressive construction, reference conditioned optimization and synthesis-aware design. Performance was assessed using operational robustness, chemical validity, uniqueness, molecular and scaffold diversity, quantitative estimate of drug likeness, synthetic accessibility, docking, physicochemical and ADMET properties, and computational resource requirements. The results revealed architecture dependent trade off such as receptor conditioned methods exploited binding pocket geometry, flow based approaches enabled efficient sampling, reference-conditioned methods favored analogue generation, and synthesis-aware approaches improved chemical feasibility, but no method consistently optimized all criteria. To address the functional potential of generated molecules, we further developed a state aware functional classifier (SAFC) that integrates molecular dynamics derived receptor ensembles, ensemble docking and protein ligand interaction graphs. SAFC provided dynamics aware functional activity rankings for generated molecules that were partly complementary to docking, drug likeness and synthetic accessibility scores. These findings support hybrid, stage specific deployment of generative models rather than reliance on any single architecture or evaluation metric. This study provides practical guidelines for generative AI based preclinical drug development processes.",
+          "summary_zh": "该研究在176个经整理的蛋白—配体体系上比较12种分子生成与优化方法，并提出整合受体构象集合、集合对接和蛋白—配体相互作用图的SAFC功能分类器，用于对生成分子进行动力学感知的功能排序。",
+          "why_it_matters_zh": "这是面向结构药物设计的较大规模横向评测，明确显示不同架构各有适用情形，并为多指标、分阶段的模型组合提供依据。需注意其结论主要来自计算评估及参考化学空间，生成命中的真实活性和可合成性仍需逐靶点验证。",
+          "quality_score": 92.0,
+          "tags": [
+            "分子与药物发现"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "experimental",
+            "clinical",
+            "evaluation",
+            "performance"
+          ],
+          "publication_status": "preprint",
+          "rank": 1,
+          "featured": true,
+          "category": "分子与药物发现",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.14.744939",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "生成式人工智能正在加速分子设计，但现有模型对不同靶点和临床前药物发现不同阶段的相对适用性仍不清楚。本文在176个经整理的蛋白—配体体系上，对12种分子生成和优化方法进行了基准评测；这些体系覆盖多种治疗靶点类别，并以经实验验证的配体作为参考化学空间。所评估的方法包括口袋条件化3D生成、扩散和流模型、自回归构建、参考条件化优化以及合成感知设计。性能采用运行稳健性、化学有效性、唯一性、分子和骨架多样性、类药性定量估计、合成可及性、对接、理化和ADMET性质以及计算资源需求进行评估。结果揭示了依赖于架构的权衡：例如，受体条件化方法利用结合口袋几何信息，流方法能够高效采样，参考条件化方法更适于生成类似物，而合成感知方法提高了化学可行性，但没有任何一种方法能始终优化所有指标。为处理生成分子的功能潜力，我们还开发了状态感知功能分类器（SAFC），其整合了由分子动力学导出的受体构象集合、集合对接和蛋白—配体相互作用图。SAFC为生成分子提供了动力学感知的功能活性排序，与对接、类药性和合成可及性评分部分互补。这些发现支持在不同阶段混合部署生成模型，而不应依赖任何单一架构或评价指标。本研究为基于生成式AI的临床前药物开发流程提供了实用指南。",
+          "published": "2026-08-17",
+          "author_line": "Kumar, H., Yang, Z., Yu, Y. 等 6 人"
+        },
+        {
+          "id": "chemrxiv:10.26434/chemrxiv.15007537/v1",
+          "channel": "aixchem",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "ChemRxiv",
+          "title": "Superhuman Centaur Retrosynthesis Through Targeted LLM-enabled Decomposition in DeepRetro2",
+          "url": "https://doi.org/10.26434/chemrxiv.15007537/v1",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-18",
+          "creators": [
+            "Sharanabasava D. Hiremath",
+            "Priyanka Makkar",
+            "Pramod Kumar",
+            "Shreyas Vinaya Sathyanarayana",
+            "Riya Singh",
+            "Rishikesh Panda",
+            "Kamal Manchanella",
+            "Aryan Amit Barsainyan",
+            "Rahil Shah Kirankumar",
+            "Bharath Ramsundar"
+          ],
+          "language": "en",
+          "abstract_or_text": "Retrosynthesis of complex molecules requires many chemically plausible transformations to be integrated into a coherent synthetic route. Although computational methods have improved reaction prediction and route identification, systematically decomposing complex molecules and coordinating multiple retrosynthetic steps remains challenging. Here we present DeepRetro2, an agentic retrosynthesis framework that extends large language model (LLM)-based retrosynthesis through recursive molecular decomposition, iterative generation, evaluation and expansion of retrosynthetic subproblems. DeepRetro2 enables autonomous retrosynthetic analysis for targets of moderate complexity, while substantially larger targets can be solved through a human-in-the-loop workflow in which expert 1 input is introduced at chemically critical decision points. We dub this mode of human-agentic collaboration “Centaur Retrosynthesis,” in homage to the tradition of human-AI “Centaur Chess.” We evaluated this framework on four chemically distinct targets: the unsolved ladder polyether maitotoxin (MTX), bryostatin 1, bryostatin 3 and luvesilocin. For MTX, DeepRetro2 generated a hierarchical decomposition into five major polyether fragments and subsequently elaborated these fragments into simpler synthons. For bryostatin 1 and bryostatin 3, it identified convergent fragment-level disconnections that preserved the stereochemically defined pyran frameworks, while luvesilocin provided a smaller-scale test of the same retrosynthetic framework. Across these targets, human-guided selection of protecting groups and functional-group transformations refined the computationally generated pathways, maintained orthogonal reactivity during fragment elaboration and facilitated chemically compatible fragment unions. DeepRetro2 therefore combines autonomous agentic retrosynthesis with expert-guided chemical reasoning, providing an iterative framework for decomposing complex molecular structures and developing chemically executable retrosynthetic pathways.",
+          "summary_zh": "DeepRetro2将LLM逆合成与递归分子拆解、子问题迭代生成和人工化学判断结合，在maitotoxin、bryostatin 1、bryostatin 3和luvesilocin上构建了可逐步细化的合成拆解方案。",
+          "why_it_matters_zh": "它把复杂天然产物逆合成中的多步协调问题显式组织为可迭代任务，并保留化学家在保护基和官能团转换等关键选择中的作用。证据来自四个案例，尚缺少对路线可执行性、收率和实际全合成结果的系统检验。",
+          "quality_score": 82.0,
+          "tags": [
+            "方法与模型"
+          ],
+          "evidence_flags": [
+            "evaluation"
+          ],
+          "publication_status": "preprint",
+          "rank": 2,
+          "featured": true,
+          "category": "方法与模型",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.26434/chemrxiv.15007537/v1",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "复杂分子的逆合成需要将许多在化学上合理的转化整合为连贯的合成路线。尽管计算方法已经改善了反应预测和路线识别，但对复杂分子进行系统拆解并协调多个逆合成步骤仍具挑战。本文提出DeepRetro2，一种智能体式逆合成框架，它通过递归分子拆解、逆合成子问题的迭代生成、评估和扩展，扩展了基于大语言模型（LLM）的逆合成。DeepRetro2可对中等复杂度靶标进行自主逆合成分析；对于大得多的靶标，则可采用人在回路工作流，在化学关键决策点引入专家1输入。我们将这一人类—智能体协作模式称为“Centaur Retrosynthesis”，以致敬人机“Centaur Chess”的传统。我们在四个化学上不同的靶标上评估该框架：尚未解决的阶梯状聚醚maitotoxin（MTX）、bryostatin 1、bryostatin 3和luvesilocin。对于MTX，DeepRetro2生成了对五个主要聚醚片段的层级拆解，随后将这些片段细化为更简单的合成子。对于bryostatin 1和bryostatin 3，它识别出保留立体化学明确的吡喃骨架的汇聚式片段断键；而luvesilocin提供了同一逆合成框架的较小规模测试。在这些靶标中，人类指导的保护基和官能团转化选择细化了计算生成的路径，在片段细化过程中维持了正交反应性，并促进了化学相容的片段偶联。因此，DeepRetro2将自主智能体式逆合成与专家引导的化学推理结合，提供了一个用于拆解复杂分子结构并制定可在化学上实施的逆合成路径的迭代框架。",
+          "published": "2026-08-17",
+          "author_line": "Sharanabasava D. Hiremath, Priyanka Makkar, Pramod Kumar 等 10 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.17.745351",
+          "channel": "aixchem",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "Resolution-standardized evaluation of ligand atomic coordinates in crystallographic structures using machine learning",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.17.745351",
+          "published_at": "2026-08-18",
+          "updated_at": "2026-08-18",
+          "creators": [
+            "Miyaguchi, I.",
+            "Hata, H.",
+            "Kuribayashi, T.",
+            "Takahashi, S.",
+            "Kashima, A.",
+            "Murasaki, K.",
+            "Matsumoto, S.",
+            "Terayama, K.",
+            "Ohta, M.",
+            "Ikeguchi, M."
+          ],
+          "language": "en",
+          "abstract_or_text": "Accurate assessment of ligand coordinate-density consistency across different resolutions remains challenging in macromolecular crystallography. We introduce the atomic Box Correlation Coefficient (aBCC), an atom-level metric for evaluating the consistency between ligand atomic coordinates and electron density in a resolution-standardized framework. To predict aBCC values from electron-density maps, we developed QAEmap, a machine learning model based on three-dimensional convolutional neural networks (3D-CNNs). The model was trained using Fourier-truncated electron-density maps and corresponding ligand coordinates generated from high-resolution structures in the Protein Data Bank. It was evaluated using both Fourier-truncated electron-density maps and experimentally determined PDB structures. was evaluated using both Fourier-truncated electron-density maps and experimentally determined PDB structures.The prediction accuracy gradually decreased with decreasing resolution, but remained reliable up to ~3.5 angstrom. These results demonstrate that aBCC enables resolution-standardized atom-wise evaluation of coordinate-density consistency across different resolutions and provide a foundation for further development and refinement of machine learning-based coordinate validation.",
+          "summary_zh": "研究提出原子级Box Correlation Coefficient（aBCC）及3D-CNN模型QAEmap，以分辨率标准化方式评价晶体结构中配体原子坐标与电子密度的一致性；在约3.5 Å以内预测仍可靠。",
+          "why_it_matters_zh": "配体构象质量直接影响结构基础药物设计的训练数据和结构解释。该工作提供原子粒度的验证思路；但随着分辨率降低准确度下降，且模型训练和验证依赖PDB结构，跨实验条件的泛化仍待评估。",
+          "quality_score": 81.0,
+          "tags": [
+            "方法与模型"
+          ],
+          "evidence_flags": [
+            "experimental",
+            "evaluation"
+          ],
+          "publication_status": "preprint",
+          "rank": 3,
+          "featured": true,
+          "category": "方法与模型",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.17.745351",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "在大分子晶体学中，准确评估不同分辨率下配体坐标与密度的一致性仍具挑战。我们引入原子级Box Correlation Coefficient（aBCC），一种在分辨率标准化框架内评估配体原子坐标与电子密度一致性的原子级指标。为从电子密度图预测aBCC值，我们开发了基于三维卷积神经网络（3D-CNN）的机器学习模型QAEmap。该模型采用由Protein Data Bank高分辨率结构生成的傅里叶截断电子密度图及相应配体坐标训练。它同时采用傅里叶截断电子密度图和实验测定的PDB结构进行评估。它同时采用傅里叶截断电子密度图和实验测定的PDB结构进行评估。预测准确度随分辨率降低而逐渐下降，但在约3.5 angstrom以内仍保持可靠。这些结果表明，aBCC能够以分辨率标准化方式逐原子评估坐标—密度一致性，并为进一步开发和完善基于机器学习的坐标验证提供基础。",
+          "published": "2026-08-18",
+          "author_line": "Miyaguchi, I., Hata, H., Kuribayashi, T. 等 10 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.11.744237",
+          "channel": "aixchem",
+          "related_channels": [
+            "aixbio"
+          ],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "Discovery of Selective Small-Molecule Ligands of SV2C by AI-Enhanced Virtual Screening and Experimental Validation",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.11.744237",
+          "published_at": "2026-08-16",
+          "updated_at": "2026-08-16",
+          "creators": [
+            "Brueckner, A. C.",
+            "Martin, M. F.",
+            "Khuttan, S.",
+            "Shields, B.",
+            "Mittal, A.",
+            "Schreiber, J. A.",
+            "Salomon-Ferrer, R.",
+            "Bortolato, A.",
+            "Salahpour, A.",
+            "Bucher, M. L.",
+            "Coleman, J. A.",
+            "Miller, G. W."
+          ],
+          "language": "en",
+          "abstract_or_text": "Synaptic vesicle glycoprotein 2C (SV2C) is a vesicular protein enriched in dopaminergic neurons of the basal ganglia that modulates dopamine storage and release, and its disruption is implicated in Parkinson's disease (PD). Despite strong genetic and pathological links to PD, there are no selective small-molecule probes for SV2C. Here, we describe an AI-enhanced virtual screening (VS) and experimental campaign that identified multiple novel chemotypes with low-micromolar affinity and marked selectivity for SV2C over SV2A and SV2B, starting from a large, general-purpose commercial library. Because no full-length high-resolution SV2C structure was available, we built a homology model using SV2A cryo-EM structures as templates and characterized its conformational landscape by molecular dynamics (MD) and Gaussian accelerated MD (GaMD) simulations in apo form and in complex with known SV2 ligands (plosaracetam, levetiracetam, brivaracetam, and padsevonil). A convolutional neural network-based scoring function (CNN_VS), retrospectively validated on a manually curated 39-ligand SV2A benchmark (r = 0.72 vs experimental pIC50), was then applied in a multi-stage funnel to 5.96 million Mcule in-stock compounds, which were sequentially filtered to 3.19 million CNS-relevant molecules before docking and rescoring. From 94 VS-prioritized candidates, 71 compounds were experimentally profiled in an orthogonal primary assay cascade combining a thermal shift assay (TSA) with a [3H]-padsevonil scintillation proximity assay (SPA), followed by Ki determination and isoform selectivity profiling for key hits. This campaign yielded 22 active molecules (31% hit rate) that naturally segregated into two categories: compounds that showed primary site competition, and compounds that did not show primary site competition with [3H]-padsevonil. A subset of competitor compounds also showed thermostabilization activity. Among these, compounds 36 and 56 emerged as particularly attractive leads, with Ki values of 24.6 uM and 3.25 uM at SV2C, respectively, and greater than 10-fold selectivity versus SV2A; compound 56 also maintained approximately 12-fold selectivity relative to SV2B. A complementary subset of SV2C-selective hits behaved as padsevonil-site competitors, providing a lead set that will serve as a template for functional characterization and future drug development for conditions that affect dopaminergic signaling. Docking analysis suggests a common binding mode anchored by conserved tryptophan residues in the SV2 pocket, a prediction independently confirmed by an unpublished SV2A-plosaracetam cryo-EM structure showing 0.76 Angstrom binding-site C-alpha RMSD relative to the SV2C model and complete conservation of the tryptophan cage. Subtle differences in the luminal domain and transmembrane region point to the structural determinants underlying isoform selectivity. Collectively, these results demonstrate that an AI-driven VS pipeline, tightly integrated with medium-throughput biophysical assays, can deliver selective SV2C binders from a general chemical library on a structurally under-characterized membrane target. The identified hits provide multiple starting points for hit-to-lead optimization and tools for probing SV2C biology and its role in PD.",
+          "summary_zh": "该工作以SV2A冷冻电镜结构建立SV2C同源模型，经MD/GaMD、CNN_VS虚拟筛选和正交生物物理实验，从596万种商业化合物中发现22个SV2C活性分子；其中化合物56对SV2C的Ki为3.25 uM，并相对SV2A和SV2B保持选择性。",
+          "why_it_matters_zh": "在缺少全长高分辨率靶标结构的条件下，工作展示了AI筛选与实验测定结合可产出选择性先导物。限制在于命中物仍为低微摩尔级，结合模式部分基于同源建模和未发表结构，功能药理与体内研究尚未给出。",
+          "quality_score": 79.0,
+          "tags": [
+            "分子与药物发现"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "experimental",
+            "release"
+          ],
+          "publication_status": "preprint",
+          "rank": 4,
+          "featured": false,
+          "category": "分子与药物发现",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.11.744237",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "突触囊泡糖蛋白2C（SV2C）是一种富集于基底神经节多巴胺能神经元的囊泡蛋白，调节多巴胺储存和释放；其功能紊乱与Parkinson's disease（PD）有关。尽管其与PD有很强的遗传和病理关联，目前尚无SV2C选择性小分子探针。本文描述了一项AI增强的虚拟筛选（VS）和实验研究：从大型通用商业库出发，鉴定出多个新颖化学型，它们对SV2C具有低微摩尔亲和力，并相对于SV2A和SV2B表现出显著选择性。由于没有全长高分辨率SV2C结构，我们以SV2A cryo-EM结构为模板建立同源模型，并通过分子动力学（MD）和Gaussian accelerated MD（GaMD）模拟，在游离态以及与已知SV2配体（plosaracetam、levetiracetam、brivaracetam和padsevonil）形成复合物时表征其构象景观。随后，基于卷积神经网络的评分函数（CNN_VS）在一个人工整理的39配体SV2A基准上进行回顾性验证（r = 0.72，相对于实验pIC50），并在多阶段漏斗中应用于596万种Mcule现货化合物；这些化合物在对接和重评分前被依次筛至319万种与CNS相关的分子。在94个VS优选候选物中，71个化合物接受了正交初筛实验级联评估，结合热转变实验（TSA）和[3H]-padsevonil闪烁邻近实验（SPA），随后对关键命中物测定Ki并进行同工型选择性分析。该研究获得22个活性分子（31%命中率），它们自然分为两类：表现出主位点竞争的化合物，以及不与[3H]-padsevonil发生主位点竞争的化合物。一部分竞争性化合物还表现出热稳定化活性。其中，化合物36和56是特别有吸引力的先导物，其在SV2C上的Ki分别为24.6 uM和3.25 uM，并且相对于SV2A具有超过10倍的选择性；化合物56相对于SV2B也维持约12倍选择性。一组补充性的SV2C选择性命中物表现为padsevonil位点竞争者，提供了一组可用于功能表征和未来药物开发的先导物模板，服务于影响多巴胺能信号的疾病。对接分析提示一种由SV2口袋保守色氨酸残基锚定的共同结合模式；一项未发表的SV2A-plosaracetam cryo-EM结构独立证实了这一预测：相对于SV2C模型，其结合位点C-alpha RMSD为0.76 Angstrom，且色氨酸笼完全保守。腔内结构域和跨膜区的细微差异提示了同工型选择性背后的结构决定因素。总体而言，这些结果表明，紧密整合中通量生物物理实验的AI驱动VS流程，可从通用化学库中为结构表征不足的膜靶标获得选择性SV2C结合物。所鉴定的命中物为命中至先导优化提供多个起点，也可作为研究SV2C生物学及其在PD中作用的工具。",
+          "published": "2026-08-16",
+          "author_line": "Brueckner, A. C., Martin, M. F., Khuttan, S. 等 12 人"
+        },
+        {
+          "id": "arxiv:2608.16111v1",
+          "channel": "aixchem",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "arXiv",
+          "title": "RetroMPA: A Molecular Property-Aware Auxiliary Framework for Enhancing Retrosynthesis Prediction",
+          "url": "https://arxiv.org/abs/2608.16111v1",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Mianzhi Liu",
+            "Fan Xiao",
+            "Zhiliang Yu",
+            "Huayang Huang",
+            "Yuke Li",
+            "Yi Yang",
+            "Wenbo Liu",
+            "Yu Wu"
+          ],
+          "language": "en",
+          "abstract_or_text": "Retrosynthesis is a cornerstone of drug discovery and organic synthesis. While data-driven deep learning models have shown remarkable progress, they autonomously learn reaction patterns from extensive datasets with limited integration of established chemical knowledge as priors. To address this limitation, we introduce RetroMPA, a molecular property-aware, post-hoc enhancement module that injects chemical knowledge into the retrosynthesis pipeline. Rather than functioning as an independent SMILES sequence generator, RetroMPA is a broadly applicable, model-agnostic chemical filter designed to recalibrate and optimize the predictive pathways of existing algorithms. This plug-and-play framework integrates seamlessly with a range of data-driven retrosynthesis methods, enhancing outputs without modifying model architecture or requiring resource-intensive retraining. By leveraging a property-aware latent embedding space, RetroMPA consistently improves top-1 accuracy across eight representative retrosynthesis models by an average of 5.50% on USPTO-50K. Furthermore, we validate its scalability on the large-scale USPTO-Full dataset, achieving an average improvement of about 2.03% across both template-based and template-free architectures. Wet-lab experiments provide preliminary support for the practical utility of the framework. These syntheses confirmed viable, previously unreported substrate combinations for classic reaction paradigms---specifically, Suzuki-Miyaura coupling, Bucherer reaction, and Friedel-Crafts acylation---suggesting that RetroMPA can operate beyond mere data fitting. The code is open-sourced at https://github.com/MengzhouLu/RetroMPA.",
+          "summary_zh": "RetroMPA是可插拔、与原模型无关的逆合成后处理模块，通过分子性质感知的潜在表示校正预测路径；它在USPTO-50K上使八种模型的top-1准确率平均提高5.50%，并以三类经典反应的湿实验支持实用性。",
+          "why_it_matters_zh": "方法无需重训即可向多种逆合成器引入化学先验，并报告了跨数据集和湿实验结果。其增益仍以USPTO数据集指标为主，实验仅提供初步支持，尚需更广泛的复杂底物和路线级验证。",
+          "quality_score": 77.0,
+          "tags": [
+            "分子与药物发现"
+          ],
+          "evidence_flags": [
+            "dataset",
+            "github"
+          ],
+          "publication_status": "preprint",
+          "rank": 5,
+          "featured": false,
+          "category": "分子与药物发现",
+          "metrics": {},
+          "metadata": {
+            "doi": "",
+            "arxiv_id": "2608.16111v1"
+          },
+          "abstract_zh": "逆合成是药物发现和有机合成的基石。尽管数据驱动的深度学习模型已取得显著进展，但它们从大规模数据集中自主学习反应模式，对既有化学知识作为先验的整合有限。为解决这一局限，我们提出RetroMPA，一种分子性质感知的事后增强模块，可将化学知识注入逆合成流程。RetroMPA并不作为独立的SMILES序列生成器，而是一种广泛适用、与模型无关的化学过滤器，旨在重新校准并优化现有算法的预测路径。这一即插即用框架可与一系列数据驱动逆合成方法无缝整合，在不改变模型架构或不需要资源密集型重新训练的情况下增强输出。借助性质感知的潜在嵌入空间，RetroMPA在USPTO-50K上使八种代表性逆合成模型的top-1准确率平均持续提高5.50%。此外，我们在大规模USPTO-Full数据集上验证其可扩展性，在基于模板和无模板架构中均实现约2.03%的平均提升。湿实验为该框架的实际效用提供了初步支持。这些合成证实了经典反应范式中可行、此前未报道的底物组合——具体为Suzuki-Miyaura coupling、Bucherer reaction和Friedel-Crafts acylation——提示RetroMPA的作用超出单纯的数据拟合。代码已在https://github.com/MengzhouLu/RetroMPA开源。",
+          "published": "2026-08-17",
+          "author_line": "Mianzhi Liu, Fan Xiao, Zhiliang Yu 等 8 人"
+        },
+        {
+          "id": "chemrxiv:10.26434/chemrxiv.15007484/v1",
+          "channel": "aixchem",
+          "related_channels": [
+            "aixmath"
+          ],
+          "item_type": "paper",
+          "source": "ChemRxiv",
+          "title": "Integrating Multi-Task Surrogate Modelling with Reinforcement Learning for Autonomous CO2 Reduction Catalyst Discovery: A Proof-of-Concept Framework",
+          "url": "https://doi.org/10.26434/chemrxiv.15007484/v1",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Samrat Chakraborty"
+          ],
+          "language": "en",
+          "abstract_or_text": "Computational design of heterogeneous catalysts for CO2 reduction remains constrained by the prohibitive cost of density functional theory (DFT) calculations and the vast compositional search space of transition-metal alloys. We present a proof-of-concept framework that integrates three AI components: (i) a multi-task neural network surrogate trained on physics-informed synthetic data that simultaneously predicts activation energy (R2 = 0.984), turnover frequency (R2 = 0.984), selectivity (R2 = 0.974), and stability (R2 = 0.559); (ii) a proximal policy optimisation (PPO) agent that autonomously navigates an 18-dimensional action space of metal–facet–alloy compo-sitions, identifying Fe(111) as the top-ranked catalyst within the synthetic model (TOF = 103.93 s−1, selectivity = 0.72); and (iii) an explainability pipeline (SHAP, learned attention, counterfactuals) that recovers the dband centre as the dominant descriptor—providing an internal-consistency check on the physics encoded in the data generator. All synthetic targets are grounded in established computational catalysis models: Sabatierprinciple volcano curves, Brønsted–Evans–Polanyi rela-tions, and a dual-volcano competitive-kinetics selectivity model for CO2RR versus HER. We discuss the frame-work’s limitations—including the discrepancy between our synthetic prediction and experimental Faradaic-efficiency trends—with full transparency and propose a path toward DFT-validated deployment.",
+          "summary_zh": "该概念验证框架以物理启发的合成数据训练多任务神经网络代理模型，再由PPO智能体在18维金属—晶面—合金空间中搜索CO2还原催化剂，并以SHAP、注意力和反事实分析解释描述符作用。",
+          "why_it_matters_zh": "工作将代理建模、强化学习与可解释性整合到催化剂搜索，且作者明确承认合成预测与实验Faradaic效率趋势不符。结果尚未得到DFT或实验验证，因此当前价值主要在于提出可检验的流程。",
+          "quality_score": 76.0,
+          "tags": [
+            "方法与模型"
+          ],
+          "evidence_flags": [
+            "experimental"
+          ],
+          "publication_status": "preprint",
+          "rank": 6,
+          "featured": false,
+          "category": "方法与模型",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.26434/chemrxiv.15007484/v1",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "用于CO2还原的多相催化剂计算设计，仍受制于密度泛函理论（DFT）计算的高昂成本以及过渡金属合金庞大的组成搜索空间。我们提出一个概念验证框架，整合三个AI组件：（i）在物理启发合成数据上训练的多任务神经网络代理模型，同时预测活化能（R2 = 0.984）、周转频率（R2 = 0.984）、选择性（R2 = 0.974）和稳定性（R2 = 0.559）；（ii）一个proximal policy optimisation（PPO）智能体，在金属—晶面—合金组成的18维动作空间中自主导航，在合成模型内将Fe(111)识别为排名第一的催化剂（TOF = 103.93 s−1，选择性 = 0.72）；以及（iii）一个可解释性流程（SHAP、学习到的注意力、反事实），它恢复d band centre为主导描述符，从而对数据生成器中编码的物理提供内部一致性检验。所有合成靶标都以既有计算催化模型为基础：Sabatier principle volcano curves、Brønsted–Evans–Polanyi relations，以及用于CO2RR与HER的dual-volcano competitive-kinetics选择性模型。我们以完全透明的方式讨论该框架的局限性——包括合成预测与实验Faradaic-efficiency趋势之间的差异——并提出通向经DFT验证部署的路径。",
+          "published": "2026-08-17",
+          "author_line": "Samrat Chakraborty"
+        },
+        {
+          "id": "arxiv:2608.15900v1",
+          "channel": "aixchem",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "arXiv",
+          "title": "Crystal-structure design by agentic AI in a language of motifs",
+          "url": "https://arxiv.org/abs/2608.15900v1",
+          "published_at": "2026-08-16",
+          "updated_at": "2026-08-16",
+          "creators": [
+            "Dinh-Khiet Le",
+            "Minh-Quyet Ha",
+            "Hong-Phuc Vu-Dinh",
+            "Takashi Miyake",
+            "Hiori Kino",
+            "Hieu-Chi Dam"
+          ],
+          "language": "en",
+          "abstract_or_text": "Data-driven materials discovery interpolates more reliably than it extrapolates and seldom reaches new structure types. We present MatEvolve, an agentic-AI framework designing crystals, proposing each candidate with a stated rationale and testing it. The agent reasons in an interpretable language of motifs, writing each crystal as a motif profile that describes the recurring geometric patterns---the motifs---composing it. The motif profile serves not merely as a description of a material but as the medium for material design: the agent edits the profile and constructs a crystal from the modified one, and the most promising candidates are validated by first-principles calculation. Applied to the design of rare-earth-lean permanent magnets, MatEvolve---built on the state-of-the-art language model Claude Fable~5 without fine-tuning---reaches new structural prototypes more than three times as often as generative models under an equal validation budget, at a comparable on-target-magnet rate. Beyond design, analysing the discovered crystals' human-readable profiles reveals structure--property relationships.",
+          "summary_zh": "MatEvolve以可读的结构母题描述晶体，令智能体修改母题画像、构建候选晶体并用第一性原理计算验证；在稀土低用量永磁体设计中，其发现新结构原型的频率超过同等验证预算下生成模型的三倍。",
+          "why_it_matters_zh": "该研究将可解释的晶体结构表征直接用于智能体式设计，并用第一性原理计算筛选，适合探索训练分布外材料。其结论基于计算验证及单一应用场景，候选材料的可合成性和实验磁性能尚待确认。",
+          "quality_score": 76.0,
+          "tags": [
+            "方法与模型"
+          ],
+          "evidence_flags": [
+            "state-of-the-art"
+          ],
+          "publication_status": "preprint",
+          "rank": 7,
+          "featured": false,
+          "category": "方法与模型",
+          "metrics": {},
+          "metadata": {
+            "doi": "",
+            "arxiv_id": "2608.15900v1"
+          },
+          "abstract_zh": "数据驱动的材料发现插值通常比外推更可靠，也很少触及新的结构类型。我们提出MatEvolve，一个设计晶体的智能体式AI框架；它为每个候选物提出带有明确理由的方案并进行测试。该智能体以一种可解释的母题语言推理，将每种晶体写为母题画像，描述构成该晶体的反复出现几何模式——即母题。母题画像不仅是材料的描述，也是材料设计的媒介：智能体编辑该画像并从修改后的画像构建晶体，最有前景的候选物由第一性原理计算验证。应用于稀土低用量永磁体设计时，MatEvolve——以最先进语言模型Claude Fable~5构建且未经微调——在相同验证预算下发现新结构原型的频率超过生成模型三倍，同时靶向磁体命中率相当。除设计之外，对所发现晶体的人类可读画像进行分析还揭示了结构—性质关系。",
+          "published": "2026-08-16",
+          "author_line": "Dinh-Khiet Le, Minh-Quyet Ha, Hong-Phuc Vu-Dinh 等 6 人"
+        },
+        {
+          "id": "biorxiv:10.1101/2025.07.20.665723",
+          "channel": "aixchem",
+          "related_channels": [
+            "aixbio"
+          ],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "A contextualised protein language model reveals the functional syntax of bacterial evolution",
+          "url": "https://www.biorxiv.org/content/10.1101/2025.07.20.665723",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Wiatrak, M.",
+            "Abelson, D. C.",
+            "Mikhaylenko, R.",
+            "Vinas Torne, R.",
+            "Ntemourtsidou, M.",
+            "Dinan, A. M.",
+            "Arora, D.",
+            "Horsfield, S. T.",
+            "Lees, J.",
+            "Brbic, M.",
+            "Weimann, A.",
+            "Floto, R. A."
+          ],
+          "language": "en",
+          "abstract_or_text": "Bacteria have evolved a vast diversity of functions and behaviours that are currently incompletely understood and poorly predicted from DNA sequence alone. To understand the syntax of bacterial evolution and discover genome-to-phenotype relationships, we curated over 1.3 million genomes spanning bacterial phylogenetic space, represented each as an ordered sequence of proteins, and used these sequences to train a transformer-based, contextualised protein language model, Bacformer. By pretraining on genome-wide evolutionary patterns, Bacformer captures the compositional and positional relationships of proteins and thereby provides a whole-genome framework for linking genomic organisation and content to measurable bacterial traits. We demonstrate the ability of Bacformer to accurately predict protein-protein interactions; uncover operon structure, which we validated experimentally; infer important phenotypic traits, including antimicrobial resistance, while revealing likely causal genes; and design template synthetic proteomes with desirable properties. Thus, Bacformer establishes a genomic foundation model that reveals the evolutionary rules governing bacterial gene organisation, function, and phenotype, opening a route to systematic whole-genome engineering.",
+          "summary_zh": "Bacformer以130多万个细菌基因组的有序蛋白质序列训练上下文化蛋白语言模型，可预测蛋白—蛋白相互作用、识别经实验验证的操纵子结构、推断抗菌药物耐药性相关基因，并设计具有目标性质的合成蛋白质组模板。",
+          "why_it_matters_zh": "它把蛋白序列语境扩展至全基因组组织，连接细菌进化、基因组结构和表型，对合成生物学具有潜在价值。训练数据覆盖及实验验证令人关注，但表型因果解释和设计蛋白质组在真实菌株中的可行性仍需更充分验证。",
+          "quality_score": 76.0,
+          "tags": [
+            "方法与模型"
+          ],
+          "evidence_flags": [
+            "experimental"
+          ],
+          "publication_status": "preprint",
+          "rank": 8,
+          "featured": false,
+          "category": "方法与模型",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.1101/2025.07.20.665723",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "细菌已演化出目前尚未被完全理解、也难以仅从DNA序列预测的巨大功能和行为多样性。为理解细菌进化的语法并发现基因组到表型的关系，我们整理了覆盖细菌系统发育空间的130多万个基因组，将每个基因组表示为有序的蛋白质序列，并利用这些序列训练了基于Transformer的上下文化蛋白语言模型Bacformer。通过在全基因组尺度的进化模式上预训练，Bacformer捕捉蛋白质的组成和位置关系，从而提供将基因组组织和内容与可测量细菌性状联系起来的全基因组框架。我们展示了Bacformer准确预测蛋白—蛋白相互作用的能力；发现操纵子结构，并对此进行了实验验证；推断包括抗菌药物耐药性在内的重要表型，同时揭示可能的因果基因；以及设计具有理想性质的模板合成蛋白质组。因此，Bacformer建立了一个基因组基础模型，揭示控制细菌基因组织、功能和表型的进化规律，为系统性全基因组工程开辟了路径。",
+          "published": "2026-08-17",
+          "author_line": "Wiatrak, M., Abelson, D. C., Mikhaylenko, R. 等 12 人"
+        },
+        {
+          "id": "biorxiv:10.1101/2025.07.21.665832",
+          "channel": "aixchem",
+          "related_channels": [
+            "aixbio",
+            "aixmath"
+          ],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "Modality-chain reasoning enables multimodal protein modelling and design",
+          "url": "https://www.biorxiv.org/content/10.1101/2025.07.21.665832",
+          "published_at": "2026-08-18",
+          "updated_at": "2026-08-18",
+          "creators": [
+            "Liu, C.",
+            "Chao, L.",
+            "Ji, S.",
+            "Wang, H.",
+            "Zhou, G.",
+            "Zheng, J.",
+            "Hong, D.",
+            "Guo, Y.",
+            "Jiang, T.",
+            "Gao, Z.",
+            "Yang, M.",
+            "Pan, J.",
+            "Li, S. Z.",
+            "Zhang, X."
+          ],
+          "language": "en",
+          "abstract_or_text": "Reasoning has emerged as a central capability of large language models, yet how it should be formulated for scientific foundation models remains unclear because scientific knowledge is distributed across interdependent, domain-specific representations. Here we introduce modality-chain reasoning, which organizes representations into ordered computational chains, each conditioning prediction or generation of the next. Based on this principle, we develop ProteinReasoner, a multimodal generative protein foundation model that sequentially connects amino acid sequence, evolutionary constraints and three-dimensional structure within a shared autoregressive architecture. Across zero-shot structure prediction, inverse folding and fitness prediction, ProteinReasoner outperformed two multimodal protein foundation models, while controlled comparisons supported the functional contribution of the modality chain. We further extended this principle beyond pretraining: reorganizing the chain across successive structural states enabled multiple-conformation prediction, while introducing experimental feedback as an additional modality enabled an in-context learning paradigm for protein optimization without target-specific parameter updates. In particular, across thermostability and affinity-maturation evaluations, this paradigm improved over matched fine-tuned models and showed stronger mean performance than target-specific active-learning baselines. These results establish modality-chain reasoning as a unified and effective foundation-modelling strategy in protein science. More broadly, they suggest a general route towards reasoning across interdependent representations in other scientific domains.",
+          "summary_zh": "ProteinReasoner将氨基酸序列、进化约束和三维结构按顺序连接，在零样本结构预测、逆折叠和适应度预测中优于两种多模态蛋白基础模型；进一步通过结构状态和实验反馈支持多构象预测及无需靶标微调的蛋白优化。",
+          "why_it_matters_zh": "该工作提出了把科学对象的关联表征组织为推理序列的通用思路，并在蛋白稳定性和亲和力成熟任务中给出比较。结果主要是模型评测，实验反馈的来源、适用靶标范围和候选蛋白的湿实验成功率仍需审慎考察。",
+          "quality_score": 73.0,
+          "tags": [
+            "方法与模型"
+          ],
+          "evidence_flags": [
+            "experimental",
+            "evaluation",
+            "performance"
+          ],
+          "publication_status": "preprint",
+          "rank": 9,
+          "featured": false,
+          "category": "方法与模型",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.1101/2025.07.21.665832",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "推理已成为大语言模型的一项核心能力，但由于科学知识分布在相互依赖、特定领域的表征之中，尚不清楚应如何为科学基础模型构建推理。本文提出模态链推理，它将表征组织为有序的计算链，每一步都对下一步的预测或生成施加条件。基于这一原则，我们开发ProteinReasoner，一个多模态生成式蛋白质基础模型，它在共享的自回归架构中依次连接氨基酸序列、进化约束和三维结构。在零样本结构预测、逆折叠和适应度预测中，ProteinReasoner优于两个多模态蛋白质基础模型，受控比较支持模态链的功能贡献。我们还将这一原则扩展至预训练之外：跨连续结构状态重组该链，实现了多构象预测；而将实验反馈引入为额外模态，则实现了一种无需靶标特异参数更新的、用于蛋白质优化的上下文学习范式。特别是，在热稳定性和亲和力成熟评估中，这一范式优于匹配的微调模型，并显示出强于靶标特异主动学习基线的平均性能。这些结果确立了模态链推理作为蛋白质科学中统一且有效的基础建模策略。更广泛地说，它们提示了在其他科学领域中跨相互依赖表征进行推理的一条通路。",
+          "published": "2026-08-18",
+          "author_line": "Liu, C., Chao, L., Ji, S. 等 14 人"
+        },
+        {
+          "id": "chemrxiv:10.26434/chemrxiv.15007551/v1",
+          "channel": "aixchem",
+          "related_channels": [
+            "aixbio"
+          ],
+          "item_type": "paper",
+          "source": "ChemRxiv",
+          "title": "LASSBio-classFLOW: A Semi-Automated KNIME Workflow for Classification Model Benchmarking and Virtual Screening",
+          "url": "https://doi.org/10.26434/chemrxiv.15007551/v1",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-18",
+          "creators": [
+            "Pedro de Sena Murteira Pinheiro",
+            "Jefferson Muniz Alves da Silva",
+            "Bárbara da Silva Mascarenhas de Jesus",
+            "Daniel Alencar Rodrigues",
+            "Lídia Moreira Lima"
+          ],
+          "language": "en",
+          "abstract_or_text": "Machine learning–based quantitative structure–activity relationship (ML-QSAR) modeling requires consistent data preparation, validation, and model comparison. We present LASSBio-classFLOW, an open, modular, and semi-automated KNIME workflow for classification-based ligand screening. It integrates basic molecular structure preparation, configurable class assignment, descriptors and fingerprints calculation, dataset partitioning, hyperparameter optimization of nine algorithms, interactive performance evaluation, user-guided model selection, and external-library prediction. As an example, the workflow was evaluated using 1,408 ROCK2 compounds from ChEMBL (218 active and 1,190 inactive). Models were trained and optimized by five-fold crossvalidation and evaluated on a held-out 20% test set. Support vector machine (SVM) and k-nearest neighbors (kNN) provided the most consistent results across both stages. On the held-out set, SVM favored active-class precision (0.861), whereas kNN achieved higher active recall (0.750). LASSBio-classFLOW (available at https://github.com/pedrosenamp/LASSBio-classFLOW_v1.0.git) therefore provides a transparent, reusable environment for benchmarking, comparative ML-QSAR development and flexible deployment, while preserving user control over model selection and screening decisions.",
+          "summary_zh": "LASSBio-classFLOW是开放、模块化的KNIME分类QSAR工作流，覆盖结构准备、特征计算、数据划分、九种算法的优化与外部库预测；在1408个ROCK2化合物案例中，SVM和kNN在留出集上表现最稳定。",
+          "why_it_matters_zh": "它将常被分散处理的QSAR建模步骤整理为可复用且保留用户选择的流程，有利于透明比较模型。演示数据集中活性类别不平衡，且目前仅展示单一靶标，跨靶标的稳健性和筛选前瞻命中率尚未得到证明。",
+          "quality_score": 73.0,
+          "tags": [
+            "分子与药物发现"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "dataset",
+            "github",
+            "evaluation",
+            "performance"
+          ],
+          "publication_status": "preprint",
+          "rank": 10,
+          "featured": false,
+          "category": "分子与药物发现",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.26434/chemrxiv.15007551/v1",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "基于机器学习的定量构效关系（ML-QSAR）建模需要一致的数据准备、验证和模型比较。我们提出LASSBio-classFLOW，一个开放、模块化、半自动的基于KNIME的分类配体筛选工作流。它整合基本分子结构准备、可配置的类别分配、描述符和指纹计算、数据集划分、九种算法的超参数优化、交互式性能评估、用户引导的模型选择及外部文库预测。作为示例，该工作流采用来自ChEMBL的1,408个ROCK2化合物进行评估（218个活性化合物和1,190个非活性化合物）。模型通过五折交叉验证训练和优化，并在留出的20%测试集上评估。支持向量机（SVM）和k近邻（kNN）在两个阶段均给出最一致的结果。在留出集上，SVM具有更高的活性类别精确率（0.861），而kNN实现了更高的活性召回率（0.750）。因此，LASSBio-classFLOW（可在https://github.com/pedrosenamp/LASSBio-classFLOW_v1.0.git获取）提供了透明、可复用的环境，用于基准测试、比较性ML-QSAR开发和灵活部署，同时保留用户对模型选择和筛选决策的控制。",
+          "published": "2026-08-17",
+          "author_line": "Pedro de Sena Murteira Pinheiro, Jefferson Muniz Alves da Silva, Bárbara da Silva Mascarenhas de Jesus 等 5 人"
+        },
+        {
+          "id": "chemrxiv:10.26434/chemrxiv.15007535/v1",
+          "channel": "aixchem",
+          "related_channels": [
+            "aixbio",
+            "aixmath"
+          ],
+          "item_type": "paper",
+          "source": "ChemRxiv",
+          "title": "PROBE: An Executable Physics-Validation Benchmark for LLM-Generated Process Model Code",
+          "url": "https://doi.org/10.26434/chemrxiv.15007535/v1",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-18",
+          "creators": [
+            "Nikhil Jayanth",
+            "Alexander Grunwald"
+          ],
+          "language": "en",
+          "abstract_or_text": "Large language models (LLMs) are increasingly proposed as assistants for chemical process modeling, yet existing benchmarks grade them with LLM judges, which are lenient and not reproducible. We introduce PROBE, an executable benchmark that scores LLM-generated first-principles process models objectively, and report an initial pilot study across ten reference tasks. PROBE evaluates contract-bound implementation—turning a specified model into correct, simulable code under a fixed input/output contract—rather than unconstrained model formulation from an underspecified engineering description. Each generated model is checked on five levels—runnability, dimensional consistency (units), structural correctness against a reference derivative field, physical invariants (mass/energy conservation, boundary and limit behavior), and numerical agreement with a reference simulation—with no LLM judges. The benchmark spans ordinary-differential problems (reactors with mass and energy balances), a differentialalgebraic problem (vapor–liquid flash / MESH equations), and a coupled multi-unit flowsheet with recycle. The benchmark comprises ten problems: six canonical textbook unit operations, a harder tier (a method-of-lines plug-flow reactor, i.e. a distributed-parameter PDE; the Van de Vusse multiple-reaction network; and a non-ideal flash with NRTL activity coefficients), and one procedurally generated reaction network that appears in no textbook. All models—frontier and local—are evaluated under one protocol: a single prompt, no tools, no iterative revision, five samples each. Two findings emerge. First, within the scope of PROBE the three Claude models (Opus 4.8, Sonnet 5, and the low-cost Haiku 4.5) are strikingly reliable: across all ten problems we observed no failure in 150 generations (50 each), an upper 95% bound of ≈ 2% on the pergeneration failure rate by the rule of three—under a pooled Bernoulli interpretation restricted to this evaluated mixture of models and tasks, not a rate to be generalized to unseen processmodeling problems. This holds on the harder tier and on the procedurally generated network alike, and—notably—the inexpensive Haiku 4.5 is as reliable as the flagship models, so frontiergrade performance on these tasks is available at a low-cost tier. Google Gemini 2.5 Flash is near-ceiling as well, dipping only on the non-ideal NRTL flash and on a reproducible parameternaming slip, so the reliability spans two vendors. This is not what judge-based benchmarks report, and the novel-network result argues against mere memorization. We are careful not to claim that LLMs have “solved” process modeling: the evidence is that, on first-principles unit operations with a fixed input/output contract, current frontier models rarely make physics errors—not a statement about full industrial flowsheets or free-form modeling. Second, the correctness gap is concentrated in smaller, locally deployable models (3–14 B), whose outputs are moreover highly stochastic. While a physics-validation feedback loop can produce striking within-conversation repairs, at a matched generation budget we found no evidence, in this limited experiment, that it outperforms simply resampling and keeping the best-scoring candidate (paired Wilcoxon signed-rank: no significant difference). That comparison is made essential by the same stochasticity, which also renders single-run evaluations of such loops misleading. In one controlled comparison, adding a reasoning trace did not close the gap either: a single samesize open reasoning model lifted the mean only marginally over its non-reasoning counterpart, still failed the flash on the identical contract-naming slip, and on some hard problems reasoned past a large token budget without ever emitting an answer—consistent with capability, rather than the amount of feedback or inference-time computation, being the binding constraint on these models.",
+          "summary_zh": "PROBE以可执行的物理验证评价LLM生成的化工过程模型代码，检查可运行性、单位一致性、结构正确性、物理不变量和数值一致性。在十项任务试验中，三种Claude模型的150次生成均未失败，但小型本地模型仍存在显著差距。",
+          "why_it_matters_zh": "相较由LLM裁判的评测，PROBE给出更可复现的过程模型正确性标准，并清楚限定了测试合同。数据规模仅十题、模型调用无工具且无迭代，不能据此推及自由形式建模或工业级全流程设计。",
+          "quality_score": 73.0,
+          "tags": [
+            "方法与模型"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "evaluation",
+            "performance"
+          ],
+          "publication_status": "preprint",
+          "rank": 11,
+          "featured": false,
+          "category": "方法与模型",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.26434/chemrxiv.15007535/v1",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "大语言模型（LLM）日益被提议作为化学过程建模助手，但现有基准采用LLM裁判评分，较为宽松且不可复现。我们引入PROBE，一个以客观方式为LLM生成的第一性原理过程模型评分的可执行基准，并报告了涵盖十项参考任务的初步试验研究。PROBE评估受契约约束的实现——在固定输入/输出契约下将指定模型转化为正确、可模拟的代码——而不评估从欠明确工程描述中自由构建模型。每个生成模型在五个层面接受检验：可运行性、量纲一致性（单位）、相对于参考导数场的结构正确性、物理不变量（质量/能量守恒、边界和极限行为）以及与参考模拟的数值一致性；不使用LLM裁判。该基准涵盖常微分问题（具有质量和能量衡算的反应器）、微分代数问题（汽液闪蒸/MESH方程）以及带回流的耦合多单元流程图。该基准包含十个问题：六个经典教材单元操作、一个更难层级（method-of-lines plug-flow reactor，即分布参数PDE；Van de Vusse多反应网络；以及具有NRTL活度系数的非理想闪蒸），以及一个未出现在任何教材中的程序生成反应网络。所有模型——前沿模型和本地模型——均在同一协议下评估：单一提示、无工具、无迭代修订，每项五个样本。出现两个发现。第一，在PROBE范围内，三个Claude模型（Opus 4.8、Sonnet 5和低成本Haiku 4.5）极其可靠：在全部十个问题的150次生成中（每个50次）我们未观察到失败；按three rule，在仅限于所评估模型和任务混合的汇总Bernoulli解释下，单次生成失败率的95%上限约为2%，并非可推广到未见过程建模问题的比率。这一结果同样在更难层级和程序生成网络中成立；值得注意的是，低价Haiku 4.5与旗舰模型一样可靠，因此这些任务上的前沿级性能可在低成本档位获得。Google Gemini 2.5 Flash也接近上限，只在非理想NRTL闪蒸和一个可复现的参数命名失误上下降，因此这种可靠性跨越两个供应商。这与基于裁判的基准所报告的情况不同，而新网络结果反对仅仅记忆的解释。我们谨慎地不宣称LLM已经“解决”过程建模：证据表明，在具有固定输入/输出契约的第一性原理单元操作上，当前前沿模型很少犯物理错误；这并非关于完整工业流程或自由形式建模的陈述。第二，正确性差距集中于较小、可本地部署的模型（3–14 B），而且它们的输出高度随机。尽管物理验证反馈循环可在单次对话中产生显著修正，但在匹配的生成预算下，我们在这项有限实验中没有证据表明它优于简单重采样并保留最高分候选物（配对Wilcoxon signed-rank：无显著差异）。这种比较因同一随机性而必不可少，随机性也使这类循环的单次运行评估具有误导性。在一项受控比较中，加入推理轨迹也未缩小差距：一个同尺寸开放推理模型的平均水平仅略高于其非推理对应物，仍因相同的契约命名失误而无法完成闪蒸；并且在某些困难问题上，它超过大量token预算进行推理却从未输出答案——这与能力而非反馈量或推理时计算量是这些模型限制因素的判断一致。",
+          "published": "2026-08-17",
+          "author_line": "Nikhil Jayanth, Alexander Grunwald"
+        },
+        {
+          "id": "chemrxiv:10.26434/chemrxiv.15007499/v1",
+          "channel": "aixchem",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "ChemRxiv",
+          "title": "Agentic AI in Process Analytical Technology: LLM Assistants for Chemometric Workflows",
+          "url": "https://doi.org/10.26434/chemrxiv.15007499/v1",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Jan G. Rittig",
+            "Luise F. Kaven",
+            "Philippe Schwaller"
+          ],
+          "language": "en",
+          "abstract_or_text": "Modern manufacturing in chemical and pharmaceutical industries increasingly depends on real-time analytical insight to maintain quality, safety, and flexibility. Yet, turning process measurements into actionable analyses still depends on scarce chemometric expertise and manual workflows. Herein, we adapt agentic AI to the process analytical technology (PAT) domain by developing PAT agents that combine large language models (LLMs) with validated open-source and commercial chemometric software, including RamanSPy, SpectroChemPy and PEAXACT, under a multi-agent orchestrator. We benchmark the agents on nine real-world Raman data-analytics tasks of varying complexity, across three user personas, and several LLM backbones. The PAT agents with frontier LLMs solve analytical tasks at 93–96% pass rate, while numerical claims are grounded in actual tool outputs, and are thus physically consistent and reliable. The agents translate individual user requests into adaptive analytical workflows, halt and request clarification on inconsistent inputs, and remain reviewable through structured logs of every tool call and state transition. These results establish PAT agents as transparent digital coworkers that expand access to advanced process analytics and support more adaptive, data-rich manufacturing, while expert chemometric oversight remains critical for industrial deployment.",
+          "summary_zh": "研究为过程分析技术开发PAT agents，将LLM与RamanSPy、SpectroChemPy、PEAXACT等化学计量学软件结合；在九项真实Raman数据分析任务中，前沿LLM版本的通过率为93–96%，并记录工具调用与状态转换。",
+          "why_it_matters_zh": "该系统把大模型的任务编排与实际数值工具输出结合，针对化工和制药制造中的光谱分析有直接应用。基准任务数量有限，且工业部署仍依赖专家对数据质量、校准迁移和合规要求的审查。",
+          "quality_score": 73.0,
+          "tags": [
+            "方法与模型"
+          ],
+          "evidence_flags": [
+            "benchmark"
+          ],
+          "publication_status": "preprint",
+          "rank": 12,
+          "featured": false,
+          "category": "方法与模型",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.26434/chemrxiv.15007499/v1",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "化学和制药行业的现代制造日益依赖实时分析洞见，以维持质量、安全性和灵活性。然而，将过程测量转化为可操作分析仍依赖稀缺的化学计量学专业知识和手工工作流程。本文将智能体式AI适配至过程分析技术（PAT）领域，开发PAT agents；它们在多智能体编排器下，将大语言模型（LLM）与经过验证的开源和商业化学计量学软件结合，包括RamanSPy、SpectroChemPy和PEAXACT。我们在九项复杂度不同的真实Raman数据分析任务上，针对三种用户角色和多种LLM骨干模型，对这些智能体进行基准测试。使用前沿LLM的PAT agents在分析任务上达到93–96%的通过率，而数值性结论以实际工具输出为依据，因此在物理上保持一致且可靠。这些智能体将单个用户请求转化为自适应分析工作流程，在输入不一致时停止并请求澄清，并通过每次工具调用和状态转换的结构化日志保持可审查性。这些结果确立PAT agents为透明的数字协作者，可扩大先进过程分析的可及性，并支持更具适应性、数据更丰富的制造；同时，工业部署仍亟需化学计量学专家监督。",
+          "published": "2026-08-17",
+          "author_line": "Jan G. Rittig, Luise F. Kaven, Philippe Schwaller"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.13.744613",
+          "channel": "aixchem",
+          "related_channels": [
+            "aixbio"
+          ],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "Causally-inspired meta-representation learning framework for predicting patient-specific clinical responses to drug combinations",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.13.744613",
+          "published_at": "2026-08-18",
+          "updated_at": "2026-08-18",
+          "creators": [
+            "Zhang, Q.-Q.",
+            "Zhang, S.-W.",
+            "Shi, M.-H.",
+            "Li, J.-N.",
+            "Qiang, Y.-R.",
+            "Zhang, T.-H."
+          ],
+          "language": "en",
+          "abstract_or_text": "Large-scale prediction and assessment of clinical patient responses (i.e., RECIST class) to drug combinations remains challenging due to scarce patient-derived data. The existing prediction methods mainly rely on cancer cell line models. However, substantial biological heterogeneity between cancer cell lines and cancer patients within same tissues, as well as the heterogeneity between one tissue and another, often limit the generalizability of these methods in clinical patients. To overcome these limitations, here we present CaMeRe, a Causally-inspired Meta-representation learning framework designed to predict patient-specific clinical Response to drug combinations. In situations where stable causal factors and domain-specific response-modulating factors are unobservable, explicit discrete domain labels are unavailable, and data is scarce, CaMeRe designed a domain-invariant causal representation learning (DICRL) model guided by the invariant information bottleneck theory and causal intervention invariance principle, and also built a meta-learning framework with bi-level domain generalization to optimize DICRL model for achieving multi-domain generalization within and across tissues. By integrating the causal representation learning and meta learning framework, CaMeRe not only exhibited robust multi-domain generalization performance across multiple clinical drug combination response datasets and PDXs drug combination response datasets and generalization scenarios, but also had better interpretability. We applied CaMeRe to predict drug-combination response scores for 3,423 patients across 542,080 drug combinations. The predicted scores were significantly associated with biomarkers of known drug combinations and enabled the prioritization of candidate drug combinations across 11 cancer types, with stronger support from literature and clinical trial evidences than random baselines. We believe that CaMeRe can be a useful tool for predicting large-scale clinical individual drug combination responses and it has broad clinical applications.",
+          "summary_zh": "CaMeRe通过因果启发的元表征学习预测患者特异性联合用药反应，在多个临床和PDX数据集上进行泛化评估；模型为3423名患者的542080种药物组合预测反应评分，并在11种癌症中优选候选组合。",
+          "why_it_matters_zh": "它试图缩小细胞系与真实患者之间的异质性差距，并把组合疗法搜索推进到患者层面。因果稳定因素并未直接观测，临床关联和文献支持也不能等同于前瞻性疗效，仍需要独立临床验证。",
+          "quality_score": 71.0,
+          "tags": [
+            "分子与药物发现"
+          ],
+          "evidence_flags": [
+            "dataset",
+            "clinical",
+            "performance"
+          ],
+          "publication_status": "preprint",
+          "rank": 13,
+          "featured": false,
+          "category": "分子与药物发现",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.13.744613",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "由于患者来源数据稀缺，大规模预测和评估患者对药物组合的临床反应（即RECIST类别）仍具挑战。现有预测方法主要依赖癌细胞系模型。然而，同一组织内癌细胞系与癌症患者之间存在显著生物异质性，以及不同组织之间的异质性，往往限制这些方法在临床患者中的泛化能力。为克服这些局限，本文提出CaMeRe，一个因果启发的元表征学习框架，旨在预测患者特异性药物组合临床反应。在稳定因果因素和领域特异反应调节因素不可观测、明确离散领域标签不可获得且数据稀缺的情形下，CaMeRe设计了一个由不变信息瓶颈理论和因果干预不变性原则指导的领域不变因果表征学习（DICRL）模型，并构建了具有双层领域泛化的元学习框架，以优化DICRL模型，从而在组织内和跨组织实现多领域泛化。通过整合因果表征学习和元学习框架，CaMeRe不仅在多个临床药物组合反应数据集、PDXs药物组合反应数据集及泛化情形中表现出稳健的多领域泛化性能，而且具有更好的可解释性。我们应用CaMeRe为3,423名患者的542,080种药物组合预测反应评分。预测评分与已知药物组合的生物标志物显著相关，并可在11种癌症类型中优选候选药物组合；与随机基线相比，得到更多文献和临床试验证据支持。我们相信CaMeRe可成为预测大规模临床个体药物组合反应的有用工具，并具有广泛临床应用。",
+          "published": "2026-08-18",
+          "author_line": "Zhang, Q.-Q., Zhang, S.-W., Shi, M.-H. 等 6 人"
+        },
+        {
+          "id": "chemrxiv:10.26434/chemrxiv.15007565/v1",
+          "channel": "aixchem",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "ChemRxiv",
+          "title": "High-Throughput DNA Sequence Space Exploration for Carbon Nanotube Biosensor Design",
+          "url": "https://doi.org/10.26434/chemrxiv.15007565/v1",
+          "published_at": "2026-08-18",
+          "updated_at": "2026-08-18",
+          "creators": [
+            "Magdalena Theresia Kuom",
+            "Phillip Galonska",
+            "Sayantani Chakraborty",
+            "Simon van Impel",
+            "Lela Vukovic",
+            "Sebastian Kruss"
+          ],
+          "language": "en",
+          "abstract_or_text": "Fluorescent single-walled carbon nanotubes (SWCNTs) can be non-covalently functionalized with biopolymers such as DNA to create biosensors. Noncovalent functionalization promises a vast design space, but synthesis is limited by low-throughput dispersion steps. Here, we present a high-throughput SWCNT-based platform that utilizes covalent DNAanchor chemistry to recruit ssDNA recognition motifs via hybridization. The approach circumvents low throughput processing steps such as sonication or centrifugation. By integrating automated liquid handling and spectroscopy, we bypass traditional fabrication bottlenecks and synthesize 180 unique sensors and test 540 analyte/sensor conditions in less than three days. This accelerated workflow generates large datasets that are combined with an iterative machine learning (ML) pipeline. We demonstrate the versatility of this approach by evolving sensors with enhanced sensitivity for the neurotransmitter dopamine over common interfering molecules such as ascorbic acid in complex media. Through iterative rounds of ML-driven prediction and synthesis, we establish a scalable framework for rapid synthesis of functional nanosensors and increase the sensitivity for dopamine for up to 89 % of the evolved sensors. This strategy bridges the gap between the vast DNA sequence space and the generation of sensor variants, offering a scalable path to next-generation sensors.",
+          "summary_zh": "该平台以共价DNA锚定和杂交招募ssDNA识别序列，自动合成180种SWCNT传感器并测试540个分析物/传感器条件；结合迭代ML预测和合成，使多达89%的进化传感器对多巴胺的灵敏度提高。",
+          "why_it_matters_zh": "研究把高通量化学制备、光谱测量和机器学习迭代结合，为DNA序列空间中的纳米传感器优化提供了真实实验数据。结果聚焦多巴胺及特定干扰物，复杂生物样本中的选择性、重复性和批间稳定性仍需进一步检验。",
+          "quality_score": 71.0,
+          "tags": [
+            "分子与药物发现"
+          ],
+          "evidence_flags": [
+            "dataset"
+          ],
+          "publication_status": "preprint",
+          "rank": 14,
+          "featured": false,
+          "category": "分子与药物发现",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.26434/chemrxiv.15007565/v1",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "荧光单壁碳纳米管（SWCNTs）可通过DNA等生物聚合物进行非共价功能化，以构建生物传感器。非共价功能化提供了巨大的设计空间，但合成受制于低通量分散步骤。本文提出一种基于SWCNT的高通量平台，利用共价DNAanchor化学，通过杂交招募ssDNA识别基序。该方法绕开了超声或离心等低通量处理步骤。通过整合自动液体处理和光谱学，我们绕过传统制造瓶颈，在不足三天内合成180种独特传感器，并测试540个分析物/传感器条件。这一加速工作流程生成大型数据集，并将其与迭代机器学习（ML）流程结合。我们通过进化对神经递质多巴胺具有更高灵敏度、且能应对复杂介质中抗坏血酸等常见干扰分子的传感器，展示该方法的通用性。经由ML驱动预测和合成的迭代轮次，我们建立了一个可扩展框架，用于快速合成功能纳米传感器，并使多达89%的进化传感器对多巴胺的灵敏度提高。这一策略弥合了巨大DNA序列空间与传感器变体生成之间的差距，为下一代传感器提供可扩展路径。",
+          "published": "2026-08-18",
+          "author_line": "Magdalena Theresia Kuom, Phillip Galonska, Sayantani Chakraborty 等 6 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.16.745124",
+          "channel": "aixchem",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "TRACER navigates rearrangement-driven sesterterpene chemical space via multimodal enzyme-product representation learning",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.16.745124",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Xing, C.",
+            "Lv, K.",
+            "Zhang, W.",
+            "Chen, Y.",
+            "Lan, K.",
+            "Zhu, G.",
+            "Zhu, B.",
+            "Shen, S.-M.",
+            "Zhang, X.",
+            "Gu, Y.",
+            "Guo, Y.-W.",
+            "Oikawa, H.",
+            "Hsiang, T.",
+            "Zhang, L.",
+            "Li, Y.",
+            "Jiang, L.",
+            "Liu, X."
+          ],
+          "language": "en",
+          "abstract_or_text": "Skeletal rearrangement drives the immense structural complexity of terpene, yet predicting it remains a formidable challenge due to sequence-function decoupling in terpene synthases. Here, we established TRACER (terpene rearrangement annotation via co-attentive enzyme-product representation), a multimodal framework mapping the latent associations between sequence-derived enzyme representations and product chemotypes. Retrospective validation proved TRACER's exceptional precision in predicting compound classes and discriminating skeletal rearrangement (SR) from non-skeletal rearrangement (NSR) pathways. TRACER-guided genome mining characterized two bifunctional synthases, FsPS and AcPS, uncovering four unprecedented carbon skeletons. Density functional theory calculations deciphered these cyclization cascades, pinpointing a critical 5/6/11 tricyclic intermediate as the key branching node for scaffold diversification. Mutagenesis and molecular dynamics simulations suggested that E305 in FsPS enables rearrangement by maintaining active-site water exclusion, whereas its alanine mutation causes premature carbocation quenching. Collectively, this work establishes a predictive paradigm for the rational discovery and mechanistic elucidation of complex terpene architectures.",
+          "summary_zh": "TRACER通过酶序列表示与产物化学型的多模态协同注意力学习预测萜烯骨架重排；基因组挖掘发现FsPS和AcPS两种双功能合酶及四种未见报道的碳骨架，并以DFT、突变和MD分析其机制。",
+          "why_it_matters_zh": "该研究将预测模型、天然产物发现和机理化学结合，给出了新骨架与关键残基的多种证据。模型的回顾性验证未给出外部前瞻发现率，且E305作用主要由模拟和突变推断，尚可借助更直接结构证据加固。",
+          "quality_score": 71.0,
+          "tags": [
+            "结构与生物"
+          ],
+          "evidence_flags": [],
+          "publication_status": "preprint",
+          "rank": 15,
+          "featured": false,
+          "category": "结构与生物",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.16.745124",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "骨架重排造成了萜烯巨大的结构复杂性，但由于萜烯合酶中序列与功能脱耦，预测它仍是一项严峻挑战。本文建立TRACER（terpene rearrangement annotation via co-attentive enzyme-product representation），一个映射序列导出酶表示与产物化学型之间潜在关联的多模态框架。回顾性验证证明TRACER在预测化合物类别以及区分骨架重排（SR）与非骨架重排（NSR）路径方面具有卓越精度。TRACER引导的基因组挖掘表征了两种双功能合酶FsPS和AcPS，发现四种前所未有的碳骨架。密度泛函理论计算阐明了这些环化级联反应，确定一个关键的5/6/11三环中间体为骨架多样化的关键分支节点。突变和分子动力学模拟表明，FsPS中的E305通过维持活性位点水排除而实现重排，而其丙氨酸突变导致碳正离子过早淬灭。总体而言，这项工作建立了一个用于复杂萜烯结构合理发现和机制阐明的预测范式。",
+          "published": "2026-08-17",
+          "author_line": "Xing, C., Lv, K., Zhang, W. 等 17 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.11.744178",
+          "channel": "aixchem",
+          "related_channels": [
+            "aixbio"
+          ],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "Assessing Codon Language Models for Context-Aware Codon Optimization in Nucleic Acid-Based Medicines",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.11.744178",
+          "published_at": "2026-08-16",
+          "updated_at": "2026-08-16",
+          "creators": [
+            "Toneyan, S.",
+            "Scholz, K.",
+            "De Donno, C.",
+            "Noack, F.",
+            "Auslaender, S.",
+            "Cijsouw, T.",
+            "Payne, J. L."
+          ],
+          "language": "en",
+          "abstract_or_text": "Codon optimization uses synonymous sequence changes to improve the expression and therapeutic performance of nucleic acid-based medicines. Masked language models (MLMs) have recently been proposed as alternatives to traditional, frequency-based codon optimization approaches, yet whether they offer a meaningful advantage over such simpler methods remains unclear. Here we benchmark three prominent MLMs --- CaLM, EnCodon and CodonTransformer --- across backtranslation fidelity, sequence generation and nine molecular phenotype prediction tasks, and experimentally evaluate model-designed sequences using a secreted embryonic alkaline phosphatase (SEAP) reporter. The models differed markedly in amino-acid fidelity and generated distinct synonymous sequence variants. However, no single model performed best across all benchmark tasks and simple sequence features remained competitive in several settings. Our interpretability analysis revealed that the models integrate a large window of codon context for making predictions, as opposed to frequency-based approaches. Our in vitro data showed that MLM-designed variants outperformed conventional and commercial vendor-derived sequences in both transient and stably integrated expression, supporting the models' ability to capture translational context beyond codon frequency. Together, our results establish MLMs as effective and complementary tools for codon optimization and suggest that sampling across multiple models may improve the likelihood of identifying high-performing therapeutic sequences.",
+          "summary_zh": "研究基准比较CaLM、EnCodon和CodonTransformer三种密码子MLM，并以SEAP报告基因实验测试模型设计序列；MLM变体在瞬时和稳定整合表达中优于常规及商业供应商序列。",
+          "why_it_matters_zh": "该工作将蛋白语言模型的密码子优化与体外表达实验证据相连，并显示多模型采样的价值。不同任务没有统一最佳模型，报告基因结果也未充分代表各类核酸药物、递送环境和长期安全性。",
+          "quality_score": 70.0,
+          "tags": [
+            "方法与模型"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "experimental",
+            "performance"
+          ],
+          "publication_status": "preprint",
+          "rank": 16,
+          "featured": false,
+          "category": "方法与模型",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.11.744178",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "密码子优化利用同义序列改变来提高核酸药物的表达和治疗性能。近期有人提出掩码语言模型（MLMs）作为传统基于频率的密码子优化方法的替代方案，但它们是否比这些更简单的方法具有实质优势仍不清楚。本文在回译保真度、序列生成和九项分子表型预测任务上，对三种重要MLM——CaLM、EnCodon和CodonTransformer——进行基准评测，并使用分泌型胚胎碱性磷酸酶（SEAP）报告基因对模型设计的序列进行实验评价。这些模型在氨基酸保真度上明显不同，并生成不同的同义序列变体。然而，没有单一模型在所有基准任务上均表现最佳，且简单序列特征在若干情形中仍具竞争力。我们的可解释性分析显示，与基于频率的方法相比，这些模型在作出预测时整合了大范围的密码子语境。体外数据表明，MLM设计的变体在瞬时表达和稳定整合表达中均优于常规序列和商业供应商来源序列，支持这些模型能够捕捉超出密码子频率的翻译语境。总体而言，我们的结果确立MLM为有效且互补的密码子优化工具，并提示跨多个模型采样可提高发现高性能治疗序列的可能性。",
+          "published": "2026-08-16",
+          "author_line": "Toneyan, S., Scholz, K., De Donno, C. 等 7 人"
+        }
+      ]
+    },
+    {
+      "id": "aixbio",
+      "name": "AI × Bio",
+      "stats": {
+        "fetched": 1183,
+        "candidates": 60,
+        "selected": 14,
+        "sources": {
+          "arXiv": 452,
+          "bioRxiv": 507,
+          "medRxiv": 188,
+          "Europe PMC": 47
+        }
+      },
+      "source_errors": [],
+      "items": [
+        {
+          "id": "biorxiv:10.64898/2026.08.13.744701",
+          "channel": "aixbio",
+          "related_channels": [
+            "aixchem",
+            "aixmath"
+          ],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "Assessing the Reliability of LLM-Generated Phenotype-Genotype Associations Through External Validation",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.13.744701",
+          "published_at": "2026-08-18",
+          "updated_at": "2026-08-18",
+          "creators": [
+            "Sun, C.",
+            "Xin, Y.",
+            "Zeng, S.",
+            "Sunthankar, S. D.",
+            "Su, W.-C.",
+            "Lynn, J.",
+            "Mundo, S.",
+            "Babanejad, M.",
+            "Feng, Q.",
+            "Wei, W.-Q."
+          ],
+          "language": "en",
+          "abstract_or_text": "Background: Phenotype-genotype associations underpin precision medicine by enabling disease prevention, early diagnosis, risk stratification, therapeutic target discovery, and personalized treatment. However, the rapid growth of scientific evidence has made manual curation of these associations increasingly labor-intensive, time-consuming, and incomplete. Large Language Models (LLMs) offer a potential path to scalable genomic generation and synthesis of this knowledge, but their ability to accurately identify phenotype-genotype associations and the extent to which these outputs are supported by established genomic knowledge bases remain unclear. Materials and Methods: Four LLMs, Claude Sonnet 4.6, DeepSeek V4 Flash, Gemini 3 Flash Preview, and GPT-5.5, were benchmarked on six zero-shot task categories covering forward and reverse phenotype-gene and phenotype-SNP generation. A total of 4,196 associations were identified from curated inputs and evaluated through a multistage external verification pipeline comprising phenotype normalization, ontology mapping, genomic identifier validation against Ensembl, and evidence verification using both the GWAS Catalog and OMIM. Associations were assigned a fused evidence level of strong, moderate, weak, or none. Results: Overall, 74.19% of generated associations were matched to at least one external genomic knowledge base; 9.15% received strong support and 54.46% moderate support. Phenotype-gene associations were more verifiable than phenotype-SNP associations (strong or moderate: 67.19% vs 54.06%). Among existing associations, Claude Sonnet 4.6 achieved the highest overall strong or moderate rate (69.2%), followed by GPT-5.5 (65.1%), DeepSeek V4 Flash (61.7%), and Gemini 3 Flash Preview (56.9%). Conclusion: LLMs can support scalable generation of candidate phenotype-genotype associations. Performance varied substantially by relation type and was lower for SNP-level and rare disease associations, highlighting both the limitations of current genomic resources and the need for rigorous validation pipelines. Key words: large language model; clinical genomics; phenotype-genotype association; external validation; genomic knowledge base",
+          "summary_zh": "对四个 LLM 生成表型—基因及表型—SNP 关联的能力开展外部知识库验证；4,196 条关联中 74.19% 可匹配至少一个外部基因组知识库，但强证据比例仅为 9.15%。",
+          "why_it_matters_zh": "为将 LLM 用于临床基因组知识生成提供了可量化的外部验证范式，同时显示 SNP 层面和罕见病关联仍需严格核验。",
+          "quality_score": 86.0,
+          "tags": [
+            "组学与细胞"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "clinical",
+            "performance",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 1,
+          "featured": true,
+          "category": "组学与细胞",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.13.744701",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "背景：表型—基因型关联通过支持疾病预防、早期诊断、风险分层、治疗靶点发现和个体化治疗，构成精准医学的基础。然而，科学证据的快速增长使这些关联的人工整理愈发劳动密集、耗时且不完整。大语言模型（LLMs）为基因组知识的可扩展生成和整合提供了一条潜在路径，但其准确识别表型—基因型关联的能力，以及这些输出得到既有基因组知识库支持的程度，仍不清楚。材料与方法：在六类零样本任务上对 Claude Sonnet 4.6、DeepSeek V4 Flash、Gemini 3 Flash Preview 和 GPT-5.5 四个 LLM 进行了基准测试，任务覆盖正向和反向的表型—基因及表型—SNP 生成。从经整理的输入中识别出共 4,196 条关联，并通过多阶段外部验证流程进行评估，该流程包括表型标准化、本体映射、依据 Ensembl 的基因组标识符验证，以及同时使用 GWAS Catalog 和 OMIM 的证据验证。关联被赋予强、中等、弱或无的融合证据等级。结果：总体而言，74.19% 的生成关联与至少一个外部基因组知识库相匹配；9.15% 获得强支持，54.46% 获得中等支持。表型—基因关联比表型—SNP 关联更易验证（强或中等支持：67.19% 对 54.06%）。在已有的关联中，Claude Sonnet 4.6 的总体强或中等支持率最高，为 69.2%，其后依次为 GPT-5.5（65.1%）、DeepSeek V4 Flash（61.7%）和 Gemini 3 Flash Preview（56.9%）。结论：LLM 可支持候选表型—基因型关联的可扩展生成。性能因关联类型而显著不同，在 SNP 层面和罕见病关联上的表现较低，这凸显了当前基因组资源的局限性及严格验证流程的必要性。关键词：大语言模型；临床基因组学；表型—基因型关联；外部验证；基因组知识库",
+          "published": "2026-08-18",
+          "author_line": "Sun, C., Xin, Y., Zeng, S. 等 10 人"
+        },
+        {
+          "id": "arxiv:2608.16273v1",
+          "channel": "aixbio",
+          "related_channels": [
+            "aixchem",
+            "aixmath"
+          ],
+          "item_type": "paper",
+          "source": "arXiv",
+          "title": "Foresight-England: Development of a National-Scale Generative AI Model of Electronic Health Records for Medical Event Prediction across the COVID-19 Pandemic",
+          "url": "https://arxiv.org/abs/2608.16273v1",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Simon Ellershaw",
+            "Christopher Tomlinson",
+            "Zeljko Kraljevic",
+            "Spiros Denaxas",
+            "Harry Hemingway",
+            "Cathie Sudlow",
+            "Angela M. Wood",
+            "Anoop D. Shah",
+            "Richard Dobson"
+          ],
+          "language": "en",
+          "abstract_or_text": "Foresight-England (Foresight-E) is the first national-scale generative foundation model of electronic health records (EHRs), developed as a research pilot strictly for COVID-19 research. We evaluated its ability to model the direct and indirect effects of the pandemic. Trained from scratch entirely within the NHS England Secure Data Environment, Foresight-E is a 243-million-parameter transformer decoder. It was trained and evaluated on de-identified, longitudinal EHRs of approximately 61 million individuals, integrating primary/secondary care, death registrations, and COVID-19 data. Training and validation used a 90% subset (54.9 million) spanning November 2018 to December 2022; the remaining 10% (6.1 million) was held out for evaluation. Foresight-E models patient timelines autoregressively, predicting the next medical event given their prior history. At inference, it operates zero-shot, predicting any concept in its ~40,000-code vocabulary without task-specific training. Our tokenisation scheme retains the clinical granularity of ICD-10, OPCS-4, and SNOMED CT codes, jointly representing absolute and relative timing. We designed an evaluation framework for 30-day COVID-19 hospitalisation and mortality, including subgroup analyses by demographic factors and vaccination status. To assess generalisation to unseen future data and the pandemic's indirect effects, we tested the model on medical events from 2023 (beyond its training period), benchmarking against logistic regression and XGBoost. As detailed in the Project Status section, NHS England has paused access to data for the Foresight-E project, meaning quantitative results are currently unavailable. Instead, we share our strategy for tokenisation, architecture, training, inference, and evaluation as a methodological template and case study in the challenges of building population-scale EHR foundation models.",
+          "summary_zh": "Foresight-E 描述了一个基于约 6,100 万人去标识化纵向 NHS 电子健康记录训练的 2.43 亿参数生成式模型；数据访问暂停，当前未报告定量结果。",
+          "why_it_matters_zh": "该工作公开了人群尺度 EHR 基础模型的编码、训练和评估设计，但尚不能据此判断预测效能或临床适用性。",
+          "quality_score": 83.0,
+          "tags": [
+            "生物医学与临床"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "clinical",
+            "evaluation",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 2,
+          "featured": true,
+          "category": "生物医学与临床",
+          "metrics": {},
+          "metadata": {
+            "doi": "",
+            "arxiv_id": "2608.16273v1"
+          },
+          "abstract_zh": "Foresight-England（Foresight-E）是首个国家尺度的电子健康记录（EHR）生成式基础模型，作为严格限于 COVID-19 研究的研究试点开发。我们评估了其刻画该疫情直接和间接影响的能力。Foresight-E 完全在 NHS England Secure Data Environment 内从头训练，是一个含 2.43 亿参数的 Transformer 解码器。它在约 6,100 万人的去标识化纵向 EHR 上训练和评估，整合了初级/二级医疗、死亡登记和 COVID-19 数据。训练和验证使用了 2018 年 11 月至 2022 年 12 月期间 90% 的数据子集（5,490 万人）；其余 10%（610 万人）留作评估。Foresight-E 以自回归方式建模患者时间线，根据既往病史预测下一医疗事件。在推理时，它以零样本方式运行，可在其约 40,000 个代码的词表中预测任意概念，无需任务特异性训练。我们的分词方案保留 ICD-10、OPCS-4 和 SNOMED CT 代码的临床粒度，并联合表示绝对和相对时间。我们设计了针对 30 天 COVID-19 住院和死亡的评估框架，包括按人口学因素和疫苗接种状态开展的亚组分析。为评估对未见未来数据的泛化能力及该疫情的间接影响，我们在 2023 年医疗事件上测试模型，将其与逻辑回归和 XGBoost 进行基准比较。正如项目状态部分所详述，NHS England 已暂停 Foresight-E 项目的数据访问，这意味着目前无法提供定量结果。作为替代，我们分享了分词、架构、训练、推理和评估策略，作为构建人群尺度 EHR 基础模型所面临挑战的方法学模板和案例研究。",
+          "published": "2026-08-17",
+          "author_line": "Simon Ellershaw, Christopher Tomlinson, Zeljko Kraljevic 等 9 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.11.744312",
+          "channel": "aixbio",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "Phenotype-associated spatial biomarker discovery in spatial transcriptomics with spHOT",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.11.744312",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Kim, H.",
+            "Kim, D.",
+            "Jung, S.",
+            "Lee, S.",
+            "Kim, K."
+          ],
+          "language": "en",
+          "abstract_or_text": "Spatial transcriptomics now profiles patient cohorts at single-cell resolution, enabling analysis of disease-associated cell organization in situ. However, discovering such spatial biomarkers remains challenging because relevant structures occur at unknown scales and cell- or niche-level annotations are rarely available. We present spHOT, a deep learning framework that localizes phenotype-associated spatial biomarkers from sample-level labels. spHOT combines spatial foundation model embeddings, a hierarchical domain tree for multi-resolution tissue representation, and a teacher-student multiple instance learning architecture that converts sample labels into cell-level biomarker scores. In controlled simulations and real-tissue benchmarks, spHOT outperformed existing spatial and single-cell methods in localizing ground-truth biomarkers. Across fibrotic, metabolic, and autoimmune disease datasets, spHOT recovered disease-relevant niches and tissue states reported by supervised analyses in the original studies. Cross-disease application of spHOT transferred biomarkers across chronic lung diseases without retraining. spHOT enables scalable, annotation-efficient spatial biomarker discovery in cohort-scale spatial transcriptomics.",
+          "summary_zh": "spHOT 利用空间基础模型嵌入、层级组织域树和师生多实例学习，从样本级标签定位与表型相关的空间转录组标志物。",
+          "why_it_matters_zh": "该方法试图降低队列尺度空间转录组研究对细胞或微环境精细标注的依赖，并在多种疾病数据中报告了跨疾病迁移能力。",
+          "quality_score": 83.0,
+          "tags": [
+            "组学与细胞"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "dataset",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 3,
+          "featured": true,
+          "category": "组学与细胞",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.11.744312",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "空间转录组学现已能够以单细胞分辨率分析患者队列，从而可在原位研究与疾病相关的细胞组织结构。然而，发现这类空间生物标志物仍具挑战，因为相关结构出现于未知尺度，且细胞或微环境层面的注释很少可得。我们提出 spHOT，一个从样本级标签定位表型相关空间生物标志物的深度学习框架。spHOT 将空间基础模型嵌入、用于多分辨率组织表征的层级域树，以及把样本标签转化为细胞级生物标志物评分的师生多实例学习架构相结合。在受控模拟和真实组织基准中，spHOT 在定位真实标志物方面优于现有空间和单细胞方法。在纤维化、代谢和自身免疫疾病数据集上，spHOT 找回了原始研究中经监督分析报告的疾病相关微环境和组织状态。spHOT 在不重新训练的情况下，跨慢性肺病迁移了生物标志物。spHOT 支持在队列尺度空间转录组学中开展可扩展、标注高效的空间生物标志物发现。",
+          "published": "2026-08-17",
+          "author_line": "Kim, H., Kim, D., Jung, S. 等 5 人"
+        },
+        {
+          "id": "medrxiv:10.64898/2026.08.13.26360407",
+          "channel": "aixbio",
+          "related_channels": [
+            "aixchem"
+          ],
+          "item_type": "paper",
+          "source": "medRxiv",
+          "title": "Deep Learning-Based Classification of Bone Lesions on CT Scans of Metastatic Spine Disease Patients: A 3D-Convolutional Neural Network Approach",
+          "url": "https://www.medrxiv.org/content/10.64898/2026.08.13.26360407",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Hong, V.",
+            "Bulent, A.",
+            "Haouchine, N.",
+            "Pieper, S.",
+            "Wells, S.",
+            "Keko, M.",
+            "Kozono, D.",
+            "Doyle, P. F.",
+            "Balboni, T.",
+            "Spektor, A.",
+            "Huynh, M. A.",
+            "Hackney, D. B.",
+            "Alkalay, R. N."
+          ],
+          "language": "en",
+          "abstract_or_text": "Purpose: Clinical assessment of vertebral lesion quality (osteolytic, osteoblastic, mixed) remains subjective, with limited interobserver reliability. This study evaluated a novel application of 3D convolutional neural networks (3D-CNNs) for classifying lesion quality from CT volumes in metastatic cancer patients. Materials and Methods: This retrospective study used CT data from 151 cancer patients planned for radiotherapy for metastatic spine disease (September 2020-July 2024). Leveraging vertebra-level expert annotations, we introduced an unconventional U-Net-based strategy converting coarse voxel-wise predictions into vertebra-level lesion classifications. The final dataset comprised 2,125 vertebrae across four classes (no lesion, osteolytic, osteoblastic, mixed), split into a 3-fold cross-validation set and an independent holdout test set. Model performance was benchmarked against a DenseNet121 baseline and a musculoskeletal radiologist, with Cohen's kappa assessing inter-rater agreement. Results: The 3D model achieved an ensemble accuracy of 84.7%, outperforming DenseNet121 (72.1%), with substantial gains in F1 score, precision, and balanced accuracy. It showed high concordance with the radiologist (Cohen's kappa = 0.76) and comparable sensitivity and specificity across all lesion subtypes. We found both models and the radiologist to struggle with osteolytic lesions, reflecting the difficulty of distinguishing this class from age-related changes in vertebral bone density and architecture caused by benign bone lesions, age-related systemic skeletal disorders and cancer treatments. Conclusions: 3D-CNNs trained with vertebra-level labels can accurately and reliably classify vertebral metastatic lesion quality from CT scans, offering a scalable path toward automated characterization of metastatic spine disease to support clinical decision-making and large-scale radiomics research.",
+          "summary_zh": "在 151 名转移性脊柱疾病患者、2,125 个椎体的 CT 数据上，3D-CNN 对骨转移病灶质量分类的集成准确率为 84.7%，并与肌肉骨骼放射科医师高度一致。",
+          "why_it_matters_zh": "研究提供了独立留出集和专家比较，但数据来自回顾性单一队列，应用于临床决策前仍需外部验证。",
+          "quality_score": 82.0,
+          "tags": [
+            "生物医学与临床"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "dataset",
+            "clinical",
+            "performance",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 4,
+          "featured": false,
+          "category": "生物医学与临床",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.13.26360407",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "目的：椎体病灶性质（溶骨性、成骨性、混合性）的临床评估仍具有主观性，观察者间一致性有限。本研究评估 3D 卷积神经网络（3D-CNN）从转移癌患者 CT 体数据中对病灶性质进行分类的一种新应用。材料与方法：这项回顾性研究使用 2020 年 9 月至 2024 年 7 月期间计划接受放疗的 151 名转移性脊柱疾病癌症患者的 CT 数据。利用椎体级专家注释，我们引入一种非常规的基于 U-Net 策略，将粗略的体素级预测转化为椎体级病灶分类。最终数据集包括 2,125 个椎体，分为四类：无病灶、溶骨性、成骨性和混合性；数据被划分为 3 折交叉验证集和独立留出测试集。模型性能与 DenseNet121 基线和一名肌肉骨骼放射科医师进行比较，并以 Cohen's kappa 评估评分者间一致性。结果：3D 模型的集成准确率为 84.7%，优于 DenseNet121（72.1%），在 F1 分数、精确率和均衡准确率方面有显著提升。它与该放射科医师高度一致（Cohen's kappa = 0.76），并在所有病灶亚型上表现出可比的敏感度和特异度。我们发现，两种模型和该放射科医师均难以识别溶骨性病灶，这反映出此类病灶与由良性骨病变、年龄相关全身性骨骼疾病和癌症治疗导致的椎骨骨密度及结构年龄相关改变之间的区分难度。结论：使用椎体级标签训练的 3D-CNN 能够从 CT 扫描中准确、可靠地对椎体转移病灶性质进行分类，为转移性脊柱疾病的自动化表征提供了一条可扩展路径，可支持临床决策和大规模影像组学研究。",
+          "published": "2026-08-17",
+          "author_line": "Hong, V., Bulent, A., Haouchine, N. 等 13 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.12.743536",
+          "channel": "aixbio",
+          "related_channels": [
+            "aixchem",
+            "aixmath"
+          ],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "A Generative Virtual Tissue Model Enables Computational Design of Therapeutic Perturbation Strategies",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.743536",
+          "published_at": "2026-08-18",
+          "updated_at": "2026-08-18",
+          "creators": [
+            "Lu, Y.",
+            "Zhang, W.",
+            "Chen, Y.-J.",
+            "Yin, J.",
+            "Chen, L.",
+            "Fleisher, K.",
+            "Gornet, J.",
+            "Liu, R.",
+            "Wang, Z. J.",
+            "Poon, Y.",
+            "You, Y.",
+            "Thomson, M."
+          ],
+          "language": "en",
+          "abstract_or_text": "Computational design has transformed many fields of engineering, where simulators can explore millions of candidate design configurations before experimental development and testing. Therapeutic design in biomedicine has resisted computational design approaches because disease progression and therapeutic response emerge from interactions among many cell types within human tissue, governed by biochemical parameters that are largely unknown and potentially unknowable. Here, we introduce the Cell Interaction Foundation Model (CIFM), a virtual tissue model that forward-simulates the transcriptional dynamics of cells in human tissue under arbitrary therapeutic conditions based upon a spatial transcriptomic seed. CIFM is a geometric graph neural network trained by self-supervised masked-transcriptome prediction on millions of cellular microenvironments spanning human tissue types and disease states; generative, auto-regressive, monte-carlo play-out, then, simulates transcriptional dynamics under combinatorial perturbations from a spatial transcriptomic seed. We validate CIFM by showing accuracy gains in gene expression prediction and imputation, disease classification, recapitulation of perturbation responses in prostate cancer models, and recovery of T cell-tumor signaling measured in cell-cell sequencing experiments. Beyond such conventional tasks, CIFM enables target identification and therapeutic design through generative tissue simulation play-outs. Analyzing over 10^6 single and combinatorial perturbations, CIFM designs immunotherapy strategies for cancer and autoimmune disease that exploit combinatorial manipulation of signaling pathways to induce or suppress immune activation. Broadly, CIFM shows how generative artificial intelligence methods can be applied to model emergent behavior in highly interacting biological systems, yielding new approaches to fundamental understanding of tissue behavior as well as large-scale therapeutic design.",
+          "summary_zh": "CIFM 是以数百万细胞微环境自监督训练的虚拟组织模型，可从空间转录组种子模拟组合扰动下的转录动态，并在前列腺癌及细胞—细胞测序实验中开展验证。",
+          "why_it_matters_zh": "将空间组织中的细胞相互作用用于大规模干预模拟具有方法学吸引力，但其治疗策略仍是计算产生的候选，不能替代功能和临床验证。",
+          "quality_score": 81.0,
+          "tags": [
+            "方法与模型"
+          ],
+          "evidence_flags": [
+            "experimental",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 5,
+          "featured": false,
+          "category": "方法与模型",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.12.743536",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "计算设计已改变许多工程领域，模拟器可以在实验开发和测试前探索数百万种候选设计配置。生物医学中的治疗设计一直难以采用计算设计方法，因为疾病进展和治疗反应源于人类组织内多种细胞类型之间的相互作用，而其生化参数大多未知，且可能无法获知。我们在此引入细胞相互作用基础模型（CIFM），这是一种虚拟组织模型，可基于空间转录组种子，在任意治疗条件下正向模拟人类组织中细胞的转录动态。CIFM 是一个几何图神经网络，在跨越人类组织类型和疾病状态的数百万个细胞微环境上，通过自监督掩蔽转录组预测进行训练；随后以生成式、自回归式蒙特卡洛模拟，从空间转录组种子模拟组合扰动下的转录动态。我们通过展示其在基因表达预测和插补、疾病分类、前列腺癌模型中扰动反应再现，以及细胞—细胞测序实验中测得的 T 细胞—肿瘤信号恢复方面的准确性提升，对 CIFM 进行验证。除这些常规任务外，CIFM 还可通过生成式组织模拟用于靶点识别和治疗设计。通过分析超过 10^6 种单一和组合扰动，CIFM 为癌症和自身免疫疾病设计免疫治疗策略，这些策略利用信号通路的组合操控来诱导或抑制免疫激活。总体而言，CIFM 展示了如何将生成式人工智能方法用于建模高度相互作用生物系统中的涌现行为，从而为组织行为的基础理解和大规模治疗设计带来新方法。",
+          "published": "2026-08-18",
+          "author_line": "Lu, Y., Zhang, W., Chen, Y.-J. 等 12 人"
+        },
+        {
+          "id": "medrxiv:10.64898/2026.08.17.26360282",
+          "channel": "aixbio",
+          "related_channels": [
+            "aixmath"
+          ],
+          "item_type": "paper",
+          "source": "medRxiv",
+          "title": "Retrieval-Augmented Large Language Models for Clinically Aligned Adverse Event Coding in Acute Myeloid Leukemia Clinical Trials",
+          "url": "https://www.medrxiv.org/content/10.64898/2026.08.17.26360282",
+          "published_at": "2026-08-18",
+          "updated_at": "2026-08-18",
+          "creators": [
+            "Dashti, N.",
+            "Schneider, M. M. K.",
+            "Eckardt, J. N.",
+            "Fiebig, F.",
+            "Schweigler, D.",
+            "Buttner, S.",
+            "Middeke, J. M.",
+            "Bornhauser, M.",
+            "Rollig, C.",
+            "Kather, J. N.",
+            "Wiest, I. C."
+          ],
+          "language": "en",
+          "abstract_or_text": "Background: Adverse event (AE) coding is essential for safety monitoring in oncology clinical trials, particularly in acute myeloid leukemia (AML), where intensive therapies are associated with frequent and heterogeneous toxicities requiring standardized MedDRA (Medical Dictionary for Regulatory Activities) coding. However, manual Low-Level Term (LLT) assignment remains labor-intensive, subjective, and difficult to scale. Although large language models (LLMs) have emerged as promising decision-support tools for automated coding, unguided zero-shot generation remains insufficient for reliable fine-grained MedDRA coding. Objective: To develop and evaluate a retrieval-augmented reasoning pipeline for clinically aligned LLT-level MedDRA coding of free-text adverse events from prospective AML clinical trials. Methods: We implemented a retrieval-augmented reasoning pipeline inspired by the retrieval-augmented generation (RAG) paradigm using LLaMA-3.3-70B-Instruct as the primary backbone and benchmarked the framework across multiple open instruction-tuned LLMs. Dense semantic retrieval first generated a constrained top-100 LLT candidate set for each AE, followed by structured LLM reasoning to select a single best-matching LLT and deterministic mapping to Preferred Term (PT) and System Organ Class (SOC) levels. The pipeline was evaluated retrospectively on AE datasets from three prospective AML clinical trials (MOSAIC, DELTA, and DaunoDouble) with automated LLT/PT/SOC metrics and expert-assessed Clinical Correctness Rate (CCR). Results: Clinical expert review showed high clinical acceptability of the RAG pipeline across datasets (91-97%). Under automated evaluation, the pipeline achieved LLT exact accuracy of 50-58%, PT accuracy of 78-85%, and SOC accuracy of 90-93%. Zero-shot generation and random candidate selection performed substantially worse. Semantic retrieval more often included the coder-assigned LLT among the candidate terms available to the model than retrieval based on lexical similarity. Multi-model benchmarking showed that backbone choice mainly affected LLT exact agreement, whereas PT and SOC performance remained comparatively stable. Conclusions: Retrieval-augmented reasoning supports clinically aligned MedDRA coding of free-text adverse events under realistic candidate constraints in AML clinical trials. Evaluation across three AML clinical trials showed that strict LLT-level string agreement underestimated clinical ap-propriateness, highlighting the importance of combining hierarchical evaluation metrics with clini-cal expert validation for AI-assisted MedDRA coding in hematology trials.",
+          "summary_zh": "研究在 MOSAIC、DELTA 和 DaunoDouble 三项前瞻性 AML 临床试验的不良事件数据上，评估以 LLaMA-3.3-70B-Instruct 为主干的检索增强 MedDRA 编码流程；专家评审临床可接受率为 91–97%。",
+          "why_it_matters_zh": "细粒度 LLT 的严格字符串一致率有限，而层级指标和专家评审较好，提示临床 NLP 评估应同时报告编码层级与临床适切性。",
+          "quality_score": 81.0,
+          "tags": [
+            "生物医学与临床"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "dataset",
+            "prospective",
+            "clinical",
+            "evaluation",
+            "performance','preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 6,
+          "featured": false,
+          "category": "生物医学与临床",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.17.26360282",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "背景：不良事件（AE）编码对于肿瘤临床试验的安全性监测至关重要，尤其是在急性髓系白血病（AML）中，强化治疗会带来频繁且异质的毒性，因而需要标准化的 MedDRA（监管活动医学词典）编码。然而，人工低级术语（LLT）分配仍然劳动密集、主观且难以扩展。尽管大语言模型（LLMs）已成为自动编码的有前景决策支持工具，但无引导的零样本生成仍不足以实现可靠的细粒度 MedDRA 编码。目的：开发并评估一种检索增强推理流程，用于对前瞻性 AML 临床试验中自由文本不良事件进行临床一致的 LLT 级 MedDRA 编码。方法：我们实施了一个受检索增强生成（RAG）范式启发的检索增强推理流程，以 LLaMA-3.3-70B-Instruct 为主要主干，并在多个开放指令微调 LLM 上对该框架进行基准测试。密集语义检索首先为每个 AE 生成受限的前 100 个 LLT 候选集，随后由结构化 LLM 推理选择唯一的最佳匹配 LLT，并确定性映射到首选术语（PT）和系统器官分类（SOC）层级。该流程在来自三项前瞻性 AML 临床试验（MOSAIC、DELTA 和 DaunoDouble）的 AE 数据集上回顾性评估，采用自动化 LLT/PT/SOC 指标和专家评估的临床正确率（CCR）。结果：临床专家评审显示，该 RAG 流程在各数据集上的临床可接受性较高（91–97%）。在自动化评估中，该流程的 LLT 精确准确率为 50–58%，PT 准确率为 78–85%，SOC 准确率为 90–93%。零样本生成和随机候选选择的表现明显更差。语义检索比基于词汇相似性的检索更常将编码员指定的 LLT 纳入模型可用候选术语中。多模型基准显示，主干模型选择主要影响 LLT 精确一致性，而 PT 和 SOC 性能相对稳定。结论：检索增强推理可在现实候选约束下支持对自由文本不良事件进行临床一致的 MedDRA 编码。对三项 AML 临床试验的评估表明，严格的 LLT 级字符串一致性低估了临床适切性，凸显在血液学试验的 AI 辅助 MedDRA 编码中结合层级评估指标和临床专家验证的重要性。",
+          "published": "2026-08-18",
+          "author_line": "Dashti, N., Schneider, M. M. K., Eckardt, J. N. 等 11 人"
+        },
+        {
+          "id": "arxiv:2608.16643v1",
+          "channel": "aixbio",
+          "related_channels": [
+            "aixmath"
+          ],
+          "item_type": "paper",
+          "source": "arXiv",
+          "title": "Toward Better Assessment of LLMs' Performance in Clinical Error Detection",
+          "url": "https://arxiv.org/abs/2608.16643v1",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Yifan Zhang",
+            "Rahmatollah Beheshti"
+          ],
+          "language": "en",
+          "abstract_or_text": "Automated detection of errors in clinical documentation is a promising application of large language models (LLMs), yet decisions to deploy such models rest on benchmarks that evaluate each clinical note in isolation. Error-detection benchmarks are typically constructed by injecting errors into notes, such that each erroneous note has a natural counterpart. Aggregate discriminative metrics (e.g., balanced accuracy or F1) do not exploit this structure. We show that this omission is consequential. In particular, evaluating 15 diverse LLMs on 4 standardized clinical error-detection test sets across 3 languages, we find that 13 of 15 models fall below the level of random pairwise discrimination, even while achieving F1 scores that standard practice would read as moderate. We also observe that the underlying bias patterns differ across languages: the same model can default to \"no error\" on one language and over-flag errors on another. To diagnose where discrimination breaks down, we further introduce a procedure to score the evidence models cite in their outputs. We find that while models consistently locate error-relevant content, they fail to produce the corresponding correct verdict on the clean counterpart. Finally, we show that F1 and pairwise accuracy are driven in opposite directions by the same underlying bias, so that ranking models by F1 may systematically promote the weakest discriminators. For safety-critical clinical NLP applications, we advocate for supplementing aggregate metrics with paired evaluations in benchmark reporting. Code and analysis scripts are available at https://github.com/healthylaife/paired-clinical-eval.",
+          "summary_zh": "在 3 种语言、4 个标准化临床错误检测测试集上评估 15 个 LLM 后发现，13 个模型的成对区分表现低于随机水平，尽管常规 F1 可显示中等水平。",
+          "why_it_matters_zh": "该工作指出临床文本错误检测的聚合指标可掩盖系统性偏差，并提供了代码和分析脚本以支持更严格的配对评估。",
+          "quality_score": 81.0,
+          "tags": [
+            "生物医学与临床"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "github",
+            "clinical",
+            "evaluation",
+            "performance",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 7,
+          "featured": false,
+          "category": "生物医学与临床",
+          "metrics": {},
+          "metadata": {
+            "doi": "",
+            "arxiv_id": "2608.16643v1"
+          },
+          "abstract_zh": "自动检测临床文档中的错误是大语言模型（LLMs）很有前景的应用，但部署这类模型的决定依赖于将每份临床记录孤立评估的基准。错误检测基准通常通过向记录中注入错误来构建，因此每份错误记录都有一个自然对应的配对记录。聚合判别指标（如均衡准确率或 F1）没有利用这一结构。我们表明，这一遗漏后果重大。具体而言，在 3 种语言的 4 个标准化临床错误检测测试集上评估 15 个不同 LLM 后，我们发现 15 个模型中有 13 个的随机成对区分水平以下，尽管其 F1 分数按标准做法会被解读为中等。我们还观察到潜在偏差模式因语言而异：同一模型可能在一种语言中默认“无错误”，而在另一种语言中过度标记错误。为诊断区分在哪些环节失效，我们进一步引入一套流程，对模型在输出中引用的证据进行评分。我们发现，尽管模型能持续定位与错误相关的内容，却无法对干净的对应记录给出相应的正确判定。最后，我们表明，F1 和成对准确率会受到同一潜在偏差的相反方向驱动，因此按 F1 对模型排序可能系统性地推崇区分能力最弱的模型。对于安全关键的临床 NLP 应用，我们主张在基准报告中以配对评估补充聚合指标。代码和分析脚本见 https://github.com/healthylaife/paired-clinical-eval。",
+          "published": "2026-08-17",
+          "author_line": "Yifan Zhang, Rahmatollah Beheshti"
+        },
+        {
+          "id": "medrxiv:10.64898/2026.08.15.26360514",
+          "channel": "aixbio",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "medRxiv",
+          "title": "Early Detection of Erythropoietic Protoporphyria Using Sequential Machine Learning on Longitudinal Electronic Health Records",
+          "url": "https://www.medrxiv.org/content/10.64898/2026.08.15.26360514",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Ayati, A.",
+            "Onal, G.",
+            "Sur, A.",
+            "Azzam, S.",
+            "Wang, B.",
+            "Rudrapatna, V. A."
+          ],
+          "language": "en",
+          "abstract_or_text": "Objective: Erythropoietic protoporphyria (EPP) is a rare photodermatosis marked by multi-year diagnostic delays. We developed and externally validated machine learning models to identify patients with EPP earlier from longitudinal electronic health record (EHR) data and estimate undiagnosed disease burden. Materials and Methods: In a retrospective case-control study at two San Francisco health systems, an academic referral center (UCSF) and a safety-net hospital (ZSFG) we identified 74 confirmed EPP cases using combined diagnostic coding, biochemical criteria, and specialty chart review. Symptom-enriched controls were sampled at a 40:1 ratio. Longitudinal diagnoses, laboratory results, medications, procedures, and encounters preceding the outcome date were modeled with a gradient-boosting classifier (CatBoost) and a state-space sequence model (MAMBA). The best model was deployed across the UCSF population and externally validated at ZSFG without retraining. Results: On the UCSF held-out test set (n=1,865; 43 cases), MAMBA outperformed CatBoost (AUC ROC 0.91 vs 0.89; average precision 0.42 vs 0.27; precision 65% vs 20%), flagging cases a median of 229 days before documented diagnosis. Deployed across 297,967 symptom-compatible patients, it identified 310 high-risk individuals, implying a prevalence approaching genetic estimates. External validation at ZSFG showed attenuated performance (AUC ROC 0.72; average precision 0.10) while preserving early detection (median 264 days). Discussion: A sequence model integrating temporal EHR signals detected EPP months before clinical recognition, corroborating genetic evidence of substantial underdiagnosis. Cross-site attenuation reflects population and documentation differences and underscores the need for local recalibration. Conclusion: Longitudinal EHR-based machine learning can shorten EPP diagnostic delay and prioritize patients for confirmatory testing, supporting proactive rare-disease case finding.",
+          "summary_zh": "在两个旧金山医疗系统中，纵向 EHR 序列模型 MAMBA 对红细胞生成性原卟啉症进行早期识别；在外部站点性能下降，但仍可较记录诊断提前中位 264 天。",
+          "why_it_matters_zh": "罕见病病例识别同时报告了外部验证和跨站点性能衰减，说明模型可能用于确认检测前的筛选优先级，而非直接诊断。",
+          "quality_score": 81.0,
+          "tags": [
+            "生物医学与临床"
+          ],
+          "evidence_flags": [
+            "clinical",
+            "performance",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 8,
+          "featured": false,
+          "category": "生物医学与临床",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.15.26360514",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "目的：红细胞生成性原卟啉症（EPP）是一种罕见光敏性皮肤病，常出现长达数年的诊断延迟。我们开发并外部验证了机器学习模型，以从纵向电子健康记录（EHR）数据中更早识别 EPP 患者，并估计未诊断疾病负担。材料与方法：在旧金山两个卫生系统，即学术转诊中心 UCSF 和安全网医院 ZSFG，开展回顾性病例对照研究；我们结合诊断编码、生化标准和专科病历审查，识别出 74 例确诊 EPP 病例。按 40:1 比例抽取症状富集对照。使用梯度提升分类器（CatBoost）和状态空间序列模型（MAMBA），对结局日期前的纵向诊断、实验室结果、用药、操作和就诊信息建模。最佳模型部署于 UCSF 人群，并在无需重新训练的情况下于 ZSFG 外部验证。结果：在 UCSF 留出测试集（n=1,865；43 例病例）中，MAMBA 优于 CatBoost（ROC AUC 0.91 对 0.89；平均精确率 0.42 对 0.27；精确率 65% 对 20%），并在有文档记录的诊断前中位 229 天识别出病例。部署到 297,967 名症状相容患者后，该模型识别出 310 名高风险个体，推示患病率接近遗传学估计。ZSFG 的外部验证显示性能减弱（ROC AUC 0.72；平均精确率 0.10），但仍保留早期识别能力（中位 264 天）。讨论：整合时间性 EHR 信号的序列模型能在临床识别前数月检出 EPP，与大量漏诊的遗传学证据相吻合。跨站点性能减弱反映了人群和文档记录差异，并强调本地重新校准的必要性。结论：基于纵向 EHR 的机器学习可缩短 EPP 诊断延迟，并将患者优先安排至确证性检测，从而支持主动的罕见病病例发现。",
+          "published": "2026-08-17",
+          "author_line": "Ayati, A., Onal, G., Sur, A. 等 6 人"
+        },
+        {
+          "id": "medrxiv:10.64898/2026.08.17.26354679",
+          "channel": "aixbio",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "medRxiv",
+          "title": "PanoraOnc: A pan-cancer clinico-genomic AI model for transferable outcome predictions",
+          "url": "https://www.medrxiv.org/content/10.64898/2026.08.17.26354679",
+          "published_at": "2026-08-18",
+          "updated_at": "2026-08-18",
+          "creators": [
+            "Schuerch, M.",
+            "Geisberg, J.",
+            "Flower, C. T.",
+            "Bektas, A. B.",
+            "McDonald, T. O.",
+            "Mishra, S.",
+            "Graser, C.",
+            "Altreuter, J.",
+            "Ananda, G.",
+            "Boland, G.",
+            "Liu, D.",
+            "kehl, K. L.",
+            "Michor, F."
+          ],
+          "language": "en",
+          "abstract_or_text": "Progress in precision oncology, including biomarker discovery and individualized treatment selection, is limited by the complexity of clinico-genomic data and the scarcity of large multimodal patient cohorts. Here, we introduce PanoraOnc, a pan-cancer artificial intelligence (AI) model pretrained on real-world clinical, genomic, and imaging data from 84,131 patients spanning 66 cancer types. PanoraOnc enables transferable treatment outcome prediction through pan-cancer pretraining and generalizes to unseen cohorts across cancer types, institutions, and therapeutic settings. Evaluation and fine-tuning were performed on cohorts comprising diverse modalities, including clinical features, targeted gene panels, immunofluorescence imaging, whole-exome sequencing, and transcriptomic profiles. Across these settings, PanoraOnc consistently outperforms statistical, machine-learning, survival, and AI baselines, with the largest improvements observed in zero- and few-shot scenarios, demonstrating that large-scale clinico-genomic pretraining enables robust and generalizable outcome predictions across previously unseen conditions. In addition, PanoraOnc supports biomarker discovery through explainable AI, revealing both established and underappreciated features, including tumor-infiltrating clonal hematopoiesis, oncogenic signaling pathways, and DNA damage response mechanisms in immunotherapy-treated melanoma and non-small cell lung cancer. Furthermore, PanoraOnc enables the identification of patient subgroups potentially benefitting from alternative treatments by estimating personalized treatment outcomes across therapeutic scenarios. These findings establish pan-cancer multimodal pretraining as a scalable paradigm for AI-assisted discovery in precision oncology.",
+          "summary_zh": "PanoraOnc 在 84,131 名、66 种癌症患者的真实世界临床、基因组与影像数据上预训练，作者报告其可迁移至未见队列和治疗场景的结局预测。",
+          "why_it_matters_zh": "大规模多模态泛癌训练有望提高小样本情境下的预测迁移性；个体化治疗获益和生物标志物结论仍来自模型估计，需前瞻性验证。",
+          "quality_score": 80.0,
+          "tags": [
+            "组学与细胞"
+          ],
+          "evidence_flags": [
+            "clinical",
+            "evaluation",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 9,
+          "featured": false,
+          "category": "组学与细胞",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.17.26354679",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "精准肿瘤学的进展，包括生物标志物发现和个体化治疗选择，受到临床—基因组数据复杂性及大型多模态患者队列稀缺的限制。我们在此引入 PanoraOnc，一种泛癌人工智能（AI）模型，在 66 种癌症、84,131 名患者的真实世界临床、基因组和影像数据上预训练。PanoraOnc 通过泛癌预训练支持可迁移的治疗结局预测，并可泛化到跨癌种、机构和治疗场景的未见队列。评估和微调在包含多样化模态的队列上进行，包括临床特征、靶向基因面板、免疫荧光成像、全外显子组测序和转录组谱。在这些情境中，PanoraOnc 一贯优于统计学、机器学习、生存分析和 AI 基线；最大的改善出现在零样本和少样本情境，表明大规模临床—基因组预训练能够在此前未见的情境中实现稳健、可泛化的结局预测。此外，PanoraOnc 通过可解释 AI 支持生物标志物发现，揭示了已知和此前未被充分关注的特征，包括在接受免疫治疗的黑色素瘤和非小细胞肺癌中的肿瘤浸润性克隆性造血、致癌信号通路和 DNA 损伤反应机制。PanoraOnc 还可通过在不同治疗情景下估计个体化治疗结局，识别可能从替代治疗中获益的患者亚组。这些发现确立了泛癌多模态预训练作为精准肿瘤学中 AI 辅助发现的可扩展范式。",
+          "published": "2026-08-18",
+          "author_line": "Schuerch, M., Geisberg, J., Flower, C. T. 等 13 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.07.743610",
+          "channel": "aixbio",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "PerturbLDM: conditional latent diffusion for modelling single-cell perturbation responses",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.07.743610",
+          "published_at": "2026-08-16",
+          "updated_at": "2026-08-16",
+          "creators": [
+            "Yu, L.",
+            "Hsieh, K.-L.",
+            "Chu, Y.",
+            "Lan, Q.",
+            "Zhao, X.",
+            "Hsu, Y.-C.",
+            "Wood, C. S.",
+            "Rasmy, L.",
+            "Pilie, P. G.",
+            "Zhi, D.",
+            "Zhao, Z.",
+            "Jiang, X.",
+            "Dai, Y."
+          ],
+          "language": "en",
+          "abstract_or_text": "Single-cell perturbation profiling maps intervention-induced phenotypes, yet experiments measure only a fraction of the perturbation-context space. Learning context-dependent perturbation effects could enable response prediction beyond measured conditions. Here we introduce PerturbLDM, a latent-diffusion framework for conditional generation of single-cell transcriptional responses. Following Tahoe-100M pretraining, it predicted 13,942 held-out combinations of observed drugs, doses and cell lines more accurately than existing methods, with higher matched-control effect correlation than an additive marginal baseline in 95.2% of conditions. The Tahoe-100M-pretrained model was further used to rank PANACEA compounds by pathway similarity, placing shared-mechanism pairs among nearest neighbours. In smaller datasets, PerturbLDM generated a mid-gestational fetal-colon state with 67% lower gene-wise error than Squidiff, retaining the balance between absorptive and BEST4/OTOP2-like epithelial programmes. In PBMCs, it captured six of seven interferon and antiviral programmes and the interferon-associated FAO-OXPHOS programme more accurately than scGen. Together, these results support conditional response generation across data scales and biological settings.",
+          "summary_zh": "PerturbLDM 以 Tahoe-100M 预训练的条件潜在扩散模型生成单细胞转录扰动反应，在 13,942 个留出药物—剂量—细胞系组合及多个小型数据场景中报告优于现有方法。",
+          "why_it_matters_zh": "该方法尝试外推实验未覆盖的扰动—细胞背景组合，并以药物、胎儿结肠和 PBMC 任务检验跨数据尺度表现。",
+          "quality_score": 79.0,
+          "tags": [
+            "组学与细胞"
+          ],
+          "evidence_flags": [
+            "dataset",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 10,
+          "featured": false,
+          "category": "组学与细胞",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.07.743610",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "单细胞扰动分析能够绘制干预诱导的表型，但实验仅测量扰动—背景空间的一小部分。学习依赖背景的扰动效应，可能支持对未测量条件下反应的预测。我们在此引入 PerturbLDM，一个用于条件生成单细胞转录反应的潜在扩散框架。经过 Tahoe-100M 预训练后，它对 13,942 个留出的已观测药物、剂量和细胞系组合的预测比现有方法更准确，并且在 95.2% 的条件下，其匹配对照效应相关性高于加性边际基线。经 Tahoe-100M 预训练的模型还用于按通路相似性排列 PANACEA 化合物，将共享机制的化合物对排在最近邻中。在较小数据集上，PerturbLDM 生成了一个妊娠中期胎儿结肠状态，其逐基因误差比 Squidiff 低 67%，同时保留吸收型和 BEST4/OTOP2 样上皮程序之间的平衡。在 PBMC 中，它比 scGen 更准确地捕捉了七个干扰素和抗病毒程序中的六个，以及干扰素相关 FAO-OXPHOS 程序。总体而言，这些结果支持跨数据尺度和生物学情境的条件反应生成。",
+          "published": "2026-08-16",
+          "author_line": "Yu, L., Hsieh, K.-L., Chu, Y. 等 13 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.16.745116",
+          "channel": "aixbio",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "AFilter: Improved Antibody Epitope Prediction by Machine Learning-Optimized Interface Energy Filtering of AlphaFold3-Predicted Complex",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.16.745116",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Liu, X.",
+            "Wang, Y. Y."
+          ],
+          "language": "en",
+          "abstract_or_text": "AlphaFold3 (AF3) predicts protein-complex structures from sequence with near-experimental accuracy on many targets, substantially lowering the cost of mechanistic and therapeutic discovery. However, application to antibody epitope prediction is hampered by an approximately 63% failure rate. Comparing successful and failed AF3 predictions across antibody-antigen and nanobody-antigen complexes, we found that failed predictions share a distinctive energetic signature: distorted CDR-loop geometries and elevated van der Waals strain at the interface. Building upon these observations, we developed a machine learning-based interface energy filtering framework, designated AFilter, capable of eliminating over 90% of erroneous predictions while retaining >90% of true positives. Compared with ipTM-based filtering, AFilter improved accuracy from 82.7% to 97.7% for nanobody-antigen complexes and from 79.4% to 96.3% for antibody-antigen complexes, while simultaneously raising the true positive rate from 69.8% to 96.4% and from 63.1% to 92.5%, respectively. When applied to NeuroMab antibodies of unknown structure, AFilter prioritized high-confidence epitope predictions that AF3 sampling alone could not reliably surface. As a lightweight post-hoc filter (<5% computational overhead) that requires no re-docking, AFilter is directly compatible with existing AF3 prediction pipelines and, in principle, transferable to other diffusion-based complex predictors, providing a practical quality-assurance layer for antibody epitope mapping in early-stage drug discovery.",
+          "summary_zh": "AFilter 从 AlphaFold3 预测复合物的界面能量特征筛除错误抗体—抗原构象；作者报告在纳米抗体和抗体体系中均大幅提高表位预测准确率。",
+          "why_it_matters_zh": "该轻量级后处理器可改善 AF3 用于早期表位定位时的质量控制，但结果仍需以独立结构或结合实验检验。",
+          "quality_score": 76.0,
+          "tags": [
+            "蛋白质与结构"
+          ],
+          "evidence_flags": [
+            "experimental",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 11,
+          "featured": false,
+          "category": "蛋白质与结构",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.16.745116",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "AlphaFold3（AF3）可从序列预测蛋白质复合物结构，并在许多靶点上达到接近实验的准确度，显著降低机制和治疗发现的成本。然而，其在抗体表位预测中的应用受到约 63% 失败率的阻碍。通过比较抗体—抗原和纳米抗体—抗原复合物中成功与失败的 AF3 预测，我们发现失败预测共享一种独特的能量特征：扭曲的 CDR 环几何形状和界面上升高的范德华应变。在这些观察基础上，我们开发了一个基于机器学习的界面能量过滤框架，命名为 AFilter，可在保留超过 90% 真阳性的同时剔除超过 90% 错误预测。与基于 ipTM 的过滤相比，AFilter 将纳米抗体—抗原复合物的准确率从 82.7% 提高至 97.7%，将抗体—抗原复合物的准确率从 79.4% 提高至 96.3%；同时，真阳性率分别从 69.8% 提高至 96.4%，以及从 63.1% 提高至 92.5%。应用于结构未知的 NeuroMab 抗体时，AFilter 优先筛出 AF3 单独采样无法可靠发现的高置信度表位预测。作为一种无需重新对接、计算开销低于 5% 的轻量级后处理过滤器，AFilter 可直接兼容现有 AF3 预测流程，并且原则上可迁移至其他基于扩散的复合物预测器，为早期药物发现中的抗体表位定位提供实用的质量保证层。",
+          "published": "2026-08-17",
+          "author_line": "Liu, X., Wang, Y. Y."
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.12.744394",
+          "channel": "aixbio",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "SPARKLE: evidence-constrained correction of local RNA leakage in high-resolution spatial transcriptomics",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.744394",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Wang, S.",
+            "Zhu, B.",
+            "Li, S.",
+            "Wei, X."
+          ],
+          "language": "en",
+          "abstract_or_text": "High-resolution sequencing-based spatial transcriptomics, including Stereo-seq and Visium HD, aggregates dense capture units into cell-resolved expression matrices. During tissue processing and permeabilization, RNA released from source cells can spread to neighbouring capture locations, reducing cell-type specificity and biasing downstream analyses. Here we developed SPARKLE (Spatial Ambient RNA Kernel-based Leakage Estimator), a cell-level correction method that uses capture locations outside cell-segmentation masks as within-sample spatial evidence of leakage. SPARKLE fits sparse spatial kernels to out-of-mask observations to estimate a sample-level propagation scale and gene-specific leakage coefficients. It corrects only genes supported by out-of-mask goodness of fit and uses expression-dependent conservative shrinkage to protect highly expressing source cells. Across ten simulated scenarios, SPARKLE achieved the highest cell-wise concordance and the lowest RMSE in 9 of 10 scenarios. In axolotl brain, mouse brain and human ovarian cancer, SPARKLE removed ectopic marker signal from neighbouring cells while retaining source-cell expression, improved agreement with independent single-cell and single-nucleus references, and recovered COL1A2-SDC4 signaling of fibroblast origin that collagen diffusion had obscured. Conclusions remained stable across plausible spatial scales and background-bin sizes. Runtime scaled near-linearly with tissue-window area, and was further acceleration on GPU. SPARKLE is therefore a reference-free, fast and scalable method for correcting local RNA leakage from evidence contained within each sample, improving the reliability of cell-type localization, tissue-compartment identification and cell-cell communication inference.",
+          "summary_zh": "SPARKLE 利用细胞分割掩膜外捕获位点的样本内空间证据，校正高分辨率空间转录组中的局部 RNA 泄漏，并在 10 种模拟和三类组织中进行评估。",
+          "why_it_matters_zh": "RNA 泄漏会扭曲细胞类型定位和细胞通讯推断；该方法在保持来源细胞高表达信号的同时开展保守校正，并强调计算可扩展性。",
+          "quality_score": 75.0,
+          "tags": [
+            "组学与细胞"
+          ],
+          "evidence_flags": [
+            "release",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 12,
+          "featured": false,
+          "category": "组学与细胞",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.12.744394",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "包括 Stereo-seq 和 Visium HD 在内的高分辨率测序型空间转录组学，将密集捕获单元聚合为细胞分辨率的表达矩阵。在组织处理和透化期间，从来源细胞释放的 RNA 可扩散至邻近捕获位置，降低细胞类型特异性并使后续分析产生偏差。我们在此开发了 SPARKLE（Spatial Ambient RNA Kernel-based Leakage Estimator），一种细胞级校正方法，它将细胞分割掩膜外的捕获位置用作样本内 RNA 泄漏的空间证据。SPARKLE 对掩膜外观测拟合稀疏空间核，以估计样本级传播尺度和基因特异性泄漏系数。它仅校正由掩膜外拟合优度支持的基因，并使用依赖表达量的保守收缩来保护高表达来源细胞。在十种模拟情景中，SPARKLE 在 10 种情景中的 9 种实现最高细胞级一致性和最低 RMSE。在美西螈脑、小鼠脑和人卵巢癌中，SPARKLE 从邻近细胞去除了异位标志物信号，同时保留来源细胞表达；它提高了与独立单细胞和单核参考的吻合度，并恢复了此前被胶原蛋白扩散遮蔽的、成纤维细胞来源的 COL1A2-SDC4 信号。结论在合理的空间尺度和背景 bin 大小范围内保持稳定。运行时间随组织窗口面积近似线性增长，并可通过 GPU 进一步加速。因此，SPARKLE 是一种无参考、快速且可扩展的方法，可利用每个样本所含证据校正局部 RNA 泄漏，提高细胞类型定位、组织区室识别和细胞—细胞通讯推断的可靠性。",
+          "published": "2026-08-17",
+          "author_line": "Wang, S., Zhu, B., Li, S. 等 4 人"
+        },
+        {
+          "id": "medrxiv:10.64898/2026.08.13.26360395",
+          "channel": "aixbio",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "medRxiv",
+          "title": "Prospective Validation of a Deep Learning Model to Detect Structural Heart Disease from Apple Watch ECGs: The WATCH-SHD Study",
+          "url": "https://www.medrxiv.org/content/10.64898/2026.08.13.26360395",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Aminorroaya, A.",
+            "Vasisht Shankar, S.",
+            "Carter, M.",
+            "Khan, M.",
+            "Dhingra, L. S.",
+            "Khunte, A.",
+            "Croon, P. M.",
+            "Lombo, B.",
+            "McNamara, R. L.",
+            "Oikonomou, E. K.",
+            "Pedroso, A. F.",
+            "Khera, R."
+          ],
+          "language": "en",
+          "abstract_or_text": "Importance: Consumer wearables such as the Apple Watch can record single-lead electrocardiograms (ECGs) but are used mainly to detect rhythm disorders. Artificial intelligence-enhanced ECG (AI-ECG) could extend these real-world recordings for detecting structural heart disease (SHD), yet prospective validation remains limited. Objective: To prospectively validate a previously developed, noise-adapted AI-ECG model for detecting severe SHD from single-lead Apple Watch ECGs. Design: Prospective cohort study. Setting: Yale New Haven Hospital echocardiography laboratory. Participants: Adults aged >=18 years undergoing outpatient transthoracic echocardiography (TTE) as part of routine clinical care. Exposure: A 30-second, single-lead Apple Watch ECG recorded during the TTE visit and processed through an end-to-end, HIPAA-compliant platform for real-time AI-ECG inference. Main Outcomes and Measures: The primary outcome was discrimination for TTE-defined severe SHD, a composite of left ventricular systolic dysfunction (left ventricular ejection fraction <40%), severe left-sided valvular disease, and/or severe left ventricular hypertrophy, assessed by the area under the receiver operating characteristic curve (AUROC). Secondary measures were sensitivity, specificity, negative predictive value (NPV), and positive predictive value (PPV) at prespecified thresholds, and screening efficiency, assessed by the number needed to test (NNT) under usual-care versus AI-ECG-guided strategies. Results: Among 596 participants with analyzable Apple Watch ECGs (median age, 62 years [IQR, 46-72]; 51.2% women), severe SHD was present in 30 (5.1%). The model discriminated severe SHD well (AUROC, 0.841; 95% CI, 0.761-0.921), with a sensitivity of 76.7% (59.1-88.2), specificity of 83.2% (79.9-86.1), NPV of 98.5% (97.0-99.3), and PPV of 19.7% (13.5-27.8) at the prespecified threshold. An AI-ECG-guided strategy reduced the NNT to identify one case by more than 60% versus usual care across the composite and individual SHD phenotypes. Conclusions and Relevance: In this prospective cohort, a noise-adapted AI-ECG algorithm identified SHD phenotypes from real-world single-lead Apple Watch ECGs and improved screening efficiency. These findings support a potential role for wearable ECG-based screening in the scalable identification of clinically actionable SHD.",
+          "summary_zh": "WATCH-SHD 在 596 名前瞻性队列参与者中验证基于单导联 Apple Watch ECG 的 AI-ECG 严重结构性心脏病识别，AUROC 为 0.841，阴性预测值为 98.5%。",
+          "why_it_matters_zh": "该研究有前瞻性采集和明确的超声终点，但阳性预测值仅为 19.7%，其筛查策略对不同人群和临床流程的净获益仍需评估。",
+          "quality_score": 75.0,
+          "tags": [
+            "生物医学与临床"
+          ],
+          "evidence_flags": [
+            "prospective",
+            "clinical",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 13,
+          "featured": false,
+          "category": "生物医学与临床",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.13.26360395",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "重要性：Apple Watch 等消费级可穿戴设备可记录单导联心电图（ECG），但主要用于检测心律失常。人工智能增强心电图（AI-ECG）可将这些真实世界记录扩展用于检测结构性心脏病（SHD），但前瞻性验证仍有限。目的：前瞻性验证一个此前开发且适配噪声的 AI-ECG 模型，用于从单导联 Apple Watch ECG 检测严重 SHD。设计：前瞻性队列研究。地点：Yale New Haven Hospital 超声心动图实验室。参与者：在常规临床治疗中接受门诊经胸超声心动图（TTE）的年龄不低于 18 岁成人。暴露：在 TTE 就诊期间记录的一份 30 秒单导联 Apple Watch ECG，并通过端到端、符合 HIPAA 标准的平台进行实时 AI-ECG 推理。主要结局和测量：主要结局为对 TTE 定义的严重 SHD 的区分能力，该复合终点包括左心室收缩功能不全（左心室射血分数 <40%）、严重左侧瓣膜病和/或严重左心室肥厚，以受试者工作特征曲线下面积（AUROC）评估。次要指标为预设阈值下的敏感度、特异度、阴性预测值（NPV）和阳性预测值（PPV），以及筛查效率，即在常规治疗和 AI-ECG 引导策略下发现一例病例所需检测人数（NNT）。结果：在 596 名具有可分析 Apple Watch ECG 的参与者中（年龄中位数 62 岁［IQR，46–72］；女性占 51.2%），30 人（5.1%）存在严重 SHD。该模型对严重 SHD 的区分表现良好（AUROC，0.841；95% CI，0.761–0.921）；在预设阈值下，敏感度为 76.7%（59.1–88.2），特异度为 83.2%（79.9–86.1），NPV 为 98.5%（97.0–99.3），PPV 为 19.7%（13.5–27.8）。在复合终点和各个 SHD 表型中，与常规治疗相比，AI-ECG 引导策略使识别一例病例所需 NNT 降低超过 60%。结论和相关性：在这个前瞻性队列中，一种适配噪声的 AI-ECG 算法从真实世界单导联 Apple Watch ECG 中识别出 SHD 表型，并提高了筛查效率。这些发现支持可穿戴 ECG 筛查在可扩展识别具有临床可操作性 SHD 方面具有潜在作用。",
+          "published": "2026-08-17",
+          "author_line": "Aminorroaya, A., Vasisht Shankar, S., Carter, M. 等 12 人"
+        },
+        {
+          "id": "biorxiv:10.64898/2026.08.17.745187",
+          "channel": "aixbio",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "bioRxiv",
+          "title": "FluoroFate: A generalisable platform for time-resolved single-cell analysis of cell fate enables quantification of cell death dynamics",
+          "url": "https://www.biorxiv.org/content/10.64898/2026.08.17.745187",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Preedy, M. K.",
+            "Taylor-Hearn, I.",
+            "Ying, C.",
+            "Ford, M. J.",
+            "Jackson, I. J.",
+            "Gilmore, A.",
+            "Tergaonkar, V.",
+            "Mort, R. L."
+          ],
+          "language": "en",
+          "abstract_or_text": "Fundamental cellular decisions of life and death are governed by intricate and tightly regulated intracellular signalling pathways that determine whether cells proliferate, enter quiescence, or undergo programmed cell death (apoptosis). Live-cell fluorescence imaging enables these processes to be observed in real time at single-cell resolution, but two problems limit their study. First, existing biosensors do not allow apoptotic status and cell cycle progression to be resolved in tandem within the same cell. Second, interpreting live-cell imaging data is challenging even where multiplex reporters exist, as the biological meaning of fluorescent signals depends on their temporal ordering, and large-scale imaging experiments generate complex, multidimensional data that are difficult to analyse systematically and at scale. Here we address both problems. We present FluoroFate, a generalisable and user-friendly graphical interface-driven tool for time-resolved single-cell analysis of multiplex live-cell imaging datasets, which integrates existing, robust deep learning-based segmentation, cell tracking, and temporal classification methods to quantify fluorescent reporter dynamics in individual cells across time without the need for specialist computational expertise. Alongside FluoroFate, we develop tricistronic Fluorescent Ubiquitination-based Cell Cycle Indicator (Fucci) and apoptosis biosensors, enabling simultaneous monitoring of cell cycle progression and caspase activation within the same cell. Applying FluoroFate, we resolve apoptotic and non-apoptotic cell death at the single-cell level based on the temporal ordering of Annexin V and propidium iodide signals, identifying distinct kinetic and phenotypic cell death profiles in response to pharmacological perturbation. We highlight divergent temporal dynamics and modes of cell death between birinapant and cycloheximide treatment, reflecting differences in how TNF/TNFR1 signalling is disrupted by these agents. At the single-cell level, we uncover parallel, independently regulated death programmes, demonstrating that loss of RIPK1 selectively impairs apoptotic cell death whilst leaving non-apoptotic death largely unaffected. We then use FluoroFate to analyse timelapse images of our combined Fucci-apoptosis reporters, resolving cell cycle progression and caspase activation within the same cell over time. Together, FluoroFate and our new cell cycle and apoptosis biosensors represent a broadly applicable platform for extracting mechanistic insight from live-cell imaging data.",
+          "summary_zh": "FluoroFate 将深度学习分割、细胞追踪和时间分类整合为图形界面，并配套三顺反子 Fucci—凋亡生物传感器，用于实时单细胞命运和死亡动力学分析。",
+          "why_it_matters_zh": "平台把细胞周期和 caspase 激活置于同一细胞的时间序列中观察，可提高活细胞成像研究对药物扰动和死亡程序的可解释性。",
+          "quality_score": 75.0,
+          "tags": [
+            "组学与细胞"
+          ],
+          "evidence_flags": [
+            "dataset",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 14,
+          "featured": false,
+          "category": "组学与细胞",
+          "metrics": {},
+          "metadata": {
+            "doi": "10.64898/2026.08.17.745187",
+            "arxiv_id": ""
+          },
+          "abstract_zh": "细胞生与死的基本决策由复杂且受到严格调控的细胞内信号通路决定，这些通路决定细胞是增殖、进入静息，还是发生程序性细胞死亡（凋亡）。活细胞荧光成像能够实时、以单细胞分辨率观察这些过程，但两个问题限制了其研究。第一，现有生物传感器无法在同一细胞中同时解析凋亡状态和细胞周期进程。第二，即使存在多重报告系统，活细胞成像数据仍难以解释，因为荧光信号的生物学意义取决于其时间顺序，而大规模成像实验会产生难以系统化、规模化分析的复杂多维数据。我们在此同时解决这两个问题。我们提出 FluoroFate，一个通用且用户友好的图形界面驱动工具，用于对多重活细胞成像数据集进行时间分辨单细胞分析。它整合既有且稳健的基于深度学习的分割、细胞追踪和时间分类方法，从而无需专业计算专长即可定量单个细胞随时间变化的荧光报告信号。除 FluoroFate 外，我们还开发了三顺反子荧光泛素化细胞周期指示器（Fucci）和凋亡生物传感器，使得可在同一细胞中同时监测细胞周期进程和 caspase 激活。应用 FluoroFate 后，我们依据 Annexin V 和碘化丙啶信号的时间顺序，在单细胞水平解析凋亡性和非凋亡性细胞死亡，并鉴定出对药物扰动作出反应的不同死亡动力学和表型谱。我们揭示了 birinapant 与 cycloheximide 治疗之间不同的时间动态和细胞死亡方式，这反映了这些药物扰动 TNF/TNFR1 信号的方式差异。在单细胞层面，我们发现相互平行、独立调控的死亡程序，表明 RIPK1 缺失选择性损害凋亡性细胞死亡，而在很大程度上不影响非凋亡性死亡。随后，我们使用 FluoroFate 分析组合 Fucci—凋亡报告系统的延时图像，解析同一细胞随时间变化的细胞周期进程和 caspase 激活。总体而言，FluoroFate 及我们的新型细胞周期和凋亡生物传感器构成一个广泛适用的平台，可从活细胞成像数据中提取机制性见解。",
+          "published": "2026-08-17",
+          "author_line": "Preedy, M. K., Taylor-Hearn, I., Ying, C. 等 8 人"
+        }
+      ]
+    },
+    {
+      "id": "aixmath",
+      "name": "AI × Math",
+      "stats": {
+        "fetched": 452,
+        "candidates": 60,
+        "selected": 7,
+        "sources": {
+          "arXiv": 452,
+          "OpenReview": 0
+        }
+      },
+      "source_errors": [
+        "OpenReview: RuntimeError: 未配置 OpenReview 账号"
+      ],
+      "items": [
+        {
+          "id": "arxiv:2608.15979v1",
+          "channel": "aixmath",
+          "related_channels": [
+            "aixchem"
+          ],
+          "item_type": "paper",
+          "source": "arXiv",
+          "title": "ALPS: Measuring Valid Creativity in Large Language Models with Mathematical Construction",
+          "url": "https://arxiv.org/abs/2608.15979v1",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Eric Xie",
+            "Wenqian Ye",
+            "Aidong Zhang"
+          ],
+          "language": "en",
+          "abstract_or_text": "Large language models produce outputs presented as discoveries - new proofs, conjectures, or molecules. Whether such an output that appears creative is truly original and effective is hard to establish: open-ended outputs require subjective judgment, the output may replicate something seen in training, or the task may be too simple to need creativity. We present ALPS (Austin-Law Proof-Synthesis), a benchmark that designs a task to measure valid creativity: producing a solution that is original and can be proven correct. Each instance is a single equational law, certified to require either the construction of an infinite mathematical structure satisfying the law, or a proof that no such structure exists. Submissions are verified by automated proof checking with no human involvement, and a public generator produces new instances without limit, so LLMs are never evaluated on problems they may have seen. A portfolio of eight configurations of leading automated provers resolves 2.2% of the 4,141-law evaluation pool, and a twentyfold budget increase adds 0.6%: the obstacle is not compute, but the absence of any method that produces the tailored structure each law requires. Under a fixed protocol, the strongest reasoning model we test succeeds in 14% of instances on the proof side, but none on the construction side. The remaining 97.2% of the pool is unresolved at every configuration and budget we test. We release ALPS in full: the corpus, the generator, and the automated judge.",
+          "summary_zh": "ALPS 以等式律为题目单元，要求系统构造满足该律的无限数学结构，或证明此类结构不存在；答案由自动证明检查器验证，并以可无限生成的新题降低训练数据重合风险。",
+          "why_it_matters_zh": "它把“看似有创造性”的开放式数学输出转化为可机检的构造或不可满足性证明任务。结果也显示，受测推理模型在证明侧仅完成 14%，在构造侧未成功，不能据此宣称模型已具备数学创造能力。",
+          "quality_score": 80.0,
+          "tags": [
+            "方法与模型",
+            "数学构造",
+            "自动证明检查",
+            "基准"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "evaluation",
+            "release",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 1,
+          "featured": true,
+          "category": "方法与模型",
+          "metrics": {},
+          "metadata": {
+            "doi": "",
+            "arxiv_id": "2608.15979v1"
+          },
+          "abstract_zh": "大语言模型会产出被呈现为发现的结果——新的证明、猜想或分子。要确定一个看似有创造性的输出是否真正原创且有效十分困难：开放式输出需要主观判断，输出可能复现训练中见过的内容，或者任务可能过于简单而无须创造性。我们提出 ALPS（Austin-Law Proof-Synthesis），这是一个旨在衡量有效创造力的基准：产生既原创又能被证明正确的解。每个实例是一条单独的等式律，并经认证，要求构造满足该律的无限数学结构，或者证明不存在这样的结构。提交结果由自动证明检查进行验证，无需人工参与；公开生成器可以无限生成新实例，因此 LLM 永远不会在它们可能见过的问题上接受评估。八种领先自动证明器配置组成的集合解决了 4,141 条律构成的评测池中的 2.2%；将预算增加二十倍只增加了 0.6%：障碍不在计算量，而在于缺少能生成每条律所需定制结构的方法。在固定协议下，我们测试的最强推理模型在证明侧的实例上成功率为 14%，但在构造侧没有成功。我们测试的所有配置和预算下，评测池中其余 97.2% 的实例均未解决。我们完整发布 ALPS：语料库、生成器和自动裁判。",
+          "published": "2026-08-17",
+          "author_line": "Eric Xie, Wenqian Ye, Aidong Zhang"
+        },
+        {
+          "id": "arxiv:2608.16554v1",
+          "channel": "aixmath",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "arXiv",
+          "title": "Ask, Condition or Abstain: Reinforcement Learning for Missing-Premise Reasoning",
+          "url": "https://arxiv.org/abs/2608.16554v1",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Yongqi Tong",
+            "Zhenyu Zhang",
+            "Zimi Liu",
+            "Kewei Fu",
+            "Mingli Song",
+            "Haofei Zhang",
+            "Junshao Zhang",
+            "Hong Zhu",
+            "Jiang-Ming Yang",
+            "Xin Zhang",
+            "Jianshe Li"
+          ],
+          "language": "en",
+          "abstract_or_text": "Answer-only reinforcement learning (RL) trains reasoning models to solve fully specified problems, but many realistic queries omit a premise needed for a unique answer. In this setting, the useful response is not always refusal: the model should ask for the missing premise, condition its answer on the unknown quantity, or abstain when no informative conditional response is available. We present Ask-Condition-Abstain Reinforcement Learning (ACA-RL), a data-augmented RL framework for this setting. Its reasoning-graph-guided pipeline converts well-posed problems into missing-premise training instances with localized gap annotations; ACA-RL then trains on these instances with a structured reward over five observable response behaviors. We also introduce the Missing-Premise Benchmark (MPB), a 274-instance human-verified benchmark spanning mathematical, logical, and real-world word problems. Across Qwen3 and Llama models, ACA-RL consistently improves on MPB while preserving competitive performance on well-posed reasoning tasks. Together with the released code, MPB, and training data, this work supports a new mission for NLP evaluation: measuring whether models can recognize when a task is underdetermined and handle uncertainty, not only whether they can answer fully specified questions.",
+          "summary_zh": "ACA-RL 将完整题目转化为带局部缺失前提标注的训练实例，训练模型在追问、条件作答和弃答之间作出选择；MPB 含 274 道经人工核验的数学、逻辑和现实文字题。",
+          "why_it_matters_zh": "该工作评测模型能否识别问题不充分确定，而非只考察给出单一答案的能力。摘要称其在 Qwen3 和 Llama 上提升 MPB 表现，同时保持完整题目的竞争性表现；具体增幅未在候选摘要中提供。",
+          "quality_score": 79.0,
+          "tags": [
+            "数学推理",
+            "强化学习",
+            "不充分确定性",
+            "基准"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "evaluation",
+            "release",
+            "performance",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 2,
+          "featured": true,
+          "category": "数学推理",
+          "metrics": {},
+          "metadata": {
+            "doi": "",
+            "arxiv_id": "2608.16554v1"
+          },
+          "abstract_zh": "仅以答案为目标的强化学习（RL）训练推理模型解决前提完整的问题，但许多现实查询缺少获得唯一答案所需的前提。在这种情形下，有用的回应并不总是拒答：模型应当询问缺失前提、在未知量条件下给出答案，或者在无法给出有信息量的条件性回答时弃答。我们提出 Ask-Condition-Abstain Reinforcement Learning（ACA-RL），一种面向这一情形的数据增强 RL 框架。其由推理图引导的流程将前提充分的问题转换为缺失前提的训练实例，并附带局部缺口标注；随后，ACA-RL 以涵盖五种可观察回应行为的结构化奖励进行训练。我们还引入 Missing-Premise Benchmark（MPB），这是一个含 274 个实例、经人工验证的基准，涵盖数学、逻辑和现实世界文字题。在 Qwen3 和 Llama 模型上，ACA-RL 一贯提升 MPB 表现，同时在前提充分的推理任务上保持有竞争力的性能。随着代码、MPB 和训练数据的发布，这项工作支持 NLP 评测的一项新任务：衡量模型能否识别任务何时不充分确定并处理不确定性，而不仅是能否回答前提完整的问题。",
+          "published": "2026-08-17",
+          "author_line": "Yongqi Tong, Zhenyu Zhang, Zimi Liu 等 11 人"
+        },
+        {
+          "id": "arxiv:2608.15673v1",
+          "channel": "aixmath",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "arXiv",
+          "title": "PL-Guard: Probabilistic Logic Reasoning for LLM Guardrails",
+          "url": "https://arxiv.org/abs/2608.15673v1",
+          "published_at": "2026-08-16",
+          "updated_at": "2026-08-16",
+          "creators": [
+            "Satchit Chatterji",
+            "Shihan Wang",
+            "Giovanni Sileno",
+            "Erman Acar"
+          ],
+          "language": "en",
+          "abstract_or_text": "Large language model guardrails can be viewed as policy-consistency problems: a system must determine which policy-relevant facts hold in a prompt-response pair and what those facts imply under a given policy. Common approaches, including policy prompting and LLM-as-a-judge pipelines, often overlap the tasks of semantic grounding and policy reasoning: the model both interprets the prompt-response pair and reasons about whether a policy has been violated. This can lead to unsafe compliance with harmful prompts, or refusals to assist benign ones. To separate grounding and reasoning roles, we propose PL-Guard, a neurosymbolic guardrail architecture. Using a symbolic policy interface consisting of predicates and ProbLog rules, a local LLM grounds prompt-response pairs into predicate probabilities using renormalized True/False token scores, while ProbLog performs explicit probabilistic rule inference over the symbolic policy. On the XSTest benchmark, an offline Qwen-based evaluator finds that PL-Guard with a hand-curated policy reduces unsafe compliance from 22.0% for the base model to 0.5%, and below the 6.0% rate of an LLM-as-a-judge baseline. This comes at the cost of higher over-refusal than the LLM-as-a-judge baseline, 14.4% versus 5.2%. These results suggest that separating neural grounding from probabilistic symbolic reasoning can expose the safety-helpfulness tradeoff while making the guardrail's intermediate reasoning steps explicit and auditable.",
+          "summary_zh": "PL-Guard 将提示—回答对的语义归因与策略推理拆开：本地 LLM 输出谓词概率，ProbLog 按符号规则作显式概率推理。",
+          "why_it_matters_zh": "在 XSTest 上，候选摘要报告该系统将基础模型的不安全服从率从 22.0% 降至 0.5%，但过度拒答率为 14.4%，高于 LLM-as-a-judge 基线的 5.2%。这一结果呈现了可审计符号中间步骤及安全性与有用性之间的具体权衡。",
+          "quality_score": 76.0,
+          "tags": [
+            "方法与模型",
+            "概率逻辑",
+            "ProbLog",
+            "神经符号"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 3,
+          "featured": true,
+          "category": "方法与模型",
+          "metrics": {},
+          "metadata": {
+            "doi": "",
+            "arxiv_id": "2608.15673v1"
+          },
+          "abstract_zh": "大语言模型护栏可以被视为策略一致性问题：系统必须确定提示—回答对中哪些与策略相关的事实成立，以及这些事实在给定策略下意味着什么。包括策略提示和 LLM-as-a-judge 流程在内的常见方法，往往将语义归因与策略推理两项任务重叠起来：模型既解释提示—回答对，也推理是否违反了策略。这可能导致对有害提示的不安全服从，或拒绝协助良性请求。为分离归因和推理角色，我们提出 PL-Guard，一种神经符号护栏架构。它使用由谓词和 ProbLog 规则组成的符号策略接口：本地 LLM 利用经重归一化的 True/False token 分数，将提示—回答对归因为谓词概率；随后 ProbLog 在符号策略上执行显式概率规则推理。在 XSTest 基准上，一个离线的、基于 Qwen 的评估器发现，采用人工整理策略的 PL-Guard 将不安全服从率从基础模型的 22.0% 降至 0.5%，低于 LLM-as-a-judge 基线的 6.0%。这以较高的过度拒答为代价：14.4%，而 LLM-as-a-judge 基线为 5.2%。这些结果表明，分离神经归因与概率符号推理，可以揭示安全性—有用性权衡，同时使护栏的中间推理步骤明确且可审计。",
+          "published": "2026-08-16",
+          "author_line": "Satchit Chatterji, Shihan Wang, Giovanni Sileno 等 4 人"
+        },
+        {
+          "id": "arxiv:2608.16033v1",
+          "channel": "aixmath",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "arXiv",
+          "title": "R^3-Bench: LLMs Struggle with Resource-Rational Reasoning under Shared Budgets",
+          "url": "https://arxiv.org/abs/2608.16033v1",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Peisong Wang",
+            "Zhiwei Ma",
+            "Bowen Liu",
+            "Feixue Liu",
+            "Aochuan Chen",
+            "Chenyi Zi",
+            "Hongchuan Zeng",
+            "Yuhan Li",
+            "Jia Li"
+          ],
+          "language": "en",
+          "abstract_or_text": "In cognitive science, resource rationality asks how an agent should allocate limited computation to maximize expected value. Most reasoning and agent benchmarks use independent per-task budgets; existing shared-budget studies do not calibrate suite performance against the same model's demonstrated single-problem competence. We introduce R^3-Bench, which evaluates six-problem suites under shared budgets across mathematics, competitive programming, and abstract reasoning in tool-free and agentic settings. Matched single-problem response curves define an offline empirical oracle over observed successes. Across 72 main-table cells for six models, the oracle mean matches or exceeds the contest mean in all cells and is strictly higher in 71. Under moderate tool-free pressure, equal-allocation replay also exceeds contest performance for four of six models. Trajectory diagnostics reveal limited strategy updating and pressure-dependent failure patterns. In a three-model diagnostic under strong agentic pressure, at least one fixed scheduler exceeds the contest mean in six of nine cells, but no policy dominates across domains. These results expose a persistent gap between demonstrated competence and shared-budget realization.",
+          "summary_zh": "R^3-Bench 在共享总预算下评测六题套题，覆盖数学、竞赛编程和抽象推理，并以同一模型的单题响应曲线构造经验参照。",
+          "why_it_matters_zh": "72 个主表条件中，经验参照在全部条件下不低于竞赛式执行，且在 71 个条件中更高；这说明模型已有的单题能力未必能转化为共享预算下的资源分配能力。",
+          "quality_score": 75.0,
+          "tags": [
+            "方法与模型",
+            "数学推理",
+            "资源理性",
+            "基准"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "performance",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 4,
+          "featured": false,
+          "category": "方法与模型",
+          "metrics": {},
+          "metadata": {
+            "doi": "",
+            "arxiv_id": "2608.16033v1"
+          },
+          "abstract_zh": "在认知科学中，资源理性研究智能体应如何分配有限计算资源以最大化期望价值。大多数推理和智能体基准使用彼此独立的逐题预算；现有共享预算研究没有根据同一模型已展示的单题能力来校准套题表现。我们引入 R^3-Bench，它在无工具和智能体两种设置下，评测数学、竞赛编程和抽象推理中的六题套题，并施加共享预算。匹配的单题响应曲线定义了一个基于观测成功结果的离线经验 oracle。在六个模型的 72 个主表条件中，oracle 平均值在所有条件下均达到或超过竞赛平均值，并在 71 个条件中严格更高。在中等无工具压力下，等额分配重放也超过六个模型中的四个的竞赛表现。轨迹诊断显示策略更新有限，并存在随压力而变化的失败模式。在强智能体压力下对三个模型的诊断中，至少一种固定调度器在九个条件中的六个超过竞赛平均值，但没有任何策略在各领域占优。这些结果揭示了已展示能力与共享预算实现之间持续存在的差距。",
+          "published": "2026-08-17",
+          "author_line": "Peisong Wang, Zhiwei Ma, Bowen Liu 等 9 人"
+        },
+        {
+          "id": "arxiv:2608.16443v1",
+          "channel": "aixmath",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "arXiv",
+          "title": "Time to Reason: Scalable Neurosymbolic Learning for LTLf via Fuzzy Semantics",
+          "url": "https://arxiv.org/abs/2608.16443v1",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Riccardo Andreoni",
+            "Andrei Buliga",
+            "Alessandro Daniele",
+            "Paolo Felli",
+            "Chiara Ghidini",
+            "Marco Montali",
+            "Massimiliano Ronzani"
+          ],
+          "language": "en",
+          "abstract_or_text": "Neurosymbolic (NeSy) Artificial Intelligence aims to integrate Deep Learning (DL) architectures with symbolic reasoning. While initial NeSy approaches have targeted mainly symbolic reasoning in propositional and first-order logics, recent works have started to address the construction of neurosymbolic frameworks for Temporal Logics, and in particular for LTLf. These approaches have established temporal NeSy as a promising research direction, laying the foundations for learning under temporal constraints. Nonetheless, they leave many questions unanswered. From a theoretical perspective, several differentiable semantics for interpreting LTLf have been proposed but have not yet been formally and systematically defined within a unified framework. Moreover, existing approaches commonly rely on automata to represent temporal knowledge, resulting in limited scalability. Motivated by this research gap, this paper provides the following contributions: (i) formally defining different fuzzy semantics for LTLf, and systematically analysing theoretical properties regarding equivalences and dualities of temporal operators; (ii) showing how these semantics can be directly integrated within a novel NeSy framework, called DiffLTLf, enabling flexible and scalable learning without relying on the usage of automata; and (iii) introducing a novel evaluation protocol of increased complexity of learning tasks w.r.t. existing benchmarks. Our results show that the choice of fuzzy semantics has a significant impact on predictive performance. Moreover, DiffLTLf achieves performance on par with, and sometimes superior to, state-of-the-art probabilistic approaches while substantially improving scalability. Taken together, these results establish direct fuzzy interpretations as a competitive and scalable alternative to existing temporal NeSy frameworks.",
+          "summary_zh": "该文统一形式化 LTLf 的多种模糊语义，分析时序算子的等价性与对偶性，并以 DiffLTLf 将这些语义直接用于神经符号学习，避免依赖自动机表示。",
+          "why_it_matters_zh": "工作同时报告理论性质分析和随任务复杂度递增的评测协议；摘要称 DiffLTLf 的效果可与概率方法相当或更好，并显著改善可扩展性，但没有给出具体数值。",
+          "quality_score": 74.0,
+          "tags": [
+            "验证与逻辑",
+            "LTLf",
+            "模糊语义",
+            "神经符号学习"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "state-of-the-art",
+            "evaluation",
+            "performance",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 5,
+          "featured": false,
+          "category": "验证与逻辑",
+          "metrics": {},
+          "metadata": {
+            "doi": "",
+            "arxiv_id": "2608.16443v1"
+          },
+          "abstract_zh": "神经符号（NeSy）人工智能旨在整合深度学习（DL）架构与符号推理。早期 NeSy 方法主要面向命题逻辑和一阶逻辑中的符号推理，近期工作开始构建用于时序逻辑、尤其是 LTLf 的神经符号框架。这些方法已使时序 NeSy 成为有前景的研究方向，并为时序约束下的学习奠定了基础。然而，它们仍留下许多未解问题。从理论角度看，人们已提出若干用于解释 LTLf 的可微语义，但尚未在统一框架中对其进行正式且系统的定义。此外，现有方法通常依赖自动机表示时序知识，因而可扩展性有限。针对这一研究空缺，本文作出如下贡献：(i) 正式定义 LTLf 的不同模糊语义，并系统分析时序算子等价性与对偶性的理论性质；(ii) 展示如何将这些语义直接整合进名为 DiffLTLf 的新型 NeSy 框架，使其无需依赖自动机即可实现灵活且可扩展的学习；(iii) 引入一种相较于既有基准学习任务复杂度更高的新评测协议。我们的结果表明，模糊语义的选择会显著影响预测性能。此外，DiffLTLf 达到与最先进概率方法相当、有时更优的性能，同时大幅改善可扩展性。总体而言，这些结果确立了直接模糊解释作为现有时序 NeSy 框架的有竞争力且可扩展的替代方案。",
+          "published": "2026-08-17",
+          "author_line": "Riccardo Andreoni, Andrei Buliga, Alessandro Daniele 等 7 人"
+        },
+        {
+          "id": "arxiv:2608.15509v1",
+          "channel": "aixmath",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "arXiv",
+          "title": "Temporal Logic Guided Universal Task Representations for Reinforcement Learning",
+          "url": "https://arxiv.org/abs/2608.15509v1",
+          "published_at": "2026-08-16",
+          "updated_at": "2026-08-16",
+          "creators": [
+            "Hao Zhang",
+            "Zhangli Zhou",
+            "Zhen Kan"
+          ],
+          "language": "en",
+          "abstract_or_text": "Task guided agents demonstrate strong performance in a wide range of complex tasks. However, most existing task representation algorithms are tailored to specific contexts and struggle to generalize across diverse scenarios. Moreover, they typically depend on gradient signals from reinforcement learning controllers to update their weights, which can degrade both representation quality and learning efficiency. To overcome these limitations, we propose LOTUS, a temporal logic inspired universal task representation framework that can be seamlessly integrated into any RL algorithm to enhance agent performance across diverse task settings. Specifically, we design a novel task representation architecture capable of modeling relationships and extracting task semantics from LTL formulas. We further introduce a more effective update mechanism that treats the LTL encoder as a policy, thereby improving representation capacity. To enhance stability and robustness, LOTUS leverages the bisimulation metric, which provides theoretical guarantees for LTL representation, including behavioral equivalence, optimality fidelity, and trajectory robustness. Experimental results show that LOTUS outperforms most existing methods in learning efficiency, generalization capability, and representation quality. Specifically, LOTUS accelerates convergence over 20% in single-task scenarios, achieves a 15%-45% higher success rate in unseen manipulation tasks, and improves generalization performance over 25% in complex multi-task environments with increased sub-goal depth or conjunctions. The corresponding code, videos, and appendix are available at: https://lotus-website.github.io/.",
+          "summary_zh": "LOTUS 以 LTL 公式编码任务语义，并把 LTL 编码器作为策略更新；论文将双模拟度量用于给出表示的行为等价性、最优性保真度和轨迹鲁棒性保证。",
+          "why_it_matters_zh": "候选摘要报告其在单任务中将收敛速度提高逾 20%，在未见操控任务中将成功率提高 15%–45%。这些结论来自实验，理论保证针对 LTL 表示性质，不能直接外推为任意强化学习任务中的普遍可靠性。",
+          "quality_score": 74.0,
+          "tags": [
+            "方法与模型",
+            "时序逻辑",
+            "LTL",
+            "强化学习"
+          ],
+          "evidence_flags": [
+            "github",
+            "experimental",
+            "performance",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 6,
+          "featured": false,
+          "category": "方法与模型",
+          "metrics": {},
+          "metadata": {
+            "doi": "",
+            "arxiv_id": "2608.15509v1"
+          },
+          "abstract_zh": "任务引导型智能体在广泛的复杂任务中表现强劲。然而，大多数现有任务表示算法都为特定情境量身定制，难以在多样场景间泛化。此外，它们通常依赖强化学习控制器的梯度信号来更新权重，这会同时降低表示质量和学习效率。为克服这些局限，我们提出 LOTUS，一种受时序逻辑启发的通用任务表示框架，它可以无缝整合到任何 RL 算法中，以提升智能体在多样任务设置中的表现。具体而言，我们设计了一种新的任务表示架构，能够从 LTL 公式中建模关系并提取任务语义。我们进一步引入一种更有效的更新机制，将 LTL 编码器视为策略，从而提升表示能力。为增强稳定性与鲁棒性，LOTUS 利用双模拟度量；该度量为 LTL 表示提供理论保证，包括行为等价性、最优性保真度和轨迹鲁棒性。实验结果表明，LOTUS 在学习效率、泛化能力和表示质量上优于大多数现有方法。具体来说，LOTUS 在单任务场景中使收敛加快逾 20%，在未见的操控任务中取得高出 15%–45% 的成功率，并在子目标深度或合取增加的复杂多任务环境中将泛化性能提高逾 25%。相应的代码、视频和附录见：https://lotus-website.github.io/。",
+          "published": "2026-08-16",
+          "author_line": "Hao Zhang, Zhangli Zhou, Zhen Kan"
+        },
+        {
+          "id": "arxiv:2608.16637v1",
+          "channel": "aixmath",
+          "related_channels": [],
+          "item_type": "paper",
+          "source": "arXiv",
+          "title": "PDDLCoder: Agentic PDDL Generation for LLM-Assisted Symbolic Planning",
+          "url": "https://arxiv.org/abs/2608.16637v1",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-17",
+          "creators": [
+            "Veit Laule",
+            "Jiangtao Shuai",
+            "Manfred Hauswirth",
+            "Sonja Schimmler"
+          ],
+          "language": "en",
+          "abstract_or_text": "LLMs remain unreliable for long-horizon planning, often generating logically inconsistent or non-applicable plans. Recent hybrid methods instead translate natural language into the Planning Domain Definition Language (PDDL), allowing symbolic planners to produce verifiable plans. However, existing methods frequently rely on rigid generation pipelines, a partial PDDL definition, or human feedback. Furthermore, their evaluation is hindered by the lack of standardized benchmarks with automated verification. To address these limitations, we present PDDLCoder, an agentic framework for PDDL generation from natural language that iteratively generates, analyzes, and refines planning specifications. We further introduce NL-pddlgym, a benchmark dataset comprising 711 planning problems across 23 domains with executable gym environments for the automated verification of plan applicability. Experiments on the NL-pddlgym test set containing 106 problems across 4 held-out domains show that PDDLCoder generates applicable plans for 89.6\\% of tested planning problems. This improves upon our adaptations of previous PDDL generation methods, which achieved up to 45.3\\%, and outperforms direct LLM planning approaches, which reached up to 74.5\\% on the same test set. Our work demonstrates the effectiveness of agentic PDDL generation for planning and establishes a reproducible benchmark for future research on LLM-assisted symbolic planning.",
+          "summary_zh": "PDDLCoder 从自然语言迭代生成、分析和修订 PDDL 规划规格；NL-pddlgym 提供 23 个领域的 711 个问题及可执行环境，用于自动验证规划适用性。",
+          "why_it_matters_zh": "在含 4 个留出领域、106 个问题的测试集上，摘要报告 PDDLCoder 的可适用规划比例为 89.6%，高于文中复现的既有 PDDL 生成方法最高 45.3% 和直接 LLM 规划最高 74.5%。可执行环境使核心结果能够复核。",
+          "quality_score": 73.0,
+          "tags": [
+            "验证与逻辑",
+            "PDDL",
+            "符号规划",
+            "自动验证"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "dataset",
+            "evaluation",
+            "preprint"
+          ],
+          "publication_status": "preprint",
+          "rank": 7,
+          "featured": false,
+          "category": "验证与逻辑",
+          "metrics": {},
+          "metadata": {
+            "doi": "",
+            "arxiv_id": "2608.16637v1"
+          },
+          "abstract_zh": "LLM 在长时程规划中仍不可靠，常常生成逻辑不一致或不可适用的计划。近期混合方法转而将自然语言翻译为规划领域定义语言（PDDL），使符号规划器能够生成可验证计划。然而，现有方法常依赖僵化的生成流程、不完整的 PDDL 定义或人工反馈。此外，由于缺乏具有自动验证功能的标准化基准，它们的评测受到限制。为解决这些限制，我们提出 PDDLCoder：一个从自然语言生成 PDDL 的智能体框架，可迭代地生成、分析和修订规划规格。我们还引入 NL-pddlgym，一个基准数据集，包含跨 23 个领域的 711 个规划问题，并提供用于自动验证计划适用性的可执行 gym 环境。在 NL-pddlgym 测试集上——它包含来自 4 个留出领域的 106 个问题——实验表明，PDDLCoder 为 89.6% 的受测规划问题生成了可适用的计划。这优于我们对既有 PDDL 生成方法的改编版本，后者最高达到 45.3%，也优于直接 LLM 规划方法，后者在同一测试集上最高达到 74.5%。我们的工作展示了面向 LLM 辅助符号规划的智能体式 PDDL 生成的有效性，并建立了一个可复现的基准，供未来研究使用。",
+          "published": "2026-08-17",
+          "author_line": "Veit Laule, Jiangtao Shuai, Manfred Hauswirth 等 4 人"
+        }
+      ]
+    },
+    {
+      "id": "aivoices",
+      "name": "AI Voices",
+      "stats": {
+        "fetched": 17,
+        "candidates": 17,
+        "selected": 1,
+        "sources": {
+          "X": 0,
+          "Research blogs": 17
+        }
+      },
+      "source_errors": [
+        "X: RuntimeError: HTTP 402 额度不足，请在 X Developer Console 充值 credits"
+      ],
+      "items": [
+        {
+          "id": "feed:https://developer.nvidia.com/blog/how-ai-coding-agents-can-unlock-materials-simulation-with-nvidia-alchemi-toolkit/",
+          "channel": "aivoices",
+          "related_channels": [
+            "aixchem"
+          ],
+          "item_type": "research_blog",
+          "source": "NVIDIA Technical Blog",
+          "title": "How AI Coding Agents Can Unlock Materials Simulation with NVIDIA ALCHEMI Toolkit",
+          "url": "https://developer.nvidia.com/blog/how-ai-coding-agents-can-unlock-materials-simulation-with-nvidia-alchemi-toolkit/",
+          "published_at": "2026-08-18T18:00:00Z",
+          "updated_at": "2026-08-18T18:00:00Z",
+          "creators": [
+            "NVIDIA Technical Blog"
+          ],
+          "language": "en",
+          "abstract_or_text": "Atomistic simulation requires three things: knowledge of the science, compute-efficient implementation of simulations, and accessible interfaces to the...",
+          "summary_zh": "NVIDIA 官方技术博客探讨 AI 编程智能体如何借助 ALCHEMI Toolkit 促进材料模拟；可见导语将原子尺度模拟概括为三项要求：科学知识、计算高效的模拟实现和可访问的接口。",
+          "why_it_matters_zh": "编辑判断：它把编程智能体与材料模拟软件的可用性联系起来，值得关注。候选材料未给出具体机制、代码或评测结果，因此仅依据导语作保守收录。",
+          "quality_score": 65.0,
+          "tags": [
+            "工具与实践"
+          ],
+          "evidence_flags": [
+            "原文摘要为截断导语；未见具体实现与评测细节"
+          ],
+          "publication_status": "official_update",
+          "rank": 1,
+          "featured": true,
+          "category": "工具与实践",
+          "metrics": {},
+          "metadata": {
+            "feed_url": "https://developer.nvidia.com/blog/feed/"
+          },
+          "abstract_zh": "原子尺度模拟需要三样东西：科学知识、计算效率高的模拟实现，以及可访问的界面，以便……",
+          "published": "2026-08-18",
+          "author_line": "NVIDIA Technical Blog"
+        }
+      ]
+    },
+    {
+      "id": "engineering",
+      "name": "Engineering",
+      "stats": {
+        "fetched": 29,
+        "candidates": 29,
+        "selected": 8,
+        "sources": {
+          "GitHub Releases": 29
+        }
+      },
+      "source_errors": [],
+      "items": [
+        {
+          "id": "github:372043815",
+          "channel": "engineering",
+          "related_channels": [
+            "aixmath",
+            "aixbio"
+          ],
+          "item_type": "software_release",
+          "source": "GitHub Releases",
+          "title": "langchain-openai==1.5.2a1",
+          "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.5.2a1",
+          "published_at": "2026-08-18T01:51:38Z",
+          "updated_at": "2026-08-18T01:25:48Z",
+          "creators": [
+            "langchain-ai/langchain"
+          ],
+          "language": "en",
+          "abstract_or_text": "Initial release release(openai): 1.5.2a1 (#39709) feat(openai): extract gateway metadata from response headers when available (#39706) chore(openai): update snapshots (#39657) fix(openai): support o-series models in `get_num_tokens_from_messages` (#38710) release(openai): 1.5.1 (#39653) fix(openai): preserve streamed encrypted reasoning (#39635) chore(infra): support langsmith gateway in CI (#39651) release(openai): 1.5.0 (#39629) feat(openai): support openai 3.0 SDK (#39613) chore(partners): bu…",
+          "summary_zh": "langchain-ai/langchain 发布 langchain-openai==1.5.2a1，扩大 OpenAI SDK 与模型兼容性，并修复流式推理、上下文窗口和 MCP 凭据处理问题。",
+          "why_it_matters_zh": "使用 LangChain 接入 OpenAI、Azure 或兼容服务的团队，可能需要验证 token 统计、流式推理和网关追踪行为；MCP `authorization` 脱敏也关系到日志中的凭据暴露风险。",
+          "quality_score": 78.0,
+          "tags": [
+            "兼容与安全"
+          ],
+          "evidence_flags": [
+            "benchmark",
+            "github",
+            "release",
+            "breaking"
+          ],
+          "publication_status": "release",
+          "rank": 1,
+          "featured": true,
+          "category": "兼容与安全",
+          "metrics": {},
+          "metadata": {
+            "repository": "langchain-ai/langchain",
+            "version": "langchain-openai==1.5.2a1",
+            "release_id": "372043815",
+            "release_type": "release"
+          },
+          "abstract_zh": "初始发布。可从响应头提取 gateway metadata；`get_num_tokens_from_messages` 支持 o-series 模型；保留流式 encrypted reasoning；支持 OpenAI 3.0 SDK；过滤内容中的无效 tool calls；处理 `ContextWindowExceededError`；保留 Responses `text` 选项；脱敏 MCP `authorization`；支持通过环境变量使用 LangSmith gateway；新增标准 chat model 参数 `reasoning_effort`、显式 prompt caching、ChatGPT OAuth 支持的 `ChatOpenAICodex` chat model，以及 `apply_patch` built-in tool。",
+          "published": "2026-08-18",
+          "author_line": "langchain-ai/langchain"
+        },
+        {
+          "id": "github:372686337",
+          "channel": "engineering",
+          "related_channels": [
+            "aixbio"
+          ],
+          "item_type": "software_release",
+          "source": "GitHub Releases",
+          "title": "0.148.0",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.148.0",
+          "published_at": "2026-08-18T22:26:03Z",
+          "updated_at": "2026-08-18T21:38:17Z",
+          "creators": [
+            "openai/codex"
+          ],
+          "language": "en",
+          "abstract_or_text": "## New Features - Export complete TUI conversations to Markdown with `/export`, either to the clipboard or a new file. (#37358) - Fork sessions with `codex exec fork`, and archive or restore sessions from the TUI resume picker. (#37367, #37369, #37371) - Draft prompts while the TUI initializes, with resume and fork progress shown during startup. (#38642, #38788) - View estimated thread credits or cost in `/status`, status lines, and terminal titles for eligible workspaces. (#38281, #38282) - Use…",
+          "summary_zh": "openai/codex 发布 rust-v0.148.0，加入会话导出、分叉和归档、Bedrock Runtime，以及异步 Hooks/MCP；同时加强跨平台沙箱限制。",
+          "why_it_matters_zh": "Codex CLI 用户可更方便地复用会话和导出记录，AWS 团队可通过 Bedrock Runtime 使用 GPT-5.6；会话恢复、MCP 重连和 Windows/Linux 沙箱修复会直接影响日常开发稳定性与权限控制。",
+          "quality_score": 72.0,
+          "tags": [
+            "兼容与安全"
+          ],
+          "evidence_flags": [
+            "github",
+            "experimental",
+            "security"
+          ],
+          "publication_status": "release",
+          "rank": 2,
+          "featured": true,
+          "category": "兼容与安全",
+          "metrics": {},
+          "metadata": {
+            "repository": "openai/codex",
+            "version": "rust-v0.148.0",
+            "release_id": "372686337",
+            "release_type": "release"
+          },
+          "abstract_zh": "新增功能：TUI 对话可用 `/export` 导出为 Markdown 到剪贴板或新文件；可用 `codex exec fork` 分叉会话，并在 TUI 恢复选择器中归档或恢复会话；TUI 初始化时可先起草提示词；符合条件的工作区可在 `/status`、状态行和终端标题查看预估 thread credits 或 cost；Amazon Bedrock Runtime 成为内置 provider，支持 AWS profile、region 和 GPT-5.6 routing；Hooks 可异步运行命令并调用 MCP tools。修复：模型切换和设置更新不再留下 stale instructions 或在进行中的 turn 中改变状态；恢复会话会还原工作目录和 approval policy；临时 provider 故障后 turn 可重连，OAuth 重新认证后 MCP servers 无需重启即可恢复；被拒绝或不可读路径在 Linux 与 Windows 的 sandbox 限制中会安全地拒绝访问。",
+          "published": "2026-08-18",
+          "author_line": "openai/codex"
+        },
+        {
+          "id": "github:371154159",
+          "channel": "engineering",
+          "related_channels": [],
+          "item_type": "software_release",
+          "source": "GitHub Releases",
+          "title": "b10448",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10448",
+          "published_at": "2026-08-15T20:48:35Z",
+          "updated_at": "2026-08-15T15:11:05Z",
+          "creators": [
+            "ggml-org/llama.cpp"
+          ],
+          "language": "en",
+          "abstract_or_text": "model: add Kimi-K3 text model (#26185) * model: add Kimi-K3 text model Hybrid KDA (linear) + MLA (full) attention as in Kimi-Linear-48B, plus five things that architecture does not have: 1. cross-layer residual attention (attn_res_block_size) 2. latent MoE (routed experts run at n_expert_latent) 3. situ activation (replaces SwiGLU everywhere) 4. MLA output gate (sigmoid gate before o_proj) 5. full-rank KDA gate (single ssm_g instead of ssm_g_a/ssm_g_b) K3's text_config reports KimiLinearForCausa…",
+          "summary_zh": "ggml-org/llama.cpp 发布 b10448，新增 Kimi-K3 text model、转换支持及带 reasoning、内容和 typed tool calls 的 Kimi-K3 chat format。",
+          "why_it_matters_zh": "在本地或自托管环境运行 Kimi-K3 的用户可获得模型加载、对话模板、流式推理内容和工具调用支持；转换链路对 MXFP4 权重采用无损重排，减少超大模型准备时的资源压力。",
+          "quality_score": 72.0,
+          "tags": [
+            "工具链更新"
+          ],
+          "evidence_flags": [
+            "github",
+            "release"
+          ],
+          "publication_status": "release",
+          "rank": 3,
+          "featured": true,
+          "category": "工具链更新",
+          "metrics": {},
+          "metadata": {
+            "repository": "ggml-org/llama.cpp",
+            "version": "b10448",
+            "release_id": "371154159",
+            "release_type": "release"
+          },
+          "abstract_zh": "新增 Kimi-K3 text model 支持，涵盖 Hybrid KDA 与 MLA attention、cross-layer residual attention、latent MoE、situ activation、MLA output gate 和 full-rank KDA gate。compressed-tensors 的 `mxfp4-pack-quantized` 权重会与 GGML MXFP4 进行无损重排，无需约 5.5 TB 的 bf16 往返转换。新增 Kimi-K3 chat format，支持 reasoning、content、typed tool calls、流式增量和相应的 finish reason；model-saver 会写入 `kda_gate_lower_bound`，避免保存后重新加载改变模型输出。",
+          "published": "2026-08-15",
+          "author_line": "ggml-org/llama.cpp"
+        },
+        {
+          "id": "github:371942335",
+          "channel": "engineering",
+          "related_channels": [],
+          "item_type": "software_release",
+          "source": "GitHub Releases",
+          "title": "JAX v0.11.1",
+          "url": "https://github.com/jax-ml/jax/releases/tag/jax-v0.11.1",
+          "published_at": "2026-08-17T20:45:31Z",
+          "updated_at": "2026-08-17T17:32:23Z",
+          "creators": [
+            "jax-ml/jax"
+          ],
+          "language": "en",
+          "abstract_or_text": "* New features * Added an error check for trying to deserialize JAX exports that are older than the backwards compatibility window. Without this check the deserialization of expired artifacts may succeed and then result in obscure downstream errors. Added a configuration flag `--jax_export_deserialize_expired_versions` to temporarily bypass the error check. See https://docs.jax.dev/en/latest/export/export.html#compatibility-guarantees. * Added `jax.numpy.top_k`, which implements `numpy.top_k`, a…",
+          "summary_zh": "jax-ml/jax 发布 jax-v0.11.1，加入导出工件兼容性检查与 `jax.numpy.top_k`，并带来若干 API 兼容性变化和 cuDNN attention 修复。",
+          "why_it_matters_zh": "维护 JAX 导出模型、依赖旧 sharding 序列化，或使用 `vmap`、fp8 和 cuDNN fused attention 的团队需要在升级前测试；旧工件将被明确拒绝，避免后续出现难以定位的错误。",
+          "quality_score": 69.0,
+          "tags": [
+            "兼容与安全"
+          ],
+          "evidence_flags": [
+            "experimental",
+            "evaluation",
+            "breaking"
+          ],
+          "publication_status": "release",
+          "rank": 4,
+          "featured": false,
+          "category": "兼容与安全",
+          "metrics": {},
+          "metadata": {
+            "repository": "jax-ml/jax",
+            "version": "jax-v0.11.1",
+            "release_id": "371942335",
+            "release_type": "release"
+          },
+          "abstract_zh": "新增对超出向后兼容期限的 JAX exports 反序列化错误检查，并提供 `--jax_export_deserialize_expired_versions` 配置项暂时绕过；新增实现 NumPy v2.6.0 `numpy.top_k` 的 `jax.numpy.top_k`。`exec_time_optimization_effort` 和 `memory_fitting_effort` 由 `EffortLevel` enum 取代；不再支持反序列化 2026-01-15 以前的 Exported modules；`jnp.take_along_axis` 的 `wrap_negative_indices` 默认值始终为 `True`。`in_shardings_hlo` 与 `out_shardings_hlo` 访问会发出警告。修复了小矩阵行列式的数值不稳定、cuDNN fused attention 的 `vmap`/fp8 路径，以及 `split` 对负索引的兼容性。",
+          "published": "2026-08-17",
+          "author_line": "jax-ml/jax"
+        },
+        {
+          "id": "github:371561378",
+          "channel": "engineering",
+          "related_channels": [],
+          "item_type": "software_release",
+          "source": "GitHub Releases",
+          "title": "b10456",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10456",
+          "published_at": "2026-08-17T06:29:29Z",
+          "updated_at": "2026-08-17T04:32:16Z",
+          "creators": [
+            "ggml-org/llama.cpp"
+          ],
+          "language": "en",
+          "abstract_or_text": "sycl: fix thread/block count in quantized cpy kernel launches (#27160) Adjusts the thread/block count to be proportional to the size of the quant, reducing under/over subscription. Largest perf improvement is the q4_0 -> f32 path, with, on a Arc 70, throughput goes from 20.21 GB/s to 158.19 GB/s The rest of the quants are flat in performance uplift. **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-macos-…",
+          "summary_zh": "ggml-org/llama.cpp 发布 b10456，修正 SYCL 量化 `cpy` kernel 的线程和 block 数计算，显著提升部分 Intel Arc 推理路径吞吐。",
+          "why_it_matters_zh": "采用 SYCL 和 Intel Arc GPU 部署量化模型的用户，尤其是 q4_0 到 f32 转换路径，可获得明显吞吐提升；其他量化格式的性能变化有限。",
+          "quality_score": 69.0,
+          "tags": [
+            "性能与部署"
+          ],
+          "evidence_flags": [
+            "github",
+            "release",
+            "performance"
+          ],
+          "publication_status": "release",
+          "rank": 5,
+          "featured": false,
+          "category": "性能与部署",
+          "metrics": {},
+          "metadata": {
+            "repository": "ggml-org/llama.cpp",
+            "version": "b10456",
+            "release_id": "371561378",
+            "release_type": "release"
+          },
+          "abstract_zh": "修复量化 `cpy` kernel launches 的 thread/block count，使其与 quant 大小成比例，减少资源不足或过度占用。在 Arc 70 上，q4_0 -> f32 路径吞吐从 20.21 GB/s 提升至 158.19 GB/s；其余 quant 的性能提升基本持平。",
+          "published": "2026-08-17",
+          "author_line": "ggml-org/llama.cpp"
+        },
+        {
+          "id": "github:372652429",
+          "channel": "engineering",
+          "related_channels": [],
+          "item_type": "software_release",
+          "source": "GitHub Releases",
+          "title": "v3.3.0",
+          "url": "https://github.com/openai/openai-python/releases/tag/v3.3.0",
+          "published_at": "2026-08-18T21:17:03Z",
+          "updated_at": "2026-08-18T21:13:31Z",
+          "creators": [
+            "openai/openai-python"
+          ],
+          "language": "en",
+          "abstract_or_text": "## [3.3.0](https://github.com/openai/openai-python/compare/v3.2.0...v3.3.0) (2026-08-18) ### Features * support named data-residency endpoints ([#3646](https://github.com/openai/openai-python/issues/3646)) ([11ee914](https://github.com/openai/openai-python/commit/11ee91475694d9cd77813763707fbadf68806d4f)) ### Bug Fixes * require patched optional networking dependencies ([#3651](https://github.com/openai/openai-python/issues/3651)) ([40e56de](https://github.com/openai/openai-python/commit/40e56de…",
+          "summary_zh": "openai/openai-python 发布 v3.3.0，支持 named data-residency endpoints，并要求使用已修补的可选网络依赖。",
+          "why_it_matters_zh": "有数据驻留要求的 Python SDK 用户可显式选择相应端点；依赖可选网络组件的应用应升级并重新锁定依赖，以获得发布说明中提到的修补版本。",
+          "quality_score": 66.0,
+          "tags": [
+            "工具链更新"
+          ],
+          "evidence_flags": [
+            "github",
+            "security"
+          ],
+          "publication_status": "release",
+          "rank": 6,
+          "featured": false,
+          "category": "工具链更新",
+          "metrics": {},
+          "metadata": {
+            "repository": "openai/openai-python",
+            "version": "v3.3.0",
+            "release_id": "372652429",
+            "release_type": "release"
+          },
+          "abstract_zh": "新增 named data-residency endpoints 支持。修复：要求使用已修补的 optional networking dependencies。维护项：移除未使用依赖并固定构建工具；文档强化 Python SDK 的 security contribution guidance。",
+          "published": "2026-08-18",
+          "author_line": "openai/openai-python"
+        },
+        {
+          "id": "github:371260055",
+          "channel": "engineering",
+          "related_channels": [],
+          "item_type": "software_release",
+          "source": "GitHub Releases",
+          "title": "b10451",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10451",
+          "published_at": "2026-08-16T07:24:37Z",
+          "updated_at": "2026-08-16T06:38:01Z",
+          "creators": [
+            "ggml-org/llama.cpp"
+          ],
+          "language": "en",
+          "abstract_or_text": "llama : check LoRA tensor data is within file bounds (#27056) * llama : check LoRA tensor data is within file bounds * Update src/llama-adapter.cpp Co-authored-by: Sigbjørn Skjæret --------- Co-authored-by: Sigbjørn Skjæret **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [ma…",
+          "summary_zh": "ggml-org/llama.cpp 发布 b10451，在读取 LoRA tensor 前校验其数据是否位于文件范围内。",
+          "why_it_matters_zh": "加载第三方、损坏或截断的 LoRA 文件时，此检查可避免程序基于越界 tensor 数据继续处理，提高本地模型加载流程的稳健性。",
+          "quality_score": 66.0,
+          "tags": [
+            "模型与框架"
+          ],
+          "evidence_flags": [
+            "github",
+            "release"
+          ],
+          "publication_status": "release",
+          "rank": 7,
+          "featured": false,
+          "category": "模型与框架",
+          "metrics": {},
+          "metadata": {
+            "repository": "ggml-org/llama.cpp",
+            "version": "b10451",
+            "release_id": "371260055",
+            "release_type": "release"
+          },
+          "abstract_zh": "在读取前检查 LoRA tensor data 是否位于 file bounds 内。",
+          "published": "2026-08-16",
+          "author_line": "ggml-org/llama.cpp"
+        },
+        {
+          "id": "github:371836454",
+          "channel": "engineering",
+          "related_channels": [],
+          "item_type": "software_release",
+          "source": "GitHub Releases",
+          "title": "b10472",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10472",
+          "published_at": "2026-08-17T17:16:25Z",
+          "updated_at": "2026-08-17T16:35:36Z",
+          "creators": [
+            "ggml-org/llama.cpp"
+          ],
+          "language": "en",
+          "abstract_or_text": "cuda : skip UMA override for HIP builds (#27083) AMD APUs report accurate memory via hipMemGetInfo. Using MemAvailable over-promises on small-carveout systems. fixes #18159 **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10472/llama-b10472-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.…",
+          "summary_zh": "ggml-org/llama.cpp 发布 b10472，针对 HIP 构建取消 UMA 内存覆盖逻辑，改用 AMD APU 报告的实际可用内存。",
+          "why_it_matters_zh": "在小显存划分的 AMD APU 上运行 HIP 后端的用户，可避免内存被高估后导致的模型加载或推理配置失配。",
+          "quality_score": 66.0,
+          "tags": [
+            "工具链更新"
+          ],
+          "evidence_flags": [
+            "github",
+            "release"
+          ],
+          "publication_status": "release",
+          "rank": 8,
+          "featured": false,
+          "category": "工具链更新",
+          "metrics": {},
+          "metadata": {
+            "repository": "ggml-org/llama.cpp",
+            "version": "b10472",
+            "release_id": "371836454",
+            "release_type": "release"
+          },
+          "abstract_zh": "HIP builds 不再覆盖 UMA 内存信息。AMD APUs 通过 `hipMemGetInfo` 报告准确内存；使用 `MemAvailable` 会在小 carveout 系统上高估可用内存。该更新修复 #18159。",
+          "published": "2026-08-17",
+          "author_line": "ggml-org/llama.cpp"
+        }
+      ]
+    }
+  ]
+}
