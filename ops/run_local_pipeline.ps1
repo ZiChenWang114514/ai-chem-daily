@@ -89,6 +89,41 @@ function Invoke-Python([string[]]$PythonArgs) {
     if ($code -ne 0) { throw "python $($PythonArgs -join ' ') failed with exit code $code" }
 }
 
+function Invoke-GrokVisit {
+    Invoke-Python @("backend/x_harvest.py", "request", "--date", $RunDate, "--root", $RepoRoot)
+    $Cache = Join-Path $RepoRoot "work\source-cache\x\$RunDate.json.gz"
+    if (Test-Path -LiteralPath $Cache) {
+        Write-Host "Grok X cache already present for $RunDate"
+        return
+    }
+    $Grok = Get-Command grok.exe -ErrorAction SilentlyContinue
+    if (-not $Grok) {
+        Write-Warning "grok.exe not found. Leave the visit ticket at work/grok-x/$RunDate.request.json and open Grok in this repo. See ops/grok/x_harvest_protocol.md"
+        return
+    }
+    $Prompt = Join-Path $RepoRoot "ops\grok\daily_visit_prompt.md"
+    $StdoutPath = Join-Path $RunRoot "$RunDate-grok-x-output.txt"
+    $StderrPath = Join-Path $RunRoot "$RunDate-grok-x-error.txt"
+    Write-Host "Codex visiting Grok for X harvest ($RunDate)"
+    $GrokArgs = @(
+        "--cwd", $RepoRoot,
+        "--prompt-file", $Prompt,
+        "--always-approve",
+        "--permission-mode", "bypassPermissions",
+        "--max-turns", "48",
+        "--output-format", "plain"
+    )
+    $Process = Start-Process -FilePath $Grok.Source -ArgumentList $GrokArgs -WorkingDirectory $RepoRoot -RedirectStandardOutput $StdoutPath -RedirectStandardError $StderrPath -WindowStyle Hidden -Wait -PassThru
+    if (Test-Path -LiteralPath $StderrPath) { Get-Content -LiteralPath $StderrPath -Encoding UTF8 | Write-Host }
+    if (Test-Path -LiteralPath $StdoutPath) { Get-Content -LiteralPath $StdoutPath -Encoding UTF8 | Write-Host }
+    if ($Process.ExitCode -ne 0) {
+        Write-Warning "Grok visit failed with exit code $($Process.ExitCode)"
+    }
+    if (-not (Test-Path -LiteralPath $Cache)) {
+        Write-Warning "Grok visit finished without X cache. See ops/grok/x_harvest_protocol.md"
+    }
+}
+
 function Invoke-Collection([string]$Channel) {
     Write-ChannelStatus $Channel "running" "Collection started"
     try {
@@ -146,10 +181,7 @@ try {
         & $Git pull --ff-only origin main
         if ($LASTEXITCODE -ne 0) { throw "git pull failed" }
     }
-    $XCache = Join-Path $RepoRoot "work\source-cache\x\$RunDate.json.gz"
-    if (-not (Test-Path -LiteralPath $XCache)) {
-        Write-Warning "Grok X harvest cache missing: $XCache. AI Voices will skip X posts. See ops/grok/x_harvest_protocol.md"
-    }
+    Invoke-GrokVisit
     $CollectedChannels = @{}
     foreach ($Channel in $Channels) {
         $CollectedChannels[$Channel] = Invoke-Collection $Channel

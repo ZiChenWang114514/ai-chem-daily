@@ -150,10 +150,11 @@ def build_hub_interfaces(site_root: Path, config_path: Path, site_url: str) -> d
             "label": "scheduled-intake",
             "issue_title_template": "AIX Intake · {channel} · {date}",
             "schema": absolute_url(site_url, "api/v1/schemas/intake.json"),
-            "method": "Windows 本地 Codex CLI 串行生成五频道结构化精选，随后更新网站并推送 GitHub。",
+            "method": "Windows 本地 Codex CLI 先拜访 Grok 检索 X，再串行生成五频道结构化精选，随后更新网站并推送 GitHub。",
         },
         "steps": [
             "读取 status；若 state 为 stale，明确报告最新日期与预期日期，然后继续读取最近一期。",
+            "采集前 Codex 写下 Grok 访问票并启动 grok.exe；Grok 按 ops/grok/x_harvest_protocol.md 检索 X。不得使用官方 X API。",
             "读取 manifest，确定 active 状态的频道；忽略 planned 频道，除非其状态已经更新。",
             "读取每个 active 频道的 latest；优先比较前三项、来源分布、候选数量和来源异常。",
             "分别读取五频道 candidates，按频道标准选择达到质量要求的内容；没有合格内容时允许空集。",
@@ -180,7 +181,7 @@ def build_hub_interfaces(site_root: Path, config_path: Path, site_url: str) -> d
 每天北京时间 01:00，由 Windows 计划任务串行执行以下工作：
 
 1. 01:00 至 05:00 依次处理 AI × Chem、AI × Bio、AI × Math、AI Voices 和 Engineering。
-2. 共享 arXiv、bioRxiv 缓存，各频道之间不并发。
+2. 采集前 Codex 拜访本机 Grok，检索 X 并写入 source-cache；共享 arXiv、bioRxiv 缓存，各频道之间不并发。
 3. 本地 Codex CLI 固定使用 `gpt-5.6-terra` 与 `high`，输出符合 schema 的结构化精选。
 4. 07:15 只再次处理失败频道；07:45 生成综合日报并完成最终发布。
 5. GitHub Pages 部署后创建一个综合日报 Issue，由 GitHub 通知发送邮件。

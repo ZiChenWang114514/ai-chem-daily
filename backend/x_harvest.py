@@ -195,9 +195,57 @@ def write_cache(root: Path, run_date: date, items: list[dict[str, Any]]) -> Path
     return path
 
 
+def cache_path(root: Path, run_date: date) -> Path:
+    return root / "work" / "source-cache" / "x" / f"{run_date.isoformat()}.json.gz"
+
+
+def request_path(root: Path, run_date: date) -> Path:
+    return root / "work" / "grok-x" / f"{run_date.isoformat()}.request.json"
+
+
+def done_path(root: Path, run_date: date) -> Path:
+    return root / "work" / "grok-x" / f"{run_date.isoformat()}.done.json"
+
+
+def write_request(root: Path, run_date: date, watchlists: dict[str, Any]) -> dict[str, Any]:
+    plan = query_plan(watchlists, run_date)
+    day = run_date.isoformat()
+    ticket = {
+        "schema_version": "1.0",
+        "kind": "x-harvest",
+        "status": "pending",
+        "visitor": "codex",
+        "host": "grok",
+        "date": day,
+        "window": plan["window"],
+        "protocol": "ops/grok/x_harvest_protocol.md",
+        "prompt": "ops/grok/daily_visit_prompt.md",
+        "queries": plan["queries"],
+        "paths": {
+            "harvest": f"work/grok-x/{day}.json",
+            "cache": f"work/source-cache/x/{day}.json.gz",
+            "done": f"work/grok-x/{day}.done.json",
+        },
+    }
+    write_json(root / "work" / "grok-x" / f"{day}-queries.json", plan)
+    write_json(request_path(root, run_date), ticket)
+    return ticket
+
+
+def harvest_status(root: Path, run_date: date) -> dict[str, Any]:
+    cache = cache_path(root, run_date)
+    return {
+        "date": run_date.isoformat(),
+        "request": request_path(root, run_date).exists(),
+        "done": done_path(root, run_date).exists(),
+        "cache": cache.exists() and cache.stat().st_size > 0,
+        "cache_path": str(cache),
+    }
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Prepare or ingest Grok X harvests")
-    parser.add_argument("command", choices=("queries", "ingest"))
+    parser.add_argument("command", choices=("queries", "ingest", "request", "status"))
     parser.add_argument("harvest", nargs="?", help="Grok harvest JSON for ingest")
     parser.add_argument("--date", required=True)
     parser.add_argument("--root", default=".")
@@ -207,9 +255,17 @@ def main(argv: list[str] | None = None) -> int:
     watchlists = load_json(root / "config" / "watchlists.json", {})
     if args.command == "queries":
         plan = query_plan(watchlists, run_date)
-        out = root / "work" / "grok-x" / f"{run_date.isoformat()}-queries.json"
-        write_json(out, plan)
+        write_json(root / "work" / "grok-x" / f"{run_date.isoformat()}-queries.json", plan)
         json.dump(plan, sys.stdout, ensure_ascii=False, indent=2)
+        sys.stdout.write("\n")
+        return 0
+    if args.command == "request":
+        ticket = write_request(root, run_date, watchlists)
+        json.dump(ticket, sys.stdout, ensure_ascii=False, indent=2)
+        sys.stdout.write("\n")
+        return 0
+    if args.command == "status":
+        json.dump(harvest_status(root, run_date), sys.stdout, ensure_ascii=False, indent=2)
         sys.stdout.write("\n")
         return 0
     if not args.harvest:
@@ -217,6 +273,13 @@ def main(argv: list[str] | None = None) -> int:
     payload = json.loads(Path(args.harvest).read_text(encoding="utf-8"))
     items = ingest_harvest(payload, run_date)
     path = write_cache(root, run_date, items)
+    write_json(done_path(root, run_date), {
+        "schema_version": "1.0",
+        "date": run_date.isoformat(),
+        "status": "ok",
+        "count": len(items),
+        "cache": str(path),
+    })
     print(f"wrote {len(items)} X posts to {path}")
     return 0
 

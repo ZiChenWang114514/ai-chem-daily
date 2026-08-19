@@ -38,6 +38,7 @@ class FiveChannelConfigurationTests(unittest.TestCase):
         self.assertNotIn("Start-Job", runner)
         self.assertNotIn("ForEach-Object -Parallel", runner)
         self.assertNotIn("Wait-ForSlot", runner)
+        self.assertLess(runner.index("Invoke-GrokVisit"), runner.index("Invoke-Collection"))
         self.assertLess(runner.index("Invoke-Collection"), runner.index("Invoke-Curation"))
 
     def test_watchlists_are_editable_configuration(self):

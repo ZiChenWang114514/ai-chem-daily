@@ -14,7 +14,7 @@ if str(BACKEND) not in sys.path:
     sys.path.insert(0, str(BACKEND))
 
 from aix_pipeline import CHANNELS, LIMITS, Runtime, fetch_openreview, fetch_x, publication_date  # noqa: E402
-from x_harvest import ingest_harvest, write_cache  # noqa: E402
+from x_harvest import harvest_status, ingest_harvest, write_cache, write_request  # noqa: E402
 from apply_channel_curation import earlier_channel_keys, main as apply_channel_curation_main  # noqa: E402
 from apply_curation import main as apply_curation_main  # noqa: E402
 from build_channel_pages import render_channel_page  # noqa: E402
@@ -348,6 +348,19 @@ class CredentialCacheTests(unittest.TestCase):
             write_cache(root, date(2026, 8, 19), items)
             runtime = Runtime(root, date(2026, 8, 19))
             self.assertEqual(fetch_x(runtime)[0]["id"], items[0]["id"])
+
+    def test_write_request_ticket_for_grok_visit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            watchlists = {"x_accounts": ["karpathy", "ylecun"], "x_topic_queries": ["paper release"]}
+            ticket = write_request(root, date(2026, 8, 20), watchlists)
+            self.assertEqual(ticket["visitor"], "codex")
+            self.assertEqual(ticket["host"], "grok")
+            self.assertEqual(ticket["status"], "pending")
+            self.assertTrue((root / "work" / "grok-x" / "2026-08-20.request.json").exists())
+            status = harvest_status(root, date(2026, 8, 20))
+            self.assertTrue(status["request"])
+            self.assertFalse(status["cache"])
 
 
 class ChannelCurationDedupTests(unittest.TestCase):
