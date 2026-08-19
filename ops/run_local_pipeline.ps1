@@ -14,6 +14,7 @@ $Settings = @{
     Model = "gpt-5.6-terra"
     ReasoningEffort = "high"
     ScheduleTime = "07:00"
+    GrokVisitTimeoutMinutes = 20
 }
 if (Test-Path -LiteralPath $SettingsPath) {
     $LocalSettings = Import-PowerShellDataFile -LiteralPath $SettingsPath
@@ -89,22 +90,28 @@ function Invoke-Python([string[]]$PythonArgs) {
     if ($code -ne 0) { throw "python $($PythonArgs -join ' ') failed with exit code $code" }
 }
 
+function Get-XHarvestStatus {
+    $Output = & $Python "backend/x_harvest.py" "status" "--date" $RunDate "--root" $RepoRoot 2>&1
+    $Code = $LASTEXITCODE
+    if ($Code -ne 0) { throw "Unable to read Grok X harvest status (exit code $Code)" }
+    return (($Output -join [Environment]::NewLine) | ConvertFrom-Json)
+}
+
 function Invoke-GrokVisit {
     Invoke-Python @("backend/x_harvest.py", "request", "--date", $RunDate, "--root", $RepoRoot)
-    $Cache = Join-Path $RepoRoot "work\source-cache\x\$RunDate.json.gz"
-    if (Test-Path -LiteralPath $Cache) {
-        Write-Host "Grok X cache already present for $RunDate"
-        return
+    $Status = Get-XHarvestStatus
+    if ($Status.ready) {
+        Write-Host "Grok X cache already ready for $RunDate ($($Status.cache_count) posts)"
+        return $true
     }
     $Grok = Get-Command grok.exe -ErrorAction SilentlyContinue
     if (-not $Grok) {
         Write-Warning "grok.exe not found. Leave the visit ticket at work/grok-x/$RunDate.request.json and open Grok in this repo. See ops/grok/x_harvest_protocol.md"
-        return
+        return $false
     }
     $Prompt = Join-Path $RepoRoot "ops\grok\daily_visit_prompt.md"
-    $StdoutPath = Join-Path $RunRoot "$RunDate-grok-x-output.txt"
-    $StderrPath = Join-Path $RunRoot "$RunDate-grok-x-error.txt"
-    Write-Host "Codex visiting Grok for X harvest ($RunDate)"
+    $TimeoutMinutes = [Math]::Max(1, [int]$Settings.GrokVisitTimeoutMinutes)
+    $TimeoutMilliseconds = $TimeoutMinutes * 60 * 1000
     $GrokArgs = @(
         "--cwd", $RepoRoot,
         "--prompt-file", $Prompt,
@@ -113,15 +120,38 @@ function Invoke-GrokVisit {
         "--max-turns", "48",
         "--output-format", "plain"
     )
-    $Process = Start-Process -FilePath $Grok.Source -ArgumentList $GrokArgs -WorkingDirectory $RepoRoot -RedirectStandardOutput $StdoutPath -RedirectStandardError $StderrPath -WindowStyle Hidden -Wait -PassThru
-    if (Test-Path -LiteralPath $StderrPath) { Get-Content -LiteralPath $StderrPath -Encoding UTF8 | Write-Host }
-    if (Test-Path -LiteralPath $StdoutPath) { Get-Content -LiteralPath $StdoutPath -Encoding UTF8 | Write-Host }
-    if ($Process.ExitCode -ne 0) {
-        Write-Warning "Grok visit failed with exit code $($Process.ExitCode)"
+    foreach ($Attempt in 1..2) {
+        $StdoutPath = Join-Path $RunRoot "$RunDate-grok-x-attempt-$Attempt-output.txt"
+        $StderrPath = Join-Path $RunRoot "$RunDate-grok-x-attempt-$Attempt-error.txt"
+        Write-Host "Codex visiting Grok for X harvest ($RunDate, attempt $Attempt of 2)"
+        try {
+            $Process = Start-Process -FilePath $Grok.Source -ArgumentList $GrokArgs -WorkingDirectory $RepoRoot -RedirectStandardOutput $StdoutPath -RedirectStandardError $StderrPath -WindowStyle Hidden -PassThru
+            $Completed = $Process.WaitForExit($TimeoutMilliseconds)
+            if (-not $Completed) {
+                Stop-Process -Id $Process.Id -Force -ErrorAction SilentlyContinue
+                $Process.WaitForExit()
+                Write-Warning "Grok visit attempt $Attempt exceeded $TimeoutMinutes minutes"
+            }
+            elseif ($Process.ExitCode -ne 0) {
+                Write-Warning "Grok visit attempt $Attempt failed with exit code $($Process.ExitCode)"
+            }
+        }
+        catch {
+            Write-Warning "Grok visit attempt $Attempt could not run: $($_.Exception.Message)"
+        }
+        if (Test-Path -LiteralPath $StderrPath) { Get-Content -LiteralPath $StderrPath -Encoding UTF8 | Write-Host }
+        if (Test-Path -LiteralPath $StdoutPath) { Get-Content -LiteralPath $StdoutPath -Encoding UTF8 | Write-Host }
+        $Status = Get-XHarvestStatus
+        if ($Status.ready) {
+            Write-Host "Grok X harvest ready for $RunDate ($($Status.cache_count) posts)"
+            return $true
+        }
+        if ($Attempt -lt 2) {
+            Write-Warning "Grok visit did not produce a ready cache; trying once more"
+        }
     }
-    if (-not (Test-Path -LiteralPath $Cache)) {
-        Write-Warning "Grok visit finished without X cache. See ops/grok/x_harvest_protocol.md"
-    }
+    Write-Warning "Grok visit finished without a ready X cache. AI Voices will continue with research blogs. See ops/grok/x_harvest_protocol.md"
+    return $false
 }
 
 function Invoke-Collection([string]$Channel) {
@@ -181,7 +211,7 @@ try {
         & $Git pull --ff-only origin main
         if ($LASTEXITCODE -ne 0) { throw "git pull failed" }
     }
-    Invoke-GrokVisit
+    [void](Invoke-GrokVisit)
     $CollectedChannels = @{}
     foreach ($Channel in $Channels) {
         $CollectedChannels[$Channel] = Invoke-Collection $Channel

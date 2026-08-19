@@ -1,5 +1,6 @@
 @{
     ScheduleTime = "07:00"
+    GrokVisitTimeoutMinutes = 20
     Days = 3
     ResearchLimit = 16
     DynamicLimit = 10

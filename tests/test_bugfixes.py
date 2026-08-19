@@ -361,6 +361,34 @@ class CredentialCacheTests(unittest.TestCase):
             status = harvest_status(root, date(2026, 8, 20))
             self.assertTrue(status["request"])
             self.assertFalse(status["cache"])
+            self.assertFalse(status["ready"])
+
+    def test_existing_x_cache_is_marked_already_and_ready(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            day = date(2026, 8, 20)
+            write_cache(root, day, [{"id": "x:123"}])
+            ticket = write_request(root, day, {"x_accounts": [], "x_topic_queries": []})
+            self.assertEqual(ticket["status"], "already")
+            status = harvest_status(root, day)
+            self.assertEqual(status["request_status"], "already")
+            self.assertEqual(status["done_status"], "already")
+            self.assertEqual(status["cache_count"], 1)
+            self.assertTrue(status["ready"])
+
+    def test_invalid_x_cache_keeps_request_pending(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            day = date(2026, 8, 20)
+            cache = root / "work" / "source-cache" / "x" / "2026-08-20.json.gz"
+            cache.parent.mkdir(parents=True)
+            cache.write_bytes(b"incomplete cache")
+            ticket = write_request(root, day, {"x_accounts": [], "x_topic_queries": []})
+            self.assertEqual(ticket["status"], "pending")
+            status = harvest_status(root, day)
+            self.assertEqual(status["cache_count"], 0)
+            self.assertFalse(status["ready"])
+            self.assertFalse(status["done"])
 
 
 class ChannelCurationDedupTests(unittest.TestCase):

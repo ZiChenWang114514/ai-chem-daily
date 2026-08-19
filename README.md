@@ -5,7 +5,7 @@ AIxDaily 在 Windows 本地完成每日采集与 Codex 审阅，使用 GitHub Pa
 ## 每日流程
 
 1. Codex 已安排任务每天北京时间 07:00 启动一次完整流程。
-2. 采集前 Codex 先写下 Grok 访问票，再启动本机 `grok.exe`。Grok 按 `ops/grok/x_harvest_protocol.md` 检索 X，把结果放进 `work/source-cache/x/`。没有缓存时，AI Voices 跳过 X，研究博客照常采集。
+2. 采集前 Codex 先写下 Grok 访问票，再启动本机 `grok.exe`。Grok 按 `ops/grok/x_harvest_protocol.md` 检索 X，把结果放进 `work/source-cache/x/`。每次访问最多 20 分钟，失败时再执行一次；仍无缓存时，AI Voices 跳过 X，研究博客照常采集。
 3. 然后依次收集五个频道的当日内容。arXiv 与 bioRxiv 每天只采集一次，Chem、Bio、Math 共用本地 source cache；同一主机的请求保持间隔。
 4. 收集完成后，依次进行五套独立的 `gpt-5.6-terra` / `high` 审阅，并更新各频道日报。
 5. 对失败频道立即再执行一次采集与审阅，随后生成综合日报、运行测试并发布 GitHub Pages。
@@ -47,7 +47,7 @@ backend/fill_abstract_zh.py    把已准备好的中文摘要写回已发布 JSO
 ops/run_local_pipeline.ps1     本地采集、先拜访 Grok、再 Codex 复核与发布
 ops/grok/                      Codex 访问 Grok 的 X 检索协议与 visit prompt
 ops/codex/                     学术复核 Prompt 与结构化输出 Schema
-AGENTS.md                      Grok 在本仓库被访问时的执行合同
+AGENTS.md                      明确 Codex 与 Grok 的职责
 public/library/                本机收藏页，按频道归位，笔记保存在浏览器
 public/assets/collection.js    收藏、笔记与摘要语言偏好
 public/                        GitHub Pages 页面、接口与已发布数据
@@ -75,7 +75,7 @@ pwsh -NoProfile -File ops/run_local_pipeline.ps1 -SkipPush -SkipPull
 
 ## Codex 已安排任务
 
-任务名称为 `AIX每日精读`，每天北京时间 07:00 运行一次。它先拜访本机 Grok 检索 X，再完成五频道采集、五套审阅和统一发布。运行记录、Codex 结构化结果、本地原始资料与共享缓存分别保存在 `work/local-pipeline/`、`work/raw/` 与 `work/source-cache/`，这些目录不会提交到 GitHub。电脑需保持开机，并同时能运行 Codex 与 `grok.exe`。
+任务名称为 `AIX 晨间五频道统一日报`，每天北京时间 07:00 运行一次。它先拜访本机 Grok 检索 X，再完成五频道采集、五套审阅和统一发布。运行记录、Codex 结构化结果、本地原始资料与共享缓存分别保存在 `work/local-pipeline/`、`work/raw/` 与 `work/source-cache/`，这些目录不会提交到 GitHub。电脑需保持开机，并同时能运行 Codex 与 `grok.exe`。
 
 本地参数位于被 Git 忽略的 `config/local.settings.psd1`。OpenReview 账号位于 `config/local.secrets.psd1`。可提交的参考文件分别是 `config/local.settings.example.psd1` 与 `config/local.secrets.example.psd1`。
 

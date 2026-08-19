@@ -10,7 +10,7 @@ X 只走 Grok 检索。日报流水线不调用官方 X API，不读取 Bearer T
 
 1. Codex 运行 `ops/run_local_pipeline.ps1`。
 2. 脚本执行 `python backend/x_harvest.py request --date <date>`，写下 `work/grok-x/<date>.request.json`。
-3. 若当日缓存已在，跳过拜访。
+3. 若当日缓存可以读取且含有帖子，访问票与完成回执标为 `already`，脚本跳过拜访。
 4. 否则启动：
 
 ```powershell
@@ -18,8 +18,9 @@ grok.exe --cwd <repo> --prompt-file ops/grok/daily_visit_prompt.md --always-appr
 ```
 
 5. Grok 按 `ops/grok/daily_visit_prompt.md` 检索，写入 `work/grok-x/<date>.json`，再 ingest 到 `work/source-cache/x/<date>.json.gz`，最后写 `work/grok-x/<date>.done.json`。
-6. Codex 采集 AI Voices 时只读该缓存；没有缓存则 X 记失败，研究博客继续。
-7. Codex 完成五套审阅、综合日报、测试与推送。Grok 不审阅、不改 `public/`、不 commit、不 push。
+6. 每次 Grok 访问最多运行 20 分钟。首次执行失败、超时或没有生成可用缓存时，脚本再执行一次。
+7. Codex 只在完成回执与非空缓存同时有效时读取 X；没有可用缓存则 X 记失败，研究博客继续。
+8. Codex 完成五套审阅、综合日报、测试与推送。Grok 不审阅、不改 `public/`、不 commit、不 push。
 
 ## 窗口
 
@@ -66,4 +67,4 @@ grok.exe --cwd <repo> --prompt-file ops/grok/daily_visit_prompt.md --always-appr
 
 ## 失败
 
-缓存不存在时，采集记录 `X: RuntimeError: 未找到 Grok X 检索缓存`。不要回退到官方 API。本机没有 `grok.exe` 时，把访问票留在 `work/grok-x/`，改在 Grok TUI 里执行同一份 visit prompt。
+缓存不存在时，采集记录 `X: RuntimeError: 未找到 Grok X 检索缓存`，不得改用官方 X API。本机没有 `grok.exe` 时，把访问票留在 `work/grok-x/`，改在 Grok TUI 里执行同一份 visit prompt。

@@ -207,13 +207,38 @@ def done_path(root: Path, run_date: date) -> Path:
     return root / "work" / "grok-x" / f"{run_date.isoformat()}.done.json"
 
 
+def cache_item_count(root: Path, run_date: date) -> int:
+    path = cache_path(root, run_date)
+    if not path.exists() or path.stat().st_size <= 0:
+        return 0
+    try:
+        with gzip.open(path, "rt", encoding="utf-8") as stream:
+            items = json.load(stream)
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        return 0
+    return len(items) if isinstance(items, list) else 0
+
+
+def write_done(root: Path, run_date: date, status: str, count: int) -> Path:
+    path = done_path(root, run_date)
+    write_json(path, {
+        "schema_version": "1.0",
+        "date": run_date.isoformat(),
+        "status": status,
+        "count": count,
+        "cache": f"work/source-cache/x/{run_date.isoformat()}.json.gz",
+    })
+    return path
+
+
 def write_request(root: Path, run_date: date, watchlists: dict[str, Any]) -> dict[str, Any]:
     plan = query_plan(watchlists, run_date)
     day = run_date.isoformat()
+    existing_count = cache_item_count(root, run_date)
     ticket = {
         "schema_version": "1.0",
         "kind": "x-harvest",
-        "status": "pending",
+        "status": "already" if existing_count else "pending",
         "visitor": "codex",
         "host": "grok",
         "date": day,
@@ -229,17 +254,26 @@ def write_request(root: Path, run_date: date, watchlists: dict[str, Any]) -> dic
     }
     write_json(root / "work" / "grok-x" / f"{day}-queries.json", plan)
     write_json(request_path(root, run_date), ticket)
+    if existing_count:
+        write_done(root, run_date, "already", existing_count)
     return ticket
 
 
 def harvest_status(root: Path, run_date: date) -> dict[str, Any]:
-    cache = cache_path(root, run_date)
+    request = load_json(request_path(root, run_date), {})
+    done = load_json(done_path(root, run_date), {})
+    count = cache_item_count(root, run_date)
+    done_status = str(done.get("status") or "")
     return {
         "date": run_date.isoformat(),
         "request": request_path(root, run_date).exists(),
         "done": done_path(root, run_date).exists(),
-        "cache": cache.exists() and cache.stat().st_size > 0,
-        "cache_path": str(cache),
+        "request_status": str(request.get("status") or ""),
+        "done_status": done_status,
+        "cache": count > 0,
+        "cache_count": count,
+        "ready": count > 0 and done_status in {"ok", "already"} and str(done.get("date") or "") == run_date.isoformat(),
+        "cache_path": str(cache_path(root, run_date)),
     }
 
 
@@ -273,13 +307,7 @@ def main(argv: list[str] | None = None) -> int:
     payload = json.loads(Path(args.harvest).read_text(encoding="utf-8"))
     items = ingest_harvest(payload, run_date)
     path = write_cache(root, run_date, items)
-    write_json(done_path(root, run_date), {
-        "schema_version": "1.0",
-        "date": run_date.isoformat(),
-        "status": "ok",
-        "count": len(items),
-        "cache": str(path),
-    })
+    write_done(root, run_date, "ok", len(items))
     print(f"wrote {len(items)} X posts to {path}")
     return 0
 
