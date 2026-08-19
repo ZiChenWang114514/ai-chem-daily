@@ -433,6 +433,8 @@ class LibraryPageTests(unittest.TestCase):
         self.assertIn("ensureHomeAbstracts", script)
         self.assertIn("scheduleActivityLoad", script)
         self.assertIn("window.displayTitle", script)
+        self.assertIn("formatTitleHtml", script)
+        self.assertIn("setRichTitle", script)
         self.assertIn("bindDebouncedSearch", script)
         self.assertIn("收起摘要", script)
         self.assertIn("itemAnchor", script)

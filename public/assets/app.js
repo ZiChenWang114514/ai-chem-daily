@@ -158,6 +158,30 @@ function displayTitle(item) {
 }
 window.displayTitle = displayTitle;
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function formatTitleHtml(text) {
+  return escapeHtml(text)
+    .replace(/\$([^$]{1,80})\$/g, "$1")
+    .replace(/\^\{([^{}]{1,40})\}/g, "<sup>$1</sup>")
+    .replace(/_\{([^{}]{1,40})\}/g, "<sub>$1</sub>")
+    .replace(/\^([+\-]?\d+)/g, "<sup>$1</sup>")
+    .replace(/\^([A-Za-z])/g, "<sup>$1</sup>")
+    .replace(/_([+\-]?\d+)/g, "<sub>$1</sub>");
+}
+
+function setRichTitle(node, text) {
+  const holder = document.createElement("span");
+  holder.innerHTML = formatTitleHtml(text);
+  node.replaceChildren(...holder.childNodes);
+}
+
 function sameText(left, right) {
   return String(left || "").replace(/\s+/g, "") === String(right || "").replace(/\s+/g, "");
 }
@@ -611,7 +635,7 @@ function createItemCard(item, groupName) {
   else topic.textContent = item.category;
   const title = fragment.querySelector(".paper-title");
   title.href = item.url;
-  title.textContent = displayTitle(item);
+  setRichTitle(title, displayTitle(item));
   const openHint = document.createElement("span");
   openHint.className = "sr-only";
   openHint.textContent = "（在新窗口打开）";

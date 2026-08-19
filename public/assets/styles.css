@@ -723,6 +723,12 @@ body:not([data-page="home"]) [data-home-only] { display: none !important; }
   color: var(--link);
   text-decoration: none;
 }
+.paper-title sup,
+.paper-title sub {
+  font-size: 0.68em;
+  line-height: 0;
+  font-family: var(--sans);
+}
 .paper-title:hover,
 .paper-title:focus-visible {
   color: var(--link-hover);
