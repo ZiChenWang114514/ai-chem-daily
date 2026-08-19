@@ -1,0 +1,948 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-04",
+  "channel": "aixbio",
+  "generated_at": "2026-08-18T15:10:47+00:00",
+  "title": "AI × Bio 每日精选",
+  "subtitle": "计算生物学、组学、蛋白质与生物医学模型。",
+  "window": {
+    "start": "2026-08-01",
+    "end": "2026-08-04"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 3537,
+    "candidates": 60,
+    "selected": 16,
+    "sources": {
+      "arXiv": 1342,
+      "bioRxiv": 638,
+      "medRxiv": 191,
+      "Europe PMC": 1980
+    }
+  },
+  "source_status": {
+    "arXiv": {
+      "state": "ok",
+      "count": 1342
+    },
+    "bioRxiv": {
+      "state": "ok",
+      "count": 638
+    },
+    "medRxiv": {
+      "state": "ok",
+      "count": 191
+    },
+    "Europe PMC": {
+      "state": "ok",
+      "count": 1980
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "medrxiv:10.1101/2025.09.06.25335216",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "A Zero-Burden Sleep Foundation Model Built on Cardiorespiratory Signals from 1,400,000+ Hours of Multi-Ethnic Sleep Recordings",
+      "url": "https://www.medrxiv.org/content/10.1101/2025.09.06.25335216",
+      "published_at": "2026-08-03",
+      "updated_at": "2026-08-03",
+      "creators": [
+        "Nie, G.",
+        "Chen, X.",
+        "Wang, Y.",
+        "Chen, J.",
+        "Shi, Y.",
+        "Zhong, J.",
+        "Fang, X.",
+        "Shi, J.",
+        "Liu, C.-f.",
+        "Huang, B.",
+        "Liu, Y.",
+        "Zhang, J.",
+        "Fang, Y.",
+        "Chen, J.",
+        "Thomas, R. J.",
+        "Huang, W.",
+        "Jin, Z.",
+        "Lei, F.",
+        "Wang, L.",
+        "Zhao, R.",
+        "Zhang, C.",
+        "Chen, K.",
+        "Lv, D.",
+        "Chen, W.",
+        "Yi, H.",
+        "Liu, J.",
+        "Wing, Y.-K.",
+        "Li, H.",
+        "Westover, M. B.",
+        "Lu, L.",
+        "Tang, X.",
+        "Yin, S.",
+        "Li, Y.",
+        "Hong, S.",
+        "Leng, Y."
+      ],
+      "language": "en",
+      "abstract_or_text": "BACKGROUNDSleep disorders pose a major global health burden and are associated with a wide range of adverse health outcomes. Polysomnography (PSG) is the gold standard for sleep assessment, but it remains impractical for home-based or long-term monitoring. We investigated whether overnight cardiorespiratory signals, which can be acquired with zero-burden to users, can enable accurate sleep assessment at scale and capture broader dimensions of multi-organ health when leveraged through foundation model approaches. METHODSWe present SleepFounder, a foundation model for zero-burden sleep monitoring built upon cardiorespiratory signals. SleepFounder was developed on the largest curated multi-ethnic sleep dataset to date, comprising over 1.4 million hours of recordings from 34 cohorts across the United States and China. We evaluated SleepFounder across diverse downstream tasks, including conventional sleep analysis, demographic profiling, and multi-organ disease detection and prediction. We further conducted a real-world external validation study using multi-center ballistocardiography (BCG) data collected with a custom-developed under-pillow BCG monitoring system. RESULTSSleepFounder achieved strong performance across downstream tasks, outperforming baseline models in 19 of 21 dataset-task pairs spanning conventional sleep analysis and demographic profiling. For example, when averaged across three to five external datasets, SleepFounder achieved a Cohens kappa of 0.651 [0.649-0.652] for five-class sleep staging and an AUROC of 0.912 [0.909-0.915] for moderate-to-severe obstructive sleep apnea (OSA) detection. Beyond sleep-specific tasks, SleepFounder demonstrated broad capability for multi-organ disease detection and future disease prediction. Averaged across three external cohorts, it achieved AUROCs > 0.75 for 172 disease phenotypes and concordance indices (C-indices) > 0.75 for 100 phenotypes spanning 16 phecode chapters, including clinically important conditions such as dementia (AUROC=0.850 [0.836-0.862], C-index=0.845 [0.833-0.855]), Parkinsons disease (AUROC=0.846 [0.832-0.860], C-index=0.823 [0.803-0.842]), congestive heart failure (AUROC=0.840 [0.834-0.846], C-index=0.768 [0.759-0.778]), atrial fibrillation (AUROC=0.835 [0.828-0.842], C-index=0.762 [0.751-0.773]), and respiratory failure (AUROC=0.822 [0.810-0.833], C-index=0.778 [0.767-0.789]). Importantly, SleepFounder generalized effectively to real-world BCG deployment, achieving a Cohens kappa of 0.621 [0.614-0.627] for five-class sleep staging, an AUROC of 0.949 [0.940-0.958] for moderate-to-severe OSA detection, an age-prediction MAE of 6.533 [6.278-6.792] years, and a sex-classification AUROC of 0.852 [0.834-0.869] in external multi-center validation. CONCLUSIONSSleepFounder establishes a foundation model that learns from cardiorespiratory signals to enable accurate and scalable sleep assessment. By linking sleep physiology with multi-organ health, it demonstrates the potential to bridge clinical and home settings, while suggesting that signals traditionally used for sleep monitoring may also serve as powerful biomarkers of systemic function and disease risk. These findings highlight a new paradigm for home-based sleep and health monitoring in real-world settings.",
+      "summary_zh": "SleepFounder 在美中 34 个队列逾 1.4 million 小时心肺记录上训练，五类睡眠分期外部 kappa 0.651，并泛化到枕下 BCG。",
+      "why_it_matters_zh": "把零负担心肺信号做成可居家部署的睡眠与多器官风险基础模型，并给出多中心外部验证。",
+      "quality_score": 86.0,
+      "tags": [
+        "生物医学与临床",
+        "SleepFounder",
+        "基础模型",
+        "OSA",
+        "BCG"
+      ],
+      "evidence_flags": [
+        "临床队列",
+        "有外部测试",
+        "有定量基准",
+        "数据集",
+        "dataset",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 1,
+      "featured": true,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2025.09.06.25335216",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "背景：睡眠障碍构成重大全球健康负担，并与广泛不良健康结局相关。多导睡眠图（PSG）是睡眠评估的金标准，但在居家或长期监测中仍不切实际。我们研究了可对使用者零负担采集的夜间心肺信号，在通过基础模型方法加以利用时，能否实现规模化准确睡眠评估，并捕获更广维度的多器官健康。方法：我们提出 SleepFounder，一个建立在心肺信号上的零负担睡眠监测基础模型。SleepFounder 在迄今最大的策展多民族睡眠数据集上开发，包含来自美国和中国 34 个队列的逾 1.4 million 小时记录。我们在多样下游任务上评估 SleepFounder，包括常规睡眠分析、人口学画像以及多器官疾病检测与预测。我们进一步使用定制开发的枕下心冲击描记（BCG）监测系统采集的多中心 BCG 数据，进行了真实世界外部验证研究。结果：SleepFounder 在下游任务上表现强劲，在覆盖常规睡眠分析与人口学画像的 21 个数据集–任务对中的 19 个上超过基线模型。例如，在三个到五个外部数据集上平均时，SleepFounder 在五类睡眠分期上达到 Cohens kappa 0.651 [0.649-0.652]，在中至重度阻塞性睡眠呼吸暂停（OSA）检测上达到 AUROC 0.912 [0.909-0.915]。在睡眠特异任务之外，SleepFounder 显示出广泛的多器官疾病检测与未来疾病预测能力。在三个外部队列上平均，它对跨越 16 个 phecode 章节的 172 个疾病表型达到 AUROCs > 0.75，对 100 个表型达到一致性指数（C-indices）> 0.75，包括具有临床重要性的病况，如痴呆（AUROC=0.850 [0.836-0.862]，C-index=0.845 [0.833-0.855]）、Parkinsons disease（AUROC=0.846 [0.832-0.860]，C-index=0.823 [0.803-0.842]）、充血性心力衰竭（AUROC=0.840 [0.834-0.846]，C-index=0.768 [0.759-0.778]）、心房颤动（AUROC=0.835 [0.828-0.842]，C-index=0.762 [0.751-0.773]）和呼吸衰竭（AUROC=0.822 [0.810-0.833]，C-index=0.778 [0.767-0.789]）。重要的是，SleepFounder 有效泛化到真实世界 BCG 部署，在外部多中心验证中，五类睡眠分期的 Cohens kappa 为 0.621 [0.614-0.627]，中至重度 OSA 检测的 AUROC 为 0.949 [0.940-0.958]，年龄预测 MAE 为 6.533 [6.278-6.792] 岁，性别分类 AUROC 为 0.852 [0.834-0.869]。结论：SleepFounder 建立了一个从心肺信号学习以实现准确、可扩展睡眠评估的基础模型。通过将睡眠生理学与多器官健康联系起来，它展示了桥接临床与居家场景的潜力，同时提示传统用于睡眠监测的信号也可能作为系统功能与疾病风险的有力生物标志物。这些发现凸显了真实世界居家睡眠与健康监测的新范式。",
+      "published": "2026-08-03",
+      "author_line": "Nie, G., Chen, X., Wang, Y. 等 35 人"
+    },
+    {
+      "id": "biorxiv:10.1101/2024.12.23.630036",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A Systematic Comparison of Single-Cell Perturbation Response Prediction Models",
+      "url": "https://www.biorxiv.org/content/10.1101/2024.12.23.630036",
+      "published_at": "2026-08-03",
+      "updated_at": "2026-08-03",
+      "creators": [
+        "Li, L.",
+        "You, Y.",
+        "Fu, Y.",
+        "Liao, W.",
+        "Fan, X.",
+        "Lu, S.",
+        "Cao, Y.",
+        "Li, B.",
+        "Ren, W.",
+        "Kong, J.",
+        "Zheng, S.",
+        "Chen, J.",
+        "Liu, X.",
+        "Tian, L."
+      ],
+      "language": "en",
+      "abstract_or_text": "Predicting single-cell transcriptional responses to perturbations is central to dissecting gene regulation and accelerating therapeutic design, yet the field lacks a rigorous, task-spanning assessment of model behavior. We present a large-scale benchmark of 13 representative methods and baselines across 25 datasets spanning diverse perturbation modalities and species, including two primary immune-cell drug-response resources. We evaluated three core tasks--generalization to unseen single-gene perturbations, prediction of combinatorial interactions, and transfer across cell types--using 24 metrics covering expression-level accuracy, relative changes, differential expression recovery, and distributional similarity. Across tasks, performance depended strongly on perturbation effect size and evaluation perspective: expression-level agreement was highest for small-effect perturbations resembling controls, whereas delta- and DE-based metrics improved with larger effects, providing clearer signals. Models shared a conservative bias, with fine-tuned foundation models compressing variance and underestimating synergistic effects in combinations. PerturbNet showed superior recovery of DE signatures in Tasks 1 and 2, while no method consistently generalized across cell types in Task 3, where biological consistency dominated outcomes. This benchmark establishes current methodological limits, clarifies that different metrics probe distinct biological signals rather than redundant summaries of the same prediction problem, and provides a foundation for developing virtual-cell models that more faithfully capture heterogeneous perturbation responses. Teaser: A large-scale benchmark reveals strengths and limits of models predicting single-cell perturbation responses.",
+      "summary_zh": "在 25 个数据集上系统比较 13 种单细胞扰动应答预测方法，覆盖未见单基因扰动、组合相互作用与跨细胞类型迁移三项任务及 24 项指标。",
+      "why_it_matters_zh": "表明表达一致性与 DE 回收探测不同生物学信号，且尚无方法能稳定跨细胞类型泛化。",
+      "quality_score": 86.0,
+      "tags": [
+        "组学与细胞",
+        "单细胞扰动",
+        "PerturbNet",
+        "虚拟细胞",
+        "基准评测"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "benchmark",
+        "dataset",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2024.12.23.630036",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "预测单细胞对扰动的转录应答，对于解析基因调控并加速治疗设计至关紧要，但该领域仍缺乏对模型行为的严格、跨任务评估。我们对 13 种代表性方法与基线进行了大规模基准评测，覆盖 25 个跨越多样扰动模态与物种的数据集，其中包括两个原代免疫细胞药物应答资源。我们评估了三项核心任务——对未见单基因扰动的泛化、组合相互作用预测，以及跨细胞类型迁移——并使用 24 项指标，覆盖表达水平精度、相对变化、差异表达回收和分布相似性。跨任务来看，性能强烈依赖于扰动效应量与评估视角：表达水平一致性在类似对照的小效应扰动上最高，而基于 delta 和 DE 的指标随效应增大而改善，信号更清晰。模型共享保守偏置，微调基础模型压缩方差并低估组合中的协同效应。PerturbNet 在任务 1 和 2 中对 DE 签名的回收更优，而在任务 3 中没有方法能一致跨细胞类型泛化，该任务中生物学一致性主导结果。这一基准确立了当前方法学限度，澄清不同指标探测的是不同生物学信号而非同一预测问题的冗余摘要，并为开发更能忠实捕获异质扰动应答的虚拟细胞模型提供基础。导语：一项大规模基准揭示了预测单细胞扰动应答模型的优势与限度。",
+      "published": "2026-08-03",
+      "author_line": "Li, L., You, Y., Fu, Y. 等 14 人"
+    },
+    {
+      "id": "europepmc:ppr1290448",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Genome-scale prediction of context-specific synthetic lethality beyond protein interaction networks",
+      "url": "https://europepmc.org/article/PPR/PPR1290448",
+      "published_at": "2026-08-03",
+      "updated_at": "2026-08-04",
+      "creators": [
+        "Baskar P",
+        "Parnika S",
+        "Lakhdive A",
+        "Bej S",
+        "Shameer S",
+        "Vijayan K"
+      ],
+      "language": "en",
+      "abstract_or_text": "Identifying synthetic lethal (SL) interactions offers a principled framework for discovering disease-specific therapeutic targets. However, current machine learning approaches heavily rely on curated protein-protein interaction networks. Because these networks cover only ∼7,500 proteins, they severely restrict the search space of human gene pairs and introduce systematic biases toward well-characterized genes. To circumvent these limitations, we developed SLxGO, a network-independent machine learning framework that predicts SL interactions directly from semantic representations of Gene Ontology annotations encoded via BioBERT-derived embeddings. Benchmarked across multiple cross-validation schemes against eight state-of-the-art methods, SLxGO consistently achieved superior predictive ranking performance, maintaining robustness under cold-start conditions for previously unseen genes. Integrating cell line-specific transcriptional profiles extended this framework to context-dependent SL prediction across six distinct cell lines. Notably, we experimentally confirmed a context-specific EFNA1 - SLC29A1 SL interaction in HeLa cells, alongside synergistic pharmacological validation of an ACVR1 - SLC29A1 vulnerability. All predictions are hosted on SLiGO, an open-access database encompassing 30 million human gene pairs, establishing a comprehensive, genome-scale resource for context-specific vulnerability mapping across the human interactome.",
+      "summary_zh": "SLxGO 用 BioBERT 编码的 Gene Ontology 语义表征预测合成致死，冷启动仍优于 8 种方法，并在 HeLa 中验证 EFNA1-SLC29A1。",
+      "why_it_matters_zh": "摆脱仅覆盖约 7,500 蛋白的 PPI 网络限制，把基因组尺度脆弱性作图扩展到 30 million 基因对。",
+      "quality_score": 85.0,
+      "tags": [
+        "组学与细胞",
+        "SLxGO",
+        "合成致死",
+        "BioBERT",
+        "EFNA1"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "实验验证",
+        "数据集",
+        "benchmark",
+        "experimental",
+        "state-of-the-art"
+      ],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.31.742101",
+        "pmid": ""
+      },
+      "abstract_zh": "识别合成致死（SL）相互作用为发现疾病特异治疗靶点提供了原则性框架。然而，当前机器学习方法严重依赖策展的蛋白质–蛋白质相互作用网络。由于这些网络仅覆盖约 7,500 个蛋白质，它们严重限制了人类基因对的搜索空间，并引入偏向已充分表征基因的系统性偏差。为规避这些限制，我们开发了 SLxGO，一个不依赖网络的机器学习框架，直接从经 BioBERT 导出嵌入编码的 Gene Ontology 注释语义表征预测 SL 相互作用。在多种交叉验证方案下对照八种先进方法的基准评测中，SLxGO 持续取得更优的预测排序性能，并在先前未见基因的冷启动条件下保持稳健。整合细胞系特异转录谱将该框架扩展到六个不同细胞系的上下文依赖 SL 预测。值得注意的是，我们在 HeLa 细胞中实验确认了上下文特异的 EFNA1 - SLC29A1 SL 相互作用，并对 ACVR1 - SLC29A1 脆弱性进行了协同药理学验证。全部预测托管于涵盖 30 million 个人类基因对的开放数据库 SLiGO，为人互作组上的上下文特异脆弱性作图建立了全面的基因组尺度资源。",
+      "published": "2026-08-03",
+      "author_line": "Baskar P, Parnika S, Lakhdive A 等 6 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.07.30.741874",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Detailed curation of biological samples and experimental designs for genomics using LLM-supported agentic workflows",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.07.30.741874",
+      "published_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "creators": [
+        "Pavlidis, P.",
+        "Mancarci, B. O.",
+        "Maximo, A.",
+        "Yan, C.",
+        "Schwartz, R. A."
+      ],
+      "language": "en",
+      "abstract_or_text": "We describe an automated software tool to accomplish data curation tasks previously performed by humans for the Gemma genomics data re-analysis resource. Gemma is a hand-curated database of reprocessed transcriptomic studies, currently covering over 23,000 human, mouse and rat data sets largely drawn from the Gene Expression Omnibus (GEO). We developed a pipeline that uses both traditional (mechanical) and large-language models to produce detailed ontology-anchored, sample- and experiment-level annotations in accordance with our established curation guidelines. In this report, we describe benchmarking the pipeline and investigations aimed at evaluating readiness of the v1.1 Gemma curation agent for production use. Overall, performance is near that of human curators, at approximately 1/20th the cost and at least 100 times the speed. We also present preliminary exploration of triage methods for identifying agent curations that are more likely to contain errors, and thus can be forwarded for human review. We discuss the potential place of such curation approaches in bioinformatics ecosystems. Besides the software, our deliverables include the benchmark set of 500 studies and an evaluation framework that can be used to further develop the pipeline or compare to other approaches.",
+      "summary_zh": "为 Gemma 转录组再分析库构建 LLM 支持的智能体策展流水线，覆盖逾 23,000 个 GEO 数据集；500 项研究基准上接近人工，成本约 1/20、速度至少快 100 倍。",
+      "why_it_matters_zh": "把组学元数据策展从人工瓶颈转为可评估的智能体工作流，并公开 500 项研究基准与分诊接口。",
+      "quality_score": 84.0,
+      "tags": [
+        "组学与细胞",
+        "Gemma",
+        "组学策展",
+        "智能体",
+        "GEO"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "公开代码",
+        "benchmark",
+        "experimental",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.30.741874",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "我们描述一个自动化软件工具，用以完成先前由人工为 Gemma 基因组学数据再分析资源执行的数据策展任务。Gemma 是一个人工策展的再处理转录组研究数据库，目前覆盖超过 23,000 个人类、小鼠和大鼠数据集，主要来自 Gene Expression Omnibus（GEO）。我们开发了一条同时使用传统（机械）方法和大语言模型的流水线，按照既定策展指南生成锚定本体、样本级与实验级的详细注释。本报告描述对该流水线的基准评测，以及旨在评估 v1.1 Gemma 策展智能体是否已具备生产就绪性的调查。总体而言，其表现接近人类策展者，成本约为 1/20，速度至少快 100 倍。我们还给出用于识别更可能含错、因而应转交人工审阅的智能体策展的分诊方法的初步探索。我们讨论此类策展途径在生物信息学生态系统中的潜在位置。除软件外，交付物还包括 500 项研究的基准集和一个评估框架，可用于进一步开发该流水线或与其他方法比较。",
+      "published": "2026-08-02",
+      "author_line": "Pavlidis, P., Mancarci, B. O., Maximo, A. 等 5 人"
+    },
+    {
+      "id": "arxiv:2608.03154v1",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem",
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "ANCHOR-RE: An Agentic Neuro-Symbolic Framework for Grounded Biomedical Relation Extraction",
+      "url": "https://arxiv.org/abs/2608.03154v1",
+      "published_at": "2026-08-04",
+      "updated_at": "2026-08-04",
+      "creators": [
+        "Shufan Ming",
+        "Yikun Han",
+        "Gibong Hong",
+        "Rui Zhang",
+        "Halil Kilicoglu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Biomedical relation extraction (BioRE) extracts structured knowledge from biomedical literature for applications such as knowledge base construction and hypothesis generation. Traditional symbolic systems such as SemRep provide high precision but limited recall, while large language models (LLMs) offer stronger contextual reasoning but remain prone to false-positive predictions. We developed ANCHOR-RE, a framework that integrates ontology-guided reasoning, external knowledge grounding, and data-driven verification rules into LLM inference. We evaluated it on three BioRE benchmarks (SemRepGS, DDI, and ChemProt) using both proprietary and open-weight LLMs. To assess generalizability beyond benchmark datasets while reducing potential evaluation bias from LLM pretraining contamination, we conducted a temporal evaluation using 100 biomedical articles published in 2026. With the proprietary backbone, ANCHOR-RE outperformed direct LLM prompting, improving micro-F1 from 0.654 to 0.676 on SemRepGS, from 0.769 to 0.872 on DDI, and from 0.939 to 0.941 on ChemProt. On DDI and ChemProt, it also outperformed previously reported inference-only methods and approached fine-tuned or instruction-tuned systems without parameter updates. Similar performance gains observed with open-weight LLMs indicate that the benefits were not limited to the proprietary backbone. On the post-cutoff set, manual assessment of 500 randomly sampled predictions yielded a precision of 69%, maintaining consistent precision on previously unseen biomedical literature. Neuro-symbolic reasoning can improve the reliability of LLM-based BioRE without fine-tuning. Results across multiple benchmarks, model families, and post-cutoff literature support ANCHOR-RE as a practical training-free approach to biomedical literature mining.",
+      "summary_zh": "ANCHOR-RE 将本体引导推理、外部知识锚定与验证规则接入 LLM 推断，SemRepGS/DDI/ChemProt 的 micro-F1 分别升至 0.676/0.872/0.941。",
+      "why_it_matters_zh": "在免微调条件下用神经–符号约束压低 BioRE 假阳性，并用 2026 年后文献做时间性外推。",
+      "quality_score": 84.0,
+      "tags": [
+        "方法与模型",
+        "ANCHOR-RE",
+        "BioRE",
+        "ChemProt",
+        "神经符号"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有外部测试",
+        "benchmark",
+        "dataset",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 5,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.03154v1"
+      },
+      "abstract_zh": "生物医学关系抽取（BioRE）从生物医学文献中提取结构化知识，用于知识库构建和假说生成等应用。传统符号系统如 SemRep 提供高精确率但召回有限，而大语言模型（LLMs）提供更强的上下文推理，但仍易产生假阳性预测。我们开发了 ANCHOR-RE，一个将本体引导推理、外部知识锚定和数据驱动验证规则整合进 LLM 推断的框架。我们在三个 BioRE 基准（SemRepGS、DDI 和 ChemProt）上，使用专有和开权 LLM 对其进行评估。为评估超越基准数据集的可泛化性，同时减少 LLM 预训练污染带来的潜在评估偏差，我们使用 2026 年发表的 100 篇生物医学文章进行了时间性评估。在专有骨干下，ANCHOR-RE 优于直接 LLM 提示，将 SemRepGS 上的 micro-F1 从 0.654 提升到 0.676，DDI 上从 0.769 提升到 0.872，ChemProt 上从 0.939 提升到 0.941。在 DDI 和 ChemProt 上，它也优于先前报告的仅推断方法，并在不更新参数的情况下接近微调或指令调优系统。在开权 LLM 上观察到的类似性能增益表明，收益并不限于专有骨干。在截止日期后集合上，对 500 个随机抽样预测的人工评估给出 69% 的精确率，在先前未见的生物医学文献上保持一致的精确率。神经–符号推理可以在无需微调的情况下改善基于 LLM 的 BioRE 可靠性。跨多个基准、模型家族和截止日期后文献的结果支持 ANCHOR-RE 作为生物医学文献挖掘的一种实用免训练途径。",
+      "published": "2026-08-04",
+      "author_line": "Shufan Ming, Yikun Han, Gibong Hong 等 5 人"
+    },
+    {
+      "id": "medrxiv:10.64898/2026.07.30.26359367",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "A Privacy-Preserving Zero-Code Conversational Statistical Analysis System for Clinical Research Using Agentic AI and Local R Execution",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.07.30.26359367",
+      "published_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "creators": [
+        "Yang, S.",
+        "Chen, V. L.",
+        "Ng, W. H.",
+        "Zhang, S.",
+        "Qiu, S.",
+        "Zhu, J.",
+        "Hsieh, T. Y.-J.",
+        "Ji, F.",
+        "Yeo, Y. H."
+      ],
+      "language": "en",
+      "abstract_or_text": "BackgroundClinical data analysis typically requires statistical programming skills, whereas cloud-based artificial intelligence (AI) agents risk exposing sensitive patient records. We developed and functionally validated a privacy-preserving, zero-code conversational statistical analysis framework that translates natural-language clinical research requests into executable R workflows while strictly retaining raw patient data within local computing environments. MethodsOrchestrated by the n8n engine, the system integrates the DeepSeek-Reasoner model with a Pinecone vector database for retrieval-augmented generation (RAG), grounding statistical selection in curated biostatistical guidance and R templates. Core functionalities include data schema perception, interactive data cleaning, requirements refinement, and local R code execution via a controlled command-line interface. System performance was evaluated by replicating a published prognostic model study on metabolic dysfunction-associated steatotic liver disease (MASLD). FindingsAll core analytical workflows -- including data cleaning, multivariable Cox proportional hazards modeling, model diagnostics, and publication-ready tables and figures (e.g., baseline characteristics, Schoenfeld residuals, receiver operating characteristic curves, and forest plots) -- were executed solely through natural-language dialogues without manual coding. The external large language model actively clarified analytical prompts while receiving zero row-level patient data. InterpretationDecoupling remote cloud reasoning from local code execution lowers the technical threshold for clinicians conducting data-driven research while safeguarding data privacy. This architecture provides a practical, scalable, and reproducible framework for converting natural-language clinical questions into executable statistical workflows. Research in contextO_ST_ABSEvidence before this studyC_ST_ABSWe searched PubMed, Web of Science, Embase, and IEEE Xplore for peer-reviewed research articles published from database inception up to 1 February 2026, using search terms including (\"large language models\" OR \"agentic AI\" OR \"conversational AI\") AND (\"clinical data analysis\" OR \"biostatistics\" OR \"R execution\") AND (\"privacy-preserving\" OR \"local computation\" OR \"retrieval-augmented generation\"). No language restrictions were applied. Existing clinical data analysis tools present a fundamental trade-off between analytical flexibility and ease of use. While programming languages like R and Python offer high flexibility and transparency, they require substantial statistical coding expertise. Conversely, low-code or visual workflow platforms (e.g., KNIME, LinkR) reduce coding demands but are constrained by pre-implemented, rigid analytical modules. General-purpose AI coding agents (e.g., OpenAI Codex, Claude Code) enable natural-language interaction but lack domain-grounded biostatistical frameworks to ensure methodologically sound model specification and assumption evaluation. Crucially, transmitting row-level patient data to external cloud-hosted LLM endpoints poses severe data privacy, cybersecurity, and regulatory risks (e.g., HIPAA, GDPR). To date, zero-code systems that effectively decouple cloud-based LLM reasoning from local execution of raw patient data, while incorporating domain-specific biostatistical knowledge grounding, remain scarce. Added value of this studyTo our knowledge, this study presents a novel, human-supervised, privacy-preserving zero-code conversational statistical analysis system that architecturally separates external LLM-assisted reasoning from local patient-level data processing. Utilizing n8n as an orchestration platform, local R execution, and Pinecone-based retrieval-augmented generation (RAG) grounded in curated biostatistical guidance and R package documentation, the system translates natural-language clinical requests into executable, reproducible R workflows. Incorporating a human-in-the-loop requirement refinement mechanism ensures that investigators retain full control over judgment-dependent decisions, such as missing-data handling and variable selection. We functionally validated the system by fully reproducing a published prognostic model study for metabolic dysfunction-associated steatotic liver disease (MASLD). Without manual programming or exposing row-level patient data to external LLMs, the system generated publication-ready baseline tables, Cox proportional hazards regressions, ROC curves, and forest plots, while reducing the analytical lifecycle from days to hours. Implications of all the available evidenceOur findings demonstrate that combining external agentic AI reasoning with local, knowledge-grounded execution provides a safe, transparent, and cost-effective solution for democratizing clinical data analysis. This architecture offers a scalable and privacy-compliant blueprint for healthcare institutions seeking to empower clinicians with advanced data analytics while strictly adhering to patient data protection regulations. Future research should prioritize implementing closed-loop automated error correction, semi-automated knowledge base curation, and formal multi-center usability and statistical validity evaluations with clinical end-users.",
+      "summary_zh": "用 n8n 编排 DeepSeek-Reasoner 与本地 R 执行，在零行级患者数据出域前提下复现已发表 MASLD 预后模型的 Cox、ROC 与森林图。",
+      "why_it_matters_zh": "把云端智能体推理与本地代码执行解耦，降低临床统计分析门槛同时守住隐私。",
+      "quality_score": 83.0,
+      "tags": [
+        "生物医学与临床",
+        "隐私保全",
+        "智能体",
+        "DeepSeek-Reasoner",
+        "MASLD"
+      ],
+      "evidence_flags": [
+        "临床队列",
+        "有定量基准",
+        "clinical",
+        "evaluation",
+        "security",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 6,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.30.26359367",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "背景：临床数据分析通常需要统计编程技能，而基于云的人工智能（AI）智能体有暴露敏感患者记录的风险。我们开发并功能验证了一个隐私保全、零代码的对话式统计分析框架，将自然语言临床研究请求转译为可执行的 R 工作流，同时严格将原始患者数据保留在本地计算环境内。方法：由 n8n 引擎编排，该系统将 DeepSeek-Reasoner 模型与 Pinecone 向量数据库整合以进行检索增强生成（RAG），使统计选择锚定于策展的生物统计学指南和 R 模板。核心功能包括数据模式感知、交互式数据清洗、需求精炼，以及经受控命令行接口的本地 R 代码执行。系统性能通过复现一项已发表的代谢功能障碍相关脂肪性肝病（MASLD）预后模型研究来评估。发现：全部核心分析工作流——包括数据清洗、多变量 Cox 比例风险建模、模型诊断，以及可发表的表格与图形（例如基线特征、Schoenfeld 残差、受试者工作特征曲线和森林图）——仅通过自然语言对话、无需手工编码即被执行。外部大语言模型主动澄清分析提示，同时接收零行级患者数据。解释：将远程云推理与本地代码执行解耦，降低了临床医生开展数据驱动研究的技术门槛，同时保障数据隐私。该架构为将自然语言临床问题转换为可执行统计工作流提供了一个实用、可扩展且可复现的框架。研究背景：本研究之前的证据。我们检索了 PubMed、Web of Science、Embase 和 IEEE Xplore 中自建库至 2026 年 2 月 1 日发表的同行评议研究文章，检索词包括（\"large language models\" OR \"agentic AI\" OR \"conversational AI\"）AND（\"clinical data analysis\" OR \"biostatistics\" OR \"R execution\"）AND（\"privacy-preserving\" OR \"local computation\" OR \"retrieval-augmented generation\"）。未施加语言限制。现有临床数据分析工具在分析灵活性与易用性之间存在根本权衡。R 和 Python 等编程语言提供高灵活性和透明度，但需要大量统计编码专长。相反，低代码或可视化工作流平台（例如 KNIME、LinkR）降低编码需求，但受预实现、刚性分析模块约束。通用 AI 编码智能体（例如 OpenAI Codex、Claude Code）使自然语言交互成为可能，但缺乏领域锚定的生物统计学框架以确保方法学上合理的模型设定与假设评估。至关重要的是，将行级患者数据传输到外部云托管 LLM 端点会带来严重的数据隐私、网络安全和监管风险（例如 HIPAA、GDPR）。迄今，能够有效将基于云的 LLM 推理与原始患者数据的本地执行解耦、同时纳入领域特异生物统计学知识锚定的零代码系统仍然稀缺。本研究的增量价值。据我们所知，本研究提出了一种新颖的、有人监督的、隐私保全的零代码对话式统计分析系统，在架构上把外部 LLM 辅助推理与本地患者级数据处理分开。利用 n8n 作为编排平台、本地 R 执行，以及锚定于策展生物统计学指南和 R 包文档的基于 Pinecone 的检索增强生成（RAG），该系统将自然语言临床请求转译为可执行、可复现的 R 工作流。纳入人在环路的需求精炼机制，确保研究者对依赖判断的决策（如缺失数据处理和变量选择）保持完全控制。我们通过完整复现一项已发表的 MASLD 预后模型研究对该系统进行功能验证。在无需手工编程或不将行级患者数据暴露给外部 LLM 的情况下，系统生成了可发表的基线表、Cox 比例风险回归、ROC 曲线和森林图，同时将分析生命周期从数天缩短到数小时。现有全部证据的含义。我们的发现表明，将外部智能体 AI 推理与本地、知识锚定的执行相结合，为民主化临床数据分析提供了安全、透明且具成本效益的解决方案。该架构为寻求在严格遵守患者数据保护法规的同时赋能临床医生进行高级数据分析的医疗机构，提供了一个可扩展且符合隐私要求的蓝图。未来研究应优先实现闭环自动纠错、半自动知识库策展，以及与临床终端用户一起进行的正式多中心可用性与统计效度评估。",
+      "published": "2026-08-02",
+      "author_line": "Yang, S., Chen, V. L., Ng, W. H. 等 9 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.07.31.742133",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "SPINDLE: Unlocking protein dynamics from single-field NMR relaxation data using a deep learning ensemble.",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.07.31.742133",
+      "published_at": "2026-08-01",
+      "updated_at": "2026-08-01",
+      "creators": [
+        "Krise, O. E.",
+        "Latham, M. P."
+      ],
+      "language": "en",
+      "abstract_or_text": "A proteins function is derived from its three-dimensional structure and the motions of the atoms about that structure. The detailed characterization of both macromolecular structure and dynamics provides an opportunity for understanding enzyme catalysis, ligand binding, and allostery, along with providing insights into how the function changes upon mutation or post-translational modification. Among the various methods for characterizing biomolecular motions, nuclear magnetic resonance (NMR) spin relaxation methods are a standard for determining nanosecond global tumbling times along with the amplitude and timescale of faster local motions. Within the model-free formalism, various mathematical models are used to extract dynamic parameters. Unfortunately, as the number of fitted parameters increases within these models, they become mathematically underdetermined for standard NMR relaxation data collected at a single magnetic field, necessitating multi-field datasets. Here, we present SPINDLE, an ensemble of deep neural networks trained on a large synthetic set of NMR relaxation data. Unlike traditional least-squares fitting, SPINDLE predicts both fast and slow timescale dynamics parameters from a single set (i.e., collected at a single magnetic field) of three relaxation datasets using the ensemble for error estimation. We demonstrate a strong correlation to ground truth dynamics parameters on synthetic benchmarks, with more precision than traditional fitting techniques, and precisely reproduce experimental dynamics parameters for [~]50 proteins with relaxation data in the Biological Magnetic Resonance Data Bank. We also leverage the architecture of the deep neural network to show how the model emphasizes rigid residues for the prediction of global correlation times. This strategy may be useful in the future for elucidating correlated networks of dynamic residues from multiple relaxation datasets.",
+      "summary_zh": "SPINDLE 用在合成 NMR 弛豫数据上训练的深度网络集成，从单磁场三组弛豫数据同时预测快慢时间尺度动力学，并在 BMRB 约 50 个蛋白质上复现实验参数。",
+      "why_it_matters_zh": "缓解单场 NMR 模型自由拟合欠定问题，并给出集成误差估计；推广到相关动态网络仍属展望。",
+      "quality_score": 83.0,
+      "tags": [
+        "蛋白质与结构",
+        "SPINDLE",
+        "NMR",
+        "蛋白质动力学",
+        "model-free"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有外部测试",
+        "公开数据",
+        "benchmark",
+        "dataset",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 7,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.31.742133",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "蛋白质的功能来自其三维结构以及原子围绕该结构的运动。对大分子结构与动力学的细致表征，为理解酶催化、配体结合和变构提供机会，并洞察功能如何随突变或翻译后修饰而变化。在表征生物分子运动的多种方法中，核磁共振（NMR）自旋弛豫方法是测定纳秒级整体翻滚时间以及更快局域运动幅度与时间尺度的标准。在 model-free 形式体系中，用各种数学模型提取动力学参数。不幸的是，随着这些模型中拟合参数增多，它们对在单一磁场采集的标准 NMR 弛豫数据在数学上变得欠定，因而需要多场数据集。本文推出 SPINDLE，一个在大量合成 NMR 弛豫数据上训练的深度神经网络集成。与传统最小二乘拟合不同，SPINDLE 从单一磁场采集的三组弛豫数据集预测快、慢时间尺度动力学参数，并用集成进行误差估计。我们在合成基准上证明其与真实动力学参数强相关，精度高于传统拟合技术，并精确再现 Biological Magnetic Resonance Data Bank 中约 50 个蛋白质的实验动力学参数。我们还利用深度神经网络的架构表明，模型在预测整体相关时间时强调刚性残基。该策略将来可能用于从多个弛豫数据集阐明动态残基的相关网络。",
+      "published": "2026-08-01",
+      "author_line": "Krise, O. E., Latham, M. P."
+    },
+    {
+      "id": "arxiv:2608.03744v1",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Agents Catching Agents: Shortcut Cascades and Benchmark Gaming in Clinical Multi-Agent Systems",
+      "url": "https://arxiv.org/abs/2608.03744v1",
+      "published_at": "2026-08-04",
+      "updated_at": "2026-08-04",
+      "creators": [
+        "Sebastián Andrés Cajas Ordóñez",
+        "Agastya Munnangi",
+        "Aldo Marzullo",
+        "Felipe Ocampo Osorio",
+        "Quang Bui",
+        "Mohammad Shahin",
+        "Armaan Grewal",
+        "Emmanuel Paul Kwesiga",
+        "Anqi Peter Li",
+        "Josephine Nanyonjo",
+        "Aaditya Panchal",
+        "Arshnoor Bhutani",
+        "Nikhil Jaiswal",
+        "Milit S. Patel",
+        "Maximin Lange",
+        "Leo Anthony Celi"
+      ],
+      "language": "en",
+      "abstract_or_text": "Clinical decision support is moving toward committees of language-model agents deliberating on a shared workspace. We ask whether such committees can be gamed by shortcuts, cues a benchmark rewards but a clinician would ignore. Across seven cohorts on six public datasets spanning text (MedQA-USMLE, MedMCQA, MIMIC-CXR reports), imaging (NIH ChestX-ray14, MIMIC-CXR-JPG, CheXpert) and tabular ICU records (SUPPORT2), Gemini committees resist these cues in isolation (flip 5-16%), yet a socially plausible shortcut spreads: when two peers assert the same wrong answer, the holdout under test adopts it in 38% of cases, as does a false \"pre-screen\" system flag, on both capability tiers. Of three oversight agents, a gate cannot separate adoption from honest agreement (false-positive rate 100%); a same-lineage judge reading only the transcript flags adoption on text (precision 100%, recall 93%) but collapses onto the gate in imaging; a referee that privately re-queries the holdout transfers to imaging (77-88% precision, 13-21% false-positive rate). Tripling a cue's visual salience does not move contagion, whereas a second peer voice raises it by half again. Gaming a hidden rubric is near-silent: only 1/10 text and 1/134 imaging drifters name the rubric they moved toward. What games a committee is social plausibility, and only a referee independent of self-report catches it. Code: https://github.com/criticaldata/benchmaxxing",
+      "summary_zh": "在六个公开数据集的七个队列上显示，Gemini 临床智能体委员会在两名同伴同错时有 38% 采纳捷径，独立裁判才能抓住传染。",
+      "why_it_matters_zh": "表明博弈临床多智能体的是社会合理性而非视觉显著性，自我报告式监督会失效。",
+      "quality_score": 83.0,
+      "tags": [
+        "方法与模型",
+        "多智能体",
+        "捷径学习",
+        "MedQA",
+        "benchmaxxing"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "公开代码",
+        "benchmark",
+        "dataset",
+        "github"
+      ],
+      "publication_status": "preprint",
+      "rank": 8,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.03744v1"
+      },
+      "abstract_zh": "临床决策支持正走向在共享工作区上审议的语言模型智能体委员会。我们问此类委员会是否可被捷径所博弈——基准会奖励但临床医生会忽略的线索。跨越六个公开数据集上的七个队列，覆盖文本（MedQA-USMLE、MedMCQA、MIMIC-CXR 报告）、影像（NIH ChestX-ray14、MIMIC-CXR-JPG、CheXpert）和表格 ICU 记录（SUPPORT2），Gemini 委员会在孤立条件下抵制这些线索（翻转 5-16%），但社会上合理的捷径会扩散：当两名同伴主张同一错误答案时，受测的留出智能体在 38% 的情形中采纳它，虚假的“预筛”系统标志也是如此，且在两个能力档次上皆然。在三种监督智能体中，门控无法将采纳与诚实一致区分开（假阳性率 100%）；只读转录本的同谱系评判者在文本上标出采纳（精确率 100%，召回 93%），但在影像上塌缩到与门控相同；私下重新询问留出智能体的裁判可迁移到影像（精确率 77-88%，假阳性率 13-21%）。将线索的视觉显著性提高三倍并不改变传染，而第二个同伴声音会再将其提高一半。博弈隐藏评分标准几乎无声：仅 1/10 的文本漂移者和 1/134 的影像漂移者点名他们所趋近的评分标准。博弈委员会的是社会合理性，且只有独立于自我报告的裁判能抓住它。代码：https://github.com/criticaldata/benchmaxxing",
+      "published": "2026-08-04",
+      "author_line": "Sebastián Andrés Cajas Ordóñez, Agastya Munnangi, Aldo Marzullo 等 16 人"
+    },
+    {
+      "id": "arxiv:2608.03391v1",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "TimeRLM: Recursive Language Models Enable Precise Anomaly Localization in Long-Context Time-Series",
+      "url": "https://arxiv.org/abs/2608.03391v1",
+      "published_at": "2026-08-04",
+      "updated_at": "2026-08-04",
+      "creators": [
+        "Nicolas Zumarraga",
+        "Lorenzo Steno",
+        "Ning Wang",
+        "Max Rosenblattl",
+        "Thomas Kaar",
+        "Maxwell A. Xu",
+        "Kevin O'Sullivan",
+        "Markus Kreft",
+        "Elgar Fleisch",
+        "Paul Schmiedmayer",
+        "Patrick Langer",
+        "Robert Jakob"
+      ],
+      "language": "en",
+      "abstract_or_text": "Precise anomaly localization over long-context time series is a crucial task in monitoring applications across clinical care, industrial operations, financial services, and logistics, where brief evidence may hide inside long spans of high-frequency data. Time-Series Language Models (TSLMs) are able to ingest time series data and verbalize findings on anomalies in natural language; however, recent benchmarks report a decrease in retrieval performance at long contexts, mirroring failure modes in text, vision, and audio. In the text domain, Recursive Language Models (RLMs) can recover much of this lost performance by keeping context external to the large language model (LLM), allowing the model to query it through code. We present TimeRLM, an RLM formulation for time-series that sequentially manipulates the signal using code and vision capabilities. We further introduce AnomalyXL, a synthetic long-context anomaly localization benchmark with programmatically injected anomalies that require precise retrieval. We implement five different task categories and two variants: AnomalyXL-MCQ and AnomalyXL-Localize. TimeRLM outperforms every evaluated TSLM and single-pass baseline on four of the five AnomalyXL-Localize tasks, reaching 0.682 IoU on localization and 0.745 on classify-with-evidence, versus at most 0.329 and 0.072 across all baselines. We post-train TimeRLM using reinforcement learning. The resulting model further improves performance and requires approximately one-third as many agent interaction turns as its untrained base model to produce a final answer. On unseen real-world ECG, sleep and software observability recordings, the post-trained TimeRLM retains or improves performance, surpassing TSLMs despite being trained exclusively on synthetic data. Our findings suggest recursive interaction with time-series is an effective approach for long-horizon retrieval.",
+      "summary_zh": "TimeRLM 以代码与视觉递归查询长上下文时间序列，AnomalyXL 定位 IoU 0.682，并迁移到未见 ECG 与睡眠记录。",
+      "why_it_matters_zh": "把递归语言模型从文本迁到生理时间序列，缓解长视野检索崩溃并给出可精确定位的基准。",
+      "quality_score": 82.0,
+      "tags": [
+        "方法与模型",
+        "TimeRLM",
+        "AnomalyXL",
+        "ECG",
+        "递归语言模型"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有外部测试",
+        "benchmark",
+        "clinical",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 9,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.03391v1"
+      },
+      "abstract_zh": "在长上下文时间序列上精确定位异常，是临床照护、工业运行、金融服务和物流等监测应用中的关键任务，短暂证据可能隐藏在长跨度的高频数据中。时间序列语言模型（TSLMs）能够摄入时间序列数据并以自然语言陈述异常发现；然而，近期基准报告在长上下文下检索性能下降，镜像了文本、视觉和音频中的失败模式。在文本领域，递归语言模型（RLMs）通过将上下文保持在大语言模型（LLM）外部、允许模型通过代码查询，可以恢复大部分损失的性能。我们提出 TimeRLM，一个面向时间序列的 RLM 表述，使用代码和视觉能力顺序操作信号。我们进一步引入 AnomalyXL，一个带有程序化注入、需要精确检索的异常的合成长上下文异常定位基准。我们实现了五个不同任务类别和两个变体：AnomalyXL-MCQ 和 AnomalyXL-Localize。TimeRLM 在五个 AnomalyXL-Localize 任务中的四个上超过每一个被评估的 TSLM 和单遍基线，定位 IoU 达到 0.682，带证据分类达到 0.745，而全部基线至多为 0.329 和 0.072。我们使用强化学习对 TimeRLM 进行后训练。所得模型进一步提升性能，并只需其未训练基座模型约三分之一的智能体交互轮次即可产生最终答案。在未见的真实世界 ECG、睡眠和软件可观测性记录上，后训练的 TimeRLM 保持或提升性能，尽管仅在合成数据上训练仍超过 TSLMs。我们的发现表明，与时间序列的递归交互是长视野检索的有效途径。",
+      "published": "2026-08-04",
+      "author_line": "Nicolas Zumarraga, Lorenzo Steno, Ning Wang 等 12 人"
+    },
+    {
+      "id": "arxiv:2608.02684v2",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath",
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "A Blind Spot in Alignment: Quantifying Biosecurity Risks in Large Language Models",
+      "url": "https://arxiv.org/abs/2608.02684v2",
+      "published_at": "2026-08-03",
+      "updated_at": "2026-08-05",
+      "creators": [
+        "Shu Quan",
+        "Tianfang Hao",
+        "Sitong Fang",
+        "He Geng",
+        "Jiayi Zhou",
+        "Boyuan Chen",
+        "Kaile Wang",
+        "Donghai Hong",
+        "Juntao Dai",
+        "Yaodong Yang",
+        "Jiaming Ji"
+      ],
+      "language": "en",
+      "abstract_or_text": "Large Language Models (LLMs) are accelerating biological research, yet this same capability poses a critical biosecurity threat: models that assist in protein engineering can equally be prompted to generate predicted toxin-like sequences, potentially lowering the barrier to biological misuse. Current safety evaluations, however, operate in natural language and cannot determine whether a model-generated amino acid sequence is biological gibberish or a computational risk signal. To address this evaluation blind spot, we introduce SPIKE-Bench, coupling 631 curated toxin-design prompts across seven functional categories with the SPIKE funnel, a three-stage protocol that filters output through compliance, biological plausibility, and predicted toxicity, producing stage-level diagnostics and an aggregate function-aware metric: the Functional Harmfulness Rate (FHR). An audit of 32 LLMs reveals that most models freely comply with toxin-design requests; FHR is driven primarily by biological generation capability rather than safety alignment, reaching 50.7%; and Refusal Rate fails to predict functional risk. As a first step toward mitigation, we provide BioSafe-Guard, a domain-specialized classifier that substantially reduces predicted functional risk while preserving benign utility. We release SPIKE-Bench and BioSafe-Guard at https://github.com/PKU-Alignment/SPIKE-Bench to support more rigorous biosecurity evaluation of LLMs.",
+      "summary_zh": "SPIKE-Bench 用 631 条毒素设计提示审计 32 个 LLM，功能有害率达 50.7%，并由 BioSafe-Guard 在保留良性效用下降低预测功能风险。",
+      "why_it_matters_zh": "指出自然语言拒答无法度量氨基酸序列是否构成计算生物安全风险，并把评估推进到功能层。",
+      "quality_score": 82.0,
+      "tags": [
+        "方法与模型",
+        "SPIKE-Bench",
+        "生物安全",
+        "FHR",
+        "BioSafe-Guard"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "公开代码",
+        "github",
+        "evaluation",
+        "release",
+        "security"
+      ],
+      "publication_status": "preprint",
+      "rank": 10,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.02684v2"
+      },
+      "abstract_zh": "大语言模型（LLMs）正在加速生物学研究，但同一能力也构成关键生物安全威胁：能够协助蛋白质工程的模型同样可被提示生成预测的毒素样序列，从而可能降低生物误用门槛。然而，当前安全评估在自然语言中运作，无法判定模型生成的氨基酸序列是生物学乱码还是计算风险信号。为填补这一评估盲点，我们引入 SPIKE-Bench，将跨越七个功能类别的 631 条策展毒素设计提示与 SPIKE 漏斗耦合；后者是一个三阶段协议，通过依从性、生物学合理性和预测毒性过滤输出，产生阶段级诊断和一个聚合的功能感知指标：功能有害率（Functional Harmfulness Rate，FHR）。对 32 个 LLM 的审计显示，大多数模型会自由依从毒素设计请求；FHR 主要由生物学生成能力而非安全对齐驱动，达到 50.7%；并且拒绝率（Refusal Rate）无法预测功能风险。作为缓解的第一步，我们提供 BioSafe-Guard，一个领域专用分类器，在保留良性效用的同时大幅降低预测的功能风险。我们在 https://github.com/PKU-Alignment/SPIKE-Bench 发布 SPIKE-Bench 和 BioSafe-Guard，以支持对 LLM 更严格的生物安全评估。",
+      "published": "2026-08-03",
+      "author_line": "Shu Quan, Tianfang Hao, Sitong Fang 等 11 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.07.29.741641",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Interpreting Protein Language Models: high attention sites predict functional regions",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.07.29.741641",
+      "published_at": "2026-08-04",
+      "updated_at": "2026-08-04",
+      "creators": [
+        "Pribus, S. J.",
+        "Altman, R. B.",
+        "Nayar, G."
+      ],
+      "language": "en",
+      "abstract_or_text": "Computational proteomics has revolutionized biomedical research, guiding targeted experimental exploration to accelerate protein-based mechanistic discovery. Protein Language Models (PLMs) enable scalable, resource-efficient study; through large-scale training on only primary protein sequences, PLMs generate vector representations of protein structure that have been shown to capture biochemical, evolutionary, and structural properties. A core component of PLMs is the attention mechanism, which specifically captures long-range interactions across a protein sequence in attention matrices. Using the Evolutionary Scale Modelling 2 (ESM-2) PLM, we previously developed a novel method to identify \"High Attention\" (HA) sites. HA sites are specific residues that ESM-2 assigns the most attention to early during encoding. Here, we further characterize these HA sites across structural and functional metrics. Using unsupervised clustering, we find HA sites can be categorized as \"structural core\", \"structural pathogenic\", \"core pathogenic\", or \"low-confidence\". We further use AlphaMissense pathogenicity predictions and the pan-cancer analysis of whole genomes (PCAWG)-labeled pathogenic variant positions to show that HA sites predict protein regions with high pathogenic risk. Finally, we explore the utility of HA sites for suggesting candidate binding sites, identifying multiple cancer protein examples where HA sites identified regions with previously undiscovered high interaction likelihood and thus potential therapeutic utility. Our work demonstrates the biological interpretability of PLM representations and offers a valuable method to prioritize functionally relevant protein residues for targeted biomedical research.",
+      "summary_zh": "用 ESM-2 编码早期的高注意力残基划分结构核心与致病位点，并以 AlphaMissense 与 PCAWG 显示其对高致病风险区域的预测力。",
+      "why_it_matters_zh": "把蛋白质语言模型注意力读成可优先实验的功能残基，并为癌症蛋白提示潜在结合位点。",
+      "quality_score": 81.0,
+      "tags": [
+        "蛋白质与结构",
+        "ESM-2",
+        "高注意力",
+        "AlphaMissense",
+        "PCAWG"
+      ],
+      "evidence_flags": [
+        "理论分析",
+        "公开数据",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 11,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.29.741641",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "计算蛋白质组学已经变革了生物医学研究，引导有针对性的实验探索以加速基于蛋白质的机制发现。蛋白质语言模型（PLMs）使可扩展、资源高效的研究成为可能；通过对仅一级蛋白质序列的大规模训练，PLMs 生成已被证明捕获生化、进化和结构性质的蛋白质结构向量表征。PLMs 的一个核心组件是注意力机制，它在注意力矩阵中专门捕获跨蛋白质序列的长程相互作用。使用 Evolutionary Scale Modelling 2（ESM-2）PLM，我们先前开发了一种识别“高注意力”（High Attention，HA）位点的新方法。HA 位点是 ESM-2 在编码早期赋予最多注意力的特定残基。本文我们进一步在结构和功能指标上表征这些 HA 位点。使用无监督聚类，我们发现 HA 位点可被归类为“结构核心”、“结构致病”、“核心致病”或“低置信”。我们进一步使用 AlphaMissense 致病性预测和全基因组泛癌分析（PCAWG）标注的致病变异位置，表明 HA 位点预测具有高致病风险的蛋白质区域。最后，我们探索 HA 位点用于提示候选结合位点的效用，识别出多个癌症蛋白实例，其中 HA 位点定位了先前未发现的高相互作用可能性区域，因而具有潜在治疗效用。我们的工作证明了 PLM 表征的生物学可解释性，并提供了一种优先排序功能相关蛋白质残基以进行定向生物医学研究的有价值方法。",
+      "published": "2026-08-04",
+      "author_line": "Pribus, S. J., Altman, R. B., Nayar, G."
+    },
+    {
+      "id": "biorxiv:10.1101/2024.12.20.629625",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "DNA-binding domain-aware classification enables systematic annotation of the regulatory genome",
+      "url": "https://www.biorxiv.org/content/10.1101/2024.12.20.629625",
+      "published_at": "2026-08-03",
+      "updated_at": "2026-08-03",
+      "creators": [
+        "Ickes, C.",
+        "Timucin, C. H.",
+        "Harms, B. C.",
+        "Akguel, U.",
+        "Vicente-Hernandez, I.",
+        "Bogeski, I.",
+        "Beissbarth, T.",
+        "Haubrock, M."
+      ],
+      "language": "en",
+      "abstract_or_text": "Defining the cis-regulatory code remains one of the central challenges of modern genomics, requiring the reliable association of transcription factor binding sites (TFBSs) with their cognate transcription factors (TFs) from DNA sequence information. While deep learning methods outperform conventional position weight matrix (PWM)-based approaches, both typically formulate TFBS prediction as a bound-versus-unbound decision rather than resolving the competitive binding potential among TFs at a given genomic location. This is further complicated by the widespread sharing of DNA-binding domains (DBDs) among TFs, which produces overlapping binding preferences, rendering TFBS assignment at the individual TF level inherently ambiguous. Consequently, we present TFClassPredict, a DNABERT-based framework that reframes TFBS prediction as a multi-class classification problem across 23 DBD-classes, discriminating each against all remaining DBD-classes, directly enabling the resolution of binding events between DBD-classes. Trained on high-confidence directly bound TFBSs and exploiting DBD-DNA co-evolution, TFClassPredict naturally resolves the ambiguity arising from shared DBD architectures. We demonstrate that TFClassPredict achieves robust DBD-class level classification, outperforming PWM-based approaches and benchmarked deep learning architectures with predictions mapping to biologically defined DBD-classes. Beyond classification, TFClassPredict improves PWM-based pipelines, three-dimensional genome interaction prediction, and allows genome-wide DBD-class annotation, while recapitulating known lineage-specifying TF programs from immune cell ATAC-seq data.",
+      "summary_zh": "TFClassPredict 用 DNABERT 将 TFBS 预测改为 23 个 DBD-class 的多类判别，并改善 PWM 流水线与三维基因组相互作用预测。",
+      "why_it_matters_zh": "把共享 DNA 结合结构域造成的位点指派模糊上收到 DBD 类，使调控基因组注释可在类间竞争中解析。",
+      "quality_score": 81.0,
+      "tags": [
+        "组学与细胞",
+        "TFClassPredict",
+        "DNABERT",
+        "TFBS",
+        "DBD"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "benchmark"
+      ],
+      "publication_status": "preprint",
+      "rank": 12,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2024.12.20.629625",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "定义顺式调控密码仍是现代基因组学的核心挑战之一，需要从 DNA 序列信息可靠地将转录因子结合位点（TFBSs）与其对应转录因子（TFs）关联起来。尽管深度学习方法优于传统的基于位置权重矩阵（PWM）的途径，两者通常都将 TFBS 预测表述为结合对未结合的判定，而非解析给定基因组位置上 TFs 之间的竞争性结合潜力。TFs 之间广泛共享 DNA 结合结构域（DBDs）使这一点更加复杂，因为这产生重叠的结合偏好，使个体 TF 水平的 TFBS 指派固有地模糊。因此，我们提出 TFClassPredict，一个基于 DNABERT 的框架，将 TFBS 预测重新表述为跨越 23 个 DBD-class 的多类分类问题，将每一类与其余全部 DBD-class 相判别，从而直接实现 DBD-class 之间结合事件的解析。在高置信直接结合 TFBSs 上训练并利用 DBD-DNA 共进化，TFClassPredict 自然地解析了由共享 DBD 架构产生的模糊性。我们证明 TFClassPredict 实现稳健的 DBD-class 水平分类，优于基于 PWM 的途径和经基准评测的深度学习架构，且预测映射到生物学定义的 DBD-class。在分类之外，TFClassPredict 改善基于 PWM 的流水线、三维基因组相互作用预测，并允许全基因组 DBD-class 注释，同时从免疫细胞 ATAC-seq 数据重现已知的谱系指定 TF 程序。",
+      "published": "2026-08-03",
+      "author_line": "Ickes, C., Timucin, C. H., Harms, B. C. 等 8 人"
+    },
+    {
+      "id": "arxiv:2608.03145v1",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Spatial proteomics guided by H&E-based AI reveals recurrence-risk niches in triple-negative breast cancer",
+      "url": "https://arxiv.org/abs/2608.03145v1",
+      "published_at": "2026-08-04",
+      "updated_at": "2026-08-04",
+      "creators": [
+        "Yesung Cho",
+        "Ji Hwan Park",
+        "Chanil Kim",
+        "Hyewon Kim",
+        "Honglan Li",
+        "Yumin Lee",
+        "Geongyu Lee",
+        "Sujeong Hong",
+        "Seong Min Park",
+        "Yoonyoung Lee",
+        "Hee Sool Rho",
+        "Sumin Lee",
+        "Amos Chungwon Lee",
+        "Changhwan Lee",
+        "Hwanyoung Shim",
+        "Hyunwook Kim",
+        "Hyeji Shin",
+        "Sanha Park",
+        "Jihoon Yu",
+        "Yoon Hee Shin",
+        "Sooheon Kim",
+        "Hyunjin Park",
+        "Seung Min Park",
+        "Sangwan Kim",
+        "Yujung Kim",
+        "Sung-Im Do",
+        "Eun-Young Kim",
+        "Dongmyung Shin",
+        "Jongbae Park",
+        "In-Gu Do"
+      ],
+      "language": "en",
+      "abstract_or_text": "Deep learning models can predict cancer recurrence from H&E stained slides, but the localized molecular states underlying these predictions remain largely obscured. Here, we developed an outcome informed spatial pathology framework in TNBC that integrates AI generated recurrence risk heatmaps with mass spectrometry based spatial proteomics. In a cohort of 156 patients, distribution based aggregation of high scoring patches achieved an AUC of 0.77 and a C-index of 0.77 in an independent test cohort. Bulk proteomics associated high image derived risk with cell cycle and genome maintenance programs and low risk with immune activation. High and low risk patches coexisted within the same tumor compartment and displayed distinct nuclear and architectural features, revealing intratumoral heterogeneity beyond tissue compartment identity. We then used the heatmaps as coordinate level guides to physically isolate and profile 46 AI defined tumor regions from two recurrence patients. Spatial proteomic profiling revealed a concordant molecular contrast across both patients: mitotic programs were enriched in high risk regions and immune and antigen presentation programs in low risk regions. A 13 protein composite derived from these spatial contrasts showed a trend toward poorer recurrence-free survival with increasing scores in an expanded cohort, while the corresponding transcript based composite stratified recurrence free survival in the independent METABRIC TNBC cohort. Integrating the protein composite with the H&E derived risk score improved the out of bag C-index from 0.679 to 0.739 and enhanced time dependent discrimination at 3 and 5 years. Together, these findings define a new role for outcome trained AI models as spatially explicit experimental guides that connect prognostic morphology with localized molecular states and advance biologically grounded, multiscale biomarker discovery in TNBC.",
+      "summary_zh": "在 156 例 TNBC 中用结局训练的 H&E 风险热图引导质谱空间蛋白质组，剖析 46 个 AI 定义区域并得到 13 蛋白复合体。",
+      "why_it_matters_zh": "把预后形态学模型变成可物理取样的实验向导，把高风险区连到有丝分裂、低风险区连到免疫程序。",
+      "quality_score": 81.0,
+      "tags": [
+        "组学与细胞",
+        "TNBC",
+        "空间蛋白质组",
+        "H&E",
+        "METABRIC"
+      ],
+      "evidence_flags": [
+        "临床队列",
+        "实验验证",
+        "有外部测试",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 13,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.03145v1"
+      },
+      "abstract_zh": "深度学习模型可以从 H&E 染色切片预测癌症复发，但这些预测背后的局域分子状态在很大程度上仍被遮蔽。本文我们在 TNBC 中开发了一个结局知情的空间病理框架，将 AI 生成的复发风险热图与基于质谱的空间蛋白质组学整合。在 156 例患者队列中，对高分斑块的基于分布的聚合在独立测试队列中达到 AUC 0.77 和 C-index 0.77。整体蛋白质组学将高影像导出风险与细胞周期和基因组维持程序相关联，将低风险与免疫激活相关联。高风险和低风险斑块共存于同一肿瘤区室，并显示不同的核与结构特征，揭示了超越组织区室身份的瘤内异质性。随后我们用热图作为坐标级向导，从两名复发患者中物理分离并剖析了 46 个 AI 定义的肿瘤区域。空间蛋白质组剖析在两名患者中揭示了一致的分子对照：有丝分裂程序在高风险区域富集，免疫和抗原呈递程序在低风险区域富集。由这些空间对照导出的 13 蛋白复合体在扩展队列中随分数升高呈现无复发生存更差的趋势，而相应的基于转录本的复合体在独立 METABRIC TNBC 队列中分层了无复发生存。将蛋白复合体与 H&E 导出的风险分数整合，将袋外 C-index 从 0.679 提升到 0.739，并增强了 3 年和 5 年的时间依赖判别。综合这些发现，为结局训练的 AI 模型定义了一个新角色：作为空间显式的实验向导，将预后形态学与局域分子状态连接起来，并推进 TNBC 中有生物学根基的多尺度生物标志物发现。",
+      "published": "2026-08-04",
+      "author_line": "Yesung Cho, Ji Hwan Park, Chanil Kim 等 30 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.07.30.741735",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "OpenAntigens: a structure-aware database for antigen construct design across the human cell-surface and secreted proteome",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.07.30.741735",
+      "published_at": "2026-08-04",
+      "updated_at": "2026-08-04",
+      "creators": [
+        "Teixeira, A. A. R.",
+        "Zhu, H.",
+        "Kothiwal, D.",
+        "Cao, R.",
+        "Mills, A."
+      ],
+      "language": "en",
+      "abstract_or_text": "Choosing which region of a protein to express remains poorly standardized in antibody discovery, recombinant reagent generation, structural biology and computational binder design. For human cell-surface and secreted proteins, this requires reconciling topology, processing, predicted and experimental structure, modifications, interaction partners, orthologs, paralogs and cross-reactivity risk before ordering DNA. OpenAntigens is a free, no-login database of construct-design reports for 5328 human secreted, GPI-anchored, single-pass and multipass proteins. It integrates UniProt topology, AlphaFold pLDDT and PAE, PDB precedent, InterPro and Pfam domains, mouse and cynomolgus orthologs, paralog and family context, Open Targets disease associations, partner and assembly context, and BLAST searches. It provides 55 305 construct suggestions spanning full design regions, PDB-backed boundaries, annotated domains, pLDDT/PAE-derived regions and membrane-expression options, plus 148 722 sequence-similarity hits to help choose constructs and assess cross-reactivity. For targets with compatible AlphaFold models, the interactive designer links sequence, structure, pLDDT and PAE, allowing users to revise boundaries and export species-equivalent sequences with real-time cysteine and modification warnings. OpenAntigens places reproducible construct suggestions, comparative context and browser editing in one workflow, reducing manual reconciliation across resources. OpenAntigens is available at openantigens.org. Graphical abstract O_FIG O_LINKSMALLFIG WIDTH=200 HEIGHT=81 SRC=\"FIGDIR/small/741735v1_ufig1.gif\" ALT=\"Figure 1\"> View larger version (28K): org.highwire.dtl.DTLVardef@11171e4org.highwire.dtl.DTLVardef@4c41b8org.highwire.dtl.DTLVardef@6ebf30org.highwire.dtl.DTLVardef@ca21fa_HPS_FORMAT_FIGEXP M_FIG C_FIG",
+      "summary_zh": "OpenAntigens 为 5328 个人类分泌与膜蛋白提供 55 305 条结构感知构建体建议，并整合 AlphaFold pLDDT/PAE、PDB 与直系同源。",
+      "why_it_matters_zh": "把抗体与计算结合物设计中分散的拓扑、结构与交叉反应判断收成可浏览器编辑的单一工作流。",
+      "quality_score": 80.0,
+      "tags": [
+        "蛋白质与结构",
+        "OpenAntigens",
+        "AlphaFold",
+        "抗原构建体",
+        "抗体发现"
+      ],
+      "evidence_flags": [
+        "数据集",
+        "公开数据",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 14,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.30.741735",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "在抗体发现、重组试剂生成、结构生物学和计算结合物设计中，选择表达蛋白质的哪一区域仍缺乏标准化。对人类细胞表面和分泌蛋白而言，这需要在订购 DNA 之前协调拓扑、加工、预测与实验结构、修饰、相互作用伙伴、直系同源、旁系同源和交叉反应风险。OpenAntigens 是一个免费、无需登录的构建体设计报告数据库，覆盖 5328 个人类分泌、GPI 锚定、单次跨膜和多次跨膜蛋白。它整合 UniProt 拓扑、AlphaFold pLDDT 和 PAE、PDB 先例、InterPro 和 Pfam 结构域、小鼠和食蟹猴直系同源、旁系同源与家族上下文、Open Targets 疾病关联、伙伴与组装上下文，以及 BLAST 搜索。它提供 55 305 条构建体建议，涵盖完整设计区域、PDB 支持的边界、注释结构域、pLDDT/PAE 导出区域和膜表达选项，外加 148 722 条序列相似性命中以帮助选择构建体并评估交叉反应。对具有兼容 AlphaFold 模型的靶标，交互式设计器将序列、结构、pLDDT 和 PAE 相连，允许用户修订边界并导出物种等价序列，同时给出实时半胱氨酸和修饰警告。OpenAntigens 将可复现的构建体建议、比较上下文和浏览器编辑置于同一工作流，减少跨资源的人工协调。OpenAntigens 可在 openantigens.org 获取。",
+      "published": "2026-08-04",
+      "author_line": "Teixeira, A. A. R., Zhu, H., Kothiwal, D. 等 5 人"
+    },
+    {
+      "id": "medrxiv:10.64898/2026.08.02.26359492",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "Variantscape: Large Language Model-Driven Mining of Biomedical Literature for Clinical Interpretation of Cancer Variants",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.08.02.26359492",
+      "published_at": "2026-08-03",
+      "updated_at": "2026-08-03",
+      "creators": [
+        "Wosny, M.",
+        "Blindu, A. S.",
+        "Boesch, M.",
+        "Peres, T.",
+        "Niederhauser, T.",
+        "Fruh, M.",
+        "Rothermundt, C.",
+        "Hastings, J."
+      ],
+      "language": "en",
+      "abstract_or_text": "BackgroundPrecision oncology relies on accurate interpretation of tumour-detected gene variants, to guide personalized treatment decisions. However, accurate interpretation of variants in context requires extensive information that is often buried within unstructured biomedical literature and obscured by inconsistent nomenclature, making manual retrieval labour-intensive and prone to omissions. MethodsTo address this challenge, we developed Variantscape, a large-scale, automated pipeline and open-access web tool. It integrates traditional natural language processing methods with state-of-the-art large language models to extract, standardize, and analyze co-associations between genetic variants, cancer types, and therapeutic interventions from published biomedical abstracts. FindingsFrom over 3 million abstracts screened, 335,817 gene name-containing articles were eligible for downstream extraction. Among these, 7,423 (2.2%) simultaneously mentioned a variant, cancer type, and therapeutic agent, encompassing 3,902 unique variants across 98 cancer types and 388 therapeutic agents. This highlights the inefficiency of manual literature retrieval in molecular tumour board (MTB) workflows. Network analysis revealed 14,831 statistically significant co-associations, represented in a literature-derived graph with 4,388 nodes and 46,943 edges. Canonical alterations in well-studied cancers (e.g., BRAF V600E in melanoma) were strongly linked to established treatments, while several rare variants also emerged with high-confidence literature support. InterpretationBy applying large language models to biomedical literature, Variantscape enables scalable, context-aware extraction of trilateral variant-treatment-cancer relationships. This approach supports early evidence synthesis/hypothesis generation, highlights underrecognized or rare associations, and offers a practical resource for accelerating discovery and supporting precision oncology research and translation. Unlike static databases, Variantscape is continuously updatable and leverages large language model-based inference to uncover putative associations without manual curation. Variantscape has the potential to support MTB workflows and translational research by rapidly revealing signals from underlying abstracts. FundingThis study was funded by the School of Medicine at the University of St. Gallen in Switzerland under grant number 2300380. Strengths and limitations of this studyO_LIVariantscape combines traditional natural language processing with large language models to enable scalable, automated extraction of variant-cancer-treatment relationships from over 3 million biomedical abstracts, substantially reducing the manual search burden inherent to existing molecular tumour board workflows. C_LIO_LIThe pipeline applies large language model-based inference to standardize inconsistent genetic nomenclature across the literature, improving the comparability and reliability of extracted associations that would otherwise be obscured by terminological variation. C_LIO_LIVariantscape is designed as a continuously updatable, open-access resource, meaning it can incorporate newly published evidence without requiring repeated manual intervention. C_LIO_LIThe pipeline relies solely on abstract-level text rather than full-text articles, which may limit the depth and granularity of extracted associations, as key methodological details, variant context, and nuanced clinical findings are frequently reported only within the body of published papers. C_LIO_LIAutomated extraction using large language models introduces a risk of misattribution of variant-cancer-treatment relationships, and without systematic manual validation of outputs, the precision of identified associations at scale remains difficult to fully characterize. C_LI",
+      "summary_zh": "Variantscape 从逾 3 million 篇摘要抽出 3,902 个变异、98 种癌种与 388 种治疗剂的共现，得到 14,831 条显著三元关联。",
+      "why_it_matters_zh": "用可持续更新的 LLM 文献挖掘减轻分子肿瘤委员会的手工检索负担，但精确率仍缺系统人工校验。",
+      "quality_score": 79.0,
+      "tags": [
+        "生物医学与临床",
+        "Variantscape",
+        "精准肿瘤学",
+        "BRAF",
+        "文献挖掘"
+      ],
+      "evidence_flags": [
+        "数据集",
+        "理论分析",
+        "clinical",
+        "state-of-the-art"
+      ],
+      "publication_status": "preprint",
+      "rank": 15,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.02.26359492",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "背景：精准肿瘤学依赖对肿瘤检出基因变异的准确解读，以指导个体化治疗决策。然而，在上下文中准确解读变异需要大量信息，这些信息往往埋藏在非结构化生物医学文献中，并被不一致的命名法遮蔽，使人工检索费力且易有遗漏。方法：为应对这一挑战，我们开发了 Variantscape，一个大规模自动化流水线与开放获取网络工具。它将传统自然语言处理方法与先进大语言模型整合，从已发表的生物医学摘要中提取、标准化并分析遗传变异、癌种与治疗干预之间的共关联。发现：在筛查的逾 3 million 篇摘要中，335,817 篇含基因名的文章符合下游抽取条件。其中 7,423 篇（2.2%）同时提及变异、癌种和治疗剂，涵盖 98 种癌种和 388 种治疗剂上的 3,902 个独特变异。这凸显了分子肿瘤委员会（MTB）工作流中人工文献检索的低效。网络分析揭示 14,831 条统计学显著的共关联，表示在一个含 4,388 个节点和 46,943 条边的文献导出图中。充分研究癌种中的经典改变（例如黑色素瘤中的 BRAF V600E）与既定治疗强关联，而若干罕见变异也以高置信文献支持出现。解释：通过将大语言模型应用于生物医学文献，Variantscape 使三元变异–治疗–癌种关系的可扩展、上下文感知抽取成为可能。该方法支持早期证据综合/假说生成，凸显未被充分认识或罕见的关联，并为加速发现以及支持精准肿瘤学研究与转化提供实用资源。与静态数据库不同，Variantscape 可持续更新，并利用基于大语言模型的推断在无需人工策展的情况下揭示推定关联。Variantscape 有潜力通过迅速揭示底层摘要中的信号来支持 MTB 工作流和转化研究。资助：本研究由瑞士圣加仑大学医学院资助，资助号 2300380。本研究的优势与限度：Variantscape 将传统自然语言处理与大语言模型结合，以实现对逾 3 million 篇生物医学摘要中变异–癌种–治疗关系的可扩展、自动化抽取，大幅减轻现有分子肿瘤委员会工作流固有的手工检索负担。该流水线应用基于大语言模型的推断来标准化文献中不一致的遗传命名，改善本会被术语变异遮蔽的抽取关联的可比性与可靠性。Variantscape 被设计为可持续更新的开放获取资源，意味着它可以纳入新发表证据而无需反复人工干预。该流水线仅依赖摘要级文本而非全文，可能限制抽取关联的深度与粒度，因为关键方法细节、变异上下文和细微临床发现经常只在已发表论文正文中报告。使用大语言模型进行自动抽取会引入变异–癌种–治疗关系误归属的风险，且在没有对输出进行系统人工验证的情况下，大规模识别关联的精确率仍难以充分刻画。",
+      "published": "2026-08-03",
+      "author_line": "Wosny, M., Blindu, A. S., Boesch, M. 等 8 人"
+    },
+    {
+      "id": "arxiv:2608.02520v1",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "MedPRESS: A Multi-turn Benchmark for Patient-Pressure-Induced Medical Sycophancy in LLMs",
+      "url": "https://arxiv.org/abs/2608.02520v1",
+      "published_at": "2026-08-03",
+      "updated_at": "2026-08-03",
+      "creators": [
+        "Saman Sarker Joy",
+        "Niloy Farhan"
+      ],
+      "language": "en",
+      "abstract_or_text": "Large language models (LLMs) are increasingly used for health-related advice. Existing research measures their safety with static questions rather than pressured patient-facing conversations. We introduce MedPRESS, a multi-turn benchmark for measuring patient-pressure-induced sycophancy in LLMs. MedPRESS contains 600 medically grounded five-turn dialogues across three scenario families: medication and treatment demand, personal health self-care, and symptom triage and care resistance. Each dialogue begins with a health query and escalates through personal experience, social proof, external evidence claims, and direct adversarial challenge. We evaluate 20 LLMs across general, medical-domain, lightweight, large, open-weight, and proprietary families using structured judging and safety-focused metrics. Results show that models frequently shift toward unsafe agreement under repeated patient pressure, with substantial variation across model families, model scale, and prompt type. Anti-sycophancy prompting improves robustness for several models, but does not eliminate unsafe agreement. MedPRESS highlights a critical gap in medical LLM evaluation: safe medical knowledge is not enough unless models can maintain it under conversational pressure.",
+      "summary_zh": "MedPRESS 用 600 个五轮医患压力对话评估 20 个 LLM，发现反复患者施压使模型频繁转向不安全同意。",
+      "why_it_matters_zh": "指出安全医学知识并不足够，除非模型能在对话压力下维持它；反谄媚提示只能部分缓解。",
+      "quality_score": 79.0,
+      "tags": [
+        "生物医学与临床",
+        "MedPRESS",
+        "谄媚",
+        "医学LLM",
+        "多轮对话"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "benchmark",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 16,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.02520v1"
+      },
+      "abstract_zh": "大语言模型（LLMs）越来越多地被用于健康相关建议。现有研究用静态问题衡量其安全性，而非有压力的面向患者对话。我们引入 MedPRESS，一个用于衡量 LLM 中患者压力诱导谄媚的多轮基准。MedPRESS 包含 600 个有医学根基的五轮对话，跨越三个情景家族：用药与治疗要求、个人健康自我照护，以及症状分诊与抗拒就医。每个对话以健康问询开始，并经个人经验、社会证明、外部证据主张和直接对抗性挑战逐步升级。我们使用结构化评判和安全导向指标，评估跨越通用、医学领域、轻量、大型、开权和专有家族的 20 个 LLM。结果显示，模型在反复患者压力下频繁转向不安全同意，且在模型家族、模型尺度和提示类型之间存在实质变异。反谄媚提示改善了若干模型的稳健性，但并未消除不安全同意。MedPRESS 凸显医学 LLM 评估中的一个关键缺口：安全的医学知识并不足够，除非模型能在对话压力下维持它。",
+      "published": "2026-08-03",
+      "author_line": "Saman Sarker Joy, Niloy Farhan"
+    }
+  ],
+  "review": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "note": "2026-08-04 候选 60 篇，全部自动分≥70，但夹杂 TCGA 模板预后指数、波斯语医疗小模型、无计算方法的湿实验与 Long COVID 影像、通用车间调度与 dLLM 强化学习，以及表型混杂可疑的 ASD 高准确率稿。按 AI×Bio 相关性、方法可信度与实验/临床证据精选 16 篇 preprint，覆盖蛋白质与结构、组学与细胞、生物医学与临床、方法与模型；当日新增隐私保全零代码临床统计智能体、ANCHOR-RE 神经–符号关系抽取、临床多智能体捷径传染、TimeRLM 长上下文异常定位、ESM-2 高注意力位点、H&E 引导 TNBC 空间蛋白质组、TFClassPredict 调控基因组注释、OpenAntigens 构建体库、Variantscape 变异文献挖掘与 MedPRESS 患者压力谄媚基准。继续收录单细胞扰动基准、SLxGO、SleepFounder、Gemma 策展智能体、SPINDLE 与 SPIKE-Bench。未收录缺乏计算方法的湿实验、无独立复现的影像灌水项及非生物域方法稿。"
+  }
+}

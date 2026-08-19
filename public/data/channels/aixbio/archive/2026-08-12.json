@@ -1,0 +1,893 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-12",
+  "channel": "aixbio",
+  "generated_at": "2026-08-18T15:11:00+00:00",
+  "title": "AI × Bio 每日精选",
+  "subtitle": "计算生物学、组学、蛋白质与生物医学模型。",
+  "window": {
+    "start": "2026-08-09",
+    "end": "2026-08-12"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 4377,
+    "candidates": 60,
+    "selected": 16,
+    "sources": {
+      "arXiv": 1306,
+      "bioRxiv": 867,
+      "medRxiv": 304,
+      "Europe PMC": 2794
+    }
+  },
+  "source_status": {
+    "arXiv": {
+      "state": "ok",
+      "count": 1306
+    },
+    "bioRxiv": {
+      "state": "ok",
+      "count": 867
+    },
+    "medRxiv": {
+      "state": "ok",
+      "count": 304
+    },
+    "Europe PMC": {
+      "state": "ok",
+      "count": 2794
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "medrxiv:10.64898/2026.08.11.26360095",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "A Vision-Language Model for Coronary Angiography Interpretation and Clinical Decision Support",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.08.11.26360095",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-12",
+      "creators": [
+        "Li, Z.",
+        "Sun, Y.",
+        "Jiang, C.",
+        "Pan, T.",
+        "Zhou, Y.",
+        "Wang, C.",
+        "Pan, L.",
+        "Zhang, X.",
+        "Yang, Z.",
+        "Yu, Z.",
+        "Xiao, Z.",
+        "Chen, J.",
+        "Huang, Y.",
+        "Sun, R.",
+        "Gan, Y.",
+        "Li, X.",
+        "Zhang, B.",
+        "Zhang, Z.",
+        "Wang, X.",
+        "Han, L.",
+        "Qi, Y.",
+        "Cheng, Y.",
+        "Liang, Y.",
+        "Ge, J."
+      ],
+      "language": "en",
+      "abstract_or_text": "BACKGROUNDCoronary angiography remains the reference standard for diagnosing coronary artery disease and guiding revascularization, yet its interpretation requires expert integration of multi-view anatomy, lesion morphology and procedural context. Existing artificial intelligence approaches are largely task-specific, annotation-dependent and limited in capturing the semantic relationship between angiographic findings and interventional decision-making. Whether large-scale vision-language pretraining can enable transferable foundation-model representations for invasive coronary imaging remains unknown. METHODSWe developed CAG-MIND, a domain-specific vision-language foundation model for coronary angiography, using 135,475 paired coronary angiography (CAG)-procedural report cases comprising 812,850 angiographic videos collected from Zhongshan Hospital and Shanghai Geriatric Medical Center. Each case consisted of standardized six-view angiographic acquisitions paired with structured procedural semantics extracted from routine reports using a large language model-assisted pipeline. The model was pretrained by aligning multi-view angiographic representations with report-derived semantic embeddings through bidirectional contrastive learning. Performance was evaluated under zero-shot and supervised fine-tuning settings across 11 downstream tasks grouped into structural abnormality detection, atherosclerotic plaque assessment, and interventional decision prediction, using both an internal validation cohort and an independent external test cohort. RESULTSCAG-MIND demonstrated robust performance across all three task categories. In the zero-shot setting, the model achieved mean AUROCs of 0.686 in the internal validation cohort and 0.745 in the external test cohort, indicating transferable multimodal representations without task-specific supervision. Following supervised fine-tuning, the mean AUROC increased to 0.827 and 0.846, respectively, with excellent performance for coronary stenosis detection (AUROC 0.940 in both cohorts), balloon/stent prediction (0.900 and 0.907), and CABG recommendation (0.877 and 0.875). Compared with representative biomedical vision-language models and conventional image-based architectures, CAG-MIND consistently achieved superior performance in both zero-shot and supervised settings and remained superior to fully fine-tuned competing models when trained with only 10% of the labelled data. Grad-CAM visualization demonstrated anatomically plausible lesion-focused attention, supporting the interpretability of the learned representations. CONCLUSIONSCAG-MIND is, to our knowledge, the first large-scale vision-language foundation model for coronary angiography trained at more than 100,000-patient scale. By aligning standardized multi-view angiographic videos with report-derived procedural semantics, CAG-MIND enables robust zero-shot transfer, data-efficient fine-tuning and cross-center generalization. These findings support domain-aligned multimodal pretraining as a scalable foundation-model paradigm for invasive cardiovascular imaging and future cath-lab decision support.",
+      "summary_zh": "CAG-MIND 以 135,475 例、812,850 段六视角造影视频做双向对比预训练，监督微调后狭窄检测两队列 AUROC 均为 0.940，球囊/支架 0.900/0.907。",
+      "why_it_matters_zh": "把百万级导管室视频接到报告语义，并在独立外院队列上检验零样本与 10% 标注数据的可迁移性。",
+      "quality_score": 88.0,
+      "tags": [
+        "生物医学与临床",
+        "CAG-MIND",
+        "冠状动脉造影",
+        "VLM",
+        "CABG"
+      ],
+      "evidence_flags": [
+        "有外部测试",
+        "有定量基准",
+        "临床队列",
+        "clinical",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 1,
+      "featured": true,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.11.26360095",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "冠状动脉造影仍是诊断冠状动脉疾病并指导血运重建的参考标准，但其解读需要专家整合多视角解剖、病变形态与操作语境。现有人工智能方法大多任务特异、依赖标注，且难以捕捉造影所见与介入决策之间的语义关系。大规模视觉–语言预训练能否为有创冠状动脉影像提供可迁移的基础模型表征，目前尚不清楚。我们开发了 CAG-MIND，一个面向冠状动脉造影的领域特异视觉–语言基础模型，使用来自中山医院与上海市老年医学中心的 135,475 对冠状动脉造影（CAG）–操作报告病例，共计 812,850 段造影视频。每个病例包含标准化六视角造影采集，并与通过大语言模型辅助流水线从常规报告中提取的结构化操作语义配对。模型通过双向对比学习，将多视角造影表征与报告导出的语义嵌入对齐。在零样本与监督微调设置下，于 11 项下游任务评估性能，任务分为结构异常检测、动脉粥样硬化斑块评估与介入决策预测三类，并同时使用内部验证队列与独立外部测试队列。CAG-MIND 在全部三类任务上表现稳健。零样本设置下，内部验证队列平均 AUROC 为 0.686，外部测试队列为 0.745，表明无需任务特异监督即可获得可迁移的多模态表征。监督微调后，平均 AUROC 分别升至 0.827 与 0.846，在冠状动脉狭窄检测（两队列 AUROC 均为 0.940）、球囊/支架预测（0.900 与 0.907）以及 CABG 建议（0.877 与 0.875）上表现优异。相较代表性生物医学视觉–语言模型与常规基于图像的架构，CAG-MIND 在零样本与监督设置下均持续更优，并且在仅使用 10% 标注数据训练时仍优于完全微调的竞争模型。Grad-CAM 可视化显示解剖上合理的病变聚焦注意力，支持所学表征的可解释性。据我们所知，CAG-MIND 是首个以超过 100,000 例患者规模训练的冠状动脉造影大规模视觉–语言基础模型。通过将标准化多视角造影视频与报告导出的操作语义对齐，CAG-MIND 实现稳健的零样本迁移、数据高效微调与跨中心泛化。这些发现支持将领域对齐的多模态预训练作为有创心血管影像及未来导管室决策支持的可扩展基础模型范式。",
+      "published": "2026-08-12",
+      "author_line": "Li, Z., Sun, Y., Jiang, C. 等 24 人"
+    },
+    {
+      "id": "medrxiv:10.64898/2026.04.23.26351588",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "Generalizing intensive care AI across time scales in resource-limited settings",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.04.23.26351588",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-12",
+      "creators": [
+        "Devadiga, A.",
+        "Singh, P.",
+        "Sankar, J.",
+        "Lodha, R.",
+        "Sethi, T."
+      ],
+      "language": "en",
+      "abstract_or_text": "Generalization remains a major barrier to the clinical deployment of artificial intelligence in critical care. Models developed using high-frequency physiological monitoring often experience performance degradation when applied across hospitals, patient populations, and monitoring environments that differ from those used during training. Although variability in temporal resolution is widespread in critical care, its impact on representation learning and model transferability remains poorly understood. Here, we introduce the resolution-transfer task for physiological time series and present PhysioStack, a self-supervised physiological representation learning framework designed to evaluate whether representations learned from high-frequency monitoring data remain robust across clinically relevant monitoring frequencies without retraining. We introduce SafeICU, a longitudinal pediatric intensive care dataset spanning ten years of routinely collected clinical and physiological data from a tertiary-care hospital in India, including high-resolution vital signs recorded at 15-second intervals. Transformer-based masked language models were trained on 144,271 patient-hours of high-resolution physiological signals from 984 pediatric ICU stays to learn representations of heart rate, respiratory rate, oxygen saturation, and arterial blood pressure. Representations learned at high temporal resolution demonstrated strong transferability across lower monitoring frequencies, consistently outperforming models trained directly on temporally aggregated data. Importantly, these representations generalized across patient populations, maintaining performance when evaluated on independent adult intensive care cohorts derived from the MIMIC-III and eICU databases without retraining. In a downstream early shock prediction task, PhysioStack achieved AUROC values of 0.82-0.86 and AUPRC values of 0.91-0.94 across 5-60-minute monitoring frequencies without retraining. Representations trained on pediatric data generalized to independent adult ICU cohorts, achieving AUROC 0.91-0.95 and AUPRC 0.94-0.97 without cohort-specific fine-tuning. These findings demonstrate that PhysioStack learns transferable physiological representations that generalize across temporal resolutions and patient cohorts, supporting robust AI for critical care. To support further research, we publicly release the SafeICU database, comprising longitudinal vital signs, laboratory measurements, treatment records, microbiology, and admission and discharge, together with pretrained physiological representation models. Research in contextO_ST_ABSEvidence before this studyC_ST_ABSBefore undertaking this study, we searched PubMed, Web of Science, and Google Scholar for articles published between 2010, and 2026. Search terms included combinations of (\"self-supervised learning\" OR transformer OR \"masked language model\") AND (\"critical care\" OR ICU); (\"MIMIC\" OR \"eICU\" OR EHR OR \"multimodal data\") AND (\"critical care\" OR ICU); and (\"physiological time series\" OR \"vital signs\" OR monitoring) AND (generalization OR \"temporal resolution\" OR \"sampling frequency\"). The equivalent PubMed searches yielded 302, 6468, and 214561 records, respectively, reflecting the rapid growth of research in artificial intelligence, critical care datasets, and physiological monitoring. Manual screening of relevant reviews and original articles showed that existing studies primarily investigate self-supervised learning for downstream clinical prediction or evaluate generalizability across institutions and patient cohorts. However, nearly all studies develop and evaluate models using a single temporal resolution, treating monitoring frequency as fixed. Added value of this studyThis study introduces the concept of temporal resolution transfer for physiological representation learning, SafeICU, a large pediatric intensive care database, and PhysioStack, a self-supervised framework pretrained using high-resolution physiological signals trained and a generalizable model for early prediction of shock in low resource settings, validated in three data cohorts spanning 200+ ICUs. We demonstrate that representations learned from high-frequency monitoring remain robust across clinically relevant monitoring frequencies without additional pretraining and generalize across independent pediatric and adult intensive care cohorts. We further show that these transferable representations support downstream early shock prediction across temporal resolutions and publicly release both the SafeICU database and pretrained PhysioStack models to support reproducible research and external benchmarking. Implications of all the available evidenceCurrent evidence suggests that self-supervised learning can produce reusable representations for clinical prediction, but deployment remains limited by poor generalizability across heterogeneous healthcare environments. Our findings indicate that pretrained physiological representations can be transferred across differences in monitoring frequency while maintaining downstream predictive performance, reducing the need to retrain models for each sampling resolution. Together with existing evidence, these results support the development of more scalable and deployable physiological AI systems and provide a publicly available pediatric resource to accelerate future research on representation learning, external validation, and foundation models for critical care.",
+      "summary_zh": "PhysioStack 在 SafeICU 的 144,271 患者小时高频生命体征上做掩蔽预训练，无需重训即在 5–60 分钟分辨率取得休克预测 AUROC 0.82–0.86，并迁移到 MIMIC-III 与 eICU。",
+      "why_it_matters_zh": "把监测频率当作可迁移的分辨率任务，并公开印度儿科 ICU 十年队列与预训练生理表征。",
+      "quality_score": 87.0,
+      "tags": [
+        "方法与模型",
+        "PhysioStack",
+        "SafeICU",
+        "休克预测",
+        "MIMIC-III"
+      ],
+      "evidence_flags": [
+        "有外部测试",
+        "数据集",
+        "有定量基准",
+        "benchmark",
+        "dataset",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.04.23.26351588",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "泛化仍是人工智能在重症监护临床部署的主要障碍。使用高频生理监测开发的模型，在应用于与训练时不同的医院、患者人群与监测环境时，常出现性能下降。尽管时间分辨率变异在重症监护中普遍存在，其对表征学习与模型可迁移性的影响仍知之甚少。在此，我们引入生理时间序列的分辨率迁移任务，并提出 PhysioStack，一个自监督生理表征学习框架，用于评估从高频监测数据学到的表征能否在无需重训的情况下，在临床相关监测频率上保持稳健。我们推出 SafeICU，一个跨越十年、来自印度一家三级医院常规采集的儿科重症纵向数据集，包括以 15 秒间隔记录的高分辨率生命体征。基于 Transformer 的掩蔽语言模型在来自 984 次儿科 ICU 住院、共计 144,271 患者小时的高分辨率生理信号上训练，以学习心率、呼吸频率、血氧饱和度与动脉血压的表征。在高时间分辨率上学到的表征对较低监测频率表现出强可迁移性，持续优于直接在时间聚合数据上训练的模型。重要的是，这些表征可跨患者人群泛化：在无需重训的情况下，于源自 MIMIC-III 与 eICU 数据库的独立成人重症队列上保持性能。在下游早期休克预测任务中，PhysioStack 在 5–60 分钟监测频率上无需重训即取得 AUROC 0.82–0.86、AUPRC 0.91–0.94。在儿科数据上训练的表征泛化到独立成人 ICU 队列，无需队列特异微调即取得 AUROC 0.91–0.95、AUPRC 0.94–0.97。这些发现表明 PhysioStack 学到可跨时间分辨率与患者队列迁移的生理表征，支持稳健的重症监护 AI。为支持进一步研究，我们公开释放 SafeICU 数据库，包含纵向生命体征、实验室测量、治疗记录、微生物学以及入出院信息，以及预训练的生理表征模型。",
+      "published": "2026-08-12",
+      "author_line": "Devadiga, A., Singh, P., Sankar, J. 等 5 人"
+    },
+    {
+      "id": "biorxiv:10.1101/2024.10.24.619766",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "CpGPT: a Foundation Model for DNA Methylation",
+      "url": "https://www.biorxiv.org/content/10.1101/2024.10.24.619766",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-12",
+      "creators": [
+        "de Lima Camillo, L. P.",
+        "Sehgal, R.",
+        "Armstrong, J.",
+        "Melnikas, M.",
+        "Miller, H. E.",
+        "Ding, J.",
+        "Ferrucci, L.",
+        "Lasky-Su, J. A.",
+        "Higgins-Chen, A. T.",
+        "Horvath, S.",
+        "Wang, B."
+      ],
+      "language": "en",
+      "abstract_or_text": "DNA methylation is a type of epigenetic modification that plays a significant role in development, aging, and disease. Despite extensive research, how genome-wide DNA methylation patterns collectively encode and influence complex phenotypes such as aging and disease remains difficult to characterize with conventional approaches. Foundation models are a class of machine learning model that leverage vast quantities of data to make sense of complex data types, such as genome sequences or single-cell transcriptomes. Here, we present the Cytosine-phosphate-Guanine Pretrained Transformer (CpGPT), a novel foundation model pretrained on CpGCorpus, a novel database with more than 2,000 DNA methylation datasets encompassing over 150,000 samples from diverse conditions. CpGPT leverages an improved transformer architecture to learn comprehensive representations of methylation patterns, allowing it to impute and reconstruct genome-wide methylation profiles from limited input data. By capturing sequence, positional, and epigenetic contexts, CpGPT outperforms specialized models when finetuned for aging-related tasks, including the state-of-the-art GrimAge2 and PCGrimAge for mortality and morbidity estimation. The model is highly adaptable and can impute beta values across different methylation platforms, tissue types, mammalian species, and even single-cell data. As a foundation model, CpGPT can be leveraged as a new tool for biological discovery in the field of epigenetics. The open-source code and model can be found at http://github.com/lucascamillomd/CpGPT. HighlightsO_LICpGPT is a novel foundation model for DNA methylation analysis, pretrained on over 2,000 datasets encompassing 150,000+ samples. C_LIO_LIThe model demonstrates strong performance in zero-shot tasks including imputation, array conversion, and reference mapping. C_LIO_LICpGPT achieves state-of-the-art results in mortality prediction and chronological age estimation. C_LI",
+      "summary_zh": "CpGPT 在 CpGCorpus 的 2,000 余个数据集、超过 150,000 份样本上预训练，微调后优于 GrimAge2 与 PCGrimAge，并可跨平台、组织、物种与单细胞填补 beta 值。",
+      "why_it_matters_zh": "把全基因组甲基化做成可填补、可迁移的基础表征，而不是再训一只专用衰老时钟。",
+      "quality_score": 86.0,
+      "tags": [
+        "组学与细胞",
+        "CpGPT",
+        "CpGCorpus",
+        "GrimAge2",
+        "DNA甲基化"
+      ],
+      "evidence_flags": [
+        "数据集",
+        "有定量基准",
+        "公开代码",
+        "dataset",
+        "github",
+        "state-of-the-art"
+      ],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2024.10.24.619766",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "DNA 甲基化是一类在发育、衰老与疾病中发挥重要作用的表观遗传修饰。尽管研究广泛，全基因组 DNA 甲基化模式如何共同编码并影响衰老与疾病等复杂表型，仍难以用常规方法刻画。基础模型是一类利用海量数据理解复杂数据类型（如基因组序列或单细胞转录组）的机器学习模型。在此，我们提出 Cytosine-phosphate-Guanine Pretrained Transformer（CpGPT），一种在 CpGCorpus 上预训练的新型基础模型；CpGCorpus 是一个包含 2,000 余个 DNA 甲基化数据集、涵盖超过 150,000 份多样条件样本的新数据库。CpGPT 利用改进的 transformer 架构学习甲基化模式的综合表征，从而能从有限输入数据中填补并重建全基因组甲基化剖面。通过捕获序列、位置与表观遗传语境，CpGPT 在衰老相关任务微调后优于专用模型，包括用于死亡与发病估计的 state-of-the-art GrimAge2 与 PCGrimAge。该模型适应性强，可跨不同甲基化平台、组织类型、哺乳动物物种甚至单细胞数据填补 beta 值。作为基础模型，CpGPT 可作为表观遗传学领域生物学发现的新工具。开源代码与模型见 http://github.com/lucascamillomd/CpGPT。要点：CpGPT 是一种用于 DNA 甲基化分析的新型基础模型，在超过 2,000 个数据集、150,000+ 样本上预训练。该模型在填补、芯片转换与参考映射等零样本任务上表现强劲。CpGPT 在死亡预测与实足年龄估计上取得 state-of-the-art 结果。",
+      "published": "2026-08-12",
+      "author_line": "de Lima Camillo, L. P., Sehgal, R., Armstrong, J. 等 11 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.05.02.722381",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem",
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Learning the Language of the Microbiome with Transformers",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.05.02.722381",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-12",
+      "creators": [
+        "Treloar, N. J.",
+        "Ur-Rehman, S.",
+        "Yang, J."
+      ],
+      "language": "en",
+      "abstract_or_text": "Self-supervised pretraining has become central to biological machine learning, yet microbiome data remains comparatively underexplored in terms of both modeling approaches and evaluation frameworks. To address this gap, we present Atlas, a pretraining dataset of 539,308 microbiome datapoints from the MGnify database. Using Atlas, we train the Waypoint family of microbiome foundation models: a series of GPT-2 style causal language models ranging from 6M to 170M parameters. We also introduce Compass, a curated benchmark of eight predictive tasks spanning biome classification, drug-microbiome interactions, drug degradation, and infant gut development. Using this benchmark, we compare the performance of Waypoint models against classical baselines and the existing MGM foundation model. Our results show that pretraining leads to consistent and significant improvements in downstream task performance, that both dataset scale and tokenization strategy impact model quality, that pretraining is essential for achieving favorable scaling behavior and that representations learned during pretraining generalise between microbiome domains. Furthermore, pretrained transformer models begin to reliably outperform classical methods once training data exceeds roughly 10,000 examples - a threshold that is attainable for modern microbiome studies. Finally, we demonstrate that the Waypoint models achieve state-of-the-art performance among microbiome foundation models. Overall, our work highlights the importance of large-scale self-supervised pretraining in this domain and establishes Atlas, Compass, and the Waypoint models as valuable resources for the research community in this emerging field.",
+      "summary_zh": "Waypoint 在 Atlas 的 539,308 个 MGnify 数据点上训练 6M–170M 的 GPT-2 风格模型，并在 Compass 八项任务上超过经典基线与 MGM；约 10,000 例后预训练开始稳定胜出。",
+      "why_it_matters_zh": "给微生物组补上可对照的预训练语料、任务基准与规模化阈值，而不是只报单数据集分类。",
+      "quality_score": 85.0,
+      "tags": [
+        "方法与模型",
+        "Waypoint",
+        "Atlas",
+        "Compass",
+        "MGnify"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "方法创新",
+        "benchmark",
+        "dataset",
+        "state-of-the-art"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.05.02.722381",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "自监督预训练已成为生物机器学习的核心，但 microbiome 数据在建模方法与评估框架两方面仍相对探索不足。为填补这一空白，我们提出 Atlas，一个来自 MGnify 数据库、包含 539,308 个 microbiome 数据点的预训练数据集。利用 Atlas，我们训练 Waypoint 系列 microbiome 基础模型：一组参数量从 6M 到 170M 的 GPT-2 风格因果语言模型。我们还引入 Compass，一个涵盖八项预测任务的策展基准，任务跨越生物群系分类、药物–微生物组互作、药物降解与婴儿肠道发育。使用该基准，我们将 Waypoint 模型的性能与经典基线及现有 MGM 基础模型进行比较。结果表明，预训练对下游任务性能带来一致且显著的改善；数据集规模与分词策略均影响模型质量；预训练对于获得有利的规模化行为至关重要；并且预训练期间学到的表征可在 microbiome 域之间泛化。此外，一旦训练数据超过大约 10,000 个样本——这对现代 microbiome 研究是可达到的阈值——预训练 transformer 模型开始可靠地优于经典方法。最后，我们表明 Waypoint 模型在 microbiome 基础模型中取得 state-of-the-art 性能。总体而言，本研究强调大规模自监督预训练在该领域的重要性，并将 Atlas、Compass 与 Waypoint 模型确立为这一新兴领域研究社区的宝贵资源。",
+      "published": "2026-08-12",
+      "author_line": "Treloar, N. J., Ur-Rehman, S., Yang, J."
+    },
+    {
+      "id": "europepmc:ppr1297421",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "PIANO: Probabilistic Inference Autoencoder Networks for multi-Omics enables robust generative modeling of gene expression and scales single-cell integration to 100 million cells",
+      "url": "https://europepmc.org/article/PPR/PPR1297421",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Wang N",
+        "Cardenas C",
+        "Nieto-Caballero VE",
+        "Turner D",
+        "Feinberg H",
+        "Yuan D",
+        "Scott N",
+        "DeBerardine M",
+        "Dan S",
+        "Caceres L",
+        "Schembri J",
+        "Yao Z",
+        "Lee C",
+        "Pillow JW",
+        "Krienen FM"
+      ],
+      "language": "en",
+      "abstract_or_text": "SUMMARY Single-cell RNA technologies enable the routine acquisition of transcriptomic atlases. However, these molecular profiles are influenced by overlapping sources of variation. Since these covariates confound comparisons, data integration is the first step in most analyses. Three challenges remain: correcting strong batch effects, scaling to millions of cells, and modeling how covariates influence gene expression. To address these challenges, we developed PIANO: Probabilistic Inference Autoencoder Networks for multi-Omics, a deep learning framework whose central feature is a generative model of gene expression data. Additionally, PIANO achieves robust integrations and trains 10x faster than previous methods. PIANO accurately integrates single-cell data across species and across single-cell and spatial transcriptomics modalities. As practical applications, PIANO models spatially-resolved gene expression during Alzheimer’s disease progression in human brains and integrates over 100 million cancer cells to model drug perturbations. In summary, PIANO’s integration and generative modeling capabilities will empower novel insights for countless future studies.",
+      "summary_zh": "PIANO 以基因表达生成模型做跨物种与空间整合，训练比先前方法快 10x，并对人类脑 AD 空间表达与超过 100 million 个癌症细胞的药物扰动建模。",
+      "why_it_matters_zh": "把强批次校正、百万级扩展与协变量生成式建模收进同一单细胞整合框架。",
+      "quality_score": 84.0,
+      "tags": [
+        "组学与细胞",
+        "PIANO",
+        "单细胞整合",
+        "空间转录组",
+        "药物扰动"
+      ],
+      "evidence_flags": [
+        "方法创新",
+        "数据集"
+      ],
+      "publication_status": "preprint",
+      "rank": 5,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.06.743394",
+        "pmid": ""
+      },
+      "abstract_zh": "单细胞 RNA 技术使转录组图谱的常规获取成为可能。然而，这些分子剖面受重叠变异来源影响。由于这些协变量会混淆比较，数据整合是多数分析的第一步。仍存在三项挑战：校正强批次效应、扩展到数百万细胞，以及建模协变量如何影响基因表达。为应对这些挑战，我们开发了 PIANO：Probabilistic Inference Autoencoder Networks for multi-Omics，一个以基因表达数据生成模型为核心特征的深度学习框架。此外，PIANO 实现稳健整合，训练速度比先前方法快 10x。PIANO 准确整合跨物种单细胞数据以及单细胞与空间转录组模态。作为实际应用，PIANO 对人类大脑阿尔茨海默病进展中的空间分辨基因表达建模，并整合超过 100 million 个癌症细胞以建模药物扰动。总之，PIANO 的整合与生成建模能力将为无数未来研究赋能新洞见。",
+      "published": "2026-08-12",
+      "author_line": "Wang N, Cardenas C, Nieto-Caballero VE 等 15 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.07.743610",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "PerturbLDM: conditional latent diffusion for modelling single-cell perturbation responses",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.07.743610",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-12",
+      "creators": [
+        "Yu, L.",
+        "Hsieh, K.-L.",
+        "Chu, Y.",
+        "Lan, Q.",
+        "Zhao, X.",
+        "Hsu, Y.-C.",
+        "Wood, C. S.",
+        "Rasmy, L.",
+        "Pilie, P. G.",
+        "Zhi, D.",
+        "Zhao, Z.",
+        "Jiang, X.",
+        "Dai, Y."
+      ],
+      "language": "en",
+      "abstract_or_text": "Single-cell perturbation profiling maps intervention-induced phenotypes, yet experiments measure only a fraction of the perturbation-context space. Learning context-dependent perturbation effects could enable response prediction beyond measured conditions. Here we introduce PerturbLDM, a latent-diffusion framework for conditional generation of single-cell transcriptional responses. Following Tahoe-100M pretraining, it predicted 13,942 held-out combinations of observed drugs, doses and cell lines more accurately than existing methods, with higher matched-control effect correlation than an additive marginal baseline in 95.2% of conditions. The Tahoe-100M-pretrained model was further used to rank PANACEA compounds by pathway similarity, placing shared-mechanism pairs among nearest neighbours. In smaller datasets, PerturbLDM generated a mid-gestational fetal-colon state with 67% lower gene-wise error than Squidiff, retaining the balance between absorptive and BEST4/OTOP2-like epithelial programmes. In PBMCs, it captured six of seven interferon and antiviral programmes and the interferon-associated FAO-OXPHOS programme more accurately than scGen. Together, these results support conditional response generation across data scales and biological settings.",
+      "summary_zh": "PerturbLDM 在 Tahoe-100M 预训练后预测 13,942 个留出药物–剂量–细胞系组合，95.2% 条件下优于加性基线，并在胎儿结肠与 PBMC 上分别低于 Squidiff 与 scGen 的误差。",
+      "why_it_matters_zh": "把未测扰动–语境组合做成可条件生成的潜扩散，而不是只拟合已测实验格子。",
+      "quality_score": 83.0,
+      "tags": [
+        "组学与细胞",
+        "PerturbLDM",
+        "Tahoe-100M",
+        "PANACEA",
+        "潜扩散"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "方法创新",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 6,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.07.743610",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "单细胞扰动剖析可绘制干预诱导的表型，但实验仅测量扰动–语境空间的一小部分。学习语境依赖的扰动效应，有望在已测条件之外预测应答。在此我们引入 PerturbLDM，一个用于条件生成单细胞转录应答的潜扩散框架。在 Tahoe-100M 预训练之后，它比现有方法更准确地预测了 13,942 个由已观察药物、剂量与细胞系组成的留出组合，并在 95.2% 的条件下取得高于加性边际基线的匹配对照效应相关。Tahoe-100M 预训练模型进一步按通路相似性对 PANACEA 化合物排序，将共享机制对置于最近邻之中。在较小数据集上，PerturbLDM 生成中孕期胎儿结肠状态的基因级误差比 Squidiff 低 67%，并保留吸收性与 BEST4/OTOP2-like 上皮程序之间的平衡。在 PBMC 中，它比 scGen 更准确地捕获七个干扰素与抗病毒程序中的六个，以及干扰素相关的 FAO-OXPHOS 程序。这些结果共同支持跨数据规模与生物学场景的条件应答生成。",
+      "published": "2026-08-12",
+      "author_line": "Yu, L., Hsieh, K.-L., Chu, Y. 等 13 人"
+    },
+    {
+      "id": "europepmc:ppr1297209",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Comparative benchmarking of AI research agents for omics data interpretation",
+      "url": "https://europepmc.org/article/PPR/PPR1297209",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Basov NV",
+        "Tirta YK",
+        "Li Z",
+        "Zhou H",
+        "Piatkevich KD"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract AI research agents, which are claimed to accelerate or even replace human bioinformatics analysis, are being deployed rapidly in life sciences and biomedical research. However, many scientists lack a systematic approach to assessing their utility and to determining which agent is best suited to a given task. Here we quantitatively benchmark three biomedical AI research agents, including K-Dense (Gemini 2.5 Pro), Finch from Edison Scientific, and Biomni (Claude family), against ChatGPT, which our survey identified as the most commonly used approach for analysing omics datasets. For benchmarking, we performed bioinformatic analyses of metabolomic, bulk proteomic and bulk transcriptomic datasets, which are among the most frequently requested workflows submitted to the deployed AI agents. We evaluated all four agents using a process-anchored framework that scores each output on process quality, result reporting, and interpretation depth, while a domain-aware ordinal rubric is applied in parallel. Eight independent runs per agent per modality, together with bootstrap resampling, alternative scoring definitions, output-volume controls, and within-agent reproducibility measurements, quantified uncertainty. No single agent dominated across all modalities. K-Dense led in metabolomics with the most thorough, reproducible reports; Finch produced the best-organized reports and won proteomics and transcriptomics; Biomni offered the strongest biological interpretation but frequently omitted quality control and preprocessing; ChatGPT, without workflow scaffolding, managed only basic statistics and finished last.Furthermore, agent architecture, not base-model capability, dominates what each agent outputs, with process-anchored evaluation reordering the field relative to accuracy alone. Our benchmark and rubric provide the community with an auditable basis for choosing among AI research agents for omics analysis.",
+      "summary_zh": "以过程锚定量规对照 K-Dense、Finch、Biomni 与 ChatGPT：K-Dense 赢代谢组，Finch 赢蛋白质组与转录组，Biomni 解释最深但常跳过质控，架构而非基座模型主导输出。",
+      "why_it_matters_zh": "把组学智能体从口号改成可审计的过程–报告–解释评分，并量化运行间不确定性。",
+      "quality_score": 83.0,
+      "tags": [
+        "组学与细胞",
+        "K-Dense",
+        "Finch",
+        "Biomni",
+        "组学智能体"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "benchmark",
+        "dataset",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 7,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10437888/v1",
+        "pmid": ""
+      },
+      "abstract_zh": "据称可加速甚至取代人类生物信息学分析的 AI 研究智能体，正被迅速部署于生命科学与生物医学研究。然而，许多科学家缺乏系统方法来评估其效用，并确定哪一智能体最适合给定任务。在此，我们定量基准测试三个生物医学 AI 研究智能体，包括 K-Dense（Gemini 2.5 Pro）、Edison Scientific 的 Finch，以及 Biomni（Claude family），并对照 ChatGPT——我们的调查将其确定为分析组学数据集最常用的方法。为进行基准测试，我们对代谢组、bulk 蛋白质组与 bulk 转录组数据集开展生物信息学分析，这些是部署的 AI 智能体最常被请求的工作流。我们用一个锚定于过程的框架评估全部四个智能体，分别对过程质量、结果报告与解释深度打分，同时并行应用领域感知的序数量规。每个智能体在每种模态上独立运行八次，并结合 bootstrap 重采样、替代评分定义、输出体量对照以及智能体内可复现性测量来量化不确定性。没有单一智能体在全部模态上占优。K-Dense 在代谢组学中领先，报告最彻底、可复现；Finch 产生组织最好的报告，并在蛋白质组与转录组上胜出；Biomni 提供最强的生物学解释，但经常省略质量控制与预处理；ChatGPT 在没有工作流支架的情况下仅能完成基本统计，排名最后。此外，智能体架构而非基座模型能力主导各智能体的输出，过程锚定评估相对单纯准确率重排了名次。我们的基准与量规为社区在组学分析中选择 AI 研究智能体提供了可审计的依据。",
+      "published": "2026-08-12",
+      "author_line": "Basov NV, Tirta YK, Li Z 等 5 人"
+    },
+    {
+      "id": "medrxiv:10.64898/2026.08.10.26360145",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "A Deep Learning-Derived Insulin Resistance Index for Cardiovascular Risk Prediction: A Prospective Cohort Study with External Validation in Chinese and US Populations",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.08.10.26360145",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-12",
+      "creators": [
+        "Mao, Y.",
+        "Lin, J.",
+        "Zhou, A.",
+        "Zeng, S.",
+        "Yang, D.",
+        "Lin, W.",
+        "Wen, J.",
+        "Yang, W.",
+        "Chen, G."
+      ],
+      "language": "en",
+      "abstract_or_text": "BackgroundExisting insulin resistance (IR) indices are predominantly developed in diabetic cohorts, limiting their generalizability. We developed a novel deep neural network-derived IR index (DNN-IR) using a Mixture-of-Experts (MoE) framework and evaluated its predictive performance for incident cardiovascular disease (CVD) and mortality in general populations. MethodsWe utilized data from three cohorts: the cross-sectional REACTION study (Fujian subcohort, 2011-2012) for DNN-IR derivation and internal validation; and two prospective cohorts, NHANES (1999-2018, linked to the National Death Index) and CHARLS (2011-2018), for external validation. The DNN-IR was developed using a deep learning model based on a Mixture-of-Experts (MoE) architecture, trained on the REACTION dataset. We evaluated the DNN-IRs utility in predicting incident CVD, cardiovascular mortality, and non-cardiovascular mortality among 13,889 NHANES and 7,047 CHARLS participants. Predictive performance was assessed via the area under the receiver operating characteristic curve (AUC). Multivariable logistic regression, restricted cubic splines, and Kaplan-Meier analyses characterized the associations between DNN-IR and clinical outcomes. ResultsIn the REACTION cohort, DNN-IR demonstrated superior predictive performance for atherosclerotic outcomes, achieving AUROCs of 0.89 (training) and 0.84 (internal validation). In the external CHARLS cohort (median follow-up: 7 years; 1,135 incident CVD cases [16.1%]), DNN-IR yielded AUROCs of 0.72 for incident CVD and 0.77 for all-cause mortality. Fully adjusted models showed that each 1-SD increment in DNN-IR was associated with a 23% higher CVD risk (OR=1.23, 95% CI: 1.14-1.32), exhibiting a predominantly linear dose-response relationship (P-nonlinearity=0.453). In NHANES, DNN-IR robustly predicted cardiovascular (AUROC=0.77) and all-cause mortality (AUROC=0.72), alongside specific mortalities like diabetes (0.91), Alzheimers disease (0.88), and kidney disease (0.96). Higher DNN-IR levels correlated with stepwise increases in cumulative mortality (log-rank P<0.001). ConclusionsThe MoE-derived DNN-IR index demonstrated robust and stable performance in predicting atherosclerosis, incident CVD, cardiovascular mortality, and all-cause mortality in the general population. Further validation in larger, more diverse cohorts is warranted to support its broad clinical applicability.",
+      "summary_zh": "MoE 导出的 DNN-IR 在 REACTION 内部验证 AUROC 0.84，CHARLS 新发 CVD 0.72、全因死亡 0.77，每 1-SD 对应 OR=1.23（95% CI 1.14–1.32）。",
+      "why_it_matters_zh": "把一般人群胰岛素抵抗指数做到中美前瞻外验，而不是只在糖尿病队列里回测。",
+      "quality_score": 82.0,
+      "tags": [
+        "生物医学与临床",
+        "DNN-IR",
+        "MoE",
+        "CHARLS",
+        "NHANES"
+      ],
+      "evidence_flags": [
+        "前瞻队列",
+        "有外部测试",
+        "临床队列",
+        "dataset",
+        "prospective",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 8,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.10.26360145",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "现有胰岛素抵抗（IR）指数主要在糖尿病队列中开发，限制了其可泛化性。我们使用 Mixture-of-Experts（MoE）框架开发了一种新的深度神经网络导出 IR 指数（DNN-IR），并在一般人群中评估其对新发心血管疾病（CVD）与死亡的预测性能。我们使用三个队列的数据：横断面 REACTION 研究（福建亚队列，2011–2012）用于 DNN-IR 推导与内部验证；以及两个前瞻队列 NHANES（1999–2018，链接 National Death Index）与 CHARLS（2011–2018）用于外部验证。DNN-IR 基于 Mixture-of-Experts（MoE）架构的深度学习模型，在 REACTION 数据集上训练。我们在 13,889 名 NHANES 与 7,047 名 CHARLS 参与者中评估 DNN-IR 对预测新发 CVD、心血管死亡与非心血管死亡的效用。预测性能通过受试者工作特征曲线下面积（AUC）评估。多变量 logistic 回归、限制性立方样条与 Kaplan-Meier 分析刻画 DNN-IR 与临床结局之间的关联。在 REACTION 队列中，DNN-IR 对动脉粥样硬化结局展示出更优预测性能，训练 AUROC 为 0.89，内部验证为 0.84。在外部 CHARLS 队列（中位随访 7 年；1,135 例新发 CVD [16.1%]）中，DNN-IR 对新发 CVD 的 AUROC 为 0.72，对全因死亡为 0.77。完全调整模型显示，DNN-IR 每增加 1-SD 与 23% 更高的 CVD 风险相关（OR=1.23，95% CI：1.14–1.32），并呈现主要为线性的剂量–反应关系（P-nonlinearity=0.453）。在 NHANES 中，DNN-IR 稳健预测心血管死亡（AUROC=0.77）与全因死亡（AUROC=0.72），以及糖尿病（0.91）、阿尔茨海默病（0.88）与肾脏疾病（0.96）等特异死亡。更高的 DNN-IR 水平与累积死亡的逐步升高相关（log-rank P<0.001）。MoE 导出的 DNN-IR 指数在一般人群中预测动脉粥样硬化、新发 CVD、心血管死亡与全因死亡方面表现出稳健且稳定的性能。需要在更大、更多样的队列中进一步验证，以支持其广泛临床适用性。",
+      "published": "2026-08-12",
+      "author_line": "Mao, Y., Lin, J., Zhou, A. 等 9 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.03.742561",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Assessing Computational Models for Pharmacogenomic Variant Interpretation",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.03.742561",
+      "published_at": "2026-08-09",
+      "updated_at": "2026-08-09",
+      "creators": [
+        "Pucci, F.",
+        "Hermans, P.",
+        "Tsishyn, M.",
+        "Cusato, J.",
+        "Rooman, M."
+      ],
+      "language": "en",
+      "abstract_or_text": "Accurately predicting the effects of pharmacogenomic variants is essential for the development of personalized therapeutic strategies, as genetic variability can influence drug response differently across patients. Here, we assessed several computational approaches using a dataset of pharmacogenomic variants with either clinical annotations or functional characterization by deep mutational scanning, compiled from the literature, with an additional focus on CYP2C9, a clinically relevant drug-metabolizing enzyme. Our results show that, despite recent methodological advances, substantial room for improvement remains. In particular, current methods struggle to distinguish gain-of-function variants associated with increased drug clearance and fast-metabolizer phenotypes from neutral variants, whereas loss-of-function variants that reduce drug clearance are predicted more accurately. The integration of structural and evolutionary information appears to be a key strategy for improving performance, with the coevolution-based StructureDCA method achieving the highest accuracy compared with classical genetic variant-effect predictors and recent deep learning approaches, including the pathogenic-variant predictor AlphaMissense and general protein language model-based methods. Finally, our results indicate that computational models can complement in vitro experiments in clinical variant interpretation, as StructureDCA predictions showed better agreement with clinically annotated phenotypes than large-scale deep mutational scanning data in several cases.",
+      "summary_zh": "在带临床注释或深度突变扫描的药物基因组变异及 CYP2C9 上，StructureDCA 优于 AlphaMissense 与蛋白语言模型，但对功能获得/快代谢变异仍难与中性区分。",
+      "why_it_matters_zh": "表明结构–共进化信息比纯深度学习更能补体外扫描，同时明确快代谢表型仍是预测短板。",
+      "quality_score": 82.0,
+      "tags": [
+        "蛋白质与结构",
+        "StructureDCA",
+        "CYP2C9",
+        "AlphaMissense",
+        "药物基因组"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "dataset",
+        "clinical",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 9,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.03.742561",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "准确预测药物基因组变异的效应对于发展个性化治疗策略至关重要，因为遗传变异可在不同患者中以不同方式影响药物应答。在此，我们使用从文献汇编的、带有临床注释或经深度突变扫描功能表征的药物基因组变异数据集，评估多种计算方法，并额外聚焦于临床相关药物代谢酶 CYP2C9。结果表明，尽管近期方法有所进展，仍有很大改进空间。尤其是，当前方法难以将与药物清除增加及快代谢表型相关的功能获得变异与中性变异区分开来，而降低药物清除的功能丧失变异则预测更准确。整合结构与进化信息似乎是改善性能的关键策略，基于共进化的 StructureDCA 方法相对经典遗传变异效应预测器以及包括致病性变异预测器 AlphaMissense 与基于通用蛋白语言模型的方法在内的近期深度学习方法，取得最高准确率。最后，我们的结果表明计算模型可在临床变异解释中补充体外实验，因为 StructureDCA 预测在若干情形下与临床注释表型的一致性优于大规模深度突变扫描数据。",
+      "published": "2026-08-09",
+      "author_line": "Pucci, F., Hermans, P., Tsishyn, M. 等 5 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.06.13.732049",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem",
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "FENNEC: Fine-Tuned Ensemble Neural Networks Accelerate Chemically Modified siRNA Design and Screening",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.06.13.732049",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-12",
+      "creators": [
+        "Larsen, A. W.",
+        "Butnaru, D.",
+        "Braun, J.",
+        "Rotrattanadumrong, R.",
+        "Berninger, P.",
+        "Yonchev, D.",
+        "Gagneur, J.",
+        "Marsico, A."
+      ],
+      "language": "en",
+      "abstract_or_text": "Small interfering RNAs (siRNAs) are a clinically validated therapeutic modality, but designing potent chemically modified siRNAs remains costly and iterative due to limited public data. Computational prediction of siRNA efficacy can accelerate rational design and preclinical development. However, despite the importance of chemical modifications in therapeutic performance, current machine-learning methods either do not account for this or generalize poorly beyond their training data. Here, we present FENNEC (Fine-Tuned Ensemble of Neural Networks for siRNA Efficiency Characterization), a machine-learning framework for predicting chemically modified siRNA activity. We curate the largest publicly available patent-derived dataset of modified siRNAs from 42 patents using OCR-based table extraction and stringent quality filtering. FENNEC combines temporal convolutional networks with thermodynamic features, experimental covariates, and RNA foundation-model embeddings to capture sequence- and transcript-level determinants of efficacy. We show that foundation-model embeddings encode transferable biological information, particularly benefiting prediction in data-scarce settings. FENNEC achieved robust gene- and siRNA-level performance, including independent validation on a novel AHSA1-targeting dataset, and consistently outperformed existing approaches. Model interpretation recovers modification-specific effects, while in silico perturbation analyses demonstrate its utility for both prediction and design optimization of chemically modified siRNAs. Together, these results establish FENNEC as a chemically aware framework for data-driven siRNA design. We have FENNEC which will be publicly available for non-commercial use at https://github.com/marsico-lab/fennec.",
+      "summary_zh": "FENNEC 从 42 项专利策展化学修饰 siRNA，融合时间卷积、热力学特征与 RNA 基础模型嵌入，并在独立 AHSA1 靶向集上优于现有方法。",
+      "why_it_matters_zh": "把修饰化学做到效力预测与计算机扰动设计里，而不是只对未修饰序列排序。",
+      "quality_score": 82.0,
+      "tags": [
+        "组学与细胞",
+        "FENNEC",
+        "siRNA",
+        "AHSA1",
+        "化学修饰"
+      ],
+      "evidence_flags": [
+        "有外部测试",
+        "数据集",
+        "公开代码",
+        "dataset",
+        "github",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 10,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.06.13.732049",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "Small interfering RNAs（siRNAs）是一种经临床验证的治疗模态，但由于公开数据有限，设计强效化学修饰 siRNA 仍昂贵且迭代。siRNA 效力的计算预测可加速理性设计与临床前开发。然而，尽管化学修饰对治疗性能至关重要，当前机器学习方法要么不考虑修饰，要么在训练数据之外泛化不佳。在此，我们提出 FENNEC（Fine-Tuned Ensemble of Neural Networks for siRNA Efficiency Characterization），一个用于预测化学修饰 siRNA 活性的机器学习框架。我们使用基于 OCR 的表格提取与严格质量过滤，从 42 项专利中策展了目前公开最大的专利来源修饰 siRNA 数据集。FENNEC 将时间卷积网络与热力学特征、实验协变量以及 RNA 基础模型嵌入相结合，以捕获效力的序列级与转录本级决定因素。我们表明，基础模型嵌入编码可迁移的生物学信息，尤其有利于数据稀缺场景中的预测。FENNEC 取得稳健的基因级与 siRNA 级性能，包括在一个新的 AHSA1 靶向数据集上的独立验证，并持续优于现有方法。模型解释回收了修饰特异效应，而计算机扰动分析表明其既可用于预测，也可用于化学修饰 siRNA 的设计优化。这些结果共同将 FENNEC 确立为数据驱动 siRNA 设计的化学感知框架。FENNEC 将以非商业用途公开，见 https://github.com/marsico-lab/fennec。",
+      "published": "2026-08-12",
+      "author_line": "Larsen, A. W., Butnaru, D., Braun, J. 等 8 人"
+    },
+    {
+      "id": "europepmc:ppr1297190",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "GraphTransformer-CoGNN: A two-stage dynamic graph learning framework for label-scarce cell-type annotation in spatial transcriptomics",
+      "url": "https://europepmc.org/article/PPR/PPR1297190",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Dang Y",
+        "Han X",
+        "Liu B"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Accurate cell-type identification in single-cell and spatial transcriptomics is crucial for understanding tissue heterogeneity and disease mechanisms. In semi-supervised settings, however, performance is frequently limited by label scarcity, distribution mismatch between labeled and unlabeled cells, and noisy connections in pre-defined cell graphs. To overcome these challenges, we propose GraphTransformer‑CoGNN, a two‑stage dynamic graph learning framework. First, a Graph Transformer learns an adaptive graph structure, incorporating global context through resistance‑distance‑based relative positional encoding. Second, Cooperative Graph Neural Network (CoGNN) refines this structure by suppressing spurious edges and enhancing biologically relevant interactions. The model is trained end‑to‑end with a joint objective combining supervised classification loss and triplet metric loss. Experiments on NanoString‑based spatial transcriptomics and the human DLPFC benchmark demonstrate that with only 18\\%labeled cells, our method achieves state‑of‑the‑art accuracy and Cohen’s kappa, while significantly improving the discrimination of rare cell types.",
+      "summary_zh": "GraphTransformer-CoGNN 先学电阻距离位置编码的自适应图，再由 CoGNN 抑伪边；在 NanoString 空间转录组与 DLPFC 上仅用 18% 标签即取得 SOTA 准确率与 Cohen’s kappa。",
+      "why_it_matters_zh": "针对标签稀缺与预定义细胞图噪声，把动态图精炼接到稀有细胞类型判别。",
+      "quality_score": 81.0,
+      "tags": [
+        "组学与细胞",
+        "GraphTransformer-CoGNN",
+        "空间转录组",
+        "DLPFC",
+        "细胞类型"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "方法创新",
+        "benchmark",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 11,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10407073/v1",
+        "pmid": ""
+      },
+      "abstract_zh": "准确的单细胞与空间转录组细胞类型鉴定，对于理解组织异质性与疾病机制至关重要。然而在半监督设置中，性能常受标签稀缺、有标签与无标签细胞之间的分布不匹配，以及预定义细胞图中的噪声连接所限制。为克服这些挑战，我们提出 GraphTransformer-CoGNN，一个两阶段动态图学习框架。首先，Graph Transformer 学习自适应图结构，并通过基于电阻距离的相对位置编码纳入全局语境。其次，Cooperative Graph Neural Network（CoGNN）通过抑制虚假边并增强生物学相关互作来精炼该结构。模型以监督分类损失与 triplet 度量损失的联合目标端到端训练。在基于 NanoString 的空间转录组与人类 DLPFC 基准上的实验表明，在仅有 18% 有标签细胞时，我们的方法取得 state-of-the-art 准确率与 Cohen’s kappa，同时显著改善稀有细胞类型的判别。",
+      "published": "2026-08-12",
+      "author_line": "Dang Y, Han X, Liu B"
+    },
+    {
+      "id": "arxiv:2608.11534v1",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "CT-ΔBench: A Benchmark for Longitudinal 3D Medical Imaging Difference Reporting with Vision-Language Models",
+      "url": "https://arxiv.org/abs/2608.11534v1",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-12",
+      "creators": [
+        "Kegeng Tang",
+        "Jingbo Wang",
+        "Shaogang Ren",
+        "Zihao Wang"
+      ],
+      "language": "en",
+      "abstract_or_text": "In medical imaging, the clinical value of Computed Tomography (CT) lies not only in depicting current disease status, but crucially in enabling longitudinal comparison of serial scans to determine disease evolution, a process that underpins response assessment, recurrence detection, and ongoing patient management. Yet, despite this central role of temporal comparison in clinical decision-making, existing medical foundation models remain largely confined to single-study understanding, leaving temporally grounded cross-examination insufficiently addressed. To address this gap, we study longitudinal imaging difference reporting, a task in which a model takes two temporally separated scans from the same patient and generates a clinically meaningful report describing interval changes between them. We introduce CT-ΔBench, a dedicated benchmark for this task with patient-level splitting to prevent information leakage. To better evaluate this task beyond surface-level text similarity, we further develop change-aware metrics specifically designed to capture clinically meaningful longitudinal changes, and conduct an independent physician validation to assess the reliability of the synthesized references and event extraction pipeline. We also compare direct paired-CT reasoning with an indirect two-stage pipeline that first generates single-timepoint reports and then performs textual differencing. Finally, we propose DeltaMed, a baseline model for direct paired-CT difference reporting, and train it on the benchmark training set. Together, these contributions lay the groundwork for temporally aware medical foundation models that better reflect real-world longitudinal clinical reasoning.",
+      "summary_zh": "CT-ΔBench 以患者级划分评估成对 CT 间隔变化报告，提出变化感知指标与医师核验，并训练直接成对推理基线 DeltaMed。",
+      "why_it_matters_zh": "把医学基础模型从单次检查理解推到可核验的纵向差异报告，避免把文本求差当成随访推理。",
+      "quality_score": 81.0,
+      "tags": [
+        "生物医学与临床",
+        "CT-ΔBench",
+        "DeltaMed",
+        "纵向CT",
+        "VLM"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "专家评估",
+        "benchmark",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 12,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.11534v1"
+      },
+      "abstract_zh": "在医学影像中，Computed Tomography（CT）的临床价值不仅在于描绘当前疾病状态，更关键的是使系列扫描的纵向比较成为可能，以判定疾病演化——这一过程支撑应答评估、复发检测与持续患者管理。然而，尽管时间比较在临床决策中居于核心地位，现有医学基础模型仍主要局限于单次检查理解，时间锚定的交叉审阅尚未得到充分处理。为填补这一空白，我们研究纵向影像差异报告：模型接收同一患者两次时间分离的扫描，并生成描述其间间隔变化的有临床意义的报告。我们推出 CT-ΔBench，一个专用于该任务的基准，采用患者级划分以防止信息泄漏。为在表面文本相似度之外更好地评估该任务，我们进一步开发专门用于捕获有临床意义纵向变化的变化感知指标，并开展独立医师验证，以评估合成参考与事件提取流水线的可靠性。我们还比较直接成对 CT 推理与先生成单时间点报告再进行文本求差的间接两阶段流水线。最后，我们提出 DeltaMed，一个用于直接成对 CT 差异报告的基线模型，并在基准训练集上训练。这些贡献共同为更好反映真实世界纵向临床推理的时间感知医学基础模型奠定基础。",
+      "published": "2026-08-12",
+      "author_line": "Kegeng Tang, Jingbo Wang, Shaogang Ren 等 4 人"
+    },
+    {
+      "id": "arxiv:2608.12138v1",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "A corpus-specific clinical RAG system matches or outperforms newer frontier LLMs on HealthBench",
+      "url": "https://arxiv.org/abs/2608.12138v1",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-12",
+      "creators": [
+        "Praveen Reddy",
+        "Charuta Mandke",
+        "Suvrankar Datta",
+        "Sarah Khan",
+        "Siddharth Reddy Anthireddy",
+        "Shitij Arora",
+        "Vishal Singh"
+      ],
+      "language": "en",
+      "abstract_or_text": "General-purpose large language models (LLMs) have recently been reported to match or exceed specialized clinical AI tools on medical benchmarks, but such comparisons draw on a narrow set of systems and on benchmarks developed largely in high-income settings. We evaluate VITA, a retrieval-augmented generation (RAG) system purpose-built for contextual knowledge retrieval in India and other low- and middle-income (LMIC) settings. VITA retrieves from a curated corpus of disease-specific guidelines, India-specific antimicrobial resistance data, national formulary constraints, and resource-limited care protocols; its architecture and corpus are proprietary, but the benchmark, the physician-written rubrics, and our full response and scoring outputs are public for independent verification. On 4,023 English-language HealthBench questions (80.5% of the benchmark), scored with a GPT-4.1 judge, VITA ranked first with 51.9% of possible rubric points, ahead of GPT-5.4 (46.1%), o4-mini (44.3%), Gemini 3.1 Pro (42.6%), and Claude Sonnet 4.6 (37.3%), and scored highest on 45.4% of questions. To test robustness to newer models and judge lineage, a 500-question subset was re-run against current-generation models (GPT-5.5, Claude Opus 4.8, Gemini 3.5 Pro, Grok 4.3) and graded by a neutral open-weight judge (DeepSeek-V4-Pro) sharing no lineage with any system tested. Here the gap narrowed to parity: VITA and GPT-5.5 were statistically indistinguishable on mean per-question score, while VITA led on points-weighted score and won the most questions. VITA's advantages in accuracy and completeness persisted under the neutral judge; its communication scores were lower. These results indicate that a purpose-built clinical RAG system remains competitive with frontier LLMs on an open benchmark, consistent with corpus specificity as a design variable that improves grounding at some cost to communication polish.",
+      "summary_zh": "面向印度与 LMIC 的临床 RAG 系统 VITA 在 4,023 道 HealthBench 上获 51.9% 量规分，高于 GPT-5.4 的 46.1%；中立裁判下与 GPT-5.5 持平但完整性仍领先。",
+      "why_it_matters_zh": "用公开量规与中立裁判表明语料特异性仍能与前沿通用模型竞争，同时承认沟通分数更低。",
+      "quality_score": 81.0,
+      "tags": [
+        "生物医学与临床",
+        "VITA",
+        "HealthBench",
+        "RAG",
+        "LMIC"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "专家评估",
+        "benchmark",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 13,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.12138v1"
+      },
+      "abstract_zh": "通用大语言模型（LLMs）最近被报告在医学基准上匹配或超过专用临床 AI 工具，但此类比较仅覆盖狭窄的系统集合，且基准主要在高收入环境中开发。我们评估 VITA，一个专为印度及其他中低收入（LMIC）环境中的语境知识检索而构建的检索增强生成（RAG）系统。VITA 从疾病特异指南、印度特异抗菌耐药数据、国家处方集约束以及资源受限照护方案的策展语料中检索；其架构与语料为专有，但基准、医师撰写的量规以及我们的完整回答与评分输出公开以供独立核验。在 4,023 道英语 HealthBench 问题（占基准的 80.5%）上，以 GPT-4.1 作为裁判打分，VITA 以 51.9% 的可能量规分数排名第一，领先于 GPT-5.4（46.1%）、o4-mini（44.3%）、Gemini 3.1 Pro（42.6%）与 Claude Sonnet 4.6（37.3%），并在 45.4% 的问题上得分最高。为检验对新模型与裁判谱系的稳健性，在 500 题子集上对照当代模型（GPT-5.5、Claude Opus 4.8、Gemini 3.5 Pro、Grok 4.3）重跑，并由与任一受试系统无谱系关系的中立开源权重裁判（DeepSeek-V4-Pro）评分。此处差距收窄至持平：VITA 与 GPT-5.5 在每题平均分上统计不可区分，而 VITA 在按分数加权的总分上领先并赢得最多问题。在中立裁判下，VITA 在准确性与完整性上的优势得以保持；其沟通分数较低。这些结果表明，专用临床 RAG 系统在开放基准上仍可与前沿 LLMs 竞争，与将语料特异性作为设计变量、以一定沟通润色代价改善扎根相一致。",
+      "published": "2026-08-12",
+      "author_line": "Praveen Reddy, Charuta Mandke, Suvrankar Datta 等 7 人"
+    },
+    {
+      "id": "europepmc:ppr1297473",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Longitudinal Clinical Foundation Models Augmented with Genomics for Early Detection and Risk Stratification of Inherited Cardiomyopathy",
+      "url": "https://europepmc.org/article/PPR/PPR1297473",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Zolensky A",
+        "Kripke CM",
+        "Keat K",
+        "Damrauer SM",
+        "Levin MG",
+        "Verma A"
+      ],
+      "language": "en",
+      "abstract_or_text": "Hypertrophic and dilated cardiomyopathy (HCM and DCM) carry substantial morbidity and mortality, yet diagnosis may be delayed, particularly when presentation is nonspecific. Existing machine-learning approaches to cardiomyopathy phenotyping, genotype prediction, and risk stratification commonly rely on disease-specific, hand-engineered features drawn from echocardiography, cardiac MRI, ECG, or curated clinical variables. We evaluated whether a general-purpose clinical foundation model, CLMBR-T-base, pre-trained via next-clinical-event prediction with no cardiomyopathy-specific supervision, could produce linearly separable embeddings for all three case/control cohorts. Using EHR data from the Penn Medicine BioBank, we constructed cohorts for (1) prediction of a first recorded qualifying HCM/DCM diagnosis at 1-, 3-, and 6-month horizons, decomposed into eventual-versus-never-case and imminent-versus-eventual comparisons; (2) genetic carrier status prediction among diagnosed patients with completed gene panels; and (3) prediction of heart-failure hospitalization, and all-cause mortality as both binary and time-to-event outcomes. Linear probes fitted to frozen embeddings achieved AUROCs of 0.75-0.82 for onset prediction, 0.74-0.75 for genotype status, and Harrell’s concordance of 0.65-0.80 for time-to-event outcomes. Decomposing the onset prediction task reveals that the model often misclassifies patients who were diagnosed later as positive, suggesting the patient journey embeddings encode disease state more reliably than care timing. These results suggest that a single, generically pretrained EHR embedding can support multiple clinically motivated prediction problems in CM without disease-specific feature engineering.",
+      "summary_zh": "无心肌病监督的 CLMBR-T-base 在 Penn Medicine BioBank 上对 HCM/DCM 发病 AUROC 0.75–0.82、基因型 0.74–0.75，时间–事件 Harrell’s C 0.65–0.80。",
+      "why_it_matters_zh": "表明通用 EHR 下一事件嵌入可支撑心肌病发病、携带者与预后，同时揭示模型更编码疾病状态而非就诊时机。",
+      "quality_score": 80.0,
+      "tags": [
+        "生物医学与临床",
+        "CLMBR-T-base",
+        "HCM",
+        "DCM",
+        "EHR"
+      ],
+      "evidence_flags": [
+        "临床队列",
+        "有定量基准",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 14,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.10.26360107",
+        "pmid": ""
+      },
+      "abstract_zh": "肥厚型与扩张型心肌病（HCM 与 DCM）带来显著发病与死亡，但诊断可能延迟，尤其当表现不特异时。现有用于心肌病表型、基因型预测与风险分层的机器学习方法，通常依赖来自超声心动图、心脏 MRI、ECG 或策展临床变量的疾病特异手工特征。我们评估通用临床基础模型 CLMBR-T-base——通过下一临床事件预测预训练、无心肌病特异监督——能否为全部三个病例/对照队列产生线性可分嵌入。使用 Penn Medicine BioBank 的 EHR 数据，我们构建队列用于：（1）在 1、3 与 6 个月视野预测首次记录的合格 HCM/DCM 诊断，并分解为最终病例相对从未病例以及即将发生相对最终发生的比较；（2）在完成基因面板的已诊断患者中预测遗传携带者状态；（3）预测心力衰竭住院以及作为二分类与时间–事件结局的全因死亡。拟合于冻结嵌入的线性探测对发病预测取得 AUROC 0.75–0.82，对基因型状态取得 0.74–0.75，对时间–事件结局取得 Harrell’s concordance 0.65–0.80。分解发病预测任务显示，模型常将后来才被诊断的患者误标为阳性，提示患者历程嵌入对疾病状态的编码比对照护时机更可靠。这些结果表明，单一、通用预训练的 EHR 嵌入可在无需疾病特异特征工程的情况下，支持心肌病中多个有临床动机的预测问题。",
+      "published": "2026-08-12",
+      "author_line": "Zolensky A, Kripke CM, Keat K 等 6 人"
+    },
+    {
+      "id": "medrxiv:10.64898/2026.08.11.26360189",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "Vision and Language Models for Classifying Maxillary Sinus Disease on Cone-Beam Computed Tomography: A Transparent Multimodal Benchmark",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.08.11.26360189",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-12",
+      "creators": [
+        "Al-Hebshi, S.",
+        "Khalifa, H.",
+        "Pham, T. D."
+      ],
+      "language": "en",
+      "abstract_or_text": "BackgroundCone-beam computed tomography (CBCT) frequently captures the maxillary sinuses incidentally, and reliable automated detection of sinus abnormality is clinically relevant. Unlike most vision-language benchmarks in medical imaging, which pair images with pre-existing, human-authored clinical reports, findings text can also be generated directly by a large language model from the image itself--raising the question of how much diagnostic value such AI-derived text carries, and whether that value depends on independent verification. Multimodal artificial intelligence (AI) benchmarks risk overstating performance if the provenance of each input--image, raw AI-generated text, or radiologist-verified text--is not clearly separated and reported. MethodsWe used 300 mid-sagittal CBCT slices from the MMDental dataset. ChatGPT generated findings text and a provisional normal/abnormal label for every slice (majority vote, three independent readings from the image alone); primary classification performance was assessed on this full, unfiltered set (n=300). A radiologist then independently reviewed each cases image together with ChatGPTs description, producing their own diagnosis; three cases were excluded as insufficient, yielding 297 confirmed cases. On this subset, every model was retrained and re-evaluated under identical 10-fold cross-validation on both the provisional ChatGPT-only labels (\"pre\") and the radiologist-confirmed labels (\"post\"), isolating the effect of label provenance from image or architecture. Eight vision architectures, seven language classifiers, and five VLMs were evaluated throughout; three generative models performed exploratory note-drafting. FindingsRaw ChatGPT-generated text produced the highest performance of any modality or condition: language models reached near-ceiling AUC (0{middle dot}992 to 1{middle dot}000, n=300), exceeding every vision model (AUC 0{middle dot}799 to 0{middle dot}880) and every VLM image-only probe (AUC 0{middle dot}63 to 0{middle dot}69). On the 297-case pre/post analysis, this advantage depended heavily on label source: language and text-derived VLM performance fell substantially from ChatGPT-only to radiologist-confirmed labels (e.g. BERT-base AUC 0{middle dot}999 to 0{middle dot}837), while vision-model performance was stable or modestly improved (e.g. DenseNet-121 0{middle dot}867 to 0{middle dot}891). The radiologist reclassified 62 of 297 cases (21%) relative to ChatGPTs provisional read, and a meaningful proportion of raw ChatGPT text was clinically uninterpretable or unsupported by the imaging. InterpretationAs shown here for the first time, raw, image-derived AI-generated text yields the highest apparent classification performance in this benchmark, but this reflects the texts alignment with its own self-generated labels rather than verified diagnostic content, and a substantial share of that text is not clinically explainable. Radiologist-confirmed text and labels give a lower but trustworthy estimate of true performance, on which convolutional neural network (CNN) vision models remain a stable, comparatively inexpensive baseline. Multimodal dental AI should report performance separately by modality and label provenance rather than pooling headline metrics. Research in contextO_ST_ABSEvidence before this studyC_ST_ABSWe searched PubMed with the terms \"maxillary sinus\", \"CBCT\", \"deep learning\", \"artificial intelligence\", and \"vision-language model\" from January 2015 to July 2026. Published benchmarks have predominantly evaluated single-modality convolutional networks for dental CBCT tasks, with limited transparency about how AI-generated text inputs are produced or verified. No study had systematically compared image-only, language-only, and VLM families for maxillary sinus classification on the same dataset under matched cross-validation, nor had the extent to which apparent multimodal performance depends on whether AI-generated text is used raw or independently verified been explicitly characterised. Added value of this studyUnlike prior vision-language benchmarks in medical imaging, which typically pair images with pre-existing, human-authored clinical reports, this study evaluates text generated directly by an LLM from the image itself, independent of any prior radiological report. This design isolates a question distinct from conventional report-grounded VLM evaluation: not how well a model can classify existing clinical documentation, but how much apparent diagnostic value an LLMs own image-derived description carries--and how much of that apparent value depends on whether the description is used raw or independently verified. We show that raw, unverified ChatGPT-generated text produces the highest classification performance of any modality evaluated (AUC up to 1{middle dot}000), exceeding image-only and image-plus-text models--but that a meaningful proportion of this raw text is clinically uninterpretable, and that its apparent advantage collapses substantially once evaluated against a radiologist-confirmed reference standard on the same cases. Trained vision models, by contrast, remain stable regardless of label source, indicating that their signal derives from image content rather than label provenance. We further show that ViTs underperform CNNs at dental-imaging dataset scale. Implications of all the available evidenceRaw AI-generated text can substantially outperform image-based classification on headline accuracy metrics, but this performance is not synonymous with clinical trustworthiness or explainability and should not be reported or deployed without independent verification. CNNs remain reliable, comparatively low-cost baselines for sinus CBCT screening at small dataset sizes. Multimodal dental AI benchmarks must report modality-specific results transparently and distinguish raw from verified text inputs; headline metrics should not be pooled across these conditions without disclosing their provenance. Generative VLMs show near-term utility as documentation aids rather than autonomous diagnostic systems, and full three-dimensional CBCT analysis remains the essential next step for clinical translation in the maxillofacial trauma setting.",
+      "summary_zh": "在 300 张 MMDental CBCT 上，ChatGPT 自生成文本使语言模型 AUC 达 0.992–1.000，但对放射科医师确认标签 BERT-base 从 0.999 降至 0.837，21% 病例被重分类。",
+      "why_it_matters_zh": "把多模态牙科基准的表观天花板拆成标签溯源伪影，并表明 CNN 在核验标签上更稳。",
+      "quality_score": 80.0,
+      "tags": [
+        "方法与模型",
+        "CBCT",
+        "ChatGPT",
+        "标签溯源",
+        "MMDental"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "临床队列",
+        "benchmark",
+        "dataset",
+        "clinical",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 15,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.11.26360189",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "锥束计算机断层扫描（CBCT）常附带捕捉上颌窦，可靠的自动化窦腔异常检测具有临床相关性。与多数将图像与预先存在的、由人类撰写的临床报告配对的医学影像视觉–语言基准不同，发现文本也可以由大语言模型直接从图像本身生成——从而提出此类 AI 导出文本携带多少诊断价值、以及该价值是否依赖于独立核验的问题。如果各输入——图像、原始 AI 生成文本或放射科医师核验文本——的来源未被清晰分离并报告，多模态人工智能（AI）基准有高估性能的风险。我们使用来自 MMDental 数据集的 300 张正中矢状 CBCT 切片。ChatGPT 为每张切片生成发现文本与临时正常/异常标签（三次仅基于图像的独立读片多数表决）；主要分类性能在这一完整、未过滤集合（n=300）上评估。随后一名放射科医师独立审阅每个病例的图像连同 ChatGPT 的描述，并给出自己的诊断；3 例因信息不充分被排除，得到 297 个确认病例。在该子集上，每个模型在相同的 10 折交叉验证下，分别对临时 ChatGPT-only 标签（“pre”）与放射科医师确认标签（“post”）重新训练并再评估，从而将标签来源效应与图像或架构分离。全程评估了八种视觉架构、七种语言分类器与五种 VLMs；三种生成模型进行探索性笔记起草。原始 ChatGPT 生成文本产生了任何模态或条件下的最高性能：语言模型达到近天花板 AUC（0.992 到 1.000，n=300），超过每种视觉模型（AUC 0.799 到 0.880）以及每种 VLM 仅图像探测（AUC 0.63 到 0.69）。在 297 例 pre/post 分析中，这一优势严重依赖标签来源：语言与文本导出 VLM 的性能从 ChatGPT-only 到放射科医师确认标签大幅下降（例如 BERT-base AUC 从 0.999 降至 0.837），而视觉模型性能稳定或略有改善（例如 DenseNet-121 从 0.867 升至 0.891）。相对 ChatGPT 的临时读片，放射科医师重分类了 297 例中的 62 例（21%），并且相当比例的原始 ChatGPT 文本在临床上不可解释或得不到影像支持。如本文首次所示，原始的、由图像导出的 AI 生成文本在该基准上产生最高的表观分类性能，但这反映的是文本与其自身生成标签的对齐，而非经核验的诊断内容，并且相当一部分该文本在临床上不可解释。放射科医师确认的文本与标签给出更低但可信的真实性能估计，在此之上卷积神经网络（CNN）视觉模型仍是稳定、相对廉价的基线。多模态牙科 AI 应按模态与标签来源分别报告性能，而非汇总统领指标。",
+      "published": "2026-08-12",
+      "author_line": "Al-Hebshi, S., Khalifa, H., Pham, T. D."
+    },
+    {
+      "id": "europepmc:ppr1297565",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "The Synthetic Fidelity–Stability Framework (SFSF): A Systematic Multi-Dimensional Benchmark of Synthetic Clinical Laboratory Data Generators",
+      "url": "https://europepmc.org/article/PPR/PPR1297565",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Desh SS",
+        "Achary PM",
+        "Nayak S"
+      ],
+      "language": "en",
+      "abstract_or_text": "Background Synthetic data generation is increasingly proposed as a strategy to support privacy-preserving data sharing, augmentation of small or restricted biomedical datasets, and benchmarking of artificial intelligence tools in laboratory medicine. However, model selection remains difficult because synthetic data generators differ in fidelity, privacy risk, stability, and generalisability. Existing evaluations have rarely examined performance jointly across conditioning signal strength, synthetic output scale, and train–test generalisation. Methods We developed the Synthetic Fidelity–Stability Framework (SFSF), a systematic benchmark of 17 synthetic tabular data generation models using NHANES as a complex biomedical reference dataset. Models included statistical, copula-based, resampling, variational autoencoder, generative adversarial network, and diffusion-based approaches. Synthetic datasets were generated across 11 seed sizes, from 0 to 500 real conditioning observations, and six output scales, from 50 to 5,000 rows, yielding 1,122 synthetic datasets per run. Each dataset was evaluated against the full original dataset, the training subset, and a held-out test subset across five tiers: univariate distributional fidelity, moment agreement, tail behaviour, multivariate dependency structure, and privacy/memorisation risk. Composite rankings and seed-versus-output stability profiles were derived. Results Univariate fidelity was broadly recovered across model classes and was the least discriminating tier. Resampling-based methods ranked highest overall but showed the greatest privacy risk, reflecting proximity to real observations rather than true generative novelty. VAE-family models reproduced moment statistics relatively well but consistently failed on tail and shape fidelity. GAN-family models showed substantial moment-level instability, while VineCopula demonstrated severe multivariate dependency failure. Diffusion-based models, particularly ForestDiffusion, provided the most favourable privacy–utility balance, combining competitive fidelity with the lowest privacy risk and the smallest train–test gap. Conclusions No single synthetic data generator dominated across fidelity, stability, and privacy dimensions. The SFSF framework provides a practical, multi-criterion approach for selecting synthetic tabular data generators according to intended clinical laboratory use, balancing statistical realism, dependency preservation, privacy risk, and robustness to seed and output scale.",
+      "summary_zh": "SFSF 在 NHANES 上对 17 类生成器、1,122 个合成集做五层保真–隐私评估：重采样保真最高但记忆风险最大，ForestDiffusion 隐私–效用最均衡。",
+      "why_it_matters_zh": "把临床实验室合成数据从单点保真竞赛改成可按用途权衡保真、依赖、隐私与种子规模稳健性的选择框架。",
+      "quality_score": 80.0,
+      "tags": [
+        "方法与模型",
+        "SFSF",
+        "NHANES",
+        "ForestDiffusion",
+        "合成数据"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "clinical",
+        "benchmark",
+        "dataset",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 16,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.11.741471",
+        "pmid": ""
+      },
+      "abstract_zh": "合成数据生成日益被提议用于支持隐私保护的数据共享、增强小型或受限生物医学数据集，以及实验室医学中人工智能工具的基准测试。然而，由于合成数据生成器在保真度、隐私风险、稳定性与可泛化性上存在差异，模型选择仍然困难。现有评估很少同时考察条件信号强度、合成输出规模与训练–测试泛化上的表现。我们开发了 Synthetic Fidelity–Stability Framework（SFSF），使用 NHANES 作为复杂生物医学参考数据集，对 17 个合成表格数据生成模型进行系统基准测试。模型包括统计、copula、重采样、变分自编码器、生成对抗网络与基于扩散的方法。合成数据集跨越 11 个种子规模（从 0 到 500 个真实条件观测）与六个输出规模（从 50 到 5,000 行），每次运行产生 1,122 个合成数据集。每个数据集相对完整原始数据集、训练子集与留出测试子集，在五个层级上评估：单变量分布保真、矩一致性、尾部行为、多变量依赖结构，以及隐私/记忆风险。导出综合排名与种子–输出稳定性剖面。单变量保真在各类模型中普遍恢复，是区分度最低的层级。基于重采样的方法总体排名最高，但隐私风险最大，反映其接近真实观测而非真正的生成新颖性。VAE 家族模型相对较好地再现矩统计，但在尾部与形状保真上持续失败。GAN 家族模型表现出显著的矩级不稳定性，而 VineCopula 出现严重的多变量依赖失败。基于扩散的模型，尤其是 ForestDiffusion，提供了最有利的隐私–效用平衡，兼具有竞争力的保真、最低隐私风险与最小训练–测试差距。没有单一合成数据生成器在保真、稳定性与隐私维度上全面占优。SFSF 框架为按预期临床实验室用途选择合成表格数据生成器提供了实用的多准则方法，在统计真实感、依赖保持、隐私风险以及对种子与输出规模的稳健性之间取得平衡。",
+      "published": "2026-08-12",
+      "author_line": "Desh SS, Achary PM, Nayak S"
+    }
+  ],
+  "review": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "note": "2026-08-12 候选 60 篇，全部自动分≥70，但夹杂面部衰老/CT 病灶/神经干预综述、无计算方法的脑膜瘤细胞系与 TPD52 湿实验、花生与菜豆 GEO 灌水、单中心前列腺活检、无湿实验证据的 MASLD 生成分子、妊娠数字孪生空转稿、医疗政策文本分析与边缘扩散语言模型综述。按 AI×Bio 相关性、方法可信度与实验/临床证据精选 16 篇 preprint，覆盖蛋白质与结构、组学与细胞、生物医学与临床、方法与模型；当日新增 CAG-MIND 冠脉造影视觉–语言基础模型、PhysioStack/SafeICU 分辨率迁移与儿科 ICU 数据释放、CpGPT 甲基化基础模型、Waypoint/Atlas/Compass 微生物组预训练、PIANO 亿级单细胞整合、PerturbLDM 扰动潜扩散、组学 AI 智能体对照基准、DNN-IR 胰岛素抵抗前瞻外验、StructureDCA 药物基因组变异解释、FENNEC 化学修饰 siRNA、GraphTransformer-CoGNN 空间转录组注释、CT-ΔBench 纵向 CT 差异报告、VITA 的 LMIC 临床 RAG、CLMBR 心肌病 EHR 嵌入、CBCT 标签溯源透明基准与 SFSF 合成检验数据基准。未收录缺乏计算方法的湿实验、植物 GEO 灌水、单中心前列腺与综述稿、无外部证据的 MASLD 生成分子，以及已被化学频道覆盖的 Pert2Mol、IL-4Ra 微型蛋白与 ScreenShot，并避免重复 08-10/08-11 已精读的 GatorOnco、mlsurv、LLM-H2G、MSDD、MedPixel、GenSyntax、白血病 RAC、Apodex、基因组 UQ、疟疾语义 XAI、bgnorm、SEA-AD、PACE/CellQ、临床轨迹遗传校验、ConRub-Med、CRISMER 与 siDiff。"
+  }
+}

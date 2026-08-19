@@ -1,0 +1,932 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-11",
+  "channel": "aixbio",
+  "generated_at": "2026-08-18T15:10:59+00:00",
+  "title": "AI × Bio 每日精选",
+  "subtitle": "计算生物学、组学、蛋白质与生物医学模型。",
+  "window": {
+    "start": "2026-08-08",
+    "end": "2026-08-11"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 3499,
+    "candidates": 60,
+    "selected": 16,
+    "sources": {
+      "arXiv": 1175,
+      "bioRxiv": 681,
+      "medRxiv": 224,
+      "Europe PMC": 2118
+    }
+  },
+  "source_status": {
+    "arXiv": {
+      "state": "ok",
+      "count": 1175
+    },
+    "bioRxiv": {
+      "state": "ok",
+      "count": 681
+    },
+    "medRxiv": {
+      "state": "ok",
+      "count": 224
+    },
+    "Europe PMC": {
+      "state": "ok",
+      "count": 2118
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "arxiv:2608.10657v1",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Retrieval-Augmented Vision Foundation Models for Robust Leukemia Cell Classification across Multiple Microscopy Datasets",
+      "url": "https://arxiv.org/abs/2608.10657v1",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Carlos Zamora",
+        "Hiram Zuniga",
+        "Ulises Orozco-Rosas",
+        "Kenia Picos"
+      ],
+      "language": "en",
+      "abstract_or_text": "Leukemia cell image classification is challenged by real-world domain shifts from acquisition, staining, illumination, and site protocols, causing single-dataset models to generalize poorly in real clinical scenarios. This work presents a robust framework for leukemia classification across multiple heterogeneous datasets using a two-stage pipeline with a pretrained vision foundation model. Stage 1 performs binary classification (leukemia vs. non-leukemia) and is trained using 122,167 single-cell images. Stage 2 is conditionally applied to Stage 1 positives to perform subtype classification into Acute Lymphoblastic Leukemia (ALL) and Acute Myeloid Leukemia (AML), trained using 69,400 single-cell images. Labels are harmonized across five heterogeneous datasets to enable cross-dataset training, and performance is evaluated on a held-out dataset protocol to assess domain-shift generalization. Within this pipeline, three encoders are benchmarked (DinoBloom, pretrained on single-cell images; BiomedCLIP, pretrained on biomedical data; and CLIP as a general-purpose model) under linear probing, Low-Rank Adaptation (LoRA), and a Retrieval-Augmented Classification (RAC) module that retrieves the top-k most similar cell images to provide cytomorphological grounding. The objective is to quantify how much domain-specific pretraining contributes to performance under domain shift, and whether cost-effective adaptation and retrieval can be a viable alternative to expensive domain-specialized pretraining. The held-out protocol additionally serves as a diagnostic tool, revealing when classification performance is attributable to dataset-specific artifacts rather than to cytomorphological features.",
+      "summary_zh": "两阶段视觉基础模型在 122,167 张图像上做白血病/非白血病判别，再对 69,400 张阳性细胞分 ALL/AML，并对照 DinoBloom、BiomedCLIP 与 CLIP 的线性探测、LoRA 与 RAC。",
+      "why_it_matters_zh": "用留出数据集协议把跨站点染色域偏移做成可诊断的细胞形态学分类，并检验检索增强能否替代昂贵领域预训练。",
+      "quality_score": 87.0,
+      "tags": [
+        "组学与细胞",
+        "DinoBloom",
+        "RAC",
+        "ALL",
+        "AML"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "方法创新",
+        "benchmark",
+        "dataset",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 1,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.10657v1"
+      },
+      "abstract_zh": "白血病细胞图像分类受到采集、染色、照明与站点协议等真实世界域偏移的挑战，使单数据集模型在真实临床场景中泛化不佳。本研究提出一个稳健框架，使用带有预训练视觉基础模型的两阶段流水线，在多个异质数据集上开展白血病分类。Stage 1 执行二分类（leukemia vs. non-leukemia），使用 122,167 张单细胞图像训练。Stage 2 有条件地应用于 Stage 1 阳性样本，将亚型分类为 Acute Lymphoblastic Leukemia（ALL）与 Acute Myeloid Leukemia（AML），使用 69,400 张单细胞图像训练。标签在五个异质数据集上被调和以实现跨数据集训练，并在留出数据集协议上评估性能以衡量域偏移泛化。在该流水线内，对三个编码器进行基准测试（在单细胞图像上预训练的 DinoBloom；在生物医学数据上预训练的 BiomedCLIP；以及作为通用模型的 CLIP），设定包括线性探测、Low-Rank Adaptation（LoRA），以及检索 top-k 最相似细胞图像以提供细胞形态学锚定的 Retrieval-Augmented Classification（RAC）模块。目标是量化领域特异预训练在域偏移下对性能的贡献，以及低成本适配与检索能否成为昂贵领域特化预训练的可行替代。留出协议还作为诊断工具，揭示分类性能何时可归因于数据集特异伪影而非细胞形态学特征。",
+      "published": "2026-08-11",
+      "author_line": "Carlos Zamora, Hiram Zuniga, Ulises Orozco-Rosas 等 4 人"
+    },
+    {
+      "id": "arxiv:2608.11341v1",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem",
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Apodex Discovery: Reality Benchmarks and Environments for Evaluating and Building Discoverative Artificial Intelligence",
+      "url": "https://arxiv.org/abs/2608.11341v1",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Brian Wang",
+        "Bin Feng",
+        "Xiaoman Pan",
+        "Chenyang An",
+        "Felix Liu",
+        "Tangqi Fang",
+        "Gongbo Sun",
+        "Lingfeng Shen",
+        "Ning Wang",
+        "Handuo Zhang",
+        "Feng Chen",
+        "Fuchao Yang",
+        "Xiang Wang",
+        "Jiacheng Lin",
+        "Siting Li",
+        "Zixuan Liu",
+        "Chi Han",
+        "Zhenhailong Wang",
+        "Kunlun Zhu",
+        "Lawrence Zhao",
+        "Yueqi Guo",
+        "Kailong Wen",
+        "Feng Xing",
+        "Yiling Guo",
+        "Lidong Bing",
+        "David Tan",
+        "Bo An",
+        "Heng Ji",
+        "Sheng Wang"
+      ],
+      "language": "en",
+      "abstract_or_text": "Apollo did not reach the Moon merely because its engineers could solve difficult equations. It succeeded by turning a distant ambition into a mission architecture of explicit objectives, simulation, verification, and repeated correction. AI now faces a similar transition: frontier models can solve difficult tasks once the problem, tools, and success criteria are specified, yet consequential real-world challenges rarely arrive in an executable or verifiable form. We introduce Apodex Discovery, a framework for building and evaluating discoverative AI through the heavy-duty solver, a system comprising a foundation model, harness, tools, and control policies that pursues extended, stateful, verifiable investigations. It has three core components. First, a problem-scouting process surveyed 561 industries across 16 sectors, assembled 423 high-value real-world problems, and selected 20 for the initial release. Second, a common environment-task-episode abstraction provides data, tools, constraints, feedback, trajectory recording, and verification of intermediate artifacts and final submissions. Third, HDS6 evaluates Tools, Repair, Alternatives, Coherence, Evidence, and Scope independently of final-task success. In AAV capsid design, Apodex surpassed the published state of the art by 7% across viability, tropism, structure prediction, and generative design. In drug repurposing and reformulation, a task-specific biomedical environment improved the mean normalized prediction score of GPT-5.5 and GPT-5.6-sol by 2.5 and 7.6 points over the same closed-book backbone. Controlled ablations show that the fixed TRACES episode interface enables attribution of performance differences to specific solver components. Apodex Discovery moves AI evaluation beyond predefined benchmarks toward verifiable investigations aimed at genuine discovery.",
+      "summary_zh": "Apodex Discovery 以 heavy-duty solver 评估可验证发现：在 AAV 衣壳设计上相对已发表 SOTA 提升 7%，药物重定位任务使 GPT-5.5 与 GPT-5.6-sol 分别提高 2.5 与 7.6 分。",
+      "why_it_matters_zh": "把发现型 AI 从预设基准改成带工具、轨迹与中间产物核验的长程调查，并在衣壳与重定位上给出可归因消融。",
+      "quality_score": 86.0,
+      "tags": [
+        "方法与模型",
+        "Apodex",
+        "AAV",
+        "HDS6",
+        "发现型AI"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "消融实验",
+        "方法创新",
+        "benchmark",
+        "ablation",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.11341v1"
+      },
+      "abstract_zh": "阿波罗并未仅仅因为工程师能解出困难方程就抵达月球。它的成功在于把遥远志向转化为由显式目标、仿真、核验与反复校正构成的任务架构。AI 现在面临类似转变：前沿模型一旦问题、工具与成功标准被指定，就能解决困难任务，但有后果的真实世界挑战很少以可执行或可核验的形式到来。我们推出 Apodex Discovery，一个通过 heavy-duty solver——由基础模型、harness、工具与控制策略组成、从事延长的有状态可核验调查的系统——来构建并评估发现型 AI 的框架。它有三个核心组件。第一，问题侦察过程调研了 16 个部门的 561 个行业，汇集 423 个高价值真实世界问题，并为初始发布选出 20 个。第二，共同的 environment-task-episode 抽象提供数据、工具、约束、反馈、轨迹记录，以及对中间产物与最终提交的核验。第三，HDS6 独立于最终任务成功，评估 Tools、Repair、Alternatives、Coherence、Evidence 与 Scope。在 AAV 衣壳设计中，Apodex 在活力、嗜性、结构预测与生成设计上超过已发表的 state of the art 达 7%。在药物重定位与再制剂中，任务特异的生物医学环境使 GPT-5.5 与 GPT-5.6-sol 的平均归一化预测分数相对同一闭卷主干分别提高 2.5 与 7.6 分。受控消融表明，固定的 TRACES episode 接口使性能差异可归因于特定 solver 组件。Apodex Discovery 将 AI 评估从预设基准推向旨在真正发现的可核验调查。",
+      "published": "2026-08-11",
+      "author_line": "Brian Wang, Bin Feng, Xiaoman Pan 等 29 人"
+    },
+    {
+      "id": "arxiv:2608.11054v1",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Uncertainty-Aware Deep Learning for Genomics Applications: Insights from an Empirical Study",
+      "url": "https://arxiv.org/abs/2608.11054v1",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Sepideh Saran",
+        "Mahsa Ghanbari",
+        "Uwe Ohler"
+      ],
+      "language": "en",
+      "abstract_or_text": "Deep learning models have emerged as the standard computational tool for a wide range of applications in genomics. Yet, uncertainty quantification (UQ) -- and more specifically, the reliability of different uncertainty estimates in this domain -- has received little systematic attention. This work presents an empirical analysis of UQ in deep learning models, focusing on genomics applications. In a series of experiments, we contrast Deep Ensembles, Bayesian Neural Networks, and Monte Carlo-dropout methods. We assess their ability to quantify uncertainty in different scenarios, accounting for common dataset characteristics in two genomic application areas and modalities: sequence-to-activity models, and single-cell expression analysis. Our systematic comparison framework provides guidelines for the applicability and reliability of UQ methods in genomics, highlighting their strengths and limitations in different scenarios. We show that Bayesian Neural Networks are better at capturing uncertainty caused by strong class imbalance and out-of-distribution data in genomics, despite their computational disadvantages. Moreover, we show how uncertainty scores can be used to select high-quality predictions in protein-RNA interactions.",
+      "summary_zh": "系统比较 Deep Ensembles、Bayesian Neural Networks 与 Monte Carlo-dropout 在 sequence-to-activity 与单细胞表达中的不确定性估计，并显示 BNN 更能捕获类别失衡与 OOD。",
+      "why_it_matters_zh": "给基因组深度学习补上可对照的不确定性指南，并用不确定度筛选高质量蛋白–RNA 互作预测。",
+      "quality_score": 84.0,
+      "tags": [
+        "组学与细胞",
+        "不确定性量化",
+        "BNN",
+        "单细胞",
+        "sequence-to-activity"
+      ],
+      "evidence_flags": [
+        "数据集",
+        "方法创新",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.11054v1"
+      },
+      "abstract_zh": "深度学习模型已成为基因组学广泛应用的标准计算工具。然而，不确定性量化（UQ）——更具体地说，该领域中不同不确定性估计的可靠性——几乎未受到系统关注。本研究对深度学习模型中的 UQ 进行实证分析，聚焦基因组学应用。在一系列实验中，我们对照 Deep Ensembles、Bayesian Neural Networks 与 Monte Carlo-dropout 方法。我们评估它们在不同情景下量化不确定性的能力，并考虑两个基因组应用领域与模态中的常见数据集特征：sequence-to-activity 模型，以及单细胞表达分析。我们的系统比较框架为基因组学中 UQ 方法的适用性与可靠性提供指南，突出其在不同情景下的优势与局限。我们表明，尽管存在计算劣势，Bayesian Neural Networks 更善于捕获基因组学中由强类别失衡与分布外数据引起的不确定性。此外，我们展示如何用不确定性分数选择蛋白–RNA 互作中的高质量预测。",
+      "published": "2026-08-11",
+      "author_line": "Sepideh Saran, Mahsa Ghanbari, Uwe Ohler"
+    },
+    {
+      "id": "europepmc:ppr1295642",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "A Semantic-Based Explainable Artificial Intelligence Framework for Spatio-Temporal Infectious Disease Hotspot Explanation",
+      "url": "https://europepmc.org/article/PPR/PPR1295642",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-12",
+      "creators": [
+        "Jillahi KB",
+        "Usman ZS",
+        "Nche C"
+      ],
+      "language": "en",
+      "abstract_or_text": "Artificial intelligence has substantially improved infectious disease surveillance, yet most explainable AI (XAI) techniques remain limited to statistical feature attribution, providing little epidemiological context to support public-health decision-making. This study proposes a semantic-based explainable artificial intelligence framework that bridges the semantic gap between machine-learning predictions and biologically grounded interpretation through ontology-guided reasoning. The framework integrates stochastic prediction models (XGBoost, Gaussian Process Regression, and Elastic Net), SHAP-based feature interrogation, semantic concept mapping, OWL/SWRL reasoning, and natural-language explanation synthesis to transform statistical associations into epidemiologically plausible reasoning traces. The framework was evaluated using a longitudinal malaria surveillance dataset comprising 6,300 spatio-temporal observations collected from 30 health centres across six states in North-Eastern Nigeria over seven months. Model performance was assessed using a harmonized chronological holdout and Leave-One-District-Out Spatial Cross-Validation protocol, while semantic validity was evaluated through ontology alignment, expert assessment, and statistical validation. Elastic Net achieved the strongest predictive performance R2=0.901, whereas XGBoost produced the most stable explanations (SHAP rank correlation = 0.87). The semantic layer achieved 92.3% ontology coverage, 94.6% mapping accuracy, and a semantic fidelity score of 0.91. Independent evaluation by seven infectious disease specialists demonstrated significant improvements in semantic causability, clinical actionability, and forensic trust over conventional XAI approaches (Wilcoxon, (p &lt; 0.01); effect size (r = 0.71)). These findings demonstrate that integrating semantic reasoning with machine learning produces transparent, context-aware, and epidemiologically coherent explanations, providing a practical neuro-symbolic framework for trustworthy AI-enabled infectious disease surveillance.",
+      "summary_zh": "语义 XAI 将 XGBoost、GPR 与 Elastic Net 接到 SHAP、OWL/SWRL 推理；Elastic Net R2=0.901，七位传染病专家评估语义可因果性显著优于常规 XAI（r=0.71）。",
+      "why_it_matters_zh": "把统计特征归因翻译成可被流行病学专家核验的本体推理痕迹，而不仅是热力图。",
+      "quality_score": 83.0,
+      "tags": [
+        "生物医学与临床",
+        "XAI",
+        "疟疾",
+        "OWL",
+        "SHAP"
+      ],
+      "evidence_flags": [
+        "专家评估",
+        "临床队列",
+        "有定量基准",
+        "clinical",
+        "dataset",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.20944/preprints202608.0682.v1",
+        "pmid": ""
+      },
+      "abstract_zh": "人工智能已显著改善传染病监测，但多数可解释人工智能（XAI）技术仍局限于统计特征归因，几乎不提供支持公共卫生决策的流行病学语境。本研究提出一种基于语义的可解释人工智能框架，通过本体引导推理弥合机器学习预测与生物学扎根解释之间的语义鸿沟。该框架整合随机预测模型（XGBoost、Gaussian Process Regression 与 Elastic Net）、基于 SHAP 的特征诘问、语义概念映射、OWL/SWRL 推理以及自然语言解释合成，将统计关联转化为流行病学上合理的推理痕迹。该框架使用纵向疟疾监测数据集评估，包含来自尼日利亚东北部六州 30 个卫生中心、历时七个月采集的 6,300 条时空观测。模型性能用调和的按时间留出与 Leave-One-District-Out Spatial Cross-Validation 协议评估，语义有效性则通过本体对齐、专家评估与统计验证评估。Elastic Net 取得最强预测性能 R2=0.901，而 XGBoost 产生最稳定的解释（SHAP rank correlation = 0.87）。语义层达到 92.3% 本体覆盖、94.6% 映射准确率，以及 0.91 的语义保真分数。七位传染病专家的独立评估表明，相对常规 XAI 方法，语义可因果性、临床可行动性与法证可信度显著改善（Wilcoxon，p < 0.01；效应量 r = 0.71）。这些发现表明，将语义推理与机器学习整合可产生透明、语境感知且流行病学上连贯的解释，为可信的 AI 赋能传染病监测提供实用的神经–符号框架。",
+      "published": "2026-08-11",
+      "author_line": "Jillahi KB, Usman ZS, Nche C"
+    },
+    {
+      "id": "europepmc:ppr1297608",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "bgnorm: A Generative Statistical Framework for Background Correction, Normalisation, and Quality Control in Multiplex Spatial Proteomics",
+      "url": "https://europepmc.org/article/PPR/PPR1297608",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Kharbanda M",
+        "Tubelleza R",
+        "Tan Y",
+        "Tan CW",
+        "Janke C",
+        "Sebina I",
+        "Belz GT",
+        "Kulasinghe A",
+        "Salim A",
+        "Bhuva DD"
+      ],
+      "language": "en",
+      "abstract_or_text": "Multiplex spatial proteomics enables highly multiplexed in situ profiling but remains limited by technical variation arising from autofluorescence, non-specific antibody binding, instrument noise, and staining variability, affecting downstream biological tasks like cell typing. We present bgnorm , a statistical framework that describes fluorescence measurements using a generative mixture model of background, non-specific binding, and biological signal components. As natural statistical consequences, the model yielded three new methods: a background-correction method through probabilistic deconvolution of protein intensities, quality control metrics, and a quantile normalisation approach to unify measurements across markers, samples, and sequential slices. Across multiple multiplex imaging technologies, bgnorm improves signal separation and downstream marker positivity classification compared with existing preprocessing approaches. In expert-annotated datasets comprising over 406,000 marker positivity annotations, bgnorm achieved the highest classification performance and enabled accurate use of a single global positivity threshold across markers and samples. The method is implemented in the bgnormR and bgnormpy packages.",
+      "summary_zh": "bgnorm 用背景、非特异结合与生物学信号的生成混合模型校正多重空间蛋白质组，在超过 406,000 条专家标记阳性注释上取得最高分类性能。",
+      "why_it_matters_zh": "把空间蛋白质组的自发荧光与染色变异做成可跨标记、样本与连续切片统一阈值的概率去卷积。",
+      "quality_score": 84.0,
+      "tags": [
+        "蛋白质与结构",
+        "bgnorm",
+        "空间蛋白质组",
+        "背景校正",
+        "标记阳性"
+      ],
+      "evidence_flags": [
+        "数据集",
+        "有定量基准",
+        "方法创新",
+        "dataset",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 5,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.05.743141",
+        "pmid": ""
+      },
+      "abstract_zh": "多重空间蛋白质组学能够进行高度多重的原位剖析，但仍受自发荧光、非特异抗体结合、仪器噪声与染色变异等技术变异限制，影响细胞分型等下游生物学任务。我们提出 bgnorm，一个统计框架，用背景、非特异结合与生物学信号分量的生成混合模型描述荧光测量。作为自然的统计后果，该模型产生三种新方法：通过对蛋白强度的概率去卷积进行背景校正、质量控制指标，以及跨标记、样本与连续切片统一测量的分位数归一化。跨越多种多重成像技术，bgnorm 相对现有预处理方法改善了信号分离与下游标记阳性分类。在包含超过 406,000 条标记阳性注释的专家标注数据集中，bgnorm 取得最高分类性能，并使跨标记与样本使用单一全局阳性阈值成为可能。该方法实现于 bgnormR 与 bgnormpy 软件包。",
+      "published": "2026-08-11",
+      "author_line": "Kharbanda M, Tubelleza R, Tan Y 等 10 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.07.02.736180",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "The SEA-AD DREAM Challenge: Community benchmarking human and AI agent solutions for Alzheimer's disease neuropathology prediction from single-nucleus transcriptomics",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.07.02.736180",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Lai, H.-Y.",
+        "Kalavros, N.",
+        "Chung, V.",
+        "Kaplan, E. S.",
+        "Saez-Rodriguez, J.",
+        "Ai, L.",
+        "Anastassiou, D.",
+        "Cai, L.",
+        "Chen, E.",
+        "Garach Velez, I.",
+        "Gursoy, G.",
+        "Herrera, L. J.",
+        "Li, X.",
+        "Londin, E.",
+        "Loher, P.",
+        "Nazeraj, I.",
+        "Ortuno, F.",
+        "Ou Yang, T.-H.",
+        "Rigoutsos, I.",
+        "Rojas, I.",
+        "Andreoletti, G.",
+        "Foschini, L.",
+        "Heath, L.",
+        "Oskotsky, T.",
+        "Sirota, M.",
+        "Stolovitzky, G.",
+        "Travaglini, K. J.",
+        "Zou, J.",
+        "Gabitto, M. I."
+      ],
+      "language": "en",
+      "abstract_or_text": "Single-nucleus transcriptomic atlases offer an unprecedented opportunity to connect cellular molecular states with Alzheimers disease (AD) neuropathology, but whether these profiles encode reproducible, predictive information about pathological burden remains unclear. We present the SEA-AD DREAM Challenge, an open, international, model-to-data competition built on the Seattle Alzheimers Disease Brain Cell Atlas to predict Alzheimers disease neuropathological severity from single-nucleus RNA-sequencing data. Participants developed containerized models to predict categorical neuropathological staging, including overall Alzheimers disease neuropathologic change, Braak stage, Thal phase, and CERAD score, as well as quantitative amyloid-{beta} and phospho-tau burden measured by 6E10 and AT8 immunohistochemistry. Across 17 eligible teams from 15 countries, the crowdsourcing framework enabled systematic comparison of diverse computational approaches and surfaced a broad landscape of modeling strategies and candidate predictive features. Top-performing methods achieved near-perfect prediction of categorical staging, with the best submission reaching a quadratic weighted kappa of 1.0 for the Overall AD Neuropathological Change score (ADNC), and competitive prediction of quantitative pathological burden in held-out data, with a best concordance correlation coefficient of 0.48. Post hoc perturbation analyses revealed that top categorical-stage predictions relied heavily on donor-level metadata-driven signals rather than transcriptomic features, whereas quantitative pathology prediction was more robust and supported by transcriptomic and cell-type-associated features with potential biological relevance to AD progression. The challenge also introduced the first AI Agent Track in a DREAM Challenge, providing an early benchmark for autonomous and human-guided agentic model development in single-cell neuroscience. This work demonstrates that single-nucleus transcriptomes encode substantial information about Alzheimers disease pathology, establishes a reproducible benchmark for molecular neuropathology prediction, and highlights critical principles for designing privacy-preserving, leakage-aware community challenges using deeply phenotyped human brain data.",
+      "summary_zh": "SEA-AD DREAM 挑战汇集 15 国 17 队，用单核转录组预测 AD 病理分期与定量负荷；最佳 ADNC 二次加权 kappa 为 1.0，但扰动分析显示分类任务严重依赖供体元数据。",
+      "why_it_matters_zh": "第一次在 DREAM 中加入 AI Agent Track，并明确告诫深表型人脑数据中的泄漏感知评估原则。",
+      "quality_score": 85.0,
+      "tags": [
+        "组学与细胞",
+        "SEA-AD",
+        "DREAM",
+        "ADNC",
+        "单核转录组"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "有外部测试",
+        "benchmark"
+      ],
+      "publication_status": "preprint",
+      "rank": 6,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.02.736180",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "单核转录组图谱为将细胞分子状态与阿尔茨海默病（AD）神经病理相连接提供了前所未有的机会，但这些剖面是否编码关于病理负荷的可复现、可预测信息仍不清楚。我们提出 SEA-AD DREAM Challenge，一场建立在西雅图阿尔茨海默病脑细胞图谱上的开放国际 model-to-data 竞赛，从单核 RNA 测序数据预测阿尔茨海默病神经病理严重程度。参与者开发容器化模型，以预测分类神经病理分期——包括总体阿尔茨海默病神经病理改变、Braak stage、Thal phase 与 CERAD score——以及由 6E10 与 AT8 免疫组化测量的定量 amyloid-β 与 phospho-tau 负荷。来自 15 个国家的 17 支合格队伍中，众包框架使多样化计算方法得以系统比较，并呈现广泛的建模策略与候选预测特征图景。顶尖方法对分类分期接近完美预测，最佳提交在 Overall AD Neuropathological Change score（ADNC）上达到二次加权 kappa 1.0，并在留出数据上对定量病理负荷取得有竞争力的预测，最佳concordance correlation coefficient 为 0.48。事后扰动分析显示，顶尖分类分期预测严重依赖供体级元数据驱动信号而非转录组特征，而定量病理预测更为稳健，并得到对 AD 进展具有潜在生物学相关性的转录组与细胞类型相关特征支持。该挑战还引入 DREAM Challenge 中的首个 AI Agent Track，为单细胞神经科学中自主与人类引导的智能体式模型开发提供早期基准。本研究表明单核转录组编码关于阿尔茨海默病病理的大量信息，为分子神经病理预测建立可复现基准，并凸显在使用深表型人脑数据设计保护隐私、感知泄漏的社区挑战时的关键原则。",
+      "published": "2026-08-11",
+      "author_line": "Lai, H.-Y., Kalavros, N., Chung, V. 等 29 人"
+    },
+    {
+      "id": "europepmc:ppr1296302",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Virtual-cell verification enables self-auditing AI discovery for immune rejuvenation",
+      "url": "https://europepmc.org/article/PPR/PPR1296302",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-12",
+      "creators": [
+        "You Y",
+        "Fan X",
+        "Li G",
+        "Deng W",
+        "Fu Y",
+        "Hu H",
+        "Ren W",
+        "Lu S",
+        "Han G",
+        "Shao J",
+        "Zheng S",
+        "Zhou K",
+        "Kong J",
+        "Chen J",
+        "Liu X",
+        "Tian L"
+      ],
+      "language": "en",
+      "abstract_or_text": "Artificial-intelligence agents propose drug-discovery hypotheses faster than experiments can test them, yet their conclusions are rarely verified, against the underlying biology, the predicted perturbation, or the agent's own scoring logic. We close this verification gap with an agentic framework built on three verifiers. First, PACE, a phenotype verifier, resolves immune aging into ten directionally scored, cell-type-resolved gene-set modules, selected for cross-cohort stability across four PBMC cohorts, and outperforms five established aging clocks in an independent in-house aging cohort of 434 elderly donors. Second, CellQ, a virtual-cell verifier built with multi-modal LLM, compresses each single-cell transcriptome into eight discrete tokens aligned to a language model's vocabulary through residual vector quantization; it attains state-of-the-art perturbation prediction and uniquely resolves the weak, module-level shifts that differential-expression recovery misses. Third, an Analyzer-Planner-Auditor agent verifies its own scoring logic: screening 110 compounds in primary human PBMCs, it found aged-down modules more reversible than aged-up modules and revised its objective from an equal-weight mean to a balance-constrained minimum, a self-correction that generalized to an independent 13-compound T-cell assay. By verifying its predictions and its own objective against experiment, the framework points beyond hypothesis-generating AI toward self-correcting AI scientists whose objectives could continuously evolve.",
+      "summary_zh": "PACE 用十个跨队列稳定的免疫衰老模块胜过五种衰老时钟（院内 434 名老年供体）；CellQ 将单细胞压成八个 RVQ token；智能体在 110 个化合物的原代 PBMC 筛选中自我修正目标。",
+      "why_it_matters_zh": "把表型、虚拟细胞与评分逻辑三层核验接到原代免疫实验，使发现型智能体能够对照实验改写自身目标。",
+      "quality_score": 84.0,
+      "tags": [
+        "组学与细胞",
+        "PACE",
+        "CellQ",
+        "免疫衰老",
+        "虚拟细胞"
+      ],
+      "evidence_flags": [
+        "实验验证",
+        "有定量基准",
+        "方法创新",
+        "state-of-the-art"
+      ],
+      "publication_status": "preprint",
+      "rank": 7,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.04.742916",
+        "pmid": ""
+      },
+      "abstract_zh": "人工智能智能体提出药物发现假说的速度快于实验能够检验它们的速度，但其结论很少对照底层生物学、所预测的扰动或智能体自身的评分逻辑加以核验。我们用建立在三个核验器上的智能体框架填补这一核验缺口。第一，表型核验器 PACE 将免疫衰老解析为十个方向计分、细胞类型分辨的基因集模块，这些模块因在四个 PBMC 队列上的跨队列稳定性而被选出，并在一个独立的院内衰老队列（434 名老年供体）上胜过五种既有衰老时钟。第二，用多模态 LLM 构建的虚拟细胞核验器 CellQ，通过残差向量量化将每个单细胞转录组压缩为与语言模型词表对齐的八个离散 token；它取得最先进的扰动预测，并独特地解析差异表达恢复所遗漏的弱、模块级偏移。第三，Analyzer-Planner-Auditor 智能体核验其自身评分逻辑：在原代人 PBMC 中筛选 110 个化合物时，它发现衰老下调模块比衰老上调模块更可逆，并将其目标从等权均值修订为平衡约束最小值，这一自我校正泛化到独立的 13 化合物 T 细胞测定。通过对照实验核验其预测及其自身目标，该框架指向超越假说生成 AI、迈向目标可持续演进的自校正 AI 科学家。",
+      "published": "2026-08-11",
+      "author_line": "You Y, Fan X, Li G 等 16 人"
+    },
+    {
+      "id": "medrxiv:10.64898/2026.08.06.26359855",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "Clinical trajectories and genetic architecture across the neurological-psychiatric boundary",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.08.06.26359855",
+      "published_at": "2026-08-10",
+      "updated_at": "2026-08-10",
+      "creators": [
+        "Kopal, J.",
+        "Smeland, O. B.",
+        "Hagen, E.",
+        "Amanzadi, A.",
+        "Erdos, B.",
+        "Fuhrer, J.",
+        "Shadrin, A. A.",
+        "Frei, O.",
+        "van der Meer, D.",
+        "O'Connell, K. S.",
+        "Dale, A. M.",
+        "Andreassen, O. A."
+      ],
+      "language": "en",
+      "abstract_or_text": "Foundation models trained on health records are increasingly used to represent human disease, but whether their embeddings reflect biology is hard to establish. We validate disease trajectory embeddings from an attention-based transformer against an external signal: genome-wide genetic architecture. Across 19 neurological and psychiatric disorders, clinical trajectory similarity mirrors genetic similarity, and the model recovers the same neurological-psychiatric boundary that emerges from genetic data, including which disorders cross it. A model with no access to diagnostic labels or genetic data thus recovers biological structure it was never trained on.",
+      "summary_zh": "基于病历轨迹的 transformer 嵌入在 19 种神经与精神障碍上与全基因组遗传结构相互映证，并在从未见诊断标签或遗传数据的情况下恢复同一神经–精神边界。",
+      "why_it_matters_zh": "用外部遗传架构校验健康记录基础模型是否学到生物学，而不把轨迹相似直接写成因果。",
+      "quality_score": 83.0,
+      "tags": [
+        "生物医学与临床",
+        "疾病轨迹",
+        "遗传架构",
+        "神经精神"
+      ],
+      "evidence_flags": [
+        "临床队列",
+        "方法创新",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 8,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.06.26359855",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "在健康记录上训练的基础模型越来越多地被用来表征人类疾病，但其嵌入是否反映生物学很难确立。我们用外部信号——全基因组遗传架构——校验来自基于注意力的 transformer 的疾病轨迹嵌入。跨越 19 种神经与精神障碍，临床轨迹相似性映照遗传相似性，并且该模型恢复了从遗传数据中浮现的同一神经–精神边界，包括哪些障碍跨越该边界。一个无法获取诊断标签或遗传数据的模型，因此恢复了它从未被训练过的生物学结构。",
+      "published": "2026-08-10",
+      "author_line": "Kopal, J., Smeland, O. B., Hagen, E. 等 12 人"
+    },
+    {
+      "id": "arxiv:2608.10996v1",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "ConRub-Med: Reinforcement Learning with Consensus Rubrics for Open-Ended Medical Question Answering",
+      "url": "https://arxiv.org/abs/2608.10996v1",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Taojie Zhu",
+        "Yuan Xia",
+        "Tao Sun",
+        "Yizhi Wang",
+        "Yan Chen",
+        "Qunshan He",
+        "Tian Guan",
+        "Jian Wang",
+        "Jinjie Gu",
+        "Junwei Liu",
+        "Yonghong He"
+      ],
+      "language": "en",
+      "abstract_or_text": "Reinforcement learning with verifiable rewards has been especially effective in mathematics and coding, where answers can be checked automatically. Many open-ended medical questions lack comparably cheap outcome verifiers: responses may be partly correct, incomplete, or contain clinically consequential errors. Rubrics written or validated by physicians offer strong clinical grounding, but involving experts in every instance is costly. Model-generated rubrics make this supervision scalable. We introduce ConRub-Med to preserve useful distinctions as rubric feedback moves from construction to policy optimization. For each prompt, three heterogeneous language models propose atomic criteria independently; a separate model reviews them, retaining only criteria with semantic support from all three generators. Three-State scoring distinguishes correct coverage, missing information, and incorrect claims. Errors receive negative rather than zero credit. When every response in a complete Group Relative Policy Optimization (GRPO) group receives the same final reward, a pairwise judge provides sequence advantages only if both candidate orders agree, without changing the scalar rewards. Groups without ties use vanilla GRPO. In a blinded study matched by question, two medical experts rate panels from the full pipeline as more clinically relevant than panels produced by one generator. Across the evaluated open models, ConRub-Med ranks first on six of nine benchmarks and achieves the highest medical and generalization averages. Using the resulting rubric dataset of 5,166 prompts, it scores 38.98 \\pm 1.04 (mean \\pm SD) on HealthBench-Hard, compared with InfiMed-ORBIT's 33.60 with 8,000 samples and 37.30 with 28,000.",
+      "summary_zh": "ConRub-Med 用三模型独立出题、仅保留三者语义支持的原子量规，并在 GRPO 全组同分时引入成对裁判；在 5,166 条提示上 HealthBench-Hard 为 38.98 ± 1.04。",
+      "why_it_matters_zh": "为缺乏廉价对错核验器的开放医学问答提供可扩展、经医师对照的量规强化学习，并惩罚错误主张。",
+      "quality_score": 83.0,
+      "tags": [
+        "生物医学与临床",
+        "ConRub-Med",
+        "GRPO",
+        "HealthBench-Hard",
+        "量规RL"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "专家评估",
+        "数据集",
+        "benchmark",
+        "dataset",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 9,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.10996v1"
+      },
+      "abstract_zh": "带可核验奖励的强化学习在数学与编程中尤为有效，因为答案可以自动检查。许多开放式医学问题缺乏同样廉价的结果核验器：回答可能部分正确、不完整，或包含具有临床后果的错误。由医师撰写或校验的量规提供强临床根基，但让专家参与每一个实例代价高昂。模型生成的量规使这种监督可扩展。我们推出 ConRub-Med，以在量规反馈从构建走向策略优化时保留有用区分。对每个提示，三个异质语言模型独立提出原子标准；另一个模型审阅它们，仅保留得到全部三个生成器语义支持的标准。Three-State 评分区分正确覆盖、缺失信息与错误主张。错误获得负分而非零分。当完整 Group Relative Policy Optimization（GRPO）组中每个回答获得相同最终奖励时，成对裁判仅在两种候选顺序都同意时提供序列优势，而不改变标量奖励。无平局的组使用 vanilla GRPO。在按问题匹配的盲法研究中，两位医学专家将完整流水线产生的面板评为比单生成器面板更具临床相关性。在所评估的开放模型中，ConRub-Med 在九个基准中的六个上排名第一，并取得最高的医学与泛化平均分。使用所得的 5,166 条提示量规数据集，它在 HealthBench-Hard 上得到 38.98 ± 1.04（mean ± SD），而 InfiMed-ORBIT 在 8,000 个样本上为 33.60、在 28,000 个样本上为 37.30。",
+      "published": "2026-08-11",
+      "author_line": "Taojie Zhu, Yuan Xia, Tao Sun 等 11 人"
+    },
+    {
+      "id": "biorxiv:10.1101/2025.05.03.652008",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "CRISMER: A transformer-based Interpretable Deep Learning Approach for Genome-wide CRISPR Cas-9 Off-Target Prediction and Optimization",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.05.03.652008",
+      "published_at": "2026-08-09",
+      "updated_at": "2026-08-09",
+      "creators": [
+        "Emtiaj, A. H.",
+        "Rafi, R. H.",
+        "Nayeem, M. A.",
+        "Rahman, M. S."
+      ],
+      "language": "en",
+      "abstract_or_text": "CRISPR-Cas9 gene editing holds transformative promise for genetic therapies, but is hindered by off-target effects that undermine its precision and safety. To address this, we developed CRISMER, a hybrid deep-learning architecture that uses multi-branch convolutional neural networks to extract k-mer features and transformer blocks to capture long-range dependencies. This hybrid approach enhances the prediction and optimization of single-guide RNA (sgRNA) designs. CRISMER was trained on Change-seq and Site-seq datasets, using a 20 x 16 sparse one-hot encoding scheme, and evaluated on independent datasets including Circle-seq, Guide-seq, Surro-seq, and TTISS. CRISMER outperformed existing tools, achieving an F1 score of 0.728 and a PR-AUC of 0.818 on the CRISPR-DIPOFF dataset, and it generalized to fully independent datasets and to off-targets containing insertions and deletions. Ablation experiments confirmed that each architectural component contributes to performance, and CRISMER attained these results with substantially fewer parameters than transformer-and foundation-model baselines. It also demonstrated strong in silico specificity prediction and optimization capabilities, identifying sgRNA variants for targets such as PCSK9, BCL11A, and EXM1 with improved predicted off-target profiles. Interpretability analysis via integrated gradients confirmed the models focus on critical PAM-proximal regions and mismatch patterns. These results demonstrate that CRISMER significantly improves the accuracy and safety of CRISPR-Cas9, advancing its reliability for therapeutic applications.",
+      "summary_zh": "CRISMER 以多分支 CNN 提取 k-mer、transformer 捕获长程依赖，在 CRISPR-DIPOFF 上 F1 0.728、PR-AUC 0.818，并泛化到含插入缺失的独立脱靶集。",
+      "why_it_matters_zh": "用更少参数把全基因组 Cas9 脱靶预测与 sgRNA 优化做成可解释、可跨测定迁移的设计工具。",
+      "quality_score": 82.0,
+      "tags": [
+        "方法与模型",
+        "CRISMER",
+        "CRISPR-Cas9",
+        "sgRNA",
+        "脱靶"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "消融实验",
+        "有外部测试",
+        "dataset",
+        "ablation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 10,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2025.05.03.652008",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "CRISPR-Cas9 基因编辑对遗传治疗具有变革性前景，但受损害其精度与安全性的脱靶效应阻碍。为应对此问题，我们开发了 CRISMER，一种混合深度学习架构，使用多分支卷积神经网络提取 k-mer 特征，并用 transformer 块捕获长程依赖。这一混合方法增强了单引导 RNA（sgRNA）设计的预测与优化。CRISMER 在 Change-seq 与 Site-seq 数据集上训练，采用 20 × 16 稀疏 one-hot 编码方案，并在包括 Circle-seq、Guide-seq、Surro-seq 与 TTISS 的独立数据集上评估。CRISMER 优于现有工具，在 CRISPR-DIPOFF 数据集上取得 F1 分数 0.728 与 PR-AUC 0.818，并泛化到完全独立的数据集以及含插入与缺失的脱靶。消融实验确认每个架构组件都对性能有贡献，并且 CRISMER 以远少于 transformer 与基础模型基线的参数取得这些结果。它还展示了强的计算机特异性预测与优化能力，为 PCSK9、BCL11A 与 EXM1 等靶点鉴定出具有改善的预测脱靶谱的 sgRNA 变体。经由 integrated gradients 的可解释性分析确认模型聚焦于关键的 PAM 近端区域与错配模式。这些结果表明 CRISMER 显著改善 CRISPR-Cas9 的准确性与安全性，推进其治疗应用的可靠性。",
+      "published": "2026-08-09",
+      "author_line": "Emtiaj, A. H., Rafi, R. H., Nayeem, M. A. 等 4 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.11.744092",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "siDiff: De Novo siRNA Design via Efficacy-Guided Discrete Masked Diffusion",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.11.744092",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Yue, Z.",
+        "Zhang, H.",
+        "Gao, X.",
+        "Shu, S.",
+        "Lai, L."
+      ],
+      "language": "en",
+      "abstract_or_text": "Target-conditioned de novo siRNA design requires capturing both target mRNA binding context and internal siRNA sequence-activity rules. Traditional computational pipelines predominantly rely on discriminative prediction models that rank pre-filtered candidate pools. However, these approaches struggle with generalization on novel target genes and often overlook potent candidates due to dataset size constraints and motif overfitting. To reconcile generation precision with sequence diversity, we propose siDiff, an efficacy-guided discrete diffusion framework for target-conditioned de novo siRNA design. siDiff pairs a discrete-masked diffusion transformer--which models the underlying sequence distribution over functional duplexes--with a mask-robust efficacy guidance model. During inference, we introduce a biology-aware, three-stage sampling mechanism that performs structural candidate filtering, dynamic unmasking guidance, and cluster-aware redundancy mitigation. This dual mechanism enables the diffusion process to explore broad sequence spaces while the efficacy model prevents distributional shift toward non-functional candidates. Extensive experiments across four datasets, including the public Takayuki benchmark and three curated patent datasets, demonstrate that siDiff significantly outperforms state-of-the-art discriminative baselines and discrete diffusion models, achieving relative hit-rate improvements of over 30% and demonstrating superior generalization on out-of-distribution gene targets. The source code and related materials are available at https://github.com/cybericha/siDiff.",
+      "summary_zh": "siDiff 以离散掩蔽扩散 transformer 建模功能双链分布，并用对掩蔽稳健的效力模型做三阶段生物学感知采样，相对判别基线命中率提升超过 30%。",
+      "why_it_matters_zh": "把靶 mRNA 条件化的 de novo siRNA 设计从候选排序改成可探索序列空间且抑制无效漂移的生成。",
+      "quality_score": 82.0,
+      "tags": [
+        "方法与模型",
+        "siDiff",
+        "siRNA",
+        "离散扩散",
+        "Takayuki"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "方法创新",
+        "公开代码",
+        "benchmark",
+        "dataset",
+        "github"
+      ],
+      "publication_status": "preprint",
+      "rank": 11,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.11.744092",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "靶条件化的 de novo siRNA 设计需要同时捕获靶 mRNA 结合语境与 siRNA 内部的序列–活性规则。传统计算流水线主要依赖对预过滤候选池排序的判别预测模型。然而这些方法在新靶基因上难以泛化，并常因数据集规模约束与基序过拟合而忽略强效候选。为调和生成精度与序列多样性，我们提出 siDiff，一个用于靶条件化 de novo siRNA 设计的效力引导离散扩散框架。siDiff 将一个离散掩蔽扩散 transformer——对功能双链的底层序列分布建模——与一个对掩蔽稳健的效力引导模型配对。在推理过程中，我们引入生物学感知的三阶段采样机制，执行结构候选过滤、动态去掩蔽引导与簇感知冗余缓解。这一双重机制使扩散过程能够探索广阔序列空间，同时效力模型防止向无功能候选的分布漂移。跨越四个数据集——包括公开的 Takayuki 基准与三个策展专利数据集——的广泛实验表明，siDiff 显著优于最先进的判别基线与离散扩散模型，相对命中率提升超过 30%，并在分布外基因靶上展示更优泛化。源代码与相关材料见 https://github.com/cybericha/siDiff。",
+      "published": "2026-08-11",
+      "author_line": "Yue, Z., Zhang, H., Gao, X. 等 5 人"
+    },
+    {
+      "id": "europepmc:ppr1295532",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "scROMA: batch-aware pathway-activity inference and a ground-truth simulation framework for single-cell transcriptomics",
+      "url": "https://europepmc.org/article/PPR/PPR1295532",
+      "published_at": "2026-08-10",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Zhubanchaliyev A",
+        "Najm M",
+        "Laigle V",
+        "Bonnet E",
+        "Martignetti L"
+      ],
+      "language": "en",
+      "abstract_or_text": "Background Pathway-activity analysis summarizes gene-level single-cell measurements into interpretable functional modules, but widely used methods lack an integrated significance framework, do not account for the batch effects that pervade multi-sample studies, and are not natively interoperable with Python-based workflows. The field also lacks simulation resources with ground-truth pathway activity for quantitative benchmarking. Results We present scROMA, a singular-value-decomposition-based method that quantifies pathway activity as coordinated variation, with per-cell scores, per-gene contributions, and permutation-based significance, natively integrated with the Scanpy/AnnData ecosystem. Its batch-aware extension is, to our knowledge, the first to correct batch effects within the gene-set subspace rather than across the full transcriptome, isolating technical variation at the pathway level while preserving signal in other genes. We also release a generative simulation framework producing synthetic data with fully specified ground-truth activities. On simulated benchmarks scROMA is competitive across tasks, and under batch effects its batch-aware mode recovers ordinal pathway structure that full-transcriptome integration misses. Across cystic fibrosis airway, intestinal-organoid, breast cancer, and lung cancer datasets it recovers established biology while separating it from technical and inter-donor variation; in the intestinal-organoid atlas it reproducibly recovers an inflammatory program across donors, separates its sustained from transient components, and resolves cell-type-specific niche-factor targets. Conclusions scROMA is open-source and released with the simulation framework and pre-generated benchmark datasets as a community resource, providing a scalable, statistically grounded, and batch-aware approach to pathway-level analysis in single-cell transcriptomics.",
+      "summary_zh": "scROMA 在基因集子空间内做 SVD 通路活性与置换显著性，并首次在通路级而非全转录组校正批次；在模拟基准与囊性纤维化气道、肠类器官等数据上回收既有生物学。",
+      "why_it_matters_zh": "把单细胞通路评分做成带真值模拟的可显著性、批次感知 Python 工作流，避免全转录组整合抹掉通路结构。",
+      "quality_score": 81.0,
+      "tags": [
+        "组学与细胞",
+        "scROMA",
+        "通路活性",
+        "批次校正",
+        "Scanpy"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "方法创新",
+        "benchmark",
+        "dataset",
+        "release"
+      ],
+      "publication_status": "preprint",
+      "rank": 12,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.07.743516",
+        "pmid": ""
+      },
+      "abstract_zh": "背景：通路活性分析将基因级单细胞测量汇总为可解释的功能模块，但广泛使用的方法缺乏整合的显著性框架，不考虑多样本研究中普遍存在的批次效应，并且无法原生与基于 Python 的工作流互操作。该领域也缺乏带有真值通路活性的模拟资源以供定量基准测试。结果：我们提出 scROMA，一种基于奇异值分解的方法，将通路活性量化为协调变异，提供每细胞分数、每基因贡献与基于置换的显著性，并原生整合到 Scanpy/AnnData 生态。其批次感知扩展据我们所知是首个在基因集子空间内而非全转录组上校正批次效应的方法，从而在通路水平隔离技术变异，同时保留其他基因中的信号。我们还发布一个生成式模拟框架，产生带有完全指定真值活性的合成数据。在模拟基准上 scROMA 在各项任务上具有竞争力，并且在批次效应下其批次感知模式能恢复全转录组整合所遗漏的序数通路结构。跨越囊性纤维化气道、肠类器官、乳腺癌与肺癌数据集，它在将既有生物学与技术和供体间变异分离的同时回收了这些生物学；在肠类器官图谱中，它可复现地跨供体回收炎症程序，分离其持续与瞬时成分，并解析细胞类型特异的微环境因子靶标。结论：scROMA 开源发布，并连同模拟框架与预生成基准数据集作为社区资源，为单细胞转录组的通路级分析提供可扩展、有统计根基且批次感知的方法。",
+      "published": "2026-08-10",
+      "author_line": "Zhubanchaliyev A, Najm M, Laigle V 等 5 人"
+    },
+    {
+      "id": "arxiv:2608.11410v1",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Unmasking Toxic Mimicry in Medical Offline Reinforcement Learning for ICU Sepsis Management via Counterfactual Clinical Audits",
+      "url": "https://arxiv.org/abs/2608.11410v1",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Hangqi Ren",
+        "Junyi Liao"
+      ],
+      "language": "en",
+      "abstract_or_text": "Offline reinforcement learning (RL) offers considerable promise for optimizing ICU treatment decisions, yet standard evaluation metrics Mean Squared Error (MSE) and Fitted Q-Evaluation (FQE) assess only behavioral imitation and cannot detect Toxic Mimicry, a failure mode in which agents replicate harmful patterns such as treatment withdrawal during comfort-care transitions. Using the MIMIC-III database, we propose the Counterfactual Clinical Audit (CCA) framework, which stress-tests RL agents through physiological perturbations anchored in Surviving Sepsis Campaign (SSC) guidelines. We audit a Medical Decision Transformer (MedDT) and a Historical Causal Transformer (HCT-RL), the latter employing Causal Action Shielding, propensity-based importance weighting, and Conservative Q-Learning. CCA reveals that MedDT paradoxically reduces vasopressor dosage as lactate escalates, contradicting resuscitation guidelines, while HCT-RL maintains physiologically consistent responses. These findings expose a systemic misalignment between statistical fit and clinical safety, supporting counterfactual audits as a necessary evaluation standard for medical RL.",
+      "summary_zh": "Counterfactual Clinical Audit 按 SSC 指南对 MIMIC-III 脓毒症离线 RL 做生理扰动：MedDT 在乳酸升高时反常减量血管加压药，而带因果屏蔽的 HCT-RL 保持生理一致。",
+      "why_it_matters_zh": "揭示 MSE/FQE 无法检出的 Toxic Mimicry，把反事实临床审计立为医学 RL 的必要评估标准。",
+      "quality_score": 81.0,
+      "tags": [
+        "方法与模型",
+        "Toxic Mimicry",
+        "CCA",
+        "MIMIC-III",
+        "HCT-RL"
+      ],
+      "evidence_flags": [
+        "临床队列",
+        "方法创新",
+        "clinical",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 13,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.11410v1"
+      },
+      "abstract_zh": "离线强化学习（RL）为优化 ICU 治疗决策提供相当前景，但标准评估指标 Mean Squared Error（MSE）与 Fitted Q-Evaluation（FQE）只评估行为模仿，无法检出 Toxic Mimicry——一种智能体复制有害模式（例如在舒适照护转换期间撤除治疗）的失败模式。使用 MIMIC-III 数据库，我们提出 Counterfactual Clinical Audit（CCA）框架，通过锚定于 Surviving Sepsis Campaign（SSC）指南的生理扰动对 RL 智能体进行压力测试。我们审计 Medical Decision Transformer（MedDT）与 Historical Causal Transformer（HCT-RL），后者采用 Causal Action Shielding、基于倾向的重要性加权与 Conservative Q-Learning。CCA 揭示 MedDT 在乳酸升高时反常减少血管加压药剂量，与复苏指南相矛盾，而 HCT-RL 保持生理一致的应答。这些发现暴露统计拟合与临床安全之间的系统性错位，支持将反事实审计作为医学 RL 的必要评估标准。",
+      "published": "2026-08-11",
+      "author_line": "Hangqi Ren, Junyi Liao"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.02.01.703078",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A disease dynamics atlas forecasts patient states and maps molecular programs in ALS",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.02.01.703078",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Li, Z.",
+        "Gao, C.",
+        "Kong, J.",
+        "Fu, Y.",
+        "Wen, S.",
+        "Li, G.",
+        "Cao, Y.",
+        "Fu, Y.",
+        "Zhang, H.",
+        "Jia, S.",
+        "Liu, X.",
+        "Yang, J.",
+        "Cai, L.",
+        "Yan, F.",
+        "Liu, X.",
+        "Tian, L."
+      ],
+      "language": "en",
+      "abstract_or_text": "ALS progression is multidimensional, yet fragmented records and scalar outcomes obscure how patients move through disease states and how those states relate to molecular variation. MEDSTREM converts patient-held medical-record images into standardised longitudinal data, enabling bottom-up cohort construction. Using MEDSTREM-structured records from more than 8,000 AskHelpU participants together with PRO-ACT and Answer ALS, we developed DynaALS, the ALS Disease Dynamics Atlas. DynaALS represents ALS as a dynamic patient-state manifold that captures distinct directions of deterioration and patient movement between them over time. DynaALS retrieved population-referenced future states and decoded them into multidimensional clinical profiles without requiring patient-specific longitudinal histories. Motor-neuron RNA and chromatin profiles linked DynaALS states to developmental and regulatory programs, while neuromuscular-organoid single-cell multi-omics converged on a neural-developmental Netrin-DCC signalling axis across interacting cell types. By coupling MEDSTREM-enabled data construction to dynamic state modelling, DynaALS establishes a transferable patient-state engine for predictive and biologically interpretable disease models.",
+      "summary_zh": "MEDSTREM 将超过 8,000 名 AskHelpU 参与者的病历图像结构化后，与 PRO-ACT、Answer ALS 共建 DynaALS 动态患者状态流形，并解码运动神经元与类器官中的 Netrin-DCC 轴。",
+      "why_it_matters_zh": "把碎片化 ALS 记录做成可检索未来状态的群体参照引擎，并把临床状态接到可解释的分子程序。",
+      "quality_score": 82.0,
+      "tags": [
+        "生物医学与临床",
+        "DynaALS",
+        "ALS",
+        "MEDSTREM",
+        "Netrin-DCC"
+      ],
+      "evidence_flags": [
+        "临床队列",
+        "方法创新",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 14,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.02.01.703078",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "ALS 进展是多维的，但碎片化记录与标量结局掩盖了患者如何在疾病状态中移动，以及这些状态如何与分子变异相关。MEDSTREM 将患者持有的病历图像转换为标准化纵向数据，使自下而上的队列构建成为可能。使用来自超过 8,000 名 AskHelpU 参与者的 MEDSTREM 结构化记录，连同 PRO-ACT 与 Answer ALS，我们开发了 DynaALS，即 ALS 疾病动力学图谱。DynaALS 将 ALS 表示为动态患者状态流形，捕获不同的恶化方向以及患者随时间在其间的移动。DynaALS 检索群体参照的未来状态，并将其解码为多维临床剖面，而无需患者特异的纵向病史。运动神经元 RNA 与染色质剖面将 DynaALS 状态连接到发育与调控程序，而神经肌肉类器官单细胞多组学在相互作用细胞类型上汇聚到神经发育 Netrin-DCC 信号轴。通过将 MEDSTREM 赋能的数据构建与动态状态建模耦合，DynaALS 为预测性且生物学可解释的疾病模型建立了可迁移的患者状态引擎。",
+      "published": "2026-08-11",
+      "author_line": "Li, Z., Gao, C., Kong, J. 等 16 人"
+    },
+    {
+      "id": "europepmc:ppr1295403",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "LiverDCP: A Disease–Cell–Protein Framework for Multi-scale Modeling of Disease Biology",
+      "url": "https://europepmc.org/article/PPR/PPR1295403",
+      "published_at": "2026-08-10",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Shi Z",
+        "Song Z",
+        "Steveson-Lerner H",
+        "Dong B",
+        "Zhao H"
+      ],
+      "language": "en",
+      "abstract_or_text": "Understanding how molecular interactions give rise to disease phenotypes across cellular contexts remains a central challenge in biomedical research. Here, we introduce a Disease–Cell–Protein ( DCP ) paradigm for modeling multi-scale disease biology, which jointly represents disease states, cellular composition, and protein interaction networks within a unified graph architecture. We instantiate this paradigm in the liver as LiverDCP by integrating a large-scale liver single-cell atlas ( LiverHomo ) with proteome-wide predicted protein-protein interactions to construct over 280 context-specific interactomes across diverse liver disease and cellular conditions. LiverDCP employs a multi-context representation learning strategy that enables joint training across hundreds of disease-cell environments, capturing shared interaction principles while preserving context-specific variation. LiverDCP incorporates pretrained protein sequence-derived features through a geometry-aware two-phase training scheme that preserves embedding structure while improving predictive performance. The resulting protein embeddings encode context-specific functional states and reveal extensive rewiring of protein roles across diseases. They provide a context-resolved representation of protein function, enabling interpretation of GWAS risk genes and prioritization of therapeutic targets, including recovery of known targets and nomination of candidate repurposed and novel targets for MASH. Overall, this work establishes a generalizable framework for linking molecular interactions to disease phenotypes and enabling mechanistic understanding and target discovery across complex diseases.",
+      "summary_zh": "LiverDCP 将 LiverHomo 单细胞图谱与蛋白质组范围预测互作整合为超过 280 个疾病–细胞情境互作组，并用于解释 GWAS 风险基因与提名 MASH 再定位靶点。",
+      "why_it_matters_zh": "用疾病–细胞–蛋白质统一图表征把肝病表型接到情境特异的蛋白功能重布线。",
+      "quality_score": 80.0,
+      "tags": [
+        "蛋白质与结构",
+        "LiverDCP",
+        "LiverHomo",
+        "MASH",
+        "PPI"
+      ],
+      "evidence_flags": [
+        "方法创新",
+        "数据集",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 15,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.07.743628",
+        "pmid": ""
+      },
+      "abstract_zh": "理解分子相互作用如何在细胞情境中产生疾病表型，仍是生物医学研究的核心挑战。本文引入用于建模多尺度疾病生物学的 Disease–Cell–Protein（DCP）范式，在统一图架构中联合表征疾病状态、细胞组成与蛋白质相互作用网络。我们在肝脏中将该范式实例化为 LiverDCP，通过整合大规模肝脏单细胞图谱（LiverHomo）与蛋白质组范围的预测蛋白质–蛋白质相互作用，跨越多样肝脏疾病与细胞条件构建超过 280 个情境特异互作组。LiverDCP 采用多情境表征学习策略，使跨数百个疾病–细胞环境的联合训练成为可能，在捕获共享相互作用原则的同时保留情境特异变异。LiverDCP 通过几何感知的两阶段训练方案纳入预训练的蛋白质序列导出特征，在保持嵌入结构的同时改善预测性能。所得蛋白质嵌入编码情境特异功能状态，并揭示跨疾病的蛋白质角色广泛重布线。它们提供蛋白质功能的情境分辨表征，使 GWAS 风险基因解释与治疗靶点优先排序成为可能，包括对已知靶点的回收以及对 MASH 候选再定位与新靶点的提名。总体而言，本研究为将分子相互作用连接到疾病表型、并在复杂疾病中实现机制理解与靶点发现建立了可泛化框架。",
+      "published": "2026-08-10",
+      "author_line": "Shi Z, Song Z, Steveson-Lerner H 等 5 人"
+    },
+    {
+      "id": "europepmc:ppr1295373",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "A Biologically Constrained Continuous-Time Framework for Long-Horizon Cognition Forecasting in Alzheimer’s Disease",
+      "url": "https://europepmc.org/article/PPR/PPR1295373",
+      "published_at": "2026-08-10",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Deepika P",
+        "Sunkari S",
+        "Upadhyayula SK",
+        "Sundaresan V"
+      ],
+      "language": "en",
+      "abstract_or_text": "Accurate long-term forecasting of cognitive trajectories across the Alzheimer’s disease continuum is essential for early intervention, personalized prognosis, patient stratification, and clinical trial enrichment. Despite the promising predictive performance of recent longitudinal forecasting methods, they remain largely data-driven, struggle with irregularly sampled, incomplete longitudinal data and often neglect established disease biology, leading to biologically implausible trajectories. To address this, we propose a biologically constrained continuous-time framework for long-horizon cognition forecasting from limited baseline observations. The proposed method models the complete amy-loid–tau–vascular–neurodegeneration–cognition (ATVNC) cascade using hierarchical Neural ODEs with biologically motivated monotonicity constraints. Each pathological stream is governed by a dedicated Neural ODE initialized from irregular longitudinal observations using a GRU-D encoder, capturing intrinsic disease evolution while being modulated by directed upstream pathological influences. A bounded cognition readout ensures physiologically valid cognitive score (MoCA) predictions, while teacher–student knowledge distillation improves learning from sparse lon-gitudinal supervision. Evaluated on the ADNI dataset, the proposed framework achieves a long-horizon extrapolation MAE of 2.06 on 188 held-out participants while eliminating biologically implausible trajectory violations. It further demonstrates robust zero-shot cross-cohort generalization on OASIS-3 (MAE 2.68 on 300 participants), with fine-tuning improving MAE to 1.90. The model also supports prognostic enrichment for Alzheimer’s clinical trials, achieving up to 2.70 × enrichment over the cohort base rate. These results demonstrate that embedding biological disease mechanisms within continuous-time deep learning improves the accuracy, biological plausibility, and clinical utility of long-horizon cognitive forecasting. The code is publicly available at: https://github.com/PonDeepika/BEACON .",
+      "summary_zh": "BEACON 用分层 Neural ODE 建模 ATVNC 级联并施加单调性约束，在 ADNI 188 人留出集上长程 MoCA MAE 为 2.06，OASIS-3 零样本 2.68，试验富集达 2.70×。",
+      "why_it_matters_zh": "把淀粉样–tau–血管–神经退行–认知生物学嵌进连续时间深度学习，减少不可信的认知轨迹。",
+      "quality_score": 81.0,
+      "tags": [
+        "生物医学与临床",
+        "BEACON",
+        "Neural ODE",
+        "ATVNC",
+        "MoCA"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有外部测试",
+        "公开代码",
+        "clinical",
+        "dataset",
+        "github"
+      ],
+      "publication_status": "preprint",
+      "rank": 16,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.07.26359964",
+        "pmid": ""
+      },
+      "abstract_zh": "跨越阿尔茨海默病连续谱对认知轨迹进行准确的长期预测，对于早期干预、个性化预后、患者分层与临床试验富集至关重要。尽管近期纵向预测方法展现出有前景的预测性能，它们仍主要是数据驱动的，难以处理不规则采样、不完整的纵向数据，并常常忽视既有疾病生物学，导致生物学上不可信的轨迹。为应对此问题，我们提出一个生物学约束的连续时间框架，从有限的基线观测进行长时域认知预测。所提方法使用带有生物学动机单调性约束的分层 Neural ODE 对完整的淀粉样–tau–血管–神经退行–认知（ATVNC）级联建模。每个病理流由专用 Neural ODE 支配，并使用 GRU-D 编码器从不规则纵向观测初始化，在捕获内在疾病演化的同时受有向的上游病理影响调制。有界认知读出使生理上有效的认知分数（MoCA）预测成为可能，而教师–学生知识蒸馏改善从稀疏纵向监督中的学习。在 ADNI 数据集上评估，所提框架在 188 名留出参与者上取得 2.06 的长时域外推 MAE，同时消除生物学上不可信的轨迹违背。它还在 OASIS-3 上展示稳健的零样本跨队列泛化（300 名参与者上 MAE 2.68），微调后 MAE 改善至 1.90。该模型还支持阿尔茨海默临床试验的预后富集，相对队列基率最高达 2.70× 富集。这些结果表明，将生物学疾病机制嵌入连续时间深度学习可改善长时域认知预测的准确性、生物学可信度与临床效用。代码公开于：https://github.com/PonDeepika/BEACON。",
+      "published": "2026-08-10",
+      "author_line": "Deepika P, Sunkari S, Upadhyayula SK 等 4 人"
+    }
+  ],
+  "review": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "note": "2026-08-11 候选 60 篇，全部自动分≥70，但夹杂无计算方法的 IOMM-Lee/SQ109/BACE1 EV/岩藻黄质湿实验、TPD52 与 THBS1 等 GEO 灌水、MASLD 纯计算分子、CT 病灶综述、医疗政策文本分析、边缘扩散语言模型综述、EHR 层论接口与开放式写作 RL。按 AI×Bio 相关性、方法可信度与实验/临床证据精选 16 篇 preprint，覆盖蛋白质与结构、组学与细胞、生物医学与临床、方法与模型；当日新增白血病跨数据集 RAC 视觉基础模型、Apodex Discovery 可验证发现评估、基因组不确定性量化、疟疾语义 XAI、bgnorm 空间蛋白质组校正、SEA-AD DREAM 阿尔茨海默单核转录组挑战、PACE/CellQ 虚拟细胞自审计、临床轨迹嵌入的遗传校验、ConRub-Med 医学量规 RL、CRISMER 脱靶预测、siDiff siRNA 离散扩散、scROMA 通路活性、ICU 脓毒症 Toxic Mimicry 反事实审计、DynaALS、BEACON 与 LiverDCP。未收录缺乏计算方法的湿实验、单中心前列腺/ROP 灌水影像、无外部证据的 MASLD/肽生成、非生物域方法稿，以及已被化学频道覆盖的 Pert2Mol 与 IL-4Ra 微型蛋白，并避免重复 08-10 已精读的 GatorOnco、mlsurv、LLM-H2G、MSDD、MedPixel 与 GenSyntax。"
+  }
+}

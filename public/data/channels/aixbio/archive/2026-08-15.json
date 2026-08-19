@@ -1,0 +1,338 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-15",
+  "channel": "aixbio",
+  "generated_at": "2026-08-18T15:11:05+00:00",
+  "title": "AI × Bio 每日精选",
+  "subtitle": "计算生物学、组学、蛋白质与生物医学模型。",
+  "window": {
+    "start": "2026-08-12",
+    "end": "2026-08-15"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 3912,
+    "candidates": 60,
+    "selected": 5,
+    "sources": {
+      "arXiv": 1132,
+      "bioRxiv": 728,
+      "medRxiv": 217,
+      "Europe PMC": 2542
+    }
+  },
+  "source_status": {
+    "arXiv": {
+      "state": "ok",
+      "count": 1132
+    },
+    "bioRxiv": {
+      "state": "ok",
+      "count": 728
+    },
+    "medRxiv": {
+      "state": "ok",
+      "count": 217
+    },
+    "Europe PMC": {
+      "state": "ok",
+      "count": 2542
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "arxiv:2608.15288v1",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "D^{2}R^{2}: Discrete Diffusion with Regulation Reinforcement for Single-Cell Perturbation Prediction",
+      "url": "https://arxiv.org/abs/2608.15288v1",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Ninghan Fan",
+        "Qi Liu",
+        "Xunuo Zhu",
+        "Yukai Sun",
+        "Luyuan Chen",
+        "Xuheng Zhou",
+        "Yuetian Du",
+        "Ming Kong",
+        "Xiaojun Zhu",
+        "Jie Liu",
+        "Zhan Zhou",
+        "Qiang Zhu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Predicting single-cell transcriptomic responses to genetic perturbations is central to functional genomics and virtual-cell modeling. Existing approaches, however, typically predict an entire expression profile as a whole, leaving the order in which individual gene responses are generated unmodeled. To address this problem, we introduce \\textbf{D^{2}R^{2}} (Discrete Diffusion with Regulation Reinforcement), which reformulates perturbation prediction as regulation-guided gene-wise progressive generation. A Masked Discrete Diffusion Model represents expression as ordinal tokens and reconstructs a fully masked profile step by step, allowing generated gene responses to condition those that remain masked. A Regulatory Policy Module initializes the generation policy from a gene regulatory network inferred from control cells and adapts it to the perturbation and current partially generated state. Then, group-relative policy optimization refines only the ordering policy using final perturbation-effect agreement as reward. Across Norman19 and VCC-H1, D^{2}R^{2} achieves the best performance on all five metrics on Norman19 and remains competitive on H1. Controlled ablations holding the generator and generation budget fixed show that biological-prior ordering improves over random ordering and is more reliable than uncertainty-based heuristics, whereas reversing the biological-prior ordering degrades every metric. Biological analyses further show that the refined policy prioritizes regulatory genes early while promoting perturbation-specific transcription factors and responsive genes. These results establish gene generation order as an effective, controllable, and biologically interpretable dimension of single-cell perturbation prediction.",
+      "summary_zh": "D^{2}R^{2} 将单细胞扰动预测改为受调控引导的按基因离散扩散生成，在 Norman19 五项指标上最优，并在固定生成预算下消融排序先验。",
+      "why_it_matters_zh": "把基因生成顺序做成可优化、可解释的扰动预测维度，并用 GRN 先验与反转对照证明其不是装饰。",
+      "quality_score": 84.0,
+      "tags": [
+        "组学与细胞",
+        "D^{2}R^{2}",
+        "单细胞扰动",
+        "离散扩散",
+        "Norman19"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "方法创新",
+        "ablation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 1,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.15288v1"
+      },
+      "abstract_zh": "预测单细胞转录组对遗传扰动的响应，是功能基因组学与虚拟细胞建模的核心问题。然而现有方法通常把整张表达谱作为整体一次预测，而未对单个基因响应的生成顺序建模。为解决这一问题，我们提出 D^{2}R^{2}（Discrete Diffusion with Regulation Reinforcement），将扰动预测重述为受调控引导的、按基因逐步推进的生成过程。掩蔽离散扩散模型（Masked Discrete Diffusion Model）把表达表示为序数 token，并逐步重建完全掩蔽的表达谱，使已生成的基因响应能够条件化仍被掩蔽的基因。调控策略模块（Regulatory Policy Module）用对照细胞推断的基因调控网络初始化生成策略，并随扰动与当前部分生成状态进行适配。随后，组相对策略优化（group-relative policy optimization）仅以最终扰动效应一致性为奖励来精炼排序策略。在 Norman19 与 VCC-H1 上，D^{2}R^{2} 在 Norman19 的全部五项指标上取得最佳性能，并在 H1 上保持竞争力。在固定生成器与生成预算的受控消融中，生物学先验排序优于随机排序，且比基于不确定性的启发式更可靠；而反转生物学先验排序会降低每一项指标。生物学分析进一步显示，精炼后的策略会尽早优先处理调控基因，同时提升扰动特异转录因子与响应基因。这些结果将基因生成顺序确立为单细胞扰动预测中一个有效、可控且具有生物学可解释性的维度。",
+      "published": "2026-08-15",
+      "author_line": "Ninghan Fan, Qi Liu, Xunuo Zhu 等 12 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.03.26.714501",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "LAMBDA: A Prophage Detection Benchmark for Genomic Language Models",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.03.26.714501",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Lindsey, L. M.",
+        "Pershing, N. L.",
+        "Dufault-Thompson, K.",
+        "Gwak, H.-j.",
+        "Habib, A.",
+        "Schindler, A.",
+        "Rakheja, A.",
+        "Round, J.",
+        "Stephens, W. Z.",
+        "Blaschke, A. J.",
+        "Sundar, H.",
+        "Jiang, X."
+      ],
+      "language": "en",
+      "abstract_or_text": "Transformer-based genomic sequence models represent an emerging frontier in computational biology. Yet, their embeddings have not yet shown the same level of predictive power as natural and protein language models, highlighting a gap between current implementations and theoretical promise. Existing benchmarks for DNA language models primarily focus on classifying regulatory elements in eukaryotic genomes, leaving open the fundamental question of whether these models learn sequence-level features across whole genomes. We introduce LAMBDA, a benchmark designed to rigorously evaluate genome language model embeddings through phage-bacteria sequence discrimination across four categories of increasing complexity: probing tasks, fine-tuning assessments, diagnostic tests, and genome-wide prophage detection. Our comprehensive analysis of current genomic language models provides insight into the importance of training data selection relative to model size, the need for domain-specific training, and the capabilities and limitations of genomic language models for detecting prophage sequences. This benchmark represents a challenging genomic annotation task in the bacterial domain and addresses a key computational problem with direct relevance to microbiology and medicine.",
+      "summary_zh": "LAMBDA 以噬菌体–细菌序列判别评估基因组语言模型嵌入，覆盖探测、微调、诊断测试与全基因组前噬菌体检测四档任务。",
+      "why_it_matters_zh": "把 DNA 语言模型从真核调控元件分类推到全基因组注释，并对照训练数据与模型规模。",
+      "quality_score": 80.0,
+      "tags": [
+        "方法与模型",
+        "LAMBDA",
+        "基因组语言模型",
+        "前噬菌体",
+        "基准"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "方法创新",
+        "benchmark"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.03.26.714501",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "基于 Transformer 的基因组序列模型是计算生物学的新兴前沿。然而，其嵌入尚未表现出与自然语言及蛋白质语言模型相当的预测能力，凸显了当前实现与理论承诺之间的差距。现有 DNA 语言模型基准主要聚焦真核基因组中调控元件的分类，从而留下一个根本问题：这些模型是否在全基因组尺度上学到了序列水平特征。我们提出 LAMBDA，一个通过噬菌体–细菌序列判别、按复杂度递增的四类任务严格评估基因组语言模型嵌入的基准：探测任务、微调评估、诊断测试以及全基因组前噬菌体检测。我们对当前基因组语言模型的综合分析表明，训练数据选择相对于模型规模的重要性、领域特异训练的必要性，以及基因组语言模型在检测前噬菌体序列方面的能力与局限。该基准代表细菌域中一项具有挑战性的基因组注释任务，并针对一个与微生物学和医学直接相关的关键计算问题。",
+      "published": "2026-08-13",
+      "author_line": "Lindsey, L. M., Pershing, N. L., Dufault-Thompson, K. 等 12 人"
+    },
+    {
+      "id": "europepmc:ppr1298846",
+      "channel": "aixbio",
+      "related_channels": [
+        "aivoices"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Large Language Models Generate Stigmatizing Language During Reasoning Over Real-World Clinical Data",
+      "url": "https://europepmc.org/article/PPR/PPR1298846",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Yang Y",
+        "Gu B",
+        "Hathaway DB",
+        "Wyss R",
+        "Marengo L",
+        "Gibbons JB",
+        "Lyndon S",
+        "Wu J",
+        "Chen Q",
+        "Liu N",
+        "Wang PS",
+        "Celi LA",
+        "Bates DW",
+        "Lin J",
+        "Zhou L",
+        "Yang J"
+      ],
+      "language": "en",
+      "abstract_or_text": "Stigmatizing language in clinical documentation, which conveys negative stereotypes, attitudes, or judgments toward patients, is a recognized source of documentation bias and is associated with poorer care and adverse health outcomes. Although prior stigma-related research has focused on clinician-written EHR notes, the increasing use of large language model (LLM)-generated documentation in clinical workflows raises new concerns about its potential to reproduce or amplify bias and affect patient safety. In this study, we conducted a large-scale assessment of stigmatizing language in LLM-generated reasoning text on 35 real-world clinical tasks across 107 LLMs. We applied a psychiatrist-validated, natural language processing (NLP) system to detect stigma terms in LLM reasoning text and quantified stigma rates of LLM-generated reasoning texts across 3,745 model-task pairs. Results showed that stigma rates ranged from 0% to 33.33%, with 84.06% of pairs containing stigma terms. Open-source models and reasoning models showed statistically higher stigma rates than proprietary (1.97% vs. 1.60%; p < 0.01) and non-reasoning models (2.35% vs. 1.70%; p < 0.0001), while the stigma rate difference between the general and medical models is not statistically significant (2.00% vs. 1.80%; p = 0.26). Stigma rates of LLM outputs correlated negatively with task accuracy (r = -0.304; p < 0.001) and positively with input clinical-text stigma (r = 0.569; p < 0.001), with 19.76% of model-task pairs amplifying stigma in the original input notes. Applying prompt engineering as a destigmatizing approach helped reduce model stigma rates by as much as 91.91% without affecting the model performance. This study shows that stigmatizing language generation is common but reducible during LLMs' reasoning traces, suggesting that well-implemented approaches for LLM monitoring and destigmatizing will be essential for healthcare systems to implement.",
+      "summary_zh": "在 35 项真实临床任务、107 个 LLM、3,745 个模型–任务对上，84.06% 的推理文本含污名术语，提示工程最多可降 91.91%。",
+      "why_it_matters_zh": "把临床 LLM 的推理轨迹本身当作安全风险来测，而不是只看最终答案对不对。",
+      "quality_score": 80.0,
+      "tags": [
+        "生物医学与临床",
+        "污名化",
+        "EHR",
+        "临床安全"
+      ],
+      "evidence_flags": [
+        "临床队列",
+        "有定量基准",
+        "clinical",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.12.26360210",
+        "pmid": ""
+      },
+      "abstract_zh": "临床文书中的污名化语言传达对患者的负面刻板印象、态度或评判，是公认的记录偏倚来源，并与较差的照护及不良健康结局相关。尽管既往污名化研究主要关注临床医生撰写的 EHR 病历，大型语言模型（LLM）生成文书在临床工作流中的日益使用，引发了其可能再现或放大偏倚并影响患者安全的新担忧。本研究在 35 项真实世界临床任务上，对 107 个 LLM 生成的推理文本开展了大规模污名化语言评估。我们应用经精神科医师验证的自然语言处理（NLP）系统检测 LLM 推理文本中的污名术语，并在 3,745 个模型–任务对上量化 LLM 生成推理文本的污名率。结果显示污名率介于 0% 至 33.33%，其中 84.06% 的配对含有污名术语。开源模型与推理模型的污名率在统计学上分别高于专有模型（1.97% vs. 1.60%；p < 0.01）与非推理模型（2.35% vs. 1.70%；p < 0.0001），而通用模型与医学模型之间的污名率差异无统计学意义（2.00% vs. 1.80%；p = 0.26）。LLM 输出的污名率与任务准确率负相关（r = -0.304；p < 0.001），与输入临床文本中的污名正相关（r = 0.569；p < 0.001），且 19.76% 的模型–任务对放大了原始输入病历中的污名。将提示工程作为去污名化手段，可在不影响模型性能的情况下将污名率最多降低 91.91%。本研究表明，污名化语言生成在 LLM 推理轨迹中常见但可被降低，提示医疗系统有必要实施完善的 LLM 监测与去污名化方法。",
+      "published": "2026-08-14",
+      "author_line": "Yang Y, Gu B, Hathaway DB 等 16 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.12.744101",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Potato Agent: AI-Driven Data and Knowledge Exploration on an Agent-Ready Potato Multi-Omics Platform",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.744101",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Dong, Y.",
+        "Li, J.",
+        "Li, F.",
+        "Luo, J.",
+        "Jia, Y.",
+        "Li, D.",
+        "Wang, L.",
+        "Su, X.",
+        "Hu, J.",
+        "Shang, Y.",
+        "Huang, S.",
+        "Zhu, Y.",
+        "Jia, Y."
+      ],
+      "language": "en",
+      "abstract_or_text": "Potato is an important non-cereal food crop worldwide. However, the limited number of functionally validated genes remains a major bottleneck to favorable allele stacking and genome design breeding in potato. Rapid advances in AI agents offer a promising means to support crop breeding by translating natural-language questions into coordinated data analysis and knowledge retrieval. Their reliable use for potato breeding, however, is constrained by fragmented multi-omics resources that lack consistent curation and machine-accessible interfaces. Here, we constructed an agent-ready potato multi-omics database integrating genomic resources from 150 potato accessions, 259 bulk RNA-seq samples, and 14 spatial transcriptomic datasets into a pangenome, a tissue expression atlas, co-expression networks, and spatial expression maps accessible through open APIs. We developed 39 potato-specific Agent Skills for reproducible bioinformatics analysis and comprehensive data and knowledge exploration, enabling natural-language questions to be translated into standardized data-retrieval and analysis tasks. By integrating direct evidence from potato studies, functions of homologous genes in Arabidopsis, rice, and maize, and tissue expression patterns, we generated genome-wide functional predictions for 37,658 genes in the DM reference genome. We further developed Potato Agent as a multi-user, browser-based platform with isolated workspaces and online result preview, reducing the technical burden of agent deployment and providing direct access to integrated data, knowledge, and workflows. Case studies demonstrated its capabilities in reproducible bioinformatics analysis, agent-assisted identification of a tuber development regulator, scientific data visualization, and haplotype-aware promoter analysis and sgRNA design. Together, the agent-ready database and Potato Agent provide an integrated infrastructure for functional gene discovery and hybrid breeding in potato.",
+      "summary_zh": "Potato Agent 将 150 份种质、259 份 bulk RNA-seq 与 14 套空间转录组做成可 API 访问的多组学库，并用 39 项 Agent Skills 为 DM 基因组 37,658 个基因做功能预测。",
+      "why_it_matters_zh": "把碎片化的马铃薯组学收成智能体可调用的基础设施，而不是再堆一个不可审计的聊天框。",
+      "quality_score": 79.0,
+      "tags": [
+        "组学与细胞",
+        "Potato Agent",
+        "马铃薯",
+        "多组学",
+        "智能体"
+      ],
+      "evidence_flags": [
+        "数据集",
+        "方法创新",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.12.744101",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "马铃薯是全球重要的非禾谷类粮食作物。然而，经过功能验证的基因数量有限，仍是马铃薯有利等位基因聚合与基因组设计育种的主要瓶颈。AI 智能体的迅速发展为将自然语言问题转译为协同的数据分析与知识检索、从而支持作物育种提供了有前景的途径。但其在马铃薯育种中的可靠应用，仍受限于碎片化、缺乏一致策展与机器可访问接口的多组学资源。在此，我们构建了一个面向智能体的马铃薯多组学数据库，将来自 150 份马铃薯种质的基因组资源、259 份 bulk RNA-seq 样本以及 14 套空间转录组数据集整合为泛基因组、组织表达图谱、共表达网络与空间表达图，并通过开放 API 访问。我们开发了 39 项马铃薯特异的 Agent Skills，用于可复现的生物信息学分析以及全面的数据与知识探索，使自然语言问题能够转译为标准化的数据检索与分析任务。通过整合马铃薯研究的直接证据、Arabidopsis、水稻与玉米同源基因功能以及组织表达模式，我们为 DM 参考基因组中的 37,658 个基因生成了全基因组功能预测。我们进一步将 Potato Agent 开发为多用户、基于浏览器的平台，具有隔离工作区与在线结果预览，降低智能体部署的技术负担，并提供对整合数据、知识与工作流的直接访问。案例研究展示了其在可复现生物信息学分析、智能体辅助鉴定块茎发育调控因子、科学数据可视化，以及单倍型感知的启动子分析与 sgRNA 设计方面的能力。面向智能体的数据库与 Potato Agent 共同为马铃薯功能基因发现与杂交育种提供了一体化基础设施。",
+      "published": "2026-08-13",
+      "author_line": "Dong, Y., Li, J., Li, F. 等 13 人"
+    },
+    {
+      "id": "medrxiv:10.64898/2026.08.11.26359946",
+      "channel": "aixbio",
+      "related_channels": [
+        "aivoices"
+      ],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "Grounding Health AI: Architecture and Evaluation of a Domain-Expert Metabolic Health Agent",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.08.11.26359946",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Diament, A.",
+        "Sapir, G.",
+        "Gorodetski, M.",
+        "Wolf, A.",
+        "Rice, A.",
+        "Azouri, D.",
+        "Etzion-Fuchs, A.",
+        "Gelbard Solodkin, D.",
+        "Talmor-Barkan, Y.",
+        "Lutsker, G.",
+        "Segal, E.",
+        "Rossman, H."
+      ],
+      "language": "en",
+      "abstract_or_text": "General-purpose language models generate fluent health reports that can fabricate derived clinical met-rics. In an illustrative comparison on identical two-week CGM and meal data, leading foundation models produced reports with invented MAGE values, inflated meal counts, and unreferenced complication-risk projections -- failures invisible to non-expert readers and plausible enough to mislead clinicians. We describe the HPP Personal Health Agent (PHA), a metabolic health agent that grounds generation in four layers: the Human Phenotype Project (HPP), a deep-phenotyped cohort of 13,000+ participants sup-plying population references and trained predictive models; 21 domain-expert tools and trained-model wrappers that compute clinical metrics and risk predictions; declarative behavioural skills that constrain what the model may claim; and 21 automated evals across 8 categories developed via a test-driven cycle in which each eval encodes a failure mode discovered during iterative development. In a 210-report ma-trix (14 participants x 3 prompts x 5 system conditions), the gains are largest on the systems primary use case -- meal-grounded metabolic reports, the report it was designed for -- where the full system raises a deterministic form/provenance score from 0.37 (the same foundation model with no tools or skills) to 0.91; this score measures structural completeness, numerical accuracy, tool grounding, and clinical-language compliance -- a necessary condition for trustworthy health reporting, with clinical quality as a complementary axis examined qualitatively. A skills-vs-tools decomposition shows the two layers act on different axes: tools drive numerical accuracy ({approx}14% [->] 90% of reported metrics correct), while the declarative skills add most of the remaining gain in citations, completeness, and structure (tools alone recover only part of the gap, 0.49 from the same 0.37 baseline). The lift generalises beyond the primary use case -- to a second metabolic prompt (0.72) and a cardiovascular extension (0.70), each from a 0.37-0.39 baseline. The architecture extends across clinical domains: adding a SCORE2 cardiovascular risk tool and a corresponding skill -- with no changes to orchestration, eval harness, or existing tools -- produced a cardiovascular risk report from the same system. Trustworthy domain-specialised health AI is a systems design problem: deep-phenotyped cohort data, domain-expert tools and models, and eval-driven development together form a replicable pattern.",
+      "summary_zh": "HPP PHA 用 13,000+ 人深度表型队列、21 个专家工具与 21 项自动评估锚定代谢报告，形式/溯源分从 0.37 升至 0.91。",
+      "why_it_matters_zh": "用可复现的工具–技能–评估栈对着通用模型编造 MAGE 与并发症风险这件事给了对照。",
+      "quality_score": 79.0,
+      "tags": [
+        "方法与模型",
+        "HPP",
+        "PHA",
+        "CGM",
+        "SCORE2"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "临床队列",
+        "方法创新",
+        "clinical",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 5,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.11.26359946",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "通用语言模型会生成流畅的健康报告，却可能编造派生临床指标。在一份针对相同两周 CGM 与膳食数据的示例比较中，领先的基础模型给出了捏造的 MAGE 值、夸大的餐次计数以及无出处的并发症风险预测——这些失败对非专业读者不可见，却足以误导临床医生。我们描述 HPP Personal Health Agent（PHA），一个在四层上锚定生成的代谢健康智能体：Human Phenotype Project（HPP），一个超过 13,000 名参与者的深度表型队列，提供人群参照与已训练的预测模型；21 个领域专家工具与训练模型包装器，用于计算临床指标与风险预测；约束模型可声称内容的陈述式行为技能；以及跨 8 个类别的 21 项自动评估，经测试驱动循环开发，每项评估编码迭代开发中发现的一种失败模式。在 210 份报告矩阵（14 名参与者 × 3 条提示 × 5 种系统条件）中，增益在该系统的主要用例——以膳食为锚的代谢报告，即其设计目标——上最大：完整系统将确定性的形式/溯源分数从 0.37（同一基础模型、无工具或技能）提升至 0.91；该分数衡量结构完整性、数值准确性、工具锚定与临床用语合规，是可信健康报告的必要条件，临床质量则作为互补轴作定性考察。技能相对工具的分解表明两层作用在不同轴上：工具驱动数值准确性（报告指标正确率约 14% → 90%），而陈述式技能贡献引用、完整性与结构方面的大部分剩余增益（仅工具只能填补部分差距，从同一 0.37 基线到 0.49）。该提升可推广到主要用例之外——第二条代谢提示（0.72）与心血管扩展（0.70），各自基线为 0.37–0.39。该架构可跨临床领域扩展：加入 SCORE2 心血管风险工具及相应技能——无需改动编排、评估框架或既有工具——即可由同一系统生成心血管风险报告。可信的领域专用健康 AI 是系统设计问题：深度表型队列数据、领域专家工具与模型，以及评估驱动的开发，共同构成可复用模式。",
+      "published": "2026-08-14",
+      "author_line": "Diament, A., Sapir, G., Gorodetski, M. 等 12 人"
+    }
+  ],
+  "review": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "note": "2026-08-15 候选 60 篇，全部自动分≥70，但大量高分稿已在 08-12/08-13/08-14 精读（CAG-MIND、PhysioStack、CpGPT、CBCT 标签溯源、Parnet、SERRATE、PSMASegmentator、Zf S1500+、Waypoint、GraphTransformer-CoGNN、LungChat、EXPRESSO、AI4Loop、CytoBERT、ESM-ECForest、PlantAI、FENNEC、PIANO、组学智能体、DNN-IR、SFSF、XG-PUL、MK-TGAN、PRISM、ICD-10、IBD 微生物组、EGRL、CoMedBench、IDD FOS/CEBPB、CT-ΔBench、VITA、GenomeOcean FP8、GigaRef singleton 等）。剩余新稿夹杂面部衰老/神经干预/脂质组学/DTA/MSC 综述、无计算方法的珊瑚真菌与 gyrase 湿实验、花生与菜豆 GEO 灌水、单中心前列腺活检、无湿实验证据的 ALS 计算靶点与膀胱癌 GEO 五基因模型、BraTS+MIMIC 拼盘空转稿，以及已被化学频道覆盖的 ScreenShot。按 AI×Bio 相关性、方法可信度与实验/临床证据精选 5 篇 preprint，覆盖组学与细胞、方法与模型、生物医学与临床：D^{2}R^{2} 以调控引导离散扩散做单细胞扰动预测并在 Norman19/VCC-H1 消融、LAMBDA 基因组语言模型前噬菌体检测基准、Potato Agent 马铃薯多组学智能体平台、107 个 LLM 在 35 项临床任务上的污名化推理评估，以及 HPP PHA 以工具+技能锚定代谢健康报告。未收录缺乏计算方法的湿实验、植物 GEO 灌水、单中心前列腺与综述稿、无湿实验证据的 ALS/膀胱癌签名、可疑的 SS-MMT 拼盘，以及 ScreenShot。"
+  }
+}

@@ -28,9 +28,129 @@
     {
       "date": "2026-08-16",
       "href": "data/channels/aixbio/archive/2026-08-16.json",
-      "selected": 0,
-      "candidates": 0,
-      "fetched": 0,
+      "selected": 7,
+      "candidates": 60,
+      "fetched": 3013,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-15",
+      "href": "data/channels/aixbio/archive/2026-08-15.json",
+      "selected": 5,
+      "candidates": 60,
+      "fetched": 3912,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-14",
+      "href": "data/channels/aixbio/archive/2026-08-14.json",
+      "selected": 8,
+      "candidates": 60,
+      "fetched": 4896,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-13",
+      "href": "data/channels/aixbio/archive/2026-08-13.json",
+      "selected": 12,
+      "candidates": 60,
+      "fetched": 5204,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-12",
+      "href": "data/channels/aixbio/archive/2026-08-12.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 4377,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-11",
+      "href": "data/channels/aixbio/archive/2026-08-11.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 3499,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-10",
+      "href": "data/channels/aixbio/archive/2026-08-10.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 4852,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-09",
+      "href": "data/channels/aixbio/archive/2026-08-09.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 3392,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-08",
+      "href": "data/channels/aixbio/archive/2026-08-08.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 4207,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-07",
+      "href": "data/channels/aixbio/archive/2026-08-07.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 5284,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-06",
+      "href": "data/channels/aixbio/archive/2026-08-06.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 5445,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-05",
+      "href": "data/channels/aixbio/archive/2026-08-05.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 4311,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-04",
+      "href": "data/channels/aixbio/archive/2026-08-04.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 3537,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-03",
+      "href": "data/channels/aixbio/archive/2026-08-03.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 4718,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-02",
+      "href": "data/channels/aixbio/archive/2026-08-02.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 3304,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-01",
+      "href": "data/channels/aixbio/archive/2026-08-01.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 4020,
       "kind": "json"
     }
   ]

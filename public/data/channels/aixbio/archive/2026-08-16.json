@@ -2,49 +2,419 @@
   "schema_version": "2.0",
   "date": "2026-08-16",
   "channel": "aixbio",
-  "generated_at": "2026-08-16T12:29:09+00:00",
+  "generated_at": "2026-08-18T15:11:06+00:00",
   "title": "AI × Bio 每日精选",
   "subtitle": "计算生物学、组学、蛋白质与生物医学模型。",
   "window": {
-    "start": "2026-08-16",
+    "start": "2026-08-13",
     "end": "2026-08-16"
   },
   "method": "公开来源采集、规则筛选与模型审阅",
   "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
   "stats": {
-    "fetched": 0,
-    "candidates": 0,
-    "selected": 0,
+    "fetched": 3013,
+    "candidates": 60,
+    "selected": 7,
     "sources": {
-      "arXiv": 0,
-      "bioRxiv": 0,
-      "medRxiv": 0,
-      "Europe PMC": 0
+      "arXiv": 977,
+      "bioRxiv": 585,
+      "medRxiv": 134,
+      "Europe PMC": 1818
     }
   },
   "source_status": {
     "arXiv": {
-      "state": "empty",
-      "count": 0
+      "state": "ok",
+      "count": 977
     },
     "bioRxiv": {
-      "state": "empty",
-      "count": 0
+      "state": "ok",
+      "count": 585
     },
     "medRxiv": {
-      "state": "empty",
-      "count": 0
+      "state": "ok",
+      "count": 134
     },
     "Europe PMC": {
-      "state": "empty",
-      "count": 0
+      "state": "ok",
+      "count": 1818
     }
   },
   "source_errors": [],
-  "items": [],
+  "items": [
+    {
+      "id": "europepmc:ppr1298878",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "A comprehensive phage-bacteria interaction atlas links phage lineage and capsule serotype to genome-guided machine learning prediction in Klebsiella pneumoniae",
+      "url": "https://europepmc.org/article/PPR/PPR1298878",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Selvakumar H",
+        "Noonan AJC",
+        "Rotman E",
+        "Alayouni M",
+        "Piya D",
+        "Maucourt F",
+        "Koderi Valappil S",
+        "Svab M",
+        "Orihuela B",
+        "Cowser G",
+        "Murray I",
+        "Bousliman C",
+        "Kazakov A",
+        "Deutschbauer AM",
+        "Roux S",
+        "Mimee M",
+        "Arkin AP",
+        "Mutalik VK"
+      ],
+      "language": "en",
+      "abstract_or_text": "Klebsiella pneumoniae is a WHO critical-priority pathogen for which strain-specific bacteriophages are being explored as precision antimicrobials, yet rapid phage-host matching remains a major barrier to therapeutic deployment. We constructed a comprehensive interaction atlas comprising 84 taxonomically diverse phages and 101 globally sourced, clinically representative K. pneumoniae strains, including multidrug-resistant isolates. Systematic pairwise profiling produced 8,484 interaction measurements, of which 2,656 (31.3%) scored positive for bacterial clearance. Genus was the dominant phage-side determinant of host range, while capsule K-serotype was the strongest host-side determinant of susceptibility; aggregate defense, prophage, plasmid, and antimicrobial-resistance features contributed comparatively little. A genome-guided machine learning model predicted interactions without curated host annotations (AUROC, 0.882; AUPR, 0.765), outperforming a model based only on phage genus and K-serotype and modestly exceeding a curated genomic baseline. The model recovered capsule- and lipopolysaccharide-biosynthesis genes, canonical receptors and defense-associated features as major predictors using SHAP analysis. Feasibility tests of expert- and model-selected cocktails exposed a translational constraint. Although all formulations suppressed growth in vitro , only the specific cocktail whose phages replicated robustly within the murine gut reduced colonization, suggesting in vivo amplification rather than predicted host range as the limiting factor for therapeutic efficacy. Together with the activity of a model-selected cocktail built for an isolate completely excluded from training, these results provide a species-wide resource for K. pneumoniae phage matching and support a hybrid workflow combining genome-based ranking with targeted phenotypic validation.",
+      "summary_zh": "84 株噬菌体与 101 株临床 K. pneumoniae 的 8,484 项互作图谱上，基因组引导模型 AUROC 0.882；小鼠肠道中仅能稳健复制的鸡尾酒降低定植。",
+      "why_it_matters_zh": "把噬菌体匹配从血清型经验规则推进到可泛化基因组模型，并用体内扩增而非宿主范围解释疗效瓶颈。",
+      "quality_score": 82.0,
+      "tags": [
+        "组学与细胞",
+        "K. pneumoniae",
+        "噬菌体",
+        "SHAP",
+        "鸡尾酒"
+      ],
+      "evidence_flags": [
+        "有实验验证",
+        "有定量基准",
+        "数据集",
+        "clinical",
+        "in vivo"
+      ],
+      "publication_status": "preprint",
+      "rank": 1,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.12.744533",
+        "pmid": ""
+      },
+      "abstract_zh": "肺炎克雷伯菌（Klebsiella pneumoniae）是世界卫生组织（WHO）的关键优先病原体，针对菌株特异的噬菌体正被探索作为精准抗微生物制剂，但快速噬菌体–宿主匹配仍是治疗部署的主要障碍。我们构建了一份综合互作图谱，包含 84 株分类学多样的噬菌体与 101 株全球来源、具有临床代表性的 K. pneumoniae 菌株，其中包括多重耐药分离株。系统成对剖析产生 8,484 项互作测量，其中 2,656 项（31.3%）在细菌清除上评分为阳性。属（genus）是噬菌体侧宿主范围的主导决定因素，而荚膜 K-血清型是宿主侧易感性的最强决定因素；总体防御、前噬菌体、质粒与抗菌耐药特征的贡献相对较小。一个基因组引导的机器学习模型在无需策展宿主注释的情况下预测互作（AUROC，0.882；AUPR，0.765），优于仅基于噬菌体属与 K-血清型的模型，并略优于策展基因组基线。该模型通过 SHAP 分析回收了荚膜与脂多糖生物合成基因、典型受体以及防御相关特征作为主要预测因子。对专家选择与模型选择鸡尾酒的可行性测试揭示了一项转化约束。尽管所有配方在体外均抑制生长，但只有其噬菌体在小鼠肠道内稳健复制的特定鸡尾酒降低了定植，提示体内扩增而非预测宿主范围才是疗效的限制因素。连同针对完全排除在训练之外的分离株所构建的模型选择鸡尾酒的活性，这些结果为 K. pneumoniae 噬菌体匹配提供了物种范围的资源，并支持将基于基因组的排序与靶向表型验证相结合的混合工作流。",
+      "published": "2026-08-13",
+      "author_line": "Selvakumar H, Noonan AJC, Rotman E 等 18 人"
+    },
+    {
+      "id": "europepmc:ppr1298041",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Learning Discrete Cell and Niche Codes from Spatial Transcriptomics Using Dual Residual Vector Quantization",
+      "url": "https://europepmc.org/article/PPR/PPR1298041",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Birk S",
+        "Merchant A",
+        "Vahidi A",
+        "Theis FJ",
+        "Lotfollahi M"
+      ],
+      "language": "en",
+      "abstract_or_text": "Spatially-resolved transcriptomics (SRT) measures gene expression at single-cell resolution while preserving each cell's spatial location, enabling the joint study of cell identity and cellular niche, the recurring microenvironment that organises tissue function. Existing representation-learning methods typically capture only one of these axes at a time. We present SQUINT, a graph vector quantized variational autoencoder (VQ-VAE) that learns two disjoint codebooks per cell from a shared architecture: a cell codebook quantising the per-cell embedding before neighbourhood aggregation, biased toward cell-intrinsic identity, and a niche codebook quantising the embedding after graph neural network (GNN) aggregation, biased toward spatial context. Both use residual vector quantization, giving a coarse-to-fine discrete-token hierarchy. SQUINT is trained with per-branch negative-binomial reconstruction objectives and three domain-motivated components that we show are crucial: a within-section cosine adjacency loss that anchors the niche codes in the spatial graph, a cross-section contrastive loss on the cell latents that aligns transcriptomically matched cells, and a decoder section covariate that absorbs batch effects. Across three datasets spanning four spatial assays (STARmap, MERFISH, CosMx, Xenium) and four tasks — niche identification, cell-type identification, cross-section integration, and spatial gene-expression imputation in held-out regions — SQUINT outperforms or is competitive with strong baselines on identification and achieves the most faithful cross-section integration. The resulting discrete vocabulary makes tissues directly consumable by transformer-style foundation models and enables one-step query-to-reference atlas mapping via code-distribution similarity, which we demonstrate on a CosMx human non-small-cell lung cancer cohort.",
+      "summary_zh": "SQUINT 用双残差向量量化同时学习细胞身份与微环境码本，在 STARmap/MERFISH/CosMx/Xenium 四项测定上完成鉴定、整合与留出区域填补。",
+      "why_it_matters_zh": "把细胞类型与空间微环境拆成可被 transformer 消费的离散词表，并在 NSCLC CosMx 上演示一步查询–参照映射。",
+      "quality_score": 81.0,
+      "tags": [
+        "组学与细胞",
+        "SQUINT",
+        "空间转录组",
+        "VQ-VAE",
+        "CosMx"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "方法创新",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.07.743490",
+        "pmid": ""
+      },
+      "abstract_zh": "空间分辨转录组学（SRT）在单细胞分辨率测量基因表达的同时保留每个细胞的空间位置，从而能够联合研究细胞身份与细胞微环境（niche）——组织功能所依赖的重复出现的微环境。现有表征学习方法通常一次只捕获其中一个轴。我们提出 SQUINT，一个图向量量化变分自编码器（VQ-VAE），从共享架构为每个细胞学习两套不相交的码本：细胞码本在邻域聚合之前量化单细胞嵌入、偏向细胞内在身份；微环境码本在图神经网络（GNN）聚合之后量化嵌入、偏向空间语境。两者均使用残差向量量化，形成由粗到细的离散 token 层级。SQUINT 以各分支负二项重建目标训练，并加入三个我们证明至关重要的领域动机组件：将微环境码锚定于空间图的切片内余弦邻接损失、在细胞潜变量上对齐转录组匹配细胞的跨切片对比损失，以及吸收批次效应的解码器切片协变量。在覆盖四种空间测定（STARmap、MERFISH、CosMx、Xenium）的三个数据集与四项任务——微环境鉴定、细胞类型鉴定、跨切片整合，以及留出区域的空间基因表达填补——上，SQUINT 在鉴定任务上优于或与强基线相当，并取得最忠实的跨切片整合。所得离散词表使组织可被 transformer 风格基础模型直接消费，并可通过码分布相似度实现一步查询到参考图谱的映射，我们在一个 CosMx 人类非小细胞肺癌队列上对此进行了演示。",
+      "published": "2026-08-13",
+      "author_line": "Birk S, Merchant A, Vahidi A 等 5 人"
+    },
+    {
+      "id": "europepmc:ppr1298914",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "scDIVA: semi-supervised integration and fine-grained annotation of tumor-immune single-cell atlases",
+      "url": "https://europepmc.org/article/PPR/PPR1298914",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Leslie CS",
+        "Rapolu V",
+        "Lee B",
+        "Wong W",
+        "Karbalayghareh A"
+      ],
+      "language": "en",
+      "abstract_or_text": "Single-cell atlases of the tumor-immune microenvironment have defined numerous fine-grained immune cell states, but each study uses its own nomenclature and procedure for annotating cell types. Transferring annotations from a reference atlas to a query dataset is complicated by both batch effects and by the presence of query populations that the reference does not contain. Here we present scDIVA, a semi-supervised deep generative model that adapts the Domain Invariant Variational Autoencoder to scRNA-seq for fine-grained tumor-immune label transfer. Three encoders disentangle each cell's expression profile into separate latent subspaces for cell type, batch, and residual variation; a single decoder reconstructs the cell's expression profile from all three latent embeddings, and auxiliary classifiers on the cell type and batch embeddings encourage each encoder to capture the respective source of variation; scDIVA's cell type embeddings are batch-invariant by construction rather than through explicit or adversarial correction. Benchmarked against four established reference-mapping approaches -- Harmony/Symphony, scANVI with scArches, scPoli with scArches, and Seurat with label transfer -- across six tumor-immune atlases spanning five cancer types, scDIVA achieved the highest mean macro-F1 in five of six atlases and the highest biological conservation scores. To detect query-enriched populations, we adapted the Milo differential abundance (DA) framework, added a directional test, corrected spatialFDR weighting, and parallelized neighborhood distances for atlas-scale data, and applied it to scDIVA's cell type embeddings with reference-versus-query membership as the condition. This design correctly identified cell types held out from the reference as OOR and flagged exhausted CD8 T cells from a tumor-immune atlas as OOR relative to a healthy pan-tissue immune reference; conversely, this procedure confirmed a conserved immune landscape between two independent colorectal cancer cohorts. scDIVA thus couples fine-grained annotation and integration with an FDR-controlled test for states the reference lacks, solving both tasks required for accurate label transfer in tumor-immune scRNA-seq atlases.",
+      "summary_zh": "scDIVA 将 Domain Invariant VAE 适配到肿瘤–免疫 scRNA-seq，在六个图谱五个癌种上 macro-F1 五胜，并以改编 Milo 检出参考所缺的 OOR 状态。",
+      "why_it_matters_zh": "把细粒度标签迁移与“参考没有的群体”的 FDR 控制检验做成同一套嵌入，而不是假装查询全集都在参照里。",
+      "quality_score": 80.0,
+      "tags": [
+        "组学与细胞",
+        "scDIVA",
+        "肿瘤免疫",
+        "scANVI",
+        "Milo"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "方法创新",
+        "benchmark",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.07.743520",
+        "pmid": ""
+      },
+      "abstract_zh": "肿瘤–免疫微环境的单细胞图谱已定义大量细粒度免疫细胞状态，但各研究使用各自的命名与细胞类型注释流程。将注释从参考图谱迁移到查询数据集，会同时受到批次效应以及参考中不包含的查询群体的干扰。在此我们提出 scDIVA，一个半监督深度生成模型，将 Domain Invariant Variational Autoencoder 适配到 scRNA-seq，用于细粒度肿瘤–免疫标签迁移。三个编码器将每个细胞的表达谱解耦为细胞类型、批次与残差变异的独立潜子空间；单一解码器从全部三个潜嵌入重建细胞表达谱，而细胞类型与批次嵌入上的辅助分类器促使各编码器捕获相应的变异来源；scDIVA 的细胞类型嵌入在构造上即批次不变，而非通过显式或对抗校正。在覆盖五种癌症类型的六个肿瘤–免疫图谱上，对照四种已确立的参考映射方法——Harmony/Symphony、带 scArches 的 scANVI、带 scArches 的 scPoli，以及带标签迁移的 Seurat——scDIVA 在六个图谱中的五个上取得最高平均 macro-F1，并取得最高生物学保守性分数。为检测查询富集群体，我们改编了 Milo 差异丰度（DA）框架，加入方向性检验、校正 spatialFDR 加权，并为图谱尺度数据并行化邻域距离，将其应用于 scDIVA 的细胞类型嵌入，以参照–查询归属作为条件。该设计正确将参考中留出的细胞类型鉴定为 OOR，并将肿瘤–免疫图谱中的耗竭 CD8 T 细胞相对健康泛组织免疫参照标记为 OOR；相反，该流程确认两个独立结直肠癌队列之间存在保守的免疫景观。因此，scDIVA 将细粒度注释与整合，与针对参考所缺状态的 FDR 控制检验相结合，解决肿瘤–免疫 scRNA-seq 图谱准确标签迁移所需的两项任务。",
+      "published": "2026-08-13",
+      "author_line": "Leslie CS, Rapolu V, Lee B 等 5 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.08.743602",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "ACCREDIT: A Quality-Aware Agentic Engine for Cell-resolved Cross-modal Image Registration with Dynamic Iterative Tuning",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.08.743602",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Zhou, L.",
+        "Zhao, F.",
+        "Ren, T.",
+        "Goodyear, S. M.",
+        "Tang, C.",
+        "Li, B.",
+        "Zhang, T.",
+        "Chen, Y.",
+        "Sears, R. C.",
+        "Mills, G. B.",
+        "Kardosh, A.",
+        "Xia, Z."
+      ],
+      "language": "en",
+      "abstract_or_text": "Spatial omics across complementary modalities is transforming our understanding of tissue architecture. Realizing this potential requires accurate and robust registration of cross-platform molecular images with hematoxylin-and-eosin (H&E) sections, the primary morphological reference for pathology. Existing methods, however, often fail silently when image orientation is unknown, image contrast is inverted, or tissue overlap is incomplete, producing erroneous registrations without alerting users or attempting recovery. Here, we present ACCREDIT, a quality-aware agentic framework that redefines cross-modal registration as an adaptive decision-making process rather than a one-shot computation. ACCREDIT combines deterministic registration pipelines with a reference-free composite quality score that automatically evaluates registration quality and rejects plausible but biologically incorrect registrations. When registration quality is insufficient, a large language model (LLM)-based rescue agent autonomously diagnoses failure modes and selects targeted recovery strategies, while an optional strategy-learning module captures expert-validated corrections for future reuse. Across Xenium, CODEX, cell-boundary, and IHC-to-H&E registration tasks, ACCREDIT outperformed competing methods by detecting registration failures and improving alignment quality through automated recovery and rescue. Ultimately, ACCREDIT enables robust integration of histology and spatial molecular profiling, providing a foundation for translating spatial omics into routine H&E-based pathology workflows.",
+      "summary_zh": "ACCREDIT 用无参照质量分拒绝生物学错误配准，并以 LLM 救援智能体诊断失败模式，覆盖 Xenium、CODEX、细胞膜与 IHC 到 H&E。",
+      "why_it_matters_zh": "把空间组学–H&E 配准从一次算完改成可拒识、可自救的决策过程，避免静默对错图。",
+      "quality_score": 79.0,
+      "tags": [
+        "方法与模型",
+        "ACCREDIT",
+        "空间组学",
+        "H&E",
+        "Xenium"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "方法创新"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.08.743602",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "跨互补模态的空间组学正在改变我们对组织架构的理解。实现这一潜力需要将跨平台分子影像与苏木精–伊红（H&E）切片——病理学的主要形态学参照——进行准确且稳健的配准。然而，当图像方向未知、对比度反转或组织重叠不完整时，现有方法常会静默失败，产生错误配准而不向用户告警或尝试恢复。在此我们提出 ACCREDIT，一个质量感知的智能体框架，将跨模态配准重新定义为自适应决策过程，而非一次性计算。ACCREDIT 将确定性配准流水线与无需参照的复合质量分数相结合，自动评估配准质量并拒绝看似合理但生物学上不正确的配准。当配准质量不足时，一个基于大语言模型（LLM）的救援智能体自主诊断失败模式并选择针对性恢复策略，而可选的策略学习模块则捕获经专家验证的纠正以供未来复用。在 Xenium、CODEX、细胞膜边界以及 IHC 到 H&E 的配准任务上，ACCREDIT 通过检测配准失败并经自动恢复与救援改善对齐质量，优于竞争方法。最终，ACCREDIT 使组织学与空间分子剖析能够稳健整合，为将空间组学转译到常规基于 H&E 的病理工作流提供基础。",
+      "published": "2026-08-14",
+      "author_line": "Zhou, L., Zhao, F., Ren, T. 等 12 人"
+    },
+    {
+      "id": "europepmc:ppr1298567",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Automated Bone Marrow Cellularity Estimation from Whole-Slide Images Using Deep Learning: Validation in an Indian Clinical Cohort",
+      "url": "https://europepmc.org/article/PPR/PPR1298567",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Patil AP",
+        "Rastogi P",
+        "Sunderasan D",
+        "Bal A",
+        "Sharma P",
+        "Sharma M",
+        "Bhardwaj V"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Bone marrow evaluation is central to diagnosing leukemia, lymphoma, unexplained cytopenias and other hematologic disorders, yet it depends on specialised expertise and remains time-consuming, subjective and prone to interobserver variability. We present the Artificial Intelligence Slide Analysis Platform (AiSAP), a deep learning framework for automated bone marrow cellularity estimation directly from raw whole-slide images (WSIs), trained and validated on an Indian clinical trephine biopsy cohort that is underrepresented in existing automated pipelines. Unlike approaches restricted to cropped or pre-selected patches, AiSAP performs end-to-end WSI tiling, automated marrow region-of-interest extraction and adipocyte segmentation using a dual Mask R-CNN architecture, before computing a case-level cellularity ratio. Across five backbone configurations, average precision ranged from 45.3% to 51.9%, while case-level concordance reached up to a Pearson correlation coefficient of 0.95 and Lin's concordance correlation coefficient of 0.88 (depending on the backbone). These results show that AiSAP achieves expert-level concordance for automated cellularity estimation and represents a promising, generalizable step toward clinical decision support in bone marrow pathology, warranting further multi-institutional validation.",
+      "summary_zh": "AiSAP 对原始骨髓 WSI 做端到端分块、感兴趣区提取与双 Mask R-CNN 脂肪分割，印度环钻队列病例级 Pearson 达 0.95、Lin CCC 0.88。",
+      "why_it_matters_zh": "把细胞量估计从预选图块改成全切片流水线，并在自动化管线中代表性不足的印度临床队列上对齐专家。",
+      "quality_score": 78.0,
+      "tags": [
+        "生物医学与临床",
+        "AiSAP",
+        "骨髓",
+        "WSI",
+        "Mask R-CNN"
+      ],
+      "evidence_flags": [
+        "临床队列",
+        "有定量基准",
+        "clinical",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 5,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10468634/v1",
+        "pmid": ""
+      },
+      "abstract_zh": "骨髓评估是诊断白血病、淋巴瘤、不明原因血细胞减少及其他血液病的核心，但仍依赖专科经验，耗时、主观且易受观察者间变异影响。我们提出 Artificial Intelligence Slide Analysis Platform（AiSAP），一个直接从原始全切片图像（WSIs）自动估计骨髓细胞量的深度学习框架，在一个现有自动化流水线中代表性不足的印度临床环钻活检队列上训练并验证。与局限于裁剪或预选图块的方法不同，AiSAP 执行端到端 WSI 分块、自动骨髓感兴趣区提取，并用双 Mask R-CNN 架构做脂肪细胞分割，随后计算病例级细胞量比值。在五种骨干配置上，平均精度介于 45.3% 至 51.9%，病例级一致性最高达到 Pearson 相关系数 0.95 与 Lin 一致性相关系数 0.88（取决于骨干）。这些结果表明 AiSAP 在自动细胞量估计上达到专家级一致性，是迈向骨髓病理临床决策支持的有前景、可泛化的一步，值得进一步多机构验证。",
+      "published": "2026-08-14",
+      "author_line": "Patil AP, Rastogi P, Sunderasan D 等 7 人"
+    },
+    {
+      "id": "arxiv:2608.13690v1",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "MedPlex: Deep Vision-Language Co-Adaptation for Clinically Grounded Medical Segmentation",
+      "url": "https://arxiv.org/abs/2608.13690v1",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Rafi Ibn Sultan",
+        "Hui Zhu",
+        "Chengyin Li",
+        "Dongxiao Zhu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Medical image segmentation is still largely treated as a vision-only problem, although clinical interpretation often relies on textual knowledge of anatomy, location, appearance, and surrounding context. Existing text-guided segmentation methods within the Vision-Language Model (VLM) paradigm often use language only as a late conditioning signal, limiting its influence on visual representation learning. We introduce MedPlex (Medical Plexus of Vision and Language), an end-to-end VLM framework that makes text guidance a continuous, clinically grounded component of segmentation learning. Through Bi-Fusion (Bidirectional Fusion), visual and textual representations evolve jointly across the encoding hierarchy. MedPlex further introduces class-level and region-level concept alignment to organize the shared representation at complementary granularities. Class-level alignment anchors each anatomical target to an aggregated clinical concept profile, while region-level alignment preserves individual concepts, such as shape, location, appearance, and texture, through class-specific visual evidence. In this way, language provides structured supervision throughout the encoder rather than serving only as a late-stage cue. MedPlex achieves state-of-the-art performance across CT and MR benchmarks for multi-organ, cardiac substructure, and tumor segmentation, including settings with real free-text clinical supervision. Code: https://github.com/rafiibnsultan/MedPlex.",
+      "summary_zh": "MedPlex 以 Bi-Fusion 让视觉与文本表征在编码器全程共演化，并用类别级/区域级概念对齐，在 CT/MR 多器官、心脏亚结构与肿瘤分割上达 SOTA。",
+      "why_it_matters_zh": "把临床文本从后期条件改成贯穿编码器的结构化监督，包括真实自由文本临床标注设置。",
+      "quality_score": 77.0,
+      "tags": [
+        "生物医学与临床",
+        "MedPlex",
+        "VLM",
+        "Bi-Fusion",
+        "医学分割"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "公开代码",
+        "方法创新",
+        "benchmark",
+        "github",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 6,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.13690v1"
+      },
+      "abstract_zh": "医学图像分割在很大程度上仍被视为纯视觉问题，尽管临床解读往往依赖关于解剖、位置、外观与周围语境的文本知识。视觉–语言模型（VLM）范式下的现有文本引导分割方法，通常仅将语言作为后期条件信号，限制了其对视觉表征学习的影响。我们引入 MedPlex（Medical Plexus of Vision and Language），一个端到端 VLM 框架，使文本引导成为分割学习中持续、有临床依据的组成部分。通过 Bi-Fusion（双向融合），视觉与文本表征在编码层级中共同演化。MedPlex 进一步引入类别级与区域级概念对齐，在互补粒度上组织共享表征。类别级对齐将每个解剖目标锚定到聚合的临床概念剖面，而区域级对齐通过类别特异的视觉证据保留形状、位置、外观与纹理等单个概念。由此，语言在整个编码器中提供结构化监督，而非仅作为后期线索。MedPlex 在 CT 与 MR 的多器官、心脏亚结构与肿瘤分割基准上取得 state-of-the-art 性能，包括使用真实自由文本临床监督的设置。代码：https://github.com/rafiibnsultan/MedPlex。",
+      "published": "2026-08-13",
+      "author_line": "Rafi Ibn Sultan, Hui Zhu, Chengyin Li 等 4 人"
+    },
+    {
+      "id": "arxiv:2608.14778v1",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "AMPLIFAI: A Multiphase CT Dataset for Benchmarking Clinical Reasoning in LI-RADS Assessment of Liver Lesions",
+      "url": "https://arxiv.org/abs/2608.14778v1",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Pranav Kulkarni",
+        "Nikhil Shah",
+        "Amritansh Suryavanshi",
+        "Jana Delfino",
+        "James Tonascia",
+        "Jade Wong-You-Cheong",
+        "Barton Lane",
+        "Joseph Chirico",
+        "Jeffrey D. Hirsch",
+        "Ang Li",
+        "Heng Huang",
+        "Florence X. Doo"
+      ],
+      "language": "en",
+      "abstract_or_text": "Hepatocellular carcinoma (HCC) is the third leading cause of cancer-related mortality worldwide, with early detection improving survival from 70\\%. The standardized LI-RADS criteria establish a biopsy-free, fully imaging-based framework that can serve as a foundation for automating HCC diagnosis with artificial intelligence (AI). However, the lack of large, publicly available datasets with high-quality labels has limited the development of AI models for LI-RADS characterization. We introduce the AMPLIFAI dataset, the first public dataset of multiphase abdominal CT scans annotated with LI-RADS categories and segmented for three major LI-RADS features: arterial phase hyperenhancement, washout, and enhancing capsule. Following the Datasheets for Datasets format, this paper details the dataset's composition, curation process, and annotation pipeline to facilitate transparent, reproducible research.",
+      "summary_zh": "AMPLIFAI 发布首个带 LI-RADS 类别标注的公开多相腹部 CT 数据集，并分割动脉期高强化、廓清与强化包膜三项主要特征。",
+      "why_it_matters_zh": "补上 LI-RADS 自动化长期缺的高质量公开标签，使无活检、纯影像的 HCC 诊断基准可复现。",
+      "quality_score": 76.0,
+      "tags": [
+        "生物医学与临床",
+        "AMPLIFAI",
+        "LI-RADS",
+        "HCC",
+        "多相CT"
+      ],
+      "evidence_flags": [
+        "数据集",
+        "临床队列",
+        "benchmark",
+        "dataset",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 7,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.14778v1"
+      },
+      "abstract_zh": "肝细胞癌（HCC）是全球癌症相关死亡的第三大原因，早期检测可改善生存（达 70%）。标准化 LI-RADS 标准建立了一套无需活检、完全基于影像的框架，可作为用人工智能（AI）自动化 HCC 诊断的基础。然而，缺乏带高质量标签的大型公开数据集，限制了用于 LI-RADS 表征的 AI 模型开发。我们引入 AMPLIFAI 数据集，这是首个公开的多相腹部 CT 扫描数据集，标注了 LI-RADS 类别，并对三项主要 LI-RADS 特征进行了分割：动脉期高强化（arterial phase hyperenhancement）、廓清（washout）与强化包膜（enhancing capsule）。本文遵循 Datasheets for Datasets 格式，详述该数据集的组成、策展过程与标注流水线，以促进透明、可复现的研究。",
+      "published": "2026-08-14",
+      "author_line": "Pranav Kulkarni, Nikhil Shah, Amritansh Suryavanshi 等 12 人"
+    }
+  ],
   "review": {
     "model": "gpt-5.6-terra",
     "reasoning_effort": "high",
-    "note": "候选文件为空（count=0），无可审阅条目。"
+    "note": "2026-08-16 候选 60 篇，全部自动分≥70，但大量高分稿已在 08-12/08-13/08-14/08-15 精读（CAG-MIND、Parnet、CytoBERT、Zf S1500+、LungChat、EXPRESSO、AI4Loop、D^{2}R^{2}、ESM-ECForest、SERRATE、PSMASegmentator、MK-TGAN、PlantAI、PRISM、ICD-10、GenomeOcean FP8、蛋白质语言模型 singleton、EGRL、CoMedBench、IDD FOS/CEBPB、PerturbLDM、LAMBDA、Potato Agent、临床 LLM 污名化、HPP PHA 等）。剩余新稿夹杂脂质组学/DTA/MSC/XAI 综述、无计算方法的珊瑚真菌与 gyrase 湿实验、单中心前列腺活检、无湿实验证据的 ALS 计算靶点与膀胱癌 GEO 五基因模型、BraTS+MIMIC 拼盘空转稿、Ceftaroline 药敏、SEM 伪造检测，以及已被化学频道覆盖的 BioKinema。按 AI×Bio 相关性、方法可信度与实验/临床证据精选 7 篇 preprint，覆盖组学与细胞、生物医学与临床、方法与模型：肺炎克雷伯菌 84×101 噬菌体互作图谱与体内鸡尾酒约束、SQUINT 双残差向量量化空间转录组、scDIVA 肿瘤–免疫图谱半监督迁移、ACCREDIT 质量感知空间组学配准智能体、AiSAP 印度队列骨髓 WSI 细胞量、MedPlex 视觉–语言共适应医学分割，以及 AMPLIFAI 多相 CT LI-RADS 公开数据集。未收录缺乏计算方法的湿实验、单中心前列腺与综述稿、无湿实验证据的 ALS/膀胱癌签名、可疑的 SS-MMT 拼盘、AUC 偏低的 SPECT MPI 与憩室超声、遗留代码 Rust 翻译，以及 ScreenShot/BioKinema。"
   }
 }

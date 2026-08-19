@@ -1,0 +1,703 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-13",
+  "channel": "aixbio",
+  "generated_at": "2026-08-18T15:11:02+00:00",
+  "title": "AI × Bio 每日精选",
+  "subtitle": "计算生物学、组学、蛋白质与生物医学模型。",
+  "window": {
+    "start": "2026-08-10",
+    "end": "2026-08-13"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 5204,
+    "candidates": 60,
+    "selected": 12,
+    "sources": {
+      "arXiv": 1438,
+      "bioRxiv": 952,
+      "medRxiv": 355,
+      "Europe PMC": 3464
+    }
+  },
+  "source_status": {
+    "arXiv": {
+      "state": "ok",
+      "count": 1438
+    },
+    "bioRxiv": {
+      "state": "ok",
+      "count": 952
+    },
+    "medRxiv": {
+      "state": "ok",
+      "count": 355
+    },
+    "Europe PMC": {
+      "state": "ok",
+      "count": 3464
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "biorxiv:10.64898/2026.08.08.743506",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "PARNET: A CLIP-SEQ-BASED FOUNDATION MODEL FOR RNA SEQUENCE REPRESENTATION LEARNING",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.08.743506",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Moyon, L.",
+        "Tirabassi, A.",
+        "Baranowskii, A.",
+        "Capitanchik, C.",
+        "Kuret Hodnik, K.",
+        "Wilkinson, L.",
+        "Londhe, S.",
+        "Dumbovic, G.",
+        "Gagneur, J.",
+        "Ule, J.",
+        "Horlacher, M.",
+        "Marsico, A."
+      ],
+      "language": "en",
+      "abstract_or_text": "RNA-binding proteins (RBPs) orchestrate a complex combinatorial regulatory \"code\" that governs RNA splicing, stability, localization, and translation. Learning the relationship between RNA sequences and these processes is a central challenge in genomics. Foundation models, notably RNA language models, have emerged as the dominant approach, learning general-purpose representations from unlabeled sequence at scale. While RNA language models have demonstrated impressive performance across a broad range of downstream tasks, they generally learn from sequence reconstruction objectives alone, lacking direct connections to the regulatory principles that govern RNA function. Here we introduce Parnet, an RNA foundation model trained directly and exclusively on experimental CLIP-seq data. Parnet is a multi-task foundation model trained end-to-end on 223 eCLIP-seq experiments spanning 150 RBPs to predict base-resolution RBP binding profiles directly from RNA sequence. This CLIP-seq pretraining strategy departs fundamentally from the masked-language-modeling paradigm, anchoring learned RNA representations directly in measured protein-RNA interactions rather than sequence statistics. Parnet substantially outperforms its single-task predecessor RBPNet in binding profile and motif recovery, generalizes to unseen cell types and iCLIP data, and recapitulates position-dependent splicing regulation. Frozen Parnet embeddings, without task-specific fine-tuning, match or exceed the performance of both task-specific tools, as well as larger self-supervised RNA and genomic language models across diverse downstream tasks, including RNA biotype classification, lncRNA chromatin localization, translational efficiency, splice-site recognition, intron retention, and non-coding variant effect prediction. Importantly, Parnet remains mechanistically interpretable, tracing predictions back to the specific RBPs and motifs that drive them. These results establish the RBP interactome as a compact, functionally sufficient, and interpretable basis for foundation model pretraining in RNA biology.",
+      "summary_zh": "Parnet 在覆盖 150 个 RBPs 的 223 项 eCLIP-seq 上端到端预测碱基分辨率结合谱，冻结嵌入在剪接、翻译效率与非编码变异等任务上达到或超过更大 RNA/基因组语言模型。",
+      "why_it_matters_zh": "把 RNA 基础模型的预训练从序列重建改接到实测蛋白–RNA 互作，并保留可追溯到特定 RBP 与基序的机制解释。",
+      "quality_score": 88.0,
+      "tags": [
+        "组学与细胞",
+        "Parnet",
+        "CLIP-seq",
+        "RBPNet",
+        "eCLIP"
+      ],
+      "evidence_flags": [
+        "有实验验证",
+        "有定量基准",
+        "方法创新",
+        "experimental",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 1,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.08.743506",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "RNA结合蛋白（RBPs）编排一套复杂的组合调控“密码”，支配 RNA 剪接、稳定性、定位与翻译。学习 RNA 序列与这些过程之间的关系是基因组学的核心挑战。基础模型，尤其是 RNA 语言模型，已成为主流方法，从大规模未标注序列中学习通用表征。尽管 RNA 语言模型在广泛下游任务上表现出色，它们通常仅从序列重建目标学习，缺乏与支配 RNA 功能的调控原理的直接联系。在此我们引入 Parnet，一个直接且专门在实验 CLIP-seq 数据上训练的 RNA 基础模型。Parnet 是一个多任务基础模型，在覆盖 150 个 RBPs 的 223 项 eCLIP-seq 实验上端到端训练，以从 RNA 序列直接预测碱基分辨率的 RBP 结合谱。这一 CLIP-seq 预训练策略从根本上偏离掩蔽语言建模范式，将所学 RNA 表征锚定于实测蛋白–RNA 互作而非序列统计。Parnet 在结合谱与基序恢复上显著优于其单任务前身 RBPNet，可泛化到未见细胞类型与 iCLIP 数据，并重现位置依赖的剪接调控。冻结的 Parnet 嵌入在无需任务特异微调的情况下，在多样下游任务上达到或超过任务专用工具以及更大的自监督 RNA 与基因组语言模型，包括 RNA 生物型分类、lncRNA 染色质定位、翻译效率、剪接位点识别、内含子保留与非编码变异效应预测。重要的是，Parnet 保持机制可解释，可将预测追溯到驱动它们的特定 RBPs 与基序。这些结果确立 RBP 互作组作为 RNA 生物学中基础模型预训练的紧凑、功能充分且可解释的基础。",
+      "published": "2026-08-13",
+      "author_line": "Moyon, L., Tirabassi, A., Baranowskii, A. 等 12 人"
+    },
+    {
+      "id": "europepmc:ppr1297797",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Development and Validation of SERRATE: A Deep Learning-Based Tool for Diagnosis of Sessile Serrated Lesions in Colonoscopy Images",
+      "url": "https://europepmc.org/article/PPR/PPR1297797",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Hu W",
+        "Chen E",
+        "Zou L",
+        "Chen Q",
+        "Hua T",
+        "Song K",
+        "Wu Y",
+        "Zou L",
+        "Yan P",
+        "Tian B",
+        "Zhang M",
+        "Fang Z",
+        "Yang N",
+        "Yang X",
+        "Lu Y",
+        "Yang M",
+        "Zhao Y",
+        "Li J",
+        "Zhang S",
+        "Jiang Q",
+        "Liu B",
+        "Cao Y",
+        "Yang Y",
+        "Wu D",
+        "Yang A"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Background and Aims: Sessile serrated lesions (SSLs) are precancerous colorectal polyps with high malignant potential, yet their endoscopic recognition remains challenging. Most artificial intelligence (AI) models for polyp classification fail to specifically identify SSLs, often misclassifying them as hyperplastic polyps. This study aimed to develop and validate SERRATE (Sessile Serrated lesion Recognition and Risk Assessment Tool for Endoscopy), a deep learning model for distinguishing SSLs from conventional adenomas and hyperplastic polyps. Methods : We retrospectively collected colonoscopic images from 696T patients at Peking Union Medical College Hospital (January 2017-September 2024), yielding >20,000 images. The balanced training dataset comprised 1,120 SSL images, 1,697 conventional adenoma images, and 1,207 hyperplastic polyp images. A Swin Transformer model was trained using both white-light imaging and narrow-band imaging (NBI). Model performance was evaluated on a prospective internal validation cohort (300 patients, January 2025-April 2025; ClinicalTrials.gov NCT06773832) and the external POLAR dataset. Results : The optimal model utilized NBI images with 2×mucosal context expansion, achieving 82.42% accuracy in internal validation. For three-class classification (SSL vs. conventional adenoma vs. hyperplastic polyp), the model demonstrated 73.44% overall accuracy (precision 82.47%, recall 95.21%, specificity 91.21%, F1-score 82.17%) on prospective internal validation and 69.46% accuracy on external validation. For binary neoplasia detection, accuracy reached 91.07% across validation sets. Conclusions : SERRATE represents the first AI model specifically designed for SSL recognition with balanced training data. The model achieved clinically relevant performance for SSL differentiation, potentially improving colorectal cancer prevention through enhanced serrated lesion management.",
+      "summary_zh": "SERRATE 以平衡的 SSL/腺瘤/增生性息肉图像训练 Swin Transformer，前瞻内部三分类准确率 73.44%、外部 POLAR 69.46%，二分类肿瘤检测达 91.07%。",
+      "why_it_matters_zh": "专攻常被误判为增生性息肉的无蒂锯齿状病变，并用注册前瞻队列与外部数据集同时检验。",
+      "quality_score": 86.0,
+      "tags": [
+        "生物医学与临床",
+        "SERRATE",
+        "SSL",
+        "Swin Transformer",
+        "NBI"
+      ],
+      "evidence_flags": [
+        "有外部测试",
+        "临床队列",
+        "有定量基准",
+        "clinical",
+        "dataset",
+        "prospective"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10122585/v1",
+        "pmid": ""
+      },
+      "abstract_zh": "背景与目的：无蒂锯齿状病变（SSLs）是具有高恶性潜能的结直肠癌前息肉，但其内镜识别仍具挑战。大多数用于息肉分类的人工智能（AI）模型未能特异识别 SSLs，常将其误判为增生性息肉。本研究旨在开发并验证 SERRATE（Sessile Serrated lesion Recognition and Risk Assessment Tool for Endoscopy），一种用于将 SSLs 与传统腺瘤及增生性息肉区分的深度学习模型。方法：我们回顾性收集北京协和医院 696T 例患者（2017年1月至2024年9月）的结肠镜图像，获得 >20,000 张图像。平衡训练集包含 1,120 张 SSL 图像、1,697 张传统腺瘤图像和 1,207 张增生性息肉图像。使用白光成像与窄带成像（NBI）训练 Swin Transformer 模型。模型性能在前瞻性内部验证队列（300 例患者，2025年1月至2025年4月；ClinicalTrials.gov NCT06773832）及外部 POLAR 数据集上评估。结果：最优模型使用 NBI 图像并做 2×黏膜语境扩展，内部验证准确率为 82.42%。对于三分类（SSL vs. 传统腺瘤 vs. 增生性息肉），模型在前瞻性内部验证上总体准确率为 73.44%（精确率 82.47%，召回率 95.21%，特异度 91.21%，F1-score 82.17%），外部验证准确率为 69.46%。对于二分类肿瘤检测，各验证集准确率达 91.07%。结论：SERRATE 是首个专为 SSL 识别设计、并采用平衡训练数据的 AI 模型。该模型在 SSL 鉴别上取得临床相关性能，有望通过改善锯齿状病变管理提高结直肠癌预防。",
+      "published": "2026-08-13",
+      "author_line": "Hu W, Chen E, Zou L 等 25 人"
+    },
+    {
+      "id": "europepmc:ppr1297876",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "PSMASegmentator: Open-source, AI-based software for PSMA PET/CT automatic segmentation and prognostic biomarker extraction",
+      "url": "https://europepmc.org/article/PPR/PPR1297876",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Noble JIM",
+        "Hiwase M",
+        "Barry N",
+        "Rowshanfarzad P",
+        "Ebert MA",
+        "Ong JSL",
+        "O'Callaghan M",
+        "Sweeney C",
+        "To M",
+        "Dell’Oro M",
+        "Tew A",
+        "Paterson F",
+        "Catterwell R",
+        "Polpo A",
+        "Hassan GM",
+        "Francis RJ",
+        "Wellman S",
+        "Hoo T",
+        "Kendrick J"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Purpose: To develop and validate a fully-automated, Artificial Intelligence (AI) tool, PSMASegmentator, for the segmentation of Prostate Specific Membrane Antigen (PSMA) PET/CT scans and extraction of imaging biomarkers. Materials and Methods: This retrospective study included 1035 PSMA PET/CT scans for training (Germany, n = 597; Australia, n = 438), with multicentre Australian testing datasets (internal, n = 199; external, n = 100). An nnU-Net–based deep learning model with PSMA-specific extensions was trained to segment PSMA-expressing lesions and derive biomarkers aligned with current consensus guidelines (total lesion count [TLC], total tumour volume [TTV], SUVmean, and SUVmax), plus total lesion uptake (TLU) and quotient (TLQ). Segmentation performance was evaluated primarily using F1 and Dice scores and the prognostic power of extracted biomarkers. The software was then executed on an external cohort (n = 1,282; 2015–2024) with linked mortality data. Biomarker value for survival prognosis was assessed in this cohort using Cox regression and Kaplan–Meier analysis. Results: Segmentation performance (n = 299 multicentre scans) was robust (lesion-level F1: 0.800; median Dice: 0.716) and generalisable (p > 0.05 between internal and external sets for F1 and Dice). Agreement between AI- and physician-derived biomarkers was high (Spearman’s ρ = 0.906–0.964; p Conclusion: PSMASegmentator, a freely available software (available at: https://github.com/UWA-Medical-Physics-Research-Group/PSMASegmentator), enables reproducible extraction of prognostically significant PSMA PET/CT biomarkers, facilitating standardised reporting aligned with consensus guidelines and hypothesis generation in research, clinical trials, and collaborative initiatives.",
+      "summary_zh": "PSMASegmentator 在德澳 1035 例 PSMA PET/CT 上训练 nnU-Net，多中心测试病灶 F1 0.800、Dice 0.716，并在 1,282 例外队列做生存生物标志物评估。",
+      "why_it_matters_zh": "把共识指南中的 PSMA 影像生物标志物做成可复现的开源分割流水线，并接到死亡终点。",
+      "quality_score": 85.0,
+      "tags": [
+        "生物医学与临床",
+        "PSMASegmentator",
+        "PSMA",
+        "nnU-Net"
+      ],
+      "evidence_flags": [
+        "有外部测试",
+        "公开代码",
+        "临床队列",
+        "clinical",
+        "dataset",
+        "github"
+      ],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10609412/v1",
+        "pmid": ""
+      },
+      "abstract_zh": "目的：开发并验证全自动人工智能（AI）工具 PSMASegmentator，用于前列腺特异性膜抗原（PSMA）PET/CT 扫描分割与影像生物标志物提取。材料与方法：本回顾性研究纳入 1035 例 PSMA PET/CT 扫描用于训练（德国，n = 597；澳大利亚，n = 438），并以多中心澳大利亚测试数据集评估（内部，n = 199；外部，n = 100）。训练了一个带有 PSMA 特异扩展的基于 nnU-Net 的深度学习模型，以分割 PSMA 表达病灶并导出与当前共识指南对齐的生物标志物（总病灶数 [TLC]、总体积 [TTV]、SUVmean 与 SUVmax），以及总病灶摄取（TLU）与商（TLQ）。分割性能主要用 F1 与 Dice 分数评估，并评估所提取生物标志物的预后效力。随后在一个带有关联死亡数据的外部队列（n = 1,282；2015–2024）上运行该软件。在该队列中用 Cox 回归与 Kaplan–Meier 分析评估生物标志物对生存预后的价值。结果：分割性能（n = 299 例多中心扫描）稳健（病灶水平 F1：0.800；中位 Dice：0.716）且可泛化（内部与外部集之间 F1 与 Dice 的 p > 0.05）。AI 与医师导出生物标志物的一致性高（Spearman’s ρ = 0.906–0.964；p 结论：PSMASegmentator 是一款免费软件（见：https://github.com/UWA-Medical-Physics-Research-Group/PSMASegmentator），可重复提取具有预后意义的 PSMA PET/CT 生物标志物，促进与共识指南对齐的标准化报告，并支持研究、临床试验与协作项目中的假设生成。",
+      "published": "2026-08-13",
+      "author_line": "Noble JIM, Hiwase M, Barry N 等 19 人"
+    },
+    {
+      "id": "europepmc:ppr1298897",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Leveraging Targeted Gene Sets and Neural Networks for Zebrafish Transcriptome Extrapolation in High-Throughput Toxicogenomics",
+      "url": "https://europepmc.org/article/PPR/PPR1298897",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Howard BE",
+        "Mav D",
+        "Balik-Meisner M",
+        "Phadke D",
+        "Green AJ",
+        "Truong L",
+        "Tanguay RL",
+        "Shah RR"
+      ],
+      "language": "en",
+      "abstract_or_text": "Background: Zebrafish (Danio rerio) are a powerful vertebrate model for developmental toxicology and chemical safety assessment, yet large-scale transcriptomics in zebrafish remains limited by cost and data heterogeneity. Targeted transcriptomics offers a cost-effective alternative, but gene extrapolation methods tailored to zebrafish have not been systematically developed or evaluated. Objectives: While the S1500+ platform is widely used for toxicogenomics research with rat, mouse, and human cell lines as model systems, its use in zebrafish has been limited due to data scarcity and lack of suitable bioinformatics approaches for analysis of such data. To that end, we sought to (i) curate a large zebrafish transcriptomic training data resource, and (ii) evaluate multiple machine learning strategies for reconstructing unmeasured transcriptome-wide expression profiles for data originating from the zebrafish-specific reduced representation gene set (Zf S1500+). Methods: We assembled 14,924 zebrafish RNA-Seq samples covering 21,930 genes across 1,246 studies. Using the Zf S1500+ gene subset (3,062 genes), we trained and tested three extrapolation approaches: principal components regression (PCR), a locally weighted extension of PCR (PCR+), and a neural network mixture-of-experts model (NN-MoE). Model performance was assessed using mean absolute error (MAE), mean squared regression error (MSRE), and weighted variants of these metrics. Results: Extrapolation performance using the baseline approach was strongly influenced by tissue and developmental context, with within-tissue models outperforming cross-tissue models. Errors were lowest when training and testing were conducted within the same tissue or between developmentally related tissues. Both PCR+ and NN-MoE improved upon the baseline PCR approach, with NN-MoE reducing average MAE by ~20% and MSRE by ~17%. Importantly, extrapolation remained reliable for the majority of genes, even when limiting output to high-confidence predictions using an empirical MAE threshold. Conclusions: We demonstrate that targeted transcriptomics can be effectively extended to zebrafish, enabling robust transcriptome-wide extrapolation at reduced cost. The NN-MoE method provided the most substantial gains, highlighting the value of non-linear and ensemble modeling in heterogeneous datasets. These results establish a scalable framework for zebrafish toxicogenomics and suggest that accuracy will continue to improve with larger, better-annotated datasets, paving the way for broader application in chemical safety assessments.",
+      "summary_zh": "在 1,246 项研究的 14,924 份斑马鱼 RNA-Seq 上，由 Zf S1500+ 的 3,062 个基因外推全转录组，NN-MoE 相对 PCR 将平均 MAE 降低约 20%、MSRE 降低约 17%。",
+      "why_it_matters_zh": "给斑马鱼毒理基因组补上可对照的靶向芯片外推，使 S1500+ 不再只服务啮齿类与人细胞系。",
+      "quality_score": 84.0,
+      "tags": [
+        "组学与细胞",
+        "Zf S1500+",
+        "NN-MoE",
+        "斑马鱼",
+        "毒理基因组"
+      ],
+      "evidence_flags": [
+        "数据集",
+        "有定量基准",
+        "方法创新",
+        "dataset",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.07.743325",
+        "pmid": ""
+      },
+      "abstract_zh": "背景：斑马鱼（Danio rerio）是发育毒理学与化学安全评估的有力脊椎动物模型，但斑马鱼大规模转录组学仍受成本与数据异质性限制。靶向转录组学提供了具有成本效益的替代方案，但针对斑马鱼的基因外推方法尚未被系统开发或评估。目标：尽管 S1500+ 平台已广泛用于以大鼠、小鼠和人类细胞系为模型系统的毒理基因组学研究，其在斑马鱼中的使用因数据稀缺以及缺乏适合分析此类数据的生物信息学方法而受限。为此，我们试图（i）策展一个大型斑马鱼转录组训练数据资源，以及（ii）评估多种机器学习策略，以从斑马鱼特异的简化表征基因集（Zf S1500+）重建未测量的全转录组表达谱。方法：我们汇编了覆盖 1,246 项研究、21,930 个基因的 14,924 份斑马鱼 RNA-Seq 样本。使用 Zf S1500+ 基因子集（3,062 个基因），我们训练并测试了三种外推方法：主成分回归（PCR）、PCR 的局部加权扩展（PCR+），以及神经网络专家混合模型（NN-MoE）。使用平均绝对误差（MAE）、均方回归误差（MSRE）及其加权变体评估模型性能。结果：基线方法的外推性能强烈受组织与发育语境影响，组织内模型优于跨组织模型。当训练与测试在同一组织或发育相关组织之间进行时误差最低。PCR+ 与 NN-MoE 均改进了基线 PCR，其中 NN-MoE 将平均 MAE 降低约 20%，MSRE 降低约 17%。重要的是，即使使用经验 MAE 阈值将输出限制为高置信预测，对大多数基因的外推仍保持可靠。结论：我们证明靶向转录组学可有效扩展到斑马鱼，从而以更低成本实现稳健的全转录组外推。NN-MoE 方法提供了最显著的增益，突显了非线性与集成建模在异质数据集中的价值。这些结果为斑马鱼毒理基因组学建立了可扩展框架，并提示随着更大规模、更好注释的数据集，准确率将继续提升，为在化学安全评估中更广泛应用铺平道路。",
+      "published": "2026-08-13",
+      "author_line": "Howard BE, Mav D, Balik-Meisner M 等 8 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.05.21.727052",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Performance of IBD machine learning classifiers varies across microbiome training data independent of geographic diversity",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.05.21.727052",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-12",
+      "creators": [
+        "Cirolia, G.",
+        "Gustafson, J. T.",
+        "Aswani, A.",
+        "Wolf, A."
+      ],
+      "language": "en",
+      "abstract_or_text": "Microbiome-based machine learning classifiers have strong promise for disease identification across gastrointestinal, metabolic, and immune-mediated conditions. Inflammatory bowel disease (IBD), a chronic immune-mediated disorder associated with disruption of the gut microbiome, has been a particularly successful application area. Many microbiome-based predictive models do not generalize well across independent populations and geographic contexts, despite high performance within individual datasets. We hypothesized that assembling training data by combining studies from varied geographic locations would improve model performance and generalizability. We also sought to compare the performance of different model classes across different types of training data and evaluation datasets. We compiled seven publicly available shotgun metagenomic studies spanning five geographic regions, comprising 697 individuals with IBD or healthy controls. We trained model configurations across seven model classes and five distinct training dataset combinations and evaluated top-performing models on independent studies from the USA, Ireland, Germany, Israel, and China. Extreme gradient boosting and random forest models showed the highest and most consistent performance across training datasets. Surprisingly, models trained on geographically diverse datasets did not outperform those trained on USA-only datasets. Instead, model performance was dependent on the evaluation study itself, with some evaluation studies consistently yielding higher performance independent of model class or training data. Amongst models with similar AUC scores, there was a small - but consistent - overlap in the key microbial species identified. However, even for the small set of disease predictive microbes shared between models, the direction of enrichment between IBD or healthy subjects sometimes varied in opposing directions across study populations. These findings suggest that study-specific factors constrain generalization and may help explain the lack of consistent microbiome-based biomarkers for IBD. ImportanceMachine learning models based on the human gut microbiome are increasingly proposed as diagnostic tools for inflammatory bowel disease, but our findings suggest that identifying reliable microbiome biomarkers poses a challenge. Models trained on different datasets often selected different species as important predictors, even when diagnostic performance was similar, indicating that disease-associated microbes may depend strongly on the patient populations studied. Even species repeatedly selected across training datasets frequently showed inconsistent associations with disease, helping explain low agreement across microbiome studies. Importantly, models performed well across new patient groups independent of the geographic diversity present in the training datasets. By identifying microbial species repeatedly selected across datasets, model types, and evaluation studies, we identified a smaller group of more consistent biomarkers, including enrichment of Klebsiella pneumoniae and Erysipelatoclostridium ramosum and depletion of Lachnospiraceae and Alistipes species, which may represent stronger candidates for transferable microbiome markers.",
+      "summary_zh": "七项宏基因组、697 人、五地训练的 IBD 分类器在美/爱/德/以/中独立队列上，地理多样训练并不优于仅美国数据，共享物种的富集方向甚至相反。",
+      "why_it_matters_zh": "用跨研究独立外验说明 IBD 微生物组诊断的瓶颈是研究特异因素，而不是再堆地理多样性。",
+      "quality_score": 83.0,
+      "tags": [
+        "生物医学与临床",
+        "IBD",
+        "微生物组",
+        "宏基因组",
+        "跨队列泛化"
+      ],
+      "evidence_flags": [
+        "有外部测试",
+        "报告负面结果",
+        "数据集",
+        "dataset",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 5,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.05.21.727052",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "基于微生物组的机器学习分类器在胃肠道、代谢与免疫介导疾病识别方面前景广阔。炎症性肠病（IBD）是一种与肠道微生物组紊乱相关的慢性免疫介导疾病，一直是特别成功的应用领域。许多基于微生物组的预测模型尽管在单个数据集内性能很高，却不能很好地跨独立人群与地理语境泛化。我们假设通过组合来自不同地理位置的研究来组装训练数据，将改善模型性能与可泛化性。我们还试图比较不同模型类别在不同类型训练数据与评估数据集上的性能。我们汇编了跨越五个地理区域的七项公开可得鸟枪宏基因组研究，包含 697 名 IBD 患者或健康对照。我们在七个模型类别与五种不同训练数据集组合上训练模型配置，并在来自美国、爱尔兰、德国、以色列与中国的独立研究上评估表现最佳的模型。极端梯度提升与随机森林模型在各训练数据集上表现最高且最一致。令人惊讶的是，在地理多样数据集上训练的模型并未优于仅在美国数据集上训练的模型。相反，模型性能取决于评估研究本身，某些评估研究无论模型类别或训练数据如何都持续给出更高性能。在 AUC 分数相近的模型之间，所鉴定的关键微生物物种仅有小但一致的重叠。然而，即使对于模型间共享的那一小部分疾病预测微生物，IBD 与健康受试者之间的富集方向有时在不同研究人群中相反。这些发现表明研究特异因素限制了泛化，并可能有助于解释 IBD 缺乏一致的基于微生物组的生物标志物。重要性：基于人类肠道微生物组的机器学习模型日益被提议作为炎症性肠病的诊断工具，但我们的发现表明鉴定可靠的微生物组生物标志物构成挑战。在不同数据集上训练的模型即使诊断性能相近，也常选择不同物种作为重要预测因子，表明疾病相关微生物可能强烈依赖于所研究的患者人群。即使跨训练数据集被反复选择的物种也常表现出与疾病不一致的关联，这有助于解释微生物组研究之间的低一致性。重要的是，模型在新患者组上的表现良好，且独立于训练数据集中存在的地理多样性。通过鉴定跨数据集、模型类型与评估研究被反复选择的微生物物种，我们鉴定出一组更小、更一致的生物标志物，包括 Klebsiella pneumoniae 与 Erysipelatoclostridium ramosum 的富集以及 Lachnospiraceae 与 Alistipes 物种的耗竭，它们可能代表更强的可迁移微生物组标志物候选。",
+      "published": "2026-08-12",
+      "author_line": "Cirolia, G., Gustafson, J. T., Aswani, A. 等 4 人"
+    },
+    {
+      "id": "arxiv:2608.12805v1",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "CoMedBench: A Multi-Source Benchmark of Synthetic Medical Data Fidelity and Downstream Utility",
+      "url": "https://arxiv.org/abs/2608.12805v1",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Akanta Das",
+        "Al Amin Farhad",
+        "Mrinmoy Sarkar Anto",
+        "David Rehkopf",
+        "Ayin Vala",
+        "Tanmoy Sarkar Pias"
+      ],
+      "language": "en",
+      "abstract_or_text": "Access to clinical data is essential for developing reliable healthcare machine learning systems, but direct use of electronic health records is constrained by privacy regulation, institutional review, data-use agreements, and the risk of re-identification. Synthetic data promises a practical alternative: it can preserve useful statistical and clinical structure while reducing exposure of sensitive patient records. Prior studies often evaluate a single generator, one dataset, or a narrow downstream task, making it difficult to know when synthetic data can support model development and when it fails to preserve task-critical signal. We introduce CoMedBench, a reproducible benchmark that evaluates a family of generators under a common clinical-validity framework and one shared training and evaluation engine, spanning static tabular and temporal downstream tasks on established critical-care datasets. In total the benchmark spans 37 dataset-task pairs across two modalities consists of 20 static tabular and 17 temporal ICU time-series-drawn from seven public data sources: three intensive-care databases (MIMIC-III, MIMIC-IV, and eICU) together with the UCI Machine Learning Repository, the CDC BRFSS diabetes cohort (2015), NHANES (1999-2014), and the pycox survival datasets (GBSG and METABRIC). The benchmark evaluates both statistical fidelity and task utility by comparing models trained and tested across real and synthetic data. In these settings, synthetic training data preserves most of the downstream signal: on tabular tasks the reference generator CoMed-CTGAN retains a mean AUROC utility (the synthetic-to-real performance ratio) of 90.6%, rising to 97.3% for the strongest generator, CoMed-TVAE. Temporal ICU tasks are harder and more generator-sensitive: CoMed-CTGAN retains 81.6% (AUROC) and only 64.0% under the imbalance-sensitive AUPRC, whereas CoMed-TVAE still retains ~95% (AUROC).",
+      "summary_zh": "CoMedBench 在 MIMIC-III/IV、eICU 等七源、37 个任务上对照合成与真实数据：表格任务 CoMed-TVAE 保留 97.3% AUROC，时间 ICU 的 AUPRC 可掉到 64.0%。",
+      "why_it_matters_zh": "把医疗合成数据从单生成器宣传改成可复现的保真度–下游效用对照，并暴露时间序列更难迁移。",
+      "quality_score": 82.0,
+      "tags": [
+        "方法与模型",
+        "CoMedBench",
+        "CoMed-TVAE",
+        "MIMIC-IV",
+        "合成数据"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "方法创新",
+        "benchmark",
+        "dataset",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 6,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.12805v1"
+      },
+      "abstract_zh": "获取临床数据对开发可靠的医疗机器学习系统至关重要，但直接使用电子健康记录受到隐私法规、机构审查、数据使用协议与再识别风险的约束。合成数据承诺提供一种实用替代：它可以保留有用的统计与临床结构，同时降低敏感患者记录的暴露。先前研究往往评估单一生成器、一个数据集或狭窄的下游任务，因而难以知道合成数据何时能支持模型开发、何时未能保留任务关键信号。我们引入 CoMedBench，一个可复现基准，在共同的临床有效性框架与同一共享训练和评估引擎下评估一族生成器，覆盖既有重症监护数据集上的静态表格与时间下游任务。该基准总共跨越两种模态的 37 个数据集–任务对，包括 20 个静态表格与 17 个时间 ICU 时间序列，来自七个公共数据源：三个重症监护数据库（MIMIC-III、MIMIC-IV 与 eICU），以及 UCI Machine Learning Repository、CDC BRFSS 糖尿病队列（2015）、NHANES（1999-2014）与 pycox 生存数据集（GBSG 与 METABRIC）。该基准通过比较在真实与合成数据上训练和测试的模型，同时评估统计保真度与任务效用。在这些设置中，合成训练数据保留了大部分下游信号：在表格任务上，参考生成器 CoMed-CTGAN 保留平均 AUROC 效用（合成相对真实的性能比）90.6%，最强生成器 CoMed-TVAE 升至 97.3%。时间 ICU 任务更难且对生成器更敏感：CoMed-CTGAN 保留 81.6%（AUROC），在对不平衡敏感的 AUPRC 下仅 64.0%，而 CoMed-TVAE 仍保留约 95%（AUROC）。",
+      "published": "2026-08-13",
+      "author_line": "Akanta Das, Al Amin Farhad, Mrinmoy Sarkar Anto 等 6 人"
+    },
+    {
+      "id": "arxiv:2608.12906v1",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "EGRL: Edge generation-guided relation-aware learning for RNA-protein interaction prediction",
+      "url": "https://arxiv.org/abs/2608.12906v1",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Danyu Li",
+        "Ling Zhou",
+        "Rubing Huang",
+        "Xian Zhong",
+        "Bin Zou",
+        "Kui Jiang"
+      ],
+      "language": "en",
+      "abstract_or_text": "RNA-Protein Interactions (RPIs) are critical for regulating cellular functions. While traditional wet-lab experiments for RPI detection are costly and time-consuming, Deep Learning (DL) methods provide an efficient computational alternative for RPI Prediction (RPIP). In particular, Graph Neural Networks (GNNs) are promising, as they naturally model RPI networks. However, existing GNN-based methods often rely on homogeneous graphs or predefined meta-paths, which limit their ability to handle data sparsity and to generalize to cold-start scenarios involving unknown molecules. To address these limitations, we propose Edge Generation-guided Relation-aware Learning (EGRL), a novel framework with several key components: implicit meta-path learning to capture relational semantics without handcrafted paths; a multi-relation-aware attention mechanism for adaptive fusion of interaction patterns; a graph generator that predicts potential (\"soft\") edges to support cold-start nodes; and a multi-feature fusion predictor for final interaction scoring. EGRL is jointly trained with a primary task loss and an auxiliary generator loss. Comprehensive evaluations on four benchmark datasets demonstrate that EGRL achieves competitive overall performance. More importantly, it exhibits superior generalization in cold-start settings, achieving an Area Under the Receiver Operating Characteristic curve (AUROC) of 0.867 and an Area Under the Precision-Recall curve (AUPR) of 0.861 on unknown molecules, corresponding to improvements of 8.6% in AUROC and 5.0% in AUPR over prior state-of-the-art methods. The code will be released soon.",
+      "summary_zh": "EGRL 以隐式元路径、多关系注意力与软边生成做 RNA–蛋白互作预测，未知分子冷启动 AUROC 0.867、AUPR 0.861，分别比先前方法高 8.6% 与 5.0%。",
+      "why_it_matters_zh": "把 RPI 图学习的难点放到未见分子冷启动，而不是只报已知网络上的重排分数。",
+      "quality_score": 81.0,
+      "tags": [
+        "蛋白质与结构",
+        "EGRL",
+        "RPI",
+        "冷启动",
+        "GNN"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "方法创新",
+        "benchmark",
+        "dataset",
+        "state-of-the-art",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 7,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.12906v1"
+      },
+      "abstract_zh": "RNA–蛋白互作（RPIs）对调控细胞功能至关重要。传统湿实验检测 RPI 成本高且耗时，而深度学习（DL）方法为 RPI 预测（RPIP）提供了高效计算替代。特别是图神经网络（GNNs）很有前景，因为它们自然地建模 RPI 网络。然而，现有基于 GNN 的方法往往依赖同质图或预定义元路径，限制了其处理数据稀疏以及泛化到涉及未知分子的冷启动场景的能力。为应对这些限制，我们提出 Edge Generation-guided Relation-aware Learning（EGRL），一个包含若干关键组件的新框架：隐式元路径学习以在无需手工路径的情况下捕获关系语义；多关系感知注意力机制以自适应融合互作模式；预测潜在（“soft”）边以支持冷启动节点的图生成器；以及用于最终互作打分的多特征融合预测器。EGRL 以主任务损失与辅助生成器损失联合训练。在四个基准数据集上的综合评估表明，EGRL 取得有竞争力的总体性能。更重要的是，它在冷启动设置中展现出更优泛化，在未知分子上取得受试者工作特征曲线下面积（AUROC）0.867 与精确率–召回率曲线下面积（AUPR）0.861，相对先前最先进方法分别提升 8.6% AUROC 与 5.0% AUPR。代码即将发布。",
+      "published": "2026-08-13",
+      "author_line": "Danyu Li, Ling Zhou, Rubing Huang 等 6 人"
+    },
+    {
+      "id": "europepmc:ppr1297206",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "XG-PUL: A Network-Based Framework for Disease Gene Prioritization Using Graph Representation Learning and Positive-Unlabeled Learning",
+      "url": "https://europepmc.org/article/PPR/PPR1297206",
+      "published_at": "2026-08-12",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Ayouman M",
+        "Narimani Z"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Identifying disease-associated genes through experimental approaches remains costly and time-consuming. Computational approaches based on biological networks provide an effective alternative for disease gene prioritization and disease module identification. However, existing machine learning methods often require reliable negative examples, whereas in disease gene prioritization only a limited number of confirmed disease genes are available and the remaining genes cannot be confidently considered negative samples. This positive--unlabeled (PU) learning setting introduces substantial label uncertainty and remains a major challenge for computational disease gene discovery. In this study, we propose XG-PUL, a machine learning framework designed for disease gene prioritization under a PU learning scenario. XG-PUL employs a two-stage strategy in which label-independent node representations are first learned from the protein--protein interaction (PPI) network using Node2Vec. These representations are then integrated with complementary graph-topological features to capture both latent network patterns and explicit connectivity characteristics of genes. Subsequently, a bagging-based PU classifier is applied to aggregate multiple classifiers trained on different bootstrap samples of unlabeled genes, improving robustness against uncertainty in the unlabeled data. The proposed framework was evaluated on ten complex disease datasets and compared with representative network-based methods and graph learning approaches. XG-PUL demonstrated improved ranking performance, achieving higher AUPR and F1-score values across the evaluated diseases and ranking thresholds, while maintaining competitive AUC-ROC performance. Functional enrichment analysis and literature-based validation further confirmed the biological relevance of prioritized candidates, showing that XG-PUL can recover genes involved in disease-related pathways and molecular mechanisms beyond known disease annotations. These results demonstrate that integrating label-independent network representation learning with PU learning provides a robust framework for disease gene prioritization in incomplete biological knowledge scenarios.",
+      "summary_zh": "XG-PUL 先用 Node2Vec 从 PPI 学与标签无关表征，再 bagging PU 分类，在十个复杂疾病上提高 AUPR 与 F1，同时保持有竞争力的 AUC-ROC。",
+      "why_it_matters_zh": "正视疾病基因任务只有正例、没有可靠负例这一设定，而不是把未标注基因硬标成负样本。",
+      "quality_score": 80.0,
+      "tags": [
+        "方法与模型",
+        "XG-PUL",
+        "PU learning",
+        "Node2Vec",
+        "疾病基因"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "方法创新",
+        "dataset",
+        "experimental",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 8,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10423323/v1",
+        "pmid": ""
+      },
+      "abstract_zh": "通过实验方法鉴定疾病相关基因仍然昂贵且耗时。基于生物网络的计算方法为疾病基因优先级排序与疾病模块识别提供了有效替代。然而，现有机器学习方法往往需要可靠的负例，而在疾病基因优先级排序中仅有有限数量的已确认疾病基因可用，其余基因不能被有把握地视为负样本。这一正例–未标注（PU）学习设定引入了大量标签不确定性，仍是计算疾病基因发现的主要挑战。本研究提出 XG-PUL，一个专为 PU 学习场景下疾病基因优先级排序设计的机器学习框架。XG-PUL 采用两阶段策略：首先使用 Node2Vec 从蛋白–蛋白互作（PPI）网络学习与标签无关的节点表征。随后将这些表征与互补的图拓扑特征整合，以同时捕获基因的潜在网络模式与显式连通性特征。随后应用基于 bagging 的 PU 分类器，聚合在未标注基因的不同 bootstrap 样本上训练的多个分类器，提高对未标注数据不确定性的稳健性。所提出框架在十个复杂疾病数据集上评估，并与代表性网络方法及图学习方法比较。XG-PUL 显示改进的排序性能，在所评估疾病与排序阈值上取得更高的 AUPR 与 F1-score，同时保持有竞争力的 AUC-ROC。功能富集分析与基于文献的验证进一步确认了优先候选的生物学相关性，表明 XG-PUL 能够恢复参与疾病相关通路与分子机制、且超出已知疾病注释的基因。这些结果表明，将与标签无关的网络表征学习与 PU 学习整合，为不完整生物学知识场景下的疾病基因优先级排序提供了稳健框架。",
+      "published": "2026-08-12",
+      "author_line": "Ayouman M, Narimani Z"
+    },
+    {
+      "id": "arxiv:2608.13256v1",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath",
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Novel Knowledge-Guided Generative Methods for Synthetic Transcriptomic Data",
+      "url": "https://arxiv.org/abs/2608.13256v1",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Francesca Pia Panaccione",
+        "Sofia Mongardi",
+        "Marco Masseroli",
+        "Pietro Pinoli"
+      ],
+      "language": "en",
+      "abstract_or_text": "As biomedical research increasingly relies on data-intensive tools, the quality and utility of datasets are critical. Challenges such as imbalances, biases, and ethical or legal constraints often limit access to high-quality data. Synthetic data generation can help overcome these limitations. Here, we present a comparative analysis of generative models for transcriptomic data, investigating strategies to incorporate prior biological knowledge via gene graphs. This ensures that synthetic data capture real-world gene patterns, maintaining their usefulness for downstream tasks. In particular, we introduce and benchmark three variants of the Generative Adversarial Network. Among the alternatives, MK-TGAN - an innovative multi-kernel, Graph Neural Network-based model - stands out for its performance in terms of both the realism and utility of the generated data. Unlike other methods, MK-TGAN leverages prior knowledge graphs by exploiting graph neural networks. Our results show that prior knowledge integration strategies improve performance, and that MK-TGAN consistently produces synthetic samples with superior realism and biological plausibility.",
+      "summary_zh": "比较三种 GAN 变体生成转录组，其中多核图网络 MK-TGAN 借助先验基因图，在真实性与下游效用上持续优于未用图知识的方案。",
+      "why_it_matters_zh": "把合成转录组是否“像真的”改成能否吃进基因图先验，而不是只比像素级 GAN 指标。",
+      "quality_score": 79.0,
+      "tags": [
+        "方法与模型",
+        "MK-TGAN",
+        "合成转录组",
+        "GAN",
+        "基因图"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "方法创新",
+        "benchmark",
+        "dataset",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 9,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.13256v1"
+      },
+      "abstract_zh": "随着生物医学研究日益依赖数据密集型工具，数据集的质量与效用至关重要。不平衡、偏倚以及伦理或法律约束常常限制对高质量数据的获取。合成数据生成有助于克服这些限制。在此，我们对转录组数据生成模型进行比较分析，并研究通过基因图纳入先验生物学知识的策略。这确保合成数据捕获真实世界基因模式，从而保持其对下游任务的有用性。特别地，我们引入并基准测试生成对抗网络的三个变体。在这些方案中，MK-TGAN——一种创新的多核、基于图神经网络的模型——因其生成数据的真实性与效用而脱颖而出。与其他方法不同，MK-TGAN 通过利用图神经网络来利用先验知识图。我们的结果表明，先验知识整合策略可改善性能，并且 MK-TGAN 持续产生具有更优真实性与生物学合理性的合成样本。",
+      "published": "2026-08-13",
+      "author_line": "Francesca Pia Panaccione, Sofia Mongardi, Marco Masseroli 等 4 人"
+    },
+    {
+      "id": "arxiv:2608.12717v1",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Perturbation-based Regional Interpretability through Subtraction Mapping (PRISM): naming-error dissociations in language models and post-stroke aphasia",
+      "url": "https://arxiv.org/abs/2608.12717v1",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Xiang Guan",
+        "Roger D. Newman-Norlund",
+        "Yong Yang",
+        "Saeed Ahmadi",
+        "Regan Willis",
+        "Nadra Salman",
+        "Kalil Warren",
+        "Srihari Nelakuditi",
+        "Chris Rorden",
+        "Leonardo Bonilha",
+        "Julius Fridriksson"
+      ],
+      "language": "en",
+      "abstract_or_text": "Mechanistic interpretability of large language models lacks spatially resolved, falsifiable tools for testing whether internal components are specialized for distinct cognitive operations. We adapt subtraction analysis, the standard framework of human neuroimaging, from biological brains to perturbed transformers, and apply the same logic to both substrates in parallel. Building on the Brain-LLM Unified Model (BLUM), which showed that layer-perturbed LLaVA-1.6-Vicuna-13B error profiles match the lesion patterns of aphasic patients, we develop PRISM (Perturbation-based Regional Interpretability through Subtraction Mapping). PRISM maps the seven clinical Philadelphia Naming Test categories, subtracts error classes pairwise, and treats each perturbation seed as a subject in a group analysis with threshold-free cluster enhancement along the layer axis. We run a structurally matched analysis on 213 chronic post-stroke aphasia patients using correlation-difference lesion-symptom mapping, and replicate both sides on held-out splits. The designs match in subject dimension (seeds, patients), spatial dimension (layers, atlas-parcellated cortex) and thresholding, but the contrast operator differs: a within-subject error-proportion difference for the LLM, a between-subject correlation difference for the cortex. Both substrates recover a robust phonemic-favoring dissociation, a deep layer cluster and a frontal-perisylvian cortical cluster, both replicating; the semantic-favoring direction is a consistently signed but non-significant trend on both. PRISM thus gives a falsifiable, spatially resolved test of functional-specialization claims in transformer language models. A confirmatory ROI-level intervention (PRISM Stage 3) licensing the strongest causal-mechanism claim is left to subsequent work.",
+      "summary_zh": "PRISM 把神经影像减法逻辑接到层扰动的 LLaVA-1.6-Vicuna-13B，并与 213 例卒中后失语的病灶–症状映射对照，两侧都复制出音素偏向解离。",
+      "why_it_matters_zh": "给语言模型功能特化提供可证伪、空间分辨的检验，而不是只做事后注意力可视化。",
+      "quality_score": 78.0,
+      "tags": [
+        "方法与模型",
+        "PRISM",
+        "失语",
+        "LLaVA",
+        "机制可解释性"
+      ],
+      "evidence_flags": [
+        "临床队列",
+        "方法创新",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 10,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.12717v1"
+      },
+      "abstract_zh": "大语言模型的机制可解释性缺乏空间分辨、可证伪的工具，以检验内部组件是否专用于不同认知操作。我们将人类神经影像的标准框架——减法分析——从生物脑适配到受扰动的 transformer，并在两种底物上并行应用同一逻辑。基于 Brain-LLM Unified Model（BLUM）——该工作表明层扰动的 LLaVA-1.6-Vicuna-13B 错误谱与失语患者的病灶模式匹配——我们开发 PRISM（Perturbation-based Regional Interpretability through Subtraction Mapping）。PRISM 映射费城命名测验的七个临床类别，成对减去错误类别，并将每个扰动种子视为组分析中的一名受试者，沿层轴使用无阈值簇增强。我们在 213 例慢性卒中后失语患者上运行结构匹配的分析，使用相关差病灶–症状映射，并在留出拆分上复制两侧。设计在受试者维度（种子、患者）、空间维度（层、图谱分区皮层）与阈值化上匹配，但对比算子不同：LLM 使用受试者内错误比例差，皮层使用受试者间相关差。两种底物均恢复稳健的音素偏向解离、一个深层簇与一个额–围外侧裂皮层簇，且均可复制；语义偏向方向在两侧均为符号一致但不显著的趋势。PRISM 因此为 transformer 语言模型中的功能特化主张提供了可证伪、空间分辨的检验。授权最强因果机制主张的确证性 ROI 水平干预（PRISM Stage 3）留待后续工作。",
+      "published": "2026-08-13",
+      "author_line": "Xiang Guan, Roger D. Newman-Norlund, Yong Yang 等 11 人"
+    },
+    {
+      "id": "europepmc:ppr1296884",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "A Multi-Criteria Decision Framework for Aggregating Ranked ICD-10 Code Suggestions from Large Language Models",
+      "url": "https://europepmc.org/article/PPR/PPR1296884",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Santos RdS",
+        "Gazzola MG",
+        "Figueira PM",
+        "Luz AG",
+        "Pacagnella RdC",
+        "Torezzan C"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Automated clinical coding is a critical component of healthcare information systems, yet it remains challenging due to the complexity of medical terminology and the hierarchical structure of classification systems such as ICD-10. Recent advances in Large Language Models (LLMs) have enabled the generation of ranked lists of candidate codes; however, individual models often exhibit variability and limited reliability when used in isolation. In this study, we investigate whether classical rank aggregation methods from Multi-Criteria Decision Analysis (MCDA) can improve decision quality by combining the ranked outputs of multiple LLMs for ICD-10 code assignment. We consider a decision framework in which each LLM is treated as an independent decision agent providing a ranked set of candidate codes, and evaluate three aggregation methods—Plurality Voting, Borda Count, and Reciprocal Rank Fusion (RRF)—on a dataset of 1,117 obstetric clinical notes in Brazilian Portuguese. Performance is assessed at both the three-character and full-code levels, focusing on top-k recommendations representative of practical decision-support scenarios, and robustness is evaluated using bootstrap resampling with 95\\% confidence intervals. The results show that rank-based aggregation methods consistently improve decision performance compared to individual models, with methods that incorporate ranking information, particularly Borda Count and RRF, achieving higher Micro-F1 scores and demonstrating more stable behavior across evaluation settings. In contrast, simple voting schemes show inferior performance, highlighting the importance of leveraging ranking structure, while weighted aggregation strategies do not yield statistically significant improvements over unweighted methods. These findings demonstrate that rank aggregation provides a principled and effective approach for combining multiple imperfect decision agents in clinical coding tasks, and suggest that simple and robust aggregation strategies can improve decision consistency and reliability in real-world healthcare applications.",
+      "summary_zh": "在 1,117 份巴西葡萄牙语产科病历上，Borda Count 与 RRF 聚合多个 LLM 的 ICD-10 排序，相对单模型提高 Micro-F1，加权聚合无显著增益。",
+      "why_it_matters_zh": "把临床编码从押注单一 LLM 改成可审计的排序聚合，并给出 bootstrap 置信区间。",
+      "quality_score": 77.0,
+      "tags": [
+        "生物医学与临床",
+        "ICD-10",
+        "Borda Count",
+        "RRF",
+        "临床编码"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "clinical",
+        "dataset",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 11,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10670185/v1",
+        "pmid": ""
+      },
+      "abstract_zh": "自动化临床编码是医疗信息系统的关键组成部分，但由于医学术语的复杂性以及 ICD-10 等分类系统的层级结构，它仍然具有挑战。大语言模型（LLMs）的近期进展使生成候选编码的排序列表成为可能；然而，单个模型在单独使用时往往表现出变异性与有限可靠性。本研究考察来自多准则决策分析（MCDA）的经典排序聚合方法，能否通过组合多个 LLM 对 ICD-10 编码分配的排序输出以改善决策质量。我们考虑一个决策框架，其中每个 LLM 被视为提供候选编码排序集的独立决策智能体，并在一个包含 1,117 份巴西葡萄牙语产科临床记录的数据集上评估三种聚合方法——Plurality Voting、Borda Count 与 Reciprocal Rank Fusion（RRF）。在三字符与完整编码两个层面评估性能，关注代表实际决策支持场景的 top-k 推荐，并用 95% 置信区间的 bootstrap 重采样评估稳健性。结果表明，基于排序的聚合方法相对单个模型持续改善决策性能，纳入排序信息的方法、尤其是 Borda Count 与 RRF，取得更高的 Micro-F1 分数，并在各评估设置中表现更稳定。相比之下，简单投票方案表现较差，突显利用排序结构的重要性，而加权聚合策略相对未加权方法未产生统计学显著改善。这些发现表明，排序聚合为在临床编码任务中组合多个不完美决策智能体提供了原则性且有效的方法，并提示简单稳健的聚合策略可改善真实世界医疗应用中的决策一致性与可靠性。",
+      "published": "2026-08-13",
+      "author_line": "Santos RdS, Gazzola MG, Figueira PM 等 6 人"
+    },
+    {
+      "id": "europepmc:ppr1297794",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Decoding Glycolysis Mechanisms and Cellular Heterogeneity in Intervertebral Disc Degeneration via scRNA-seq and Bulk RNA-seq",
+      "url": "https://europepmc.org/article/PPR/PPR1297794",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Huang L",
+        "Bian X",
+        "Jia Y",
+        "Li H",
+        "Yang Y",
+        "Kang X"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Intervertebral disc degeneration (IDD) is a major contributor to chronic low back pain; however, the metabolic alterations and cellular mechanisms driving its progression remain incompletely understood. Increasing evidence indicates that glycolytic reprogramming is closely associated with inflammatory responses, oxidative stress, and extracellular matrix (ECM) degradation during degeneration. Here, we integrated bulk RNA sequencing and single-cell RNA sequencing analyses to systematically characterize glycolysis-related molecular changes and cellular heterogeneity in IDD. Through differential expression analysis, protein–protein interaction network analysis, and machine learning approaches, 39 glycolysis-associated candidate genes were identified, and FOS and CEBPB were subsequently recognized as key regulatory genes. Both genes were significantly upregulated in IDD tissues and demonstrated high diagnostic performance in independent datasets (AUC ≥ 0.90). Single-cell analysis revealed that FOS and CEBPB exhibited distinct expression patterns across nucleus pulposus cell populations, particularly in pre-chondrocytes, stem cells, and fibroblast progenitor cells. Immune infiltration and regulatory network analyses suggested that these genes may participate in metabolic-inflammatory regulation during IDD progression. Importantly, immunohistochemical analysis of human degenerative disc specimens and immunofluorescence validation in a rat puncture-induced IDD model consistently confirmed the upregulation of FOS and CEBPB, accompanied by decreased expression of anabolic ECM markers (Aggrecan and Collagen II) and increased expression of catabolic markers (MMP3 and MMP9). Collectively, this study reveals that glycolytic dysregulation contributes to IDD progression through metabolic reprogramming and cellular heterogeneity, and identifies FOS and CEBPB as potential biomarkers and therapeutic targets for metabolic intervention in IDD.",
+      "summary_zh": "整合 bulk 与单细胞 RNA-seq 筛出 IDD 糖酵解关键基因 FOS 与 CEBPB，独立数据 AUC ≥ 0.90，并在人标本 IHC 与大鼠穿刺模型中验证上调。",
+      "why_it_matters_zh": "把常见的 GEO 机器学习基因排序接到免疫组化与动物模型，而不停在诊断 AUC。",
+      "quality_score": 76.0,
+      "tags": [
+        "组学与细胞",
+        "IDD",
+        "FOS",
+        "CEBPB",
+        "scRNA-seq"
+      ],
+      "evidence_flags": [
+        "有实验验证",
+        "有外部测试",
+        "dataset",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 12,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10401482/v1",
+        "pmid": ""
+      },
+      "abstract_zh": "椎间盘退变（IDD）是慢性腰痛的主要贡献因素；然而，驱动其进展的代谢改变与细胞机制仍未完全阐明。越来越多的证据表明，糖酵解重编程与退变过程中的炎症反应、氧化应激及细胞外基质（ECM）降解密切相关。在此，我们整合 bulk RNA 测序与单细胞 RNA 测序分析，系统刻画 IDD 中糖酵解相关分子改变与细胞异质性。通过差异表达分析、蛋白–蛋白互作网络分析与机器学习方法，鉴定出 39 个糖酵解相关候选基因，随后确认 FOS 与 CEBPB 为关键调控基因。两个基因在 IDD 组织中均显著上调，并在独立数据集上显示高诊断性能（AUC ≥ 0.90）。单细胞分析显示 FOS 与 CEBPB 在髓核细胞群体中呈现不同表达模式，尤其在前软骨细胞、干细胞与成纤维祖细胞中。免疫浸润与调控网络分析提示这些基因可能参与 IDD 进展中的代谢–炎症调控。重要的是，对人退变椎间盘标本的免疫组化分析以及大鼠穿刺诱导 IDD 模型中的免疫荧光验证一致确认了 FOS 与 CEBPB 的上调，并伴随合成代谢 ECM 标志物（Aggrecan 与 Collagen II）表达下降以及分解代谢标志物（MMP3 与 MMP9）表达升高。总之，本研究揭示糖酵解失调通过代谢重编程与细胞异质性促进 IDD 进展，并将 FOS 与 CEBPB 鉴定为 IDD 代谢干预的潜在生物标志物与治疗靶点。",
+      "published": "2026-08-13",
+      "author_line": "Huang L, Bian X, Jia Y 等 6 人"
+    }
+  ],
+  "review": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "note": "2026-08-13 候选 60 篇，全部自动分≥70，但夹杂面部衰老/CT 病灶/神经干预综述、无计算方法的脑膜瘤细胞系与 TPD52 湿实验、花生与菜豆 GEO 灌水、单中心前列腺活检、无湿实验证据的 MASLD 生成分子、妊娠数字孪生空转稿、医疗政策文本分析与边缘扩散语言模型综述。按 AI×Bio 相关性、方法可信度与实验/临床证据精选 12 篇 preprint，覆盖蛋白质与结构、组学与细胞、生物医学与临床、方法与模型；当日新增 Parnet CLIP-seq RNA 基础模型、斑马鱼 Zf S1500+ 转录组外推、SERRATE 无蒂锯齿状病变前瞻外验、PSMASegmentator 多中心 PSMA PET/CT、MK-TGAN 知识引导转录组生成、XG-PUL 疾病基因 PU 学习、PRISM 失语与 LLM 扰动对照、产科 ICD-10 排序聚合、EGRL 冷启动 RNA–蛋白互作、CoMedBench 合成医疗数据基准、IBD 微生物组跨地理负结果与 IDD 糖酵解 FOS/CEBPB 湿实验验证。未收录缺乏计算方法的湿实验、植物 GEO 灌水、单中心前列腺与综述稿、无外部证据的 MASLD 生成分子，以及已被化学频道覆盖的 Pert2Mol、IL-4Ra 微型蛋白与 ScreenShot，并避免重复 08-10/08-11/08-12 已精读的 CAG-MIND、PhysioStack、CpGPT、CBCT 标签溯源、GatorOnco、白血病 RAC、mlsurv、LLM-H2G、Waypoint、GraphTransformer-CoGNN、Apodex、基因组 UQ、疟疾语义 XAI、MSDD、FENNEC、bgnorm、MedPixel、SFSF、PIANO、组学智能体、DNN-IR、SEA-AD、CT-ΔBench、VITA、PACE/CellQ、临床轨迹遗传校验与 ConRub-Med。"
+  }
+}

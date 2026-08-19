@@ -1,0 +1,487 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-14",
+  "channel": "aixbio",
+  "generated_at": "2026-08-18T15:11:04+00:00",
+  "title": "AI × Bio 每日精选",
+  "subtitle": "计算生物学、组学、蛋白质与生物医学模型。",
+  "window": {
+    "start": "2026-08-11",
+    "end": "2026-08-14"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 4896,
+    "candidates": 60,
+    "selected": 8,
+    "sources": {
+      "arXiv": 1341,
+      "bioRxiv": 911,
+      "medRxiv": 262,
+      "Europe PMC": 3277
+    }
+  },
+  "source_status": {
+    "arXiv": {
+      "state": "ok",
+      "count": 1341
+    },
+    "bioRxiv": {
+      "state": "ok",
+      "count": 911
+    },
+    "medRxiv": {
+      "state": "ok",
+      "count": 262
+    },
+    "Europe PMC": {
+      "state": "ok",
+      "count": 3277
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "biorxiv:10.1101/2025.10.24.684491",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A machine learning framework for supervised treatment response prediction from tumor transcriptomics: A large-scale pan-cancer study",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.10.24.684491",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Pal, L. R.",
+        "Gertz, E. M.",
+        "Ulhas Nair, N.",
+        "Mukherjee, S.",
+        "Patiyal, S.",
+        "Cantore, T.",
+        "Campagnolo, E. M.",
+        "Chang, T.",
+        "Dhruba, S. R.",
+        "Kim, Y.",
+        "Shulman, E. D.",
+        "Rajagopal, P. S.",
+        "Hoang, D.-T.",
+        "Hannenhalli, S.",
+        "Schaffer, A. A.",
+        "Ruppin, E."
+      ],
+      "language": "en",
+      "abstract_or_text": "Precision oncology aims to guide treatment decisions using biomarkers. While DNA-based panels are increasingly applied, RNA transcriptomics remain underused due to limited datasets and the absence of robust models. We assembled the largest transcriptomic resource for drug response prediction to date, spanning 91 cohorts, 5,675 patients, nine cancer types, and six frontline therapies: anti-PD-1/PD-L1 immune-checkpoint inhibitors, trastuzumab, bevacizumab, BRAF inhibitors, paclitaxel, and FAC/FEC (Fluorouracil-Adriamycin-Cyclophosphamide/Fluorouracil-Epirubicin-Cyclophosphamide) chemotherapy. We developed EXPRESSO (EXpression-Profile-RESponSe-Optimizer), a supervised machine-learning framework that predicts treatment response from pre-treatment transcriptomes by integrating drug targets and context-specific biomarkers. EXPRESSO achieves mean ROC-AUCs of 0.62-0.73 and median odds ratios of 2.4-4.6 across therapies, outperforming 20 published transcriptomic signatures and other machine learning methods. Prospective validation on 22 independent cohorts confirms that performance generalizes beyond cross-validation. The EXPRESSO signature additionally stratifies progression-free survival in immune checkpoint blockade-treated cohorts, demonstrating prognostic value beyond binary response prediction. Robustness analysis reveals that predictive performance plateaued for some therapies with increasing training cohorts but continued to improve for others. These findings suggest inherent limits of supervised brute-force learning for certain treatments, but additional data and deeper mechanistic modeling may further enhance transcriptomics-based predictors. SIGNIFICANCEEXPRESSO forms the next step in studying the feasibility of harnessing bulk transcriptomic data to inform therapeutic decision-making, advancing the role of transcriptomics from exploratory biomarker discovery to actionable predictive modeling.",
+      "summary_zh": "EXPRESSO 在 91 队列、5,675 例患者、九癌种与六种一线疗法的治疗前转录组上预测疗效，跨疗法平均 ROC-AUC 0.62–0.73，并在 22 个独立队列上前瞻外验。",
+      "why_it_matters_zh": "把 bulk 转录组疗效预测做成迄今最大规模的有监督资源，并用独立队列检验能否走出交叉验证。",
+      "quality_score": 86.0,
+      "tags": [
+        "组学与细胞",
+        "EXPRESSO",
+        "转录组",
+        "疗效预测",
+        "免疫检查点"
+      ],
+      "evidence_flags": [
+        "有外部测试",
+        "临床队列",
+        "有定量基准",
+        "数据集",
+        "dataset",
+        "prospective"
+      ],
+      "publication_status": "preprint",
+      "rank": 1,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2025.10.24.684491",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "精准肿瘤学旨在利用生物标志物指导治疗决策。基于 DNA 的检测面板应用日益广泛，但 RNA 转录组因数据集有限且缺乏稳健模型而仍利用不足。我们组装了迄今最大的药物反应预测转录组资源，覆盖 91 个队列、5,675 例患者、九种癌症类型以及六种一线疗法：抗 PD-1/PD-L1 免疫检查点抑制剂、trastuzumab、bevacizumab、BRAF 抑制剂、paclitaxel，以及 FAC/FEC（Fluorouracil-Adriamycin-Cyclophosphamide/Fluorouracil-Epirubicin-Cyclophosphamide）化疗。我们开发了 EXPRESSO（EXpression-Profile-RESponSe-Optimizer），一个有监督机器学习框架，通过整合药物靶点与语境特异生物标志物，从治疗前转录组预测治疗反应。EXPRESSO 在各疗法上取得平均 ROC-AUC 0.62-0.73、中位比值比 2.4-4.6，优于 20 个已发表转录组签名及其他机器学习方法。在 22 个独立队列上的前瞻验证确认性能可超出交叉验证而泛化。EXPRESSO 签名还在免疫检查点阻断治疗队列中分层无进展生存，显示超出二分类反应预测的预后价值。稳健性分析表明，对某些疗法，预测性能随训练队列增加而趋于平台期，对其他疗法则继续改善。这些发现提示，对某些治疗而言有监督蛮力学习存在固有上限，但更多数据与更深入的机制建模或可进一步增强基于转录组的预测器。意义：EXPRESSO 构成研究利用 bulk 转录组数据指导治疗决策可行性的下一步，将转录组学的角色从探索性生物标志物发现推进到可行动的预测建模。",
+      "published": "2026-08-14",
+      "author_line": "Pal, L. R., Gertz, E. M., Ulhas Nair, N. 等 16 人"
+    },
+    {
+      "id": "arxiv:2608.14414v1",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "CytoBERT: A Foundation Model for Cytometry Data",
+      "url": "https://arxiv.org/abs/2608.14414v1",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Syed Abdul Haseeb Qadri",
+        "Bjarne C. Hiller",
+        "Felix Blanke",
+        "Vanja Sophie Cangalovic",
+        "Kutalmış Coşkun",
+        "Amin Mirzaei",
+        "Tom Siegl",
+        "Sebastian Bader",
+        "Thomas Kirste",
+        "Martin Becker"
+      ],
+      "language": "en",
+      "abstract_or_text": "Cytometry measures the complex characteristics of single cells (e.g., counts and protein expression of immune cells) and is widely used across immunological research and clinical settings. However, cytometry data is highly heterogeneous and unstandardized due to experimental protocols and the choice of measured features. While machine learning methods hold the potential to gain deeper insights into cell biology, these challenges make them difficult to apply and transfer across studies. Recent advances in foundation models can alleviate these issues, but corresponding approaches are still scarce in this field. To address this, we provide CytoBERT, a publicly available, open-source, open-weight foundation model for single-cell cytometry data with variable marker panels. CytoBERT is pretrained in a self-supervised manner on a large-scale cytometry corpus (15 human datasets with heterogeneous marker panels and more than 50 million cells) curated through marker standardization, enabling it to learn transferable inter-marker relationships within cells. Fine-tuning CytoBERT for sample-level classification demonstrates that transfer learning across heterogeneous cytometry datasets is feasible, providing a starting point for scalable, generalizable cytometry analysis. Code is available at GitHub.",
+      "summary_zh": "CytoBERT 在 15 个人类数据集、超过 5,000 万个细胞上自监督预训练，面向可变标记面板的单细胞流式数据，并在样本级分类上展示跨研究迁移。",
+      "why_it_matters_zh": "给高度异质、标记不统一的流式细胞术补上开源开权的基础模型起点。",
+      "quality_score": 85.0,
+      "tags": [
+        "组学与细胞",
+        "CytoBERT",
+        "细胞术",
+        "基础模型",
+        "自监督"
+      ],
+      "evidence_flags": [
+        "数据集",
+        "公开代码",
+        "方法创新",
+        "dataset",
+        "github",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.14414v1"
+      },
+      "abstract_zh": "细胞术测量单细胞的复杂特征（例如免疫细胞的计数与蛋白表达），并广泛用于免疫学研究与临床场景。然而，由于实验方案与所测特征选择的不同，细胞术数据高度异质且缺乏标准化。尽管机器学习方法有望更深入洞察细胞生物学，这些挑战使其难以跨研究应用与迁移。基础模型的近期进展可缓解这些问题，但该领域相应方法仍很少。为此，我们提供 CytoBERT，一个面向可变标记面板的单细胞细胞术数据的公开、开源、开权基础模型。CytoBERT 在经标记标准化策展的大规模细胞术语料（15 个人类数据集，异质标记面板，超过 5,000 万个细胞）上以自监督方式预训练，从而学习细胞内可迁移的标记间关系。将 CytoBERT 微调用于样本级分类表明，跨异质细胞术数据集的迁移学习是可行的，为可扩展、可泛化的细胞术分析提供了起点。代码可在 GitHub 获取。",
+      "published": "2026-08-14",
+      "author_line": "Syed Abdul Haseeb Qadri, Bjarne C. Hiller, Felix Blanke 等 10 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.12.744314",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "AI4Loop: an Artificial Intelligence Framework Reveals Increased 3D Chromatin Interactions and Therapeutic Vulnerabilities across 12,000 Cancer Samples",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.744314",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Dao, F.",
+        "Lebeau, B.",
+        "Amuley, P.",
+        "Tan, W. K.",
+        "Li, X.",
+        "Goh, B. C.",
+        "Chng, W. J.",
+        "Kwoh, C. K.",
+        "Lin, H.",
+        "Lyu, H.",
+        "Fullwood, M."
+      ],
+      "language": "en",
+      "abstract_or_text": "Three-dimensional chromatin interactions shape gene regulation, but their large-scale analysis remains limited by the cost and complexity of experimental assays. Here we present AI4Loop, a deep learning framework that infers genome-wide gene-centered chromatin interaction networks directly from RNA-seq data. Across multiple cell types, AI4Loop recovered interaction patterns consistent with clinical samples and orthogonal chromatin conformation datasets. Applied to 12,347 transcriptomes from 32 cancer types, AI4Loop revealed pervasive increases in gene-centered chromatin interactions in tumors, particularly at oncogene-associated loci. These inferred interaction networks outperformed gene expression alone in cancer classification. Integration with more than 50,000 drug-treated transcriptomes identified compounds predicted to reverse cancer-associated interaction gains. Hi-C experiments confirmed that the oxazolidinone antibiotics eperezolid and radezolid reduce breast cancer-gain chromatin interactions. Together, these results identify increased gene-centered chromatin interactions as a pan-cancer feature and provide a scalable strategy for linking 3D genome dysregulation to therapeutic vulnerabilities.",
+      "summary_zh": "AI4Loop 从 RNA-seq 推断全基因组基因中心染色质互作，应用于 32 癌种 12,347 份转录组，并用 Hi-C 确认 eperezolid 与 radezolid 可降低乳腺癌获得性互作。",
+      "why_it_matters_zh": "把昂贵的三维基因组测定改接到可规模化的转录组推断，并用湿实验核对可药干预。",
+      "quality_score": 85.0,
+      "tags": [
+        "组学与细胞",
+        "AI4Loop",
+        "染色质互作",
+        "Hi-C",
+        "eperezolid"
+      ],
+      "evidence_flags": [
+        "有实验验证",
+        "数据集",
+        "方法创新",
+        "dataset",
+        "experimental",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.12.744314",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "三维染色质互作塑造基因调控，但其大规模分析仍受实验测定成本与复杂度限制。在此我们提出 AI4Loop，一个直接从 RNA-seq 数据推断全基因组基因中心染色质互作网络的深度学习框架。在多种细胞类型中，AI4Loop 恢复了与临床样本及正交染色质构象数据集一致的互作模式。应用于来自 32 种癌症类型的 12,347 份转录组，AI4Loop 揭示肿瘤中基因中心染色质互作普遍增加，尤其在癌基因相关位点。这些推断互作网络在癌症分类上优于单独的基因表达。与超过 50,000 份药物处理转录组整合后，鉴定出被预测可逆转癌症相关互作增益的化合物。Hi-C 实验确认噁唑烷酮类抗生素 eperezolid 与 radezolid 可降低乳腺癌获得性染色质互作。总之，这些结果将基因中心染色质互作增加鉴定为一种泛癌特征，并提供将三维基因组失调与治疗脆弱性相连的可扩展策略。",
+      "published": "2026-08-14",
+      "author_line": "Dao, F., Lebeau, B., Amuley, P. 等 11 人"
+    },
+    {
+      "id": "europepmc:ppr1298819",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "A Conversational Multi-Agent AI System for Integrated Multi-Omics Analysis and Biomedical Discovery",
+      "url": "https://europepmc.org/article/PPR/PPR1298819",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Rajdeo P",
+        "Asanuma S",
+        "Kouril M",
+        "Lu P",
+        "Chen J",
+        "Chadha A",
+        "Prasath VBS",
+        "Aronow BJ",
+        "Salomonis N"
+      ],
+      "language": "en",
+      "abstract_or_text": "Single-cell and spatial omics offer unprecedented opportunities to decipher the mechanisms of disease, however, this process requires teams of experts, iterative trial-and-error and reasoning across modalities. Here we present LungChat (https://chat.lungmap.net), a conversational system for integrated multi-omics analysis and biomedical discovery, deployed as a hierarchical multi-agent architecture in which a supervisor decomposes natural-language questions into parallel, tool-grounded tasks spanning single-cell and spatial analyses, literature and clinical-trial synthesis, and drug repurposing. To predict new therapeutics, LungChat implements Direction-Aware Repurposing and Targeting (DART) to distinguish perturbations that reverse disease transcriptional programs from those that reinforce them, at the cell-type level, for safety prediction. Controlled architecture ablations showed that hierarchical orchestration improved grounded abstention and token efficiency and preserved strong performance on complex multi-step tasks. In pulmonary disease case studies, LungChat independently prioritized saracatinib for IPF through drug-connectivity screening, followed by DART-based cell-type analysis; the same compound has been evaluated in the STOP-IPF clinical trial ( NCT04598919 ). The system also recovered fluticasone propionate, an established COPD therapy, through a single orchestrated analysis. This tissue-agnostic system provides a blueprint for verifiable agentic AI systems that support reproducible scientific discovery.",
+      "summary_zh": "LungChat 以层级多智能体分解自然语言问题，覆盖单细胞/空间分析、文献与试验综合及药物再利用，并用 DART 在细胞类型水平区分逆转与强化疾病程序的扰动。",
+      "why_it_matters_zh": "把多组学发现做成可工具落地、可消融对照的对话系统，并用已知试验药核对再利用排序。",
+      "quality_score": 84.0,
+      "tags": [
+        "组学与细胞",
+        "LungChat",
+        "DART",
+        "saracatinib",
+        "多组学智能体"
+      ],
+      "evidence_flags": [
+        "方法创新",
+        "有定量基准",
+        "clinical",
+        "ablation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.08.743577",
+        "pmid": ""
+      },
+      "abstract_zh": "单细胞与空间组学为破译疾病机制提供了前所未有的机会，但这一过程需要专家团队、迭代试错以及跨模态推理。在此我们提出 LungChat（https://chat.lungmap.net），一个用于整合多组学分析与生物医学发现的对话系统，部署为层级多智能体架构：监督者将自然语言问题分解为并行、工具落地的任务，覆盖单细胞与空间分析、文献与临床试验综合，以及药物再利用。为预测新疗法，LungChat 实现 Direction-Aware Repurposing and Targeting（DART），以在细胞类型水平区分逆转疾病转录程序的扰动与强化这些程序的扰动，用于安全性预测。受控架构消融表明，层级编排改善了有依据的弃答与 token 效率，并在复杂多步任务上保持强性能。在肺部疾病案例研究中，LungChat 通过药物连通性筛选、随后基于 DART 的细胞类型分析，独立将 saracatinib 优先用于 IPF；同一化合物已在 STOP-IPF 临床试验（NCT04598919）中评估。该系统还通过一次编排分析回收了已确立的 COPD 疗法 fluticasone propionate。这一组织无关系统为支持可复现科学发现的可验证智能体 AI 系统提供了蓝图。",
+      "published": "2026-08-14",
+      "author_line": "Rajdeo P, Asanuma S, Kouril M 等 9 人"
+    },
+    {
+      "id": "europepmc:ppr1299159",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Protein language models and the long tail of functional diversity",
+      "url": "https://europepmc.org/article/PPR/PPR1299159",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-16",
+      "creators": [
+        "Vinod R",
+        "Char S",
+        "Amini AP",
+        "Crawford LK",
+        "Yang KK"
+      ],
+      "language": "en",
+      "abstract_or_text": "Protein language model performance on downstream tasks depends on the pretraining data, motivating recent efforts to combine genomic- and metagenomic-derived protein sequences into large-scale atlases. Because these datasets are highly redundant, sequences are typically clustered by similarity and sampled during training. Sequences that do not belong to any cluster, known as ``singletons'', are typically excluded from training and evaluation because they are considered to be artifacts. However, singletons represent the long tail of functional diversity and are abundant in many large-scale atlases: nearly 43\\% of the 3.34 billion sequences in the joint genomic-metagenomic dataset GigaRef are singletons. Here, we characterize singletons derived from UniRef and GigaRef by assessing whether clustering missed homologs, how much their exclusion affects protein language model (PLM) training, and which biological domains they contain. We find that many GigaRef singletons belong to a cluster under alternative parameter settings, suggesting that genomic and metagenomic datasets may require dataset-specific clustering configurations. We also show that singletons share mutual information with clustered sequences, making them learnable by PLMs and useful for training. Finally, metagenomic singletons carry denser, more diverse domain content than clustered sequences, including domain-level homology that sequence-identity clustering misses. Together, these results support including singletons in PLM training and call for closer examination of data curation in large-scale integrated sequence atlases.",
+      "summary_zh": "GigaRef 的 33.4 亿条序列中近 43% 为 clustering 后的 singleton；分析显示它们可被 PLM 学习，并携带比成簇序列更密、更多样的结构域内容。",
+      "why_it_matters_zh": "把常被当作伪影丢掉的功能长尾重新放进蛋白质语言模型的预训练与数据策展讨论。",
+      "quality_score": 83.0,
+      "tags": [
+        "蛋白质与结构",
+        "GigaRef",
+        "singleton",
+        "PLM",
+        "UniRef"
+      ],
+      "evidence_flags": [
+        "数据集",
+        "方法创新",
+        "dataset",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 5,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744703",
+        "pmid": ""
+      },
+      "abstract_zh": "蛋白质语言模型在下游任务上的性能取决于预训练数据，这促使近期努力将基因组与宏基因组来源的蛋白质序列合并为大规模图谱。由于这些数据集高度冗余，序列通常按相似性聚类并在训练时采样。不属于任何簇的序列，即所谓“singletons”，通常被排除在训练与评估之外，因为它们被视为伪影。然而，singletons 代表功能多样性的长尾，并在许多大规模图谱中数量庞大：联合基因组–宏基因组数据集 GigaRef 的 33.4 亿条序列中近 43% 为 singletons。在此，我们通过评估聚类是否漏掉同源物、排除它们对蛋白质语言模型（PLM）训练影响多大、以及它们包含哪些生物学结构域，来刻画来自 UniRef 与 GigaRef 的 singletons。我们发现许多 GigaRef singletons 在替代参数设置下属于某一簇，提示基因组与宏基因组数据集可能需要数据集特异的聚类配置。我们还表明 singletons 与成簇序列共享互信息，因而可被 PLM 学习并对训练有用。最后，宏基因组 singletons 携带比成簇序列更密、更多样的结构域内容，包括序列同一性聚类所遗漏的结构域水平同源。总之，这些结果支持将 singletons 纳入 PLM 训练，并呼吁更仔细审视大规模整合序列图谱中的数据策展。",
+      "published": "2026-08-14",
+      "author_line": "Vinod R, Char S, Amini AP 等 5 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744831",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A Two-Stage ESM-Based Machine Learning Pipeline for Robust Hierarchical Enzyme Function Prediction",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744831",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Hua, X.",
+        "Grimaud, G."
+      ],
+      "language": "en",
+      "abstract_or_text": "Accurate enzyme annotation remains a major bottleneck in translating rapidly growing protein sequence data into biological knowledge. Enzyme Commission (EC) prediction is particularly challenging because enzyme functions are organized hierarchically, annotations are often imbalanced across classes, and sequence similarity alone may be insufficient to resolve functional differences. To address these challenges, we developed ESM-ECForest, a two-stage framework that combines protein embeddings generated by the pretrained language model ESM-2 (Evolutionary Scale Modeling 2) with Random Forest classifiers. The first stage distinguishes enzymes from non-enzymes, whereas the second assigns one or more EC numbers to proteins predicted to be enzymatic. On an external benchmark comprising 25,778 protein sequences, ESM-ECForest achieved the highest weighted F1 score among the evaluated methods at all four EC levels, decreasing from 0.94 at Level 1 to 0.90 at Level 4. The largest relative improvements were observed for lyases (EC 4), ligases (EC 6), and translocases (EC 7), although EC 6 and EC 7 remained the most difficult classes internally. Visualization of the ESM-2 embedding space using Uniform Manifold Approximation and Projection (UMAP) revealed clustering patterns consistent with enzyme functional relationships, indicating that biologically relevant information is retained in the pretrained representations prior to supervised classification. These results support the use of pretrained protein language model embeddings as an effective foundation for enzyme annotation. By combining large-scale sequence representations with a lightweight supervised classifier, ESM-ECForest provides a scalable approach for EC prediction and may facilitate functional annotation of protein sequences derived from large genomic and metagenomic datasets.",
+      "summary_zh": "ESM-ECForest 以 ESM-2 嵌入加两阶段随机森林做酶/非酶与多层 EC 编号预测，在 25,778 条外部序列上加权 F1 从 Level 1 的 0.94 降至 Level 4 的 0.90。",
+      "why_it_matters_zh": "用轻量监督分类把预训练蛋白表征接到层级 EC 标注，并在独立序列集上对照。",
+      "quality_score": 82.0,
+      "tags": [
+        "蛋白质与结构",
+        "ESM-ECForest",
+        "ESM-2",
+        "EC",
+        "酶注释"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有外部测试",
+        "方法创新",
+        "benchmark",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 6,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744831",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "准确的酶注释仍是将快速增长的蛋白质序列数据转化为生物学知识的主要瓶颈。酶委员会（EC）预测尤其困难，因为酶功能按层级组织、注释在各类间往往不平衡，且仅靠序列相似性可能不足以分辨功能差异。为应对这些挑战，我们开发了 ESM-ECForest，一个将预训练语言模型 ESM-2（Evolutionary Scale Modeling 2）生成的蛋白质嵌入与随机森林分类器相结合的两阶段框架。第一阶段区分酶与非酶，第二阶段为预测为酶的蛋白质分配一个或多个 EC 编号。在包含 25,778 条蛋白质序列的外部基准上，ESM-ECForest 在全部四个 EC 层级上取得所评估方法中最高的加权 F1 分数，从 Level 1 的 0.94 降至 Level 4 的 0.90。相对改进最大的是裂合酶（EC 4）、连接酶（EC 6）与转位酶（EC 7），尽管 EC 6 与 EC 7 在内部仍是最困难的类别。使用 Uniform Manifold Approximation and Projection（UMAP）对 ESM-2 嵌入空间的可视化揭示了与酶功能关系一致的聚类模式，表明在有监督分类之前，预训练表征中已保留生物学相关信息。这些结果支持将预训练蛋白质语言模型嵌入作为酶注释的有效基础。通过将大规模序列表征与轻量有监督分类器结合，ESM-ECForest 为 EC 预测提供了可扩展方法，并可能促进来自大规模基因组与宏基因组数据集的蛋白质序列功能注释。",
+      "published": "2026-08-14",
+      "author_line": "Hua, X., Grimaud, G."
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744760",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "PlantAI: A Multi-Agent System for Plant Functional Genomics Analysis and Biological Knowledge Interpretation",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744760",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Wu, T.",
+        "Yang, Z.",
+        "Shi, J.",
+        "Zou, M.",
+        "Wu, Y.",
+        "Jiang, S.",
+        "Xia, C.",
+        "Kong, L.",
+        "Yang, L.",
+        "Xia, Z."
+      ],
+      "language": "en",
+      "abstract_or_text": "Plant functional genomics requires the integration of sequence, expression, evolutionary, regulatory and literature evidence. However, the corresponding analyses are often distributed across disparate programs, scripts and databases, creating substantial barriers to task organization and result interpretation. Here, we present PlantAI, a multi-agent system that integrates bioinformatics analysis, project-level process tracking and knowledge-assisted interpretation. A Main Agent coordinates two complementary routes: an analysis route that invokes bioinformatics tools for RNA-seq and gene-family analyses, and a knowledge route that uses PlantAI-RAG for knowledge retrieval and evidence synthesis. PlantAI-RAG currently contains 31,207 plant-science literature records, comprising approximately 3.82 million normalized entities and 8.25 million literature-supported relation assertions. In an evaluation using plant-science questions, it achieved a Gold evidence-assertion recall of 86.7%, while strict accuracy ranged from 77% to 82% across three independent evaluator models. We further demonstrate an end-to-end task using 24 rice RNA-seq libraries collected under salt stress, spanning transcriptome analysis, candidate-family screening, HXK/HKL family analysis and knowledge-assisted interpretation, and prioritize OsHXK8 for experimental validation. By preserving analysis artifacts, run manifests, logs and environment records, PlantAI supports result verification and repeat execution while linking project-derived results to traceable literature evidence. Together, these capabilities provide an integrated and auditable framework to support plant functional genomics research.",
+      "summary_zh": "PlantAI 以主智能体协调 RNA-seq/基因家族分析路线与含 31,207 篇文献的 PlantAI-RAG，Gold 证据断言召回 86.7%，并在 24 份水稻盐胁迫文库中优先 OsHXK8。",
+      "why_it_matters_zh": "把植物功能基因组的工具调用、过程留痕与文献证据接到可审计的多智能体流水线。",
+      "quality_score": 80.0,
+      "tags": [
+        "组学与细胞",
+        "PlantAI",
+        "PlantAI-RAG",
+        "OsHXK8",
+        "多智能体"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "方法创新",
+        "experimental",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 7,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744760",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "植物功能基因组学需要整合序列、表达、进化、调控与文献证据。然而，相应分析往往分散在不同程序、脚本与数据库中，给任务组织与结果解释造成显著障碍。在此我们提出 PlantAI，一个整合生物信息学分析、项目级过程追踪与知识辅助解释的多智能体系统。Main Agent 协调两条互补路线：调用生物信息学工具进行 RNA-seq 与基因家族分析的分析路线，以及使用 PlantAI-RAG 进行知识检索与证据综合的知识路线。PlantAI-RAG 目前包含 31,207 条植物科学文献记录，约 382 万个归一化实体与 825 万条文献支持的关系断言。在植物科学问题上的评估中，它取得 86.7% 的 Gold 证据断言召回，而严格准确率在三个独立评估模型上介于 77% 至 82%。我们进一步用盐胁迫下收集的 24 个水稻 RNA-seq 文库演示端到端任务，覆盖转录组分析、候选家族筛选、HXK/HKL 家族分析与知识辅助解释，并将 OsHXK8 优先用于实验验证。通过保留分析产物、运行清单、日志与环境记录，PlantAI 支持结果核验与重复执行，同时将项目衍生结果与可追溯的文献证据相连。这些能力共同提供一个整合且可审计的框架，以支持植物功能基因组研究。",
+      "published": "2026-08-14",
+      "author_line": "Wu, T., Yang, Z., Shi, J. 等 10 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.09.743676",
+      "channel": "aixbio",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "FP8 Inference in Genomic Foundation Models: Theoretical vs. Realized Speedups on GenomeOcean",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.09.743676",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Yu, M.",
+        "Egan, R.",
+        "Liu, F.",
+        "Wang, Z.",
+        "Shi, L."
+      ],
+      "language": "en",
+      "abstract_or_text": "Genomic Foundation Models (GFMs) are increasingly used for large-scale sequence analysis and generation. Compared with frontier language models, GFMs are typically smaller and frequently operate on long genomic sequences, with evaluation often requiring preservation of biologically meaningful structure and sequence-level relationships. Although low-precision post-training quantization (PTQ) has shown substantial memory and throughput benefits for general-purpose language models, it remains unclear whether these benefits transfer to GFMs given their distinct model scales, sequence characteristics, and evaluation requirements. We present an empirical case study of FP8 post-training quantization applied to GenomeOcean, a computationally efficient genomic foundation model with strong reported performance across diverse genomics tasks [Zhou et al., 2025]. Its range of model scales, from 100M to 4B parameters, provides a useful setting for examining how quantization effects vary with model size. We evaluate FP8 across two primary GFM inference regimes--embedding extraction and autoregressive generation--and assess its impact along two dimensions: biological fidelity relative to BF16 baselines and system-level efficiency in terms of throughput, memory usage, and energy efficiency. We find that FP8 largely preserves biological fidelity across the evaluated scales and inference regimes, while reducing GPU memory footprint at 4B scale and improving energy efficiency during autoregressive generation. However, realized throughput gains remain substantially below FP8s theoretical 2x hardware ceiling, with a best-case improvement of 19.3% in autoregressive generation and benefits varying strongly by model scale and workload. Autoregressive generation shows the clearest gains, driven largely by KV-cache compression, whereas embedding extraction provides limited or negative throughput benefits at smaller model scales. We attribute this theory-practice gap to the interaction of model-scale effects, memory-system bottlenecks, and software-stack limitations. These findings highlight the need for workload-specific empirical evaluation before adopting low-precision inference in scientific foundation models. Code availabilityhttps://github.com/jgi-genomeocean/genomeocean_efficiency",
+      "summary_zh": "在 100M–4B 的 GenomeOcean 上评估 FP8 训练后量化：生物保真大体保持，自回归生成吞吐最多提升 19.3%，远低于理论 2× 硬件上限。",
+      "why_it_matters_zh": "用基因组基础模型的实测说明科学模型的低精度推理不能直接套用通用 LLM 的加速叙事。",
+      "quality_score": 79.0,
+      "tags": [
+        "方法与模型",
+        "GenomeOcean",
+        "FP8",
+        "PTQ",
+        "GFM"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "公开代码",
+        "github",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 8,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.09.743676",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "基因组基础模型（GFMs）日益用于大规模序列分析与生成。与前沿语言模型相比，GFMs 通常更小，并经常在长基因组序列上运行，评估往往要求保留生物学有意义的结构与序列水平关系。尽管低精度训练后量化（PTQ）已为通用语言模型带来显著的内存与吞吐收益，鉴于 GFMs 在模型规模、序列特征与评估要求上的差异，这些收益能否迁移仍不清楚。我们对应用于 GenomeOcean 的 FP8 训练后量化给出经验案例研究；GenomeOcean 是一个计算高效的基因组基础模型，在多样基因组学任务上报告了强性能 [Zhou et al., 2025]。其从 100M 到 4B 参数的模型规模范围，为考察量化效应如何随模型大小变化提供了有用设定。我们在两种主要 GFM 推理体制——嵌入提取与自回归生成——上评估 FP8，并沿两个维度评估其影响：相对 BF16 基线的生物学保真，以及吞吐、内存占用与能效方面的系统级效率。我们发现 FP8 在所评估规模与推理体制上大体保持生物学保真，同时在 4B 规模降低 GPU 内存占用，并在自回归生成期间改善能效。然而，实际吞吐增益仍显著低于 FP8 理论 2× 硬件上限，自回归生成的最佳改进为 19.3%，且收益随模型规模与工作负载强烈变化。自回归生成显示最清晰的增益，主要来自 KV-cache 压缩，而嵌入提取在较小模型规模上仅提供有限或负的吞吐收益。我们将这一理论–实践差距归因于模型规模效应、内存系统瓶颈与软件栈限制的相互作用。这些发现强调，在科学基础模型中采用低精度推理之前，需要进行工作负载特异的经验评估。代码可用性：https://github.com/jgi-genomeocean/genomeocean_efficiency",
+      "published": "2026-08-14",
+      "author_line": "Yu, M., Egan, R., Liu, F. 等 5 人"
+    }
+  ],
+  "review": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "note": "2026-08-14 候选 60 篇，全部自动分≥70，但夹杂面部衰老/CT 病灶/神经干预/脂质组学综述、无计算方法的珊瑚真菌与 IOMM-Lee 湿实验、花生与菜豆 GEO 灌水、单中心前列腺活检、妊娠数字孪生空转稿、医疗政策文本分析与边缘扩散语言模型综述。按 AI×Bio 相关性、方法可信度与实验/临床证据精选 8 篇 preprint，覆盖蛋白质与结构、组学与细胞、方法与模型；当日新增 EXPRESSO 泛癌转录组疗效预测与 22 队列前瞻外验、CytoBERT 可变标记流式基础模型、AI4Loop 从 RNA-seq 推断染色质互作并经 Hi-C 验证、LungChat 多组学多智能体与 DART 药物再利用、蛋白质语言模型 singleton 长尾、ESM-ECForest 酶 EC 分层预测、PlantAI 植物功能基因组智能体与 GenomeOcean FP8 量化实测。未收录缺乏计算方法的湿实验、植物 GEO 灌水、单中心前列腺与综述稿、无湿实验证据的 ALS 计算靶点与膀胱癌 GEO 五基因模型，以及已被化学频道覆盖的 ScreenShot，并避免重复 08-10/08-11/08-12/08-13 已精读的 CAG-MIND、PhysioStack、CpGPT、CBCT 标签溯源、白血病 RAC、Apodex、基因组 UQ、疟疾语义 XAI、bgnorm、SEA-AD、PACE/CellQ、ConRub-Med、Parnet、SERRATE、PSMASegmentator、Zf S1500+、Waypoint、GraphTransformer-CoGNN、PIANO、FENNEC、组学智能体、DNN-IR、SFSF、CT-ΔBench、VITA、XG-PUL、MK-TGAN、PRISM、ICD-10、IBD 微生物组、EGRL、CoMedBench 与 IDD FOS/CEBPB。"
+  }
+}

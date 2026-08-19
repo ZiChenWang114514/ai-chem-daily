@@ -2,44 +2,869 @@
   "schema_version": "2.0",
   "date": "2026-08-16",
   "channel": "aixchem",
-  "generated_at": "2026-08-16T12:28:41+00:00",
+  "generated_at": "2026-08-18T15:11:05+00:00",
   "title": "AI × Chem 每日精选",
   "subtitle": "预印本、方法、数据集与实验验证的每日精选。",
   "window": {
-    "start": "2026-08-16",
+    "start": "2026-08-13",
     "end": "2026-08-16"
   },
   "method": "公开来源采集、规则筛选与模型审阅",
   "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
   "stats": {
-    "fetched": 0,
-    "candidates": 0,
-    "selected": 0,
+    "fetched": 1615,
+    "candidates": 60,
+    "selected": 16,
     "sources": {
-      "arXiv": 0,
-      "bioRxiv": 0,
-      "ChemRxiv": 0
+      "arXiv": 977,
+      "bioRxiv": 585,
+      "ChemRxiv": 68
     }
   },
   "source_status": {
     "arXiv": {
-      "state": "empty",
-      "count": 0
+      "state": "ok",
+      "count": 977
     },
     "bioRxiv": {
-      "state": "empty",
-      "count": 0
+      "state": "ok",
+      "count": 585
     },
     "ChemRxiv": {
-      "state": "empty",
-      "count": 0
+      "state": "ok",
+      "count": 68
     }
   },
   "source_errors": [],
-  "items": [],
+  "items": [
+    {
+      "id": "biorxiv:10.64898/2026.08.11.744237",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Discovery of Selective Small-Molecule Ligands of SV2C by AI-Enhanced Virtual Screening and Experimental Validation",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.11.744237",
+      "published_at": "2026-08-16",
+      "updated_at": "2026-08-16",
+      "creators": [
+        "Brueckner, A. C.",
+        "Martin, M. F.",
+        "Khuttan, S.",
+        "Shields, B.",
+        "Mittal, A.",
+        "Schreiber, J. A.",
+        "Salomon-Ferrer, R.",
+        "Bortolato, A.",
+        "Salahpour, A.",
+        "Bucher, M. L.",
+        "Coleman, J. A.",
+        "Miller, G. W."
+      ],
+      "language": "en",
+      "abstract_or_text": "Synaptic vesicle glycoprotein 2C (SV2C) is a vesicular protein enriched in dopaminergic neurons of the basal ganglia that modulates dopamine storage and release, and its disruption is implicated in Parkinson's disease (PD). Despite strong genetic and pathological links to PD, there are no selective small-molecule probes for SV2C. Here, we describe an AI-enhanced virtual screening (VS) and experimental campaign that identified multiple novel chemotypes with low-micromolar affinity and marked selectivity for SV2C over SV2A and SV2B, starting from a large, general-purpose commercial library. Because no full-length high-resolution SV2C structure was available, we built a homology model using SV2A cryo-EM structures as templates and characterized its conformational landscape by molecular dynamics (MD) and Gaussian accelerated MD (GaMD) simulations in apo form and in complex with known SV2 ligands (plosaracetam, levetiracetam, brivaracetam, and padsevonil). A convolutional neural network-based scoring function (CNN_VS), retrospectively validated on a manually curated 39-ligand SV2A benchmark (r = 0.72 vs experimental pIC50), was then applied in a multi-stage funnel to 5.96 million Mcule in-stock compounds, which were sequentially filtered to 3.19 million CNS-relevant molecules before docking and rescoring. From 94 VS-prioritized candidates, 71 compounds were experimentally profiled in an orthogonal primary assay cascade combining a thermal shift assay (TSA) with a [3H]-padsevonil scintillation proximity assay (SPA), followed by Ki determination and isoform selectivity profiling for key hits. This campaign yielded 22 active molecules (31% hit rate) that naturally segregated into two categories: compounds that showed primary site competition, and compounds that did not show primary site competition with [3H]-padsevonil. A subset of competitor compounds also showed thermostabilization activity. Among these, compounds 36 and 56 emerged as particularly attractive leads, with Ki values of 24.6 uM and 3.25 uM at SV2C, respectively, and greater than 10-fold selectivity versus SV2A; compound 56 also maintained approximately 12-fold selectivity relative to SV2B. A complementary subset of SV2C-selective hits behaved as padsevonil-site competitors, providing a lead set that will serve as a template for functional characterization and future drug development for conditions that affect dopaminergic signaling. Docking analysis suggests a common binding mode anchored by conserved tryptophan residues in the SV2 pocket, a prediction independently confirmed by an unpublished SV2A-plosaracetam cryo-EM structure showing 0.76 Angstrom binding-site C-alpha RMSD relative to the SV2C model and complete conservation of the tryptophan cage. Subtle differences in the luminal domain and transmembrane region point to the structural determinants underlying isoform selectivity. Collectively, these results demonstrate that an AI-driven VS pipeline, tightly integrated with medium-throughput biophysical assays, can deliver selective SV2C binders from a general chemical library on a structurally under-characterized membrane target. The identified hits provide multiple starting points for hit-to-lead optimization and tools for probing SV2C biology and its role in PD.",
+      "summary_zh": "以 SV2A 电镜同源建模结合 MD/GaMD 与 CNN_VS，对 5.96 million Mcule 现货库漏斗筛选至 3.19 million CNS 分子；71 个候选经 TSA 与 [3H]-padsevonil SPA 验证，命中率 31%。化合物 56 的 SV2C Ki 为 3.25 uM，相对 SV2A 大于 10 倍、相对 SV2B 约 12 倍选择性。",
+      "why_it_matters_zh": "把 CNN 打分接到结构欠表征膜靶点并有正交生物物理命中；结合位点仍依赖 SV2A 模板与未发表电镜，功能药效尚未闭环。",
+      "quality_score": 92.0,
+      "tags": [
+        "分子与药物发现",
+        "SV2C",
+        "虚拟筛选",
+        "CNN_VS",
+        "帕金森病"
+      ],
+      "evidence_flags": [
+        "有实验验证",
+        "有定量基准",
+        "仅摘要可判断",
+        "benchmark",
+        "experimental",
+        "release"
+      ],
+      "publication_status": "preprint",
+      "rank": 1,
+      "featured": true,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.11.744237",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "突触囊泡糖蛋白2C（SV2C）是一种在基底神经节多巴胺能神经元中富集的囊泡蛋白，调节多巴胺储存与释放，其破坏与帕金森病（PD）有关。尽管与PD存在强遗传和病理联系，目前尚无针对SV2C的选择性小分子探针。本文描述了一项AI增强的虚拟筛选（VS）与实验活动：从大型通用商业库出发，鉴定出多种对SV2C具有低微摩尔亲和力、并相对SV2A和SV2B具有显著选择性的新化学型。由于没有全长高分辨率SV2C结构可用，我们以SV2A冷冻电镜结构为模板构建同源模型，并通过分子动力学（MD）和高斯加速MD（GaMD）模拟，在apo形式以及与已知SV2配体（plosaracetam、levetiracetam、brivaracetam和padsevonil）的复合物中表征其构象景观。随后，一种基于卷积神经网络的评分函数（CNN_VS）——在人工整理的39配体SV2A基准上经回顾验证（相对实验pIC50，r = 0.72）——以多阶段漏斗应用于596万个Mcule现货化合物，这些化合物在对接与重打分前被依次过滤至319万个中枢神经系统相关分子。从94个VS优先候选中，71个化合物在正交的一级测定级联中进行了实验表征，该级联结合热位移测定（TSA）与[3H]-padsevonil闪烁邻近测定（SPA），随后对关键命中进行Ki测定和亚型选择性分析。此次活动得到22个活性分子（命中率31%），它们自然分为两类：显示与[3H]-padsevonil主位点竞争的化合物，以及不显示主位点竞争的化合物。一部分竞争化合物还表现出热稳定化活性。其中，化合物36和56成为特别有吸引力的先导物，在SV2C上的Ki值分别为24.6 uM和3.25 uM，相对SV2A具有大于10倍的选择性；化合物56相对SV2B也保持了约12倍选择性。一组互补的SV2C选择性命中表现为padsevonil位点竞争剂，提供了一套将作为功能表征以及面向影响多巴胺能信号的疾病的未来药物开发模板的先导集合。对接分析提示一种由SV2口袋中保守色氨酸残基锚定的共同结合模式，该预测被一项未发表的SV2A–plosaracetam冷冻电镜结构独立证实：相对SV2C模型，结合位点C-alpha RMSD为0.76 Å，且色氨酸笼完全保守。腔域和跨膜区的细微差异指向了亚型选择性背后的结构决定因素。综合来看，这些结果表明，与中通量生物物理测定紧密整合的AI驱动VS流程，能够从通用化学库中、针对结构表征不足的膜靶点交付选择性SV2C结合剂。所鉴定的命中为hit-to-lead优化提供了多个起点，并可作为探究SV2C生物学及其在PD中作用的工具。",
+      "published": "2026-08-16",
+      "author_line": "Brueckner, A. C., Martin, M. F., Khuttan, S. 等 12 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.09.743788",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Learning from human and chemical languages to predict biological function",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.09.743788",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Kosonocky, C. W.",
+        "Kaderabkova, N.",
+        "Kim, K.",
+        "Mahmood, A. J. S.",
+        "Dunmyre, A.",
+        "Woolley, P.",
+        "Xing, K.",
+        "Winkler, D.",
+        "Babu, T.",
+        "Kaderabek, F.",
+        "Sessler, J. L.",
+        "Anslyn, E. V.",
+        "Marcotte, E. M.",
+        "Zhang, Y. J.",
+        "Ellington, A. D.",
+        "Mavridou, D. A. I."
+      ],
+      "language": "en",
+      "abstract_or_text": "Understanding how molecular structure encodes biological function remains a grand challenge in drug discovery. Here, we present PubCheF-1, a deep learning model that predicts literature-derived biological function directly from chemical structure. PubCheF-1 was trained on a dataset linking molecules to labels derived from the scientific articles in which they appear, a strategy that connects disparate compounds through the language used to describe their functionalities. When tasked with identifying inhibitors of {beta}-lactamases, including enzymes considered largely refractory to inhibition, PubCheF-1 predicted structurally distinct compounds that collectively have activity against all {beta}-lactamase classes. Furthermore, hit compounds directly bind the enzyme active site, restore antibiotic efficacy in multidrug-resistant high-priority pathogens, and demonstrate potent activity in animal infection models. Together, these findings establish that machine learning-based prediction of biological function derived from the language of scientific literature allows the identification of bioactive molecules at high hit rates, thereby accelerating therapeutic discovery.",
+      "summary_zh": "PubCheF-1 将分子与其出现论文中的功能语言标签相连，直接由结构预测文献来源生物学功能；针对 β-lactamases 给出跨全部类别的结构相异抑制剂，并经活性位点结合、多重耐药病原体药效恢复与动物感染模型验证。",
+      "why_it_matters_zh": "用文献语义作监督信号做功能导向筛选，并有从预测到动物的连续证据；训练标签来自论文共现，机制特异性与假阳性风险仍需留意。",
+      "quality_score": 91.0,
+      "tags": [
+        "分子与药物发现",
+        "PubCheF-1",
+        "功能预测",
+        "β-内酰胺酶",
+        "文献监督"
+      ],
+      "evidence_flags": [
+        "有实验验证",
+        "仅摘要可判断",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.09.743788",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "理解分子结构如何编码生物学功能仍是药物发现中的重大挑战。本文介绍PubCheF-1，这是一个直接从化学结构预测文献来源生物学功能的深度学习模型。PubCheF-1在一个将分子与其出现的科学论文所导出标签相连接的数据集上训练，该策略通过用于描述其功能的语言将不同化合物联系起来。在被要求鉴定β-内酰胺酶抑制剂（包括被认为大体上难以抑制的酶）时，PubCheF-1预测了结构上不同的化合物，这些化合物合在一起对所有β-内酰胺酶类别均具有活性。此外，命中化合物直接结合酶活性位点，在多重耐药的高优先级病原体中恢复抗生素效力，并在动物感染模型中显示出强效活性。综合来看，这些发现表明，基于机器学习、从科学文献语言导出的生物学功能预测，能够以高命中率鉴定生物活性分子，从而加速治疗发现。",
+      "published": "2026-08-14",
+      "author_line": "Kosonocky, C. W., Kaderabkova, N., Kim, K. 等 16 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.02.15.705956",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Physically Grounded Generative Modeling of All-Atom Biomolecular Dynamics",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.02.15.705956",
+      "published_at": "2026-08-15",
+      "updated_at": "2026-08-15",
+      "creators": [
+        "Feng, B.",
+        "Zhang, J.",
+        "Zhang, X.",
+        "Cao, H.",
+        "Zhang, M.",
+        "Barth, P.",
+        "Liu, Z.",
+        "Li, Y."
+      ],
+      "language": "en",
+      "abstract_or_text": "Predicting the kinetic pathways of biomolecular systems at all-atom resolution is crucial for understanding protein function and drug efficacy, yet this task is hindered by the immense computational cost of conventional molecular dynamics (MD) simulations. While deep learning has revolutionized static structure prediction and equilibrium ensemble sampling, simulating the kinetics of conformational transitions remains a critical challenge. We introduce BioKinema, a physically grounded generative model that predicts continuous-time, all-atom biomolecular trajectories at a fraction of the cost of traditional simulations. In particular, BioKinema utilizes a spatial-temporal diffusion architecture motivated by the exponential decay of correlations characteristic of Langevin dynamics, and is explicitly trained to generate trajectories with the correct kinetics and thermodynamics. It employs a hierarchical forecasting-and-interpolation strategy to overcome the error accumulation that often plagues long-horizon generation. Through extensive validation, we demonstrate that BioKinema generates physically stable and dynamically accurate trajectories suitable for rigorous downstream analysis. For protein systems, it reproduces the equilibrium thermodynamics of the conformational ensemble and the underlying kinetics. For protein-ligand complexes, it successfully elucidates mechanisms such as ligand-driven conformational changes and allosteric interactions. Furthermore, BioKinema leverages enhanced sampling data to predict rare kinetic events, emerging as a powerful tool for estimating ligand unbinding pathways. Collectively, these results establish BioKinema as a computationally efficient complement to MD simulations that bridges the gap between static structure and dynamic function, enabling high-throughput exploration of the kinetic landscape for structural biology and drug discovery.",
+      "summary_zh": "BioKinema 以受 Langevin 相关指数衰减启发的时空扩散架构生成连续时间全原子轨迹，并用分层预测–插值抑制长时程误差；复现蛋白质平衡热力学与动力学，阐明配体驱动构象变化与别构，并可借增强采样估计配体解离路径。",
+      "why_it_matters_zh": "把动力学与热力学同时写入生成式轨迹模型，补静态结构预测之缺；摘要未给出相对 MD 的加速倍数与独立实验对照。",
+      "quality_score": 89.0,
+      "tags": [
+        "结构与生物",
+        "BioKinema",
+        "全原子动力学",
+        "扩散模型",
+        "配体解离"
+      ],
+      "evidence_flags": [
+        "有物理一致性检查",
+        "仅摘要可判断"
+      ],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.02.15.705956",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "以全原子分辨率预测生物分子体系的动力学路径对于理解蛋白质功能与药效至关重要，但该任务受制于传统分子动力学（MD）模拟的巨大计算代价。尽管深度学习已变革静态结构预测与平衡系综采样，模拟构象转变的动力学仍是一项关键挑战。我们提出 BioKinema，一种物理奠基的生成模型，能以传统模拟的一小部分代价预测连续时间、全原子生物分子轨迹。具体而言，BioKinema 采用受 Langevin 动力学特征性相关指数衰减启发的时空扩散架构，并经显式训练以生成具有正确动力学与热力学的轨迹。它采用分层预测–插值策略，以克服长时程生成中常见的误差累积。通过广泛验证，我们表明 BioKinema 生成物理稳定、动力学准确、适合严格下游分析的轨迹。对于蛋白质体系，它复现构象系综的平衡热力学及底层动力学。对于蛋白–配体复合物，它成功阐明配体驱动的构象变化与别构相互作用等机制。此外，BioKinema 利用增强采样数据预测稀有动力学事件，成为估计配体解离路径的有力工具。综合来看，这些结果确立 BioKinema 作为 MD 模拟的计算高效补充，弥合静态结构与动态功能之间的差距，使结构生物学与药物发现能够高通量探索动力学图景。",
+      "published": "2026-08-15",
+      "author_line": "Feng, B., Zhang, J., Zhang, X. 等 8 人"
+    },
+    {
+      "id": "arxiv:2608.13341v2",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Simulation-to-real transfer learning for infrared spectroscopic chemical sensing and analysis from molecules to complex samples",
+      "url": "https://arxiv.org/abs/2608.13341v2",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Yusen Tan",
+        "Yixuan Chen",
+        "Zheng Fang",
+        "Pan Liu",
+        "Yifan Li",
+        "Qinyu Guo",
+        "Zhedong Lin",
+        "Yuqiang Li",
+        "Xiangxiang Zeng",
+        "Tong Wang",
+        "Jun Xia"
+      ],
+      "language": "en",
+      "abstract_or_text": "Infrared (IR) spectroscopy is widely used for chemical sensing, but extracting reliable chemical information from spectra remains challenging. Conventional interpretation is labor-intensive, relies on prior knowledge and reference spectra, and is difficult to scale, whereas most machine-learning methods are tailored to individual tasks or datasets, require large labeled training sets, and transfer poorly across analytical objectives and experimental datasets. Here we introduce UltraIR, a foundation model for IR spectroscopy with more than 100 million parameters that enables simulation-to-real transfer learning for chemical sensing and analysis from molecules to complex samples. UltraIR is pretrained on approximately 60 million simulated IR spectra using spectral reconstruction, molecular fingerprint similarity alignment, and functional-group prediction, then adapted to downstream objectives with task-specific labels or targets. Across functional-group prediction, molecular structure elucidation, physicochemical property prediction, mixture-component identification and quantification, bacterial classification, medicinal-herb geographic origin traceability and constituent quantification, microplastics classification, and soil property prediction, UltraIR outperforms conventional machine-learning and task-specific deep-learning baselines. It performs strongly with limited labeled experimental spectra and in zero-shot inference for the same analytical task across Fourier-transform infrared spectrometers and laboratories, providing a route to adaptable, data-efficient chemical sensing from complex real-world samples.",
+      "summary_zh": "UltraIR 以超过 100 million 参数在约 60 million 条模拟红外光谱上做光谱重建、分子指纹对齐与官能团预测预训练，再适配结构解析、混合物定量、细菌/微塑料分类与土壤性质等下游任务，并在少标注与跨仪器零样本设置中优于任务特异性基线。",
+      "why_it_matters_zh": "把模拟红外光谱做成可迁移的化学传感基础模型，覆盖分子到复杂样品；真实实验标签规模与失败案例摘要未细报。",
+      "quality_score": 88.0,
+      "tags": [
+        "方法与模型",
+        "UltraIR",
+        "红外光谱",
+        "基础模型",
+        "模拟到真实"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有实验验证",
+        "仅摘要可判断",
+        "dataset",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.13341v2"
+      },
+      "abstract_zh": "红外光谱（IR）被广泛用于化学传感，但从光谱中提取可靠化学信息仍具挑战。传统解读费时费力，依赖先验知识与参考光谱，难以规模化；而多数机器学习方法针对单一任务或数据集定制，需要大量标注训练集，并且在不同分析目标与实验数据集之间迁移较差。本文提出 UltraIR，一个参数超过 100 million 的红外光谱基础模型，实现从分子到复杂样品的化学传感与分析的模拟到真实迁移学习。UltraIR 在约 60 million 条模拟红外光谱上以光谱重建、分子指纹相似性对齐和官能团预测进行预训练，随后用任务特异性标签或目标适配下游目标。在官能团预测、分子结构解析、理化性质预测、混合物组分鉴定与定量、细菌分类、药材地理来源溯源与成分定量、微塑料分类以及土壤性质预测等任务上，UltraIR 优于常规机器学习与任务特异性深度学习基线。它在标注实验光谱有限时表现强劲，并能对同一分析任务在傅里叶变换红外光谱仪与实验室之间做零样本推理，为从复杂真实样品进行可适配、数据高效的化学传感提供了路径。",
+      "published": "2026-08-13",
+      "author_line": "Yusen Tan, Yixuan Chen, Zheng Fang 等 11 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007443/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Neural Networks Accelerate Ab Initio Multiple Spawning Simulations: A Case Study of Using Machine Learning Potentials for Excited State Dynamics",
+      "url": "https://doi.org/10.26434/chemrxiv.15007443/v1",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Pablo A. Unzueta",
+        "Yuanheng Wang",
+        "Todd J. Martinez"
+      ],
+      "language": "en",
+      "abstract_or_text": "Nonadiabatic simulations are critical for understanding photochemical reactions but are often computationally prohibitive, limiting their application to relatively small molecules and short timescales. Machine learning interatomic potentials (MLIPs) promise to remove most of the cost by replacing the electronic structure calls that dominate these simulations, while retaining chemical accuracy. We evaluate independent MLIPs fit to the ground and first excited state for two prototypical photochemical molecules — ethylene and the deprotonated green fluorescent protein chromophore. Despite sub-chemical-accuracy errors on held-out test data, the MLIPs predict qualitatively wrong potential energy surfaces (PESs) near conical intersections: artificial gaps, spurious near-degeneracies, and even reordering of the adiabatic states. We repair this with a hybrid “holey-ML” approach that switches from the MLIPs to ab initio quantum chemistry (QM) wherever the ML-predicted gap between states is small. This hybrid approach reduces the computational cost by an order of magnitude while reproducing the excited state population decay of reference fully ab initio QM simulations. Therefore, hybrid QM/ML schemes are a practical route to routine nonadiabatic dynamics.",
+      "summary_zh": "对 ethylene 与去质子化绿色荧光蛋白发色团分别拟合基态/第一激发态 MLIP，虽留出误差低于化学精度，但在圆锥交叉附近出现人为能隙、虚假近简并与绝热态重排；holey-ML 在预测能隙较小时切回从头算 QM，计算成本降一个数量级并复现激发态布居衰减。",
+      "why_it_matters_zh": "诚实报告 MLIP 在圆锥交叉失效，并给出可落地的混合 QM/ML 修法；目前仅两个原型分子。",
+      "quality_score": 86.0,
+      "tags": [
+        "方法与模型",
+        "holey-ML",
+        "MLIP",
+        "激发态动力学",
+        "圆锥交叉"
+      ],
+      "evidence_flags": [
+        "有对照实验",
+        "有物理一致性检查",
+        "报告负面结果",
+        "仅摘要可判断"
+      ],
+      "publication_status": "preprint",
+      "rank": 5,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007443/v1",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "非绝热模拟对理解光化学反应至关重要，但计算成本往往过高，使其应用限于相对小的分子与短时间尺度。机器学习原子间势（MLIP）有望通过替换主导这些模拟的电子结构调用而去除大部分成本，同时保持化学精度。我们评估了分别拟合基态与第一激发态的独立 MLIP，对象是两种原型光化学分子——ethylene 与去质子化绿色荧光蛋白发色团。尽管在留出测试数据上误差低于化学精度，这些 MLIP 在圆锥交叉附近预测出定性错误的势能面（PES）：人为能隙、虚假近简并，甚至绝热态重排。我们用混合 “holey-ML” 方法加以修复：在 ML 预测的态间能隙较小时，从 MLIP 切换到从头算量子化学（QM）。该混合方法将计算成本降低一个数量级，同时复现了完全从头算 QM 参考模拟的激发态布居衰减。因此，混合 QM/ML 方案是实现常规非绝热动力学的实用路径。",
+      "published": "2026-08-14",
+      "author_line": "Pablo A. Unzueta, Yuanheng Wang, Todd J. Martinez"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007436/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "SafeChem: A Benchmark Dataset for Multi-Label Chemical Hazard Prediction and LLM Safety Hallucination Evaluation",
+      "url": "https://doi.org/10.26434/chemrxiv.15007436/v1",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Ran Elgedawy",
+        "Sanjay Das",
+        "Ethan Seefried",
+        "Ryan Burchfield",
+        "Gavin Wiggins",
+        "Kimberly Jeskie",
+        "Chrissi Schnell",
+        "Susan Fiscor",
+        "Subhamay Pramanik",
+        "Billey Thomas",
+        "Sudarshan Srinivasan",
+        "Tirthankar Ghosal"
+      ],
+      "language": "en",
+      "abstract_or_text": "We introduce SafeChem, a regulatory-grounded benchmark of 32,211 chemical substances annotated with molecular structure representations, physicochemical descriptors, and 30 binary Globally Harmonized System (GHS) hazard labels. Unlike prior molecular benchmarks queried from pharmaceutical databases, SafeChem is seeded from a curated hazardous materials registry (HMMIS), ensuring coverage of real-world industrial and safety-critical chemicals. We position it as a unified benchmark for chemical safety reasoning across two complementary regimes: predictive performance, measuring multi-label hazard classification from molecular structure, and safety reliability, measuring omission-prone hazard assessment by large language models (LLMs). Under predictive evaluation, a scaffold-split benchmark over 20 GHS categories reveals that all six baseline models achieve meaningful performance on high-prevalence labels (macro-AUPRC 0.45–0.55), while mid-prevalence labels remain substantially harder (macro-AUPRC 0.08–0.28), establishing a difficulty gradient that motivates future work on low-resource hazard prediction. Under reliability evaluation, a 500-substance high-hazard LLM stress test shows that all eight evaluated LLMs exhibit omission hallucination rates above 0.21, with the dominant failure mode being silent abstention: empty predictions indistinguishable from confirmed negatives in automated pipelines, disproportionately targeting the rarest and most dangerous hazard classes. Together, these regimes make SafeChem a benchmark resource for both task-specific molecular models and general-purpose LLMs in chemical safety workflows.",
+      "summary_zh": "SafeChem 以 HMMIS 危化品登记库构建 32,211 种物质、30 个二值 GHS 危害标签的监管基准，同时评测结构到危害的多标签预测与 LLM 遗漏幻觉；骨架划分下高流行度标签 macro-AUPRC 为 0.45–0.55，中等流行度仅 0.08–0.28，八个 LLM 在 500 种高危害物上遗漏幻觉率均高于 0.21。",
+      "why_it_matters_zh": "把工业危化品监管标签做成可复现的预测与 LLM 安全双轨基准；摘要未报告最优模型名称与代码开源情况。",
+      "quality_score": 85.0,
+      "tags": [
+        "方法与模型",
+        "SafeChem",
+        "GHS",
+        "危害预测",
+        "LLM幻觉"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有外部测试",
+        "仅摘要可判断",
+        "benchmark",
+        "dataset",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 6,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007436/v1",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "我们提出 SafeChem，一个有监管依据的基准，包含 32,211 种化学物质，并标注分子结构表征、理化描述符以及 30 个二值 Globally Harmonized System（GHS）危害标签。与以往从药物数据库查询的分子基准不同，SafeChem 以经策展的危险材料登记库（HMMIS）为种子，确保覆盖真实世界工业与安全关键化学品。我们将其定位为跨越两个互补体制的化学安全推理统一基准：预测性能，衡量从分子结构出发的多标签危害分类；以及安全可靠性，衡量大语言模型（LLM）易发生遗漏的危害评估。在预测评估中，覆盖 20 个 GHS 类别的骨架划分基准显示，全部六个基线模型在高流行度标签上达到有意义的性能（macro-AUPRC 0.45–0.55），而中等流行度标签仍明显更难（macro-AUPRC 0.08–0.28），从而建立了激励未来低资源危害预测工作的难度梯度。在可靠性评估中，针对 500 种高危害物质的 LLM 压力测试显示，全部八个被评估的 LLM 的遗漏幻觉率均高于 0.21，主导失败模式是静默弃权：空预测在自动化流水线中与确认阴性无法区分，且不成比例地针对最稀有、最危险的危害类别。这两个体制共同使 SafeChem 成为任务特异性分子模型与通用大语言模型在化学安全工作流中的基准资源。",
+      "published": "2026-08-14",
+      "author_line": "Ran Elgedawy, Sanjay Das, Ethan Seefried 等 12 人"
+    },
+    {
+      "id": "arxiv:2608.15900v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Crystal-structure design by agentic AI in a language of motifs",
+      "url": "https://arxiv.org/abs/2608.15900v1",
+      "published_at": "2026-08-16",
+      "updated_at": "2026-08-16",
+      "creators": [
+        "Dinh-Khiet Le",
+        "Minh-Quyet Ha",
+        "Hong-Phuc Vu-Dinh",
+        "Takashi Miyake",
+        "Hiori Kino",
+        "Hieu-Chi Dam"
+      ],
+      "language": "en",
+      "abstract_or_text": "Data-driven materials discovery interpolates more reliably than it extrapolates and seldom reaches new structure types. We present MatEvolve, an agentic-AI framework designing crystals, proposing each candidate with a stated rationale and testing it. The agent reasons in an interpretable language of motifs, writing each crystal as a motif profile that describes the recurring geometric patterns---the motifs---composing it. The motif profile serves not merely as a description of a material but as the medium for material design: the agent edits the profile and constructs a crystal from the modified one, and the most promising candidates are validated by first-principles calculation. Applied to the design of rare-earth-lean permanent magnets, MatEvolve---built on the state-of-the-art language model Claude Fable~5 without fine-tuning---reaches new structural prototypes more than three times as often as generative models under an equal validation budget, at a comparable on-target-magnet rate. Beyond design, analysing the discovered crystals' human-readable profiles reveals structure--property relationships.",
+      "summary_zh": "MatEvolve 以可解释基序剖面作为晶体设计媒介，由智能体编辑剖面并构建结构，再经第一性原理验证；基于未经微调的 Claude Fable 5，在贫稀土永磁体任务上以同等验证预算触及新结构原型的频率超过生成模型三倍，目标磁体命中率相当。",
+      "why_it_matters_zh": "把晶体设计写成可编辑、可陈述理由的基序语言并接 DFT 验证；摘要未给出稳定性通过率与合成可行性。",
+      "quality_score": 84.0,
+      "tags": [
+        "材料与催化",
+        "MatEvolve",
+        "晶体设计",
+        "智能体",
+        "永磁体"
+      ],
+      "evidence_flags": [
+        "有物理一致性检查",
+        "有对照实验",
+        "仅摘要可判断",
+        "state-of-the-art"
+      ],
+      "publication_status": "preprint",
+      "rank": 7,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.15900v1"
+      },
+      "abstract_zh": "数据驱动的材料发现在插值上比外推更可靠，很少触及新的结构类型。我们提出 MatEvolve，一个设计晶体的智能体 AI 框架，为每个候选给出明确理由并加以检验。该智能体以可解释的基序语言进行推理，将每种晶体写成描述其组成中反复出现的几何图案——基序——的基序剖面。基序剖面不仅是材料的描述，也是材料设计的媒介：智能体编辑剖面并由修改后的剖面构建晶体，最有前景的候选再经第一性原理计算验证。应用于贫稀土永磁体设计时，建立在未经微调的先进语言模型 Claude Fable 5 之上的 MatEvolve，在同等验证预算下触及新结构原型的频率是生成模型的三倍以上，同时保持相当的目标磁体命中率。除设计外，分析所发现晶体的人类可读剖面还可揭示结构–性质关系。",
+      "published": "2026-08-16",
+      "author_line": "Dinh-Khiet Le, Minh-Quyet Ha, Hong-Phuc Vu-Dinh 等 6 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007400/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "High-throughput Molecular Dynamics Simulation on an AIpowered Platform",
+      "url": "https://doi.org/10.26434/chemrxiv.15007400/v1",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Dengpan Dong",
+        "Yani Guan",
+        "Shuang Luo",
+        "Jingxuan Ding",
+        "Dan C. Hannah",
+        "Yumin Zhang",
+        "Qichao Hu",
+        "Kang Xu"
+      ],
+      "language": "en",
+      "abstract_or_text": "We present an end-to-end, AI-powered platform for high-throughput molecular dynamics (MD) simulation of liquid electrolytes and complex formulations. At its core is MU-PFF, a many-body polarizable force field (PFF) whose functional form follows the well-validated polarizable force field, but whose parameters are produced entirely by an automated machine-learning pipeline rather than by hand. We assemble a quantum-chemistry (QC) dataset of roughly 106 molecules and molecular complexes and train a single message-passing neural network (MPNN) to predict the complete parameter set—partial charges, atomic polarizabilities, bonded (bond, bend, torsion) terms, and the repulsion–dispersion (van der Waals) parameters—directly from molecular structure. Parameterization that traditionally takes weeks of expert effort per chemistry is reduced to a single forward pass, yielding a universal PFF that transfers across solvents, salts and additives. Coupled to automated system building and trajectory analysis (MU-MDSuiteTM), the platform reproduces experimental electrolyte properties with high fidelity: density error below 0.02 g/cm3, lithium-electrolyte ionic conductivity of approximately 1.5 mS/cm in quantitative agreement with measurement, and salt/additive solubility predicted to within 10%. We further demonstrate extended capabilities, including additive solubility by thermodynamic integration and electric-double-layer (EDL) simulation under applied potential.",
+      "summary_zh": "MU-PFF 以 MPNN 从分子结构一次前向预测可极化力场全套参数，并接入 MU-MDSuiteTM 做液态电解质高通量 MD；密度误差低于 0.02 g/cm3，锂电解质电导率约 1.5 mS/cm 与实验定量一致，盐/添加剂溶解度预测误差在 10% 以内，并可做热力学积分溶解度与外加电位下 EDL 模拟。",
+      "why_it_matters_zh": "把可极化力场参数化压成可迁移的自动流水线，并有密度、电导与溶解度实验对照；摘要中 QC 集规模写为 106，覆盖化学空间与开源情况仍待核对。",
+      "quality_score": 83.0,
+      "tags": [
+        "材料与催化",
+        "MU-PFF",
+        "可极化力场",
+        "电解质",
+        "MPNN"
+      ],
+      "evidence_flags": [
+        "有实验验证",
+        "有定量基准",
+        "仅摘要可判断",
+        "dataset",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 8,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007400/v1",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "我们提出一个端到端、人工智能驱动的平台，用于液态电解质与复杂配方的高通量分子动力学（MD）模拟。其核心是 MU-PFF，一种多体可极化力场（PFF），函数形式沿用经过充分验证的可极化力场，但其参数完全由自动化机器学习流水线而非手工生成。我们组装了约 106 个分子与分子复合物的量子化学（QC）数据集，并训练单个消息传递神经网络（MPNN），直接从分子结构预测完整参数集——部分电荷、原子极化率、成键（键、弯、扭转）项以及排斥–色散（van der Waals）参数。传统上每种化学体系需要数周专家努力的参数化被压缩为单次前向传播，从而得到可在溶剂、盐与添加剂之间迁移的通用 PFF。与自动化体系构建和轨迹分析（MU-MDSuiteTM）耦合后，该平台以高保真度复现实验电解质性质：密度误差低于 0.02 g/cm3，锂电解质离子电导率约为 1.5 mS/cm 并与测量定量一致，盐/添加剂溶解度预测误差在 10% 以内。我们进一步展示了扩展能力，包括通过热力学积分计算添加剂溶解度，以及在外加电位下的电双层（EDL）模拟。",
+      "published": "2026-08-13",
+      "author_line": "Dengpan Dong, Yani Guan, Shuang Luo 等 8 人"
+    },
+    {
+      "id": "arxiv:2608.13355v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Evaluating Electrostatic Embedding MLIP/MM for Relative Binding Free Energy Calculations",
+      "url": "https://arxiv.org/abs/2608.13355v1",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Stephen E. Farr",
+        "Gianni De Fabritiis"
+      ],
+      "language": "en",
+      "abstract_or_text": "Alchemical relative binding free energy (RBFE) calculations are limited by the fixed-charge approximation of classical force fields. Hybrid machine learning interatomic potential/molecular mechanics (MLIP/MM) schemes correct ligand strain, but under mechanical embedding still describe ligand--environment electrostatics with static point charges. Electrostatic embedding schemes coupling machine-learned charges to the MM environment have been proposed and validated against QM/MM for simple systems, but not tested in a production alchemical workflow. We take the electrostatic embedding scheme of Semelak et al.\\ and evaluate it on protein--ligand RBFE. We trained a TensorNet2 model, AceFF-2-RESP-1, on 10^{6} conformations from the AceFF dataset, jointly predicting energies, forces and Restrained Electrostatic Potential (RESP) charges. We chose RESP over MBIS for commensurability with the AMBER-family force field it couples to. The predicted charges enter the short-range direct-space part of the particle mesh Ewald sum, with Thole damping to prevent polarization catastrophes during alchemical transformations. We tested the scheme across five targets from the Wang et al.\\ benchmark set, fixed in advance by a prior study, with three replicates per edge and matched protocols. Electrostatic embedding improved every accuracy and correlation metric for TYK2 (ΔΔG RMSE 0.86 \\rightarrow 0.45~kcal/mol against GAFF2), but performed comparably to the classical and mechanical-embedding baselines for CDK2, thrombin, p38 and JNK1. Standard single-molecule energy and charge benchmarks were not good predictors of this target-dependent outcome. TYK2 combined good ΔΔG accuracy with the lowest force error on the Schrödinger benchmark, but this pattern did not hold for the other targets.",
+      "summary_zh": "以 TensorNet2 模型 AceFF-2-RESP-1 在 10^{6} 构象上联合预测能量、力与 RESP 电荷，将静电嵌入接入炼金术 RBFE；在预先固定的五个靶点上，TYK2 的 ΔΔG RMSE 由 0.86 降至 0.45 kcal/mol，但 CDK2、thrombin、p38 与 JNK1 与经典/机械嵌入基线相当。",
+      "why_it_matters_zh": "首次把静电嵌入 MLIP/MM 放进生产级相对结合自由能流程，并如实报告靶点依赖成败；单分子能量/电荷基准无法预测这一分化。",
+      "quality_score": 82.0,
+      "tags": [
+        "分子与药物发现",
+        "RBFE",
+        "静电嵌入",
+        "AceFF-2-RESP-1"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有对照实验",
+        "报告负面结果",
+        "仅摘要可判断",
+        "benchmark",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 9,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.13355v1"
+      },
+      "abstract_zh": "炼金术相对结合自由能（RBFE）计算受限于经典力场的固定电荷近似。杂化机器学习原子间势/分子力学（MLIP/MM）方案可校正配体应变，但在机械嵌入下仍以静态点电荷描述配体–环境静电。将机器学习电荷耦合到 MM 环境的静电嵌入方案已针对简单体系相对 QM/MM 得到验证，但尚未在生产级炼金术工作流中测试。我们采用 Semelak 等人的静电嵌入方案，并在蛋白–配体 RBFE 上加以评估。我们在 AceFF 数据集的 10^{6} 个构象上训练 TensorNet2 模型 AceFF-2-RESP-1，联合预测能量、力与限制静电势（RESP）电荷。我们选择 RESP 而非 MBIS，以便与其所耦合的 AMBER 族力场相匹配。预测电荷进入粒子网格 Ewald 求和的短程直接空间部分，并以 Thole 阻尼防止炼金术变换过程中的极化灾难。我们在 Wang 等人基准集中由先前研究预先固定的五个靶点上测试该方案，每条边三次重复并采用匹配协议。静电嵌入改善了 TYK2 的全部精度与相关性指标（相对 GAFF2，ΔΔG RMSE 0.86 → 0.45 kcal/mol），但在 CDK2、thrombin、p38 与 JNK1 上与经典及机械嵌入基线表现相当。标准单分子能量与电荷基准并不能很好预测这种靶点依赖结果。TYK2 同时具有良好的 ΔΔG 精度和 Schrödinger 基准上最低的力误差，但该模式在其他靶点上并不成立。",
+      "published": "2026-08-13",
+      "author_line": "Stephen E. Farr, Gianni De Fabritiis"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.10.743877",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "CALFP-MHC: Interpretable Pan-Allelic Prediction of Peptide-MHC Binding and Presentation Using Chemically Grounded Fingerprints and Contrastive Learning",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.10.743877",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Pham, M.-D. N.",
+        "Ho, T.-K.-C.",
+        "Nguyen, H.-N.",
+        "Tran, L.-S.",
+        "Phan, M.-D.",
+        "Nguyen, V."
+      ],
+      "language": "en",
+      "abstract_or_text": "Identifying which peptides bind major histocompatibility complex (MHC) molecules is central to vaccine design, neoantigen prioritization, and precision immunotherapy. Existing deep learning predictors largely encode amino acids as discrete symbols, thereby missing the residue-level chemistry driving molecular recognition. Performance also tends to degrade under class imbalance, for rare alleles, and on peptide-MHC combinations outside the training distribution. We developed CALFP-MHC, a framework that encodes each amino acid as a set of complementary cheminformatics fingerprints capturing functional groups, atomic connectivity, and substructural features, and combines positional encoding with supervised contrastive pre-training to organize the latent space by binding class before fine-tuning a binary classifier. Peptide-MHC interactions are modeled through a hybrid convolutional-transformer backbone. In a large-scale computational benchmark covering ~18.7 million peptide-MHC pairs across 112 HLA class I and 53 class II alleles, CALFP-MHC achieved AUCs of 0.93-0.97 and PPVs of 0.66 - 0.94. Critically, performance remained above AUC 0.90 even at a 200:1 negative-to-positive ratio, where competing tools frequently collapsed toward chance. On independent experimental data containing 3,627 class I and 520 class II MS/MS-confirmed ligands and 570 validated neoantigens, the model maintained strong discrimination, correctly prioritizing immunogenic peptides and MHC-presented ligands. Attention and integrated-gradient analyses recovered established anchor positions (P2 and P{Omega}; for class I, P1, P4, P6, and P9 for class II) and highlighted chemically interpretable functional groups consistent with known binding determinants. CALFP-MHC demonstrates that grounding residue representations in molecular chemistry, rather than sequence symbols alone, improves both robustness and interpretability in peptide-MHC binding prediction.",
+      "summary_zh": "CALFP-MHC 用官能团、连通性与亚结构化学信息学指纹编码氨基酸，经监督对比预训练与混合卷积–transformer 预测肽–MHC 结合；在约 18.7 million 对、112 个 HLA I 类与 53 个 II 类等位基因上 AUC 为 0.93-0.97，200:1 阴阳性比下仍高于 AUC 0.90，并在 3,627/520 个 MS/MS 配体与 570 个新抗原上保持判别。",
+      "why_it_matters_zh": "把残基级化学指纹接入免疫原性预测并有独立质谱验证；任务偏免疫信息学，湿实验疫苗闭环仍缺。",
+      "quality_score": 81.0,
+      "tags": [
+        "分子与药物发现",
+        "CALFP-MHC",
+        "肽-MHC",
+        "化学指纹",
+        "对比学习"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有外部测试",
+        "有实验验证",
+        "仅摘要可判断",
+        "benchmark",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 10,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.10.743877",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "鉴定哪些肽结合主要组织相容性复合体（MHC）分子，是疫苗设计、新抗原优先排序与精准免疫治疗的核心。现有深度学习预测器大多将氨基酸编码为离散符号，从而错过驱动分子识别的残基级化学信息。性能也往往在类别不平衡、稀有等位基因以及训练分布外的肽–MHC 组合上下降。我们开发了 CALFP-MHC，该框架将每个氨基酸编码为一组互补的化学信息学指纹，以捕获官能团、原子连通性与亚结构特征，并将位置编码与监督对比预训练相结合，在微调二分类器之前按结合类别组织潜在空间。肽–MHC 相互作用通过混合卷积–transformer 主干建模。在覆盖 112 个 HLA I 类与 53 个 II 类等位基因、约 18.7 million 肽–MHC 对的大规模计算基准上，CALFP-MHC 取得 0.93-0.97 的 AUC 与 0.66 - 0.94 的 PPV。关键的是，即使在 200:1 的阴阳性比下，性能仍保持在 AUC 0.90 以上，而竞争工具常塌缩至接近随机。在包含 3,627 个 I 类与 520 个 II 类经 MS/MS 确认配体以及 570 个已验证新抗原的独立实验数据上，模型保持强判别力，正确优先排序免疫原性肽与 MHC 呈递配体。注意力与 integrated-gradient 分析恢复了既定锚定位置（I 类为 P2 与 P{Omega}，II 类为 P1、P4、P6 与 P9），并突出了与已知结合决定因素一致、化学上可解释的官能团。CALFP-MHC 表明，将残基表征扎根于分子化学而非仅序列符号，可同时提升肽–MHC 结合预测的稳健性与可解释性。",
+      "published": "2026-08-14",
+      "author_line": "Pham, M.-D. N., Ho, T.-K.-C., Nguyen, H.-N. 等 6 人"
+    },
+    {
+      "id": "arxiv:2608.14734v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Unraveling the Size Determination Mechanism of Nanocrystal Synthesis via Interpretable Neural Networks",
+      "url": "https://arxiv.org/abs/2608.14734v1",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Kai Gu",
+        "Haizheng Zhong"
+      ],
+      "language": "en",
+      "abstract_or_text": "Deep learning models of nanocrystal synthesis enable the prediction of size and shape by encoding precursors and reaction conditions. However, their black-box nature hinders gaining deep insights into the underlying synthetic mechanisms. Here, we develop the Nanocrystal Equation Learner (NanoEQL), a fully white-box neural network to unravel the size determination mechanisms of nanocrystal synthesis. Building on the EQL architecture, eight operators are introduced to replace standard activation functions to fit the mathematical equations in nanocrystal synthesis. Among these operators, three smoothed operators address the gradient explosion of singular operators at zero. To evaluate the weights of different precursors, we develop a temperature-gated attention pooling strategy that encodes concentration-driven and reactivity-driven chemical synthesis mechanisms into the temperature gate. The NanoEQL model illustrates that the final nanocrystal size can be described by a linear equation composed of three scalars representing nanocrystallization capability (-Zp), growth capability (Zrea), and external input potential (-Zops). These interpretable scalars not only advance the rational design of nanocrystal synthesis but also establish a generalizable paradigm for deciphering chemical reaction mechanisms through white-box machine learning.",
+      "summary_zh": "NanoEQL 以白箱方程学习网络替换激活函数，引入八种算子及三种平滑算子抑制零点梯度爆炸，并用温度门控注意力池化编码浓度驱动与反应性驱动机理；最终纳米晶体尺寸由纳米结晶能力（-Zp）、生长能力（Zrea）与外部输入势（-Zops）三个标量的线性方程描述。",
+      "why_it_matters_zh": "把纳米晶体尺寸决定写成可解释标量方程，而不只做黑箱预测；摘要未给出尺寸预测误差与实验交叉验证规模。",
+      "quality_score": 80.0,
+      "tags": [
+        "材料与催化",
+        "NanoEQL",
+        "纳米晶体",
+        "可解释ML",
+        "白箱网络"
+      ],
+      "evidence_flags": [
+        "有对照实验",
+        "仅摘要可判断"
+      ],
+      "publication_status": "preprint",
+      "rank": 11,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.14734v1"
+      },
+      "abstract_zh": "深度学习纳米晶体合成模型通过编码前体与反应条件来预测尺寸与形貌。然而其黑箱性质阻碍了对底层合成机理的深入认识。本文开发 Nanocrystal Equation Learner（NanoEQL），一个完全白箱的神经网络，用以揭示纳米晶体合成的尺寸决定机理。基于 EQL 架构，引入八种算子替换标准激活函数，以拟合纳米晶体合成中的数学方程。在这些算子中，三种平滑算子用于应对奇异算子在零点的梯度爆炸。为评估不同前体的权重，我们开发温度门控注意力池化策略，将浓度驱动与反应性驱动的化学合成机理编码进温度门。NanoEQL 模型表明，最终纳米晶体尺寸可由三个标量组成的线性方程描述，分别代表纳米结晶能力（-Zp）、生长能力（Zrea）与外部输入势（-Zops）。这些可解释标量不仅推进纳米晶体合成的理性设计，也确立了通过白箱机器学习破译化学反应机理的可推广范式。",
+      "published": "2026-08-13",
+      "author_line": "Kai Gu, Haizheng Zhong"
+    },
+    {
+      "id": "arxiv:2608.14899v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Data-Efficient Construction of Material-Specific Machine-Learning Interatomic Potentials from Ab Initio Molecular Dynamics Trajectories",
+      "url": "https://arxiv.org/abs/2608.14899v1",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Jonas Hänseroth",
+        "Christian Dreßler"
+      ],
+      "language": "en",
+      "abstract_or_text": "Pretrained machine-learning interatomic potentials, so-called universal or foundation models offer an appealing starting point for atomistic simulations, but their accuracy for material-specific observables often remains limited without additional reference data (fine-tuning). Here, we systematically quantify how much first-principles data are required to convert universal models into ab initio-accurate material-specific potentials, and ask whether fine-tuning is necessarily preferable to training from scratch. We compare five universal MLIP frameworks, MACE-MP-0, SevenNet-0, GRACE-1L-OAM, MatterSim-v1-5M and ORB-v2, across seven chemically diverse systems incorporating rare and reactive events. Fine-tuning on only 10 AIMD-derived configurations is insufficient for the investigated systems; 200 configurations succeed in favorable cases, but the outcome remains strongly system-dependent. By contrast, 2000 AIMD configurations constitute a robust default, yielding low force and energy errors and reproducing the target material-specific observables. Moderately dense sub-sampling of the AIMD trajectory reduces the required trajectory length tenfold with little loss in model quality. Training from scratch on the same datasets is competitive with, and often slightly more accurate than, naive fine-tuning for MACE and SevenNet, whereas GRACE requires more data. The energy profile for a sulfur-vacancy jump in MoS_2 reveals that low trajectory-level errors do not guarantee a correct reaction profile, highlighting the need for observable-level validation. Finally, we show that averaging independently trained models improves predictions in scarce-data regimes at no additional first-principles cost. Together, these results provide practical guidelines for converting limited AIMD reference data into reliable material-specific MLIPs for nanosecond-timescale simulations at near-DFT accuracy.",
+      "summary_zh": "比较 MACE-MP-0、SevenNet-0、GRACE-1L-OAM、MatterSim-v1-5M 与 ORB-v2 在七个含稀有/反应事件体系上的微调与从零训练；10 个 AIMD 构象不足，200 个结果依赖体系，2000 个为稳健默认，轨迹子采样可把所需长度降十倍，且轨迹级低误差并不保证 MoS_2 硫空位跳跃剖面正确。",
+      "why_it_matters_zh": "给出把通用 MLIP 做成近 DFT 材料特异性势的数据量经验法则，并警示可观测量级验证；摘要未开源具体数据集。",
+      "quality_score": 80.0,
+      "tags": [
+        "材料与催化",
+        "MLIP",
+        "AIMD",
+        "微调",
+        "MACE-MP-0"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有对照实验",
+        "仅摘要可判断",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 12,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.14899v1"
+      },
+      "abstract_zh": "预训练机器学习原子间势，即所谓的通用或基础模型，为原子级模拟提供了有吸引力的起点，但若无额外参考数据（微调），其对材料特异性可观测量的精度往往仍然有限。本文系统量化将通用模型转化为从头算精度的材料特异性势所需的第一性原理数据量，并询问微调是否必然优于从零训练。我们比较五种通用 MLIP 框架——MACE-MP-0、SevenNet-0、GRACE-1L-OAM、MatterSim-v1-5M 与 ORB-v2——覆盖七个包含稀有与反应性事件的化学多样体系。仅用 10 个 AIMD 导出构象微调对所研究体系不足；200 个构象在有利情形下可以成功，但结果仍强烈依赖体系。相比之下，2000 个 AIMD 构象构成稳健默认设置，可给出低的力与能量误差并复现目标材料特异性可观测量。对 AIMD 轨迹做中等密度子采样可将所需轨迹长度降低十倍，而模型质量损失很小。在相同数据集上从零训练对 MACE 与 SevenNet 可与朴素微调竞争，且往往略更准确，而 GRACE 需要更多数据。MoS_2 中硫空位跳跃的能量剖面表明，低的轨迹级误差并不能保证正确的反应剖面，凸显了可观测量级验证的必要。最后我们表明，对独立训练模型取平均可在稀缺数据体制下改善预测，且不增加第一性原理成本。这些结果共同为将有限 AIMD 参考数据转化为可靠的材料特异性 MLIP、以实现近 DFT 精度的纳秒时间尺度模拟提供了实用指南。",
+      "published": "2026-08-14",
+      "author_line": "Jonas Hänseroth, Christian Dreßler"
+    },
+    {
+      "id": "arxiv:2608.13826v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "SPEAR: Structure Property Explainability with Attention Regularization",
+      "url": "https://arxiv.org/abs/2608.13826v1",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Aditya Raghavan",
+        "Utkarsh Pratiush",
+        "Dalton A. Pearl",
+        "Jade Holliman",
+        "Katharine Page",
+        "Philip D Rack",
+        "Sergei V Kalinin"
+      ],
+      "language": "en",
+      "abstract_or_text": "Machine learning is increasingly used to learn structure property relationships from spectroscopic and diffraction data, yet its adoption in materials discovery is often limited by poor interpretability of model predictions. Although attention mechanisms are frequently treated as inherently explainable, unregularized attention can yield unstable, fragmented, or intensity driven attribution patterns that obscure the physical origin of these relationships. Here we introduce SPEAR (Structure Property Explainability with Attention Regularization), a framework that constrains attention distributions during training to improve their stability, selectivity, and physical interpretability. SPEAR augments attention based regression with a learnable temperature that controls attention concentration and a smoothness penalty that enforces coherence across neighboring spectral positions, treating attention as a learnable explanatory object rather than a post hoc visualization. Using synthetic spectral benchmarks with known generative structure, we show that attention regularization produces smooth, contiguous attribution profiles aligned with causal features while preserving predictive accuracy. Applied to experimental X ray diffraction data from a combinatorial rare earth zirconate thin film library, the regularized model selectively emphasizes physically relevant diffraction features and decouples feature importance from raw peak intensity. The reflection it identified prompted a reassessment of our earlier structural analysis, revealing a correlation between the 220 peak position, the tetragonal distortion that accommodates cation size disorder, and the local thermal conductivity. Attention regularization therefore provides a principled training constraint for explainable structure property regression, yielding mechanistically meaningful explanations without sacrificing predictive performance.",
+      "summary_zh": "SPEAR 以可学习温度与邻域平滑惩罚约束注意力分布，使归因连续并与因果特征对齐；在组合稀土锆酸盐薄膜库的实验 XRD 上把特征重要性与原始峰强解耦，并由 220 峰位置关联四方畸变与局域热导率。",
+      "why_it_matters_zh": "把注意力当成可训练解释对象，而不是事后可视化；目前主要为单一薄膜库案例，跨谱学泛化仍待检验。",
+      "quality_score": 79.0,
+      "tags": [
+        "材料与催化",
+        "SPEAR",
+        "注意力正则",
+        "XRD",
+        "结构-性质"
+      ],
+      "evidence_flags": [
+        "有实验验证",
+        "有定量基准",
+        "仅摘要可判断",
+        "benchmark",
+        "experimental",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 13,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.13826v1"
+      },
+      "abstract_zh": "机器学习正越来越多地用于从光谱与衍射数据学习结构–性质关系，但其在材料发现中的采用常受限于模型预测可解释性差。尽管注意力机制常被视为天生可解释，未正则化的注意力可能产生不稳定、碎片化或强度驱动的归因模式，从而掩盖这些关系的物理起源。本文提出 SPEAR（Structure Property Explainability with Attention Regularization），一个在训练中约束注意力分布以改善其稳定性、选择性与物理可解释性的框架。SPEAR 用可学习温度控制注意力集中度，并用平滑惩罚强制相邻光谱位置之间的连贯性，将注意力视为可学习的解释对象而非事后可视化。利用具有已知生成结构的合成光谱基准，我们表明注意力正则化产生与因果特征对齐的平滑、连续归因剖面，同时保持预测精度。应用于组合稀土锆酸盐薄膜库的实验 X 射线衍射数据时，正则化模型选择性地强调物理相关的衍射特征，并将特征重要性与原始峰强度解耦。它所识别的反射促使我们重新评估先前的结构分析，揭示了 220 峰位置、容纳阳离子尺寸无序的四方畸变与局域热导率之间的相关性。因此，注意力正则化为可解释的结构–性质回归提供了原则性的训练约束，在不牺牲预测性能的情况下给出机制上有意义的解释。",
+      "published": "2026-08-13",
+      "author_line": "Aditya Raghavan, Utkarsh Pratiush, Dalton A. Pearl 等 7 人"
+    },
+    {
+      "id": "arxiv:2608.14293v1",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Conditional Neural Optimal Transport for Predicting Cellular Phenotypes from Molecular Structure",
+      "url": "https://arxiv.org/abs/2608.14293v1",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "creators": [
+        "Gauthier Avité",
+        "Maxime Sanchez-Renauld",
+        "Nicolas Bourriez",
+        "Auguste Genovesio"
+      ],
+      "language": "en",
+      "abstract_or_text": "High-content microscopy enables systematic profiling of cellular responses to chemical perturbations, but the scale of the chemical space makes exhaustive phenotypic characterization experimentally infeasible. This motivates computational models that can predict image-derived phenotypes without acquiring the corresponding treated cells. We formulate molecule-induced phenotype prediction as an inductive conditional transport problem in image representation space. Given a negative-control phenotype and the structure of a molecule, we aim to predict the phenotype induced by the corresponding molecule. We first evaluate classical optimal transport baselines and show that static couplings do not yield useful predictions on large-scale phenotypic image datasets. We then introduce a molecule-conditioned Neural Optimal Transport (NOT) model with a Monge-Gap regularization training objective that learns to transport negative-control unperturbed phenotypes toward perturbed phenotypes using molecular structure as conditioning information. NOT recovers molecule-specific phenotypic effects while reducing microscopy-associated technical variation, thereby facilitating comparisons across experimental batches. On unseen active molecules, the model outperforms baseline approaches, demonstrating that chemically conditioned transport can generalize beyond the molecules observed during training. We identified the molecular encoder as the main limitation to this generalization, while transport in a compressed representation space improves performance and scalability. These results establish NOT as a promising framework for predicting cellular phenotypes from molecular structure and negative-control phenotypes, while highlighting the development of more informative molecular representations as a key direction for improving out-of-distribution performance.",
+      "summary_zh": "将分子诱导表型预测表述为图像表征空间中的归纳条件输运，以分子结构条件化的 Neural Optimal Transport（NOT）加 Monge-Gap 正则，把阴性对照表型输运到扰动表型；在未见活性分子上优于静态最优输运，并指认分子编码器为泛化主瓶颈。",
+      "why_it_matters_zh": "用化学条件输运连接分子结构与细胞图像表型，避开穷尽给药成像；未见分子上的增益仍受分子表征限制。",
+      "quality_score": 78.0,
+      "tags": [
+        "分子与药物发现",
+        "Neural OT",
+        "细胞表型",
+        "高内涵成像",
+        "条件输运"
+      ],
+      "evidence_flags": [
+        "有对照实验",
+        "有外部测试",
+        "仅摘要可判断",
+        "dataset",
+        "experimental",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 14,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.14293v1"
+      },
+      "abstract_zh": "高内涵显微术能够系统刻画细胞对化学扰动的响应，但化学空间的规模使穷尽表型表征在实验上不可行。这促使人们建立计算模型，以便在不获取相应处理细胞的情况下预测图像导出的表型。我们将分子诱导的表型预测表述为图像表征空间中的归纳条件输运问题。给定阴性对照表型与分子结构，我们旨在预测相应分子所诱导的表型。我们首先评估经典最优输运基线，并表明静态耦合在大规模表型图像数据集上不能给出有用预测。随后我们引入带 Monge-Gap 正则化训练目标的分子条件神经最优输运（NOT）模型，以分子结构为条件信息，学习将阴性对照未扰动表型输运到扰动表型。NOT 恢复分子特异性表型效应，同时降低显微术相关的技术变异，从而便于跨实验批次比较。在未见活性分子上，该模型优于基线方法，表明化学条件输运可以泛化到训练中未观测的分子之外。我们认定分子编码器是这一泛化的主要限制，而在压缩表征空间中做输运可改善性能与可扩展性。这些结果确立 NOT 作为由分子结构与阴性对照表型预测细胞表型的有前景框架，同时强调开发更具信息量的分子表征是改善分布外性能的关键方向。",
+      "published": "2026-08-14",
+      "author_line": "Gauthier Avité, Maxime Sanchez-Renauld, Nicolas Bourriez 等 4 人"
+    },
+    {
+      "id": "arxiv:2608.13800v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Stochastic Control Policies for Robust Molecular Transition Path Sampling",
+      "url": "https://arxiv.org/abs/2608.13800v1",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Jingqian Liu",
+        "Yu-Hsiang Wang",
+        "Yanru Qu",
+        "Ge Liu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Transition path sampling (TPS) aims to efficiently generate rare molecular transition trajectories between metastable states and is essential for understanding biomolecular mechanisms. Beyond traditional molecular dynamics (MD)-based sampling, machine learning has become central to state-of-the-art TPS. One major class of methods learns control forces during explicit MD rollouts. By preserving the underlying molecular dynamics, these methods tend to produce more physically plausible trajectories than endpoint-conditioned generators that construct paths directly. However, rollout-based control methods have been reported to exhibit unstable and strongly seed-dependent performance. We recast rollout-based control as learning a path-space proposal distribution and investigate stochasticity placement as a design choice for improving exploration and optimization robustness. We develop two stochastic policies: FS-TPS, which directly parameterizes a state-dependent Gaussian distribution over the control policy output, and LaS-TPS, which samples a compact latent control variable and decodes it into structured, cross-atom-correlated force variation. We conduct extensive multi-seed experiments on three biomolecular systems of increasing size: alanine dipeptide, chignolin, and BBL, a fast-folding protein. Stochastic policies consistently improve transition success and path quality over deterministic-policy baselines while substantially reducing sensitivity to random initialization.",
+      "summary_zh": "将滚动式过渡路径采样重述为路径空间提议分布学习，提出直接参数化状态依赖高斯控制的 FS-TPS 与潜变量解码跨原子力扰动的 LaS-TPS；在 alanine dipeptide、chignolin 与快速折叠蛋白 BBL 上，随机策略相对确定性基线提高过渡成功率与路径质量并降低种子敏感性。",
+      "why_it_matters_zh": "用随机控制稳住显式 MD 滚动式 TPS，而不是直接生成端点条件轨迹；目前仍为计算基准，未见实验动力学对照。",
+      "quality_score": 77.0,
+      "tags": [
+        "结构与生物",
+        "TPS",
+        "FS-TPS",
+        "随机控制",
+        "分子动力学"
+      ],
+      "evidence_flags": [
+        "有对照实验",
+        "有物理一致性检查",
+        "仅摘要可判断",
+        "state-of-the-art",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 15,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.13800v1"
+      },
+      "abstract_zh": "过渡路径采样（TPS）旨在高效生成亚稳态之间的稀有分子过渡轨迹，对理解生物分子机制至关重要。在传统基于分子动力学（MD）的采样之外，机器学习已成为最先进 TPS 的核心。一类主要方法在显式 MD 滚动中学习控制力。通过保留底层分子动力学，这些方法往往比直接构造路径的端点条件生成器产生更物理合理的轨迹。然而，基于滚动的控制方法被报告表现出不稳定且强烈依赖随机种子的性能。我们将基于滚动的控制重新表述为学习路径空间提议分布，并研究随机性放置作为改善探索与优化稳健性的设计选择。我们开发两种随机策略：FS-TPS 直接将控制策略输出参数化为状态依赖的高斯分布；LaS-TPS 采样紧凑的潜在控制变量，并将其解码为结构化的、跨原子相关的力变化。我们在三个规模递增的生物分子体系上进行广泛的多种子实验：alanine dipeptide、chignolin 以及快速折叠蛋白 BBL。随机策略相对确定性策略基线一致改善过渡成功率与路径质量，同时显著降低对随机初始化的敏感性。",
+      "published": "2026-08-13",
+      "author_line": "Jingqian Liu, Yu-Hsiang Wang, Yanru Qu 等 4 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.07.743493",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Peptide-HLA II interaction prediction for post-translationally modified peptides",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.07.743493",
+      "published_at": "2026-08-13",
+      "updated_at": "2026-08-13",
+      "creators": [
+        "Dumitrescu, A.",
+        "Korpela, D.",
+        "Bebenek, A. M.",
+        "Ju, A.",
+        "Lawrence, G. M.",
+        "Clauser, K. R.",
+        "Abelin, J. G.",
+        "Strazar, M.",
+        "Lähdesmäki, H.",
+        "Graham, D. B.",
+        "Xavier, R. J."
+      ],
+      "language": "en",
+      "abstract_or_text": "CD4+ T cells recognize peptides presented by human leukocyte antigen (HLA) II, implementing a fundamental mediation mechanism of the adaptive immune system. Although post-translational modifications (PTMs) alter immune responses, PTM-peptide-HLA interaction prediction remains challenging due to data scarcity resulting from substoichiometric levels of PTMs. To overcome this, we developed PepChem, a deep learning model utilizing novel, molecular-level peptide representations that enable predictions for sidechain modifications. Using monoallelic datasets that we reanalyze for PTMs of interest, we show accurate predictions on PTMs that were unseen during training. Furthermore, we introduce a novel training protocol that improves PTM-peptide generalization compared to conventional methods. We predict and experimentally validate citrullination-induced binding increase of rheumatoid arthritis (RA)-linked peptides to HLA II risk allele DRB1*04:01. This framework bridges the critical gap in PTM-aware immune recognition prediction, with immediate applications in autoimmunity, cancer, and infectious disease.",
+      "summary_zh": "PepChem 以分子级肽表征预测侧链翻译后修饰对肽–HLA II 结合的影响，并在训练未见 PTM 上保持判别；新训练协议改善 PTM–肽泛化，且预测并实验验证类风湿关节炎相关肽经瓜氨酸化后对 DRB1*04:01 的结合增强。",
+      "why_it_matters_zh": "把侧链化学写进免疫识别模型并有瓜氨酸化实验对照；PTM 数据仍稀缺，覆盖修饰类型与湿实验规模摘要未细报。",
+      "quality_score": 76.0,
+      "tags": [
+        "分子与药物发现",
+        "PepChem",
+        "PTM",
+        "HLA II",
+        "瓜氨酸化"
+      ],
+      "evidence_flags": [
+        "有实验验证",
+        "有外部测试",
+        "仅摘要可判断",
+        "dataset",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 16,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.07.743493",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "CD4+ T 细胞识别由人类白细胞抗原（HLA）II 呈递的肽，实施适应性免疫系统的基本介导机制。尽管翻译后修饰（PTM）会改变免疫应答，但由于 PTM 的亚化学计量水平导致数据稀缺，PTM–肽–HLA 相互作用预测仍具挑战。为克服这一点，我们开发了 PepChem，一种利用新颖分子级肽表征、能够对侧链修饰进行预测的深度学习模型。利用我们针对感兴趣 PTM 重新分析的单等位基因数据集，我们表明模型对训练中未见的 PTM 也能准确预测。此外，我们引入一种新的训练协议，相对常规方法改善 PTM–肽泛化。我们预测并实验验证了类风湿关节炎（RA）相关肽经瓜氨酸化后对 HLA II 风险等位基因 DRB1*04:01 的结合增强。该框架弥合了感知 PTM 的免疫识别预测中的关键缺口，可立即应用于自身免疫、癌症与感染性疾病。",
+      "published": "2026-08-13",
+      "author_line": "Dumitrescu, A., Korpela, D., Bebenek, A. M. 等 11 人"
+    }
+  ],
   "review": {
     "model": "gpt-5.6-terra",
     "reasoning_effort": "high",
-    "note": "候选文件中的完整候选集为空（count: 0），因此无可审阅或入选条目。"
+    "note": "2026-08-16 候选 60 篇，自动分仍偏高并夹杂 SEM 伪造检测、乳酪细菌素、无 AI 的 InSb 量子点与 E64d 化学蛋白质组、临床化验/健康合成数据、语音生成、电商推荐、电网监测、PL/SQL 基准、施工蓝图计量、量子纠错译码与逻辑综合调参等弱相关稿。按 AI×Chem 相关性、方法可信度与验证强度精选 16 篇：保留 SV2C 虚筛实验闭环、PubCheF-1 文献功能预测、BioKinema 全原子动力学、UltraIR 红外基础模型、holey-ML 激发态势、SafeChem 危化品双轨基准、MatEvolve 基序智能体晶体设计、MU-PFF、静电嵌入 MLIP/MM 相对结合自由能、CALFP-MHC、NanoEQL、AIMD 数据高效 MLIP、SPEAR 衍射注意力正则、分子条件神经最优输运、FS-TPS/LaS-TPS 过渡路径控制与 PepChem 修饰肽–HLA；未收录无 AI 的 InSb/Nisin 2A/E64d，以及 VoiceChat-TTS、MACS、PLSQLBench、Handoff-H1、SynAct 逻辑综合与电网/加密流量等弱相关项。"
   }
 }

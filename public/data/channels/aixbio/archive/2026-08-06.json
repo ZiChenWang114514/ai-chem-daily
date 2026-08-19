@@ -1,0 +1,893 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-06",
+  "channel": "aixbio",
+  "generated_at": "2026-08-18T15:10:51+00:00",
+  "title": "AI × Bio 每日精选",
+  "subtitle": "计算生物学、组学、蛋白质与生物医学模型。",
+  "window": {
+    "start": "2026-08-03",
+    "end": "2026-08-06"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 5445,
+    "candidates": 60,
+    "selected": 16,
+    "sources": {
+      "arXiv": 1664,
+      "bioRxiv": 1022,
+      "medRxiv": 258,
+      "Europe PMC": 3452
+    }
+  },
+  "source_status": {
+    "arXiv": {
+      "state": "ok",
+      "count": 1664
+    },
+    "bioRxiv": {
+      "state": "ok",
+      "count": 1022
+    },
+    "medRxiv": {
+      "state": "ok",
+      "count": 258
+    },
+    "Europe PMC": {
+      "state": "ok",
+      "count": 3452
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "europepmc:ppr1293479",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Putting the I in AML: Artificial Intelligence and Machine Learning in Acute Myeloid Leukemia",
+      "url": "https://europepmc.org/article/PPR/PPR1293479",
+      "published_at": "2026-08-05",
+      "updated_at": "2026-08-08",
+      "creators": [
+        "De Marchi F",
+        "Ciotti G",
+        "Atanasio A",
+        "Pascarella G",
+        "Sperotto A",
+        "Gottardi M"
+      ],
+      "language": "en",
+      "abstract_or_text": "Acute myeloid leukemia (AML) produces more molecular, imaging, and clinical data per patient than any hematologist can hold in mind at once, and each revision of the WHO, ICC, and European LeukemiaNet (ELN) frameworks adds to the load. Artificial intelligence (AI) and machine learning (ML) now reach into every stage of AML care. Deep-learning models read therapy-relevant mutations directly from bone-marrow smears; automated flow-cytometry gating reproduces expert calls in under a minute; and the first AI pathology devices for hematology have cleared regulatory review and entered clinical use. Beyond diagnosis, ML captures the age-dependent weight of individual mutations that categorical ELN scoring misses, drug-response prediction for venetoclax–azacitidine has been validated across multiple external cohorts, and large language models are being tested for tumor-board support and trial matching. The next wave, from clonal-architecture modeling and single-cell foundation models to digital twins and reinforcement learning for adaptive dosing, could move AML management from reactive toward predictive, evolution-aware care. This review departs from existing AI-in-hematology surveys in three ways: we (i) restrict scope to AML and organize the field around clinical decision points rather than technology categories, (ii) grade every tool on a five-tier clinical-readiness level (CRL-AML 1–5), which exposes hundreds of models clustered at CRL-AML 1–2 and none yet in prospective clinical evaluation, and (iii) close with a numbered three-year agenda naming the consortia, datasets, and pragmatic trials needed to carry the field from publication to practice.",
+      "summary_zh": "AML 专病综述按临床决策点组织 AI/ML，并以五档 CRL-AML 1–5 为工具分级，显示数百模型聚于 1–2 档、尚无前瞻临床评估。",
+      "why_it_matters_zh": "把血液学 AI 从技术分类改到决策点与临床就绪度，并给出三年落地议程。",
+      "quality_score": 88.0,
+      "tags": [
+        "方法与模型",
+        "AML",
+        "CRL-AML",
+        "ELN",
+        "临床就绪"
+      ],
+      "evidence_flags": [
+        "综述梳理",
+        "临床队列",
+        "clinical",
+        "dataset",
+        "prospective",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 1,
+      "featured": true,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.20944/preprints202608.0252.v1",
+        "pmid": ""
+      },
+      "abstract_zh": "急性髓系白血病（AML）为每位患者产生的分子、影像和临床数据超过任何血液科医生能同时记在脑子里的量，而 WHO、ICC 和 European LeukemiaNet（ELN）框架的每次修订都进一步加重负担。人工智能（AI）和机器学习（ML）现已渗透到 AML 照护的每一个阶段。深度学习模型可直接从骨髓涂片读取治疗相关突变；自动化流式细胞术设门在一分钟内复现专家判定；首批血液学 AI 病理设备已通过监管审评并进入临床使用。在诊断之外，ML 捕获了分类 ELN 评分所遗漏的个体突变年龄依赖权重，venetoclax–azacitidine 的药物应答预测已在多个外部队列中得到验证，大语言模型正被测试用于肿瘤委员会支持与试验匹配。下一波——从克隆架构建模和单细胞基础模型，到数字孪生和用于自适应给药的强化学习——可能将 AML 管理从反应式推向预测性、进化感知的照护。本综述在三个方面区别于现有血液学 AI 综述：我们 (i) 将范围限定于 AML，并围绕临床决策点而非技术类别组织该领域，(ii) 用五档临床就绪水平（CRL-AML 1–5）为每一工具分级，从而揭示数百个模型聚集在 CRL-AML 1–2、尚无进入前瞻性临床评估者，以及 (iii) 以一份编号的三年议程收尾，点名将领域从发表推进到实践所需的联盟、数据集和务实试验。",
+      "published": "2026-08-05",
+      "author_line": "De Marchi F, Ciotti G, Atanasio A 等 6 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.04.20.719773",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "RVQ-Alpha: Bridging Single-Cell Transcriptomics and Large Language Models via Hierarchical Discrete Tokenization and Fact-Aware Reinforcement Learning",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.04.20.719773",
+      "published_at": "2026-08-06",
+      "updated_at": "2026-08-06",
+      "creators": [
+        "Li, G.",
+        "You, Y.",
+        "Fu, Y.",
+        "Zhou, W.",
+        "Tang, F.",
+        "Kong, J.",
+        "Tian, L."
+      ],
+      "language": "en",
+      "abstract_or_text": "Single-cell RNA sequencing yields continuous expression profiles, whereas large language models operate over discrete autoregressive sequences, leaving no shared computational interface for language-model reasoning over cell states. Existing approaches either keep cellular information outside the LLM vocabulary, consume context per listed gene, or learn reconstruction codes without gene-level grounding. We introduce RVQ-Alpha, which systematically adapts four stages of LLM training (tokenization, supervised fine-tuning, reinforcement learning, and distillation) to single-cell analysis. Multi-codebook Residual Vector Quantization (RVQ) lexicalizes each profile into a compact, hierarchical cellular alphabet in the models native token stream, while a paired decoder reconstructs the corresponding expression profile. Evidence-First supervision grounds these symbols in named genes and expression-linked evidence; Fact-Aware RLVR then penalizes contradictory claims to support auditable reasoning. Task-specific RLVR yields strong experts, but a single Mixed policy underperforms them across all four task families. To recover specialist competence in a unified model, we adopt Multi-Teacher On-Policy Distillation (MOPD), which consolidates these experts into one All-in-One checkpoint without retaining a separate policy for each task. On the CAPSTONE benchmark, a four-task suite with explicit biological shifts and deterministic ontology-aware graders, the unified checkpoint improves over Mixed on all 12 metrics and remains within 0.005 of the task-routed specialist reference on every primary metric. Overall, RVQ-Alpha provides a unified pipeline for grounded, auditable multi-task single-cell analysis.",
+      "summary_zh": "RVQ-Alpha 用多码本残差向量量化把单细胞表达谱编入 LLM 原生 token，经 Evidence-First 与 Fact-Aware RLVR 后，MOPD 统一检查点在 CAPSTONE 12 项指标上优于 Mixed、距专家差不超过 0.005。",
+      "why_it_matters_zh": "把单细胞连续谱接到可审计的 LLM 推理，并用多教师蒸馏收回专家能力。",
+      "quality_score": 87.0,
+      "tags": [
+        "组学与细胞",
+        "RVQ-Alpha",
+        "单细胞",
+        "RLVR",
+        "CAPSTONE"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "方法创新",
+        "benchmark"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.04.20.719773",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "单细胞 RNA 测序产生连续表达谱，而大语言模型在离散自回归序列上运作，因而缺乏让语言模型对细胞状态进行推理的共享计算接口。现有方法要么把细胞信息留在 LLM 词表之外，要么按列出的基因消耗上下文，或学习缺乏基因级锚定的重建码。我们推出 RVQ-Alpha，系统地把 LLM 训练的四个阶段（tokenization、监督微调、强化学习和蒸馏）适配到单细胞分析。多码本 Residual Vector Quantization（RVQ）将每个表达谱词法化为模型原生 token 流中紧凑、分层的细胞字母表，配对解码器则重建相应表达谱。Evidence-First 监督将这些符号锚定到具名基因与表达关联证据；Fact-Aware RLVR 随后惩罚自相矛盾的陈述以支持可审计推理。任务特异 RLVR 产生强专家，但单一 Mixed 策略在全部四个任务族上均逊于它们。为在统一模型中回收专家能力，我们采用 Multi-Teacher On-Policy Distillation（MOPD），将这些专家合并为一个 All-in-One 检查点，而无需为每个任务保留单独策略。在 CAPSTONE 基准——一个带有显式生物学偏移和确定性本体感知评分器的四任务套件——上，统一检查点在全部 12 项指标上优于 Mixed，并在每一项主指标上与任务路由专家参考相差不超过 0.005。总体而言，RVQ-Alpha 为有锚定、可审计的多任务单细胞分析提供了统一管线。",
+      "published": "2026-08-06",
+      "author_line": "Li, G., You, Y., Fu, Y. 等 7 人"
+    },
+    {
+      "id": "arxiv:2608.06022v1",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem",
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "EpiBench: Can LLMs Understand Epitopes for Antibody Drug Discovery?",
+      "url": "https://arxiv.org/abs/2608.06022v1",
+      "published_at": "2026-08-06",
+      "updated_at": "2026-08-06",
+      "creators": [
+        "Zirui Wang",
+        "Jiaqi Wang",
+        "Qinghan Wang",
+        "Yuzhi Xu",
+        "Gang Du",
+        "Tingjun Hou",
+        "Odin Zhang"
+      ],
+      "language": "en",
+      "abstract_or_text": "Epitopes determine where antibodies bind antigens and shape downstream therapeutic properties such as functional blockade and escape resistance, making epitope understanding central to antibody drug discovery. Although large language models (LLMs) have shown strong biomedical reasoning ability, it remains unclear whether they can infer epitope information directly from antigen and antibody sequences. Existing epitope resources typically focus on isolated prediction tasks or rely on specialized structural settings, while general protein benchmarks do not evaluate epitope-centered decisions across the antibody development workflow. To address this gap, we introduce EpiBench, a closed-book, sequence-based, and automatically scorable benchmark for evaluating epitope reasoning in LLMs. EpiBench contains 1,609 curated samples grounded in structural antibody--antigen contacts, curated functional B-cell assays, and deep mutational scanning escape measurements. It covers five connected tasks: targetable region discovery, antibody-conditioned epitope identification, epitope binning, functional epitope assessment, and antibody escape assessment, with controlled sampling to reduce shortcut-based evaluation artifacts. We evaluate nine general-purpose LLMs and analyze their behavior through task-specific baselines, antigen length stratification, explicit-reasoning comparison, and failure-mode inspection. The results show that current LLMs capture partial epitope-related signals but remain limited in antibody-specific sequence grounding, long-context residue localization, and biologically grounded reasoning. Therefore, EpiBench provides a diagnostic testbed for measuring and improving sequence-aware biomedical LLMs toward reliable LLM-assisted antibody discovery.",
+      "summary_zh": "EpiBench 以 1,609 个结构接触、B 细胞功能测定与深度突变扫描逃逸样本构建闭卷序列基准，覆盖可靶向区域、抗体条件表位、分箱、功能评估与逃逸五项任务；九个通用 LLM 仅捕获部分信号。",
+      "why_it_matters_zh": "把表位推理做成可自动打分的抗体发现诊断基准，暴露通用 LLM 的残基定位短板。",
+      "quality_score": 86.0,
+      "tags": [
+        "蛋白质与结构",
+        "EpiBench",
+        "表位",
+        "抗体发现"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "benchmark",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.06022v1"
+      },
+      "abstract_zh": "表位决定抗体在何处结合抗原，并塑造功能阻断与逃逸抗性等下游治疗性质，使表位理解成为抗体药物发现的核心。尽管大语言模型（LLMs）已展现出较强的生物医学推理能力，它们能否直接从抗原与抗体序列推断表位信息仍不清楚。现有表位资源通常聚焦孤立预测任务或依赖专门结构设定，而通用蛋白质基准并不评估贯穿抗体开发工作流的以表位为中心的决策。为填补这一空白，我们推出 EpiBench，一个闭卷、基于序列、可自动打分的基准，用于评估 LLM 中的表位推理。EpiBench 包含 1,609 个经整理的样本，其依据是结构性抗体–抗原接触、经策展的功能性 B 细胞测定以及深度突变扫描逃逸测量。它覆盖五项相互关联的任务：可靶向区域发现、抗体条件下的表位识别、表位分箱、功能表位评估与抗体逃逸评估，并通过受控抽样减少基于捷径的评估伪影。我们评估了九个通用 LLM，并通过任务特异基线、抗原长度分层、显式推理对比与失败模式检查分析其行为。结果表明，当前 LLM 捕获了部分表位相关信号，但在抗体特异序列锚定、长上下文残基定位以及有生物学依据的推理方面仍受限制。因此，EpiBench 为衡量并改进面向可靠 LLM 辅助抗体发现的序列感知生物医学 LLM 提供了诊断测试平台。",
+      "published": "2026-08-06",
+      "author_line": "Zirui Wang, Jiaqi Wang, Qinghan Wang 等 7 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.06.13.732023",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem",
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Unlocking Your Programmable and Creative RNA Sequence Designer with RDiffusion",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.06.13.732023",
+      "published_at": "2026-08-06",
+      "updated_at": "2026-08-06",
+      "creators": [
+        "Wang, J.",
+        "Dong, J.",
+        "Yang, L.",
+        "Li, T.",
+        "yin, J.",
+        "Chen, J.",
+        "Dong, Y.",
+        "Li, J.",
+        "Tan, C."
+      ],
+      "language": "en",
+      "abstract_or_text": "RNA, a pillar of the central dogma, has shaped three billion years of evolution. Despite cataloging tens of millions of non-coding RNAs and annotating millions, we have barely scratched the surface of the vast, unexplored RNA sequence space. Here, we introduce RDiffusion, a discrete-diffusion-based generative transformer model for RNA sequence design. Conditioned on diverse biological features, such as desired function, family type, secondary and tertiary structure, or binding protein partners, it can guide the generation of novel RNA sequences tailored to specific design specifications. We evaluate RDiffusion across a broad spectrum of RNA design tasks and find that it not only surpasses all baseline methods in design success rate and sequence diversity but also achieves advanced performance on downstream tasks. To demonstrate its translational potential, we applied RDiffusion with a customized seed-screening pipeline to de novo design therapeutic MicroRNA(miRNA) mimics in osteoarthritis (OA). This strategy identified mimic 0-4 as a lead candidate targeting SDC4 to preserve ECM homeostasis and cartilage integrity, with robust efficacy validated in clinical OA samples. Altogether, RDiffusion holds strong potential to serve as a cornerstone for RNA generation and representation learning, establishing a generalizable AI-driven paradigm for RNA therapeutic discovery.",
+      "summary_zh": "RDiffusion 以功能、家族、二/三级结构或结合蛋白为条件的离散扩散 transformer 设计 RNA，并从头得到靶向 SDC4 的治疗性 miRNA 模拟物 mimic 0-4，在临床 OA 样本中验证疗效。",
+      "why_it_matters_zh": "把条件 RNA 生成接到可湿实验检验的骨关节炎治疗性 miRNA 先导。",
+      "quality_score": 86.0,
+      "tags": [
+        "方法与模型",
+        "RDiffusion",
+        "RNA设计",
+        "离散扩散",
+        "miRNA"
+      ],
+      "evidence_flags": [
+        "实验验证",
+        "临床队列",
+        "有定量基准",
+        "clinical",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.06.13.732023",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "RNA 作为中心法则的支柱，塑造了三十亿年的进化。尽管已编目数千万条非编码 RNA 并注释了数百万条，我们仍几乎未触及广阔、未探索的 RNA 序列空间。本文推出 RDiffusion，一个基于离散扩散的生成式 transformer 模型，用于 RNA 序列设计。以所需功能、家族类型、二级与三级结构或结合蛋白伴侣等多样生物学特征为条件，它可以引导生成针对特定设计规格定制的新型 RNA 序列。我们在广泛的 RNA 设计任务上评估 RDiffusion，发现它不仅在设计成功率与序列多样性上超过所有基线方法，也在下游任务上取得先进性能。为展示其转化潜力，我们将 RDiffusion 与定制种子筛选管线结合，从头设计骨关节炎（OA）治疗性 MicroRNA（miRNA）模拟物。该策略鉴定出以 SDC4 为靶点的先导候选 mimic 0-4，以维持 ECM 稳态与软骨完整性，并在临床 OA 样本中验证了稳健疗效。总之，RDiffusion 有望成为 RNA 生成与表征学习的基石，为 RNA 治疗发现建立可泛化的 AI 驱动范式。",
+      "published": "2026-08-06",
+      "author_line": "Wang, J., Dong, J., Yang, L. 等 9 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.01.742180",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "scMaize: A Single-Cell Foundation Model and Integrated Atlas for Maize",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.01.742180",
+      "published_at": "2026-08-05",
+      "updated_at": "2026-08-05",
+      "creators": [
+        "Qian, C.",
+        "Ying, Z.",
+        "Hao, W. T.",
+        "Zhao, A.",
+        "Qi, S. M.",
+        "Feng, W. X.",
+        "Jun, Y."
+      ],
+      "language": "en",
+      "abstract_or_text": "Single-cell transcriptomics has resolved cell type-specific gene expression in plants, yet maize still lacks an integrated reference and species-specific foundation models. We present scMaize, which combines scMaizeAtlas, an integrated atlas of 385,675 cells from 20 projects and 66 samples across seven tissues with hierarchical annotation, with two Transformer-based foundation models pretrained on this atlas. scMaizeExp serves as an expression-only baseline, whereas scMaizeGO incorporates Gene Ontology (GO) functional embeddings as an inductive bias. Although the two models showed comparable global expression prediction accuracy, the GO prior improved rank-order prediction, strengthened attention toward functionally coherent gene modules, and enhanced embedding organization. scMaizeGO achieved 86.0% cell type classification accuracy and 97.1% tissue classification accuracy. Evaluation on independent maize, rice, and Arabidopsis datasets demonstrated the transferability of scMaizeGO representations, while few-shot fine-tuning enabled accurate cross-species classification using a limited fraction of labeled cells. Perturbation analysis further showed that the model captured treatment-associated cellular states, and expression projection identified condition-responsive genes enriched in established stress pathways. An online platform (https://www.scmaize.com) provides atlas exploration, model access, and zero-code analysis tools. Together, scMaize provides an integrated resource and computational framework for transferable and perturbation-aware representation learning in crop single-cell genomics. HIGHLIGHTSO_LIscMaizeAtlas integrates 385,675 cells from 20 maize single-cell projects. C_LIO_LIscMaizeGO incorporates Gene Ontology priors into maize-specific pretraining. C_LIO_LIGO priors improve rank-order prediction, attention coherence and embeddings. C_LIO_LIFew-shot tuning enables cross-species cell-type classification with limited labels. C_LIO_LIExpression projection reveals stress-responsive genes in root cell states. C_LI",
+      "summary_zh": "scMaize 整合 20 个项目 385,675 个玉米细胞并预训练 scMaizeGO，细胞类型分类准确率 86.0%，并可少样本迁移到水稻与拟南芥。",
+      "why_it_matters_zh": "为作物单细胞组学补上物种特异基础模型与可扰动表征，并开放零代码平台。",
+      "quality_score": 86.0,
+      "tags": [
+        "组学与细胞",
+        "scMaize",
+        "scMaizeGO",
+        "单细胞",
+        "玉米"
+      ],
+      "evidence_flags": [
+        "数据集",
+        "有定量基准",
+        "有外部测试",
+        "dataset",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 5,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.01.742180",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "单细胞转录组学已解析植物中的细胞类型特异基因表达，但玉米仍缺乏整合参考和物种特异基础模型。我们提出 scMaize，它将 scMaizeAtlas——一个来自 20 个项目、66 个样本、覆盖七个组织、带层级注释的 385,675 个细胞整合图谱——与在该图谱上预训练的两个基于 Transformer 的基础模型相结合。scMaizeExp 作为仅表达基线，而 scMaizeGO 将 Gene Ontology（GO）功能嵌入作为归纳偏置纳入。尽管两个模型的全局表达预测精度相当，GO 先验改善了秩次预测，强化了对功能连贯基因模块的注意力，并增强了嵌入组织。scMaizeGO 达到 86.0% 的细胞类型分类准确率和 97.1% 的组织分类准确率。在独立玉米、水稻和拟南芥数据集上的评估证明了 scMaizeGO 表征的可迁移性，而少样本微调使仅用有限比例标记细胞即可实现准确的跨物种分类。扰动分析进一步表明模型捕获了处理相关细胞状态，表达投影识别出在既定胁迫通路中富集的条件应答基因。在线平台（https://www.scmaize.com）提供图谱浏览、模型访问和零代码分析工具。综上，scMaize 为作物单细胞基因组学中可迁移、扰动感知的表征学习提供了整合资源与计算框架。要点：scMaizeAtlas 整合来自 20 个玉米单细胞项目的 385,675 个细胞。scMaizeGO 将 Gene Ontology 先验纳入玉米特异预训练。GO 先验改善秩次预测、注意力连贯性与嵌入。少样本调优使有限标签下的跨物种细胞类型分类成为可能。表达投影揭示根细胞状态中的胁迫应答基因。",
+      "published": "2026-08-05",
+      "author_line": "Qian, C., Ying, Z., Hao, W. T. 等 7 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.02.26.708362",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem",
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "MolX: A Geometric Foundation Model for Protein-Ligand Modelling",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.02.26.708362",
+      "published_at": "2026-08-05",
+      "updated_at": "2026-08-05",
+      "creators": [
+        "Liu, J.",
+        "Pan, T.",
+        "Guo, X.",
+        "Ran, Z.",
+        "Hao, Y.",
+        "Yang, Y.",
+        "Ng, A. P.",
+        "Pan, S.",
+        "Song, J.",
+        "Li, F."
+      ],
+      "language": "en",
+      "abstract_or_text": "Understanding how small molecules interact with protein binding pockets is central to structure-based drug discovery. Accurately modelling these interactions requires capturing the 3D geometry and physicochemical complementarity of binding interfaces, yet existing computational approaches encode proteins and ligands separately or rely on simplified structural representations that do not explicitly model cross-entity spatial relationships. Such decoupled representations restrict their capacity to capture interface-level geometric constraints that arise from protein-ligand coorganisation. Here we present MolX, a Graph Transformer foundation model that jointly learns geometric and chemical representations of protein pockets and ligands from large-scale 3D structural data. Integrating over 3 million protein pockets and 5 million molecules, MolX represents both entities as E(3)-equivariant graphs to preserve spatial geometry and chemical context. The architecture employs dual E(3)-equivariant graph Transformer encoders to model pocket and ligand embeddings, ensuring representations remain invariant to rotation, translation, and reflection. MolX is pretrained using a hybrid learning paradigm that combines supervised biochemical objectives, logP and energy-gap regression, with self-supervised geometric objectives, coordinate re-construction, and atom-type prediction, fostering generalisable molecular understanding. Across eight downstream benchmarks, including antibody-drug conjugates (ADC), proteolysis-targeting chimeras (PROTAC), molecular glue, and PCBA activity prediction, as well as binding affinity and physicochemical property regression, MolX achieves consistent state-of-the-art performance and strong cross-domain generalisation. Furthermore, MolX incorporates a sparse autoencoder module to decompose latent representations into interpretable biological components, thereby revealing the pocket-ligand interactions that drive prediction outcomes. Together, MolX establishes a scalable and interpretable foundation model for molecular representation learning, providing a unified framework for predicting and interpreting complex small-molecule-protein interactions.",
+      "summary_zh": "MolX 用双路 E(3)-等变 Graph Transformer 联合编码口袋与配体，整合超过 3 million 口袋和 5 million 分子，在 ADC、PROTAC、PCBA 等八项基准上取得当前最优。",
+      "why_it_matters_zh": "为结构药物发现提供可扩展的口袋–配体几何基础模型，并用稀疏自编码器分解界面驱动因素。",
+      "quality_score": 85.0,
+      "tags": [
+        "蛋白质与结构",
+        "MolX",
+        "蛋白-配体",
+        "E(3)",
+        "基础模型"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "当前最优",
+        "benchmark",
+        "state-of-the-art",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 6,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.02.26.708362",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "理解小分子如何与蛋白质结合口袋相互作用，是基于结构的药物发现的核心。准确建模这些相互作用需要捕获结合界面的 3D 几何与物理化学互补性，然而现有计算方法要么分别编码蛋白质与配体，要么依赖简化的结构表征，并未显式建模跨实体空间关系。这类解耦表征限制了它们捕获由蛋白–配体共组织产生的界面级几何约束的能力。本文提出 MolX，一个从大规模 3D 结构数据中联合学习蛋白质口袋与配体几何及化学表征的 Graph Transformer 基础模型。MolX 整合超过 3 million 个蛋白质口袋和 5 million 个分子，将二者均表示为 E(3)-equivariant 图以保留空间几何与化学语境。该架构采用双路 E(3)-equivariant graph Transformer 编码器来建模口袋与配体嵌入，确保表征对旋转、平移和反射保持不变。MolX 采用混合学习范式预训练，将有监督生物化学目标（logP 与 energy-gap 回归）与自监督几何目标（坐标重建与原子类型预测）相结合，以促进可泛化的分子理解。在八项下游基准上，包括抗体–药物偶联物（ADC）、蛋白水解靶向嵌合体（PROTAC）、molecular glue 与 PCBA 活性预测，以及结合亲和力与物理化学性质回归，MolX 取得一致的当前最优性能和强跨域泛化。此外，MolX 引入 sparse autoencoder 模块，将潜表征分解为可解释的生物学组分，从而揭示驱动预测结果的口袋–配体相互作用。综上，MolX 建立了可扩展且可解释的分子表征学习基础模型，为预测和解释复杂小分子–蛋白质相互作用提供统一框架。",
+      "published": "2026-08-05",
+      "author_line": "Liu, J., Pan, T., Guo, X. 等 10 人"
+    },
+    {
+      "id": "arxiv:2608.03154v1",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem",
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "ANCHOR-RE: An Agentic Neuro-Symbolic Framework for Grounded Biomedical Relation Extraction",
+      "url": "https://arxiv.org/abs/2608.03154v1",
+      "published_at": "2026-08-04",
+      "updated_at": "2026-08-04",
+      "creators": [
+        "Shufan Ming",
+        "Yikun Han",
+        "Gibong Hong",
+        "Rui Zhang",
+        "Halil Kilicoglu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Biomedical relation extraction (BioRE) extracts structured knowledge from biomedical literature for applications such as knowledge base construction and hypothesis generation. Traditional symbolic systems such as SemRep provide high precision but limited recall, while large language models (LLMs) offer stronger contextual reasoning but remain prone to false-positive predictions. We developed ANCHOR-RE, a framework that integrates ontology-guided reasoning, external knowledge grounding, and data-driven verification rules into LLM inference. We evaluated it on three BioRE benchmarks (SemRepGS, DDI, and ChemProt) using both proprietary and open-weight LLMs. To assess generalizability beyond benchmark datasets while reducing potential evaluation bias from LLM pretraining contamination, we conducted a temporal evaluation using 100 biomedical articles published in 2026. With the proprietary backbone, ANCHOR-RE outperformed direct LLM prompting, improving micro-F1 from 0.654 to 0.676 on SemRepGS, from 0.769 to 0.872 on DDI, and from 0.939 to 0.941 on ChemProt. On DDI and ChemProt, it also outperformed previously reported inference-only methods and approached fine-tuned or instruction-tuned systems without parameter updates. Similar performance gains observed with open-weight LLMs indicate that the benefits were not limited to the proprietary backbone. On the post-cutoff set, manual assessment of 500 randomly sampled predictions yielded a precision of 69%, maintaining consistent precision on previously unseen biomedical literature. Neuro-symbolic reasoning can improve the reliability of LLM-based BioRE without fine-tuning. Results across multiple benchmarks, model families, and post-cutoff literature support ANCHOR-RE as a practical training-free approach to biomedical literature mining.",
+      "summary_zh": "ANCHOR-RE 把本体引导、外部知识锚定与验证规则接入 LLM 推断，SemRepGS/DDI/ChemProt 的 micro-F1 分别升至 0.676、0.872 与 0.941，2026 年文献人工评估精度 69%。",
+      "why_it_matters_zh": "在不微调的前提下用神经–符号规则压低 BioRE 假阳性，并用截止日期后文献做污染对照。",
+      "quality_score": 85.0,
+      "tags": [
+        "方法与模型",
+        "ANCHOR-RE",
+        "BioRE",
+        "ChemProt",
+        "神经符号"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有外部测试",
+        "数据集",
+        "benchmark",
+        "dataset",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 7,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.03154v1"
+      },
+      "abstract_zh": "生物医学关系抽取（BioRE）从生物医学文献中提取结构化知识，用于知识库构建与假说生成等应用。传统符号系统如 SemRep 精度高但召回有限，而大语言模型（LLMs）提供更强的上下文推理，但仍易产生假阳性预测。我们开发了 ANCHOR-RE，一个将本体引导推理、外部知识锚定和数据驱动验证规则整合进 LLM 推断的框架。我们在三个 BioRE 基准（SemRepGS、DDI 和 ChemProt）上用专有与开权 LLM 进行评估。为评估超越基准数据集的泛化并降低 LLM 预训练污染带来的评估偏差，我们用 2026 年发表的 100 篇生物医学文章做了时间性评估。使用专有骨干时，ANCHOR-RE 优于直接 LLM 提示，将 SemRepGS 上的 micro-F1 从 0.654 提升到 0.676，DDI 从 0.769 提升到 0.872，ChemProt 从 0.939 提升到 0.941。在 DDI 和 ChemProt 上，它也优于先前报告的仅推断方法，并在不更新参数的情况下接近微调或指令调优系统。开权 LLM 上观察到的类似增益表明收益不限于专有骨干。在截止日期后集合上，对 500 条随机抽样预测的人工评估得到 69% 的精度，在先前未见的生物医学文献上保持一致精度。神经–符号推理可在不微调的情况下改善基于 LLM 的 BioRE 可靠性。跨多个基准、模型家族和截止日期后文献的结果支持 ANCHOR-RE 作为生物医学文献挖掘的实用免训练方法。",
+      "published": "2026-08-04",
+      "author_line": "Shufan Ming, Yikun Han, Gibong Hong 等 5 人"
+    },
+    {
+      "id": "europepmc:ppr1290448",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Genome-scale prediction of context-specific synthetic lethality beyond protein interaction networks",
+      "url": "https://europepmc.org/article/PPR/PPR1290448",
+      "published_at": "2026-08-03",
+      "updated_at": "2026-08-04",
+      "creators": [
+        "Baskar P",
+        "Parnika S",
+        "Lakhdive A",
+        "Bej S",
+        "Shameer S",
+        "Vijayan K"
+      ],
+      "language": "en",
+      "abstract_or_text": "Identifying synthetic lethal (SL) interactions offers a principled framework for discovering disease-specific therapeutic targets. However, current machine learning approaches heavily rely on curated protein-protein interaction networks. Because these networks cover only ∼7,500 proteins, they severely restrict the search space of human gene pairs and introduce systematic biases toward well-characterized genes. To circumvent these limitations, we developed SLxGO, a network-independent machine learning framework that predicts SL interactions directly from semantic representations of Gene Ontology annotations encoded via BioBERT-derived embeddings. Benchmarked across multiple cross-validation schemes against eight state-of-the-art methods, SLxGO consistently achieved superior predictive ranking performance, maintaining robustness under cold-start conditions for previously unseen genes. Integrating cell line-specific transcriptional profiles extended this framework to context-dependent SL prediction across six distinct cell lines. Notably, we experimentally confirmed a context-specific EFNA1 - SLC29A1 SL interaction in HeLa cells, alongside synergistic pharmacological validation of an ACVR1 - SLC29A1 vulnerability. All predictions are hosted on SLiGO, an open-access database encompassing 30 million human gene pairs, establishing a comprehensive, genome-scale resource for context-specific vulnerability mapping across the human interactome.",
+      "summary_zh": "SLxGO 用 BioBERT 编码的 Gene Ontology 语义表征预测合成致死，冷启动仍优于 8 种方法，并在 HeLa 中验证 EFNA1-SLC29A1。",
+      "why_it_matters_zh": "摆脱仅覆盖约 7,500 蛋白的 PPI 网络限制，把基因组尺度脆弱性作图扩展到 30 million 基因对。",
+      "quality_score": 85.0,
+      "tags": [
+        "组学与细胞",
+        "SLxGO",
+        "合成致死",
+        "BioBERT",
+        "EFNA1"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "实验验证",
+        "数据集",
+        "benchmark",
+        "experimental",
+        "state-of-the-art"
+      ],
+      "publication_status": "preprint",
+      "rank": 8,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.31.742101",
+        "pmid": ""
+      },
+      "abstract_zh": "识别合成致死（SL）相互作用为发现疾病特异治疗靶点提供了原则性框架。然而，当前机器学习方法严重依赖策展的蛋白质–蛋白质相互作用网络。由于这些网络仅覆盖约 7,500 个蛋白质，它们严重限制了人类基因对的搜索空间，并引入偏向已充分表征基因的系统性偏差。为规避这些限制，我们开发了 SLxGO，一个不依赖网络的机器学习框架，直接从经 BioBERT 导出嵌入编码的 Gene Ontology 注释语义表征预测 SL 相互作用。在多种交叉验证方案下对照八种先进方法的基准评测中，SLxGO 持续取得更优的预测排序性能，并在先前未见基因的冷启动条件下保持稳健。整合细胞系特异转录谱将该框架扩展到六个不同细胞系的上下文依赖 SL 预测。值得注意的是，我们在 HeLa 细胞中实验确认了上下文特异的 EFNA1 - SLC29A1 SL 相互作用，并对 ACVR1 - SLC29A1 脆弱性进行了协同药理学验证。全部预测托管于涵盖 30 million 个人类基因对的开放数据库 SLiGO，为人互作组上的上下文特异脆弱性作图建立了全面的基因组尺度资源。",
+      "published": "2026-08-03",
+      "author_line": "Baskar P, Parnika S, Lakhdive A 等 6 人"
+    },
+    {
+      "id": "arxiv:2608.05329v1",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Frozen but Not Always Accessible: A Representation Analysis of Genomic Language Models",
+      "url": "https://arxiv.org/abs/2608.05329v1",
+      "published_at": "2026-08-05",
+      "updated_at": "2026-08-05",
+      "creators": [
+        "Nirjhor Datta",
+        "Swakkhar Shatabda",
+        "M. Sohel Rahman"
+      ],
+      "language": "en",
+      "abstract_or_text": "Genomic foundation models are increasingly reused as frozen feature extractors for downstream sequence prediction, offering a compute-efficient alternative to full fine-tuning. However, it remains unclear when biological information encoded by these models is accessible without task-specific adaptation. We present a representation-accessibility analysis of frozen genomic language models across regulatory, epigenetic, promoter, splice-site, and variant-effect prediction tasks. We evaluate DNABERT-2, Nucleotide Transformer, HyenaDNA, GENERATOR-v2, and Omni-DNA under unified frozen-probing protocols, while separating diagnostic readout analyses from validation-selected checks. Our results reveal a consistent task-dependent pattern: frozen probes recover 95-100 % of fine-tuned performance on promoter tasks, but average splice-site recovery drops to 60-88 %. Frozen embeddings are also competitive on broad Genomic Benchmark tasks such as coding-region and species-discrimination classification, but show larger gaps on some regulatory and OCR tasks. Layer-wise probing, in-silico mutagenesis, variant-effect prediction, and embedding geometry show that local biological signal is partially present in frozen representations, but is not always accessible through final pooled embeddings.",
+      "summary_zh": "在统一冻结探针协议下比较 DNABERT-2、Nucleotide Transformer、HyenaDNA 等，启动子任务回收 95-100% 微调性能，剪接位点仅 60-88%。",
+      "why_it_matters_zh": "表明基因组语言模型编码的生物学信号并不总能从最终池化嵌入直接取出，冻结复用需按任务判断。",
+      "quality_score": 84.0,
+      "tags": [
+        "方法与模型",
+        "基因组语言模型",
+        "DNABERT-2",
+        "HyenaDNA",
+        "冻结探针"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "理论分析",
+        "benchmark",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 9,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.05329v1"
+      },
+      "abstract_zh": "基因组基础模型越来越多地被复用为下游序列预测的冻结特征提取器，作为全量微调的计算高效替代。然而，这些模型编码的生物学信息在何种情况下无需任务特异适应即可被访问，仍不清楚。我们对冻结基因组语言模型进行了表征可访问性分析，覆盖调控、表观遗传、启动子、剪接位点与变异效应预测任务。我们在统一冻结探针协议下评估 DNABERT-2、Nucleotide Transformer、HyenaDNA、GENERATOR-v2 和 Omni-DNA，同时将诊断性读出分析与经验证集选择的检查分开。结果揭示一致的任务依赖模式：冻结探针在启动子任务上回收 95-100% 的微调性能，但剪接位点平均回收降至 60-88%。冻结嵌入在编码区与物种判别等宽泛 Genomic Benchmark 任务上也具竞争力，但在某些调控和 OCR 任务上差距更大。逐层探针、计算机诱变、变异效应预测和嵌入几何表明，局域生物学信号部分存在于冻结表征中，但并不总能通过最终池化嵌入被访问。",
+      "published": "2026-08-05",
+      "author_line": "Nirjhor Datta, Swakkhar Shatabda, M. Sohel Rahman"
+    },
+    {
+      "id": "europepmc:ppr1292543",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Spectral universality in single-cell foundation models: a low-dimensional shared core carries the biology",
+      "url": "https://europepmc.org/article/PPR/PPR1292543",
+      "published_at": "2026-08-06",
+      "updated_at": "2026-08-07",
+      "creators": [
+        "Chen L"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Dozens of foundation models are now trained on single-cell transcriptomes, each proposed as a general-purpose representation of the genome. We ask whether they agree with one another, and if so, where. Taking seven transcriptome-trained models spanning five architecture families and a 32-fold range of parameter counts, together with a protein language model as an outgroup, and restricting all of them to the 17,874 genes they share, we find that pairwise agreement is low: leading rank-256 subspaces overlap by 0.107 on average, where 1 is identity and 0.014 is chance. An empirical co-expression profile carrying no learned parameters overlaps each model more (0.135) than the models overlap each other. Generalised canonical correlation analysis nevertheless recovers a small consensus subspace: the leading shared direction lies 91% inside every model on average, and 43 directions lie at least half inside all of them, against a gene-permutation null of 0.22. This core is robust—dropping any model, or the entire three-member Geneformer family, leaves the leading shared fraction between 0.900 and 0.948. We then locate the biology. On five retrieval tasks built from Gene Ontology, Reactome, hu.MAP protein complexes and STRING, the component of each model orthogonal to the core is at or near chance (mean AUROC 0.501–0.551), while restricting a model to the core raises its mean AUROC for all eight models, significantly on all five tasks for seven of them. Eight consensus directions, belonging to no model, significantly outperform every full-width embedding on all five tasks (40 of 40 paired DeLong comparisons, minimum |z| = 7.6). The core survives removing a transcript-abundance axis and a co-expression subspace, both individually and jointly, and resolves into interpretable programs: a housekeeping-versus-untranscribed axis, then adhesion and extracellular matrix, cytokine signalling, immune response, and translational machinery. The practical consequence is that the majority of every model’s representational capacity is private and biologically inert, and the object worth extracting from these models is not any one model’s geometry but the intersection of several.",
+      "summary_zh": "七个单细胞基础模型秩-256 子空间平均重叠仅 0.107，但广义 CCA 回收出 43 个共享方向；正交于该核心的分量检索近乎随机，八个共识方向在五项任务上全面优于全宽嵌入。",
+      "why_it_matters_zh": "表明多数 scFM 容量是私有且生物学惰性的，真正有用的是模型交集而非任一几何。",
+      "quality_score": 83.0,
+      "tags": [
+        "组学与细胞",
+        "单细胞基础模型",
+        "谱分析",
+        "Geneformer",
+        "共识子空间"
+      ],
+      "evidence_flags": [
+        "理论分析",
+        "有定量基准"
+      ],
+      "publication_status": "preprint",
+      "rank": 10,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10595552/v1",
+        "pmid": ""
+      },
+      "abstract_zh": "数十个基础模型现已在单细胞转录组上训练，每个都被提出作为基因组的通用表征。我们问它们是否彼此一致，以及若一致则在何处一致。取跨越五个架构家族、参数量相差 32 倍的七个转录组训练模型，并以一个蛋白质语言模型作为外群，将它们全部限制到共享的 17,874 个基因，我们发现两两一致性很低：领先的秩-256 子空间平均重叠为 0.107，其中 1 为恒等、0.014 为偶然水平。一个不含任何学习参数的经验共表达谱与每个模型的重叠（0.135）高于模型彼此之间的重叠。广义典型相关分析仍回收出一个小的共识子空间：领先共享方向平均 91% 落在每个模型内部，且有 43 个方向至少一半落在全部模型内部，对照基因置换零模型为 0.22。该核心稳健——去掉任一模型，或去掉整个三成员 Geneformer 家族，领先共享分数仍介于 0.900 与 0.948 之间。随后我们定位生物学。在由 Gene Ontology、Reactome、hu.MAP 蛋白复合物和 STRING 构建的五项检索任务上，每个模型正交于该核心的分量处于或接近偶然水平（平均 AUROC 0.501–0.551），而将模型限制到该核心会提高全部八个模型的平均 AUROC，其中七个在全部五项任务上显著提高。八个不属于任何模型的共识方向，在全部五项任务上显著优于每一个全宽嵌入（40/40 成对 DeLong 比较，最小 |z| = 7.6）。该核心在分别及联合去除转录丰度轴和共表达子空间后仍然存活，并分解为可解释程序：管家相对未转录轴，随后是黏附与细胞外基质、细胞因子信号、免疫应答和翻译机器。实践含义是每个模型表征容量的大部分是私有且生物学惰性的，值得从这些模型中提取的对象不是任一模型的几何，而是若干模型的交集。",
+      "published": "2026-08-06",
+      "author_line": "Chen L"
+    },
+    {
+      "id": "arxiv:2608.06430v1",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "MiGHT-EHR: A Multi-task Graph Transformer for Heterogeneous Temporal Electronic Health Records",
+      "url": "https://arxiv.org/abs/2608.06430v1",
+      "published_at": "2026-08-05",
+      "updated_at": "2026-08-05",
+      "creators": [
+        "Anirudh Rayas",
+        "Yuan Wang",
+        "Pavan Turaga"
+      ],
+      "language": "en",
+      "abstract_or_text": "Learning from Electronic Health Records (EHRs) has gained significant attention due to its potential to improve clinical prediction. However, effective learning remains challenging because EHRs encode heterogeneous, temporally ordered clinical interactions. In particular, EHRs contain: (i) heterogeneous clinical entities, including patients, visits, diagnoses, prescriptions, and procedures, together with their heterogeneous interactions, (ii) longitudinal patient trajectories across hospital visits and (iii) shared statistical dependencies across related clinical prediction tasks. Existing EHR learning methods capture only a subset of these properties. To bridge this gap, we propose Multi-task Graph transformer for Heterogeneous Temporal EHRs (MiGHT-EHR), which jointly models all three within a unified representation learning method. MiGHT-EHR constructs a heterogeneous graph from EHRs in which nodes represent clinical entities and edges connect statistically associated entities identified via normalized point-wise mutual information. Across MIMIC-III and MIMIC-IV datasets, MiGHT-EHR outperforms state-of-the-art methods on average across four tasks: drug recommendation, prediction of length-of-stay, mortality, and readmission, with particularly strong improvements in mortality and readmission prediction. Furthermore, a post-hoc analysis of the learned representations reveals that patient neighborhoods are organized by clinical outcomes, salient medical concepts are recoverable as linear directions in the representation space, and task probabilities are well calibrated. Collectively, these findings demonstrate that MiGHT-EHR representations support diverse prediction tasks while preserving clinically interpretable structure.",
+      "summary_zh": "MiGHT-EHR 用归一化逐点互信息建异构时序图，在 MIMIC-III/IV 上联合做药物推荐、住院时长、死亡与再入院预测并优于当前最优。",
+      "why_it_matters_zh": "把异质实体、纵向轨迹与多任务依赖放进同一图 Transformer，并给出可校准、可解释的病历表征。",
+      "quality_score": 83.0,
+      "tags": [
+        "生物医学与临床",
+        "MiGHT-EHR",
+        "EHR",
+        "MIMIC",
+        "图Transformer"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "当前最优",
+        "dataset",
+        "clinical",
+        "state-of-the-art"
+      ],
+      "publication_status": "preprint",
+      "rank": 11,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.06430v1"
+      },
+      "abstract_zh": "从电子健康记录（EHRs）学习因其改善临床预测的潜力而受到广泛关注。然而，有效学习仍然困难，因为 EHR 编码了异质、按时间排序的临床交互。具体而言，EHR 包含：(i) 异质临床实体，包括患者、就诊、诊断、处方和操作，及其异质交互，(ii) 跨医院就诊的纵向患者轨迹，以及 (iii) 相关临床预测任务之间的共享统计依赖。现有 EHR 学习方法仅捕获这些性质的一个子集。为弥合这一差距，我们提出 Multi-task Graph transformer for Heterogeneous Temporal EHRs（MiGHT-EHR），在统一表征学习方法中联合建模这三者。MiGHT-EHR 从 EHR 构建异质图，其中节点表示临床实体，边连接经归一化逐点互信息识别的统计关联实体。在 MIMIC-III 和 MIMIC-IV 数据集上，MiGHT-EHR 在四项任务——药物推荐、住院时长预测、死亡与再入院——的平均表现上优于当前最优方法，在死亡和再入院预测上改进尤为显著。此外，对所学表征的事后分析显示，患者邻域按临床结局组织，显著医学概念可作为表征空间中的线性方向被回收，且任务概率校准良好。综合这些发现表明，MiGHT-EHR 表征在支持多样预测任务的同时保留了临床上可解释的结构。",
+      "published": "2026-08-05",
+      "author_line": "Anirudh Rayas, Yuan Wang, Pavan Turaga"
+    },
+    {
+      "id": "medrxiv:10.64898/2026.08.04.26359536",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "Multimodal artificial intelligence using entire electronic health record and complete pathogen genome data for patient outcome prediction from life-threatening infection: the SuperbugAI Platform",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.08.04.26359536",
+      "published_at": "2026-08-06",
+      "updated_at": "2026-08-06",
+      "creators": [
+        "Tyagi, S.",
+        "Ramakrishnaiah, Y.",
+        "Hawkey, J.",
+        "Wisniewski, J.",
+        "Blakeway, L.",
+        "Christian, T.",
+        "Sikric, V.",
+        "Librata, W.",
+        "Song, J.",
+        "Webb, G. I.",
+        "Ashok, A.",
+        "Bain, C.",
+        "Macesic, N.",
+        "Peleg, A. Y."
+      ],
+      "language": "en",
+      "abstract_or_text": "Artificial intelligence (AI) has the potential to transform healthcare, with advanced multimodal approaches showing great promise in leveraging diverse health-related data. Here, we applied multimodal AI to entire electronic health record (EHR) and complete pathogen genome data to predict patient outcomes from life-threatening infection. An automated, scalable pipeline was developed for EHR data preprocessing, quality control, and standardisation. A deep learning fusion model was trained to predict in-hospital mortality, need for ICU admission, prolonged length of stay and 30-day unplanned readmission. We then developed a novel genomic large language model (gLLM) architecture to incorporate bacterial genomic features into the multimodal fusion model. The cohort comprised 2,656 bloodstream infection hospitalisations involving 2,535 patients. Deep learning fusion models using entire structured and unstructured EHR data outperformed traditional APACHE II score mortality prediction (AUROC [95% confidence intervals] 0.93 [0.92-0.94] versus 0.77 [0.77-0.78]). The model also showed strong performance for predicting the need for ICU admission (AUROC 0.978 [0.966 - 0.986]), prolonged hospital length of stay (AUROC 0.803 [0.790 - 0.812]) and unplanned readmission (AUROC 0.696 [0.690 - 0.701]). As proof of principle, incorporating entire microbial genomic features from the causative pathogen further enhanced prediction and enabled identification of key bacterial virulence pathways relevant for human disease. Multimodal AI integrating harmonised EHR and genomic data can accurately identify hospitalised patients at risk of poor outcomes. These approaches are scalable to other subspecialities of medicine.",
+      "summary_zh": "SuperbugAI 融合 2,656 次血流感染住院的完整 EHR 与病原体基因组，院内死亡 AUROC 0.93 优于 APACHE II 的 0.77，并识别关键细菌毒力通路。",
+      "why_it_matters_zh": "把完整病历与完整病原体基因组接到同一预后模型，并优于传统重症评分。",
+      "quality_score": 82.0,
+      "tags": [
+        "方法与模型",
+        "SuperbugAI",
+        "EHR",
+        "gLLM",
+        "血流感染"
+      ],
+      "evidence_flags": [
+        "临床队列",
+        "有定量基准",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 12,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.04.26359536",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "人工智能（AI）有潜力变革医疗，先进多模态方法在利用多样健康相关数据方面展现出巨大前景。本文将多模态 AI 应用于完整电子健康记录（EHR）和完整病原体基因组数据，以预测危及生命感染的患者结局。我们开发了一条自动化、可扩展的流水线，用于 EHR 数据预处理、质量控制与标准化。训练了一个深度学习融合模型，以预测院内死亡、是否需要 ICU 收治、住院时间延长和 30 天非计划再入院。随后我们开发了一种新颖的基因组大语言模型（gLLM）架构，将细菌基因组特征纳入多模态融合模型。队列包含 2,656 次血流感染住院，涉及 2,535 名患者。使用完整结构化和非结构化 EHR 数据的深度学习融合模型优于传统 APACHE II 评分的死亡预测（AUROC [95% 置信区间] 0.93 [0.92-0.94] 对 0.77 [0.77-0.78]）。该模型在预测 ICU 收治需求（AUROC 0.978 [0.966 - 0.986]）、住院时间延长（AUROC 0.803 [0.790 - 0.812]）和非计划再入院（AUROC 0.696 [0.690 - 0.701]）上也表现强劲。作为原理验证，纳入致病病原体的完整微生物基因组特征进一步增强了预测，并能够识别与人类疾病相关的关键细菌毒力通路。整合经协调的 EHR 与基因组数据的多模态 AI 可以准确识别有不良结局风险的住院患者。这些方法可扩展到其他医学亚专科。",
+      "published": "2026-08-06",
+      "author_line": "Tyagi, S., Ramakrishnaiah, Y., Hawkey, J. 等 14 人"
+    },
+    {
+      "id": "biorxiv:10.1101/2024.12.23.630036",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A Systematic Comparison of Single-Cell Perturbation Response Prediction Models",
+      "url": "https://www.biorxiv.org/content/10.1101/2024.12.23.630036",
+      "published_at": "2026-08-03",
+      "updated_at": "2026-08-03",
+      "creators": [
+        "Li, L.",
+        "You, Y.",
+        "Fu, Y.",
+        "Liao, W.",
+        "Fan, X.",
+        "Lu, S.",
+        "Cao, Y.",
+        "Li, B.",
+        "Ren, W.",
+        "Kong, J.",
+        "Zheng, S.",
+        "Chen, J.",
+        "Liu, X.",
+        "Tian, L."
+      ],
+      "language": "en",
+      "abstract_or_text": "Predicting single-cell transcriptional responses to perturbations is central to dissecting gene regulation and accelerating therapeutic design, yet the field lacks a rigorous, task-spanning assessment of model behavior. We present a large-scale benchmark of 13 representative methods and baselines across 25 datasets spanning diverse perturbation modalities and species, including two primary immune-cell drug-response resources. We evaluated three core tasks--generalization to unseen single-gene perturbations, prediction of combinatorial interactions, and transfer across cell types--using 24 metrics covering expression-level accuracy, relative changes, differential expression recovery, and distributional similarity. Across tasks, performance depended strongly on perturbation effect size and evaluation perspective: expression-level agreement was highest for small-effect perturbations resembling controls, whereas delta- and DE-based metrics improved with larger effects, providing clearer signals. Models shared a conservative bias, with fine-tuned foundation models compressing variance and underestimating synergistic effects in combinations. PerturbNet showed superior recovery of DE signatures in Tasks 1 and 2, while no method consistently generalized across cell types in Task 3, where biological consistency dominated outcomes. This benchmark establishes current methodological limits, clarifies that different metrics probe distinct biological signals rather than redundant summaries of the same prediction problem, and provides a foundation for developing virtual-cell models that more faithfully capture heterogeneous perturbation responses. Teaser: A large-scale benchmark reveals strengths and limits of models predicting single-cell perturbation responses.",
+      "summary_zh": "在 25 个数据集上系统比较 13 种单细胞扰动应答预测方法，覆盖未见单基因扰动、组合相互作用与跨细胞类型迁移三项任务及 24 项指标。",
+      "why_it_matters_zh": "表明表达一致性与 DE 回收探测不同生物学信号，且尚无方法能稳定跨细胞类型泛化。",
+      "quality_score": 82.0,
+      "tags": [
+        "组学与细胞",
+        "单细胞扰动",
+        "PerturbNet",
+        "虚拟细胞",
+        "基准评测"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "benchmark",
+        "dataset",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 13,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2024.12.23.630036",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "预测单细胞对扰动的转录应答，对于解析基因调控并加速治疗设计至关紧要，但该领域仍缺乏对模型行为的严格、跨任务评估。我们对 13 种代表性方法与基线进行了大规模基准评测，覆盖 25 个跨越多样扰动模态与物种的数据集，其中包括两个原代免疫细胞药物应答资源。我们评估了三项核心任务——对未见单基因扰动的泛化、组合相互作用预测，以及跨细胞类型迁移——并使用 24 项指标，覆盖表达水平精度、相对变化、差异表达回收和分布相似性。跨任务来看，性能强烈依赖于扰动效应量与评估视角：表达水平一致性在类似对照的小效应扰动上最高，而基于 delta 和 DE 的指标随效应增大而改善，信号更清晰。模型共享保守偏置，微调基础模型压缩方差并低估组合中的协同效应。PerturbNet 在任务 1 和 2 中对 DE 签名的回收更优，而在任务 3 中没有方法能一致跨细胞类型泛化，该任务中生物学一致性主导结果。这一基准确立了当前方法学限度，澄清不同指标探测的是不同生物学信号而非同一预测问题的冗余摘要，并为开发更能忠实捕获异质扰动应答的虚拟细胞模型提供基础。导语：一项大规模基准揭示了预测单细胞扰动应答模型的优势与限度。",
+      "published": "2026-08-03",
+      "author_line": "Li, L., You, Y., Fu, Y. 等 14 人"
+    },
+    {
+      "id": "arxiv:2608.04514v2",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "RESPClinBench: Benchmarking Multimodal Clinical Decision-Making and Longitudinal Disease Management in Respiratory Specialty Care",
+      "url": "https://arxiv.org/abs/2608.04514v2",
+      "published_at": "2026-08-05",
+      "updated_at": "2026-08-06",
+      "creators": [
+        "Mouxiao Bian",
+        "Zhi Chen",
+        "Ruiyao Chen",
+        "Lu Lu",
+        "Hengrui Liang",
+        "Chaoyi Huang",
+        "Yiluo Lin",
+        "Jingru Ding",
+        "Yun Zhong",
+        "Yueming Su",
+        "Jie Xu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Background: Respiratory specialty care requires multimodal interpretation, longitudinal risk assessment, guideline-concordant intervention, and whole-course management, which are poorly represented by examination-oriented medical benchmarks. Objective: To develop RESPClinBench, a real-world scenario-based benchmark for respiratory clinical decision-making, and evaluate seven contemporary large language models across AECOPD-PIM and PNBIM. Methods: RESPClinBench cases were adapted from de-identified respiratory clinical data. Three attending-level respiratory physicians revised cases, reference answers, and atomic clinical-action points, while one senior respiratory specialist performed cross-review and final adjudication. AECOPD-PIM comprised 427 open-ended COPD cases, and PNBIM comprised 196 multimodal pulmonary nodule cases combining chest CT with structured clinical information. Seven models generated 4,361 responses through standardized API inference with temperature 0 and a maximum output length of 8192 tokens. An automated framework calculated the final score as the arithmetic mean of atomic-action recall and rubric-based LLM-as-a-Judge assessment. Results: Across 623 cases, the mean final score was 68.58. Qwen3.6-27B ranked first overall at 71.22, Qwen3.5-397B-A17B led PNBIM at 72.48, and Qwen3.6-27B led AECOPD-PIM at 71.11. Imaging hallucination and serious medical risk occurred in 31.85% and 8.16% of PNBIM responses; medication-safety risk and serious medical risk occurred in 26.93% and 1.44% of AECOPD-PIM responses. Conclusions: RESPClinBench identifies task-specific limitations in multimodal pulmonary nodule assessment and longitudinal COPD management. Combining explicit clinical-action coverage, holistic evaluation, and independent safety flags provides a clinically grounded basis for model selection and prospective validation.",
+      "summary_zh": "RESPClinBench 由医师裁定 623 例真实呼吸病例，评估 7 个 LLM；Qwen3.6-27B 总分 71.22，PNBIM 影像幻觉率 31.85%。",
+      "why_it_matters_zh": "把呼吸专科决策从考题式基准改到全程管理与独立安全标志，暴露多模态幻觉风险。",
+      "quality_score": 81.0,
+      "tags": [
+        "生物医学与临床",
+        "RESPClinBench",
+        "COPD",
+        "肺结节",
+        "Qwen3.6-27B"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "临床队列",
+        "数据集",
+        "benchmark",
+        "prospective",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 14,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.04514v2"
+      },
+      "abstract_zh": "背景：呼吸专科照护需要多模态解读、纵向风险评估、符合指南的干预和全程管理，而这些在以考试为导向的医学基准中表征不足。目的：开发 RESPClinBench，一个基于真实世界情景的呼吸临床决策基准，并在 AECOPD-PIM 和 PNBIM 上评估七个当代大语言模型。方法：RESPClinBench 病例改编自去标识的呼吸临床数据。三名主治级呼吸科医师修订病例、参考答案和原子临床行动点，一名资深呼吸专科医师进行交叉审阅与最终裁定。AECOPD-PIM 包含 427 个开放式 COPD 病例，PNBIM 包含 196 个将胸部 CT 与结构化临床信息结合的多模态肺结节病例。七个模型通过标准化 API 推断生成 4,361 条回复，temperature 为 0，最大输出长度为 8192 tokens。自动化框架将最终分数计算为原子行动召回与基于量规的 LLM-as-a-Judge 评估的算术平均。结果：在 623 个病例上，平均最终分数为 68.58。Qwen3.6-27B 以 71.22 总体排名第一，Qwen3.5-397B-A17B 以 72.48 领先 PNBIM，Qwen3.6-27B 以 71.11 领先 AECOPD-PIM。影像幻觉和严重医疗风险分别出现在 31.85% 和 8.16% 的 PNBIM 回复中；用药安全风险和严重医疗风险分别出现在 26.93% 和 1.44% 的 AECOPD-PIM 回复中。结论：RESPClinBench 识别出多模态肺结节评估和纵向 COPD 管理中的任务特异限度。将显式临床行动覆盖、整体评估和独立安全标志相结合，为模型选择与前瞻验证提供了有临床根基的依据。",
+      "published": "2026-08-05",
+      "author_line": "Mouxiao Bian, Zhi Chen, Ruiyao Chen 等 11 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.07.31.741265",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Multi-modal foundation model with whole-slide attention enables transferrable digital pathology at single-cell resolution",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.07.31.741265",
+      "published_at": "2026-08-06",
+      "updated_at": "2026-08-06",
+      "creators": [
+        "Wu, Q.",
+        "Gong, Q.",
+        "Yuan, L.",
+        "Li, Z.",
+        "Ashenberg, O.",
+        "Chen, F.",
+        "Xavier, R.",
+        "Uhler, C."
+      ],
+      "language": "en",
+      "abstract_or_text": "Paired histopathology and spatial transcriptomics data are advancing our understanding of tissue biology and disease, but modeling both modalities at single-cell resolution while mapping local and distal cell-cell interdependencies remains computationally prohibitive. Here we introduce TissueFormer, a framework for pretraining foundation models with linear rather than quadratic computational complexity, overcoming a long-standing barrier to modeling long-range dependencies at scale. Trained on over 17 million image-expression pairs from 1.2K tissue slides, TissueFormer excels at predicting spatial gene expression from histology images at cellular resolution and scales to diagnostic tasks at the cell, region, and slide levels. Additionally, by identifying both long and short-range cell-cell interdependencies, our model enables the generation of testable hypotheses about disease mechanisms and staging, as demonstrated in lung fibrosis and breast cancer.",
+      "summary_zh": "TissueFormer 以线性复杂度在 1.2K 张切片逾 17 million 图像–表达对上预训练，从组织学预测细胞分辨率空间表达，并在肺纤维化与乳腺癌中提出可检验的细胞互作假说。",
+      "why_it_matters_zh": "打破全切片注意力二次复杂度，把组织学与空间转录组接到可检验的疾病机制假说。",
+      "quality_score": 81.0,
+      "tags": [
+        "组学与细胞",
+        "TissueFormer",
+        "空间转录组",
+        "数字病理",
+        "基础模型"
+      ],
+      "evidence_flags": [
+        "数据集",
+        "方法创新"
+      ],
+      "publication_status": "preprint",
+      "rank": 15,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.31.741265",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "配对的组织病理学与空间转录组数据正在推进我们对组织生物学与疾病的理解，但在单细胞分辨率同时建模两种模态并映射局域与远距细胞–细胞相互依赖，在计算上仍令人望而却步。本文推出 TissueFormer，一个以线性而非二次计算复杂度预训练基础模型的框架，克服了大规模建模长程依赖的长期障碍。TissueFormer 在来自 1.2K 张组织切片的逾 17 million 个图像–表达对上训练，擅长从组织学图像在细胞分辨率预测空间基因表达，并扩展到细胞、区域和切片水平的诊断任务。此外，通过识别长程与短程细胞–细胞相互依赖，我们的模型能够生成关于疾病机制与分期的可检验假说，如在肺纤维化和乳腺癌中所展示。",
+      "published": "2026-08-06",
+      "author_line": "Wu, Q., Gong, Q., Yuan, L. 等 8 人"
+    },
+    {
+      "id": "medrxiv:10.64898/2026.08.04.26359713",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "Continuous Value Tokenization Improves Medical Event Foundation Models",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.08.04.26359713",
+      "published_at": "2026-08-06",
+      "updated_at": "2026-08-06",
+      "creators": [
+        "McCann, K. A.",
+        "Shin, I.",
+        "Li, H.",
+        "White, D.",
+        "Melnick, E. R.",
+        "Iscoe, M. S.",
+        "Loza, A. J."
+      ],
+      "language": "en",
+      "abstract_or_text": "Medical foundation models convert patient records into token sequences for autoregressive prediction, but numeric values such as lab results, vital signs, and time intervals are typically discretized into bins, losing precision and misaligning with clinical thresholds. We trained decoder-only transformer models (47 million parameters) on MIMIC-IV data (364,627 patients; 375 million observations) to compare three tokenization strategies: Discrete (binned values), Continuous Factored (continuous values preserving sequence length), and Continuous Fused (continuous values fused with measurement-type tokens). We evaluated next-token prediction, numeric value prediction, and three clinical tasks: ED disposition at triage, ICD code prediction, and DRG prediction at discharge. Continuous Fused tokenization reduced median sequence length by 34%, reached the Discrete models final next-token loss in 30% of training iterations, and improved numeric prediction accuracy by 30.25% median nRMSE reduction. ICD code prediction favored Continuous Fused (AU-PRC 0.457 vs. 0.446; p < 0.001); DRG prediction was equivalent between Continuous Fused and Discrete; ED disposition accuracy was equivalent across all models ([~]0.900), though Discrete achieved better calibration. We additionally explain why predictive performance improves with Monte Carlo sample count and derive a scaling law to predict performance gains from increasing simulation budget. Continuous-value tokenization offers substantial efficiency and precision gains while maintaining comparable clinical task performance, with no modifications to the standard transformer architecture. Author SummaryMedical event foundation models are increasingly used to forecast clinical outcomes. These models predict using patient records as sequences of \"tokens,\" much like a language model predicts next words. Numerical values such as lab results and vital signs pose a problem: they are usually grouped into discrete bins before being tokenized, which loses precision and ignores the fact that medical decisions often depend on specific numerical thresholds. We compared three ways of representing continuous values in medical foundation models: the standard binning approach and two new approaches that preserve the actual values. The continuous-value approaches trained about three times faster, produced 34% shorter sequences, and achieved comparable accuracy on clinical prediction tasks including emergency department triage, ICD diagnosis codes, and hospital billing codes. These gains require no modifications to the standard transformer architecture. We also discovered that commonly used evaluation metrics exhibit a systematic bias depending on the number of simulated predictions, and that this bias follows a predictable mathematical pattern, enabling researchers to estimate full-scale performance from smaller, less expensive simulation experiments.",
+      "summary_zh": "在 MIMIC-IV 的 364,627 名患者、375 million 条观测上比较三种数值 tokenization，Continuous Fused 将中位序列缩短 34%、数值 nRMSE 降 30.25%，ICD AU-PRC 升至 0.457。",
+      "why_it_matters_zh": "证明医学事件基础模型不必把化验值分箱，连续值 tokenization 同时提升效率与精度。",
+      "quality_score": 80.0,
+      "tags": [
+        "生物医学与临床",
+        "tokenization",
+        "MIMIC-IV",
+        "医学基础模型",
+        "Continuous Fused"
+      ],
+      "evidence_flags": [
+        "数据集",
+        "有定量基准",
+        "临床队列",
+        "clinical",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 16,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.04.26359713",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "医学基础模型将患者记录转换为自回归预测的 token 序列，但实验室结果、生命体征和时间间隔等数值通常被离散化为分箱，损失精度并与临床阈值错位。我们在 MIMIC-IV 数据（364,627 名患者；375 million 条观测）上训练仅解码器 transformer 模型（47 million 参数），以比较三种 tokenization 策略：Discrete（分箱值）、Continuous Factored（保留序列长度的连续值）和 Continuous Fused（将连续值与测量类型 token 融合）。我们评估了下一 token 预测、数值预测以及三项临床任务：分诊时的急诊去向、ICD 编码预测和出院时的 DRG 预测。Continuous Fused tokenization 将中位序列长度缩短 34%，在 30% 的训练迭代内达到 Discrete 模型的最终下一 token 损失，并以 30.25% 的中位 nRMSE 降幅改善数值预测精度。ICD 编码预测偏向 Continuous Fused（AU-PRC 0.457 vs. 0.446；p < 0.001）；DRG 预测在 Continuous Fused 与 Discrete 之间相当；急诊去向准确率在所有模型上相当（约 0.900），尽管 Discrete 校准更好。我们还解释了预测性能为何随 Monte Carlo 样本数改善，并导出一条缩放律以从增加的模拟预算预测性能增益。连续值 tokenization 在不修改标准 transformer 架构的情况下提供显著效率与精度增益，同时保持相当的临床任务性能。作者按语：医学事件基础模型越来越多地用于预测临床结局。这些模型把患者记录当作“token”序列来预测，很像语言模型预测下一个词。实验室结果和生命体征等数值带来一个问题：它们通常在 tokenization 前被分组成离散分箱，这会损失精度，并忽略医学决策往往依赖于特定数值阈值这一事实。我们比较了在医学基础模型中表示连续值的三种方式：标准分箱方法和两种保留实际数值的新方法。连续值方法训练大约快三倍，产生短 34% 的序列，并在包括急诊分诊、ICD 诊断编码和医院账单编码在内的临床预测任务上达到相当准确率。这些增益无需修改标准 transformer 架构。我们还发现常用评估指标会随模拟预测数量呈现系统性偏差，且该偏差遵循可预测的数学模式，使研究者能够从更小、更便宜的模拟实验估计全尺度性能。",
+      "published": "2026-08-06",
+      "author_line": "McCann, K. A., Shin, I., Li, H. 等 7 人"
+    }
+  ],
+  "review": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "note": "2026-08-06 候选 60 篇，全部自动分≥70，但夹杂 TCGA 模板预后指数、Long COVID 影像、法医年龄估计、农村填表语音、无计算方法的蜂蜜/VRK1/21 三体湿实验，以及表型混杂可疑的 ASD 高准确率稿。按 AI×Bio 相关性、方法可信度与实验/临床证据精选 16 篇 preprint，覆盖蛋白质与结构、组学与细胞、生物医学与临床、方法与模型；当日新增 RVQ-Alpha 单细胞离散词法、EpiBench 表位推理基准、RDiffusion RNA 条件生成、ANCHOR-RE 神经–符号关系抽取、单细胞基础模型谱共识、SuperbugAI 病历–基因组预后、TissueFormer 全切片线性注意力与连续值病历 tokenization。继续收录 AML 临床就绪分级综述、scMaize、MolX、SLxGO、基因组语言模型冻结探针、单细胞扰动基准、MiGHT-EHR 与 RESPClinBench。未收录缺乏计算方法的湿实验、无独立复现的影像灌水项、非生物域方法稿及模板化 GEO/TCGA 预后指数。"
+  }
+}

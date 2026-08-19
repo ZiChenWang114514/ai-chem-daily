@@ -28,9 +28,9 @@
     {
       "date": "2026-08-16",
       "href": "data/channels/aixchem/archive/2026-08-16.json",
-      "selected": 0,
-      "candidates": 0,
-      "fetched": 0,
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 1615,
       "kind": "json"
     },
     {
@@ -39,6 +39,118 @@
       "selected": 16,
       "candidates": 68,
       "fetched": 1449,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-14",
+      "href": "data/channels/aixchem/archive/2026-08-14.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 2376,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-13",
+      "href": "data/channels/aixchem/archive/2026-08-13.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 2546,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-12",
+      "href": "data/channels/aixchem/archive/2026-08-12.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 2301,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-11",
+      "href": "data/channels/aixchem/archive/2026-08-11.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 1946,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-10",
+      "href": "data/channels/aixchem/archive/2026-08-10.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 2558,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-09",
+      "href": "data/channels/aixchem/archive/2026-08-09.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 1889,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-08",
+      "href": "data/channels/aixchem/archive/2026-08-08.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 2177,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-07",
+      "href": "data/channels/aixchem/archive/2026-08-07.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 2790,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-06",
+      "href": "data/channels/aixchem/archive/2026-08-06.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 2864,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-05",
+      "href": "data/channels/aixchem/archive/2026-08-05.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 2511,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-04",
+      "href": "data/channels/aixchem/archive/2026-08-04.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 2122,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-03",
+      "href": "data/channels/aixchem/archive/2026-08-03.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 2574,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-02",
+      "href": "data/channels/aixchem/archive/2026-08-02.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 1842,
+      "kind": "json"
+    },
+    {
+      "date": "2026-08-01",
+      "href": "data/channels/aixchem/archive/2026-08-01.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 2140,
       "kind": "json"
     },
     {

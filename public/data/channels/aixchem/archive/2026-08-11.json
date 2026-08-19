@@ -1,0 +1,841 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-11",
+  "channel": "aixchem",
+  "generated_at": "2026-08-18T15:10:58+00:00",
+  "title": "AI × Chem 每日精选",
+  "subtitle": "预印本、方法、数据集与实验验证的每日精选。",
+  "window": {
+    "start": "2026-08-08",
+    "end": "2026-08-11"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 1946,
+    "candidates": 60,
+    "selected": 16,
+    "sources": {
+      "arXiv": 1175,
+      "bioRxiv": 681,
+      "ChemRxiv": 109
+    }
+  },
+  "source_status": {
+    "arXiv": {
+      "state": "ok",
+      "count": 1175
+    },
+    "bioRxiv": {
+      "state": "ok",
+      "count": 681
+    },
+    "ChemRxiv": {
+      "state": "ok",
+      "count": 109
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007330/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "ChemMoB: Contribution-Aware Dynamic Multi-Modal Balance for Chemical Representation Learning",
+      "url": "https://doi.org/10.26434/chemrxiv.15007330/v1",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-12",
+      "creators": [
+        "Jiayi Wen",
+        "Jingyi Jia",
+        "Ruiqi Zhao",
+        "Haoyang Xu",
+        "Tianyu Yin"
+      ],
+      "language": "en",
+      "abstract_or_text": "Molecular property prediction underpins virtual screening, reaction design, and toxicity assessment, yet most deep learning models reason from a single molecular view—typically a two-dimensional graph or a SMILES string. Such single-modality representations discard complementary signals that chemists routinely exploit: the three-dimensional conformation governs quantum behavior, the textual description encodes sub-structural intent, and spectroscopic measurements provide direct experimental evidence. A further difficulty is that these modalities contribute unequally across tasks and training stages, so naive fusion lets a dominant modality suppress the others and fails when a view is missing. We propose ChemMoB (Chemistry-aware Multi-modal Balance), a framework that ports contribution-aware dynamic multi-modal balancing to chemical representation learning. ChemMoB encodes four complementary views of a molecule—a 2D graph, a 3D conformation, a SMILES/Transformer text stream, and a 1D spectroscopic signal—and fuses them through a Contribution-aware Dynamic Balance (CDB) module that re-estimates per-modality weights every epoch. To handle missing or noisy inputs, ChemMoB adds a generative spectral enhancement head, a static-to-dynamic lift that reconstructs an approximate 3D embedding from the 2D graph, and a provenance watermark that flags unreliable spectra. We evaluate ChemMoB on QM9 (quantum properties), ESOL (aqueous solubility), and ADMET binary tasks (blood-brain barrier penetration and hERG liability). ChemMoB consistently outperforms single-modality and fixed-fusion baselines, reducing QM9 average MAE by 12.0% over fixed fusion and improving BBBP and hERG AUROC to 0.873 and 0.831. Ablations confirm that the dynamic balance module and the static-to-dynamic enhancement are the principal sources of gain, and that ChemMoB remains robust when up to 30% of spectral inputs are dropped.",
+      "summary_zh": "ChemMoB 编码 2D 图、3D 构象、SMILES/Transformer 文本与 1D 光谱，经每 epoch 重估权重的 CDB 融合，并配光谱增强与 2D→3D lift；相对固定融合将 QM9 平均 MAE 降低 12.0%，BBBP 与 hERG AUROC 达 0.873 与 0.831，丢弃至多 30% 光谱仍稳健。",
+      "why_it_matters_zh": "把化学家常用的多视角信号做成可缺模态的动态表征；评测仍以公开基准为主，湿实验落地与代码开源情况摘要未给出。",
+      "quality_score": 90.0,
+      "tags": [
+        "方法与模型",
+        "ChemMoB",
+        "多模态",
+        "QM9",
+        "ADMET"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有对照实验",
+        "有消融研究",
+        "仅摘要可判断",
+        "experimental",
+        "ablation"
+      ],
+      "publication_status": "preprint",
+      "rank": 1,
+      "featured": true,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007330/v1",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "分子性质预测支撑虚拟筛选、反应设计与毒性评估，但多数深度学习模型仅从单一分子视角推理——通常是二维图或 SMILES 字符串。此类单模态表征丢弃了化学家日常利用的互补信号：三维构象支配量子行为，文本描述编码亚结构意图，光谱测量提供直接实验证据。另一困难在于，这些模态在不同任务与训练阶段贡献不均，因此朴素融合会让主导模态压制其他模态，并在某一视角缺失时失效。我们提出 ChemMoB（Chemistry-aware Multi-modal Balance），一个将贡献感知的动态多模态平衡移植到化学表征学习的框架。ChemMoB 编码分子的四种互补视角——2D 图、3D 构象、SMILES/Transformer 文本流以及 1D 光谱信号——并通过每个 epoch 重新估计各模态权重的 Contribution-aware Dynamic Balance（CDB）模块加以融合。为处理缺失或噪声输入，ChemMoB 增加了生成式光谱增强头、从 2D 图重建近似 3D 嵌入的 static-to-dynamic lift，以及标记不可靠光谱的 provenance watermark。我们在 QM9（量子性质）、ESOL（水溶性）以及 ADMET 二分类任务（血脑屏障穿透与 hERG 风险）上评估 ChemMoB。ChemMoB 一致优于单模态与固定融合基线，相对固定融合将 QM9 平均 MAE 降低 12.0%，并将 BBBP 与 hERG 的 AUROC 提升至 0.873 与 0.831。消融确认动态平衡模块与 static-to-dynamic 增强是增益的主要来源，且在至多 30% 光谱输入被丢弃时 ChemMoB 仍保持稳健。",
+      "published": "2026-08-11",
+      "author_line": "Jiayi Wen, Jingyi Jia, Ruiqi Zhao 等 5 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.09.743794",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Design of high-affinity miniprotein antagonist targeting IL-4Ra for IL-4/IL-13 signal blockade",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.09.743794",
+      "published_at": "2026-08-10",
+      "updated_at": "2026-08-10",
+      "creators": [
+        "Yu, Y.",
+        "Wang, N.",
+        "Xu, L.",
+        "Wang, H.",
+        "Zhang, Z.",
+        "Yu, B."
+      ],
+      "language": "en",
+      "abstract_or_text": "IL-4Ra is a key regulatory receptor for type 2 inflammatory responses, signal transduce from IL-4 and IL-13 through binding with IL-13Ra or the gamma c chain to activate the downstream JAK1-STAT6 pathway. IL-4Ra is currently the most successful \"golden target\" in the field of allergic disease therapeutics. Its representative monoclonal antibody drug, dupilumab, through the dual blockade mechanism of IL-4/IL-13 has pioneered a new era of precision therapy for type 2 inflammation. In our manuscript, we employed large-scale deep learning-based computational design methods to de novo design mini-protein antagonists specific for both human and mouse IL-4Ra. The binding affinity was improved from 22.1 nM to 569 pM through partial diffusion. The design accuracy and binding specificity were verified through X-ray crystallography and biochemical studies. In vitro IL4/IL13 signal blockade assays revealed that de novo designed monomeric mini-protein antagonist exhibited comparable blockade ability to bivalent dupilumab. In vivo pharmacokinetic half-life studies demonstrated that fusion to an HSA-binding domain extended the half-life of the mini-protein antagonist from 2.7 hours to 60.6 hours. The IL-4Ra mini-protein antagonist had excellent expression levels, solubility and thermal stability. The IL4/IL13 signal blockade ability remained unchanged even after being heating to 95 degrees. In conclusion, through large-scale cluster computing and deep learning-based de novo design, we developed well-performed IL-4Ra mini-protein antagonist, and demonstrates certain potential for drug development.",
+      "summary_zh": "采用大规模深度学习从头设计人/小鼠 IL-4Ra 微型蛋白拮抗剂，经 partial diffusion 将亲和力由 22.1 nM 提升至 569 pM；X 射线晶体与生化实验验证特异性，体外 IL4/IL13 阻断与二价 dupilumab 相当，融合 HSA 结合域后体内半衰期由 2.7 hours 延长至 60.6 hours，加热至 95 degrees 仍保持活性。",
+      "why_it_matters_zh": "把生成式蛋白设计推进到可与已上市抗体对照的双物种受体拮抗，并有晶体与体内药代证据；临床转化与免疫原性仍待检验。",
+      "quality_score": 87.0,
+      "tags": [
+        "分子与药物发现",
+        "IL-4Ra",
+        "蛋白质设计",
+        "dupilumab",
+        "partial diffusion"
+      ],
+      "evidence_flags": [
+        "有实验验证",
+        "仅摘要可判断",
+        "in vivo"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.09.743794",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "IL-4Ra 是 2 型炎症反应的关键调控受体，IL-4 与 IL-13 通过结合 IL-13Ra 或 gamma c 链传导信号，激活下游 JAK1-STAT6 通路。IL-4Ra 目前是过敏性疾病治疗领域最成功的“黄金靶点”。其代表性单抗药物 dupilumab 通过 IL-4/IL-13 双重阻断机制开创了 2 型炎症精准治疗的新纪元。本文采用大规模基于深度学习的计算设计方法，从头设计对人与小鼠 IL-4Ra 均特异的微型蛋白拮抗剂。通过 partial diffusion，结合亲和力由 22.1 nM 提升至 569 pM。设计准确性与结合特异性经 X 射线晶体学与生化研究验证。体外 IL4/IL13 信号阻断实验显示，从头设计的单体微型蛋白拮抗剂具有与二价 dupilumab 相当的阻断能力。体内药代半衰期研究表明，融合 HSA 结合结构域后，微型蛋白拮抗剂半衰期由 2.7 hours 延长至 60.6 hours。该 IL-4Ra 微型蛋白拮抗剂具有优异的表达量、溶解性与热稳定性。即使加热至 95 degrees，其 IL4/IL13 信号阻断能力仍保持不变。总之，通过大规模集群计算与基于深度学习的从头设计，我们开发了性能良好的 IL-4Ra 微型蛋白拮抗剂，并显示一定的药物开发潜力。",
+      "published": "2026-08-10",
+      "author_line": "Yu, Y., Wang, N., Xu, L. 等 6 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.02.02.703193",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Joint Modeling of Transcriptomic and Morphological Phenotypes for Generative Molecular Design",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.02.02.703193",
+      "published_at": "2026-08-10",
+      "updated_at": "2026-08-10",
+      "creators": [
+        "Wang, M.",
+        "Verma, S.",
+        "Jayasundara, S.",
+        "Kadadi, S. D.",
+        "Kazemian, M.",
+        "Grama, A.",
+        "Lanman, N. A."
+      ],
+      "language": "en",
+      "abstract_or_text": "BackgroundEffectively translating data on complex cellular responses from transcriptomic and morphological measurements into molecular design remains a significant computational challenge. Existing generative methods operate on single modalities and condition on post-treatment measurements without leveraging paired control-treatment dynamics to capture perturbation effects. ResultsWe present Pert2Mol, a framework for multi-modal phenotype-to-structure generation that integrates transcriptomic and morphological features from paired control-treatment experiments. Pert2Mol employs bidirectional cross-attention between control and treatment states to capture perturbation dynamics, conditioning a rectified flow transformer that generates molecular structures along straight-line trajectories. We introduce Student-Teacher Self-Representation (SERE) learning to stabilize training in high-dimensional multi-modal spaces. On the Ginkgo Data Platform (GDP) dataset, Pert2Mol achieves Frechet ChemNet Distance of 4.996 compared to 7.343 for diffusion baselines and 59.114 for transcriptomics-only methods, while maintaining perfect molecular validity and appropriate physicochemical property distributions. The model demonstrates 84.7% scaffold diversity and 12.4 times faster generation than diffusion approaches with deterministic sampling suitable for hypothesis-driven validation. ConclusionsPert2Mol establishes a new paradigm for linking high-content phenotypic screening data with computational hypothesis generation in drug discovery: joint multi-modal perturbation modeling enables more accurate and structurally diverse molecular design than single-modality or diffusion-based approaches. Code and pretrained models are available at https://github.com/wangmengbo/Pert2Mol.",
+      "summary_zh": "Pert2Mol 整合成对对照–处理实验的转录组与形态学特征，以双向交叉注意力捕获扰动动态，并条件化 rectified flow transformer 沿直线轨迹生成分子；在 GDP 上 Frechet ChemNet Distance 为 4.996，优于扩散基线 7.343 与仅转录组方法 59.114，骨架多样性 84.7%，生成快 12.4 倍，代码开源。",
+      "why_it_matters_zh": "把高内涵表型筛选接到可复现的多模态表型到分子生成；目前以 FCD 等计算指标为主，尚无湿实验命中验证。",
+      "quality_score": 86.0,
+      "tags": [
+        "分子与药物发现",
+        "Pert2Mol",
+        "表型筛选",
+        "分子生成",
+        "rectified flow"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有对照实验",
+        "公开代码",
+        "仅摘要可判断",
+        "dataset",
+        "github"
+      ],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.02.02.703193",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "背景：如何将转录组与形态学测量所反映的复杂细胞响应有效转化为分子设计，仍是一项重大计算挑战。现有生成方法只处理单一模态，并以处理后测量为条件，而未利用成对的对照–处理动态来捕获扰动效应。结果：我们提出 Pert2Mol，一个多模态表型到结构生成框架，整合来自成对对照–处理实验的转录组与形态学特征。Pert2Mol 在对照与处理状态之间采用双向交叉注意力以捕获扰动动力学，并据此条件化一个沿直线轨迹生成分子结构的 rectified flow transformer。我们引入 Student-Teacher Self-Representation（SERE）学习，以稳定高维多模态空间中的训练。在 Ginkgo Data Platform（GDP）数据集上，Pert2Mol 的 Frechet ChemNet Distance 为 4.996，而扩散基线为 7.343、仅转录组方法为 59.114，同时保持完全的分子有效性与合理的理化性质分布。该模型展现 84.7% 的骨架多样性，且生成速度比扩散方法快 12.4 倍，并具有适合假设驱动验证的确定性采样。结论：Pert2Mol 为将高内涵表型筛选数据与药物发现中的计算假设生成相连接确立了新范式：联合多模态扰动建模能够实现比单模态或基于扩散的方法更准确、结构更多样的分子设计。代码与预训练模型见 https://github.com/wangmengbo/Pert2Mol。",
+      "published": "2026-08-10",
+      "author_line": "Wang, M., Verma, S., Jayasundara, S. 等 7 人"
+    },
+    {
+      "id": "biorxiv:10.1101/2025.03.04.641536",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Supervised Deep Learning for Efficient Cryo-EM Image Alignment in Drug Discovery with cryoPARES",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.03.04.641536",
+      "published_at": "2026-08-10",
+      "updated_at": "2026-08-10",
+      "creators": [
+        "Sanchez-Garcia, R.",
+        "Berndt, A.",
+        "Apelbaum, A.",
+        "Reeks, J.",
+        "Williams, P. A.",
+        "Poelking, C.",
+        "Deane, C.",
+        "Saur, M."
+      ],
+      "language": "en",
+      "abstract_or_text": "Cryo-Electron Microscopy (cryo-EM) is a pivotal tool for determining 3D structures of biological macromolecules. Current workflows are computationally demanding and require manual intervention, creating bottlenecks for high-throughput applications like structure-based drug discovery. In such contexts, where all protein samples can be assumed to be equivalent at resolutions relevant for image alignment, information about particle poses from previous refinements could be reused. Existing methods, however, ignore this prior knowledge, aligning each dataset from scratch. We present cryoPARES, a deep learning pose estimation method trained on pre-aligned datasets. Our method not only provides accurate angular predictions significantly faster than traditional approaches but also introduces automated particle pruning capabilities that eliminate manual intervention. Together with its single-pass operation, these features enable near real-time reconstructions that provide feedback during data acquisition. We demonstrate cryoPARESs effectiveness through rapid structural determination of seven ligand-bound complexes across four distinct protein targets. We also release three fragment-bound cryo-EM datasets.",
+      "summary_zh": "cryoPARES 在预对齐数据集上训练深度学习姿态估计，复用同蛋白既往精修姿态并自动剪枝颗粒；相对传统方法显著加速角度预测，单次前向可近实时重建，并在四个靶标的七个配体结合复合物上完成快速结构测定，同时发布三个片段结合 cryo-EM 数据集。",
+      "why_it_matters_zh": "把结构药物发现中重复配体复合物的重建压到近实时采集反馈；摘要未给出分辨率数值对照，代码开源情况亦未说明。",
+      "quality_score": 85.0,
+      "tags": [
+        "结构与生物",
+        "cryoPARES",
+        "cryo-EM",
+        "姿态估计",
+        "结构药物发现"
+      ],
+      "evidence_flags": [
+        "有实验验证",
+        "公开数据",
+        "仅摘要可判断",
+        "dataset",
+        "release"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2025.03.04.641536",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "冷冻电子显微镜（cryo-EM）是测定生物大分子三维结构的关键工具。现有工作流计算负担重且需要人工干预，对基于结构的药物发现等高通量应用形成瓶颈。在此类情境中，所有蛋白质样品在图像对齐相关分辨率下可视为等价，因此可复用先前精修得到的颗粒姿态信息。然而现有方法忽略这一先验，对每个数据集从头对齐。我们提出 cryoPARES，一种在预对齐数据集上训练的深度学习姿态估计方法。该方法不仅以显著快于传统方法的速度提供准确角度预测，还引入自动化颗粒剪枝能力以消除人工干预。连同其单次前向操作，这些特性使近实时重建成为可能，从而在数据采集过程中提供反馈。我们通过对四个不同蛋白靶标上七个配体结合复合物的快速结构测定，展示了 cryoPARES 的有效性。我们还发布了三个片段结合的 cryo-EM 数据集。",
+      "published": "2026-08-10",
+      "author_line": "Sanchez-Garcia, R., Berndt, A., Apelbaum, A. 等 8 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.10.743906",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Ab initio side-chain sampling with PUD+ enables high-fidelity protein dynamics across AI-driven and classical simulations",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.10.743906",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Wu, D.",
+        "Wang, T."
+      ],
+      "language": "en",
+      "abstract_or_text": "The fidelity of molecular dynamics (MD) simulations fundamentally depends on the quality and coverage of the ab initio data used to parameterize the underlying force field, yet the role of side-chain conformational space remains insufficiently explored. In this study, we systematically investigate how comprehensive ab initio sampling of dipeptide conformations--specifically targeting side-chain degrees of freedom--impacts force field accuracy and MD simulation predictive power. We present the Protein Unit Dataset Plus (PUD+), a 40-million-conformation quantum mechanical dataset featuring unprecedented coverage of both backbone and side-chain conformational space. Machine learning force fields trained on PUD+ and integrated into AI2BMD simulations demonstrate superior energy and force prediction accuracy, capturing high-fidelity protein folding dynamics and the conformational flexibility of long-side-chain systems. Furthermore, leveraging PUD+ to reparameterize the CMAP term of the classical ff19SB force field markedly improves the description of intrinsically disordered protein (IDP) dynamics and IDP-ligand binding. Collectively, these results demonstrate that ab initio sampling of dipeptide side-chain conformations enables high-fidelity modeling of protein dynamics across both AI-driven and classical simulation paradigms.",
+      "summary_zh": "发布覆盖骨架与侧链的 40-million 构象量子力学数据集 PUD+；据此训练的机器学习力场接入 AI2BMD 后提升能量与力预测，并更好描述折叠与长侧链柔性；用其重参数化 ff19SB 的 CMAP 后，IDP 动力学与 IDP–配体结合描述明显改善。",
+      "why_it_matters_zh": "把侧链采样补进力场数据，同时服务 AI 与经典 MD；摘要未给出能量/力误差数值与数据开源链接。",
+      "quality_score": 84.0,
+      "tags": [
+        "结构与生物",
+        "PUD+",
+        "力场",
+        "AI2BMD",
+        "IDP"
+      ],
+      "evidence_flags": [
+        "有对照实验",
+        "仅摘要可判断",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 5,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.10.743906",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "分子动力学（MD）模拟的保真度根本上取决于用于参数化力场的从头算数据质量与覆盖度，但侧链构象空间的作用仍探索不足。本研究系统考察二肽构象——尤其针对侧链自由度——的全面从头算采样如何影响力场精度与 MD 模拟预测能力。我们提出 Protein Unit Dataset Plus（PUD+），一个包含 40-million 构象的量子力学数据集，对骨架与侧链构象空间均具有前所未有的覆盖。在 PUD+ 上训练并接入 AI2BMD 模拟的机器学习力场展现出更优的能量与力预测精度，能够捕获高保真蛋白质折叠动力学以及长侧链体系的构象柔性。此外，利用 PUD+ 重新参数化经典 ff19SB 力场的 CMAP 项，显著改善了对固有无序蛋白（IDP）动力学及 IDP–配体结合的描述。这些结果共同表明，对二肽侧链构象的从头算采样能够在人工智能驱动与经典模拟范式下实现高保真蛋白质动力学建模。",
+      "published": "2026-08-11",
+      "author_line": "Wu, D., Wang, T."
+    },
+    {
+      "id": "arxiv:2608.09099v1",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "RAVEN: Frozen Random Graph Reservoirs with Physics-Informed Interaction Fingerprints for Protein-Ligand Binding Affinity Prediction",
+      "url": "https://arxiv.org/abs/2608.09099v1",
+      "published_at": "2026-08-10",
+      "updated_at": "2026-08-10",
+      "creators": [
+        "Qingyang Zou",
+        "Jiaye Huang",
+        "Hangbo Xie",
+        "Jiayue Yin",
+        "Youyi Song",
+        "Jinfeng Liu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Quantitative estimation of protein-ligand binding affinity from three-dimensional complex structures is a fundamental task in structure-based computational chemistry and molecular modeling. Reliable prediction remains challenging because available structure-affinity data are limited, experimentally heterogeneous, conformation-dependent, and sensitive to dataset partitioning. RAVEN (Randomized Atomistic Views with Ensemble Neural Reservoirs) utilizes a multihead reservoir of independently initialized and fully frozen atomistic graph encoders to generate diverse structural projections without end-to-end optimization of the graph representation. These projections are integrated with a deterministic physicochemical interaction fingerprint and processed by heterogeneous supervised readers, including neural and tree-based regressors, whose outputs are combined through validation-based nonnegative fusion. The random reservoir expands structural feature coverage across independent encoder realizations, whereas the explicit physicochemical descriptors and heterogeneous readers contribute complementary information and distinct inductive biases. Evaluation on a similarity-isolated PDBbind 2020R1 split reconstructed using GEMS similarity resources, together with the protected CASF-2016 subset, demonstrated strong predictive performance. The results indicate that frozen multi-view graph representations, explicit physicochemical statistics, and heterogeneous model fusion provide a robust and flexible framework for protein-ligand binding-affinity prediction.",
+      "summary_zh": "RAVEN 以独立初始化且完全冻结的多头原子图编码器生成多样结构投影，再与确定性物理化学相互作用指纹及神经/树模型异构读取器做验证集非负融合，预测蛋白–配体结合亲和力；在相似性隔离的 PDBbind 2020R1 划分与受保护 CASF-2016 子集上报告强预测性能。",
+      "why_it_matters_zh": "在小数据、划分敏感的结构亲和力任务上避免端到端图表征过拟合；摘要未给出 RMSE 或 Pearson 等具体数值，领先幅度难以量化。",
+      "quality_score": 83.0,
+      "tags": [
+        "分子与药物发现",
+        "RAVEN",
+        "结合亲和力",
+        "PDBbind",
+        "CASF-2016"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有外部测试",
+        "仅摘要可判断",
+        "dataset",
+        "experimental",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 6,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.09099v1"
+      },
+      "abstract_zh": "从三维复合物结构定量估计蛋白–配体结合亲和力，是基于结构的计算化学与分子建模中的基本任务。可靠预测仍然困难，因为可用的结构–亲和力数据有限、实验上异质、依赖构象，且对数据集划分敏感。RAVEN（Randomized Atomistic Views with Ensemble Neural Reservoirs）使用由独立初始化且完全冻结的原子图编码器组成的多头 reservoir，在不对图表征做端到端优化的情况下生成多样的结构投影。这些投影与确定性物理化学相互作用指纹整合，并由异构监督读取器处理，包括神经回归器与基于树的回归器，其输出通过基于验证的非负融合加以组合。随机 reservoir 在独立编码器实现之间扩展结构特征覆盖，而显式物理化学描述符与异构读取器则贡献互补信息与不同归纳偏置。在使用 GEMS 相似性资源重建的相似性隔离 PDBbind 2020R1 划分以及受保护的 CASF-2016 子集上的评估显示了强预测性能。结果表明，冻结的多视角图表征、显式物理化学统计量与异构模型融合，为蛋白–配体结合亲和力预测提供了稳健且灵活的框架。",
+      "published": "2026-08-10",
+      "author_line": "Qingyang Zou, Jiaye Huang, Hangbo Xie 等 6 人"
+    },
+    {
+      "id": "arxiv:2608.11483v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "A Modular Agentic Framework for Synthetically Constrained Multi-Objective Hit-to-Lead Optimization",
+      "url": "https://arxiv.org/abs/2608.11483v1",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Kelvin P. Idanwekhai",
+        "Enes Kelestemur",
+        "Benjamin Strickland",
+        "Matthew Hart",
+        "Steini Davidsson",
+        "Angelos Angelopoulos",
+        "Ron Alterovitz",
+        "Marcello DeLuca",
+        "Alexander Tropsha"
+      ],
+      "language": "en",
+      "abstract_or_text": "Hit-to-lead optimization requires iterative design of hit analogs across competing potency, selectivity, physicochemical, pharmacokinetic, safety, and synthetic constraints. We present SABLE (Synthetically-accessible Agentic Bayesian Ligand Exploration), an open-source framework that employs natural-language orchestration to guide chemical structure optimization. SABLE uses an LLM to interpret user-defined goals and route tasks, while specialized tools perform reaction-templated analog enumeration, physicochemical and ADMET property prediction, structure-based affinity scoring, and Bayesian optimization. The resulting workflow is a computational twin of the analytical and prioritization stages of the design-make-test-analyze cycle, providing provenance of each numerical output. Across single, and multi-objective optimization studies, SABLE enriches candidate sets for user-defined computational objectives while evaluating only a subset of the enumerated search space. Its modular architecture allows tools and characterization backends to be replaced by editing a simple config file, without modifying operational logic. SABLE provides an extensible decision-support framework for prioritizing synthetically constrained analogs in early-stage drug discovery.",
+      "summary_zh": "SABLE 以 LLM 解读目标并路由任务，串联反应模板类似物枚举、理化/ADMET 预测、结构亲和力打分与贝叶斯优化，形成可溯源的 hit-to-lead 计算孪生；在单/多目标研究中仅评估部分枚举空间即可富集目标候选，工具可经配置替换。",
+      "why_it_matters_zh": "把合成可达约束写入可编排的智能体优化回路并开源；摘要未给出富集倍数或基准数值，湿实验闭环仍缺。",
+      "quality_score": 82.0,
+      "tags": [
+        "分子与药物发现",
+        "SABLE",
+        "hit-to-lead",
+        "贝叶斯优化",
+        "智能体"
+      ],
+      "evidence_flags": [
+        "公开代码",
+        "仅摘要可判断"
+      ],
+      "publication_status": "preprint",
+      "rank": 7,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.11483v1"
+      },
+      "abstract_zh": "先导优化需要在效力、选择性、理化、药代、安全性与合成约束之间迭代设计 hit 类似物。我们提出 SABLE（Synthetically-accessible Agentic Bayesian Ligand Exploration），一个以自然语言编排引导化学结构优化的开源框架。SABLE 用大语言模型解释用户定义目标并路由任务，由专用工具执行反应模板化类似物枚举、理化与 ADMET 性质预测、基于结构的亲和力打分以及贝叶斯优化。所得工作流是 design-make-test-analyze 周期中分析与优先排序阶段的计算孪生，并为每个数值输出提供溯源。在单目标与多目标优化研究中，SABLE 在仅评估枚举搜索空间子集的情况下，富集符合用户定义计算目标的候选集。其模块化架构允许通过编辑简单配置文件替换工具与表征后端，而无需修改运行逻辑。SABLE 为早期药物发现中优先排序受合成约束的类似物提供了可扩展的决策支持框架。",
+      "published": "2026-08-11",
+      "author_line": "Kelvin P. Idanwekhai, Enes Kelestemur, Benjamin Strickland 等 9 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007305/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "AutoSolvate 2.0: Automated End-to-End Explicit-Solvent Molecular Simulation for Chemically Diverse Molecular Systems",
+      "url": "https://doi.org/10.26434/chemrxiv.15007305/v1",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Sangni Xun",
+        "Fangning Ren",
+        "Pinyuan Li",
+        "Xu Chen",
+        "Lechen Dong",
+        "Bushra Alam",
+        "Fang Liu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Electronic-structure calculations in solution often require explicit solvent to describe hydrogen bonding, ion pairing, charge transfer, and solvent reorganization. However, preparing explicit-solvent simulations remains labor-intensive because force-field generation, system construction, molecular dynamics (MD) sampling, and quantum-chemical calculations typically rely on multiple software packages. Here, we present AutoSolvate 2.0, a modular, open-source framework that automates end-to-end explicit-solvent simulation workflows for chemically diverse systems. A new AutoMCPB module automates the MCPB.py parameterization workflow for transition-metal complexes, while generalized system representations enable mixed solvents, multiple solutes, and multicomponent electrolytes at arbitrary compositions. AutoSolvate 2.0 integrates force-field generation, solvated-system construction, MD simulations, and microsolvated-cluster extraction through standardized software wrappers. It also provides complementary JSON, interactive command-line, and Model Context Protocol interfaces for high-throughput calculations and integration with large language model (LLM) agents. We demonstrate these capabilities through three applications of increasing complexity. AutoSolvate 2.0 reproduces the solvent-dependent absorption spectrum of an aqueous transition-metal photosensitizer, the microsolvation structure of water–acetonitrile mixtures, and the ion-pairing structure of a multicomponent redox-flow-battery electrolyte. These results show that AutoSolvate 2.0 can generate simulation-ready explicit-solvent models across diverse chemical environments while substantially reducing manual intervention, providing a versatile platform for solution-phase quantum chemistry and AI-assisted computational workflows.",
+      "summary_zh": "AutoSolvate 2.0 以 AutoMCPB 自动化过渡金属 MCPB.py 参数化，并支持混合溶剂与多组分电解质，经 JSON/CLI/MCP 对接 LLM 智能体；复现水相光敏剂溶剂依赖吸收谱、水–乙腈微溶剂化及液流电池电解质离子配对。",
+      "why_it_matters_zh": "把显式溶剂量子化学收成可被智能体调用的开源流水线；案例为复现已知结构，未见大规模基准对照。",
+      "quality_score": 81.0,
+      "tags": [
+        "方法与模型",
+        "AutoSolvate",
+        "显式溶剂",
+        "MCPB",
+        "LLM智能体"
+      ],
+      "evidence_flags": [
+        "公开代码",
+        "有实验验证",
+        "仅摘要可判断"
+      ],
+      "publication_status": "preprint",
+      "rank": 8,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007305/v1",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "溶液中的电子结构计算常需要显式溶剂来描述氢键、离子配对、电荷转移与溶剂重组。然而准备显式溶剂模拟仍费力，因为力场生成、体系构建、分子动力学（MD）采样与量子化学计算通常依赖多个软件包。本文提出 AutoSolvate 2.0，一个模块化开源框架，可对化学多样体系自动化端到端显式溶剂模拟工作流。新增 AutoMCPB 模块自动化过渡金属配合物的 MCPB.py 参数化流程，而广义体系表征支持任意组成的混合溶剂、多溶质与多组分电解质。AutoSolvate 2.0 通过标准化软件封装整合力场生成、溶剂化体系构建、MD 模拟与微溶剂化团簇提取。它还提供互补的 JSON、交互式命令行与 Model Context Protocol 接口，用于高通量计算及与大语言模型（LLM）智能体集成。我们通过三个复杂度递增的应用展示这些能力。AutoSolvate 2.0 复现了水相过渡金属光敏剂的溶剂依赖吸收光谱、水–乙腈混合物的微溶剂化结构，以及多组分液流电池电解质的离子配对结构。这些结果表明，AutoSolvate 2.0 能在多样化学环境中生成可直接模拟的显式溶剂模型，同时大幅减少人工干预，为溶液相量子化学与人工智能辅助计算工作流提供了通用平台。",
+      "published": "2026-08-11",
+      "author_line": "Sangni Xun, Fangning Ren, Pinyuan Li 等 7 人"
+    },
+    {
+      "id": "arxiv:2608.11283v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Chemically Meaningful Textualization Enables Explainable Validation of Metal-Organic Frameworks by Large Language Models",
+      "url": "https://arxiv.org/abs/2608.11283v1",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Guobin Zhao",
+        "Xiao-Yan Li"
+      ],
+      "language": "en",
+      "abstract_or_text": "Computation-ready metal-organic framework (MOF) databases are essential for high-throughput screening, yet many reported crystal structures remain chemically unreasonable or disordered, compromising simulation fidelity. Existing validation approaches can identify non-computation-ready structures, but they often rely on heuristic rules, license requirement, or offer limited interpretability. Here, we show that large language models (LLMs) can serve as interpretable validators of MOF structures when crystallographic information is transformed into chemically meaningful text. By benchmarking nine descriptors, we find that successful LLM-based validation depends not on the amount of structural information alone, but on whether local coordination, framework connectivity, and chemical context are organized into a linguistically learnable representation. Fine-tuned LLMs using specialized descriptors (mof2text) achieve performance comparable to graph-based models in identifying unreasonable MOFs. Importantly, these models extend beyond black-box classification by generating diagnostic rationales for likely error sources, including abnormal bonding, connectivity, and charge states, as well as error-category predictions for annotated datasets. This work establishes chemically informed textualization as the key step that transforms LLMs from generic text models into practical and explainable tools for curating MOF databases.",
+      "summary_zh": "将 MOF 晶体学信息转为化学文本后，用九种描述符比较 LLM 校验；mof2text 微调模型识别不合理结构的性能与图模型相当，并能给出成键、连通性与电荷态等诊断理由及误差类别。",
+      "why_it_matters_zh": "指出文本化方式比信息量本身更决定 LLM 能否审 MOF 库；摘要未给出准确率数值，且仍为计算就绪校验而非新材料发现。",
+      "quality_score": 80.0,
+      "tags": [
+        "材料与催化",
+        "MOF",
+        "mof2text",
+        "结构校验"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有对照实验",
+        "仅摘要可判断",
+        "benchmark",
+        "dataset",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 9,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.11283v1"
+      },
+      "abstract_zh": "面向计算的金属有机框架（MOF）数据库对高通量筛选至关重要，但许多已报道晶体结构在化学上仍不合理或无序，损害模拟保真度。现有校验方法能够识别非计算就绪结构，但往往依赖启发式规则、许可要求，或可解释性有限。本文表明，当晶体学信息被转化为化学上有意义的文本时，大语言模型（LLM）可作为 MOF 结构的可解释校验器。通过基准评测九种描述符，我们发现成功的基于 LLM 的校验并不单单取决于结构信息量，而取决于局部配位、框架连通性与化学上下文是否被组织成语言上可学习的表征。使用专用描述符（mof2text）微调的 LLM 在识别不合理 MOF 方面达到与基于图的模型相当的性能。重要的是，这些模型超越黑箱分类，能够生成关于可能误差来源的诊断理由，包括异常成键、连通性与电荷态，并在带标注数据集上给出误差类别预测。本工作确立了化学知情的文本化是将 LLM 从通用文本模型转变为用于整理 MOF 数据库的实用、可解释工具的关键步骤。",
+      "published": "2026-08-11",
+      "author_line": "Guobin Zhao, Xiao-Yan Li"
+    },
+    {
+      "id": "arxiv:2608.11261v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Temperature-Driven Sequential Modeling for the Prediction of Annual Power Conversion Efficiency Profiles of Organic Photovoltaic Materials: Douala Case Study",
+      "url": "https://arxiv.org/abs/2608.11261v1",
+      "published_at": "2026-08-09",
+      "updated_at": "2026-08-09",
+      "creators": [
+        "Steve Cabrel Teguia Kouam",
+        "Rockefeller Rockefeller",
+        "Raoult Dabou Teukam",
+        "Jean-Pierre Tchapet Njafa",
+        "Patrick Sorrel Mvoto Kongo",
+        "Jean-Pierre Nguenang",
+        "Serge Guy Nana Engo"
+      ],
+      "language": "en",
+      "abstract_or_text": "Organic photovoltaic (OPV) materials are promising candidates for distributed solar energy in tropical regions, yet existing virtual screening tools report static power conversion efficiency (PCE) values at standard testing conditions (STC) that fail to capture the temperature-driven performance degradation experienced under real deployment conditions. Here we introduce a Climate-Native computational framework that forecasts the annual PCE profile of OPV donor molecules under geographically realistic operating conditions. The framework combines GFN2-xTB molecular dynamics with an equivariant graph neural network surrogate (268 Neyman-stratified CEP molecules; 120,600 training geometries; \\sim 1050\\times speedup over explicit quantum chemistry) and sequential deep learning models trained on annual time series anchored in NASA POWER climate data for Douala, Cameroon, and validated by zero-shot transfer to Yaoundé and Maroua. Applied to \\sim 30,000 molecules from the Harvard Clean Energy Project (CEP) and validated against 350 HOPV15 experimental device measurements, the framework demonstrates that sequential models trained on full molecular dynamics trajectories outperform time-averaged baselines (35\\%-48\\% relative MAE improvement over static baselines), confirming that thermal conformational dynamics carry information beyond mean geometry. We further introduce a seasonal stability score that reranks OPV candidates by performance consistency under tropical conditions, identifying molecules whose deployment suitability differs substantially from their static PCE ranking.",
+      "summary_zh": "以 GFN2-xTB 分子动力学与等变 GNN 代理（268 个 Neyman 分层 CEP 分子、120,600 几何、约 1050× 加速）驱动序列模型，预测 Douala 真实气候下 OPV 给体年际 PCE，并零样本迁移至 Yaoundé 与 Maroua；约 30,000 个 CEP 分子与 350 个 HOPV15 器件上，完整轨迹相对静态基线 MAE 改善 35%–48%。",
+      "why_it_matters_zh": "把 OPV 筛选从 STC 静态 PCE 推进到热带部署年际曲线，并有器件实验锚；代码开源情况摘要未给出，气候站点仍偏区域。",
+      "quality_score": 79.0,
+      "tags": [
+        "材料与催化",
+        "OPV",
+        "PCE",
+        "等变GNN",
+        "气候筛选"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有实验验证",
+        "有外部测试",
+        "仅摘要可判断",
+        "experimental",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 10,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.11261v1"
+      },
+      "abstract_zh": "有机光伏（OPV）材料是热带地区分布式太阳能的有前景候选，但现有虚拟筛选工具报告的是标准测试条件（STC）下的静态功率转换效率（PCE）值，无法捕获真实部署条件下由温度驱动的性能衰减。本文引入 Climate-Native 计算框架，在地理上真实的运行条件下预测 OPV 给体分子的年度 PCE 曲线。该框架将 GFN2-xTB 分子动力学与等变图神经网络代理（268 个 Neyman 分层 CEP 分子；120,600 个训练几何；相对显式量子化学约 1050× 加速）相结合，并使用锚定于喀麦隆 Douala 的 NASA POWER 气候数据的年度时间序列训练序列深度学习模型，再以零样本迁移至 Yaoundé 与 Maroua 进行验证。应用于来自 Harvard Clean Energy Project（CEP）的约 30,000 个分子，并对照 350 个 HOPV15 实验器件测量进行验证，该框架表明，在完整分子动力学轨迹上训练的序列模型优于时间平均基线（相对静态基线 MAE 改善 35%–48%），确认热构象动力学携带了超出平均几何的信息。我们进一步引入季节稳定性分数，按热带条件下的性能一致性对 OPV 候选重新排序，识别出部署适用性与静态 PCE 排名显著不同的分子。",
+      "published": "2026-08-09",
+      "author_line": "Steve Cabrel Teguia Kouam, Rockefeller Rockefeller, Raoult Dabou Teukam 等 7 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007288/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "ALIGNing Learned Representations: Domain-General Models Triangulate Physicochemical Interactions in Analytical Separations",
+      "url": "https://doi.org/10.26434/chemrxiv.15007288/v1",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Daniel Domingo-Fern´andez",
+        "Cailum M. K. Stienstra",
+        "Yen-Nhi Hoang",
+        "Chen Zhao",
+        "Alisa Hui",
+        "Emir Nazdrajić",
+        "Pelle Simpson",
+        "Aurelie Roux",
+        "Augest Allen",
+        "Michael Widrich",
+        "W. Scott Hopkins"
+      ],
+      "language": "en",
+      "abstract_or_text": "Despite rapid progress, foundation models for chemistry have yet to consistently deliver broadly transferable, experiment-grounded representations for structure-to-measurement tasks in practice. This reflects both the scarcity and fragmentation of experimental datasets and the weak alignment between common molecular representations (e.g., SMILES and graphs) and measured chemical behaviour. Here, we formalize domain-general models: pretrained models constrained across multiple measurement contexts within a physically coherent domain to learn transferable chemical representations that capture how molecular structure gives rise to experimental observables. Using liquid chromatography as a testbed, we develop ALIGN and show that it outperforms conventional baselines, including foundation models and transfer learning approaches, across diverse chromatographic contexts while retaining performance in data-limited and chemically out-of-distribution settings. By training across multiple chromatographic methods, ALIGN triangulates an underlying physicochemical interaction space, with each method providing a complementary projection that constrains the learned representation. We show that ALIGN learns embeddings consistent with physicochemical properties and chromatographic principles and provide evidence for a mechanism underlying improved method-specific adaptation. These representations transfer to related analytical modalities, including GC, CCS, and DMS, suggesting that these measurements encode overlapping physicochemical relationships. Together, these results demonstrate the value of physically grounded representation learning and suggest that domain-general approaches may extend to other fragmented scientific domains.",
+      "summary_zh": "ALIGN 在多种液相色谱测量情境上预训练 domain-general 表征，优于基础模型与迁移学习，并在少数据与化学 OOD 下保持性能；学得嵌入符合色谱原理，并可迁移至 GC、CCS 与 DMS。",
+      "why_it_matters_zh": "用多方法实验测量约束结构到性质表征，而非仅堆 SMILES/图；摘要未给出具体误差数值与代码开源情况。",
+      "quality_score": 78.0,
+      "tags": [
+        "方法与模型",
+        "ALIGN",
+        "液相色谱",
+        "表征学习",
+        "分析化学"
+      ],
+      "evidence_flags": [
+        "有对照实验",
+        "有外部测试",
+        "仅摘要可判断",
+        "dataset",
+        "experimental",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 11,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007288/v1",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "尽管进展迅速，化学基础模型尚未在实践中持续提供面向结构到测量任务、广泛可迁移且扎根实验的表征。这既反映实验数据集的稀缺与碎片化，也反映常见分子表征（如 SMILES 与图）与测得化学行为之间对齐较弱。本文形式化 domain-general models：在物理上自洽的领域内、跨多个测量情境受约束预训练的模型，以学习可迁移的化学表征，捕获分子结构如何产生实验可观测量。以液相色谱为试验台，我们开发 ALIGN，并表明它在多样色谱情境中优于包括基础模型与迁移学习在内的常规基线，同时在数据有限与化学分布外设置中保持性能。通过跨多种色谱方法训练，ALIGN 三角定位底层物理化学相互作用空间，每种方法提供约束学得表征的互补投影。我们表明 ALIGN 学得与理化性质及色谱原理一致的嵌入，并给出改进方法特异性适应的机制证据。这些表征可迁移到相关分析模态，包括 GC、CCS 与 DMS，提示这些测量编码了重叠的物理化学关系。这些结果共同证明了物理扎根表征学习的价值，并表明 domain-general 方法或可扩展到其他碎片化科学领域。",
+      "published": "2026-08-11",
+      "author_line": "Daniel Domingo-Fern´andez, Cailum M. K. Stienstra, Yen-Nhi Hoang 等 11 人"
+    },
+    {
+      "id": "arxiv:2608.10480v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Multi-Granular Rationale-Guided Molecular LLM for Property Prediction",
+      "url": "https://arxiv.org/abs/2608.10480v1",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Junwoo Park",
+        "Minyoung Shin",
+        "Cheol Soon Lee",
+        "Sujee Lee"
+      ],
+      "language": "en",
+      "abstract_or_text": "Large language models (LLMs) are widely applied across chemical tasks, such as molecular property prediction, which underpins drug discovery. Molecular LLMs represent a molecule through several modalities, notably a 1D SMILES sequence or a 2D molecular graph. Both encode molecular information implicitly, so the contribution of individual substructures remains opaque. Retrieval and augmentation methods add context, but from external sources. However, the cues chemists reason over are the internal substructures that drive a property up or down. We propose MR-MoL, a multi-granular rationale-guided molecular LLM that supplies this evidence directly. A fine-tuned GNN scores each substructure through masking, and the most influential ones are serialized as a ranked, direction-tagged rationale that the LLM reads alongside the SMILES sequence and molecular graph. The rationale spans three levels of granularity: Murcko scaffolds with their side chains, BRICS fragments, and functional groups. This is, to our knowledge, the first method to expose GNN-derived attributions to an LLM as evidence for property prediction. On eight MoleculeNet tasks, MR-MoL achieves the best overall results among generalist models and narrows the gap to specialist models tuned for each task. Five diagnostics further confirm that the model reads the rationale rather than merely benefiting from its presence. Its direction, rank, and substructure each shape the prediction, and its attributions reproduce known structure-property relationships.",
+      "summary_zh": "MR-MoL 用微调 GNN 掩码为 Murcko/BRICS/官能团亚结构打分，将带排序与方向的 rationale 连同 SMILES 与分子图交给 LLM；在八项 MoleculeNet 上通才模型整体最优，五项诊断表明模型读取了理由而非仅受益于其存在。",
+      "why_it_matters_zh": "把化学家关心的亚结构升降证据接到分子 LLM，而不是外部检索；摘要未给出具体 AUC/RMSE，湿实验与代码情况亦未说明。",
+      "quality_score": 77.0,
+      "tags": [
+        "方法与模型",
+        "MR-MoL",
+        "分子LLM",
+        "可解释性",
+        "MoleculeNet"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有对照实验",
+        "仅摘要可判断"
+      ],
+      "publication_status": "preprint",
+      "rank": 12,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.10480v1"
+      },
+      "abstract_zh": "大语言模型（LLM）被广泛用于化学任务，例如支撑药物发现的分子性质预测。分子 LLM 通过多种模态表征分子，尤其是 1D SMILES 序列或 2D 分子图。二者均隐式编码分子信息，因此单个亚结构的贡献仍不透明。检索与增强方法会添加上下文，但来自外部来源。然而化学家推理所依据的线索，是驱动性质上升或下降的内部亚结构。我们提出 MR-MoL，一个多粒度理由引导的分子 LLM，直接提供此类证据。微调 GNN 通过掩码为每个亚结构打分，最具影响的亚结构被序列化为带排序与方向标签的 rationale，供 LLM 与 SMILES 序列及分子图一并读取。该 rationale 跨越三个粒度：带侧链的 Murcko 骨架、BRICS 片段与官能团。据我们所知，这是首个将 GNN 导出的归因作为性质预测证据呈现给 LLM 的方法。在八项 MoleculeNet 任务上，MR-MoL 在通才模型中取得整体最佳结果，并缩小了与按任务调优的专才模型之间的差距。五项诊断进一步确认模型确实读取了 rationale，而非仅仅因其存在而受益。其方向、排序与亚结构各自塑造预测，且其归因复现了已知的构效关系。",
+      "published": "2026-08-11",
+      "author_line": "Junwoo Park, Minyoung Shin, Cheol Soon Lee 等 4 人"
+    },
+    {
+      "id": "arxiv:2608.10792v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "ChemWorld: Programmable Chemical Worlds for Controlled and Replayable Agent Experimentation",
+      "url": "https://arxiv.org/abs/2608.10792v1",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Jiangjie Qiu",
+        "Yijun Li",
+        "Xiaonan Wang"
+      ],
+      "language": "en",
+      "abstract_or_text": "Autonomous chemistry increasingly depends on environments in which agents can repeatedly act, observe, and adapt.Physical laboratories provide essential real-material evidence but are costly to repeat and difficult to use for tightly matched interventions, whereas most digital environments keep the underlying experimental world largely fixed. We introduce ChemWorld, a programmable chemical environment in which reusable process and observation components are compiled into executable worlds. ChemWorld separates the public experimental contract available to an agent from evaluator-owned chemical and material laws. Researchers can therefore vary world composition and operating conditions, or change a single hidden law while holding the public task and interaction conditions fixed. Transactional execution records operations, failures, resource changes, and state transitions, allowing complete environment-action trajectories to be replayed exactly and audited. Full-census qualification covered the reference registry, 52 generated compositions, and module, interface, compilation, and invalid-action tests. Eight deterministic experimental cases demonstrated shared lifecycle semantics, failure recovery, and exact replay, while six parent-child world-fork pairs isolated the effects of single private-law interventions under matched public conditions. An independent agent also completed a full lifecycle in a non-reference world through the same public interface. Within the declared component and model domain, ChemWorld provides a controlled and replayable substrate for studying experimentation across systematically varied chemical worlds, complementary to physical-laboratory evidence and calibration.",
+      "summary_zh": "ChemWorld 将可复用过程与观测组件编译为可执行化学世界，分离智能体可见契约与评估者持有的隐藏定律；52 个组成与资格测试后，8 个确定性案例与 6 对 world-fork 展示精确回放及单一定律干预隔离，独立智能体完成完整生命周期。",
+      "why_it_matters_zh": "给化学智能体一个可回放、可对照干预的可编程实验床，补实体实验室难以严格匹配的短板；目前为环境与接口验证，尚未报告发现新化学的任务分数。",
+      "quality_score": 76.0,
+      "tags": [
+        "方法与模型",
+        "ChemWorld",
+        "化学智能体",
+        "可编程环境",
+        "回放"
+      ],
+      "evidence_flags": [
+        "有对照实验",
+        "仅摘要可判断",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 13,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.10792v1"
+      },
+      "abstract_zh": "自主化学日益依赖于智能体可反复行动、观察与适应的环境。实体实验室提供必要的真实材料证据，但重复成本高、难以做严格匹配的干预；而多数数字环境则使底层实验世界基本固定。我们引入 ChemWorld，一个可编程化学环境，其中可复用的过程与观测组件被编译为可执行世界。ChemWorld 将智能体可见的公共实验契约与评估者持有的化学与材料定律分离。因此研究者可以改变世界组成与操作条件，或在保持公共任务与交互条件固定的情况下更改单一隐藏定律。事务性执行记录操作、失败、资源变化与状态转换，使完整的环境–行动轨迹可被精确回放并审计。全量资格测试覆盖参考注册表、52 个生成组成，以及模块、接口、编译与非法动作测试。八个确定性实验案例展示了共享生命周期语义、失败恢复与精确回放；六对父子 world-fork 在匹配的公共条件下隔离了单一私有定律干预的效应。一个独立智能体也通过同一公共接口在非参考世界中完成了完整生命周期。在所声明的组件与模型域内，ChemWorld 为跨系统变化的化学世界研究实验提供了受控、可回放的基底，与实体实验室证据和校准互为补充。",
+      "published": "2026-08-11",
+      "author_line": "Jiangjie Qiu, Yijun Li, Xiaonan Wang"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007184/v2",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "MolSanity: A Reliability Audit for Feature Attributions on Molecular Graph Neural Networks",
+      "url": "https://doi.org/10.26434/chemrxiv.15007184/v2",
+      "published_at": "2026-08-10",
+      "updated_at": "2026-08-10",
+      "creators": [
+        "Karthik Iyer",
+        "Nasser Sabar"
+      ],
+      "language": "en",
+      "abstract_or_text": "Feature attributions are routinely used to justify molecular graph neural network (GNN) predictions to chemists, yet they are almost never audited for reliability: existing frameworks ask whether an explanation is faithful to the model, not whether it identifies the chemistry that determines the property, nor where it stops being trustworthy under scaffold shift. MolSanity is a reliability-audit framework that wraps canonical implementations (Captum, PyTorch Geometric, RDKit) rather than proposing a new attributor, scoring every (dataset × backbone × attributor × split) cell on six axes: motif-native coherence, occlusion–attribution faithfulness, ground-truth localisation where node labels exist, cross-checkpoint stability, calibration linkage, and confidence/correctness regime stratification. Our central finding is that faithfulness is not correctness, and that the two carry no dependable relationship in either regime. Across 30 selection tests — 5 molecular ground-truth arms × two splits × 3 ranking metrics — a faithfulness-only ranking picks an attributor other than the ground-truth-best one in 26, and this is no less true in distribution (14 of 15) than under scaffold shift (12 of 15); on MUTAG under shift it prefers an attributor anti-aligned with the nitro motif (GT AUROC 0.013) over one at 0.826. Pooled over 47 cells the faithfulness–correctness rank correlation is +0.222 in distribution (p = 0.134) and −0.124 under shift (p = 0.405), neither distinguishable from zero, while per arm under shift it runs from −0.564 to +0.786: reliability is a property of the individual (dataset, backbone, attributor, split) cell rather than of the attributor. Restricted to the 3 arms of an earlier analysis it gives −0.356 (p = 0.042); two externally authored rationale benchmarks remove the effect, and we report the 5-arm result. Faithfulness itself does not fall under shift — it rises, from 0.049 to 0.132, while ground-truth localisation does not move — so the metric gives no warning either way. Over 31,785 per-molecule records, localisation degrades on confidently-wrong predictions (0.769 to 0.681) while their measured faithfulness improves, and the calibration–reliability link attenuates from a per-cell median of 0.144 to 0.074 when cells are pooled. Every number, figure and table regenerates from the committed artifacts.",
+      "summary_zh": "MolSanity v2 对（数据集×骨架×归因器×划分）做六轴审计；30 项选择测试中 26 项忠实度排序未找回真值最优归因器，MUTAG 偏移下选出 GT AUROC 0.013 的反对齐归因器而非 0.826，47 单元上忠实度与正确性相关不显著。",
+      "why_it_matters_zh": "用更大审计面证明分子 GNN 解释的忠实度不能当化学正确性用；框架依赖已有真值基序基准，外推到无节点标签的回归任务仍受限。",
+      "quality_score": 75.0,
+      "tags": [
+        "方法与模型",
+        "MolSanity",
+        "GNN归因",
+        "忠实度",
+        "MUTAG"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "报告负面结果",
+        "仅摘要可判断",
+        "benchmark",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 14,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007184/v2",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "特征归因常被用来向化学家为分子图神经网络（GNN）预测作辩护，但几乎从未就其可靠性接受审计：现有框架询问的是解释是否忠实于模型，而不是它是否识别出决定该性质的化学，以及在骨架偏移下它在何处不再可信。MolSanity 是一个可靠性审计框架，它封装规范实现（Captum、PyTorch Geometric、RDKit）而非提出新的归因器，并在六个轴上为每一个（数据集 × 骨架 × 归因器 × 划分）单元打分：基序原生一致性、遮挡–归因忠实度、在存在节点标签处的真值定位、跨检查点稳定性、校准关联，以及置信/正确性区间分层。我们的核心发现是：忠实度不是正确性，且二者在任一设定下都没有可靠关系。在 30 项选择测试中——5 个分子真值分支 × 两种划分 × 3 种排序指标——仅按忠实度排序在 26 项中选出了并非真值最优的归因器，且这一现象在分布内（15 项中的 14 项）并不比骨架偏移下（15 项中的 12 项）更轻；在 MUTAG 的偏移设置上，它偏好与硝基基序反对齐的归因器（GT AUROC 0.013），而非 0.826 的那个。在 47 个单元上汇总，忠实度–正确性秩相关在分布内为 +0.222（p = 0.134），在偏移下为 −0.124（p = 0.405），均与零无显著差别，而各分支在偏移下从 −0.564 到 +0.786：可靠性是单个（数据集、骨架、归因器、划分）单元的属性，而非归因器本身的属性。若限制在先前分析的 3 个分支，该相关为 −0.356（p = 0.042）；两个外部撰写的理由基准消除了该效应，我们报告 5 分支结果。忠实度本身在偏移下并不下降——它从 0.049 升至 0.132，而真值定位不变——因此该指标无论向哪边都给不出预警。在 31,785 条逐分子记录上，定位在自信错误的预测上由 0.769 降至 0.681，而其测得忠实度反而改善；校准–可靠性关联在单元汇总后由每单元中位数 0.144 衰减至 0.074。每一个数字、图与表均可由已提交产物重新生成。",
+      "published": "2026-08-10",
+      "author_line": "Karthik Iyer, Nasser Sabar"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15003910/v4",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Revisiting Deep Learning DTA Methods from the Dataset Viewpoint",
+      "url": "https://doi.org/10.26434/chemrxiv.15003910/v4",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Gustavo Cárdenas",
+        "Rosalinda Marinello",
+        "Giovanno Marcelo Renato Cárdenas",
+        "Ugo Perricone"
+      ],
+      "language": "en",
+      "abstract_or_text": "In this work, we present a study revisiting deep learning drug-target affinity models, which are otherwise used as benchmark methods in the literature to compare more complex and heavy-weighted architectures. We focus on training and testing these models using pKd values from BindingDB, a dataset that presents binding affinity information of a high variety of ligans and proteins. These activity data need a proper pre-treatment and curation prior to actually using them for production tasks, a factor that is often overlooked in the literature. We show that a combination of a thorough curation of the dataset and a proper hyperparameter tuning of slight modifications of the revisited models (e.g, by using pretrained protein embeddings to describe the proteins) provides beyond state of the art performances at a much lower computational cost, with respect to more demanding deep learning models. We study the distributions of the protein and ligand learned (or eventually, pre-trained) embeddings, to observe how they classify the proteins depending on the (super)families they belong to (for the former), and how they distribute in the embedding space depending on the values of their binding affinities, with respect to a given protein (for the latter). We take advantage of the graph representations of the ligands to further approach explainability at an atom-wise level, by computing the directional derivative of the model with respect to each of the atoms of a ligand. This method, unlike other derivative-based approaches such as Grad-CAM and variants, turns out to be extremely useful for regression tasks of binding affinities, as this provides direct means of assessing which atoms contribute to an increase/decrease of the binding affinity, depending on both the sign of the directional derivative, and on its absolute value-an indication of how steep the function is with respect to each atom.",
+      "summary_zh": "在整理后的 BindingDB pKd 上重训轻量 DTA 模型并调超参、接入预训练蛋白嵌入，以更低算力超过更重架构；再用配体图上的原子方向导数解释哪些原子升高或降低亲和力。",
+      "why_it_matters_zh": "提醒 DTA 刷分常被数据整理与泄漏掩盖，轻模型加清洗即可超重模型；摘要未给出具体 RMSE/Pearson，也未说明划分协议。",
+      "quality_score": 74.0,
+      "tags": [
+        "分子与药物发现",
+        "DTA",
+        "BindingDB",
+        "pKd",
+        "可解释性"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "仅摘要可判断",
+        "benchmark",
+        "dataset",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 15,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15003910/v4",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "本文重新审视深度学习药物–靶标亲和力模型；这类模型在文献中常被用作基准方法，以对照更复杂、更重的架构。我们聚焦于使用 BindingDB 中的 pKd 值训练与测试这些模型，该数据集提供种类丰富的配体与蛋白质结合亲和力信息。这些活性数据在真正用于生产任务前需要妥善预处理与整理，而这一因素在文献中常被忽视。我们表明，对数据集进行彻底整理，并对所审视模型的轻微改动（例如用预训练蛋白质嵌入描述蛋白质）做恰当超参数调优，即可相对更昂贵的深度学习模型，以低得多的计算成本取得超越当前最优的性能。我们研究蛋白质与配体学得（或最终为预训练）嵌入的分布，以观察前者如何按所属（超）家族对蛋白质分类，以及后者如何相对给定蛋白质按其结合亲和力值分布在嵌入空间中。我们利用配体的图表征，通过计算模型对配体每个原子的方向导数，进一步在原子层面逼近可解释性。与 Grad-CAM 及其变体等其他基于导数的方法不同，该方法对结合亲和力回归任务极为有用，因为它根据方向导数的符号及其绝对值——表明函数相对每个原子有多陡——直接评估哪些原子贡献于结合亲和力的升高或降低。",
+      "published": "2026-08-11",
+      "author_line": "Gustavo Cárdenas, Rosalinda Marinello, Giovanno Marcelo Renato Cárdenas 等 4 人"
+    },
+    {
+      "id": "arxiv:2608.10483v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Predicting Space Groups of Double Perovskites by LLM with Dynamic Few-Shot Learning",
+      "url": "https://arxiv.org/abs/2608.10483v1",
+      "published_at": "2026-08-11",
+      "updated_at": "2026-08-11",
+      "creators": [
+        "Jongwon Park",
+        "Inhyo Lee",
+        "Junhyeong Lee",
+        "Seunghwa Ryu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Double perovskites (DPs) offer broad compositional tunability, but predicting the space groups (SGs) of stable structures remains difficult because available datasets are often strongly imbalanced toward dominant SG classes. We refer to dominant SG classes as major SGs and underrepresented classes as minor SGs. We introduce Dynamic and Diversity-enhanced Few-shot Retrieval and Rule-Guided Inference for Space-Group Prediction (DyRIS), an LLM-agent-based framework that predicts ranked SG candidates from a given DP composition. DyRIS uses diversity-enhanced dynamic few-shot prompting to retrieve relevant in-context examples while limiting the dominance of frequently represented SGs. It further incorporates rule-guided inference based on B/B' cation ordering, quantitative indicators, and major-SG bias control to refine and rank the final Top-3 SG candidates. We evaluate DyRIS on 3,528 thermodynamically filtered DP entries and compare it with composition-based and descriptor-based baselines. At a training-data ratio of 0.5, DyRIS achieves competitive overall accuracy while obtaining the best Overall Top-1 macro-F1 score and the best performance across all Minor-SG metrics. DyRIS improves Minor-SG Top-1 accuracy by 3.26 percentage points relative to CrabNet and achieves higher Minor-SG Top-3 accuracy than the strongest PyCaret-based baseline. Ablation studies show that diversity-enhanced retrieval, quantitative indicators, major-SG bias control, and B/B' ordering information each contribute to prediction performance. Additional experiments show that the final rule-guided inference step is not easily replaced by conventional classifier- or ranker-based models. These findings demonstrate the potential of combining retrieval-based LLM reasoning with crystallographic domain knowledge for SG prediction in imbalanced materials datasets.",
+      "summary_zh": "DyRIS 以多样性增强动态少样本检索与 B/B' 有序等规则引导 LLM 预测双钙钛矿空间群；在 3,528 条热力学过滤条目、训练比 0.5 时 Overall Top-1 macro-F1 与全部 Minor-SG 指标最优，Minor-SG Top-1 较 CrabNet 高 3.26 个百分点。",
+      "why_it_matters_zh": "针对材料空间群长尾类别，把晶体学规则接到 LLM 检索推理；目前为组成到 SG 分类，未预测完整晶体结构。",
+      "quality_score": 73.0,
+      "tags": [
+        "材料与催化",
+        "DyRIS",
+        "双钙钛矿",
+        "空间群"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有对照实验",
+        "有消融研究",
+        "仅摘要可判断",
+        "dataset",
+        "ablation"
+      ],
+      "publication_status": "preprint",
+      "rank": 16,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.10483v1"
+      },
+      "abstract_zh": "双钙钛矿（DP）具有宽广的组成可调性，但预测稳定结构的空间群（SG）仍然困难，因为可用数据集往往强烈偏向占优 SG 类。我们将占优 SG 类称为 major SGs，将代表性不足的类称为 minor SGs。我们引入 Dynamic and Diversity-enhanced Few-shot Retrieval and Rule-Guided Inference for Space-Group Prediction（DyRIS），一个基于 LLM 智能体的框架，由给定 DP 组成预测排序后的 SG 候选。DyRIS 使用多样性增强的动态少样本提示检索相关上下文示例，同时限制高频 SG 的主导。它进一步纳入基于 B/B' 阳离子有序、定量指标与 major-SG 偏置控制的规则引导推理，以精炼并排序最终 Top-3 SG 候选。我们在 3,528 条热力学过滤的 DP 条目上评估 DyRIS，并与基于组成及描述符的基线比较。在训练数据比例为 0.5 时，DyRIS 取得有竞争力的总体准确率，同时获得最佳 Overall Top-1 macro-F1，以及全部 Minor-SG 指标上的最佳性能。相对 CrabNet，DyRIS 将 Minor-SG Top-1 准确率提高 3.26 个百分点，其 Minor-SG Top-3 准确率也高于最强的基于 PyCaret 的基线。消融表明多样性增强检索、定量指标、major-SG 偏置控制与 B/B' 有序信息各自贡献于预测性能。额外实验显示，最后的规则引导推理步骤不易被常规分类器或排序模型替代。这些发现表明，将基于检索的 LLM 推理与晶体学领域知识结合，有望用于不平衡材料数据集上的 SG 预测。",
+      "published": "2026-08-11",
+      "author_line": "Jongwon Park, Inhyo Lee, Junhyeong Lee 等 4 人"
+    }
+  ],
+  "review": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "note": "2026-08-11 候选 60 篇，自动分仍偏高并夹杂肿瘤 PINN、结直肠癌治疗规划、放射治疗 CBCT、健身动作、通用智能体、结构工程合规与 ICU 时序稿。按 AI×Chem 相关性、方法可信度与验证强度精选 16 篇：保留 ChemMoB、IL-4Ra 微型蛋白拮抗剂、Pert2Mol、cryoPARES、PUD+、RAVEN、SABLE、AutoSolvate 2.0、mof2text、热带气候 OPV、ALIGN、MR-MoL、ChemWorld、MolSanity v2、BindingDB DTA 重访与 DyRIS；未收录无 AI 的渗透汽化阻抗/d2-苄基化试剂/光诱导双功能试剂/核苷 N-芳基化，以及 GatorOnco、MedPixel、Evo-Bench、UNSPECIFIC 等弱相关项。"
+  }
+}

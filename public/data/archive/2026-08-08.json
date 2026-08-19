@@ -1,0 +1,880 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-08",
+  "channel": "aixchem",
+  "generated_at": "2026-08-18T15:10:53+00:00",
+  "title": "AI × Chem 每日精选",
+  "subtitle": "预印本、方法、数据集与实验验证的每日精选。",
+  "window": {
+    "start": "2026-08-05",
+    "end": "2026-08-08"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 2177,
+    "candidates": 60,
+    "selected": 16,
+    "sources": {
+      "arXiv": 1277,
+      "bioRxiv": 759,
+      "ChemRxiv": 153
+    }
+  },
+  "source_status": {
+    "arXiv": {
+      "state": "ok",
+      "count": 1277
+    },
+    "bioRxiv": {
+      "state": "ok",
+      "count": 759
+    },
+    "ChemRxiv": {
+      "state": "ok",
+      "count": 153
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "arxiv:2608.07454v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Strategy-first synthesis planning for complex natural products",
+      "url": "https://arxiv.org/abs/2608.07454v1",
+      "published_at": "2026-08-07",
+      "updated_at": "2026-08-07",
+      "creators": [
+        "Daniel Armstrong",
+        "Xuan-Vu Nguyen",
+        "Octavian Susanu",
+        "Gabriel Gibberd",
+        "Théo A. Neukomm",
+        "Taddäus Strunden",
+        "Dan Forster",
+        "Morgane Delattre",
+        "Shawn Teh",
+        "Clément Rols",
+        "John Federice",
+        "Hayden Leatherwood",
+        "M. Lavelle Barnes",
+        "Maarten R. Dobbelaere",
+        "Peter Wipf",
+        "Jon T. Njardarson",
+        "Jieping Zhu",
+        "Philippe Schwaller"
+      ],
+      "language": "en",
+      "abstract_or_text": "The total synthesis of a complex molecule is among the most demanding intellectual and experimental feats in chemistry: a chemist must plan many steps ahead for how to assemble simple building blocks into an intricate target, devise backup strategies, and anticipate procedural challenges. It is also a profoundly creative activity. For half a century, efforts to automate the retrosynthetic design of natural products and other complex molecules have drawn on catalogued reactions, and the resulting tools now report near-complete success on benchmarks built from that same source. But these tools were shaped to fit benchmarked chemistry, and they falter on many natural products, the frontier of the field, whose densely functionalized, polycyclic architectures demand precisely the inventive chemistry the record contains least. Whether a machine could reasonably design such syntheses like an expert chemist does has remained unclear. Here, we show that SynthEx, an agentic framework built on large language models, plans routes to complex natural products that lie beyond the reach of conventional design algorithms. SynthEx proposes competing strategies, assembles a sequence of routine and key steps into a cohesive route, and critiques and improves its own design; the chemistry it favours is more convergent than existing tools produce, and spans a region of reaction space that catalogue-based tools cannot match. Most notably, in blinded assessments, expert chemists judged its key steps comparable to those of published human syntheses and engaged with them as genuine synthesis plans, a response algorithmic route prediction has not previously accomplished. We release routes to more than a thousand natural products as SynthAtlas, an open, interactive database, and anticipate it will become a shared resource for a collection of complex target molecules that lack existing literature routes.",
+      "summary_zh": "SynthEx 以大语言模型智能体提出竞争策略、组装常规与关键步骤并自我批评，规划传统编目算法难以覆盖的复杂天然产物路线；盲评中专家认为其关键步骤与已发表人类合成相当，并发布含一千余条路线的开放库 SynthAtlas。",
+      "why_it_matters_zh": "把逆合成从编目反应检索推进到可被专家当作真实方案讨论的策略级规划，并开源无文献路线资源；路线尚未经湿实验验证，长程可执行性仍待检验。",
+      "quality_score": 93.0,
+      "tags": [
+        "分子与药物发现",
+        "SynthEx",
+        "逆合成",
+        "天然产物",
+        "SynthAtlas"
+      ],
+      "evidence_flags": [
+        "有对照实验",
+        "公开数据",
+        "仅摘要可判断",
+        "benchmark",
+        "experimental",
+        "release"
+      ],
+      "publication_status": "preprint",
+      "rank": 1,
+      "featured": true,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.07454v1"
+      },
+      "abstract_zh": "复杂分子的全合成是化学中最苛刻的智力与实验成就之一：化学家必须提前规划许多步骤，将简单砌块组装成精密靶标，设计后备策略，并预判操作挑战。它也是一项深刻的创造性活动。半个世纪以来，自动化天然产物及其他复杂分子逆合成设计的努力一直依赖已编目反应，由此产生的工具如今在源自同一来源的基准上报告近乎完全成功。但这些工具被塑造成适配基准化学，并在许多天然产物——该领域的前沿——上失效，其高度官能化、多环骨架恰恰需要记录中最少的创造性化学。机器能否像专家化学家那样合理地设计此类合成，一直尚不清楚。本文表明，SynthEx，一个建立在大语言模型之上的智能体框架，能够规划传统设计算法无法企及的复杂天然产物路线。SynthEx 提出相互竞争的策略，将常规步骤与关键步骤组装成连贯路线，并批评与改进自身设计；它所偏好的化学比现有工具更汇聚，并跨越编目式工具无法匹配的反应空间区域。最值得注意的是，在盲评中，专家化学家判定其关键步骤与已发表的人类合成相当，并将其作为真正的合成方案加以讨论，这是算法路线预测此前未能达成的反应。我们以 SynthAtlas 这一开放、交互式数据库发布一千余个天然产物的路线，并预期它将成为一批尚无文献路线的复杂靶标分子的共享资源。",
+      "published": "2026-08-07",
+      "author_line": "Daniel Armstrong, Xuan-Vu Nguyen, Octavian Susanu 等 18 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.02.26.708362",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "MolX: A Geometric Foundation Model for Protein-Ligand Modelling",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.02.26.708362",
+      "published_at": "2026-08-05",
+      "updated_at": "2026-08-05",
+      "creators": [
+        "Liu, J.",
+        "Pan, T.",
+        "Guo, X.",
+        "Ran, Z.",
+        "Hao, Y.",
+        "Yang, Y.",
+        "Ng, A. P.",
+        "Pan, S.",
+        "Song, J.",
+        "Li, F."
+      ],
+      "language": "en",
+      "abstract_or_text": "Understanding how small molecules interact with protein binding pockets is central to structure-based drug discovery. Accurately modelling these interactions requires capturing the 3D geometry and physicochemical complementarity of binding interfaces, yet existing computational approaches encode proteins and ligands separately or rely on simplified structural representations that do not explicitly model cross-entity spatial relationships. Such decoupled representations restrict their capacity to capture interface-level geometric constraints that arise from protein-ligand coorganisation. Here we present MolX, a Graph Transformer foundation model that jointly learns geometric and chemical representations of protein pockets and ligands from large-scale 3D structural data. Integrating over 3 million protein pockets and 5 million molecules, MolX represents both entities as E(3)-equivariant graphs to preserve spatial geometry and chemical context. The architecture employs dual E(3)-equivariant graph Transformer encoders to model pocket and ligand embeddings, ensuring representations remain invariant to rotation, translation, and reflection. MolX is pretrained using a hybrid learning paradigm that combines supervised biochemical objectives, logP and energy-gap regression, with self-supervised geometric objectives, coordinate re-construction, and atom-type prediction, fostering generalisable molecular understanding. Across eight downstream benchmarks, including antibody-drug conjugates (ADC), proteolysis-targeting chimeras (PROTAC), molecular glue, and PCBA activity prediction, as well as binding affinity and physicochemical property regression, MolX achieves consistent state-of-the-art performance and strong cross-domain generalisation. Furthermore, MolX incorporates a sparse autoencoder module to decompose latent representations into interpretable biological components, thereby revealing the pocket-ligand interactions that drive prediction outcomes. Together, MolX establishes a scalable and interpretable foundation model for molecular representation learning, providing a unified framework for predicting and interpreting complex small-molecule-protein interactions.",
+      "summary_zh": "MolX 用双路 E(3)-等变 Graph Transformer 联合编码口袋与配体，整合超过 3 million 口袋和 5 million 分子，经 logP、energy-gap 与几何预训练，在 ADC、PROTAC、PCBA 等八项基准上取得当前最优。",
+      "why_it_matters_zh": "为结构药物发现提供可扩展的口袋–配体几何基础模型并带可解释分解；湿实验与代码开源情况摘要未给出。",
+      "quality_score": 91.0,
+      "tags": [
+        "分子与药物发现",
+        "MolX",
+        "蛋白-配体",
+        "E(3)",
+        "基础模型"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "仅摘要可判断",
+        "benchmark",
+        "state-of-the-art",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.02.26.708362",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "理解小分子如何与蛋白质结合口袋相互作用，是基于结构的药物发现的核心。准确建模这些相互作用需要捕获结合界面的 3D 几何与物理化学互补性，然而现有计算方法要么分别编码蛋白质与配体，要么依赖简化的结构表征，并未显式建模跨实体空间关系。这类解耦表征限制了它们捕获由蛋白–配体共组织产生的界面级几何约束的能力。本文提出 MolX，一个从大规模 3D 结构数据中联合学习蛋白质口袋与配体几何及化学表征的 Graph Transformer 基础模型。MolX 整合超过 3 million 个蛋白质口袋和 5 million 个分子，将二者均表示为 E(3)-equivariant 图以保留空间几何与化学语境。该架构采用双路 E(3)-equivariant graph Transformer 编码器来建模口袋与配体嵌入，确保表征对旋转、平移和反射保持不变。MolX 采用混合学习范式预训练，将有监督生物化学目标（logP 与 energy-gap 回归）与自监督几何目标（坐标重建与原子类型预测）相结合，以促进可泛化的分子理解。在八项下游基准上，包括抗体–药物偶联物（ADC）、蛋白水解靶向嵌合体（PROTAC）、molecular glue 与 PCBA 活性预测，以及结合亲和力与物理化学性质回归，MolX 取得一致的当前最优性能和强跨域泛化。此外，MolX 引入 sparse autoencoder 模块，将潜表征分解为可解释的生物学组分，从而揭示驱动预测结果的口袋–配体相互作用。综上，MolX 建立了可扩展且可解释的分子表征学习基础模型，为预测和解释复杂小分子–蛋白质相互作用提供统一框架。",
+      "published": "2026-08-05",
+      "author_line": "Liu, J., Pan, T., Guo, X. 等 10 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv-2025-gmrdb/v2",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Learning to Generalize: Deep Models and Robust Benchmarks for Drug–Target Affinity Prediction",
+      "url": "https://doi.org/10.26434/chemrxiv-2025-gmrdb/v2",
+      "published_at": "2026-08-07",
+      "updated_at": "2026-08-07",
+      "creators": [
+        "Agaaz Bansal",
+        "Milendra Kumar Turkar",
+        "Chirag Tayal",
+        "Raghvendra Mall",
+        "Sudipta K Sinha",
+        "Sukrit Gupta"
+      ],
+      "language": "en",
+      "abstract_or_text": "Small-molecule binding to proteins drives biological processes and underpins drug discovery, with binding affinity serving as a key therapeutic metric. Traditional 3D structure-based approaches achieve high performance but remain computationally expensive and limited by scarce experimental data. Deep learning alternatives, on the other hand, capture spatial features from 3D data but risk overfitting, poor generalization, and performance inflation due to data leakage. We introduce two sequence-based models for structure-free affinity prediction: (1) AffinityLM: A pretrained biological–chemical language model using concatenated representations from FASTA and SMILES, and (2) AffinityNet: An attention-based architecture learning contextual drug–target dependencies from raw sequences. We create a newly curated dataset of \\(\\sim\\)14,000 protein–ligand complexes, pulled from the Plas-20k and PDBbind-CN datasets, each uniquely mapped to a PDB ID and corresponding experimental binding affinity. We explicitly define a data split that eliminates the overlap between proteins and ligands across train, validation, and test sets. We show that the performance of the prior benchmarks drops significantly (Pearson correlation of the best benchmark drops from \\(0.74\\) to \\(0.67\\)) when the pervasive data-leakage problem is plugged. The proposed models give statistically significant improvements (on all four measures) over the existing baselines, which hold under independent, out-of-distribution test sets. The data and the code for the work are available at https://github.com/AI4Med-Lab/affinitynet-benchmark.",
+      "summary_zh": "提出无结构亲和力模型 AffinityLM 与 AffinityNet，并整理约 14,000 个来自 Plas-20k 与 PDBbind-CN 的蛋白–配体复合物；堵住蛋白与配体泄漏后最佳旧基准 Pearson 由 0.74 降至 0.67，新模型在四项指标及独立 OOD 集上显著优于基线，代码开源。",
+      "why_it_matters_zh": "纠正亲和力预测中被数据泄漏抬高的分数，给出可复现的无结构 DTA 基准；仍为序列模型，未与结构方法在同一实验亲和力集上全面对照。",
+      "quality_score": 90.0,
+      "tags": [
+        "分子与药物发现",
+        "AffinityNet",
+        "AffinityLM",
+        "结合亲和力",
+        "数据泄漏"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有外部测试",
+        "公开代码",
+        "公开数据",
+        "benchmark",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv-2025-gmrdb/v2",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "小分子与蛋白质结合驱动生物过程并支撑药物发现，结合亲和力是关键治疗学指标。传统基于 3D 结构的方法性能高，但计算昂贵且受限于稀缺实验数据。另一方面，深度学习替代方案从 3D 数据捕获空间特征，但存在过拟合、泛化差以及因数据泄漏导致的性能膨胀风险。我们引入两个用于无结构亲和力预测的序列模型：(1) AffinityLM：一个使用 FASTA 与 SMILES 拼接表征的预训练生物–化学语言模型；(2) AffinityNet：一个从原始序列学习上下文药物–靶标依赖的注意力架构。我们新建了一个约 14,000 个蛋白–配体复合物的整理数据集，来自 Plas-20k 与 PDBbind-CN，每个复合物唯一映射到 PDB ID 及相应实验结合亲和力。我们显式定义了消除训练、验证与测试集之间蛋白质与配体重叠的数据划分。我们表明，当普遍存在的数据泄漏问题被堵住后，先前基准的性能显著下降（最佳基准的 Pearson 相关从 0.74 降至 0.67）。所提出模型在全部四项指标上相对现有基线取得具有统计显著性的改进，并在独立、分布外测试集上保持。数据与代码见 https://github.com/AI4Med-Lab/affinitynet-benchmark。",
+      "published": "2026-08-07",
+      "author_line": "Agaaz Bansal, Milendra Kumar Turkar, Chirag Tayal 等 6 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.06.743053",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "De novo design of a protein fold for small-molecule binding through aromatic π stacking",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.06.743053",
+      "published_at": "2026-08-07",
+      "updated_at": "2026-08-07",
+      "creators": [
+        "Ouchida, S. T.",
+        "Horst, M. T.",
+        "Gou, X.",
+        "Bakanas, I.",
+        "Hatstat, A. K.",
+        "Schnaider, L.",
+        "Diolaiti, M. E.",
+        "Ashworth, A.",
+        "DeGrado, W. F."
+      ],
+      "language": "en",
+      "abstract_or_text": "The de novo design of proteins that bind chemically complex small molecules has broad chemical and biological implications, but strategies typically rely on a small set of protein scaffolds and require extensive experimental screening. Here, we computationally designed proteins around a minimal aromatic {pi}-stacking motif to bind the anthracycline anticancer drug doxorubicin. Experimental characterization of twelve proteins revealed a {micro}M doxorubicin binder; two additional design cycles improved scaffold stability and binding affinity to yield an 85-residue protein that binds doxorubicin with a dissociation constant of 85 nM. An X-ray crystal structure of the protein-drug complex confirmed the accuracy of the designed {pi}-{pi} stacking interactions. The designed protein could act to protect cultured cells from doxorubicin-induced cytotoxicity. Unlike previous ligand-binding protein designs based on repeat proteins or naturally occurring folds, the designed protein adopts a previously unobserved 5-helix globular fold, indicating that a broader space of folded, functional proteins exists even for compact tertiary structures smaller than 100 residues. These results demonstrate that motif-guided generative protein design can discover compact de novo protein folds capable of high-affinity recognition of chemically complex small molecules.",
+      "summary_zh": "围绕芳香 π 堆积基序计算设计结合 doxorubicin 的蛋白质，12 个实验命中 μM 级结合，再两轮优化得到 85 残基、解离常数 85 nM 的蛋白；晶体结构证实 π-π 堆积，细胞实验显示可保护培养细胞，并呈现此前未见的 5 螺旋折叠。",
+      "why_it_matters_zh": "把生成式蛋白设计推进到复杂小分子高亲和识别，并有晶体与细胞证据；目前仅针对 doxorubicin，设计通量与通用性仍有限。",
+      "quality_score": 89.0,
+      "tags": [
+        "分子与药物发现",
+        "蛋白质设计",
+        "doxorubicin",
+        "π堆积",
+        "从头折叠"
+      ],
+      "evidence_flags": [
+        "有实验验证",
+        "仅摘要可判断",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.06.743053",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "能够结合化学上复杂小分子的蛋白质从头设计具有广泛的化学与生物学意义，但现有策略通常依赖少数蛋白质骨架，并需要大量实验筛选。本文围绕最小芳香 π-堆积基序计算设计蛋白质，以结合蒽环类抗癌药物 doxorubicin。对十二个蛋白质的实验表征揭示了一个 μM 级 doxorubicin 结合蛋白；再经两个设计周期提升骨架稳定性与结合亲和力，得到一个 85 残基蛋白质，其对 doxorubicin 的解离常数为 85 nM。蛋白–药物复合物的 X 射线晶体结构证实了所设计 π-π 堆积相互作用的准确性。该设计蛋白可保护培养细胞免受 doxorubicin 诱导的细胞毒性。与以往基于重复蛋白或天然折叠的配体结合蛋白设计不同，该设计蛋白采用此前未观测到的 5 螺旋球状折叠，表明即使对于小于 100 残基的紧凑三级结构，也存在更广阔的可折叠、有功能蛋白质空间。这些结果表明，基序引导的生成式蛋白质设计能够发现紧凑的从头蛋白质折叠，实现对化学上复杂小分子的高亲和力识别。",
+      "published": "2026-08-07",
+      "author_line": "Ouchida, S. T., Horst, M. T., Gou, X. 等 9 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007090/v1",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Hierarchical Molecular Diffusion Transformers (HiMoDiT) for Chemistry-Grounded Generation",
+      "url": "https://doi.org/10.26434/chemrxiv.15007090/v1",
+      "published_at": "2026-08-06",
+      "updated_at": "2026-08-06",
+      "creators": [
+        "Dengpan Dong",
+        "Yumin Zhang",
+        "Daniel C. Hannah",
+        "Qichao Hu",
+        "Kang Xu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Molecular generation underpins discovery in drug design, organic electronics, and energy storage, but specialized chemistries are typically supported by datasets on the order of 10 4 -10 5 molecules which is too small for many state-of-the-art generative models, especially under property conditioning. We present HiMoDiT, a hierarchical discrete-diffusion model for generic molecular geneartion. HiMoDiT factors generation into two stages with a deterministic ring-layout decoder: Stage 1 generates a discrete ring layout (ring types, fusion adjacency, linker chains, pendant chains), which is deterministically decoded into a bond-class skeleton and aromaticity mask before atom identities are assigned under aromaticity constraints; Stage 2 grafts terminal fragments from a K-class functional-group vocabulary. By treating bond classes as a deterministic readout of ring layout rather than a learned per-edge prediction, HiMoDiT eliminates the topological failure modes that limit per-edge discrete diffusion, including aromatic 4-cycles, [6+4] split topologies, aromatic–aliphatic inconsistencies, by construction rather than via sampler biases or post-hoc repairs. On RedDB, the dataset of redox flow battery electrolyte, HiMoDiT achieves achieves a Validity-Uniqueness-Novelty (V·U·N) = 76.30% under matched-protocol benchmarking against four baselines fine-tuned on RedDB: HiMoDiT leads three iterative graph-diffusion methods (DiGress, Cometh, DeFoG) by 25.8%–36.8%, and outperforms MoLeR as the chemistry-aware motif-extension generator pretrained on 106 organic molecules, while uniquely supporting classifier-free-guidance conditioning on pseudoscore defined using solubility and HOMO–LUMO gap. Extended to ZINC250K with enlarged atom and terminal vocabularies, HiMoDiT reaches V·U·N = 98.6% with simultaneous logP (Pearson r = 0.730) and SAS (r = 0.845) conditioning.",
+      "summary_zh": "HiMoDiT 用确定性环布局解码器分两阶段做离散扩散：先生成环类型、稠合邻接与链接/侧链并解码为键类别骨架与芳香性掩码，再嫁接端基；RedDB 上 V·U·N 为 76.30%，领先 DiGress/Cometh/DeFoG 达 25.8%–36.8%，ZINC250K 上达 98.6%，并对 logP（r = 0.730）与 SAS（r = 0.845）同时条件化。",
+      "why_it_matters_zh": "用化学先验从构造上消除芳香 4 元环等拓扑失败，并支持小数据专科化学的性质条件生成；目前主要为计算指标，湿实验与代码开源情况摘要未给出。",
+      "quality_score": 88.0,
+      "tags": [
+        "方法与模型",
+        "HiMoDiT",
+        "分子生成",
+        "离散扩散",
+        "RedDB"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有对照实验",
+        "仅摘要可判断",
+        "benchmark",
+        "dataset",
+        "state-of-the-art"
+      ],
+      "publication_status": "preprint",
+      "rank": 5,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007090/v1",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "分子生成支撑药物设计、有机电子学与储能中的发现工作，但专科化学通常只有约 10 4 -10 5 个分子的数据集，对许多当前最优生成模型——尤其是在性质条件下——规模过小。我们提出 HiMoDiT，一种面向通用分子生成的分层离散扩散模型。HiMoDiT 将生成分解为两个阶段，并配合确定性环布局解码器：第 1 阶段生成离散环布局（环类型、稠合邻接、连接链、侧链），随后被确定性解码为键类别骨架与芳香性掩码，再在芳香性约束下指定原子身份；第 2 阶段从 K 类官能团词表中嫁接端基片段。通过将键类别视为环布局的确定性读出而非逐边学习预测，HiMoDiT 从构造上消除了限制逐边离散扩散的拓扑失败模式，包括芳香 4 元环、[6+4] 分裂拓扑、芳香–脂肪不一致，而不是依赖采样器偏置或事后修补。在氧化还原液流电池电解质数据集 RedDB 上，按匹配协议对四个在 RedDB 上微调的基线进行基准评测，HiMoDiT 取得 Validity-Uniqueness-Novelty（V·U·N）= 76.30%：相对三种迭代图扩散方法（DiGress、Cometh、DeFoG）领先 25.8%–36.8%，并优于在 106 个有机分子上预训练的化学感知 motif 扩展生成器 MoLeR，同时是唯一支持基于溶解度与 HOMO–LUMO gap 定义的 pseudoscore 的 classifier-free-guidance 条件生成的方法。扩展到原子与端基词表扩大后的 ZINC250K 时，HiMoDiT 达到 V·U·N = 98.6%，并同时对 logP（Pearson r = 0.730）与 SAS（r = 0.845）进行条件化。",
+      "published": "2026-08-06",
+      "author_line": "Dengpan Dong, Yumin Zhang, Daniel C. Hannah 等 5 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.04.742718",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "CryoLigATE: enhancing the resolvability of cryo-EM maps in protein-ligand complexes using deep learning",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.04.742718",
+      "published_at": "2026-08-05",
+      "updated_at": "2026-08-05",
+      "creators": [
+        "Haloi, N.",
+        "Howard, R. J.",
+        "Lindahl, E."
+      ],
+      "language": "en",
+      "abstract_or_text": "Cryo-electron microscopy (cryo-EM) has become a central tool for structure-based drug discovery, yet ligand-binding sites often remain substantially less well resolved than the surrounding protein, limiting reliable atomic interpretation. Although deep-learning methods have substantially improved overall cryo-EM map quality, their predominantly protein-focused training limits their ability to recover ligand density. Here we present CryoLigATE, a deep learning framework specifically designed to enhance densities associated with protein-bound ligands in cryo-EM maps. We curated a chemically and structurally diverse dataset of more than 6,000 protein-ligand complexes from the EMDB and PDB, encompassing drug-like molecules, lipids, steroids, carbohydrates and other ligand classes, and trained a hybrid convolutional-transformer network to enhance local density around binding pockets. During inference, CryoLigATE automatically extracts the target region from a preliminary atomic model, requiring no manual map preparation and completing localized refinement in seconds on a desktop GPU. Evaluation on an independent test set of 649 complexes demonstrates substantial improvements in ligand resolvability, particularly for maps with poorly resolved binding sites, while preserving high-quality experimental densities. The enhanced maps recover chemically meaningful features, including ligand functional groups and topological continuity, enabling more confident atomic modeling. By learning the structural diversity of ligand features, CryoLigATE addresses a longstanding limitation of cryo-EM map enhancement and provides a useful framework for improving structural interpretation and structure-guided drug discovery.",
+      "summary_zh": "CryoLigATE 在超过 6,000 个 EMDB/PDB 蛋白–配体复合物上训练混合卷积–transformer，自动增强口袋局域密度；在 649 个复合物独立测试集上显著提升配体可分辨性，恢复官能团与拓扑连续性，并保留高质量实验密度。",
+      "why_it_matters_zh": "针对配体密度长期弱于蛋白的问题给出可落地的局域增强；摘要未报告代码或原子建模成功率的定量指标。",
+      "quality_score": 87.0,
+      "tags": [
+        "结构与生物",
+        "CryoLigATE",
+        "cryo-EM",
+        "配体密度",
+        "结构药物发现"
+      ],
+      "evidence_flags": [
+        "有外部测试",
+        "公开数据",
+        "仅摘要可判断",
+        "dataset",
+        "experimental",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 6,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.04.742718",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "冷冻电镜（cryo-EM）已成为基于结构的药物发现的核心工具，但配体结合位点的分辨率往往显著低于周围蛋白质，限制了可靠的原子级解释。尽管深度学习方法已大幅提升整体 cryo-EM 图质量，但其训练主要面向蛋白质，限制了恢复配体密度的能力。本文提出 CryoLigATE，一个专为增强 cryo-EM 图中蛋白质结合配体相关密度而设计的深度学习框架。我们从 EMDB 与 PDB 整理了超过 6,000 个化学与结构多样的蛋白–配体复合物数据集，涵盖类药分子、脂质、甾体、碳水化合物及其他配体类别，并训练混合卷积–transformer 网络以增强结合口袋周围的局部密度。推理时，CryoLigATE 从初步原子模型自动提取目标区域，无需手工图准备，并在桌面 GPU 上于数秒内完成局域精修。在 649 个复合物的独立测试集上评估表明，配体可分辨性显著提升，尤其是结合位点解析较差的图，同时保留高质量实验密度。增强后的图恢复了具有化学意义的特征，包括配体官能团与拓扑连续性，从而支持更有把握的原子建模。通过学习配体特征的结构多样性，CryoLigATE 应对了 cryo-EM 图增强的长期局限，为改进结构解释与结构导向药物发现提供了有用框架。",
+      "published": "2026-08-05",
+      "author_line": "Haloi, N., Howard, R. J., Lindahl, E."
+    },
+    {
+      "id": "arxiv:2608.06448v2",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "ED-CSP: Crystal Structure Prediction from Electron Diffraction",
+      "url": "https://arxiv.org/abs/2608.06448v2",
+      "published_at": "2026-08-06",
+      "updated_at": "2026-08-12",
+      "creators": [
+        "Germain Poloudenny",
+        "Yaël Frégier",
+        "Arnaud Demortière"
+      ],
+      "language": "en",
+      "abstract_or_text": "Recovering a periodic 3D crystal structure from sparse, unindexed electron diffraction (ED) observations is a challenging generative inverse problem. Existing ED-based learning methods mainly predict crystallographic labels, reconstruct structures from indexed reflections, or retrieve candidates from finite structure libraries. Here, we introduce ED-CSP, a machine learning framework that predicts crystal structures from chemical composition, atom count, and multiple detector-plane ED spot sets. ED-CSP combines a relational set encoder, permutation-invariant multi-view aggregation, and a periodic flow generator to jointly predict lattice parameters and fractional atomic coordinates. To train the model, we construct ED-CS, a dataset of 4.85 million simulated multi-view ED crystal structures, deduplicated across seven materials repositories and filtered to exclude CHILI-100K overlaps. On 2,075 held-out CHILI-100K materials, ED-CSP trained only on CHILI achieves a structural match rate of 57.49% MR@5, outperforming PXRDGen (52.92%), a state-of-the-art crystal structure prediction model conditioned on powder X-ray diffraction. Scaling training data further improves performance: initializing from a one-million-structure precursor raises MR@5 to 66.27%. On 1,024 compositions absent from the training retrieval library, the model still achieves 53.52% MR@5, demonstrating true generative capability beyond exact-formula retrieval. Replacing target ED observations with diffraction from non-isomorphic structures of identical composition decreases MR@5 by 22.09 percentage points, confirming that predictions depend on the input diffraction patterns rather than composition alone. ED-CSP and ED-CS establish a benchmark for generative crystal structure prediction from sparse ED observations and provide a foundation for future transfer to experimental data.",
+      "summary_zh": "ED-CSP 由组成、原子数与多视角电子衍射斑点联合预测晶格与分数坐标；自建 4.85 million 模拟 ED-CS 数据，CHILI 留出 MR@5 为 57.49%，百万前驱初始化后升至 66.27%，未见组成上仍有 53.52%，错配衍射使 MR@5 下降 22.09 个百分点。",
+      "why_it_matters_zh": "把稀疏未指标 ED 变成可生成的晶体结构先验，并证明预测依赖衍射而非仅组成；目前训练与测试均为模拟数据，实验迁移仍待验证。",
+      "quality_score": 86.0,
+      "tags": [
+        "材料与催化",
+        "ED-CSP",
+        "电子衍射",
+        "晶体结构预测",
+        "流匹配"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有外部测试",
+        "公开数据",
+        "仅摘要可判断",
+        "benchmark",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 7,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.06448v2"
+      },
+      "abstract_zh": "从稀疏、未指标的电子衍射（ED）观测恢复周期性 3D 晶体结构，是一个具有挑战性的生成式逆问题。现有基于 ED 的学习方法主要预测晶体学标签、从已指标反射重建结构，或从有限结构库中检索候选。本文引入 ED-CSP，一个机器学习框架，根据化学组成、原子数以及多个探测器平面 ED 斑点集预测晶体结构。ED-CSP 结合关系集合编码器、置换不变多视角聚合以及周期性流生成器，联合预测晶格参数与分数原子坐标。为训练该模型，我们构建 ED-CS，一个包含 4.85 million 个模拟多视角 ED 晶体结构的数据集，跨越七个材料仓库去重，并过滤以排除与 CHILI-100K 的重叠。在 2,075 个留出的 CHILI-100K 材料上，仅在 CHILI 上训练的 ED-CSP 达到 57.49% 的结构匹配率 MR@5，优于以粉末 X 射线衍射为条件的当前最优晶体结构预测模型 PXRDGen（52.92%）。扩大训练数据进一步提升性能：从一个百万结构的前驱模型初始化后，MR@5 升至 66.27%。在训练检索库中不存在的 1,024 个组成上，模型仍达到 53.52% MR@5，表明其具有超越精确化学式检索的真正生成能力。用相同组成的非同构结构衍射替换目标 ED 观测后，MR@5 下降 22.09 个百分点，确认预测依赖于输入衍射图样而非仅依赖组成。ED-CSP 与 ED-CS 为从稀疏 ED 观测进行生成式晶体结构预测建立了基准，并为未来迁移到实验数据提供了基础。",
+      "published": "2026-08-06",
+      "author_line": "Germain Poloudenny, Yaël Frégier, Arnaud Demortière"
+    },
+    {
+      "id": "arxiv:2608.06259v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "RxnCLF: Contrastive Transformation-Aware Reaction Foundation Model for Improved Reactivity Prediction",
+      "url": "https://arxiv.org/abs/2608.06259v1",
+      "published_at": "2026-08-06",
+      "updated_at": "2026-08-06",
+      "creators": [
+        "Yiting Zheng",
+        "Cheng Fang",
+        "Anthony Donofrio",
+        "Haote Li"
+      ],
+      "language": "en",
+      "abstract_or_text": "Reaction yield prediction remains challenging because labeled data are scarce and reaction space is both combinatorially large and sparsely populated, limiting the generalization of existing reaction representations. String-, fingerprint-, and graph-based reaction encodings only partially capture chemical transformations, making accurate prediction difficult for reactions with complex substrates. We propose reaction contrastive learning foundation (RxnCLF), a self-supervised contrastive framework for reaction representation learning. RxnCLF is built on a condensed reaction graph (CRG) that unifies reactant and product information into a single graph, enabling the model to learn explicit and enriched transformation structure rather than disconnected graphs. Pretrained on 1.7 million Pistachio reactions, RxnCLF learns a compact and continuous latent space that captures both reaction-center features and broader side chain contexts, making it transformation-aware and chemically interpretable. Fine-tuned on multiple yield prediction benchmarks, including Buchwald-Hartwig, Pd-catalyzed BH coupling, and proprietary HTE C-N coupling and amide formation datasets, RxnCLF consistently outperforms graph and sequence-based baselines, improving R2 and achieving the best performance overall. Our results highlight the promise of CRG-based RxnCLF as a scalable reaction foundation model, with the potential to generalize across broader reaction spaces and support diverse downstream reaction informatics tasks, including regioselectivity prediction, enantioselectivity prediction, and reaction condition optimization.",
+      "summary_zh": "RxnCLF 在 condensed reaction graph 上对 1.7 million 个 Pistachio 反应做对比预训练，学习转化感知表征；在 Buchwald-Hartwig、Pd-catalyzed BH coupling 以及专有 HTE C-N coupling 与酰胺形成产率基准上优于图/序列基线并取得最佳 R2。",
+      "why_it_matters_zh": "把反应物与产物并入单图，为产率及后续选择性/条件任务提供可扩展反应基础模型；湿实验落地与代码开源情况摘要未给出。",
+      "quality_score": 85.0,
+      "tags": [
+        "方法与模型",
+        "RxnCLF",
+        "反应表征",
+        "产率预测",
+        "对比学习"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "公开数据",
+        "仅摘要可判断",
+        "benchmark",
+        "dataset",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 8,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.06259v1"
+      },
+      "abstract_zh": "反应产率预测仍然具有挑战性，因为标注数据稀缺且反应空间既组合爆炸又稀疏填充，限制了现有反应表征的泛化。基于字符串、指纹和图的反应编码仅部分捕获化学转化，使复杂底物反应的准确预测变得困难。我们提出 reaction contrastive learning foundation（RxnCLF），一个用于反应表征学习的自监督对比框架。RxnCLF 建立在将反应物与产物信息统一到单一图中的 condensed reaction graph（CRG）之上，使模型能够学习显式且丰富的转化结构，而不是断开的图。在 1.7 million 个 Pistachio 反应上预训练后，RxnCLF 学得紧凑连续的潜空间，同时捕获反应中心特征与更广泛的侧链上下文，从而具有转化感知能力且化学上可解释。在多个产率预测基准上微调，包括 Buchwald-Hartwig、Pd-catalyzed BH coupling 以及专有 HTE C-N coupling 与酰胺形成数据集，RxnCLF 一致优于基于图和序列的基线，提高 R2 并取得整体最佳性能。我们的结果凸显了基于 CRG 的 RxnCLF 作为可扩展反应基础模型的前景，有潜力在更广反应空间泛化，并支持包括区域选择性预测、对映选择性预测与反应条件优化在内的多种下游反应信息学任务。",
+      "published": "2026-08-06",
+      "author_line": "Yiting Zheng, Cheng Fang, Anthony Donofrio 等 4 人"
+    },
+    {
+      "id": "arxiv:2608.04942v1",
+      "channel": "aixchem",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "CheMLFlow: An Open-Source Platform for Cheminformatics and Materials Informatics Applications",
+      "url": "https://arxiv.org/abs/2608.04942v1",
+      "published_at": "2026-08-05",
+      "updated_at": "2026-08-05",
+      "creators": [
+        "Brendan Smith",
+        "Susana Lopez-Moreno",
+        "Eric Dolores-Cuenca",
+        "Sangil Kim",
+        "Jose L. Mendoza-Cortes",
+        "Nijamudheen Abdulrahiman"
+      ],
+      "language": "en",
+      "abstract_or_text": "CheMLFlow is an open-source platform for building and executing end-to-end, high-throughput, and agentic workflows for scientific and technological applications. CheMLFlow targets a common bottleneck in scientific machine learning development, where researchers often need to assemble data acquisition, curation, representation, model training, validation, screening, interpretation, and reporting into a reproducible pipeline, even when their primary research contribution concerns only one stage. CheMLFlow provides modular workflow components, ready-to-run reference pipelines, standardized artifacts, and evaluation outputs that reduce orchestration overhead and support benchmarking across methods and datasets. The platform is designed to be extensible, reproducible, and automation friendly, with pluggable representations and models, deterministic splits, explicit run artifacts, batch execution, and report generation. As scientific software increasingly moves toward agent assisted experimentation, CheMLFlow's configuration driven workflows and structured outputs also provide a practical interface for coding agents to help users construct experiments, inspect results, and summarize findings under human supervision. This article describes the system architecture, core workflows, and benchmarks that reach literature performance for quantum mechanical, physicochemical and bioactivity property prediction, and use cases involving time series datasets demonstrating applications beyond molecular chemistry datasets.",
+      "summary_zh": "CheMLFlow 开源平台用模块化、可复现的配置驱动工作流串联化学信息学与材料信息学的采集、表征、训练、验证与报告，并在量子力学、物理化学与生物活性性质预测上达到文献性能，也可用于时间序列数据。",
+      "why_it_matters_zh": "降低 AI×Chem 管线编排成本并预留编码智能体接口；摘要未给出分任务数值与外部用户复现证据。",
+      "quality_score": 84.0,
+      "tags": [
+        "方法与模型",
+        "CheMLFlow",
+        "化学信息学",
+        "工作流",
+        "开源平台"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "公开代码",
+        "仅摘要可判断",
+        "benchmark",
+        "dataset",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 9,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.04942v1"
+      },
+      "abstract_zh": "CheMLFlow 是一个开源平台，用于构建和执行面向科学与技术应用的端到端、高通量及智能体工作流。CheMLFlow 针对科学机器学习开发中的常见瓶颈：研究者往往需要把数据采集、整理、表征、模型训练、验证、筛选、解释与报告组装成可复现管线，即便其主要研究贡献只涉及其中一个阶段。CheMLFlow 提供模块化工作流组件、即用参考管线、标准化产物与评估输出，以降低编排开销并支持跨方法与数据集的基准评测。该平台被设计为可扩展、可复现且便于自动化，具有可插拔表征与模型、确定性划分、显式运行产物、批量执行与报告生成。随着科学软件日益走向智能体辅助实验，CheMLFlow 的配置驱动工作流与结构化输出也为编码智能体提供实用接口，帮助用户在人类监督下构建实验、检查结果并总结发现。本文描述系统架构、核心工作流，以及在量子力学、物理化学与生物活性性质预测上达到文献水平的基准，并给出时间序列数据集用例，表明其应用可超出分子化学数据。",
+      "published": "2026-08-05",
+      "author_line": "Brendan Smith, Susana Lopez-Moreno, Eric Dolores-Cuenca 等 6 人"
+    },
+    {
+      "id": "arxiv:2608.07401v1",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "DynaCrys: Crystal Generation with Dynamic Space-Group Diffusion",
+      "url": "https://arxiv.org/abs/2608.07401v1",
+      "published_at": "2026-08-07",
+      "updated_at": "2026-08-07",
+      "creators": [
+        "Zhuotao Jin",
+        "Xiaoyun Wang",
+        "Nicholas Brawand",
+        "Roman Zubatyuk",
+        "Atul Thakur",
+        "Eric Qu",
+        "Boris Kozinsky",
+        "Justin Smith"
+      ],
+      "language": "en",
+      "abstract_or_text": "The search for new crystalline materials spans an enormous compositional and structural space. Generating candidates in this space requires jointly modeling discrete crystallographic symmetry, elemental composition, and continuous geometry. We introduce DynaCrys, a generative model for crystals in which the space group co-evolves with Wyckoff occupations and elements through a coupled symbolic diffusion process. The structured space-group transitions follow crystallographic group-subgroup relations. As the space group changes, a shared, pretrained symmetry codebook provides both the legality-constrained stochastic decoder and the symmetry-constrained crystal-geometry model with a common representation of the corresponding Wyckoff vocabulary. Across large-scale evaluations using two independent relaxation-and-evaluation engines, DynaCrys achieves best-in-class performance in symmetry-aware discovery of stable, unique, and novel crystals, both overall and under the additional requirement of nontrivial post-relaxation symmetry. It also enables fast sampling while generating structures with consistently low relaxation-induced structural displacements.",
+      "summary_zh": "DynaCrys 以耦合符号扩散使空间群与 Wyckoff 占位、元素共演化，跃迁遵循群–子群关系并用共享对称性码本约束合法性；在两个独立弛豫评估引擎上，于稳定–独特–新颖及弛豫后非平凡对称性上取得同类最优，且采样快、位移低。",
+      "why_it_matters_zh": "把晶体学对称性写成可与组成、几何联合扩散的生成变量，利于对称性感知材料搜索；摘要未给出具体 S.U.N. 数值与代码开源情况。",
+      "quality_score": 84.0,
+      "tags": [
+        "材料与催化",
+        "DynaCrys",
+        "晶体生成",
+        "空间群",
+        "扩散模型"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "仅摘要可判断",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 10,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.07401v1"
+      },
+      "abstract_zh": "新晶体材料的搜索跨越巨大的组成与结构空间。在该空间中生成候选需要联合建模离散晶体学对称性、元素组成与连续几何。我们提出 DynaCrys，一种晶体生成模型，其中空间群通过耦合的符号扩散过程与 Wyckoff 占位及元素共同演化。结构化的空间群跃迁遵循晶体学群–子群关系。随着空间群变化，一个共享、预训练的对称性码本为合法性约束的随机解码器与对称性约束的晶体几何模型提供相应 Wyckoff 词表的共同表征。在使用两个独立弛豫–评估引擎的大规模评测中，DynaCrys 在对称性感知的稳定、独特且新颖晶体发现上取得同类最优性能，无论总体还是在额外要求弛豫后仍具非平凡对称性时。它还能快速采样，并生成弛豫诱导结构位移始终较低的结构。",
+      "published": "2026-08-07",
+      "author_line": "Zhuotao Jin, Xiaoyun Wang, Nicholas Brawand 等 8 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15004105/v2",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Data-Driven Discovery of Structure–Reactivity Relationships in Oxidative Addition at Zerovalent Nickel Centers",
+      "url": "https://doi.org/10.26434/chemrxiv.15004105/v2",
+      "published_at": "2026-08-05",
+      "updated_at": "2026-08-05",
+      "creators": [
+        "Sarah N. Elliott",
+        "Rosmi Reji",
+        "Qingzhi Chen",
+        "Xin Zheng",
+        "Simah Riaz",
+        "Xiaoli Yan",
+        "Thang Pham",
+        "Eliu Huerta",
+        "Ksenija D. Glusac",
+        "Murat Keçeli"
+      ],
+      "language": "en",
+      "abstract_or_text": "Understanding the factors that control CO 2 insertion into Ni–alkyne complexes is essential for improving the regioselectivity of Ni-catalyzed reductive carboxylation reactions. Here, we combine highperformance computing, experimental validation, and interpretable machine learning to identify structurereactivity relationships governing oxidative cyclization of CO 2 at zerovalent bipyridine–Ni–alkyne complexes. The MACE machine-learning interatomic potential (MLIP) was used to generate a large thermochemical dataset of optimized Ni–alkyne reactants and Type-I/Type-II nickelacycle products, enabling systematic analysis of reaction Gibbs free energies and regioisomer stability across a broad ligandsubstrate space. Experimental IR spectra of representative Ni–alkyne complexes confirmed key structural assignments but also revealed that MACE-optimized geometries underestimate Ni-to-alkyne πbackbonding, leading to systematically blue-shifted alkyne stretching frequencies relative to experiment and DFT. Despite this limitation, MACE-derived relative free energies provided useful thermodynamic descriptors for product regioselectivity when CO 2 insertion was experimentally observed. Equivariant graph neural networks predicted reaction free energies directly from reactant geometries with high accuracy, while GNNExplainer localized the dominant structural information to the Ni–alkyne fragment and nearby alkyne substituents. Complementary random-forest models showed that overall CO 2 -insertion thermodynamics are governed primarily by alkyne sterics, Ni-center accessibility, and product nickelacycle stabilization, whereas regioselectivity is controlled primarily by the electronic asymmetry of the alkyne substituents, with secondary contributions from steric congestion and product metallacycle stability. These results establish a scalable, experimentally anchored workflow for using MLIP-generated datasets and interpretable machine learning to discover chemically meaningful design rules in organometallic CO 2 -functionalization chemistry.",
+      "summary_zh": "用 MACE MLIP 生成零价 bipyridine–Ni–alkyne 上 CO2 氧化环化的热化学数据，结合实验 IR 与等变 GNN/random-forest，揭示插入热力学由立体与可及性支配、区域选择性由取代基电子不对称控制，并报告 MACE 低估 π-backbonding。",
+      "why_it_matters_zh": "把 MLIP 高通量与可解释 ML、实验光谱锚在一起，给出 CO2 羧化设计规则；MACE 几何系统偏差需用 DFT 校正。",
+      "quality_score": 83.0,
+      "tags": [
+        "材料与催化",
+        "MACE",
+        "CO2",
+        "镍催化",
+        "可解释ML"
+      ],
+      "evidence_flags": [
+        "有实验验证",
+        "公开数据",
+        "报告负面结果",
+        "dataset",
+        "experimental",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 11,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15004105/v2",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "理解控制 CO2 插入 Ni–alkyne 配合物的因素，对提高镍催化还原羧化反应的区域选择性至关重要。本文将高性能计算、实验验证与可解释机器学习相结合，识别支配零价 bipyridine–Ni–alkyne 配合物上 CO2 氧化环化的结构–反应性关系。使用 MACE 机器学习原子间势（MLIP）生成大规模热化学数据集，包含优化的 Ni–alkyne 反应物以及 Type-I/Type-II nickelacycle 产物，从而在广阔的配体–底物空间中系统分析反应 Gibbs 自由能与区域异构体稳定性。代表性 Ni–alkyne 配合物的实验 IR 光谱确认了关键结构指认，但也揭示 MACE 优化几何低估了 Ni 向 alkyne 的 π-backbonding，导致 alkyne 伸缩频率相对实验与 DFT 系统性蓝移。尽管有此局限，当实验观测到 CO2 插入时，MACE 导出的相对自由能仍为产物区域选择性提供了有用的热力学描述符。等变图神经网络可直接从反应物几何高精度预测反应自由能，而 GNNExplainer 将主导结构信息定位到 Ni–alkyne 片段及邻近 alkyne 取代基。互补的 random-forest 模型表明，整体 CO2 插入热力学主要由 alkyne 立体效应、Ni 中心可及性与产物 nickelacycle 稳定化支配，而区域选择性主要由 alkyne 取代基的电子不对称性控制，立体拥挤与产物 metallacycle 稳定性为次要贡献。这些结果建立了一个可扩展、有实验锚定的工作流，用于利用 MLIP 生成数据集与可解释机器学习，在有机金属 CO2 官能化化学中发现有化学意义的设计规则。",
+      "published": "2026-08-05",
+      "author_line": "Sarah N. Elliott, Rosmi Reji, Qingzhi Chen 等 10 人"
+    },
+    {
+      "id": "arxiv:2608.06697v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "3D Molecular Representation Learning for Organic Mixtures: Viscosity and Density Prediction",
+      "url": "https://arxiv.org/abs/2608.06697v1",
+      "published_at": "2026-08-07",
+      "updated_at": "2026-08-07",
+      "creators": [
+        "Haicheng Qu",
+        "Yanyi Su",
+        "Ning Wang",
+        "Shangqian Chen",
+        "Zhifeng Gao",
+        "Jun Cheng",
+        "Qi Ou"
+      ],
+      "language": "en",
+      "abstract_or_text": "The viscosity and density of organic mixtures are essential properties for designing lubricants, solvents, and heat transfer fluids. In engineering practice, formulating a functional fluid requires understanding how these properties change with composition and temperature. However, exhaustive experimental characterization across the full parameter space is impractical due to the vast number of possible species and combinations. Here we introduce a mixture-aware 3D molecular representation learning strategy, built upon a pre-trained molecular encoder, that jointly encodes component structures, mole fractions, and temperature to achieve accurate predictions for organic mixtures. Fine-tuning on publicly available datasets covering a wide range of binary organic mixtures yields test-set R2 values of 0.973 for dynamic viscosity and 0.996 for density, significantly outperforming traditional machine learning baselines. Beyond this overall accuracy, the model captures non-monotonic viscosity changes upon mixing, surpassing simple linear or logarithmic mixing rules. The architecture is extendable to ternary and multicomponent mixtures, as verified via preliminary experiments. Using this model, we quantitatively analyze how molecular structure-branching, cycloalkane, and aromatic rings-affects viscosity-temperature behavior, which benefits the design of lubricants with superior viscosity-temperature performance. Altogether, this work provides a practical, data-driven tool for mixture property prediction, accelerating the rational formulation of functional fluids in chemical engineering.",
+      "summary_zh": "在预训练分子编码器上联合编码组分 3D 结构、摩尔分数与温度，预测有机混合物黏度与密度；公开二元数据测试集 R2 分别为 0.973 与 0.996，能捕获非单调混合黏度，并初步扩展到三元/多组分以分析支化与环结构对黏温行为的影响。",
+      "why_it_matters_zh": "把混合物配方从线性混合规则推进到可迁移的 3D 表征学习，便于润滑剂等功能流体设计；三元验证仍为初步，湿实验配方落地摘要未给出。",
+      "quality_score": 83.0,
+      "tags": [
+        "方法与模型",
+        "混合物性质",
+        "黏度",
+        "密度",
+        "3D表征"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "公开数据",
+        "仅摘要可判断",
+        "dataset",
+        "experimental",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 12,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.06697v1"
+      },
+      "abstract_zh": "有机混合物的黏度与密度是设计润滑剂、溶剂与传热流体的关键性质。工程实践中，配制功能流体需要理解这些性质如何随组成与温度变化。然而，由于可能的物种与组合数目巨大，在全参数空间做穷尽实验表征并不现实。本文引入一种面向混合物的 3D 分子表征学习策略，建立在预训练分子编码器之上，联合编码组分结构、摩尔分数与温度，从而对有机混合物实现准确预测。在覆盖广泛二元有机混合物的公开数据集上微调后，测试集动态黏度 R2 为 0.973、密度 R2 为 0.996，显著优于传统机器学习基线。除整体精度外，该模型还能捕获混合时的非单调黏度变化，超越简单线性或对数混合规则。架构可扩展至三元及多组分混合物，并已通过初步实验验证。利用该模型，我们定量分析分子结构——支化、环烷与芳香环——如何影响黏度–温度行为，从而有助于设计黏温性能更优的润滑剂。总体而言，本工作为混合物性质预测提供了实用的数据驱动工具，加速化学工程中功能流体的理性配制。",
+      "published": "2026-08-07",
+      "author_line": "Haicheng Qu, Yanyi Su, Ning Wang 等 7 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007166/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Efficiently Exploring Chemical Space for Fischer-Tropsch Reactivity from CO2 via Steiner Combinatorial High-Throughput Experimentation",
+      "url": "https://doi.org/10.26434/chemrxiv.15007166/v1",
+      "published_at": "2026-08-07",
+      "updated_at": "2026-08-07",
+      "creators": [
+        "Nestor Iwanojko",
+        "Erwin Lam",
+        "Christophe Copéret"
+      ],
+      "language": "en",
+      "abstract_or_text": "High-throughput experimentation (HTE) and machine learning (ML) have accelerated discovery in molecular chemistry. Meanwhile, such advances in heterogeneous catalysis are hindered by complex surfaces and vast chemical space. We present a mathematically optimized methodology using Steiner coverings to explore multi-component catalysts and access lower-dimension interactions through higher-dimension blocks. From 21 elements, we designed a library of 70 trimetallic mixed-metaloxide catalysts, covering all 210 possible bimetallic pairs. The experimental workflow was automated by a robotic platform and applied to thermocatalytic CO 2 hydrogenation, critical for achieving a circular carbon economy. In just 70 materials we successfully recovered established benchmarks for methanation, reverse water–gas shift (RWGS), and methanol synthesis, while discovering a highly active FeGaRu catalyst for CO 2 –Fischer–Tropsch synthesis that retains this activity when simplified to binary FeRu. Our combinatorial optimization methodology replaces thousands of manual experiments with strategic exploration, improving the discovery rate for complex, multi-component heterogeneous catalysts.",
+      "summary_zh": "用 Steiner covering 从 21 元素设计 70 个三金属混合氧化物，覆盖全部 210 个双金属对，并由机器人平台做 CO2 氢化高通量实验；70 个材料即复现甲烷化、RWGS 与甲醇基准，并发现高活性 FeGaRu，简化为 FeRu 后仍保持活性。",
+      "why_it_matters_zh": "用组合覆盖把多相催化剂搜索从穷尽实验压到可执行的 70 点库，并有机器人实验命中；摘要对 ML 模型本身着墨较少，机制解释有限。",
+      "quality_score": 82.0,
+      "tags": [
+        "材料与催化",
+        "高通量实验",
+        "Fischer-Tropsch",
+        "CO2氢化",
+        "FeGaRu"
+      ],
+      "evidence_flags": [
+        "有实验验证",
+        "仅摘要可判断",
+        "benchmark",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 13,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007166/v1",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "高通量实验（HTE）与机器学习（ML）已加速分子化学中的发现。与此同时，此类进展在多相催化中因复杂表面与巨大化学空间而受阻。我们提出一种使用 Steiner covering 的数学优化方法，以探索多组分催化剂，并通过更高维区块访问更低维相互作用。从 21 种元素出发，我们设计了 70 个三金属混合金属氧化物催化剂库，覆盖全部 210 种可能的双金属对。实验工作流由机器人平台自动化，并应用于热催化 CO2 氢化，这对实现循环经济至关重要。仅用 70 种材料，我们成功复现了甲烷化、逆水煤气变换（RWGS）与甲醇合成的既有基准，同时发现了对 CO2–Fischer–Tropsch 合成高活性的 FeGaRu 催化剂，且简化为二元 FeRu 后仍保持该活性。我们的组合优化方法用策略性探索取代数千次手工实验，提高了复杂多组分多相催化剂的发现速率。",
+      "published": "2026-08-07",
+      "author_line": "Nestor Iwanojko, Erwin Lam, Christophe Copéret"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007094/v1",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Curricular Contrastive Self-Supervised Learning for Molecular Property Prediction",
+      "url": "https://doi.org/10.26434/chemrxiv.15007094/v1",
+      "published_at": "2026-08-06",
+      "updated_at": "2026-08-06",
+      "creators": [
+        "Jiayi Peng",
+        "Zekun Luo",
+        "Haoran Ji"
+      ],
+      "language": "en",
+      "abstract_or_text": "Predicting molecular properties from molecular graphs is a central task in cheminformatics and computer-aided drug discovery, yet the scarcity of labeled molecules limits the generalization of supervised graph neural networks. Self-supervised and contrastive pre-training methods have been introduced to mitigate this label scarcity, but they typically adopt a fixed difficulty schedule for positive and negative pairs and fail to exploit the hierarchical structural complexity of molecules, resulting in limited discriminative power on hard molecules. In this paper, we propose MolCurriCL, a molecular property prediction framework that integrates self-supervised pretraining, curricular contrastive regularization, and a local-non-local attention encoder. MolCurriCL first performs functional-group-level masked reconstruction and subgraph contrastive pretraining on a large corpus of unlabeled molecules. It then introduces a curricular contrastive regularization module that schedules positive and negative molecule pairs from easy to hard according to a structural complexity score combining the number of atoms, bonds, rings, and stereocenters, using an InfoNCE loss with a stage-wise increasing margin. To capture both local functionalgroup substructures and non-local long-range interactions, we design a local-non-local attention encoder in which local attention focuses on one-hop neighborhoods and non-local attention models cross-ring interactions through a gated fusion. We further introduce an adversarial molecular augmentation strategy that synthesizes hard negative molecules to sharpen the contrastive objective. On the MoleculeNet benchmark, MolCurriCL achieves an average AUROC of 81.7 percent on five classification datasets, outperforming the strongest baseline by 1.7 percentage points, and obtains the lowest RMSE on three regression datasets. Extensive ablations confirm the contribution of each component.",
+      "summary_zh": "MolCurriCL 先做官能团掩码重建与子图对比预训练，再按原子/键/环/立体中心复杂度由易到难调度 InfoNCE，并以局部–非局部注意力与对抗硬负样本增强；MoleculeNet 五分类平均 AUROC 81.7 percent，较最强基线高 1.7 个百分点，三项回归 RMSE 最低。",
+      "why_it_matters_zh": "把分子层级复杂度写进对比课程，缓解固定难度预训练在硬分子上判别不足；增益幅度有限，外部分布与湿实验仍缺。",
+      "quality_score": 81.0,
+      "tags": [
+        "分子与药物发现",
+        "MolCurriCL",
+        "对比学习",
+        "MoleculeNet",
+        "分子性质"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有消融研究",
+        "仅摘要可判断",
+        "benchmark",
+        "dataset",
+        "ablation"
+      ],
+      "publication_status": "preprint",
+      "rank": 14,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007094/v1",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "从分子图预测分子性质是化学信息学与计算机辅助药物发现的核心任务，但有标签分子稀缺限制了有监督图神经网络的泛化。已有自监督与对比预训练方法被引入以缓解标签稀缺，但它们通常对正负对采用固定难度日程，未能利用分子的层级结构复杂性，导致在困难分子上判别力有限。本文提出 MolCurriCL，一个整合自监督预训练、课程对比正则化以及局部–非局部注意力编码器的分子性质预测框架。MolCurriCL 首先在大规模未标注分子语料上执行官能团级掩码重建与子图对比预训练。随后引入课程对比正则化模块，根据结合原子数、键数、环数与立体中心数的结构复杂度分数，由易到难调度正负分子对，并使用带分阶段增大间隔的 InfoNCE 损失。为同时捕获局部官能团亚结构与非局部长程相互作用，我们设计局部–非局部注意力编码器，其中局部注意力聚焦一跳邻域，非局部注意力通过门控融合建模跨环相互作用。我们进一步引入对抗分子增强策略，合成困难负分子以锐化对比目标。在 MoleculeNet 基准上，MolCurriCL 在五个分类数据集上取得 81.7 percent 的平均 AUROC，相对最强基线提升 1.7 个百分点，并在三个回归数据集上获得最低 RMSE。大量消融确认了各组件的贡献。",
+      "published": "2026-08-06",
+      "author_line": "Jiayi Peng, Zekun Luo, Haoran Ji"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007180/v1",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "BandLLM: Modular Encoder-Decoder Large Language Model-Assisted Band Structure Prediction",
+      "url": "https://doi.org/10.26434/chemrxiv.15007180/v1",
+      "published_at": "2026-08-07",
+      "updated_at": "2026-08-07",
+      "creators": [
+        "Xinyi Wang",
+        "Tianle Wang",
+        "Youle Wang",
+        "Lei Zhang"
+      ],
+      "language": "en",
+      "abstract_or_text": "First-principles calculations of band structures remain costly for large-scale materials screening. While recent machine learning approaches have explored direct prediction of k-resolved band structures from crystal geometries, reconstructing high-dimensional multi-band spectra remains challenging. To address the issue, we introduce BandLLM, a framework that couples a CIF-based crystal encoder with a compact manifold representation of electronic bands. We first train a physically constrained autoencoder on band tensors referenced to the Fermi level and restricted to the near-Fermi region, using data from the Materials Project to compress the band profile into a continuous 512-dimensional latent space. A CIFtoken Transformer then maps raw crystal structures and high-symmetry path descriptors directly into this latent space, from which the decoder reconstructs the full near-Fermi band tensor. To enforce physical consistency, the training objective combines masked band reconstruction with auxiliary physics-informed losses that penalize deviations in Fermi-window occupancy, band slope, curvature, and gap magnitude. Under an identical benchmark, compared to the graph-to-sequence baseline, BandLLM reduces the sample-mean MAE by 39.6%, global MAE by 37.5% and improves the global R2 by 10.3%, while also preserving near-Fermi band hierarchy and dispersion more faithfully, as evidenced by error distribution analyses and band visualizations. Collectively, these results establish a fast and efficient strategy that integrates crystal-structure language models with learned electronic manifolds for physically consistent band-structure prediction.",
+      "summary_zh": "BandLLM 先把 Materials Project 近 Fermi 能带压入 512 维潜空间，再用 CIFtoken Transformer 由晶体与高对称路径重建能带张量，并以占据、斜率、曲率与能隙损失约束物理一致性；相对 graph-to-sequence，样本 MAE 降 39.6%、全局 MAE 降 37.5%、R2 升 10.3%。",
+      "why_it_matters_zh": "把能带预测从逐 k 回归改成可物理约束的流形重建，利于高通量电子结构筛选；目前主要为计算重建误差，实验谱对照与代码情况摘要未给出。",
+      "quality_score": 81.0,
+      "tags": [
+        "方法与模型",
+        "BandLLM",
+        "能带结构",
+        "Materials Project",
+        "CIF"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有对照实验",
+        "仅摘要可判断",
+        "benchmark"
+      ],
+      "publication_status": "preprint",
+      "rank": 15,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007180/v1",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "第一性原理能带结构计算对大规模材料筛选仍然昂贵。尽管近期机器学习方法已探索从晶体几何直接预测 k 分辨能带结构，重建高维多能带谱仍具挑战。为解决该问题，我们引入 BandLLM，一个将基于 CIF 的晶体编码器与电子能带的紧凑流形表征耦合的框架。我们首先在以 Fermi 能级为参考、并限制在近 Fermi 区域的能带张量上训练物理约束自编码器，使用 Materials Project 数据将能带轮廓压缩到连续的 512 维潜空间。随后 CIFtoken Transformer 将原始晶体结构与高对称路径描述符直接映射到该潜空间，解码器由此重建完整近 Fermi 能带张量。为强制物理一致性，训练目标将掩码能带重建与辅助物理信息损失相结合，惩罚 Fermi 窗口占据、能带斜率、曲率与能隙幅度的偏差。在相同基准下，相对 graph-to-sequence 基线，BandLLM 将样本均值 MAE 降低 39.6%，全局 MAE 降低 37.5%，并将全局 R2 提高 10.3%，同时更忠实地保持近 Fermi 能带层级与色散，误差分布分析与能带可视化可资证明。这些结果共同确立了一种快速高效策略，将晶体结构语言模型与学得的电子流形结合，用于物理一致的能带结构预测。",
+      "published": "2026-08-07",
+      "author_line": "Xinyi Wang, Tianle Wang, Youle Wang 等 4 人"
+    },
+    {
+      "id": "arxiv:2608.05336v1",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Physics-Based Molecular Fingerprints from Spectral Graph Theory Provide Efficient Geometry-Aware Measures of Chemical Similarity",
+      "url": "https://arxiv.org/abs/2608.05336v1",
+      "published_at": "2026-08-05",
+      "updated_at": "2026-08-05",
+      "creators": [
+        "Jacob W. Toney",
+        "Ayleen Y. Farnood",
+        "Samir Darouich",
+        "Heather J. Kulik"
+      ],
+      "language": "en",
+      "abstract_or_text": "Molecular representations are essential for the evaluation of molecular similarity and the development of structure-property relationships. Despite the known importance of 3D structure to determine chemical and physical properties, the most widely used molecular fingerprints encode only two-dimensional connectivity. Such representations fail to distinguish similar but distinct stereoisomers and conformers. Alternative 3D methods are typically defined pairwise, making their application to large chemical spaces prohibitive, while deep learning embeddings are expressive but uninterpretable and limited by their training data diversity. Here, we introduce novel physics-inspired molecular fingerprints based on principles from spectral graph theory. We represent molecules as a complete graph in 3D space, with edge weights encoding heuristic physical interactions. Eigenvalue decomposition of the resulting graph Laplacian matrix results in a computationally efficient fixed-length chemical fingerprint that encodes 3D structure while obeying necessary physical symmetries of permutation and E(3) invariance. Spectral fingerprints differentiate between unique molecular structures with identical 2D connectivity, overcoming a limitation of 2D descriptors, while maintaining the low computational cost needed for efficient screening of vast chemical spaces. We evaluate our fingerprints with community detection algorithms and observe strong performance against representative baselines across datasets from organic, inorganic, biological, reticular, and reaction chemistry. Nearest-neighbor property estimation and applicability domain analyses reveal the utility of our molecular representation in machine learning and cheminformatics. We anticipate that spectral fingerprints will serve as generalizable, interpretable, and efficient measures of chemical similarity that incorporate 3D information at minimal cost.",
+      "summary_zh": "将分子表示为边权编码启发式物理相互作用的 3D 完全图，对图拉普拉斯做特征值分解得到置换与 E(3) 不变的定长谱指纹，可区分相同 2D 连通性的立体异构体与构象，并在有机、无机、生物、网状与反应化学数据上优于代表性基线。",
+      "why_it_matters_zh": "以接近 2D 指纹的成本写入 3D 几何与物理对称性，便于大规模化学相似性筛选；边权仍为启发式，湿实验性质验证摘要未给出。",
+      "quality_score": 80.0,
+      "tags": [
+        "方法与模型",
+        "谱指纹",
+        "图拉普拉斯",
+        "E(3)",
+        "分子相似性"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "仅摘要可判断",
+        "dataset",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 16,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.05336v1"
+      },
+      "abstract_zh": "分子表征对于评估分子相似性以及建立结构–性质关系至关重要。尽管已知 3D 结构对决定化学与物理性质十分重要，最广泛使用的分子指纹仍只编码二维连通性。这类表征无法区分相似但不同的立体异构体与构象异构体。替代的 3D 方法通常按成对定义，使其难以应用于巨大化学空间；而深度学习嵌入虽有表达力，但不可解释，并受限于训练数据多样性。本文引入基于谱图论原理的新型物理启发分子指纹。我们将分子表示为 3D 空间中的完全图，边权编码启发式物理相互作用。对所得图拉普拉斯矩阵做特征值分解，得到计算高效的定长化学指纹，它编码 3D 结构，同时服从必要的置换与 E(3) 不变性物理对称性。谱指纹能够区分具有相同 2D 连通性的独特分子结构，克服了 2D 描述符的局限，同时保持高效筛选巨大化学空间所需的低计算成本。我们用社区检测算法评估这些指纹，并在有机、无机、生物、网状与反应化学数据集上相对代表性基线观察到强性能。最近邻性质估计与适用域分析揭示了该分子表征在机器学习与化学信息学中的效用。我们预期谱指纹将成为可泛化、可解释且高效的化学相似性度量，以极低成本纳入 3D 信息。",
+      "published": "2026-08-05",
+      "author_line": "Jacob W. Toney, Ayleen Y. Farnood, Samir Darouich 等 4 人"
+    }
+  ],
+  "review": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "note": "2026-08-08 候选 60 篇，自动分仍偏高并夹杂深度伪造视频、肿瘤 PINN、心脏骤停、卫星自愈、自动驾驶、胎儿超声、家禽大肠杆菌与通用智能体稿。按 AI×Chem 相关性、方法可信度与验证强度精选 16 篇：保留 SynthEx、MolX、AffinityLM/AffinityNet、HiMoDiT、CryoLigATE、ED-CSP、RxnCLF、doxorubicin 从头折叠、混合物黏密、Steiner CO2-FT、DynaCrys 与 BandLLM，并纳入 CheMLFlow、MolCurriCL、谱图论 3D 指纹与镍–炔烃 CO2 氧化加成的实验锚定 ML；未收录无 AI 的 LYTAC/交联 DFT/渗透汽化阻抗，以及 QuanTiMedAI、RDiffusion 等弱相关项。"
+  }
+}

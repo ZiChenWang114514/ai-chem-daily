@@ -1,0 +1,940 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-02",
+  "channel": "aixbio",
+  "generated_at": "2026-08-18T15:10:44+00:00",
+  "title": "AI × Bio 每日精选",
+  "subtitle": "计算生物学、组学、蛋白质与生物医学模型。",
+  "window": {
+    "start": "2026-07-30",
+    "end": "2026-08-02"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 3304,
+    "candidates": 60,
+    "selected": 16,
+    "sources": {
+      "arXiv": 1176,
+      "bioRxiv": 560,
+      "medRxiv": 203,
+      "Europe PMC": 1957
+    }
+  },
+  "source_status": {
+    "arXiv": {
+      "state": "ok",
+      "count": 1176
+    },
+    "bioRxiv": {
+      "state": "ok",
+      "count": 560
+    },
+    "medRxiv": {
+      "state": "ok",
+      "count": 203
+    },
+    "Europe PMC": {
+      "state": "ok",
+      "count": 1957
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "arxiv:2607.27556v1",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Evaluating Agentic Bioinformatics through Function, Evidence, and Validation",
+      "url": "https://arxiv.org/abs/2607.27556v1",
+      "published_at": "2026-07-30",
+      "updated_at": "2026-07-30",
+      "creators": [
+        "Phuc Pham",
+        "Truong-Son Hy"
+      ],
+      "language": "en",
+      "abstract_or_text": "Large language model agents increasingly plan, execute, and interpret biological analyses, yet fluent responses, successful tool calls, and benchmark performance alone do not establish scientific credibility. Existing reviews primarily organize biological agents by application, architecture, and agentic capability, but do not jointly operationalize the accountability of agent-generated workflows. We address this gap by treating the inspectable workflow trajectory, rather than architecture or final output alone, as the primary unit of analysis. We introduce the Function--Evidence--Validation (FEV) framework, which separates demonstrated workflow operations, traceable support for actions and claims, and use-case-specific validation. Using FEV, we map 109 agentic or agent-adjacent systems and 28 benchmark or evaluation resources, representing 128 unique publications across genomics, single-cell and spatial omics, protein science, drug discovery, computational pathology, and general bioinformatics automation. Across domains, planning and tool-mediated execution have advanced more rapidly than replayability, provenance, robust scientific assessment, external validation, and prospective empirical testing. We therefore argue that agentic bioinformatics should be assessed through workflow correctness rather than final-answer correctness alone. FEV provides a practical basis for comparing systems and designing transparent, auditable, and scientifically accountable bioinformatics workflows.",
+      "summary_zh": "提出 Function--Evidence--Validation（FEV）框架，将可检查工作流轨迹作为分析单元，映射 109 个智能体或相邻系统与 28 个基准资源，覆盖 128 篇基因组、单细胞、蛋白质与药物发现文献。",
+      "why_it_matters_zh": "把智能体生物信息学的评估从最终答案正确性转到工作流可追溯与验证，并指出规划执行远快于外部验证和前瞻检验。",
+      "quality_score": 88.0,
+      "tags": [
+        "综述",
+        "智能体",
+        "生物信息学",
+        "FEV",
+        "工作流评估"
+      ],
+      "evidence_flags": [
+        "综述梳理",
+        "有定量基准",
+        "benchmark",
+        "prospective",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 1,
+      "featured": true,
+      "category": "综述",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2607.27556v1"
+      },
+      "abstract_zh": "大型语言模型智能体越来越多地规划、执行并解释生物学分析，但流畅回复、成功的工具调用和基准成绩本身并不能确立科学可信度。现有综述主要按应用、架构和智能体能力组织生物学智能体，但并未联合操作化智能体生成工作流的可问责性。我们通过将可检查的工作流轨迹（而非仅架构或最终输出）作为主要分析单元来填补这一空白。我们引入 Function--Evidence--Validation（FEV）框架，将已展示的工作流操作、对行动与主张的可追溯支持，以及用例特定的验证加以分离。利用 FEV，我们映射了 109 个智能体或智能体相邻系统以及 28 个基准或评估资源，代表基因组学、单细胞与空间组学、蛋白质科学、药物发现、计算病理学和通用生物信息学自动化等领域的 128 篇独立文献。跨领域来看，规划与工具介导执行的进展快于可重放性、溯源、稳健科学评估、外部验证和前瞻性实证检验。因此我们主张，智能体生物信息学应通过工作流正确性而非仅最终答案正确性来评估。FEV 为比较系统和设计透明、可审计、科学上可问责的生物信息学工作流提供了实践基础。",
+      "published": "2026-07-30",
+      "author_line": "Phuc Pham, Truong-Son Hy"
+    },
+    {
+      "id": "arxiv:2608.01012v1",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "MedUPS: Towards Diagnostic Assistance in Uncommon Medical Cases with Large Language Models",
+      "url": "https://arxiv.org/abs/2608.01012v1",
+      "published_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "creators": [
+        "Ofir Ben Shoham",
+        "Oriel Perets",
+        "Nir Grinberg",
+        "Nadav Rappoport"
+      ],
+      "language": "en",
+      "abstract_or_text": "Uncommon and off-guideline cases are difficult for clinical decision support, because physicians must make a series of management decisions under diagnostic uncertainty and rarely see the full case at once. Most large language model (LLM) benchmarks for medicine score only the final diagnosis, yet much of clinical care turns on the next appropriate action: the next test to order, the imaging study to obtain, the specialist to involve, or the differential to pursue. We introduce MedUPSQA, a dataset of 21,874 mid-stream clinical decision points built from 5,535 real case reports, and MedUPS, an alignment framework that supervises models on these intermediate decisions as they unfold along a patient's trajectory. We segment free-text case presentations into chronologically ordered, accumulating clinical chunks and align models to predict the next step with reinforcement learning (GRPO), using an external LLM-as-a-Judge reward. This objective mirrors how clinicians actually meet patients, reasoning forward from accumulating evidence toward the next decision, rather than committing to a final label. Across three backbones, mid-stream alignment raises next-step accuracy from 55.2 to 66.7 for Qwen3.6-27B, from 47.2 to 57.8 for Qwen3.5-9B, and from 37.8 to 44.4 for HuatuoGPT-3-8B, with 95% CI. In several model scales we test the objective improves accuracy more than scale, with smaller models surpassing larger, frontier models we evaluate. We further train supervised fine-tuning (SFT) baselines on the mid-stream task, SFT improves all backbones above base, indicating the target framwork carries signal independently of the optimizer. We release the dataset, code, and aligned checkpoints.",
+      "summary_zh": "由 5,535 份真实病例报告构建 21,874 个中途决策点数据集 MedUPSQA，用 GRPO 对齐 Qwen3.6-27B 等骨干，下一步准确率由 55.2 升至 66.7。",
+      "why_it_matters_zh": "把医学 LLM 评估从最终诊断改到累积证据下的下一步行动，并开源数据与检查点。",
+      "quality_score": 87.0,
+      "tags": [
+        "生物医学与临床",
+        "MedUPS",
+        "MedUPSQA",
+        "GRPO",
+        "临床决策"
+      ],
+      "evidence_flags": [
+        "数据集",
+        "有定量基准",
+        "公开代码",
+        "benchmark",
+        "dataset",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.01012v1"
+      },
+      "abstract_zh": "罕见和偏离指南的病例对临床决策支持很困难，因为医师必须在诊断不确定下做出一系列管理决策，且很少一次看到完整病例。大多数面向医学的大语言模型（LLM）基准只给最终诊断打分，然而临床照护的很大一部分取决于下一步恰当行动：下一步该开什么检查、该做哪项影像、该请哪位专科会诊，或该追踪哪条鉴别诊断。我们引入 MedUPSQA，一个由 5,535 份真实病例报告构建的 21,874 个中途临床决策点数据集，以及 MedUPS，一个在这些中间决策沿患者轨迹展开时对模型进行监督的对齐框架。我们将自由文本病例陈述切分为按时间顺序累积的临床片段，并用强化学习（GRPO）对齐模型以预测下一步，奖励来自外部 LLM-as-a-Judge。该目标镜像临床医生实际接诊方式：从累积证据向前推理直至下一步决策，而不是承诺一个最终标签。在三个骨干上，中途对齐将下一步准确率从 55.2 提升到 66.7（Qwen3.6-27B）、从 47.2 提升到 57.8（Qwen3.5-9B）、从 37.8 提升到 44.4（HuatuoGPT-3-8B），并给出 95% CI。在我们测试的若干模型尺度上，该目标对准确率的提升超过单纯放大规模，较小模型超过了我们所评估的更大前沿模型。我们进一步在中途任务上训练监督微调（SFT）基线，SFT 使所有骨干都高于 base，表明该目标框架的信号独立于优化器。我们发布数据集、代码和对齐后的检查点。",
+      "published": "2026-08-02",
+      "author_line": "Ofir Ben Shoham, Oriel Perets, Nir Grinberg 等 4 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.04.22.720174",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Cross-Attention Over RNA And Protein Sequences Enables Generalizable Interaction Prediction",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.04.22.720174",
+      "published_at": "2026-07-31",
+      "updated_at": "2026-07-31",
+      "creators": [
+        "Catalano, M.",
+        "Pepe, G.",
+        "Appierdo, R.",
+        "Ausiello, G.",
+        "McWhite, C.",
+        "Gambosi, G.",
+        "Helmer-Citterich, M.",
+        "Gherardini, P. F."
+      ],
+      "language": "en",
+      "abstract_or_text": "Computational predictions are essential to characterize the RNA-protein interaction landscape, yet a persistent gap between benchmark performance and practical utility suggests that current models have limited generalization capabilities. To address this issue, we present CORAL (Cross-attention for RNA-protein Association Learning), a deep learning framework for the prediction of RNA-protein interactions that integrates pretrained protein (ESM-2) and RNA (DNABERT2) language models through bidirectional cross-attention with Low-Rank Adaptation fine-tuning. We also introduce a benchmarking framework that rigorously addresses the problem of data redundancy between training and test sets, which greatly inflates model performances reported in the literature. To this end we adopt three partitioning strategies of increasing stringency: conventional random splits, pairwise non-redundant splits, and component-wise non-redundant splits. CORAL maintains an F1 score of 0.65 under the most stringent component-wise evaluation, compared to 0.47 for the next-best method retaining discriminative behavior. Interpretability analyses further reveal that the cross-attention mechanism captures biologically meaningful features of molecular recognition at two complementary structural scales: at atomic resolution, specific attention heads systematically attend to structurally defined contact positions, showing 26% elevated attention at interface residues across 309 experimentally resolved complexes (p < 0.001); at the domain level, protein-side attention localizes to annotated RNA-binding domains across 94 % of 462 proteins examined (median within-protein Cohens d {approx} 0.94). Together, these findings establish that current RPI prediction benchmarks substantially inflate performance estimates and demonstrate that cross-modal attention architectures yield improved generalization alongside mechanistically interpretable representations.",
+      "summary_zh": "CORAL 用双向交叉注意力融合 ESM-2 与 DNABERT2；在最严格组分级非冗余划分下 F1 为 0.65，并在 309 个实验复合物上显示界面残基注意力升高 26%。",
+      "why_it_matters_zh": "指出当前 RNA–蛋白相互作用基准因冗余而虚高，并给出可解释的跨模态注意力证据。",
+      "quality_score": 86.0,
+      "tags": [
+        "蛋白质与结构",
+        "CORAL",
+        "RNA-蛋白",
+        "ESM-2",
+        "交叉注意力"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "实验验证",
+        "benchmark",
+        "experimental",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.04.22.720174",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "计算预测对于刻画 RNA–蛋白质相互作用景观至关重要，但基准性能与实际效用之间的持续差距表明当前模型的泛化能力有限。为解决这一问题，我们提出 CORAL（Cross-attention for RNA-protein Association Learning），一个用于 RNA–蛋白质相互作用预测的深度学习框架，通过双向交叉注意力与 Low-Rank Adaptation 微调整合预训练蛋白质（ESM-2）和 RNA（DNABERT2）语言模型。我们还引入一个基准框架，严格处理训练集与测试集之间的数据冗余问题，该问题会大幅抬高文献中报告的模型性能。为此我们采用三种严格程度递增的划分策略：常规随机划分、成对非冗余划分，以及组分级非冗余划分。在最严格的组分级评估下，CORAL 保持 F1 分数 0.65，而下一个仍保留判别行为的方法为 0.47。可解释性分析进一步表明，交叉注意力机制在两个互补结构尺度上捕获分子识别的生物学有意义特征：在原子分辨率，特定注意力头系统性地关注结构定义的接触位置，在 309 个实验解析复合物中界面残基注意力升高 26%（p < 0.001）；在结构域水平，蛋白质侧注意力在所考察的 462 个蛋白质中的 94% 定位到已注释的 RNA 结合结构域（蛋白内中位 Cohens d ≈ 0.94）。综合这些发现表明，当前 RPI 预测基准大幅抬高了性能估计，并证明跨模态注意力架构在改进泛化的同时给出机制上可解释的表征。",
+      "published": "2026-07-31",
+      "author_line": "Catalano, M., Pepe, G., Appierdo, R. 等 8 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.07.28.741267",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A curated human lactylome and protein language model framework enable accurate prediction and reveal local determinants of lysine lactylation",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.07.28.741267",
+      "published_at": "2026-07-31",
+      "updated_at": "2026-07-31",
+      "creators": [
+        "Li, Z.",
+        "Huang, Y.",
+        "Shan, G.",
+        "Zuo, D.",
+        "Zhang, J.",
+        "Du, Y.",
+        "Zeng, D.",
+        "Wang, X.",
+        "Chen, L.",
+        "Fan, H.",
+        "Yao, G."
+      ],
+      "language": "en",
+      "abstract_or_text": "Lysine lactylation is a dynamic post-translational modification that can alter protein function and has been implicated in diverse physiological and pathological processes. Accurate identification of lactylation sites is therefore important for defining its regulatory landscape and for generating testable hypotheses about lactylation-associated mechanisms. Here, we introduce CLEAR-Lactyl and AttentionKla. CLEAR-Lactyl is a curated benchmark dataset of human lysine lactylation comprising 16,604 positive sites. AttentionKla is a deep learning framework trained on CLEAR-Lactyl that employs a pre-trained protein language model fine-tuned with LoRA; it significantly outperforms existing tools, and the factors contributing to its performance gain have been dissected through comprehensive ablation studies. Its utility in predicting novel lactylation sites and in sequence-directed modulation of lactylation levels has been experimentally validated in cellular assays. Together, CLEAR-Lactyl and AttentionKla provide a powerful platform for lysine lactylation research and offer an extensible framework for the precise modulation of other post-translational modifications.",
+      "summary_zh": "CLEAR-Lactyl 收录 16,604 个人类赖氨酸乳酸化阳性位点；AttentionKla 以 LoRA 微调蛋白语言模型，消融后优于现有工具，并在细胞实验中验证新位点与序列导向调节。",
+      "why_it_matters_zh": "把策展乳酸化组与可实验检验的位点预测连成可扩展平台，也为其他翻译后修饰提供模板。",
+      "quality_score": 85.0,
+      "tags": [
+        "蛋白质与结构",
+        "乳酸化",
+        "AttentionKla",
+        "蛋白质语言模型",
+        "CLEAR-Lactyl"
+      ],
+      "evidence_flags": [
+        "数据集",
+        "消融实验",
+        "实验验证",
+        "有定量基准",
+        "benchmark",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.28.741267",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "赖氨酸乳酸化是一种可改变蛋白质功能的动态翻译后修饰，并已被牵涉到多种生理和病理过程。因此，准确识别乳酸化位点对于界定其调控图景以及产生关于乳酸化相关机制的可检验假设很重要。本文引入 CLEAR-Lactyl 和 AttentionKla。CLEAR-Lactyl 是一个策展的人类赖氨酸乳酸化基准数据集，包含 16,604 个阳性位点。AttentionKla 是在 CLEAR-Lactyl 上训练的深度学习框架，采用经 LoRA 微调的预训练蛋白质语言模型；它显著优于现有工具，其性能增益因素已通过全面消融研究剖析。其在预测新乳酸化位点和序列导向调节乳酸化水平方面的效用已在细胞实验中得到实验验证。CLEAR-Lactyl 与 AttentionKla 共同为赖氨酸乳酸化研究提供了有力平台，并为精确调节其他翻译后修饰提供了可扩展框架。",
+      "published": "2026-07-31",
+      "author_line": "Li, Z., Huang, Y., Shan, G. 等 11 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.07.30.741874",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Detailed curation of biological samples and experimental designs for genomics using LLM-supported agentic workflows",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.07.30.741874",
+      "published_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "creators": [
+        "Pavlidis, P.",
+        "Mancarci, B. O.",
+        "Maximo, A.",
+        "Yan, C.",
+        "Schwartz, R. A."
+      ],
+      "language": "en",
+      "abstract_or_text": "We describe an automated software tool to accomplish data curation tasks previously performed by humans for the Gemma genomics data re-analysis resource. Gemma is a hand-curated database of reprocessed transcriptomic studies, currently covering over 23,000 human, mouse and rat data sets largely drawn from the Gene Expression Omnibus (GEO). We developed a pipeline that uses both traditional (mechanical) and large-language models to produce detailed ontology-anchored, sample- and experiment-level annotations in accordance with our established curation guidelines. In this report, we describe benchmarking the pipeline and investigations aimed at evaluating readiness of the v1.1 Gemma curation agent for production use. Overall, performance is near that of human curators, at approximately 1/20th the cost and at least 100 times the speed. We also present preliminary exploration of triage methods for identifying agent curations that are more likely to contain errors, and thus can be forwarded for human review. We discuss the potential place of such curation approaches in bioinformatics ecosystems. Besides the software, our deliverables include the benchmark set of 500 studies and an evaluation framework that can be used to further develop the pipeline or compare to other approaches.",
+      "summary_zh": "为 Gemma 转录组再分析库构建 LLM 支持的智能体策展流水线，覆盖逾 23,000 个 GEO 数据集；500 项研究基准上接近人工，成本约 1/20、速度至少快 100 倍。",
+      "why_it_matters_zh": "把组学元数据策展从人工瓶颈转为可评估的智能体工作流，并公开 500 项研究基准与分诊接口。",
+      "quality_score": 85.0,
+      "tags": [
+        "组学与细胞",
+        "Gemma",
+        "组学策展",
+        "智能体",
+        "GEO"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "公开代码",
+        "benchmark",
+        "experimental",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 5,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.30.741874",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "我们描述一个自动化软件工具，用以完成先前由人工为 Gemma 基因组学数据再分析资源执行的数据策展任务。Gemma 是一个人工策展的再处理转录组研究数据库，目前覆盖超过 23,000 个人类、小鼠和大鼠数据集，主要来自 Gene Expression Omnibus（GEO）。我们开发了一条同时使用传统（机械）方法和大语言模型的流水线，按照既定策展指南生成锚定本体、样本级与实验级的详细注释。本报告描述对该流水线的基准评测，以及旨在评估 v1.1 Gemma 策展智能体是否已具备生产就绪性的调查。总体而言，其表现接近人类策展者，成本约为 1/20，速度至少快 100 倍。我们还给出用于识别更可能含错、因而应转交人工审阅的智能体策展的分诊方法的初步探索。我们讨论此类策展途径在生物信息学生态系统中的潜在位置。除软件外，交付物还包括 500 项研究的基准集和一个评估框架，可用于进一步开发该流水线或与其他方法比较。",
+      "published": "2026-08-02",
+      "author_line": "Pavlidis, P., Mancarci, B. O., Maximo, A. 等 5 人"
+    },
+    {
+      "id": "europepmc:ppr1289089",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Radiomics and Deep Learning Features Based on 18F-FDG PET/CT for Predicting Occult Lymph Node Metastasis in Non-small Cell Lung Cancer",
+      "url": "https://europepmc.org/article/PPR/PPR1289089",
+      "published_at": "2026-07-31",
+      "updated_at": "2026-08-03",
+      "creators": [
+        "Yu J",
+        "Li Y",
+        "He C",
+        "Ren C",
+        "Huang L",
+        "Ren D",
+        "Chen C"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Background Preoperative identification of occult lymph node metastasis (OLM) in non-small cell lung cancer (NSCLC) remains a diagnostic hurdle, as standard imaging often fails to detect micrometastases, and single-modality radiomic approaches may not fully capture crucial tumor microenvironment information. To overcome this, we sought to construct an artificial intelligence-driven model that synergistically combines tumor radiomic features, deep learning (DL) features derived from 18 F-FDG PET/CT, and clinical parameters to predict OLM in NSCLC patients. Methods This retrospective analysis included 358 NSCLC patients (clinical stage T1-3N0M0) from Ningbo Mingzhou Hospital, randomly allocated to training and internal validation sets at an 8:2 ratio. An additional 132 patients from Suzhou Hongci Hospital formed an external validation cohort. Radiomic features were derived from manually segmented tumor volumes on PET/CT. Simultaneously, DL features were extracted from the slice with the largest tumor area and its two neighboring slices [(n + 2) and (n-2)]. Feature selection was executed via a multi-step process incorporating Spearman's correlation analysis, the minimum redundancy maximum relevance (mRMR) algorithm, and least absolute shrinkage and selection operator (LASSO) regression. The resultant features were fed into various machine learning classifiers to identify the optimal performer. We established seven distinct models and benchmarked their performance using the area under the receiver operating characteristic curve (AUC) and accuracy. The optimal cutoff was derived from the Youden index of the best model, stratifying patients into high- and low-risk groups for survival comparisons. Results Among the seven models, the logistic regression-based deep learning-radiomics-clinical (DLRC) model demonstrated superior predictive power, achieving AUCs of 0.890 and 0.872 in the internal and external validation cohorts, respectively. It also delivered the highest accuracy (0.833 and 0.826) in these cohorts. Kaplan-Meier analyses revealed that patients in the high-risk group experienced significantly worse progression-free survival (PFS) and overall survival (OS) compared to their low-risk group ( χ 2 = 7.339 and 9.464, respectively; all p",
+      "summary_zh": "融合 18F-FDG PET/CT 影像组学、深度学习与临床参数预测 NSCLC 隐匿淋巴结转移；内部/外部验证 AUC 为 0.890/0.872，高风险组 PFS 与 OS 更差。",
+      "why_it_matters_zh": "在独立医院队列上给出可分层生存的术前 OLM 风险，但仍属回顾性影像模型。",
+      "quality_score": 84.0,
+      "tags": [
+        "生物医学与临床",
+        "NSCLC",
+        "OLM",
+        "影像组学"
+      ],
+      "evidence_flags": [
+        "临床队列",
+        "有外部测试",
+        "有定量基准",
+        "clinical",
+        "benchmark",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 6,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10371616/v1",
+        "pmid": ""
+      },
+      "abstract_zh": "背景：非小细胞肺癌（NSCLC）中隐匿性淋巴结转移（OLM）的术前识别仍是诊断难点，因为标准影像常无法检出微转移，而单模态影像组学方法可能无法充分捕获关键的肿瘤微环境信息。为克服这一点，我们试图构建一个人工智能驱动的模型，协同结合肿瘤影像组学特征、来自 18F-FDG PET/CT 的深度学习（DL）特征以及临床参数，以预测 NSCLC 患者的 OLM。方法：本回顾性分析纳入宁波明州医院 358 例 NSCLC 患者（临床分期 T1-3N0M0），按 8:2 随机分配到训练集和内部验证集。另有苏州弘慈医院 132 例患者组成外部验证队列。影像组学特征来自 PET/CT 上手动分割的肿瘤体积。同时，从肿瘤面积最大的切片及其两个相邻切片[(n + 2) 和 (n-2)]提取 DL 特征。特征选择通过多步流程执行，纳入 Spearman 相关分析、最小冗余最大相关（mRMR）算法和最小绝对收缩与选择算子（LASSO）回归。所得特征输入多种机器学习分类器以识别最优执行者。我们建立了七个不同模型，并用受试者工作特征曲线下面积（AUC）和准确率对其性能进行基准评测。最优截断值来自最佳模型的 Youden 指数，将患者分为高风险和低风险组以进行生存比较。结果：在七个模型中，基于逻辑回归的深度学习–影像组学–临床（DLRC）模型表现出更优预测能力，在内部和外部验证队列的 AUC 分别为 0.890 和 0.872。它也在这些队列中给出最高准确率（0.833 和 0.826）。Kaplan-Meier 分析显示，高风险组患者的无进展生存期（PFS）和总生存期（OS）显著差于低风险组（χ2 = 7.339 和 9.464；均 p < 0.05）。结论：所提出的融合模型整合基于 PET/CT 的影像组学、DL 特征和临床变量，对 NSCLC 中的 OLM 表现出稳健预测能力。这一非侵入性工具有望用于定制淋巴结清扫策略，并优化术后辅助治疗的患者选择。",
+      "published": "2026-07-31",
+      "author_line": "Yu J, Li Y, He C 等 7 人"
+    },
+    {
+      "id": "europepmc:ppr1289773",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "An end-to-end framework for single-cell-resolution, whole-transcriptomic spatial profiling in post-mortem human brain",
+      "url": "https://europepmc.org/article/PPR/PPR1289773",
+      "published_at": "2026-08-01",
+      "updated_at": "2026-08-03",
+      "creators": [
+        "Castro Brant A",
+        "Aladyeva E",
+        "Nguyen-Hao H",
+        "Alltop K",
+        "Sweeney N",
+        "Kim TY",
+        "De Souza ID",
+        "Adhicary S",
+        "D ’o Albanus R",
+        "Bharani KL",
+        "Fu H",
+        "Meares G",
+        "Sutherland GT",
+        "Harari O"
+      ],
+      "language": "en",
+      "abstract_or_text": "Single-cell resolution spatial transcriptomics enables transcriptome-wide molecular profiling within intact tissue architecture, providing unprecedented opportunities to investigate cellular organization and disease-associated molecular states in the human brain. However, applying these technologies to post-mortem human brain tissue remains challenging due to RNA degradation, heterogeneity in tissue preservation, and a lack of standardized analytical workflows. These challenges are particularly pronounced for whole-transcriptome platforms, where successful implementation requires optimization of both experimental and computational procedures. Here, we present an end-to-end framework for single-cell-resolution, whole-transcriptome spatial transcriptomics of fresh-frozen (FF) and formalin-fixed paraffin-embedded (FFPE) post-mortem human brain tissue. The framework combines an optimized experimental workflow with a preservation-agnostic bioinformatics pipeline for data processing, integration, and annotation. Experimentally, we show that a condensed two-day Visium HD workflow provides improved library quality, lowered qPCR cycle thresholds, and more consistent fragment size distributions. Sequencing saturation analyses further identified cost-effective sequencing depths that maximize transcript recovery while minimizing redundant sequencing. Computationally, we established a scalable workflow incorporating DAPI-based nuclear segmentation, transcript assignment, quality control, reference-guided integration, clustering, and cell-type annotation. We implemented a reference-based highly variable gene selection strategy to enable robust cross-sample harmonization independent of tissue preservation method. Application of this framework to seven Alzheimer’s disease frontal cortex specimens (five FF and two FFPE) generated a unified single-cell spatial transcriptomic atlas comprising more than 530,000 spatially resolved cells. The integrated dataset resolved major neuronal, glial, and vascular cell populations, recapitulated expected cortical architecture, and enabled direct comparison of FF- and FFPE-derived spatial transcriptomic profiles. Together, this work provides a practical experimental and computational framework for single-cell resolution, whole-transcriptome spatial transcriptomics in post-mortem human brain tissue and delivers a publicly available resource that expands the utility of archived and frozen specimens for studies of neurodegeneration and other neurological disorders. Importance Spatial transcriptomics of human post-mortem brain tissue is limited by RNA degradation, preservation variability, and lack of standardized workflows. Here, we present an end-to-end framework combining an optimized two-day Visium HD protocol with a preservation-agnostic bioinformatics pipeline. This approach improves library quality, defines efficient sequencing strategies, and enables robust spatial profiling across both FF and FFPE samples. Applied to Alzheimer’s disease brain tissue, it generates high-resolution single-cell spatial data and expands the utility of archived and frozen specimens for studying neurodegenerative diseases.",
+      "summary_zh": "给出面向死后人脑 FF 与 FFPE 的两日 Visium HD 端到端流程，在 7 例阿尔茨海默病额叶标本上建成超过 530,000 个空间分辨细胞的统一图谱。",
+      "why_it_matters_zh": "把存档与冷冻脑标本纳入单细胞全转录组空间分析，降低保存方式对整合的限制。",
+      "quality_score": 84.0,
+      "tags": [
+        "组学与细胞",
+        "Visium HD",
+        "空间转录组",
+        "人脑",
+        "阿尔茨海默病"
+      ],
+      "evidence_flags": [
+        "实验验证",
+        "数据集",
+        "公开数据",
+        "dataset",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 7,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.28.740610",
+        "pmid": ""
+      },
+      "abstract_zh": "单细胞分辨率空间转录组学能够在完整组织结构内进行全转录组分子剖析，为研究人脑中的细胞组织和疾病相关分子状态提供前所未有的机会。然而，将这些技术应用于死后人类脑组织仍然具有挑战性，原因包括 RNA 降解、组织保存异质性以及缺乏标准化分析工作流。这些挑战对全转录组平台尤为突出，其成功实施需要同时优化实验和计算流程。本文提出一个端到端框架，用于新鲜冷冻（FF）和福尔马林固定石蜡包埋（FFPE）死后人类脑组织的单细胞分辨率全转录组空间转录组学。该框架将优化的实验工作流与保存方式无关的生物信息学流水线相结合，用于数据处理、整合和注释。在实验上，我们表明浓缩的两日 Visium HD 工作流提高了文库质量、降低了 qPCR 循环阈值，并使片段大小分布更一致。测序饱和分析进一步确定了在最大化转录本回收同时最小化冗余测序的高性价比测序深度。在计算上，我们建立了可扩展工作流，纳入基于 DAPI 的核分割、转录本分配、质量控制、参照引导整合、聚类和细胞类型注释。我们实现了基于参照的高变基因选择策略，以在不依赖于组织保存方法的情况下实现稳健的跨样本调和。将该框架应用于七例阿尔茨海默病额叶皮层标本（五例 FF 和两例 FFPE），生成了包含超过 530,000 个空间分辨细胞的统一单细胞空间转录组图谱。整合数据集解析了主要神经元、胶质和血管细胞群体，重现了预期皮层结构，并能够直接比较 FF 与 FFPE 来源的空间转录组图谱。总之，本工作为死后人类脑组织的单细胞分辨率全转录组空间转录组学提供了实用的实验与计算框架，并给出公开可用资源，扩展了存档和冷冻标本在神经退行性疾病及其他神经系统疾病研究中的效用。重要性：人类死后脑组织的空间转录组学受 RNA 降解、保存变异性和缺乏标准化工作流限制。本文提出一个端到端框架，将优化的两日 Visium HD 方案与保存方式无关的生物信息学流水线相结合。该方法提高文库质量、定义高效测序策略，并能够在 FF 和 FFPE 样本上实现稳健空间剖析。应用于阿尔茨海默病脑组织后，它生成高分辨率单细胞空间数据，并扩展存档和冷冻标本用于研究神经退行性疾病的效用。",
+      "published": "2026-08-01",
+      "author_line": "Castro Brant A, Aladyeva E, Nguyen-Hao H 等 14 人"
+    },
+    {
+      "id": "europepmc:ppr1289047",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "A heterogeneous LLM-augmented ensemble for robust drug-induced autoimmunity prediction",
+      "url": "https://europepmc.org/article/PPR/PPR1289047",
+      "published_at": "2026-07-31",
+      "updated_at": "2026-08-03",
+      "creators": [
+        "Dhrubo TH",
+        "Siddika A",
+        "Hossain MI"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Drug-induced autoimmunity (DIA) is a rare, mechanistically heterogeneous adverse drug reaction whose prediction is constrained by small labelled corpora, severe class imbalance and chemically diverse scaffolds. The recently released InterDIA benchmark established the first dedicated machine-learning baseline, in which an EasyEnsembleClassifier trained on a 65-feature genetic-algorithm-selected RDKit descriptor subset reaches an external-test area under the receiver-operating-characteristic curve (AUC) of 0.8930 from a single molecular view, without out-of-distribution (OOD) evaluation or calibrated uncertainty. We propose a heterogeneous six-stream ensemble that fuses classical RDKit descriptors, Morgan ECFP6 fingerprints, two pretrained chemical language models (ChemBERTa-MTR and MoLFormer-XL), a descriptor-transformer hybrid view, and a 7-billion-parameter Qwen-2.5 large language model fine-tuned with QLoRA. A simple mean blend reaches a five-seed external-test AUC of 0.9324 ± 0.0107, exceeding the baseline at every seed. The central finding is robustness rather than the marginal in-distribution gain: on the 68% of held-out drugs whose Bemis-Murcko scaffolds are absent from training, the ensemble degrades by only 0.054 AUC, whereas individual streams degrade by 0.10 to 0.20. We further report the first cross-corpus external evaluation of a DIA model on 427 drug-induced liver injury compounds, split-conformal prediction sets with 91.7% empirical coverage at the 90% target, and transparent SHAP and chain-of-thought interpretability with explicit hallucination disclosure. Representation-level heterogeneity, not algorithmic novelty, yields a predictor that generalises to novel chemistry and reports calibrated confidence. All artefacts, per-seed predictions and code are released for reproduction.",
+      "summary_zh": "六流异构集成融合 RDKit、ECFP6、ChemBERTa-MTR、MoLFormer-XL 与 Qwen-2.5，外部测试 AUC 0.9324 ± 0.0107，新骨架药物上仅下降 0.054。",
+      "why_it_matters_zh": "在药物诱导自身免疫这一小样本不平衡任务上，表征异质性带来的 OOD 稳健性比边际分布内增益更重要。",
+      "quality_score": 84.0,
+      "tags": [
+        "方法与模型",
+        "药物诱导自身免疫",
+        "集成学习",
+        "OOD"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有外部测试",
+        "公开代码",
+        "benchmark",
+        "evaluation",
+        "release"
+      ],
+      "publication_status": "preprint",
+      "rank": 8,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10493298/v1",
+        "pmid": ""
+      },
+      "abstract_zh": "药物诱导自身免疫（DIA）是一种罕见、机制异质的药物不良反应，其预测受限于标注语料小、类别严重不平衡以及化学骨架多样。最近发布的 InterDIA 基准建立了首个专用机器学习基线，其中在遗传算法选出的 65 个 RDKit 描述符子集上训练的 EasyEnsembleClassifier，从单一分子视图达到外部测试受试者工作特征曲线下面积（AUC）0.8930，但没有分布外（OOD）评估或校准不确定性。我们提出一个异构六流集成，融合经典 RDKit 描述符、Morgan ECFP6 指纹、两个预训练化学语言模型（ChemBERTa-MTR 和 MoLFormer-XL）、一个描述符–transformer 混合视图，以及用 QLoRA 微调的 70 亿参数 Qwen-2.5 大语言模型。简单均值融合在五种子外部测试上达到 AUC 0.9324 ± 0.0107，在每个种子上都超过基线。核心发现是稳健性而非边际的分布内增益：在 Bemis-Murcko 骨架未出现于训练集的 68% 留出药物上，集成仅下降 0.054 AUC，而单流下降 0.10 到 0.20。我们进一步报告 DIA 模型在 427 个药物性肝损伤化合物上的首次跨语料外部评估、在 90% 目标下经验覆盖率为 91.7% 的 split-conformal 预测集，以及带有明确幻觉披露的透明 SHAP 与思维链可解释性。表征层面的异质性而非算法新颖性，产生了一个可泛化到新化学空间并报告校准置信度的预测器。所有产物、各种子预测和代码均已发布以便复现。",
+      "published": "2026-07-31",
+      "author_line": "Dhrubo TH, Siddika A, Hossain MI"
+    },
+    {
+      "id": "europepmc:ppr1289141",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Single-cell foundation models predict durable CAR T response despite imperfect cell annotation",
+      "url": "https://europepmc.org/article/PPR/PPR1289141",
+      "published_at": "2026-07-31",
+      "updated_at": "2026-08-03",
+      "creators": [
+        "Fan R",
+        "Shen L",
+        "Bai Z",
+        "Yang M",
+        "Li N"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract CD19-targeted chimeric antigen receptor (CAR) T cell therapy achieves high initial response rates in B-cell acute lymphoblastic leukemia (B-ALL), yet half of patients relapse within one year. Pre-infusion product composition decoded by single-cell RNA sequencing (scRNA-seq) carries information predictive of long-term CAR T persistence, but extracting this information from individual patients typically requires highly sophisticated bioinformatics expert annotation, limiting clinical translation. Here, we evaluate whether single-cell foundation models (scFMs) can extract clinically actionable information from engineered CAR T products. We applied four scFMs (scGPT, scFoundation, CellPLM and UCE), including fine-tuned versions of scGPT and scFoundation, to paired basal and CD19-stimulated pre-infusion CAR T products from 33 pediatric patients with B-ALL. Although annotation accuracy declined relative to healthy peripheral blood references, scFM-derived cell composition stratified patients with long-duration B-cell aplasia with a leave-one-out cross-validated area under the receiver operating characteristic curve of 0.879 (95% confidence interval, 0.742–0.986). Notably, foundation-model-identified cell proportion analysis matched or exceeded expert annotations for several predictive features, demonstrating that accurate clinical prediction may not require perfect per-cell annotation to begin with. CD8+XCL1/2+ cells were further identified as the biomarker consistently associated with durable CAR T persistence across models under CD19 stimulation, whereas other candidate populations showed limited reproducibility. Finally, we translate these findings into a locally deployable decision-support AI agent that predicts the probability of sustained CAR T persistence from pre-infusion CAR T scRNA-seq data.",
+      "summary_zh": "将 scGPT、scFoundation、CellPLM 与 UCE 用于 33 例儿科 B-ALL 输注前 CAR T 产品，留一交叉验证 AUROC 0.879；CD8+XCL1/2+ 细胞在 CD19 刺激下与持久应答一致相关。",
+      "why_it_matters_zh": "表明临床预测不必先有完美单细胞注释；但队列仅 33 例，标志物仍需独立复现。",
+      "quality_score": 83.0,
+      "tags": [
+        "生物医学与临床",
+        "CAR T",
+        "单细胞基础模型",
+        "B-ALL",
+        "scGPT"
+      ],
+      "evidence_flags": [
+        "临床队列",
+        "有定量基准",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 9,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10412263/v1",
+        "pmid": ""
+      },
+      "abstract_zh": "靶向 CD19 的嵌合抗原受体（CAR）T 细胞疗法在 B 细胞急性淋巴细胞白血病（B-ALL）中初始缓解率高，但一半患者在一年内复发。通过单细胞 RNA 测序（scRNA-seq）解码的输注前产品组成携带可预测长期 CAR T 持续存在的信息，但要从个体患者中提取这些信息通常需要高度复杂的生物信息学专家注释，限制了临床转化。本文评估单细胞基础模型（scFMs）能否从工程化 CAR T 产品中提取具有临床可操作性的信息。我们将四种 scFMs（scGPT、scFoundation、CellPLM 和 UCE），包括微调版 scGPT 和 scFoundation，应用于 33 例儿科 B-ALL 患者配对的基础状态和 CD19 刺激后输注前 CAR T 产品。尽管相对健康外周血参照，注释准确率下降，但 scFM 导出的细胞组成仍能分层出长时程 B 细胞再生障碍患者，留一交叉验证受试者工作特征曲线下面积为 0.879（95% 置信区间，0.742–0.986）。值得注意的是，基础模型识别的细胞比例分析在若干预测特征上匹配或超过专家注释，表明准确的临床预测一开始可能并不需要完美的单细胞注释。CD8+XCL1/2+ 细胞被进一步识别为在 CD19 刺激下跨模型与持久 CAR T 持续存在一致相关的生物标志物，而其他候选群体的可重复性有限。最后，我们将这些发现转化为可本地部署的决策支持 AI 智能体，从输注前 CAR T scRNA-seq 数据预测持续 CAR T 持续存在的概率。",
+      "published": "2026-07-31",
+      "author_line": "Fan R, Shen L, Bai Z 等 5 人"
+    },
+    {
+      "id": "biorxiv:10.1101/2025.09.07.670677",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Illuminating the Ligandable Proteome with AI Protein Profiling",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.09.07.670677",
+      "published_at": "2026-07-30",
+      "updated_at": "2026-07-30",
+      "creators": [
+        "Dayhoff, G. W.",
+        "Kortzak, D.",
+        "Liu, R.",
+        "Shen, M.",
+        "Lin, J.",
+        "Zhang, Z.-Y.",
+        "Shen, J."
+      ],
+      "language": "en",
+      "abstract_or_text": "Most human proteins lack chemical probes or pharmaceutical modulators, leaving much of the proteome unexplored. 1,2 Activity-based protein profiling has enabled proteome-scale discovery of protein-ligand interactions and covalent inhibitors, 3-5 but remains limited by probe chemistry, protein abundance, and discordant ligandability assignments across studies. 6-9 Machine-learning (ML) models can in principle generate proteomewide ligandability maps, but the predictive utility of current models is limited by the requirement for structures and the use of incomplete and weak training labels. 9-12 Here we developed an artificial intelligence protein profiling (AiPP), a sequence-based multitask platform built on the ESMC protein language model, 13,14 to accelerate proteomewide therapeutic discovery and target identification. While its primary task is identification of covalently ligandable cysteines, seven additional task heads and two external modules provide broader context by annotating reversible ligand-binding residues, disordered molecular recognition features, cysteine functional context, and reactivities. Central to the development is the LatentLift clustering approach, which leverages latent space similarities to reconcile conflicting experimental labels and facilitate model training. Applied to the human proteome, AiPP generated a cysteine-directed ligandability atlas that overcomes the limitations of current chemo-proteomic maps. As a proof of concept, we demonstrate that AiPP can guide the discovery of covalent allosteric inhibitors targeting the previously undruggable protein tyrosine phosphatase PTPN6. By linking sequence, ligandability and biological context, AiPP provides an open resource for therapeutic discovery, while LatentLift offers a general strategy for harmonizing proteomics data for ML applications.",
+      "summary_zh": "AiPP 基于 ESMC 做序列多任务学习，主任务预测可共价配体化半胱氨酸，并用 LatentLift 调和冲突实验标签；据此绘制人类蛋白质组图谱，并指导发现针对 PTPN6 的共价变构抑制剂。",
+      "why_it_matters_zh": "把化学蛋白质组标签冲突显式纳入训练，并给出不可成药磷酸酶的概念验证；主证据仍偏计算方法与有限实验。",
+      "quality_score": 83.0,
+      "tags": [
+        "蛋白质与结构",
+        "AiPP",
+        "ESMC",
+        "共价配体",
+        "PTPN6"
+      ],
+      "evidence_flags": [
+        "实验验证",
+        "有定量基准",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 10,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2025.09.07.670677",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "大多数人类蛋白质缺乏化学探针或药物调节剂，使蛋白质组的很大一部分仍未被探索。1,2 基于活性的蛋白质剖析已实现蛋白质组尺度的蛋白–配体相互作用和共价抑制剂发现，3-5 但仍受探针化学、蛋白质丰度以及不同研究间配体化指派不一致的限制。6-9 机器学习（ML）模型原则上可以生成全蛋白质组配体化图谱，但当前模型的预测效用受限于对结构的需求以及使用不完整、弱的训练标签。9-12 本文开发了人工智能蛋白质剖析（AiPP），一个建立在 ESMC 蛋白质语言模型上的基于序列的多任务平台，13,14 以加速全蛋白质组治疗发现和靶点鉴定。其主任务是识别可共价配体化的半胱氨酸，另有七个任务头和两个外部模块通过标注可逆配体结合残基、无序分子识别特征、半胱氨酸功能上下文和反应性来提供更广背景。开发的核心是 LatentLift 聚类方法，利用潜空间相似性调和冲突的实验标签并便于模型训练。应用于人类蛋白质组后，AiPP 生成了半胱氨酸导向的配体化图谱，克服了当前化学蛋白质组图谱的限制。作为概念验证，我们证明 AiPP 可指导发现针对先前不可成药蛋白酪氨酸磷酸酶 PTPN6 的共价变构抑制剂。通过连接序列、配体化与生物学上下文，AiPP 为治疗发现提供开放资源，而 LatentLift 为调和蛋白质组学数据以用于 ML 提供通用策略。",
+      "published": "2026-07-30",
+      "author_line": "Dayhoff, G. W., Kortzak, D., Liu, R. 等 7 人"
+    },
+    {
+      "id": "biorxiv:10.1101/2024.12.09.627518",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Patient-Derived Xenograft-Guided Prediction of Chemotherapy Response in Triple-Negative Breast Cancer",
+      "url": "https://www.biorxiv.org/content/10.1101/2024.12.09.627518",
+      "published_at": "2026-07-30",
+      "updated_at": "2026-07-30",
+      "creators": [
+        "Lei, J. T.",
+        "Dobrolecki, L. E.",
+        "Huang, C.",
+        "Srinivasan, R. R.",
+        "Vasaikar, S. V.",
+        "Lewis, A. N.",
+        "Sallas, C.",
+        "Zhao, N.",
+        "Cao, J.",
+        "Landua, J. D.",
+        "Pilcher, J. B.",
+        "Moon, C. I.",
+        "Liao, Y.",
+        "Hilsenbeck, S. G.",
+        "Rimawi, M. F.",
+        "Ellis, M. J.",
+        "Petrosyan, V.",
+        "Wen, B.",
+        "Li, K.",
+        "Saltzman, A. B.",
+        "Jain, A.",
+        "Malovannaya, A.",
+        "Wulf, G. M.",
+        "Marangoni, E.",
+        "Li, S.",
+        "Kraushaar, D. C.",
+        "Wang, T.",
+        "Damodaran, S.",
+        "Goetz, M. P.",
+        "Boughey, J. C.",
+        "Wang, L.",
+        "Kalari, K. R.",
+        "Suman, V. J.",
+        "Zheng, X.",
+        "Meric-Bernstam, F.",
+        "Echeverria, G. V.",
+        "Anurag, M.",
+        "Chen, X.",
+        "Welm, B. E.",
+        "Welm, A. L.",
+        "Zhang, B.",
+        "Lewis, M. T."
+      ],
+      "language": "en",
+      "abstract_or_text": "Chemotherapy regimens for triple-negative breast cancer (TNBC) combine agents without knowing which agents drive response. Consequently, predictors derived from multi-agent regimens cannot be assumed to generalize to individual drugs or other regimens, motivating development of treatment-matched predictors. Here, we used TNBC patient-derived xenografts (PDXs) treated with carboplatin, docetaxel, or the combination to deconvolute drug-specific responses and identify associated molecular features. Combination treatment rarely improved upon the best single agent, with enhanced responses in only 13% of PDXs and antagonism in a comparable fraction. Proteogenomic analyses identified high cytokeratin-5 (KRT5) as a general marker of chemotherapy responsiveness and KRT5 immunohistochemistry discriminated responsive PDXs (AUROC, 0.83). To train treatment-specific predictors, we integrated these data with independent PDX and clinical cohorts with responses assessed after anthracycline-free platinum, taxane, or platinum-taxane therapy, ensuring response corresponded to the modeled treatment. Four feature selection strategies yielded largely nonoverlapping biomarker panels converging on treatment-relevant pathways. On independent test data, RNA-based predictors of complete response (CR) to platinum-based (carboplatin or cisplatin) and taxane-based (docetaxel or paclitaxel) chemotherapy achieved AUROCs of 0.80 and 0.86, respectively. For platinum-taxane regimens (carboplatin plus docetaxel or paclitaxel), proteomic-guided feature selection generated a 10-biomarker, protein- informed RNA predictor of pathologic complete response (pCR) that outperformed RNA-only feature selection and achieved an AUROC of 0.85 in an independent clinical cohort, while retaining practicality as an RNA-based assay. Treatment-matched integration of multi-omic PDX and clinical datasets provides a framework for chemotherapy-specific predictors with clinically relevant performance, supporting biomarker-guided precision selection and treatment optimization for patients with TNBC. Statement of significanceIntegration of multi-omic data from patient-derived xenografts with treatment-matched clinical cohorts yielded three retrospectively validated predictors of platinum, taxane, and platinum+taxane response, enabling biomarker-guided chemotherapy selection for patients with triple-negative breast cancer.",
+      "summary_zh": "用卡铂、多西他赛及联合处理的 TNBC PDX 解卷积药物特异应答；独立测试上铂类、紫杉烷与铂–紫杉烷预测器 AUROC 分别为 0.80、0.86 与 0.85。",
+      "why_it_matters_zh": "治疗匹配的多组学整合给出可回顾验证的化疗选择线索；联合方案很少优于最佳单药，外推仍需前瞻检验。",
+      "quality_score": 83.0,
+      "tags": [
+        "生物医学与临床",
+        "TNBC",
+        "PDX",
+        "化疗应答",
+        "KRT5"
+      ],
+      "evidence_flags": [
+        "实验验证",
+        "临床队列",
+        "有外部测试",
+        "有定量基准",
+        "dataset",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 11,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2024.12.09.627518",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "三阴性乳腺癌（TNBC）的化疗方案在不知道哪些药物驱动应答的情况下联合用药。因此，不能假定从多药方案导出的预测器可推广到单个药物或其他方案，这促使开发与治疗匹配的预测器。本文使用以卡铂、多西他赛或二者联合处理的 TNBC 患者来源异种移植（PDXs），解卷积药物特异应答并识别相关分子特征。联合治疗很少优于最佳单药，仅 13% 的 PDX 出现增强应答，相当比例出现拮抗。蛋白质基因组分析将高细胞角蛋白-5（KRT5）识别为化疗应答性的一般标志物，KRT5 免疫组化可判别应答性 PDX（AUROC，0.83）。为训练治疗特异预测器，我们将这些数据与独立 PDX 和临床队列整合，后者在无蒽环类的铂类、紫杉烷或铂–紫杉烷治疗后评估应答，以确保应答对应于所建模的治疗。四种特征选择策略产生大体不重叠的生物标志物面板，但汇聚于治疗相关通路。在独立测试数据上，基于 RNA 的铂类（卡铂或顺铂）和紫杉烷（多西他赛或紫杉醇）化疗完全缓解（CR）预测器分别达到 AUROC 0.80 和 0.86。对于铂–紫杉烷方案（卡铂加多西他赛或紫杉醇），蛋白质组引导的特征选择生成了一个 10 生物标志物、蛋白质知情的 RNA 病理完全缓解（pCR）预测器，优于仅 RNA 特征选择，并在独立临床队列中达到 AUROC 0.85，同时保留作为基于 RNA 检测的实用性。将多组学 PDX 与临床数据集进行治疗匹配整合，为具有临床相关性能的化疗特异预测器提供了框架，支持生物标志物引导的精准选择和 TNBC 患者治疗优化。意义声明：将患者来源异种移植的多组学数据与治疗匹配临床队列整合，产生了三个经回顾性验证的铂类、紫杉烷和铂+紫杉烷应答预测器，使三阴性乳腺癌患者的生物标志物引导化疗选择成为可能。",
+      "published": "2026-07-30",
+      "author_line": "Lei, J. T., Dobrolecki, L. E., Huang, C. 等 42 人"
+    },
+    {
+      "id": "europepmc:ppr1288494",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "Europe PMC",
+      "title": "Ultra-efficient High Resolution 3D Reconstruction of Spatial Omics Data with Neural Transcriptomic Field",
+      "url": "https://europepmc.org/article/PPR/PPR1288494",
+      "published_at": "2026-07-30",
+      "updated_at": "2026-07-31",
+      "creators": [
+        "Yu Z",
+        "Gong Y",
+        "Yuan X",
+        "Gao R",
+        "Chen J"
+      ],
+      "language": "en",
+      "abstract_or_text": "Abstract Biological tissues are inherently three-dimensional (3D) ecosystems where spatial architecture dictates cellular function. While spatial omics technologies have revolutionized molecular profiling, they are largely restricted to isolated two-dimensional (2D) tissue sections. Existing computational methods attempting to reconstruct 3D volumes from sparse slices rely heavily on local slice-to-slice interpolation, struggling to balance high-fidelity reconstruction, noise reduction, and atlas-scale efficiency. Here, we present Neural Transcriptomic Field (NTF), a deep learning framework employing multi-resolution hash-grid encoding and implicit neural representations. Unlike interpolation-based approaches that merely bridge adjacent observations, NTF learns a global, continuous 3D representation of the tissue. By modeling the underlying latent biological patterns, NTF intrinsically decouples true molecular signals from technical artifacts, naturally enabling robust denoising and high-fidelity reconstructions. This global field paradigm shatters traditional scalability limits: NTF achieves up to a 1,000× speedup over existing methods, notably reconstructing a 100-million-cell scale 3D whole-mouse embryo atlas in under 15 minutes. Furthermore, NTF can generate super-resolved volumes from sparse input (e.g., utilizing only 10% of slices) and robustly extrapolating into unseen tissue regions. We demonstrate NTF’s versatility across diverse transcriptomic and proteomic datasets, capturing complex spatiotemporal dynamics in Drosophila and mouse embryogenesis, and mapping intra-tumoral functional gradients in human breast cancer. Ultimately, NTF provides an unprecedentedly fast, scalable, and robust computational engine for constructing the next generation of comprehensive 3D tissue atlases.",
+      "summary_zh": "Neural Transcriptomic Field 用多分辨率哈希网格学习连续 3D 转录组场，称相对插值方法加速达 1,000 倍，并在 15 分钟内重建约 1 亿细胞小鼠胚胎图谱。",
+      "why_it_matters_zh": "把稀疏切片重建从局部插值改成全局隐式场，便于降噪与外推；速度与保真度声明仍待独立复现。",
+      "quality_score": 82.0,
+      "tags": [
+        "组学与细胞",
+        "NTF",
+        "空间组学",
+        "三维重建",
+        "隐式神经场"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "数据集",
+        "仅摘要可判断",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 12,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.21203/rs.3.rs-10286734/v1",
+        "pmid": ""
+      },
+      "abstract_zh": "生物组织本质上是三维（3D）生态系统，空间架构决定细胞功能。尽管空间组学技术已变革分子剖析，但它们在很大程度上仍限于孤立的二维（2D）组织切片。现有试图从稀疏切片重建 3D 体积的计算方法严重依赖局部切片间插值，难以在高保真重建、降噪和图谱级效率之间取得平衡。本文提出 Neural Transcriptomic Field（NTF），一个采用多分辨率哈希网格编码和隐式神经表征的深度学习框架。与仅桥接相邻观测的基于插值的方法不同，NTF 学习组织的全局、连续 3D 表征。通过建模底层潜在生物学模式，NTF 从本质上将真实分子信号与技术伪迹解耦，自然实现稳健降噪和高保真重建。这一全局场范式打破了传统可扩展性限制：NTF 相对现有方法实现高达 1,000 倍加速，尤其是在 15 分钟内重建 1 亿细胞规模的 3D 全小鼠胚胎图谱。此外，NTF 可以从稀疏输入生成超分辨体积（例如仅使用 10% 的切片），并稳健外推到未见组织区域。我们在多种转录组和蛋白质组数据集上展示 NTF 的通用性，捕获果蝇和小鼠胚胎发生中的复杂时空动态，并映射人乳腺癌中的瘤内功能梯度。最终，NTF 为构建下一代综合 3D 组织图谱提供了前所未有的快速、可扩展和稳健计算引擎。",
+      "published": "2026-07-30",
+      "author_line": "Yu Z, Gong Y, Yuan X 等 5 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.07.31.742133",
+      "channel": "aixbio",
+      "related_channels": [
+        "aixchem"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "SPINDLE: Unlocking protein dynamics from single-field NMR relaxation data using a deep learning ensemble.",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.07.31.742133",
+      "published_at": "2026-08-01",
+      "updated_at": "2026-08-01",
+      "creators": [
+        "Krise, O. E.",
+        "Latham, M. P."
+      ],
+      "language": "en",
+      "abstract_or_text": "A proteins function is derived from its three-dimensional structure and the motions of the atoms about that structure. The detailed characterization of both macromolecular structure and dynamics provides an opportunity for understanding enzyme catalysis, ligand binding, and allostery, along with providing insights into how the function changes upon mutation or post-translational modification. Among the various methods for characterizing biomolecular motions, nuclear magnetic resonance (NMR) spin relaxation methods are a standard for determining nanosecond global tumbling times along with the amplitude and timescale of faster local motions. Within the model-free formalism, various mathematical models are used to extract dynamic parameters. Unfortunately, as the number of fitted parameters increases within these models, they become mathematically underdetermined for standard NMR relaxation data collected at a single magnetic field, necessitating multi-field datasets. Here, we present SPINDLE, an ensemble of deep neural networks trained on a large synthetic set of NMR relaxation data. Unlike traditional least-squares fitting, SPINDLE predicts both fast and slow timescale dynamics parameters from a single set (i.e., collected at a single magnetic field) of three relaxation datasets using the ensemble for error estimation. We demonstrate a strong correlation to ground truth dynamics parameters on synthetic benchmarks, with more precision than traditional fitting techniques, and precisely reproduce experimental dynamics parameters for [~]50 proteins with relaxation data in the Biological Magnetic Resonance Data Bank. We also leverage the architecture of the deep neural network to show how the model emphasizes rigid residues for the prediction of global correlation times. This strategy may be useful in the future for elucidating correlated networks of dynamic residues from multiple relaxation datasets.",
+      "summary_zh": "SPINDLE 用在合成 NMR 弛豫数据上训练的深度网络集成，从单磁场三组弛豫数据同时预测快慢时间尺度动力学，并在 BMRB 约 50 个蛋白质上复现实验参数。",
+      "why_it_matters_zh": "缓解单场 NMR 模型自由拟合欠定问题，并给出集成误差估计；推广到相关动态网络仍属展望。",
+      "quality_score": 82.0,
+      "tags": [
+        "蛋白质与结构",
+        "SPINDLE",
+        "NMR",
+        "蛋白质动力学",
+        "model-free"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有外部测试",
+        "公开数据",
+        "benchmark",
+        "dataset",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 13,
+      "featured": false,
+      "category": "蛋白质与结构",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.31.742133",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "蛋白质的功能来自其三维结构以及原子围绕该结构的运动。对大分子结构与动力学的细致表征，为理解酶催化、配体结合和变构提供机会，并洞察功能如何随突变或翻译后修饰而变化。在表征生物分子运动的多种方法中，核磁共振（NMR）自旋弛豫方法是测定纳秒级整体翻滚时间以及更快局域运动幅度与时间尺度的标准。在 model-free 形式体系中，用各种数学模型提取动力学参数。不幸的是，随着这些模型中拟合参数增多，它们对在单一磁场采集的标准 NMR 弛豫数据在数学上变得欠定，因而需要多场数据集。本文推出 SPINDLE，一个在大量合成 NMR 弛豫数据上训练的深度神经网络集成。与传统最小二乘拟合不同，SPINDLE 从单一磁场采集的三组弛豫数据集预测快、慢时间尺度动力学参数，并用集成进行误差估计。我们在合成基准上证明其与真实动力学参数强相关，精度高于传统拟合技术，并精确再现 Biological Magnetic Resonance Data Bank 中约 50 个蛋白质的实验动力学参数。我们还利用深度神经网络的架构表明，模型在预测整体相关时间时强调刚性残基。该策略将来可能用于从多个弛豫数据集阐明动态残基的相关网络。",
+      "published": "2026-08-01",
+      "author_line": "Krise, O. E., Latham, M. P."
+    },
+    {
+      "id": "medrxiv:10.1101/2025.11.22.25340784",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "Population genomics of four-dimensional cardiac motion reveals non-myocyte regulatory programmes",
+      "url": "https://www.medrxiv.org/content/10.1101/2025.11.22.25340784",
+      "published_at": "2026-07-31",
+      "updated_at": "2026-07-31",
+      "creators": [
+        "Kalaie, S.",
+        "Vadgama, N.",
+        "Zheng, J.",
+        "Curran, L.",
+        "McGurk, K. A.",
+        "Coriano, M.",
+        "Rjoob, K.",
+        "Gifani, P.",
+        "Meng, Q.",
+        "Bai, W.",
+        "Bender, C.",
+        "O'Regan, D. P."
+      ],
+      "language": "en",
+      "abstract_or_text": "Genome-wide studies of cardiac structure and function have relied on global imaging metrics that fail to capture the full complexity of myocardial behaviour, leaving the genetic and environmental architecture of motion largely unexplored. Here we show, using unsupervised deep learning applied to four-dimensional cardiac imaging data in 78,113 adult participants, that latent representations of left-ventricular motion reveal 39 genetic loci, two-thirds undetected by conventional indices, exposing a diversity of cell-type specificity validated across single-cell transcriptional atlases of the human heart. Conventional traits resolve to cardiomyocyte and conduction-system regulatory elements, while motion-specific variants converge on non-myocyte programmes encompassing autonomic neuronal, endocardial, fibroblast, and endothelial compartments. All of Us, FinnGen and GPMap data provided locus-level corroboration. Motion-specific traits further implicate environmental exposures including smoking and air pollution linked to motion profiles, and unsupervised clustering stratifies participants by genetic burden and clinical risk, uncovering disease-relevant endophenotypes invisible to standard clinical assessment.",
+      "summary_zh": "对 78,113 名成人的四维心脏影像做无监督深度学习，左室运动潜表征揭示 39 个位点，其中三分之二常规指标未检出，并指向非心肌细胞调控程序。",
+      "why_it_matters_zh": "把心脏运动从全局指标扩展到细胞类型特异遗传结构，但位点与环境暴露的关联仍是观察性证据。",
+      "quality_score": 82.0,
+      "tags": [
+        "组学与细胞",
+        "心脏运动",
+        "群体基因组",
+        "UK Biobank",
+        "非心肌细胞"
+      ],
+      "evidence_flags": [
+        "临床队列",
+        "有定量基准",
+        "数据集",
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 14,
+      "featured": false,
+      "category": "组学与细胞",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2025.11.22.25340784",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "心脏结构与功能的全基因组研究一直依赖无法捕捉心肌行为全部复杂性的全局影像指标，使运动的遗传与环境架构在很大程度上未被探索。本文表明，将无监督深度学习应用于 78,113 名成年参与者的四维心脏影像数据，左心室运动的潜表征揭示了 39 个遗传位点，其中三分之二未被常规指标检出，并暴露出在人心脏单细胞转录组图谱中得到验证的细胞类型特异性多样性。常规性状解析到心肌细胞和传导系统调控元件，而运动特异变异汇聚于涵盖自主神经元、心内膜、成纤维细胞和内皮区室的非心肌细胞程序。All of Us、FinnGen 和 GPMap 数据提供了位点水平的印证。运动特异性状进一步提示与运动图谱相关的环境暴露，包括吸烟和空气污染；无监督聚类按遗传负荷和临床风险分层参与者，揭示了对标准临床评估不可见的疾病相关内表型。",
+      "published": "2026-07-31",
+      "author_line": "Kalaie, S., Vadgama, N., Zheng, J. 等 12 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.06.10.727770",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "General-purpose language models integrate structured biological evidence for explainable biological interaction prediction",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.06.10.727770",
+      "published_at": "2026-07-30",
+      "updated_at": "2026-07-30",
+      "creators": [
+        "Zhang, Y.-z.",
+        "Xu, L.",
+        "Imoto, S."
+      ],
+      "language": "en",
+      "abstract_or_text": "Biological interaction inference often requires integrating heterogeneous evidence that differs in biological meaning, provenance, specificity, and reliability. Existing computational approaches typically compress such evidence into numerical features, aggregate scores or latent representations before prediction, obscuring the contribution of individual evidence records and limiting interpretation when evidence is conflicting or incomplete. Phage-host interaction prediction provides a demanding test case for this problem, requiring the integration of genomic, functional, and reference-derived evidence with differing coverage, specificity, and reliability. Here we introduce a structured-evidence inference paradigm that retains heterogeneous biological observations as modular, named, and experimentally perturbable records rather than compressing them before prediction. We implement this paradigm in PHI-Reason, which constructs structured evidence profiles from genomic annotations, receptor-binding protein homology, nucleotide-neighbour relationships, alignment-free genomic similarity, and available CRISPR spacer information. A general-purpose large language model (LLM) performs inference directly over these structured profiles without task-specific training or manually engineered evidence-fusion rules. To validate this paradigm, we evaluated it across two distinct biological interaction domains: prokaryotic phage-host prediction and eukaryotic virus-host prediction. Across phage-host benchmarks, PHI-Reason achieved species-level top-1 accuracies of 63.6% and 53.2% on RefSeq-634 and VHDB-3150, respectively, and a multi-host accuracy of 0.571 on the Hi-C cohort, outperforming established numerical methods. Besides, systematic evidence perturbations quantified how individual evidence supported, complemented, or misled inference, identifying nucleotide-neighbour context as the dominant signal. Analyses of LLM intermediate representations using a target-conditioned local Jacobian readout, together with output-grounding analyses, further characterized evidence-dependent inference and quantified the extent to which generated rationales departed from the supplied evidence profiles. Applying the same framework to eukaryotic virus-host prediction using domain-appropriate evidence also preserved high predictive accuracy (66.6%), supporting the generalizability of the proposed paradigm across biological prediction. These results demonstrate that LLMs can serve as an evidence-grounded inference interface, integrating heterogeneous biological evidence while making the boundaries of evidential support directly testable.",
+      "summary_zh": "PHI-Reason 把基因组、同源、邻近与 CRISPR spacer 证据保留为可扰动记录，由通用 LLM 直接推断；噬菌体–宿主 top-1 准确率在 RefSeq-634 为 63.6%。",
+      "why_it_matters_zh": "把 LLM 当作可检验的证据接口而非黑箱分类器，使冲突或不完整证据的贡献可被扰动量化。",
+      "quality_score": 81.0,
+      "tags": [
+        "方法与模型",
+        "PHI-Reason",
+        "噬菌体-宿主",
+        "结构化证据"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "消融实验",
+        "benchmark",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 15,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.06.10.727770",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "生物学相互作用推断通常需要整合在生物学含义、来源、特异性和可靠性上不同的异质证据。现有计算方法通常在预测前将此类证据压缩为数值特征、聚合分数或潜表征，从而掩盖单条证据记录的贡献，并在证据冲突或不完整时限制解释。噬菌体–宿主相互作用预测为该问题提供了一个严苛测试案例，需要整合覆盖度、特异性和可靠性不同的基因组、功能和参照来源证据。本文引入一种结构化证据推断范式，将异质生物学观测保留为模块化、具名、可实验扰动的记录，而不是在预测前压缩它们。我们在 PHI-Reason 中实现该范式，从基因组注释、受体结合蛋白同源、核苷酸邻近关系、无比对基因组相似性和可用的 CRISPR spacer 信息构建结构化证据档案。通用大语言模型（LLM）直接对这些结构化档案进行推断，无需任务特定训练或手工设计的证据融合规则。为验证该范式，我们在两个不同的生物学相互作用领域进行评估：原核噬菌体–宿主预测和真核病毒–宿主预测。在噬菌体–宿主基准上，PHI-Reason 在 RefSeq-634 和 VHDB-3150 上分别达到物种水平 top-1 准确率 63.6% 和 53.2%，在 Hi-C 队列上的多宿主准确率为 0.571，优于既有数值方法。此外，系统的证据扰动量化了单条证据如何支持、补充或误导推断，识别出核苷酸邻近上下文为主要信号。使用目标条件局部 Jacobian 读出对 LLM 中间表征的分析，连同输出锚定分析，进一步刻画了依赖证据的推断，并量化生成理由偏离所提供证据档案的程度。将同一框架应用于使用领域适宜证据的真核病毒–宿主预测时，也保持了高预测准确率（66.6%），支持所提范式跨生物学预测的可推广性。这些结果表明，LLM 可作为以证据为基础的推断接口，整合异质生物学证据，同时使证据支持的边界可直接检验。",
+      "published": "2026-07-30",
+      "author_line": "Zhang, Y.-z., Xu, L., Imoto, S."
+    },
+    {
+      "id": "medrxiv:10.64898/2026.07.29.26358751",
+      "channel": "aixbio",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "medRxiv",
+      "title": "Large language models enable consensus-level interpretation in metagenomic diagnostics",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.07.29.26358751",
+      "published_at": "2026-07-31",
+      "updated_at": "2026-07-31",
+      "creators": [
+        "Steinig, E.",
+        "Krysiak, M.",
+        "Deo, K.",
+        "Duncan, A.",
+        "Prestedge, J.",
+        "Barr, J.",
+        "Moselen, J.",
+        "Khan, S. F.",
+        "Fernando, J. A.",
+        "Savic, I.",
+        "Yellapu, B.",
+        "Aziz, A.",
+        "Wirth, W.",
+        "Parry, J.",
+        "McDonald, A.",
+        "Lim, C.",
+        "Trevor, S.",
+        "Aw-Yeong, B.",
+        "McCluskey, G.",
+        "Moso, M.",
+        "Chan, E.",
+        "La Vita, S. L.",
+        "Bryant, P. A.",
+        "Crowe, A.",
+        "Maalim, R.",
+        "Velasquez Reyes, D.",
+        "Graham, M.",
+        "Williams, E.",
+        "Kwong, J. C.",
+        "Woolstencroft, R.",
+        "Slavin, M.",
+        "Lim, L. L.",
+        "Coin, L. J. M.",
+        "Caly, L.",
+        "Bond, K.",
+        "Kok Lim, C.",
+        "Stinear, T. P.",
+        "Williamson, D. A.",
+        "Ramachandran, P. S."
+      ],
+      "language": "en",
+      "abstract_or_text": "Metagenomic sequencing can detect a broad range of pathogens, but interpreting which detections are clinically relevant requires expert adjudication that is difficult to scale and standardize. Here we present diagnostic classifiers that formalize expert adjudication by combining structured decision trees with large language model reasoning to assign diagnoses and select pathogen candidates. We first developed a short-read metagenomic assay for sterile-site specimens (cerebrospinal and ocular fluid) in the META-GP study (Victoria, Australia, 2024-2025) and evaluated classifiers on a validation dataset (n = 96; clinical samples, spike-ins and controls). Locally deployed, open-weight reasoning models (Owen3) achieved diagnostic performance comparable to expert consensus, improving with clinical context (n = 79, above experimental limit-of-detection; without clinical notes, 94.4% sensitivity, 95.4% specificity; with clinical notes, 97.2% sensitivity, 100% specificity). Automated adjudication enabled systematic benchmarking of computational parameters and regression testing for pathogen detection tasks. In a heterogeneous development cohort (n = 78), reviewers and classifiers identified clinically significant pathogens missed during routine testing. By reproducing consensus detections without requiring a full review panel, diagnostic classifiers enable scalable, standardized metagenomic interpretation that complements expert adjudications.",
+      "summary_zh": "将决策树与本地开权模型 Owen3 结合，对无菌部位短读长宏基因组做专家级裁定；有临床笔记时灵敏度 97.2%、特异度 100%（n=79，高于检出限）。",
+      "why_it_matters_zh": "用可本地部署的分类器复现共识检出，便于规模化宏基因组解读；原文模型名按摘要保留为 Owen3。",
+      "quality_score": 81.0,
+      "tags": [
+        "生物医学与临床",
+        "宏基因组",
+        "诊断裁定",
+        "Owen3",
+        "无菌部位"
+      ],
+      "evidence_flags": [
+        "临床队列",
+        "有定量基准",
+        "有外部测试",
+        "benchmark",
+        "dataset",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 16,
+      "featured": false,
+      "category": "生物医学与临床",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.29.26358751",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "宏基因组测序可以检测广泛病原体，但解读哪些检出具有临床相关性需要专家裁定，难以规模化和标准化。本文提出诊断分类器，通过将结构化决策树与大语言模型推理相结合来形式化专家裁定，以分配诊断并选择病原体候选。我们首先在 META-GP 研究（澳大利亚维多利亚，2024-2025）中为无菌部位标本（脑脊液和眼内液）开发了短读长宏基因组检测，并在验证数据集（n = 96；临床样本、加标和对照）上评估分类器。本地部署的开权推理模型（Owen3）达到与专家共识相当的诊断性能，并随临床上下文改善（n = 79，高于实验检出限；无临床笔记时，灵敏度 94.4%，特异度 95.4%；有临床笔记时，灵敏度 97.2%，特异度 100%）。自动裁定使计算参数的系统基准评测和病原体检出任务的回归测试成为可能。在异质开发队列（n = 78）中，审阅者和分类器识别出常规检测遗漏的临床重要病原体。通过在不需要完整审阅小组的情况下复现共识检出，诊断分类器使可规模化、标准化的宏基因组解读成为可能，并补充专家裁定。",
+      "published": "2026-07-31",
+      "author_line": "Steinig, E., Krysiak, M., Deo, K. 等 39 人"
+    }
+  ],
+  "review": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "note": "2026-08-02 候选 60 篇，全部自动分≥70，但夹杂合成数据训练且外部崩溃的 AKI 智能体、波斯语医疗小模型、法律欺骗检测、藏医文化偏见基准及纯湿实验稿。按 AI×Bio 相关性、方法可信度与实验/临床证据精选 16 篇 preprint，覆盖蛋白质与结构、组学与细胞、生物医学与临床、方法与模型；当日新增 MedUPS 中途决策对齐、Gemma 组学策展智能体与 PET/CT 隐匿淋巴结外验证。未收录外部验证崩溃的 AKI 框架、无独立复现的影像灌水项及缺乏计算方法的湿实验。"
+  }
+}

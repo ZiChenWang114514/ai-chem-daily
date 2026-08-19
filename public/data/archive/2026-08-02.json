@@ -1,0 +1,863 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-02",
+  "channel": "aixchem",
+  "generated_at": "2026-08-18T15:10:44+00:00",
+  "title": "AI × Chem 每日精选",
+  "subtitle": "预印本、方法、数据集与实验验证的每日精选。",
+  "window": {
+    "start": "2026-07-30",
+    "end": "2026-08-02"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 1842,
+    "candidates": 60,
+    "selected": 16,
+    "sources": {
+      "arXiv": 1176,
+      "bioRxiv": 560,
+      "ChemRxiv": 122
+    }
+  },
+  "source_status": {
+    "arXiv": {
+      "state": "ok",
+      "count": 1176
+    },
+    "bioRxiv": {
+      "state": "ok",
+      "count": 560
+    },
+    "ChemRxiv": {
+      "state": "ok",
+      "count": 122
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15001253/v5",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixmath",
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "When Do Models Win? A Learning Curve Benchmark for Molecular Property Prediction in Low-Data Regimes",
+      "url": "https://doi.org/10.26434/chemrxiv.15001253/v5",
+      "published_at": "2026-07-31",
+      "updated_at": "2026-07-31",
+      "creators": [
+        "Junho Lee¹"
+      ],
+      "language": "en",
+      "abstract_or_text": "In many molecular property prediction tasks, such as drug discovery and OLED material design, labeled data are often limited to only tens to thousands of samples due to high experimental costs. Despite the rapid development of machine learning models, it remains unclear which model classes are most effective under such low-data regimes and how their performance evolves with increasing data. In this work, we present a comprehensive learning curve benchmark of molecular property prediction across a broad model suite spanning traditional machine learning, graph neural networks (GNNs), transformer-based molecular language models, SE(3)-equivariant and -invariant 3D networks, descriptor-based hybrids, multi-task learning variants, and multimodal graph–sequence fusion baselines. We systematically vary the training data size from 50 to 3,000 samples and evaluate on the QM9, ESOL, Lipophilicity, and BACE datasets using scaffold splits with repeated trials for statistical robustness. Our analysis reveals four principal patterns: (1) regime-dependent model optimality — deep learning models lead continuous physicochemical property prediction (ESOL, Lipophilicity), while kernel-based methods such as Gaussian Process Regression remain superior for bioactivity prediction (BACE) across most of the tested range, with clear crossover points emerging between traditional and deep learning approaches; (2) target-dependent benefit of 3D inductive bias — on QM9 an equivariant 3D network trained on DFT-optimized geometries performs strongly on LUMO and the HOMO–LUMO gap but struggles on HOMO despite these exact geometries, suggesting a representational mismatch rather than a geometry-quality limitation; on Lipophilicity and BACE, single-conformer ETKDG inputs yield essentially flat learning curves, where weak conformer geometry and the conformer-insensitivity of these endpoints cannot be fully disentangled — though both readings point to a mismatch between single-geometry 3D models and conformer-insensitive targets; (3) pretraining chiefly raises the low-data floor — the advantage of modern foundation models (ChemBERTa-2, MoLFormer-XL, SELFormer, Uni-Mol-PT) over GNNs and fingerprints appears not uniformly at the smallest sizes but in regimes where no single model dominates, and works chiefly by lifting worst-case low-data accuracy far above that of a matched from-scratch model — shown directly for the 3D model Uni-Mol (the minimum QM9 R² at N≤200 rises by 0.6–0.9) — while its peak advantage is target-specific (e.g., Uni-Mol-PT on QM9 LUMO and the gap) rather than universal; raw parameter count and pretraining-corpus size still do not by themselves explain the ranking among these models (the compact ChemBERTa-2 outperforms the far larger MoLFormer-XL and SELFormer on ESOL and Lipophilicity); and (4) model selection over model averaging — in a controlled post-hoc analysis, even oracle ensembles that select their members by test-set error barely improve on the best single model in the lowest-data regime (at most +1.2% at N=50, and negative on ESOL), so even under oracle selection the gain from averaging is marginal, indicating that the dominant lever under data scarcity is choosing the right single model rather than combining several. Our findings provide actionable guidelines for model selection under data scarcity and highlight learning curve analysis as a principled tool for understanding model behavior across the property–scale plane. Scientific Contribution: This study establishes a comprehensive learning curve benchmark for molecular property prediction in low-data regimes, systematically comparing a broad suite of model families — from traditional machine learning to multimodal graph–sequence fusion baselines — across four datasets spanning physicochemical, quantum mechanical, and biological activity properties. We identify regime- and target-dependent model optimality and crossover points between traditional machine learning and deep learning methods, quantify the target-dependent benefit and conformer-fidelity limits of 3D geometry-based networks, and provide actionable, data-scale-aware guidelines for model selection in low-data molecular property prediction.",
+      "summary_zh": "在 QM9、ESOL、Lipophilicity 与 BACE 上比较传统机器学习、GNN、分子语言模型与 3D 等变网络从 50 到 3,000 样本的学习曲线，发现体制依赖的最优模型，并指出预训练主要抬高低数据下限、集成收益有限。",
+      "why_it_matters_zh": "低数据分子性质预测的选型长期依赖经验；该基准用骨架划分与重复试验给出可操作交叉点，但仅覆盖四个公开集。",
+      "quality_score": 94.0,
+      "tags": [
+        "方法与模型",
+        "分子性质预测",
+        "学习曲线",
+        "低数据",
+        "基础模型"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "公开数据",
+        "报告负面结果",
+        "benchmark",
+        "dataset",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 1,
+      "featured": true,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15001253/v5",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "在许多分子性质预测任务中，例如药物发现和 OLED 材料设计，由于实验成本高昂，标注数据往往仅有数十至数千个样本。尽管机器学习模型发展迅速，在此类低数据体制下哪一类模型最为有效、以及其性能如何随数据量增加而演变，仍不清楚。本文给出一项全面的分子性质预测学习曲线基准，覆盖传统机器学习、图神经网络（GNNs）、基于 transformer 的分子语言模型、SE(3) 等变与不变 3D 网络、基于描述符的混合模型、多任务学习变体，以及多模态图–序列融合基线。我们系统地将训练数据规模从 50 变化到 3,000 个样本，并在 QM9、ESOL、Lipophilicity 和 BACE 数据集上采用骨架划分与重复试验以保证统计稳健性。分析揭示四个主要规律：(1) 体制依赖的模型最优性——深度学习模型在连续物理化学性质预测（ESOL、Lipophilicity）上领先，而核方法如高斯过程回归在生物活性预测（BACE）的大部分测试范围内仍更优，传统方法与深度学习之间出现清晰交叉点；(2) 3D 归纳偏置的收益具有目标依赖性——在 QM9 上，以 DFT 优化几何训练的等变 3D 网络在 LUMO 和 HOMO–LUMO gap 上表现强劲，但即便几何精确，在 HOMO 上仍困难，提示这是表征失配而非几何质量限制；在 Lipophilicity 和 BACE 上，单构象 ETKDG 输入给出近乎平坦的学习曲线，弱构象几何与这些终点的构象不敏感性无法完全分离——两种解读都指向单几何 3D 模型与构象不敏感目标之间的失配；(3) 预训练主要抬高低数据下限——现代基础模型（ChemBERTa-2、MoLFormer-XL、SELFormer、Uni-Mol-PT）相对 GNNs 和指纹的优势并不均匀出现在最小规模，而出现在没有单一模型主导的体制，并且主要通过把最差情况下的低数据精度远高于匹配的从头训练模型——直接体现在 3D 模型 Uni-Mol 上（N≤200 时 QM9 最小 R² 提升 0.6–0.9）——其峰值优势具有目标特异性（例如 Uni-Mol-PT 在 QM9 LUMO 和 gap 上）而非普适；原始参数量与预训练语料规模本身仍无法解释这些模型之间的排名（紧凑的 ChemBERTa-2 在 ESOL 和 Lipophilicity 上优于远更大的 MoLFormer-XL 和 SELFormer）；(4) 模型选择优于模型平均——在受控事后分析中，即便按测试集误差选择成员的 oracle 集成，在最低数据体制下也几乎无法超过最佳单模型（N=50 时最多 +1.2%，在 ESOL 上为负），因此即便在 oracle 选择下，平均带来的增益也微弱，表明数据稀缺时的主导杠杆是选择正确的单一模型，而非组合多个模型。我们的发现为数据稀缺下的模型选择提供可操作指南，并强调学习曲线分析是理解模型在性质–规模平面上行为的原则性工具。科学贡献：本研究建立了低数据体制下分子性质预测的全面学习曲线基准，系统比较从传统机器学习到多模态图–序列融合基线的广泛模型家族，覆盖跨越物理化学、量子力学和生物活性性质的四个数据集。我们识别体制与目标依赖的模型最优性以及传统机器学习与深度学习之间的交叉点，量化 3D 几何网络的目标依赖收益与构象保真度限制，并为低数据分子性质预测提供可操作的、数据规模感知的模型选择指南。",
+      "published": "2026-07-31",
+      "author_line": "Junho Lee¹"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15006882/v1",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "KITE: Knowledge-Infused Transformer Encoder for Molecular Property Prediction",
+      "url": "https://doi.org/10.26434/chemrxiv.15006882/v1",
+      "published_at": "2026-08-02",
+      "updated_at": "2026-08-03",
+      "creators": [
+        "Hoang-Huy Nguyen",
+        "Van-Thinh To",
+        "Tuyen Ngoc Truong",
+        "Tieu-Long Phan"
+      ],
+      "language": "en",
+      "abstract_or_text": "The prediction of molecular properties using Artificial Intelligence (AI) is a transformative approach yet the effectiveness of such models depends heavily on the quality of the molecular representation. Deep learning architectures such as Graph Neural Networks (GNNs), combined with Self-Supervised Learning (SSL), have achieved considerable success, but they remain limited in their ability to capture long-range interactions and to integrate fundamental chemical information, such as atomic period, group, and orbital hybridization data. To address these limitations, this study proposes the Knowledge-Infused Transformer Encoder (KITE) model. KITE leverages the strengths of the Transformer architecture, which is well suited to processing long-range dependencies, and integrates fundamental chemical information directly into its input features. The methodology focuses on constructing the KITE model around the Bond-Edge Attention Model (BEAM) architecture to represent information from chemical bonds. The principal design 1 change lies in the atomic features: one-hot encoding is replaced by atom identification based on periodic-table period and group, while the hybridization state is represented by a five-component vector derived from Valence Shell Electron Pair Repulsion (VSEPR) theory. The model was pre-trained using a Knowledge-Guided Pre-training Strategy (KPS) on 965,812 molecules from ChEMBL29 and subsequently fine-tuned on eleven benchmark datasets, nine drawn from MoleculeNet together with the Estrogen and MetStab datasets. Performance was evaluated using the Area Under the Receiver Operating Characteristic Curve (ROC-AUC) and Root-Mean-Square Error (RMSE) metrics, together with a data contamination analysis based on canonical SMILES. On the eight classification tasks, KITE achieved an average ROC-AUC of 0.854, compared with 0.843 for Knowledge-guided Pre-training of Graph Transformer (KPGT), despite using a pre-training dataset less than half the size. On the three regression tasks, KITE achieved an average RMSE of 1.020, compared with 1.175 for KPGT. The overall exact-molecule contamination rate was 24.9% for KITE and 86.9% for KPGT. These results show that chemically informed atom and bond features can support competitive molecular property prediction with a comparatively small pre-training corpus. Further work should evaluate richer chemical features, alternative fine-tuning strategies, and practical virtual-screening applications with experimental validation.",
+      "summary_zh": "KITE 用周期与族标识及 VSEPR 五维杂化向量替换原子 one-hot，并以 BEAM 编码键信息；在 ChEMBL29 的 965,812 个分子上做 KPS 预训练后，八项分类平均 ROC-AUC 0.854、三项回归平均 RMSE 1.020，精确分子污染率仅 24.9%。",
+      "why_it_matters_zh": "把周期表与 VSEPR 先验写进表征，并用污染分析解释相对 KPGT 的增益；湿实验虚拟筛选验证仍缺。",
+      "quality_score": 91.0,
+      "tags": [
+        "方法与模型",
+        "KITE",
+        "分子性质预测",
+        "VSEPR",
+        "数据污染"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "公开数据",
+        "报告负面结果",
+        "benchmark",
+        "dataset",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 2,
+      "featured": true,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15006882/v1",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "利用人工智能（AI）预测分子性质是一种具有变革性的方法，但此类模型的有效性在很大程度上取决于分子表征的质量。图神经网络（GNNs）等深度学习架构与自监督学习（SSL）相结合已取得相当成功，但它们在捕获长程相互作用以及整合原子周期、族和轨道杂化等基本化学信息方面仍受限制。为应对这些局限，本研究提出 Knowledge-Infused Transformer Encoder（KITE）模型。KITE 利用 Transformer 架构善于处理长程依赖的优势，并将基本化学信息直接整合到输入特征中。方法上，KITE 围绕 Bond-Edge Attention Model（BEAM）架构构建，以表征化学键信息。主要设计变化在于原子特征：用基于周期表周期和族的原子标识取代 one-hot encoding，而杂化态则由源自 Valence Shell Electron Pair Repulsion（VSEPR）理论的五分量向量表示。该模型使用 Knowledge-Guided Pre-training Strategy（KPS）在来自 ChEMBL29 的 965,812 个分子上预训练，随后在十一个基准数据集上微调，其中九个来自 MoleculeNet，另加 Estrogen 和 MetStab 数据集。性能用受试者工作特征曲线下面积（ROC-AUC）和均方根误差（RMSE）评估，并基于 canonical SMILES 进行数据污染分析。在八项分类任务上，KITE 的平均 ROC-AUC 为 0.854，而 Knowledge-guided Pre-training of Graph Transformer（KPGT）为 0.843，尽管预训练数据集不到后者一半。在三项回归任务上，KITE 的平均 RMSE 为 1.020，KPGT 为 1.175。整体精确分子污染率 KITE 为 24.9%，KPGT 为 86.9%。这些结果表明，化学知情的原子与键特征能够以相对较小的预训练语料支持有竞争力的分子性质预测。后续工作应评估更丰富的化学特征、替代微调策略，以及带实验验证的实际虚拟筛选应用。",
+      "published": "2026-08-02",
+      "author_line": "Hoang-Huy Nguyen, Van-Thinh To, Tuyen Ngoc Truong 等 4 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15006899/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Integrated BODIPY photosensitizer discovery: Multimodal property prediction, fingerprint diffusion and human-in-the-loop molecular design",
+      "url": "https://doi.org/10.26434/chemrxiv.15006899/v1",
+      "published_at": "2026-08-02",
+      "updated_at": "2026-08-03",
+      "creators": [
+        "Junpeng Chen",
+        "Yanrong Song",
+        "Yikun Li",
+        "Chao Wu",
+        "Jie Luo",
+        "Yixue Lu",
+        "Haokun Wei",
+        "Fuping Han",
+        "Changyu Zhang",
+        "Yifan Wang",
+        "Qilei Liu",
+        "Lei Zhang",
+        "Jianjun Du"
+      ],
+      "language": "en",
+      "abstract_or_text": "Boron-dipyrromethene (BODIPY) photosensitizers (PS) are important candidates for photodynamic therapy (PDT) and other light-driven applications because of their readily tunable photophysical properties. However, existing molecular design approaches are constrained by insufficient property-prediction accuracy, inefficient structure generation and limited consideration of experimental feasibility. Here, we develop an integrated molecular design framework that combines multimodal property prediction, fingerprint-based molecular diffusion, GRU–SELFIES decoding and human-in-the-loop decision-making. We further develop a Perturbation–Immediate Denoising–Evaluation (PIDE) guidance strategy that decouples molecular generation from property prediction, unlike classifier guidance, which requires a property predictor to estimate properties from noisy intermediate states during diffusion. The framework was trained using 889,033 symmetric BODIPY molecules, whose structural symmetry was introduced to reduce the expected difficulty of chemical synthesis. Compared with PaiNN, Chemprop, random forest, XGBoost and support vector machine baselines, the multimodal fusion model improved R2 by 0.6–86.0% across five regression tasks. The fingerprint diffusion model achieved a molecular validity of 96.88%, compared with 54.79% for GDSS. Complete unconditional generation from random fingerprint initialization through 200 reverse-diffusion steps and GRU–SELFIES decoding to SMILES required 0.000911 ± 0.000009 s per molecule. When benchmarked using the same device, GDSS required 4.3704 s per generated sample (approximately 4,797-fold higher). The GRUSELFIES model correctly translated 93.5% of fingerprint-derived tokens and exactly reproduced the reference SMILES for 82.1% of molecules, with 100% molecular validity and an approximately 193-fold speedup over the Transformer–SMILES decoder. Following automated QSPR-based ranking, human experts participate in every round of guided molecular optimization rather than evaluating the candidates only after the entire generation process is completed. At each round, experts assess the synthetic accessibility, commercial availability of starting materials and empirical chemical value of the proposed molecules. This iterative interaction enables overestimated out-of-distribution candidates to be identified and removed at an early stage, preventing them from being propagated into subsequent rounds of guidance and reducing the risk of investing wet-laboratory resources in poorly supported candidates.",
+      "summary_zh": "面向 BODIPY 光敏剂，结合多模态性质预测、指纹扩散、GRU–SELFIES 解码与人在环决策，并提出 PIDE 引导；在 889,033 个对称分子上训练，五任务 R2 相对基线提升 0.6–86.0%，指纹扩散有效性 96.88%，生成较 GDSS 快约 4,797 倍。",
+      "why_it_matters_zh": "把生成与性质预测解耦并引入化学家轮次筛选，降低 OOD 高估风险；目前主要是计算指标，湿实验落地仍待开展。",
+      "quality_score": 90.0,
+      "tags": [
+        "分子与药物发现",
+        "BODIPY",
+        "分子生成",
+        "PIDE",
+        "人在环"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有对照实验",
+        "仅摘要可判断",
+        "benchmark",
+        "experimental",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 3,
+      "featured": true,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15006899/v1",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "Boron-dipyrromethene（BODIPY）光敏剂（PS）因其易于调控的光物理性质，是光动力治疗（PDT）及其他光驱动应用的重要候选。然而，现有分子设计方法受限于性质预测精度不足、结构生成效率低以及对实验可行性考虑有限。本文开发一个集成分子设计框架，结合多模态性质预测、基于指纹的分子扩散、GRU–SELFIES 解码以及人在环决策。我们进一步提出 Perturbation–Immediate Denoising–Evaluation（PIDE）引导策略，将分子生成与性质预测解耦，这不同于 classifier guidance——后者要求性质预测器在扩散过程中从带噪声的中间状态估计性质。该框架用 889,033 个对称 BODIPY 分子训练，引入结构对称性以降低预期化学合成难度。相对 PaiNN、Chemprop、random forest、XGBoost 和支持向量机基线，多模态融合模型在五项回归任务上使 R2 提升 0.6–86.0%。指纹扩散模型的分子有效性为 96.88%，而 GDSS 为 54.79%。从随机指纹初始化出发，经 200 步反向扩散和 GRU–SELFIES 解码到 SMILES 的完整无条件生成，每个分子耗时 0.000911 ± 0.000009 s。在同一设备上基准评测时，GDSS 每个生成样本需要 4.3704 s（约高 4,797 倍）。GRUSELFIES 模型正确翻译了 93.5% 的指纹衍生 token，并精确复现了 82.1% 分子的参考 SMILES，分子有效性为 100%，相对 Transformer–SMILES 解码器约快 193 倍。在基于 QSPR 的自动排序之后，人类专家参与每一轮引导分子优化，而不是仅在整个生成过程结束后评估候选。在每一轮中，专家评估所提分子的合成可及性、起始原料的商业可得性以及经验化学价值。这种迭代交互使被高估的分布外候选能够在早期被识别并剔除，防止其传入后续引导轮次，并降低把湿实验室资源投入证据不足候选的风险。",
+      "published": "2026-08-02",
+      "author_line": "Junpeng Chen, Yanrong Song, Yikun Li 等 13 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15006766/v1",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "MATCHA: a toolkit for streamlining molecular property prediction for drug discovery applications",
+      "url": "https://doi.org/10.26434/chemrxiv.15006766/v1",
+      "published_at": "2026-07-30",
+      "updated_at": "2026-07-30",
+      "creators": [
+        "Davide Boldini",
+        "Lukas Friedrich",
+        "Jakub Gunera",
+        "Christina Schindler",
+        "Daniel Kuhn"
+      ],
+      "language": "en",
+      "abstract_or_text": "Molecular property prediction is a key computational tool for drug design, allowing researchers to predict several key parameters such as Absorption, Distribution, Metabolism, Excretion and Toxicity (ADMET) properties of candidate molecules. While the field has undergone rapid development in recent years, for example with the introduction of graph neural networks and chemical foundation models, the tool landscape is highly fragmented across diDerent packages, making the adoption of state-of-the-art approaches particularly cumbersome. To address this issue, we introduce MATCHA (Modelling and AI Toolkit for Chemistry in Healthcare Applications), an open-source Python package for various molecular property prediction algorithms, which we used to rank 3rd out of 370 participants in the recent OpenADMET-ExpansionRx molecular property prediction blind challenge. We provide three diDerent case studies tackling large-scale benchmarking on the OpenADMET-ExpansionRx challenge dataset, estimating prediction confidence via uncertainty quantification approaches and explaining black-box model decisions via medicinal chemistry inspired Local Interpretable Modelagnostic Explanations (LIME). By providing multiple programming interfaces and agentic skills for AI-assisted workflow automation, the package is suited for experts and non-experts alike to develop complex molecular property prediction workflows and integrate new algorithms. The package is available at https://github.com/emdgroup/matcha.",
+      "summary_zh": "开源工具包 MATCHA 统一多种分子性质预测算法，并在 OpenADMET-ExpansionRx 盲测中于 370 支队伍排名第 3；案例覆盖大规模基准、不确定性量化与药物化学启发的 LIME 解释。",
+      "why_it_matters_zh": "把碎片化的 ADMET 工具链收成可扩展 Python 包并附 agentic skills，便于复现盲测流程；主要证据来自一次挑战排名。",
+      "quality_score": 88.0,
+      "tags": [
+        "方法与模型",
+        "ADMET",
+        "MATCHA",
+        "开源工具",
+        "不确定性量化"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "公开代码",
+        "有外部测试",
+        "benchmark",
+        "dataset",
+        "github"
+      ],
+      "publication_status": "preprint",
+      "rank": 4,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15006766/v1",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "分子性质预测是药物设计的关键计算工具，使研究者能够预测候选分子的吸收、分布、代谢、排泄和毒性（ADMET）等关键参数。尽管该领域近年来发展迅速，例如图神经网络和化学基础模型的引入，工具生态在不同软件包之间高度碎片化，使采用最先进方法尤为繁琐。为解决这一问题，我们推出 MATCHA（Modelling and AI Toolkit for Chemistry in Healthcare Applications），一个面向多种分子性质预测算法的开源 Python 包；我们用它在近期 OpenADMET-ExpansionRx 分子性质预测盲测挑战中于 370 名参赛者中排名第 3。我们提供三个不同案例研究：在 OpenADMET-ExpansionRx 挑战数据集上的大规模基准评测、通过不确定性量化方法估计预测置信度，以及用受药物化学启发的 Local Interpretable Modelagnostic Explanations（LIME）解释黑箱模型决策。通过提供多种编程接口和用于 AI 辅助工作流自动化的 agentic skills，该软件包同时适合专家与非专家开发复杂分子性质预测工作流并集成新算法。该软件包见 https://github.com/emdgroup/matcha。",
+      "published": "2026-07-30",
+      "author_line": "Davide Boldini, Lukas Friedrich, Jakub Gunera 等 5 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.07.27.740774",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "How Bias Shapes the Leaderboard: Scoring Function Performance Under Scrutiny",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.07.27.740774",
+      "published_at": "2026-07-30",
+      "updated_at": "2026-07-30",
+      "creators": [
+        "Graber, D.",
+        "Kopko, J.",
+        "Stockinger, P.",
+        "Nakandalage, R.",
+        "Kuhn, B.",
+        "Mishra, S."
+      ],
+      "language": "en",
+      "abstract_or_text": "Structure-based scoring functions leveraging machine learning have recently demonstrated superior performance over classical scoring functions, particularly on virtual screening benchmarks. However, due to the fundamental differences between their underlying model principles and architectures, it remains unclear to what extent performance stems from an understanding of molecular binding or from exploitation of systemic biases. Thus, disentangling the factors underlying benchmark performance is essential for determining whether a scoring function will generalize to novel chemical space and succeed in prospective drug discovery. To address this need, we present a case study investigating the nature and impact of systemic biases on benchmark comparisons between different scoring function paradigms. By systematically analyzing the evaluation workflows of prominent models, we reveal pocket bias, a form of spatial coordinate frame leakage arising from static binding pocket extraction, which artificially inflates benchmark performance. To progressively eliminate these sources of bias, we benchmarked two selected graph neural network scoring functions against two minmalist machine learning models and a classical scoring function under four increasingly stringent evaluation levels, successively removing pocket bias, reducing structural data leakage, and finally evaluating on out-of-distribution (OOD) protein targets. Upon removal of pocket bias and structural data leakage, the performance of all machine learning models dropped substantially. When evaluated on out-of-distribution protein families, the classical baseline AutoDock Vina outperformed the machine learning models in five of seven virtual screening tasks and dominated the docking power evaluation. Our findings indicate that benchmark performance can be heavily shaped by evaluation design and dataset artifacts, potentially overshadowing algorithmic improvements. While the tested machine learning models remain heavily dependent on encountering familiar data distributions to achieve competitive results, AutoDock Vina demonstrated superior generalization capacity on OOD targets. This work underscores the critical need for rigorous, artifact-free benchmarking protocols to guide the development of truly prospective machine learning models for virtual screening.",
+      "summary_zh": "分析指出静态口袋提取会造成 pocket bias，抬高机器学习评分函数的虚拟筛选成绩；去掉口袋偏差与结构泄漏后性能大降，OOD 靶点上 AutoDock Vina 在多数任务中反超。",
+      "why_it_matters_zh": "直接警示对接排行榜可能被评估伪迹主导，对前瞻虚拟筛选的模型选择有纠偏价值。",
+      "quality_score": 87.0,
+      "tags": [
+        "分子与药物发现",
+        "评分函数",
+        "虚拟筛选",
+        "口袋偏差",
+        "OOD 泛化"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有对照实验",
+        "报告负面结果",
+        "benchmark",
+        "dataset",
+        "prospective"
+      ],
+      "publication_status": "preprint",
+      "rank": 5,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.27.740774",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "利用机器学习的基于结构的评分函数最近在虚拟筛选基准上表现出优于经典评分函数的性能。然而，由于其底层模型原理和架构存在根本差异，尚不清楚性能在多大程度上来自对分子结合的理解，还是对系统性偏差的利用。因此，拆解基准性能背后的因素，对于判断评分函数能否泛化到新化学空间并在前瞻性药物发现中成功至关重要。针对这一需求，我们给出一项案例研究，考察系统性偏差对不同评分函数范式基准比较的性质与影响。通过系统分析主流模型的评估工作流，我们揭示 pocket bias，这是一种由静态结合口袋提取引起的空间坐标系泄漏，会人为抬高基准性能。为逐步消除这些偏差来源，我们在四个日益严格的评估层级下，将两个选定的图神经网络评分函数与两个极简机器学习模型和一个经典评分函数进行基准比较，依次去除口袋偏差、降低结构数据泄漏，最后在分布外（OOD）蛋白靶点上评估。去除口袋偏差和结构数据泄漏后，所有机器学习模型的性能大幅下降。在分布外蛋白家族上评估时，经典基线 AutoDock Vina 在七项虚拟筛选任务中的五项上优于机器学习模型，并主导对接能力评估。我们的发现表明，基准性能可能在很大程度上由评估设计和数据集伪迹塑造，从而掩盖算法改进。受测机器学习模型仍高度依赖遇到熟悉的数据分布才能获得有竞争力的结果，而 AutoDock Vina 在 OOD 靶点上展现出更强的泛化能力。本工作强调，需要严谨、无伪迹的基准协议，以指导真正面向前瞻虚拟筛选的机器学习模型发展。",
+      "published": "2026-07-30",
+      "author_line": "Graber, D., Kopko, J., Stockinger, P. 等 6 人"
+    },
+    {
+      "id": "arxiv:2607.29158v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Implicit Machine Learning Force Fields Accelerate Molecular Dynamics Simulations",
+      "url": "https://arxiv.org/abs/2607.29158v1",
+      "published_at": "2026-07-31",
+      "updated_at": "2026-07-31",
+      "creators": [
+        "Johannes Maeß",
+        "Leon Werner",
+        "J. Thorben Frank",
+        "Winfried Ripken",
+        "Martin Michajlow",
+        "Joshua Futterer",
+        "Klaus-Robert Müller",
+        "Stefan Chmiela"
+      ],
+      "language": "en",
+      "abstract_or_text": "We introduce implicit machine learning force fields (I-MLFFs), which replace explicit stacks of neural network layers with self-consistent fixed-point equations. In molecular simulations, this formulation enables intermediate representations to be reused across successive timesteps, thereby warm-starting force evaluation. The resulting models effectively combine the computational footprint of a shallow, single-layer MLFF with the representational capacity and accuracy of a deep neural network. Our approach unlocks architecture-agnostic efficiency gains that are inaccessible when force prediction and trajectory integration are considered separately. We demonstrate this across three major classes of graph neural networks: invariant, equivariant Cartesian tensor, and SO(3)-equivariant spherical-tensor architectures. Each yields a two- to five-fold reduction in compute and memory footprint. Crucially, these gains are achieved while retaining full atomistic resolution and the original integration timestep, avoiding spatial or temporal coarse graining. Our contribution therefore advances the scaling frontier of quantum-mechanically faithful molecular simulation, enabling longer trajectories and larger atomistic systems within fixed GPU memory and compute budgets, and thereby opening access to new insights across biomolecular and material systems.",
+      "summary_zh": "I-MLFFs 用自洽不动点方程替代显式深层网络，使力评估可跨时间步热启动；在不变、笛卡尔等变与 SO(3) 球张量三类图网络上把计算与显存降为原来的 1/2 到 1/5，且不改变原子分辨率和时间步。",
+      "why_it_matters_zh": "把力预测与轨迹积分一并考虑，给出架构无关的 MLFF 加速；摘要未报告具体体系的能量或力误差对照。",
+      "quality_score": 87.0,
+      "tags": [
+        "方法与模型",
+        "机器学习力场",
+        "分子动力学",
+        "等变网络",
+        "隐式层"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "仅摘要可判断",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 6,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2607.29158v1"
+      },
+      "abstract_zh": "我们提出隐式机器学习力场（I-MLFFs），用自洽不动点方程替代显式堆叠的神经网络层。在分子模拟中，这一表述使中间表示可在相继时间步之间复用，从而对力评估进行热启动。所得模型实际上把浅层单层 MLFF 的计算足迹与深度神经网络的表征能力和精度结合起来。当力预测与轨迹积分被分开考虑时，这种方法解锁了架构无关的效率增益。我们在三类主要图神经网络上证明了这一点：不变网络、等变笛卡尔张量网络，以及 SO(3) 等变球张量架构。各自实现了计算与内存足迹两到五倍的降低。关键的是，这些增益在保留完整原子分辨率和原始积分时间步的前提下获得，避免了空间或时间粗粒化。因此，我们的贡献推进了量子力学忠实分子模拟的尺度前沿，使在固定 GPU 内存和计算预算下能够运行更长轨迹和更大原子体系，从而为生物分子与材料体系打开新的洞见。",
+      "published": "2026-07-31",
+      "author_line": "Johannes Maeß, Leon Werner, J. Thorben Frank 等 8 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.07.31.742133",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixmath",
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "SPINDLE: Unlocking protein dynamics from single-field NMR relaxation data using a deep learning ensemble.",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.07.31.742133",
+      "published_at": "2026-08-01",
+      "updated_at": "2026-08-01",
+      "creators": [
+        "Krise, O. E.",
+        "Latham, M. P."
+      ],
+      "language": "en",
+      "abstract_or_text": "A proteins function is derived from its three-dimensional structure and the motions of the atoms about that structure. The detailed characterization of both macromolecular structure and dynamics provides an opportunity for understanding enzyme catalysis, ligand binding, and allostery, along with providing insights into how the function changes upon mutation or post-translational modification. Among the various methods for characterizing biomolecular motions, nuclear magnetic resonance (NMR) spin relaxation methods are a standard for determining nanosecond global tumbling times along with the amplitude and timescale of faster local motions. Within the model-free formalism, various mathematical models are used to extract dynamic parameters. Unfortunately, as the number of fitted parameters increases within these models, they become mathematically underdetermined for standard NMR relaxation data collected at a single magnetic field, necessitating multi-field datasets. Here, we present SPINDLE, an ensemble of deep neural networks trained on a large synthetic set of NMR relaxation data. Unlike traditional least-squares fitting, SPINDLE predicts both fast and slow timescale dynamics parameters from a single set (i.e., collected at a single magnetic field) of three relaxation datasets using the ensemble for error estimation. We demonstrate a strong correlation to ground truth dynamics parameters on synthetic benchmarks, with more precision than traditional fitting techniques, and precisely reproduce experimental dynamics parameters for [~]50 proteins with relaxation data in the Biological Magnetic Resonance Data Bank. We also leverage the architecture of the deep neural network to show how the model emphasizes rigid residues for the prediction of global correlation times. This strategy may be useful in the future for elucidating correlated networks of dynamic residues from multiple relaxation datasets.",
+      "summary_zh": "SPINDLE 用在合成 NMR 弛豫数据上训练的深度网络集成，从单磁场三组弛豫数据同时预测快慢时间尺度动力学，并在 BMRB 约 50 个蛋白质上复现实验参数。",
+      "why_it_matters_zh": "缓解单场 NMR 模型自由拟合欠定问题，并给出集成误差估计；推广到相关动态网络仍属展望。",
+      "quality_score": 86.0,
+      "tags": [
+        "结构与生物",
+        "NMR",
+        "蛋白质动力学",
+        "SPINDLE",
+        "model-free"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有外部测试",
+        "公开数据",
+        "benchmark",
+        "dataset",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 7,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.31.742133",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "蛋白质的功能来自其三维结构以及原子围绕该结构的运动。对大分子结构与动力学的细致表征，为理解酶催化、配体结合和变构提供机会，并洞察功能如何随突变或翻译后修饰而变化。在表征生物分子运动的多种方法中，核磁共振（NMR）自旋弛豫方法是测定纳秒级整体翻滚时间以及更快局域运动幅度与时间尺度的标准。在 model-free 形式体系中，用各种数学模型提取动力学参数。不幸的是，随着这些模型中拟合参数增多，它们对在单一磁场采集的标准 NMR 弛豫数据在数学上变得欠定，因而需要多场数据集。本文推出 SPINDLE，一个在大量合成 NMR 弛豫数据上训练的深度神经网络集成。与传统最小二乘拟合不同，SPINDLE 从单一磁场采集的三组弛豫数据集预测快、慢时间尺度动力学参数，并用集成进行误差估计。我们在合成基准上证明其与真实动力学参数强相关，精度高于传统拟合技术，并精确再现 Biological Magnetic Resonance Data Bank 中约 50 个蛋白质的实验动力学参数。我们还利用深度神经网络的架构表明，模型在预测整体相关时间时强调刚性残基。该策略将来可能用于从多个弛豫数据集阐明动态残基的相关网络。",
+      "published": "2026-08-01",
+      "author_line": "Krise, O. E., Latham, M. P."
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15006846/v1",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "TSS-TDM: A Spatiotemporal Diffusion Framework for Protein State-Transition Pathway Generation, and Unbiased Frontier Conformational Exploration",
+      "url": "https://doi.org/10.26434/chemrxiv.15006846/v1",
+      "published_at": "2026-07-31",
+      "updated_at": "2026-07-31",
+      "creators": [
+        "Chuanye Xiong",
+        "Alex Chen",
+        "Eleanor D. Smith",
+        "Peng Tao"
+      ],
+      "language": "en",
+      "abstract_or_text": "Determining protein structures and dynamics has been a central pursuit in biomedical research for decades. However, the intrinsic complexity of protein systems and the limited ability of experimental techniques to capture transient conformational states have made molecular dynamics (MD) simulations indispensable for exploring protein conformational landscapes and elucidating structure–function relationships at the atomic level. Despite their broad utility, MD simulations are fundamentally limited by high computational cost and dependence on the accuracy of empirical force fields. To address these challenges, we introduce TSS-TDM, a diffusion-based protein trajectory sampling framework that integrates spatial and temporal attention to model protein conformational dynamics. TSS-TDM enables efficient and unbiased exploration of protein conformational space and generates protein transition pathways between distinct functional states. The performance of TSS-TDM was validated across three representative molecular systems: alanine dipeptide, a well-established model system for evaluating conformational sampling; the Nuclear Coactivator Binding Domain (NCBD), a molten-globule-like Intrinsically Disordered Domain (IDD) that exhibits multiple conformational states; and T4 lysozyme, an enzyme that undergoes hingebending motions between open and closed conformations. Upon validation of the generated trajectories, TSS-TDM outperforms its predecessor, GeoTDM. Notably, although TSS-TDM is trained without explicit energy information, it generates structures with OpenMM potential energy profiles that are closer to those observed in MD simulations and more stable than those generated by GeoTDM, indicating improved structural stability. In addition, TSS-TDM reproduces Ramachandran conformational distributions that are highly consistent with those sampled by real MD trajectories. For NCBD and T4 lysozyme, parallel sampling enables TSS-TDM to explore frontier conformational space in a layer-by-layer and unbiased manner, while trimming sampling allows efficient generation of transition pathways between distinct functional states. Benchmarking results demonstrate that TSS-TDM achieves substantially faster sampling than conventional MD simulations while maintaining an extremely low atomic clash rate in the generated structures. Overall, TSS-TDM provides an efficient alternative to MD simulation for unbiased protein trajectory generation and conformational space exploration.",
+      "summary_zh": "TSS-TDM 以时空注意力扩散模型生成蛋白质轨迹与功能态转变路径，在 alanine dipeptide、NCBD 与 T4 lysozyme 上优于 GeoTDM，OpenMM 能量更接近 MD，且原子碰撞率极低。",
+      "why_it_matters_zh": "为昂贵 MD 采样提供更快替代，并报告能量与 Ramachandran 一致性；训练未显式使用能量，物理可靠性仍需更广体系检验。",
+      "quality_score": 84.0,
+      "tags": [
+        "结构与生物",
+        "蛋白质动力学",
+        "扩散模型",
+        "TSS-TDM",
+        "构象采样"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有对照实验",
+        "有物理一致性检查",
+        "benchmark",
+        "experimental",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 8,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15006846/v1",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "测定蛋白质结构与动力学数十年来一直是生物医学研究的核心追求。然而，蛋白质体系的内在复杂性，以及实验技术捕获瞬态构象态的有限能力，使分子动力学（MD）模拟成为在原子水平探索蛋白质构象景观并阐明结构–功能关系不可或缺的手段。尽管用途广泛，MD 模拟根本上受限于高计算成本和对经验力场精度的依赖。为应对这些挑战，我们推出 TSS-TDM，一个基于扩散的蛋白质轨迹采样框架，整合空间与时间注意力来建模蛋白质构象动力学。TSS-TDM 能够高效、无偏地探索蛋白质构象空间，并生成不同功能态之间的蛋白质转变路径。TSS-TDM 的性能在三个代表性分子体系上得到验证：alanine dipeptide，评估构象采样的成熟模型体系；Nuclear Coactivator Binding Domain（NCBD），呈现多种构象态的熔球样内禀无序结构域（IDD）；以及 T4 lysozyme，在开、闭构象之间发生铰链弯曲运动的酶。在对生成轨迹进行验证后，TSS-TDM 优于其前身 GeoTDM。值得注意的是，尽管 TSS-TDM 训练时没有显式能量信息，它生成的结构具有更接近 MD 模拟、且比 GeoTDM 更稳定的 OpenMM 势能剖面，表明结构稳定性有所提升。此外，TSS-TDM 再现的 Ramachandran 构象分布与真实 MD 轨迹采样高度一致。对 NCBD 和 T4 lysozyme，并行采样使 TSS-TDM 能够层层、无偏地探索前沿构象空间，而修剪采样则允许在不同功能态之间高效生成转变路径。基准结果表明，TSS-TDM 的采样远快于常规 MD 模拟，同时生成结构中的原子碰撞率极低。总体而言，TSS-TDM 为无偏蛋白质轨迹生成和构象空间探索提供了 MD 模拟的高效替代。",
+      "published": "2026-07-31",
+      "author_line": "Chuanye Xiong, Alex Chen, Eleanor D. Smith 等 4 人"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15006844/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Chelatron: Charting Chemical Space with Agentic AI for Metal-Ligand Discovery",
+      "url": "https://doi.org/10.26434/chemrxiv.15006844/v1",
+      "published_at": "2026-07-31",
+      "updated_at": "2026-07-31",
+      "creators": [
+        "Thomas J. Summers",
+        "Logan Ward",
+        "Logan J. Augustine",
+        "Jiyoung Lee",
+        "Michael G. Taylor",
+        "Pascal Grosset",
+        "Scot Halverson",
+        "Yuliana Zamora",
+        "Xiaoyun Wang",
+        "Geetika Gupta",
+        "Danny Perez",
+        "Ping Yang"
+      ],
+      "language": "en",
+      "abstract_or_text": "Automating scientific discovery has been a long-standing objective in the scientific community, and the recent advances in artificial intelligence, particularly large language models and agentic workflows, have made this goal increasingly feasible. In chemistry, however, many problems remain limited by sparse data and fragmentary prior knowledge, leading standard data-driven approaches to struggle. In these low-data settings, progress should instead be accelerated by autonomous systems that strategically generate new informative data. Here, we introduce Chelatron, an agentic platform for autonomous metal-ligand design that leverages large language model-based reasoning to coordinate an iterative, hypothesis-driven framework of molecular discovery via effective chemical space exploration. The platform emulates key elements of the scientific method by proposing chemically meaningful hypotheses, generating candidate molecules, evaluating molecular properties, and using accumulated evidence to guide subsequent exploration. As an initial demonstration, we apply Chelatron to the design of chelators for actinium, an element whose scarcity and radioactivity have left its coordination chemistry underexplored. Across two campaigns, Chelatron proposed 119 hypotheses for improving chelator design and screened nearly 65,000 candidate molecules. 3D metal-chelator structures were constructed and evaluated at the xTB-level of theory for around 2,500 chelators, of which 679 were predicted to bind actinium comparable to or more favorable than the reference chelator, macropa, and are under further investigation. These results demonstrate Chelatron as an operational framework to accelerate hypothesis-driven discovery in data-limited metal-ligand chemistry.",
+      "summary_zh": "Chelatron 用大语言模型智能体循环提出假设、生成并评估金属–配体分子；在锕螯合剂设计中提出 119 条假设、筛选近 65,000 个候选，约 2,500 个经 xTB 评估，679 个优于或接近 macropa。",
+      "why_it_matters_zh": "在数据稀缺的锕配位化学中展示可运行的假设驱动探索；目前主要为计算筛选，实验验证仍在进行。",
+      "quality_score": 84.0,
+      "tags": [
+        "分子与药物发现",
+        "智能体",
+        "金属配体",
+        "锕",
+        "xTB"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "仅摘要可判断"
+      ],
+      "publication_status": "preprint",
+      "rank": 9,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15006844/v1",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "自动化科学发现长期是科学界的目标，而人工智能尤其是大语言模型和智能体工作流的近期进展使这一目标日益可行。然而在化学中，许多问题仍受稀疏数据和零碎先验知识限制，使标准数据驱动方法陷入困境。在这些低数据设定下，进展应由能够策略性生成新信息数据的自主系统来加速。本文推出 Chelatron，一个面向自主金属–配体设计的智能体平台，利用基于大语言模型的推理来协调迭代的、假设驱动的分子发现框架，以有效探索化学空间。该平台通过提出化学上有意义的假设、生成候选分子、评估分子性质，并用累积证据指导后续探索，来模拟科学方法的关键要素。作为初步示范，我们将 Chelatron 应用于锕的螯合剂设计；该元素因稀缺和放射性，其配位化学仍探索不足。在两次活动中，Chelatron 提出了 119 条改进螯合剂设计的假设，并筛选了近 65,000 个候选分子。对约 2,500 个螯合剂构建了 3D 金属–螯合剂结构并在 xTB 理论水平评估，其中 679 个被预测对锕的结合与参考螯合剂 macropa 相当或更有利，目前正在进一步考察。这些结果表明 Chelatron 是一个可运行的框架，可加速数据有限的金属–配体化学中的假设驱动发现。",
+      "published": "2026-07-31",
+      "author_line": "Thomas J. Summers, Logan Ward, Logan J. Augustine 等 12 人"
+    },
+    {
+      "id": "arxiv:2608.00149v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "A Synthetically-accessible Universe of Chemically Recyclable Polymers",
+      "url": "https://arxiv.org/abs/2608.00149v1",
+      "published_at": "2026-07-31",
+      "updated_at": "2026-07-31",
+      "creators": [
+        "Anagha Savit",
+        "Wei Xiong",
+        "Harikrishna Sahu",
+        "Shivank S. Shukla",
+        "Will R. Gutekunst",
+        "Rampi Ramprasad"
+      ],
+      "language": "en",
+      "abstract_or_text": "Polymers synthesized via ring-opening polymerization (ROP) of cyclic monomers represent an important class of materials due to their chemical recyclability and possible insertion in several critical applications. We present a dataset of 1 million synthetically realizable ROP polymer structures generated through a combination of Virtual Forward Synthesis (VFS) and polymer expert language models and qualified by stringent chemical heuristics. VFS is used to generate ROP polymers by applying known reactions to existing monomers. The polymer foundation models polyBART and POLYT5 further enable the generation of ROP candidates, with polyBART exploring its learned latent space and POLYT5 producing candidates via sequence-to-sequence generation. The resulting ROP polymers are subjected to robust filtering criteria to ensure novelty, validity and overall data quality through a combination of automated validation pipelines and a comprehensive set of chemist-informed heuristic rules introduced in this work for the first time. We hope that this dataset will serve as a valuable resource for downstream sustainable applications.",
+      "summary_zh": "结合 Virtual Forward Synthesis 与聚合物基础模型 polyBART、POLYT5，生成并过滤得到 100 万个可合成的开环聚合（ROP）可回收聚合物结构，辅以化学家启发式规则保证新颖性与有效性。",
+      "why_it_matters_zh": "为可回收聚合物设计提供大规模、强调可合成性的候选宇宙；下游性质预测与实验验证尚未展开。",
+      "quality_score": 83.0,
+      "tags": [
+        "材料与催化",
+        "可回收聚合物",
+        "ROP",
+        "polyBART",
+        "生成数据集"
+      ],
+      "evidence_flags": [
+        "公开数据",
+        "仅摘要可判断",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 10,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.00149v1"
+      },
+      "abstract_zh": "通过环状单体开环聚合（ROP）合成的聚合物因化学可回收性以及可进入若干关键应用而成为一类重要材料。我们给出一个包含 100 万个可合成实现的 ROP 聚合物结构的数据集，通过 Virtual Forward Synthesis（VFS）与聚合物专家语言模型相结合生成，并用严格化学启发式加以筛选。VFS 通过对已有单体施加已知反应来生成 ROP 聚合物。聚合物基础模型 polyBART 和 POLYT5 进一步支持 ROP 候选生成：polyBART 探索其学得的潜空间，POLYT5 通过序列到序列生成产生候选。所得 ROP 聚合物经过稳健过滤标准，通过自动化验证管线以及本工作首次引入的一套化学家知情启发式规则，确保新颖性、有效性和整体数据质量。我们希望该数据集成为下游可持续应用的有价值资源。",
+      "published": "2026-07-31",
+      "author_line": "Anagha Savit, Wei Xiong, Harikrishna Sahu 等 6 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.07.29.741404",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "PG-MLD: Physics-Guided Molecular Representation Learning via Dynamic 3D Trajectory Distillation",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.07.29.741404",
+      "published_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "creators": [
+        "liu, Z.",
+        "Wu, Z.",
+        "Chen, Z.",
+        "Gao, X.",
+        "Yu, B."
+      ],
+      "language": "en",
+      "abstract_or_text": "Molecular representation learning underpins molecular property prediction and drug design by capturing molecular structure-property relationships. SMILES-based molecular language models learn chemical semantics from large-scale unlabeled data and support efficient inference. However, the one-dimensional nature of SMILES constrains their ability to capture 3D geometry and conformational evolution, whereas 3D molecular models require conformer generation and substantial computational resources. To bridge this gap, we propose PG-MLD, a dynamic 3D-to-1D physical knowledge distillation paradigm for molecular representation learning. PG-MLD constructs a dynamic 3D physical teacher by combining equivariant geometric encoding with Liquid Time-Constant modeling to capture 3D geometry, atom-level electronic descriptors, and conformational evolution. PG-MLD subsequently distills the learned trajectory knowledge into SMILES-based students through atom- and molecule-level representation alignment and cross-modal contrastive learning, with masked language modeling retained where supported. The distilled students perform downstream tasks using only SMILES, without conformer generation or molecular dynamics simulations. Experiments on MoleculeNet show that PG-MLD improves overall property prediction performance across three molecular language student architectures while maintaining SMILES-only inference. The learned representations also encode 3D geometry and conformational dynamics more effectively, demonstrating that dynamic 3D physical knowledge can be transferred to SMILES-based molecular language models with different architectures.",
+      "summary_zh": "PG-MLD 以等变几何编码与 Liquid Time-Constant 构建动态 3D 教师，经原子/分子对齐与跨模态对比把轨迹知识蒸馏到 SMILES 学生模型；在 MoleculeNet 上提升三类分子语言学生的性质预测，推理只需 SMILES。",
+      "why_it_matters_zh": "让 SMILES 模型廉价获得 3D/动力学信息，适合大规模筛选；摘要未给出分任务数值与外部分布测试。",
+      "quality_score": 82.0,
+      "tags": [
+        "方法与模型",
+        "PG-MLD",
+        "知识蒸馏",
+        "SMILES",
+        "3D 表征"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "仅摘要可判断",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 11,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.07.29.741404",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "分子表征学习通过捕获分子结构–性质关系，支撑分子性质预测和药物设计。基于 SMILES 的分子语言模型从大规模未标注数据中学习化学语义并支持高效推理。然而，SMILES 的一维本质限制了它们捕获 3D 几何与构象演化的能力，而 3D 分子模型则需要构象生成并消耗大量计算资源。为弥合这一差距，我们提出 PG-MLD，一种面向分子表征学习的动态 3D 到 1D 物理知识蒸馏范式。PG-MLD 通过将等变几何编码与 Liquid Time-Constant 建模相结合构建动态 3D 物理教师，以捕获 3D 几何、原子级电子描述符和构象演化。随后，PG-MLD 通过原子级与分子级表征对齐以及跨模态对比学习，把学得的轨迹知识蒸馏到基于 SMILES 的学生中，并在支持的情况下保留掩码语言建模。蒸馏后的学生仅使用 SMILES 执行下游任务，无需构象生成或分子动力学模拟。在 MoleculeNet 上的实验表明，PG-MLD 在三种分子语言学生架构上整体提升了性质预测性能，同时保持仅 SMILES 推理。学得的表征也更有效地编码 3D 几何与构象动力学，表明动态 3D 物理知识可以迁移到不同架构的基于 SMILES 的分子语言模型。",
+      "published": "2026-08-02",
+      "author_line": "liu, Z., Wu, Z., Chen, Z. 等 5 人"
+    },
+    {
+      "id": "arxiv:2608.01431v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "PolymerGPT: Multi-property Optimization with a Decoder-Based GPT Model for Generative Polymer Design",
+      "url": "https://arxiv.org/abs/2608.01431v1",
+      "published_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "creators": [
+        "Charlie Pyle",
+        "Adarsh Gadari",
+        "C. Adrian Figg",
+        "Zhenquan Jia",
+        "Yaohang Li",
+        "Chunjiang Zhu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Polymer property prediction and inverse generative design targeting desired properties are two crucial tasks in machine learning-assisted polymer design. While the former has received considerable attention, there have been limited methods developed for the latter. Existing methods focus on single-property optimization in the generative process, whereas accurate prediction of macroscopic material behavior requires simultaneous control of multiple physical properties. In this paper, we provide a transformative framework for direct optimization of a large collection of polymer properties. We propose PolymerGPT, a decoder-based GPT model that incorporates up to 37 commonly used polymer properties into the generative process via learned conditioning prefixes. It also supports a scaffold condition that specifies a desired scaffold for predicted structures. Our experimental results demonstrate that PolymerGPT achieves exceptional performance for unconditional and conditional generation while maintaining high validity, uniqueness, and novelty. Conditioning on five key properties yields generated structures whose predicted values closely match all target properties simultaneously.",
+      "summary_zh": "PolymerGPT 以解码器 GPT 通过条件前缀同时调控多达 37 项聚合物性质，并支持骨架条件；无条件与有条件生成均保持高有效性、独特性和新颖性，五项关键性质条件生成的预测值同时贴近全部目标。",
+      "why_it_matters_zh": "少见的聚合物多目标条件生成，便于材料反向设计；宏观性质预测器本身的误差会传入生成评估。",
+      "quality_score": 81.0,
+      "tags": [
+        "材料与催化",
+        "PolymerGPT",
+        "聚合物设计",
+        "条件生成",
+        "多目标优化"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "仅摘要可判断",
+        "experimental",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 12,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.01431v1"
+      },
+      "abstract_zh": "聚合物性质预测和面向目标性质的反向生成设计，是机器学习辅助聚合物设计中的两项关键任务。前者已受到较多关注，而后者的方法仍然有限。现有方法在生成过程中聚焦单性质优化，而准确预测宏观材料行为需要同时控制多种物理性质。本文给出一个可直接优化大量聚合物性质的变革性框架。我们提出 PolymerGPT，一个基于解码器的 GPT 模型，通过学得的条件前缀将多达 37 项常用聚合物性质纳入生成过程。它还支持指定预测结构所需骨架的骨架条件。实验结果表明，PolymerGPT 在无条件和有条件生成上均取得优异性能，同时保持高有效性、独特性和新颖性。以五项关键性质为条件时，生成结构的预测值同时紧密匹配全部目标性质。",
+      "published": "2026-08-02",
+      "author_line": "Charlie Pyle, Adarsh Gadari, C. Adrian Figg 等 6 人"
+    },
+    {
+      "id": "arxiv:2608.01007v1",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Fused Bayesian Flow Networks for Dual-Target Molecular Design",
+      "url": "https://arxiv.org/abs/2608.01007v1",
+      "published_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "creators": [
+        "Jingyuan Zhou",
+        "Shikui Tu",
+        "Lei Xu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Dual-target drug design aims to generate 3D molecules that can simultaneously interact with two target proteins, offering a promising route for discovering polypharmacological compounds against complex diseases. While recent generative models have shown encouraging performance in single-target drug design, existing dual-target approaches either focus on sequence generation or introduce an additional predictive drift term into the diffusion-based generative trajectory, which limits their ability to fully integrate feature information from both targets. We propose FusedBFN, a fused Bayesian flow network (BFN) for dual-target molecular design. FusedBFN formulates dual-target generation as distribution fusion in a unified continuous parameter space and employs a product-of-experts formulation to incorporate dual-target information throughout the generative process. To address the scarcity of dual-target structural data, we leverage a pretrained target-aware BFN model as the shared backbone. We further introduce a chemically aware prior-based alignment method and a prior-free pocket alignment strategy to construct aligned dual-target contexts. Extensive experiments demonstrate that FusedBFN generates molecules with strong binding affinity toward dual targets while maintaining favorable molecular properties.",
+      "summary_zh": "FusedBFN 在统一连续参数空间用 product-of-experts 融合双靶点信息，并借助预训练靶点感知 BFN 与口袋对齐策略缓解双靶点结构数据稀缺，生成对双靶均有强结合亲和力且性质良好的 3D 分子。",
+      "why_it_matters_zh": "双靶点 3D 生成长期缺结构数据，该工作给出可复用融合范式；摘要对结合能提升幅度披露有限。",
+      "quality_score": 80.0,
+      "tags": [
+        "分子与药物发现",
+        "FusedBFN",
+        "双靶点设计",
+        "贝叶斯流网络",
+        "3D 分子生成"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "仅摘要可判断",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 13,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.01007v1"
+      },
+      "abstract_zh": "双靶点药物设计旨在生成能够同时与两个靶蛋白相互作用的 3D 分子，为发现针对复杂疾病的多药理学化合物提供有前景的路径。尽管近期生成模型在单靶点药物设计中已展现出令人鼓舞的性能，现有双靶点方法要么聚焦序列生成，要么在基于扩散的生成轨迹中引入额外的预测漂移项，从而限制了它们充分整合来自两个靶点的特征信息的能力。我们提出 FusedBFN，一种用于双靶点分子设计的融合贝叶斯流网络（BFN）。FusedBFN 将双靶点生成表述为统一连续参数空间中的分布融合，并采用 product-of-experts 公式在整个生成过程中纳入双靶点信息。为应对双靶点结构数据稀缺，我们利用预训练的靶点感知 BFN 模型作为共享骨干。我们进一步引入基于化学感知先验的对齐方法，以及无先验的口袋对齐策略，以构建对齐的双靶点上下文。广泛实验表明，FusedBFN 生成对双靶具有强结合亲和力、同时保持良好分子性质的分子。",
+      "published": "2026-08-02",
+      "author_line": "Jingyuan Zhou, Shikui Tu, Lei Xu"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.06.29.735353",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "ConfDock: Atom-specific Uncertainty Quantification for Molecular Docking via Conformal Prediction",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.06.29.735353",
+      "published_at": "2026-08-01",
+      "updated_at": "2026-08-01",
+      "creators": [
+        "Hao, H.",
+        "Elhendawy, N.",
+        "Wang, Y.",
+        "Lu, C."
+      ],
+      "language": "en",
+      "abstract_or_text": "Molecular docking is widely used in structure-based drug discovery, yet most approaches provide point estimates without rigorous uncertainty quantification. This limitation makes it difficult to assess when a predicted pose should be trusted, especially when docking methods are applied to diverse protein-ligand systems. We present ConfDock, a conformal prediction (CP) framework for constructing atom-specific prediction intervals for ligand docking poses. ConfDock combines graph neural network (GNN) based quantile estimation with split conformal calibration, producing intervals that adapt to local protein-ligand environments while retaining distribution-free finite-sample coverage guarantees. We evaluate ConfDock on 238 protein-ligand complexes across four docking methods representing distinct computational paradigms. The proposed approach yields substantially narrower prediction intervals compared to standard split CP (57.2% average reduction in mean interval width, up to 74.5%) while maintaining target coverage across all evaluated settings. Ablation analysis indicates that the GNN captures the dominant structure-dependent variability in uncertainty, whereas the conformal calibration step provides a bounded adjustment to ensure coverage guarantees. These results demonstrate that combining learned, structure-aware quantile estimation with conformal calibration enables rigorous uncertainty quantification for molecular docking at atom-level resolution.",
+      "summary_zh": "ConfDock 将 GNN 分位数估计与 split conformal prediction 结合，为对接构象给出原子级预测区间；在 238 个复合物、四种对接方法上平均区间宽度降 57.2%，并保持目标覆盖。",
+      "why_it_matters_zh": "把对接从点估计推进到有覆盖保证的原子不确定性，便于判断何时可信；仍依赖校准集分布假设。",
+      "quality_score": 79.0,
+      "tags": [
+        "分子与药物发现",
+        "分子对接",
+        "不确定性量化",
+        "Conformal Prediction",
+        "ConfDock"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "有消融研究",
+        "ablation"
+      ],
+      "publication_status": "preprint",
+      "rank": 14,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.06.29.735353",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "分子对接广泛用于基于结构的药物发现，但大多数方法只给出点估计，没有严格的不确定性量化。这一限制使得难以判断预测构象何时可信，尤其是对接方法应用于多样蛋白–配体体系时。我们推出 ConfDock，一个 conformal prediction（CP）框架，用于为配体对接构象构建原子特异预测区间。ConfDock 将基于图神经网络（GNN）的分位数估计与 split conformal calibration 结合，产生适应局域蛋白–配体环境的区间，同时保留与分布无关的有限样本覆盖保证。我们在代表不同计算范式的四种对接方法上，对 238 个蛋白–配体复合物评估 ConfDock。相对标准 split CP，所提方法给出显著更窄的预测区间（平均区间宽度平均降低 57.2%，最高 74.5%），同时在所有评估设定下维持目标覆盖。消融分析表明，GNN 捕获了不确定性中占主导的结构依赖变异，而 conformal calibration 步骤提供有界调整以确保覆盖保证。这些结果表明，将学得的、结构感知的分位数估计与 conformal calibration 结合，能够在原子分辨率上为分子对接提供严格的不确定性量化。",
+      "published": "2026-08-01",
+      "author_line": "Hao, H., Elhendawy, N., Wang, Y. 等 4 人"
+    },
+    {
+      "id": "arxiv:2607.28461v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Fast and Accurate Foundation Models for Equivariant Machine-Learned Interatomic Potentials",
+      "url": "https://arxiv.org/abs/2607.28461v1",
+      "published_at": "2026-07-30",
+      "updated_at": "2026-07-30",
+      "creators": [
+        "Seán R. Kavanagh",
+        "Chuin Wei Tan",
+        "Menghang Wang",
+        "Marc L. Descoteaux",
+        "Gabriel de Miranda Nascimento",
+        "Ulrik Unneberg",
+        "Laura Zichi",
+        "Francesco Libbi",
+        "Norma Rivano",
+        "Austin Glover",
+        "Vivek Bharadwaj",
+        "Anders Johansson",
+        "William C. Witt",
+        "Albert Musaelian",
+        "Boris Kozinsky"
+      ],
+      "language": "en",
+      "abstract_or_text": "Machine-learned interatomic potentials (MLIPs) have emerged as a transformative tool for computational materials science and chemistry, with universal potentials trained on large and diverse datasets now routinely deployed as 'foundation models' for downstream fine-tuning in targeted chemical spaces. Many scientific applications of the resulting models, such as molecular dynamics (MD), require high inference and training speeds as well as accuracy. In this work, we examine the limits of equivariant MLIPs, which directly encode physical symmetries in model architectures, to achieve these competing targets -- particularly in the regime of extremely large datasets where data efficiency is less critical. We show how this trade-off can be addressed, and present a family of foundation potentials in the NequIP and Allegro equivariant MLIP architectures which achieve leading inference speeds and strong scalability as well as excellent accuracies across a range of community benchmarks -- spanning materials discovery, thermal conductivity prediction, and near-equilibrium mechanical and thermodynamic properties. Accelerations implemented within the NequIP infrastructure now permit training of high-accuracy foundation potentials on ultra-large datasets with dramatically reduced computational cost. Alongside, we show that efforts to improve model accuracy for materials discovery should focus on dataset diversity and improved, consistent descriptions of transition metal compound energy surfaces.",
+      "summary_zh": "在超大数据集体制下考察等变 MLIPs 的速度–精度权衡，给出 NequIP 与 Allegro 基础势族，在材料发现、热导率与近平衡力学热力学基准上兼具领先推理速度与高精度，并指出过渡金属能量面描述仍是精度瓶颈。",
+      "why_it_matters_zh": "把等变基础势推到超大数据集速度前沿，对材料 MD 实用；摘要未给出具体误差数字。",
+      "quality_score": 79.0,
+      "tags": [
+        "方法与模型",
+        "MLIP",
+        "NequIP",
+        "Allegro",
+        "等变网络"
+      ],
+      "evidence_flags": [
+        "有定量基准",
+        "仅摘要可判断",
+        "benchmark",
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 15,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2607.28461v1"
+      },
+      "abstract_zh": "机器学习原子间势（MLIPs）已成为计算材料科学与化学的变革性工具，在大规模多样数据集上训练的通用势现在常被部署为“基础模型”，以便在目标化学空间中进行下游微调。所得模型的许多科学应用，例如分子动力学（MD），同时要求高推理与训练速度以及精度。本工作考察等变 MLIPs——在模型架构中直接编码物理对称性——在实现这些相互竞争目标上的极限，尤其是在数据效率不再关键的超大数据集体制中。我们展示如何应对这一权衡，并给出基于 NequIP 和 Allegro 等变 MLIP 架构的一族基础势，它们在材料发现、热导率预测以及近平衡力学与热力学性质等一系列社区基准上实现领先推理速度、强可扩展性与优异精度。在 NequIP 基础设施中实现的加速现在允许以显著降低的计算成本在超大数据集上训练高精度基础势。同时，我们表明，若要提升材料发现的模型精度，应聚焦数据集多样性，以及过渡金属化合物能量面更完善、一致的描述。",
+      "published": "2026-07-30",
+      "author_line": "Seán R. Kavanagh, Chuin Wei Tan, Menghang Wang 等 15 人"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.02.742283",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Benchmarking Deep Learning Predictions of Mutation-Induced Fold Switching",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.02.742283",
+      "published_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "creators": [
+        "Felbinger, N.",
+        "Carillo, K. J.",
+        "Chen, Y.",
+        "Orban, J.",
+        "Pierce, B."
+      ],
+      "language": "en",
+      "abstract_or_text": "Many proteins are known to adopt multiple distinct folded states which are often associated with key functional behavior. A predictive understanding of the properties of such fold-switching or metamorphic proteins can provide insights into protein dynamics and energetics, and enable the design of complex protein functions and molecular machines. Recently developed deep learning modeling tools, including AlphaFold, have led to dramatic increases in accuracy for prediction of protein structures from sequence, but their performance for prediction of point mutant effects or fold switching is unclear. Here we present a systematic NMR-characterized dataset of mutants of the GA/GB model fold-switching system and use it to evaluate whether current structure prediction and design methods can predict mutation-induced changes in fold state. We measured fold-state populations for variants at three key positions that differentially stabilize the 3, 4{beta}+, mixed, or unfolded states, generating a quantitative experimental benchmark for mutation-level fold switching. Using this benchmark to assess and compare a panel of deep learning and physics-based modeling and design algorithms, we found that this benchmark revealed variable and position-dependent performance across methods, with certain AlphaFold2-based algorithms were able to predict mutant effects at individual sites, indicating some understanding of physical effects of residue substitutions. Additional comparisons of predictions with experimentally measured stability changes further highlighted position-dependent success and general challenges for predictive algorithms. Together, this study provides a new benchmark for mutation-induced fold switching and reveals the current capabilities and limitations of deep learning models for predicting mutation-dependent protein conformational states.",
+      "summary_zh": "用 GA/GB 体系突变体的系统 NMR 数据构建突变水平 fold switching 基准，比较深度学习与物理基算法对 3、4{beta}+、混合与未折叠态种群的预测；表现呈位点依赖，部分 AlphaFold2 方法仅在个别位点有效。",
+      "why_it_matters_zh": "以 NMR 种群为金标准检验突变致折叠切换，暴露 AlphaFold 类模型的位点盲区；体系仍限于 GA/GB。",
+      "quality_score": 78.0,
+      "tags": [
+        "结构与生物",
+        "fold switching",
+        "AlphaFold",
+        "NMR"
+      ],
+      "evidence_flags": [
+        "有实验验证",
+        "有定量基准",
+        "公开数据",
+        "benchmark",
+        "dataset",
+        "experimental"
+      ],
+      "publication_status": "preprint",
+      "rank": 16,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.02.742283",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "许多蛋白质已知可采取多种不同折叠态，这些状态往往与关键功能行为相关。对这类 fold-switching 或变质蛋白质性质的预测性理解，可洞察蛋白质动力学与能量学，并促成复杂蛋白质功能与分子机器的设计。包括 AlphaFold 在内的近期深度学习建模工具已使从序列预测蛋白质结构的精度大幅提升，但其对点突变效应或 fold switching 的预测表现尚不清楚。本文给出 GA/GB 模型 fold-switching 体系突变体的系统 NMR 表征数据集，并用它评估当前结构预测与设计方法能否预测突变诱导的折叠态变化。我们测定了三个关键位点变异体的折叠态种群，这些位点分别差异稳定 3、4{beta}+、混合或未折叠态，从而形成突变水平 fold switching 的定量实验基准。用该基准评估并比较一组深度学习与基于物理的建模和设计算法后，我们发现该方法间表现多变且具有位点依赖性，某些基于 AlphaFold2 的算法能够预测个别位点的突变效应，表明对残基替换物理效应有一定理解。将预测与实验测定的稳定性变化进一步比较，更凸显了位点依赖的成功以及预测算法的普遍挑战。总体而言，本研究为突变诱导的 fold switching 提供了新基准，并揭示深度学习模型在预测突变依赖蛋白质构象态方面的当前能力与局限。",
+      "published": "2026-08-02",
+      "author_line": "Felbinger, N., Carillo, K. J., Chen, Y. 等 5 人"
+    }
+  ],
+  "review": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "note": "2026-08-02 候选 60 篇，自动分仍偏高并夹杂通用智能体、医学影像与软件工程稿。按 AI×Chem 相关性、方法可信度与验证强度精选 16 篇：优先低数据分子学习曲线、化学知识注入表征、BODIPY 光敏剂生成、对接评分偏差与力场加速，并纳入当日新增的 3D 轨迹蒸馏、聚合物多目标生成、双靶点 BFN、等变基础势与 NMR fold-switching 基准；未收录流体 QPINN、认知障碍综述、通用工具智能体等弱相关项。"
+  }
+}
