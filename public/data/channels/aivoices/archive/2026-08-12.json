@@ -1,0 +1,329 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-12",
+  "channel": "aivoices",
+  "generated_at": "2026-08-19T08:53:54+00:00",
+  "title": "AI Voices 每日精选",
+  "subtitle": "研究者公开观点、研究发布与重要讨论。",
+  "window": {
+    "start": "2026-08-09",
+    "end": "2026-08-12"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 28,
+    "candidates": 28,
+    "selected": 7,
+    "sources": {
+      "X": 3,
+      "Research blogs": 25
+    }
+  },
+  "source_status": {
+    "X": {
+      "state": "ok",
+      "count": 3
+    },
+    "Research blogs": {
+      "state": "ok",
+      "count": 25
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "x:2087231350134980830",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@OpenAI：Now in preview: The ChatGPT desktop app for Linux. Use ChatGPT, ChatGPT Work, and Codex where you already work and build",
+      "url": "https://x.com/OpenAI/status/2087231350134980830",
+      "published_at": "2026-08-11T17:35:07Z",
+      "updated_at": "2026-08-11T17:35:07Z",
+      "creators": [
+        "OpenAI"
+      ],
+      "language": "en",
+      "abstract_or_text": "Now in preview: The ChatGPT desktop app for Linux. Use ChatGPT, ChatGPT Work, and Codex where you already work and build, with your projects and browser workflows on supported Linux systems.",
+      "summary_zh": "OpenAI 宣布 ChatGPT 桌面应用进入 Linux 预览，可在受支持系统上使用 ChatGPT、ChatGPT Work 与 Codex，并接入项目与浏览器工作流。",
+      "why_it_matters_zh": "这是官方对 Linux 开发者工作流的产品声明，可对照后续发行版清单核实。帖文未给出功能边界、遥测范围或预览退出条件。",
+      "quality_score": 69.0,
+      "tags": [
+        "工具与实践"
+      ],
+      "evidence_flags": [
+        "官方产品声明"
+      ],
+      "publication_status": "public_post",
+      "rank": 1,
+      "featured": true,
+      "category": "工具与实践",
+      "metrics": {
+        "like_count": 11727,
+        "repost_count": 992,
+        "reply_count": 788,
+        "quote_count": 591
+      },
+      "metadata": {
+        "post_id": "2087231350134980830",
+        "username": "OpenAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "现已预览：面向 Linux 的 ChatGPT 桌面应用。在你已经工作和构建的地方使用 ChatGPT、ChatGPT Work 和 Codex，并在受支持的 Linux 系统上接入你的项目与浏览器工作流。",
+      "published": "2026-08-11",
+      "author_line": "OpenAI"
+    },
+    {
+      "id": "x:2087305196841922782",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@MistralAI：☁️Mistral is bringing together the inference infrastructure, open models, and long-term commitments Europe needs to cont",
+      "url": "https://x.com/MistralAI/status/2087305196841922782",
+      "published_at": "2026-08-11T22:28:33Z",
+      "updated_at": "2026-08-11T22:28:33Z",
+      "creators": [
+        "Mistral AI"
+      ],
+      "language": "en",
+      "abstract_or_text": "☁️Mistral is bringing together the inference infrastructure, open models, and long-term commitments Europe needs to control its AI future, and setting a roadmap for the world. 🧵: https://mistral.ai/news/regional-inference-open-models-new-compute/",
+      "summary_zh": "Mistral 称将区域推理、开源模型与长期算力承诺一并推出，并指向关于欧洲主权人工智能基础设施的正式博文。",
+      "why_it_matters_zh": "帖文本身偏宣言，但给出可核对的新闻稿链接，涉及区域端点、优先级档位与第三方开源模型接入。具体 SLA、数据驻留例外和 1GW 规划仍是公司承诺。",
+      "quality_score": 69.0,
+      "tags": [
+        "研究发布",
+        "基础设施"
+      ],
+      "evidence_flags": [
+        "官方声明",
+        "新闻稿链接"
+      ],
+      "publication_status": "public_post",
+      "rank": 2,
+      "featured": true,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 957,
+        "repost_count": 103,
+        "reply_count": 84,
+        "quote_count": 37
+      },
+      "metadata": {
+        "post_id": "2087305196841922782",
+        "username": "MistralAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "Mistral 正在把欧洲掌控自身人工智能未来所需的推理基础设施、开源模型与长期承诺整合到一起，并为世界设定一条路线图。线索帖：https://mistral.ai/news/regional-inference-open-models-new-compute/",
+      "published": "2026-08-11",
+      "author_line": "Mistral AI"
+    },
+    {
+      "id": "feed:https://developer.nvidia.com/blog/nvidia-jetpack-7-2-1-adds-agentic-video-skills-and-t3000-emulation/",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "research_blog",
+      "source": "NVIDIA Technical Blog",
+      "title": "NVIDIA JetPack 7.2.1 Adds Agentic Video Skills and T3000 Emulation",
+      "url": "https://developer.nvidia.com/blog/nvidia-jetpack-7-2-1-adds-agentic-video-skills-and-t3000-emulation/",
+      "published_at": "2026-08-11T19:00:00Z",
+      "updated_at": "2026-08-11T19:00:00Z",
+      "creators": [
+        "NVIDIA Technical Blog"
+      ],
+      "language": "en",
+      "abstract_or_text": "Video is a core data path across NVIDIA Jetson applications, from robotics and intelligent video analytics to industrial automation, healthcare, media...",
+      "summary_zh": "NVIDIA 称 JetPack 7.2.1 为 Jetson 增加面向编解码的智能体视频技能、PyNvVideoCodec 2.2，以及在 T5000 上仿真 T3000 性能。",
+      "why_it_matters_zh": "这是边缘视频流水线的官方软件更新，技能层只覆盖编解码配置与验证，不包含 GStreamer 或应用级组管。对机器人与工业视觉开发者可直接对照发行说明。",
+      "quality_score": 65.0,
+      "tags": [
+        "研究发布",
+        "边缘计算"
+      ],
+      "evidence_flags": [
+        "官方发行说明"
+      ],
+      "publication_status": "official_update",
+      "rank": 3,
+      "featured": true,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://developer.nvidia.com/blog/feed/"
+      },
+      "abstract_zh": "视频是 NVIDIA Jetson 应用的核心数据通路，覆盖机器人、智能视频分析、工业自动化、医疗、媒体处理与远程运维。系统可能采集多路摄像头、解码网络流、运行人工智能推理或传统视觉处理、绘制结果，再编码后存储或分发。各次调用本身并不复杂；工程工作在于为该 Jetson 设备选择合适的接口、编解码器、像素格式、内存路径、码率控制与缓冲，并证明整条路径满足延迟、吞吐与质量目标。",
+      "published": "2026-08-11",
+      "author_line": "NVIDIA Technical Blog"
+    },
+    {
+      "id": "feed:https://developer.nvidia.com/blog/run-local-agentic-ai-workflows-with-metas-muse-glimmer-on-nvidia/",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "research_blog",
+      "source": "NVIDIA Technical Blog",
+      "title": "Run Local Agentic AI Workflows with Meta’s Muse Glimmer on NVIDIA",
+      "url": "https://developer.nvidia.com/blog/run-local-agentic-ai-workflows-with-metas-muse-glimmer-on-nvidia/",
+      "published_at": "2026-08-10T13:27:19Z",
+      "updated_at": "2026-08-10T13:27:19Z",
+      "creators": [
+        "NVIDIA Technical Blog"
+      ],
+      "language": "en",
+      "abstract_or_text": "Meta returns to the open source ecosystem with the release of Muse Glimmer, a 30B open-weight dense model with a 120K+ context window built for local AI...",
+      "summary_zh": "NVIDIA 技术博客称 Meta 发布开源权重稠密模型 Muse Glimmer：约 300 亿参数、上下文窗口超过 120K，面向本地 AI 智能体工作负载。",
+      "why_it_matters_zh": "这是窗口内唯一的新开源权重模型发布信号，把本地长上下文智能体从云端接口拉回单机。RSS 摘要被截断，吞吐与硬件数字需对照原文，不能只凭导语认定可在所有消费级 GPU 上运行。",
+      "quality_score": 69.0,
+      "tags": [
+        "研究发布",
+        "开源模型"
+      ],
+      "evidence_flags": [
+        "官方博文",
+        "摘要被截断",
+        "open source",
+        "release"
+      ],
+      "publication_status": "official_update",
+      "rank": 4,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://developer.nvidia.com/blog/feed/"
+      },
+      "abstract_zh": "Meta 带着 Muse Glimmer 回到开源生态：这是一个 300 亿参数的开源权重稠密模型，上下文窗口超过 120K，面向本地 AI……",
+      "published": "2026-08-10",
+      "author_line": "NVIDIA Technical Blog"
+    },
+    {
+      "id": "feed:https://openai.com/index/how-enterprises-put-ai-to-work",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "research_blog",
+      "source": "OpenAI News",
+      "title": "From assistance to execution: How enterprises put AI to work",
+      "url": "https://openai.com/index/how-enterprises-put-ai-to-work",
+      "published_at": "Wed, 12 Aug 2026 06:00:00 GMT",
+      "updated_at": "Wed, 12 Aug 2026 06:00:00 GMT",
+      "creators": [
+        "OpenAI News"
+      ],
+      "language": "en",
+      "abstract_or_text": "OpenAI research reveals how enterprises are adopting agentic AI, using ChatGPT and Codex, and how frontier firms are pulling ahead in AI adoption.",
+      "summary_zh": "OpenAI 称两份新报告显示企业人工智能正从问答协助转向执行任务，并比较前沿企业与其余组织在采用节奏上的差距。",
+      "why_it_matters_zh": "这是实验室对自身产品采用情况的研究发布，能反映 ChatGPT 与 Codex 在企业侧的叙事。样本、定义与对照设定未在摘要中给出，不能直接外推。",
+      "quality_score": 65.0,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "官方研究博客",
+        "样本细节未见"
+      ],
+      "publication_status": "official_update",
+      "rank": 5,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://openai.com/news/rss.xml"
+      },
+      "abstract_zh": "OpenAI 的研究揭示企业如何采用智能体式人工智能、如何使用 ChatGPT 和 Codex，以及前沿企业如何在人工智能采用上拉开差距。两份新报告显示，人工智能采用正在企业和员工中扩散，以及前沿组织的做法有何不同。企业正在同时扩大使用人工智能的范围，以及要求它完成的事情。企业人工智能正从协助转向执行，但并非所有公司都以同一速度完成这一转变。",
+      "published": "Wed, 12 Au",
+      "author_line": "OpenAI News"
+    },
+    {
+      "id": "feed:https://research.google/blog/empty-shelves-or-lost-keys-recall-is-the-bottleneck-for-parametric-factuality/",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "research_blog",
+      "source": "Google Research",
+      "title": "Empty shelves or lost keys? Recall is the bottleneck for parametric factuality",
+      "url": "https://research.google/blog/empty-shelves-or-lost-keys-recall-is-the-bottleneck-for-parametric-factuality/",
+      "published_at": "Wed, 12 Aug 2026 09:51:00 +0000",
+      "updated_at": "Wed, 12 Aug 2026 09:51:00 +0000",
+      "creators": [
+        "Google Research"
+      ],
+      "language": "en",
+      "abstract_or_text": "Generative AI",
+      "summary_zh": "Google Research 用知识画像框架区分“未编码”与“编了却召不回”，称前沿模型几乎编码了全部事实，但仍有大量事实无法直接召回。",
+      "why_it_matters_zh": "它把事实性误差从扩数据/扩模型，转到后训练与推理时利用。结论依赖 WikiProfile 与自动评分，外部复现需对照论文与数据集。",
+      "quality_score": 65.0,
+      "tags": [
+        "研究发布",
+        "事实性"
+      ],
+      "evidence_flags": [
+        "论文与数据集链接",
+        "实验室评测"
+      ],
+      "publication_status": "official_update",
+      "rank": 6,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://research.google/blog/rss/"
+      },
+      "abstract_zh": "当大语言模型把事实答错时，是因为从未学过，还是已经编码却召不回来？我们的知识画像框架显示是后者：前沿大语言模型几乎编码了全部事实，却难以召回其中许多。事实性对让大语言模型可靠至关重要。当模型答错一个事实问题时，是因为该事实从未被编码，还是已经编码但不可访问？标准准确率指标把这两类情况混在一起，尽管它们指向非常不同的限制和干预。编码失败要求扩大模型规模或扩展数据覆盖；召回失败则也可能指向后训练与推理时方法，帮助模型更好利用已经编码的内容。",
+      "published": "Wed, 12 Au",
+      "author_line": "Google Research"
+    },
+    {
+      "id": "feed:https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "research_blog",
+      "source": "NVIDIA Technical Blog",
+      "title": "NVIDIA Nemotron 3.5 Lightning Delivers Fast, Accurate Specialized Task Execution for Long-Running Agents",
+      "url": "https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/",
+      "published_at": "2026-08-11T13:01:07Z",
+      "updated_at": "2026-08-11T13:01:07Z",
+      "creators": [
+        "NVIDIA Technical Blog"
+      ],
+      "language": "en",
+      "abstract_or_text": "Long-running AI agents spend most of their time on high-volume execution: tool calls, result validation, and subagent delegation. Using a frontier reasoning...",
+      "summary_zh": "NVIDIA 发布开源 MoE 模型 Nemotron 3.5 Lightning：总参 300 亿、激活约 30 亿，面向长程智能体中的高频工具调用与校验。",
+      "why_it_matters_zh": "官方给出权重、数据和食谱，并把该模型定位为执行层而非规划层。Pareto 与 PinchBench 数字来自厂商评测，独立复现前应视为声称。",
+      "quality_score": 65.0,
+      "tags": [
+        "工具与实践",
+        "开源模型"
+      ],
+      "evidence_flags": [
+        "官方博客",
+        "评测为厂商声称"
+      ],
+      "publication_status": "official_update",
+      "rank": 7,
+      "featured": false,
+      "category": "工具与实践",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://developer.nvidia.com/blog/feed/"
+      },
+      "abstract_zh": "长程人工智能智能体把大部分时间花在高频执行上：工具调用、结果校验和子智能体委派。对每一步都使用前沿推理模型会增加成本与延迟。NVIDIA Nemotron 3.5 Lightning 是一个开源的 300 亿参数混合专家模型，激活参数约 30 亿，面向常驻智能体的这一执行层。它为 OpenClaw、Hermes Agent 等编排框架设计，并得到用于运行常驻智能体的开源安全与管理栈 NVIDIA NemoClaw 支持。",
+      "published": "2026-08-11",
+      "author_line": "NVIDIA Technical Blog"
+    }
+  ],
+  "review": {
+    "model": "grok-4.6",
+    "reasoning_effort": "medium",
+    "note": "共审阅28项，其中11项达到质量分65。Muse Glimmer、Nemotron 与 Switchyard 已在前两日收录；空摘要 Hugging Face 帖和 Linux 发行版跟帖不重复。收录3项当日窗口内新的官方产品与基础设施更新：ChatGPT Linux 预览、Mistral 区域推理路线，以及 JetPack 7.2.1。企业采用报告与 Google 事实性博客留到13日。 为使当日可独立阅读，从本窗口已审条目中补回若干未重复收录项。"
+  }
+}

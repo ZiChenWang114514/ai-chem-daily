@@ -1,0 +1,306 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-11",
+  "channel": "aivoices",
+  "generated_at": "2026-08-19T08:53:54+00:00",
+  "title": "AI Voices 每日精选",
+  "subtitle": "研究者公开观点、研究发布与重要讨论。",
+  "window": {
+    "start": "2026-08-08",
+    "end": "2026-08-11"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 21,
+    "candidates": 21,
+    "selected": 6,
+    "sources": {
+      "X": 4,
+      "Research blogs": 17
+    }
+  },
+  "source_status": {
+    "X": {
+      "state": "ok",
+      "count": 4
+    },
+    "Research blogs": {
+      "state": "ok",
+      "count": 17
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "feed:https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "research_blog",
+      "source": "NVIDIA Technical Blog",
+      "title": "NVIDIA Nemotron 3.5 Lightning Delivers Fast, Accurate Specialized Task Execution for Long-Running Agents",
+      "url": "https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/",
+      "published_at": "2026-08-11T13:01:07Z",
+      "updated_at": "2026-08-11T13:01:07Z",
+      "creators": [
+        "NVIDIA Technical Blog"
+      ],
+      "language": "en",
+      "abstract_or_text": "Long-running AI agents spend most of their time on high-volume execution: tool calls, result validation, and subagent delegation. Using a frontier reasoning...",
+      "summary_zh": "NVIDIA 发布开源 MoE 模型 Nemotron 3.5 Lightning：总参 300 亿、激活约 30 亿，面向长程智能体中的高频工具调用与校验。",
+      "why_it_matters_zh": "官方给出权重、数据和食谱，并把该模型定位为执行层而非规划层。Pareto 与 PinchBench 数字来自厂商评测，独立复现前应视为声称。",
+      "quality_score": 65.0,
+      "tags": [
+        "工具与实践",
+        "开源模型"
+      ],
+      "evidence_flags": [
+        "官方博客",
+        "评测为厂商声称"
+      ],
+      "publication_status": "official_update",
+      "rank": 1,
+      "featured": true,
+      "category": "工具与实践",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://developer.nvidia.com/blog/feed/"
+      },
+      "abstract_zh": "长程人工智能智能体把大部分时间花在高频执行上：工具调用、结果校验和子智能体委派。对每一步都使用前沿推理模型会增加成本与延迟。NVIDIA Nemotron 3.5 Lightning 是一个开源的 300 亿参数混合专家模型，激活参数约 30 亿，面向常驻智能体的这一执行层。它为 OpenClaw、Hermes Agent 等编排框架设计，并得到用于运行常驻智能体的开源安全与管理栈 NVIDIA NemoClaw 支持。",
+      "published": "2026-08-11",
+      "author_line": "NVIDIA Technical Blog"
+    },
+    {
+      "id": "feed:https://developer.nvidia.com/blog/route-ai-agent-workloads-across-models-with-nvidia-nemo-switchyard/",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "research_blog",
+      "source": "NVIDIA Technical Blog",
+      "title": "Route AI Agent Workloads Across Models with NVIDIA NeMo Switchyard",
+      "url": "https://developer.nvidia.com/blog/route-ai-agent-workloads-across-models-with-nvidia-nemo-switchyard/",
+      "published_at": "2026-08-11T13:00:00Z",
+      "updated_at": "2026-08-11T13:00:00Z",
+      "creators": [
+        "NVIDIA Technical Blog"
+      ],
+      "language": "en",
+      "abstract_or_text": "Building an AI agent does not end with choosing a single model. Each model has its own strengths, weaknesses, and cost profile, which can shift from one...",
+      "summary_zh": "NVIDIA 介绍开源库 NeMo Switchyard：在智能体工作流中按能力、成本与基础设施信号把请求路由到不同模型。",
+      "why_it_matters_zh": "它把多模型协作从口号落到可接入的路由库，并引用 LangChain 与 Cognition 的内部数字。这些数字是合作方基准，不是独立对照实验。",
+      "quality_score": 65.0,
+      "tags": [
+        "研究发布",
+        "智能体"
+      ],
+      "evidence_flags": [
+        "官方博客",
+        "合作方基准"
+      ],
+      "publication_status": "official_update",
+      "rank": 2,
+      "featured": true,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://developer.nvidia.com/blog/feed/"
+      },
+      "abstract_zh": "构建人工智能智能体并不止于选定单一模型。每个模型都有自己的强弱项和成本曲线，这些会随工作负载变化，甚至在同一次工作中变化。例如，一个智能体任务可能某一步需要分类，下一步需要推理，随后又用更小的模型处理常规跟进。把每个请求都送给最大模型会增加成本与延迟，而全部送给较小模型又会降低复杂任务的质量。模型路由通过编排专用模型与前沿模型来应对这一挑战，使每项任务使用最合适的模型。NVIDIA NeMo Switchyard 让这一工程问题对智能体工作负载变得可操作，开发者无需围绕每个供应商或模型选择重建应用。",
+      "published": "2026-08-11",
+      "author_line": "NVIDIA Technical Blog"
+    },
+    {
+      "id": "x:2085901306342908157",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@Xudong07452910：分享一套很适合补「现代强化学习」的开源教程：Hands-On Modern RL。 它的学习路线很完整，从 CartPole、DQN、PPO 这些经典 RL，一直讲到 RLHF、DPO、GRPO、RLVR，再往后延伸到 Agentic RL",
+      "url": "https://x.com/Xudong07452910/status/2085901306342908157",
+      "published_at": "2026-08-08T01:30:00Z",
+      "updated_at": "2026-08-08T01:30:00Z",
+      "creators": [
+        "Xudong Han"
+      ],
+      "language": "zh",
+      "abstract_or_text": "分享一套很适合补「现代强化学习」的开源教程：Hands-On Modern RL。 它的学习路线很完整，从 CartPole、DQN、PPO 这些经典 RL，一直讲到 RLHF、DPO、GRPO、RLVR，再往后延伸到 Agentic RL、工具调用、多轮信用分配和 VLM RL。 我比较喜欢它的一点，是「实践优先」。很多章节都配了可以直接运行的代码、训练曲线和失败案例，比如从零实现 PPO、数学推理 GRPO、Mini Deep Research Agent，以及 VLM 的 GRPO 训练。",
+      "summary_zh": "Xudong Han 推荐开源教程 Hands-On Modern RL：从 CartPole、DQN、PPO 讲到 RLHF、DPO、GRPO、RLVR，再延伸到 Agentic RL、工具调用与 VLM RL，并配有可运行代码和失败案例。",
+      "why_it_matters_zh": "这是一份可核对的实践教材，而不是新实验结果。作者观点是「实践优先」；是否覆盖当前研究前沿，需对照教程目录与代码，不能把推荐当成同行评审背书。",
+      "quality_score": 72.0,
+      "tags": [
+        "工具与实践",
+        "强化学习"
+      ],
+      "evidence_flags": [
+        "开源教程",
+        "作者推荐"
+      ],
+      "publication_status": "public_post",
+      "rank": 3,
+      "featured": true,
+      "category": "工具与实践",
+      "metrics": {
+        "like_count": 844,
+        "repost_count": 159,
+        "reply_count": 79,
+        "quote_count": 2
+      },
+      "metadata": {
+        "post_id": "2085901306342908157",
+        "username": "Xudong07452910",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "分享一套很适合补「现代强化学习」的开源教程：Hands-On Modern RL。 它的学习路线很完整，从 CartPole、DQN、PPO 这些经典 RL，一直讲到 RLHF、DPO、GRPO、RLVR，再往后延伸到 Agentic RL、工具调用、多轮信用分配和 VLM RL。 我比较喜欢它的一点，是「实践优先」。很多章节都配了可以直接运行的代码、训练曲线和失败案例，比如从零实现 PPO、数学推理 GRPO、Mini Deep Research Agent，以及 VLM 的 GRPO 训练。",
+      "published": "2026-08-08",
+      "author_line": "Xudong Han"
+    },
+    {
+      "id": "x:2085801349866729975",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@OpenAI：After evaluating one of our upcoming models, Astra, we're treating it as our first \"critical\" model for cybersecurity un",
+      "url": "https://x.com/OpenAI/status/2085801349866729975",
+      "published_at": "2026-08-07T18:52:48Z",
+      "updated_at": "2026-08-07T18:52:48Z",
+      "creators": [
+        "OpenAI"
+      ],
+      "language": "en",
+      "abstract_or_text": "After evaluating one of our upcoming models, Astra, we're treating it as our first \"critical\" model for cybersecurity under our Preparedness Framework. This is a scenario we've planned for, and we're putting additional controls in place to ensure Astra's further development happens safely and securely. We're working hard to make Astra broadly available, and get its advanced cyber capabilities into the hands of defenders.",
+      "summary_zh": "OpenAI 称在评估即将推出的模型 Astra 后，已按预备框架将其视为首个网络安全意义上的「关键」模型，并加设额外控制，同时希望把其网络能力交给防御者。",
+      "why_it_matters_zh": "这是实验室首次把未部署模型标成网络安全 critical 等级的公开声明，比前一日的「初步评估」博文更明确。帖文未给出评估分数、能力边界或控制清单，属于政策声明而非技术报告。",
+      "quality_score": 71.0,
+      "tags": [
+        "研究发布",
+        "网络安全"
+      ],
+      "evidence_flags": [
+        "官方声明",
+        "未见评估数据",
+        "security"
+      ],
+      "publication_status": "public_post",
+      "rank": 4,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 9653,
+        "repost_count": 844,
+        "reply_count": 823,
+        "quote_count": 493
+      },
+      "metadata": {
+        "post_id": "2085801349866729975",
+        "username": "OpenAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "在评估即将推出的模型 Astra 之后，我们按预备框架（Preparedness Framework）将其视为首个网络安全意义上的「关键」（critical）模型。这是我们预先规划过的情形，我们正在加设额外控制，以确保 Astra 的后续开发安全进行。我们正努力使 Astra 广泛可用，并将其先进的网络能力交到防御者手中。",
+      "published": "2026-08-07",
+      "author_line": "OpenAI"
+    },
+    {
+      "id": "feed:https://developer.nvidia.com/blog/run-local-agentic-ai-workflows-with-metas-muse-glimmer-on-nvidia/",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "research_blog",
+      "source": "NVIDIA Technical Blog",
+      "title": "Run Local Agentic AI Workflows with Meta’s Muse Glimmer on NVIDIA",
+      "url": "https://developer.nvidia.com/blog/run-local-agentic-ai-workflows-with-metas-muse-glimmer-on-nvidia/",
+      "published_at": "2026-08-10T13:27:19Z",
+      "updated_at": "2026-08-10T13:27:19Z",
+      "creators": [
+        "NVIDIA Technical Blog"
+      ],
+      "language": "en",
+      "abstract_or_text": "Meta returns to the open source ecosystem with the release of Muse Glimmer, a 30B open-weight dense model with a 120K+ context window built for local AI...",
+      "summary_zh": "NVIDIA 技术博客称 Meta 发布开源权重稠密模型 Muse Glimmer：约 300 亿参数、上下文窗口超过 120K，面向本地 AI 智能体工作负载。",
+      "why_it_matters_zh": "这是窗口内唯一的新开源权重模型发布信号，把本地长上下文智能体从云端接口拉回单机。RSS 摘要被截断，吞吐与硬件数字需对照原文，不能只凭导语认定可在所有消费级 GPU 上运行。",
+      "quality_score": 69.0,
+      "tags": [
+        "研究发布",
+        "开源模型"
+      ],
+      "evidence_flags": [
+        "官方博文",
+        "摘要被截断",
+        "open source",
+        "release"
+      ],
+      "publication_status": "official_update",
+      "rank": 5,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://developer.nvidia.com/blog/feed/"
+      },
+      "abstract_zh": "Meta 带着 Muse Glimmer 回到开源生态：这是一个 300 亿参数的开源权重稠密模型，上下文窗口超过 120K，面向本地 AI……",
+      "published": "2026-08-10",
+      "author_line": "NVIDIA Technical Blog"
+    },
+    {
+      "id": "x:2086111492018221523",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@zarazhangrui：This paper gives a fancy name to a problem you can already feel in your bones \"The Tragedy of the Cognitive Commons.\" Ch",
+      "url": "https://x.com/zarazhangrui/status/2086111492018221523",
+      "published_at": "2026-08-08T15:25:12Z",
+      "updated_at": "2026-08-08T15:25:12Z",
+      "creators": [
+        "Zara Zhang"
+      ],
+      "language": "en",
+      "abstract_or_text": "This paper gives a fancy name to a problem you can already feel in your bones \"The Tragedy of the Cognitive Commons.\" Checking AI output requires deep expertise. Deep expertise comes from doing grunt work for years. And grunt work is the first thing AI eats So we're building systems that need expert supervision while dismantling the only known process for making experts The paper calls the shared pool of human expertise the \"cognitive commons.\" Every profession drinks from it. Nobody's refilling it.",
+      "summary_zh": "Zara Zhang 转述一篇论文中的「认知公地悲剧」：核对 AI 输出需要专家，专家却来自 AI 正在取代的苦活，于是系统一边需要监督、一边掏空培养专家的过程。",
+      "why_it_matters_zh": "这是对自动化与专业训练循环的观点性概括，不是新的因果证据。帖文未给论文链接或数据；编辑判断它适合作为讨论入口，不能当成已证实的劳动力预测。",
+      "quality_score": 69.0,
+      "tags": [
+        "观点与讨论",
+        "专业能力"
+      ],
+      "evidence_flags": [
+        "作者观点",
+        "未见论文链接"
+      ],
+      "publication_status": "public_post",
+      "rank": 6,
+      "featured": false,
+      "category": "观点与讨论",
+      "metrics": {
+        "like_count": 12405,
+        "repost_count": 3231,
+        "reply_count": 336,
+        "quote_count": 361
+      },
+      "metadata": {
+        "post_id": "2086111492018221523",
+        "username": "zarazhangrui",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "这篇论文给一个你已经能直觉感到的问题起了个华丽的名字：「认知公地的悲剧」。核对 AI 输出需要深厚的专业能力。深厚的专业能力来自多年做苦活。而苦活正是 AI 最先吃掉的东西。于是我们一边构建需要专家监督的系统，一边拆掉目前已知唯一能培养专家的过程。论文把人类专业知识的共享池称为「认知公地」。每个行业都从中取水，却没有人在往里补给。",
+      "published": "2026-08-08",
+      "author_line": "Zara Zhang"
+    }
+  ],
+  "review": {
+    "model": "grok-4.6",
+    "reasoning_effort": "medium",
+    "note": "共审阅21项，其中9项达到质量分65。Astra、现代强化学习教程、认知公地与 Muse Glimmer 已在 8–10 日窗口收录，本日不再重复；空摘要博客和仅有直播链接的短帖排除。收录2项当日新出现的官方技术发布：Nemotron 3.5 Lightning 与 NeMo Switchyard。 为使当日可独立阅读，从本窗口已审条目中补回若干未重复收录项。"
+  }
+}

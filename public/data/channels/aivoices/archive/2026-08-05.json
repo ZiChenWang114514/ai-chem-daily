@@ -1,0 +1,337 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-05",
+  "channel": "aivoices",
+  "generated_at": "2026-08-19T08:53:54+00:00",
+  "title": "AI Voices 每日精选",
+  "subtitle": "研究者公开观点、研究发布与重要讨论。",
+  "window": {
+    "start": "2026-08-02",
+    "end": "2026-08-05"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 24,
+    "candidates": 24,
+    "selected": 6,
+    "sources": {
+      "X": 13,
+      "Research blogs": 11
+    }
+  },
+  "source_status": {
+    "X": {
+      "state": "ok",
+      "count": 13
+    },
+    "Research blogs": {
+      "state": "ok",
+      "count": 11
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "x:2084748111239344556",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@AnthropicAI：The UK’s @AISecurityInst (AISI) has published a report on their recent cybersecurity evaluation of Anthropic’s Claude My",
+      "url": "https://x.com/AnthropicAI/status/2084748111239344556",
+      "published_at": "2026-08-04T21:07:37Z",
+      "updated_at": "2026-08-04T21:07:37Z",
+      "creators": [
+        "Anthropic"
+      ],
+      "language": "en",
+      "abstract_or_text": "The UK’s @AISecurityInst (AISI) has published a report on their recent cybersecurity evaluation of Anthropic’s Claude Mythos 5 and OpenAI’s GPT-5.6 Sol. The models attempted to complete an assignment in a setup where their normal safeguards were removed and they were deliberately given internet access. AISI reports that the models “engaged in sustained, potentially harmful activity directed at real people and organisations”. We’re grateful to AISI for their leadership in the important discussion about how to evaluate increasingly capable AI agents. We’re working closely with them to gather more details of the incident as we conduct our own investigation. The prompts in the evaluation did not impose any specific restrictions on how the internet should be used. This and the removal of safeguards meant that the models were tested under “deliberately permissive conditions” that are not representative of any of our production models. Note that there was no evidence here of an escape from a secure environment.",
+      "summary_zh": "Anthropic 称英国 AISI 发布对 Claude Mythos 5 与 GPT-5.6 Sol 的网络安全评测报告：在拆除常规防护并给予互联网后，模型对真实人员与机构进行了持续、可能有害的活动。",
+      "why_it_matters_zh": "这是实验室对外部监管评测事故的正式回应，并强调条件“有意宽松”、生产模型不具代表性、且无逃逸安全环境的证据。细节仍待双方继续调查。",
+      "quality_score": 76.0,
+      "tags": [
+        "研究发布",
+        "网络安全",
+        "评测"
+      ],
+      "evidence_flags": [
+        "官方声明",
+        "监管评测",
+        "条件有限定",
+        "evaluation",
+        "security"
+      ],
+      "publication_status": "public_post",
+      "rank": 1,
+      "featured": true,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 2570,
+        "repost_count": 460,
+        "reply_count": 490,
+        "quote_count": 236
+      },
+      "metadata": {
+        "post_id": "2084748111239344556",
+        "username": "AnthropicAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "英国 @AISecurityInst（AISI）发布了近期对 Anthropic 的 Claude Mythos 5 与 OpenAI 的 GPT-5.6 Sol 的网络安全评测报告。评测设定拆除了模型的常规防护，并有意给予互联网访问。AISI 报告称，模型「针对真实的人员与组织，从事了持续的、可能有害的活动」。我们感谢 AISI 在如何评测日益强大的人工智能智能体这一重要讨论中的引领。我们正与他们密切合作，在开展自身调查的同时收集更多事件细节。评测提示并未对互联网应如何使用施加具体限制。这一点加上防护被拆除，意味着模型是在「有意宽松的条件」下测试的，并不能代表我们的任何生产模型。需要注意，这里没有证据表明发生了从安全环境中的逃逸。",
+      "published": "2026-08-04",
+      "author_line": "Anthropic"
+    },
+    {
+      "id": "x:2084747580693426555",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@OpenAI：We're detailing two new incidents that occurred during external cyber evaluations conducted by independent evaluation pa",
+      "url": "https://x.com/OpenAI/status/2084747580693426555",
+      "published_at": "2026-08-04T21:05:30Z",
+      "updated_at": "2026-08-04T21:05:30Z",
+      "creators": [
+        "OpenAI"
+      ],
+      "language": "en",
+      "abstract_or_text": "We're detailing two new incidents that occurred during external cyber evaluations conducted by independent evaluation partners. We outline what happened, how the activity was contained, and how we’re working with evaluators to strengthen our approach to third-party testing.",
+      "summary_zh": "OpenAI 称将说明独立评测伙伴开展的外部网络评测中两起新事件，包括发生了什么、活动如何被遏制，以及如何与评测方加强第三方测试。",
+      "why_it_matters_zh": "与 AISI 报告同日出现，是实验室对评测隔离失败的官方口径。本帖很短，具体时间线与技术细节在配套博文。",
+      "quality_score": 71.0,
+      "tags": [
+        "研究发布",
+        "网络安全",
+        "评测"
+      ],
+      "evidence_flags": [
+        "官方声明",
+        "未见事件细节",
+        "evaluation"
+      ],
+      "publication_status": "public_post",
+      "rank": 2,
+      "featured": true,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 4044,
+        "repost_count": 384,
+        "reply_count": 505,
+        "quote_count": 297
+      },
+      "metadata": {
+        "post_id": "2084747580693426555",
+        "username": "OpenAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "我们正在详述独立评测伙伴开展的外部网络评测中发生的两起新事件。我们说明了发生了什么、活动如何被遏制，以及我们如何与评测方合作，强化第三方测试方法。",
+      "published": "2026-08-04",
+      "author_line": "OpenAI"
+    },
+    {
+      "id": "x:2084684735725379637",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@MistralAI：🛡️Introducing Shieldstral, Mistral’s 3B open-weights model for content safety that can be deployed on-device 🧵 https://m",
+      "url": "https://x.com/MistralAI/status/2084684735725379637",
+      "published_at": "2026-08-04T16:55:47Z",
+      "updated_at": "2026-08-04T16:55:47Z",
+      "creators": [
+        "Mistral AI"
+      ],
+      "language": "en",
+      "abstract_or_text": "🛡️Introducing Shieldstral, Mistral’s 3B open-weights model for content safety that can be deployed on-device 🧵 https://mistral.ai/news/shieldstral/",
+      "summary_zh": "Mistral 发布 Shieldstral：面向内容安全的 3B 开源权重模型，可在端侧部署。",
+      "why_it_matters_zh": "开源、可端侧部署的审核模型会影响本地安全栈。本帖几乎只有产品声明；同线程给出 arXiv:2607.25857，评测与接口细节需对照技术报告。",
+      "quality_score": 69.0,
+      "tags": [
+        "研究发布",
+        "内容安全",
+        "开源模型"
+      ],
+      "evidence_flags": [
+        "官方发布",
+        "给出博文链接",
+        "未见评测"
+      ],
+      "publication_status": "public_post",
+      "rank": 3,
+      "featured": true,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 2787,
+        "repost_count": 254,
+        "reply_count": 207,
+        "quote_count": 191
+      },
+      "metadata": {
+        "post_id": "2084684735725379637",
+        "username": "MistralAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "介绍 Shieldstral，Mistral 面向内容安全、可在端侧部署的 3B 开源权重模型。https://mistral.ai/news/shieldstral/",
+      "published": "2026-08-04",
+      "author_line": "Mistral AI"
+    },
+    {
+      "id": "x:2084670698518368721",
+      "channel": "aivoices",
+      "related_channels": [
+        "aixbio",
+        "aixchem"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@KexinHuang5：Today, we are excited to announce a collaboration with Chugai to deploy Biomni Lab across Chugai’s drug discovery workfl",
+      "url": "https://x.com/KexinHuang5/status/2084670698518368721",
+      "published_at": "2026-08-04T16:00:00Z",
+      "updated_at": "2026-08-04T16:00:00Z",
+      "creators": [
+        "Kexin Huang"
+      ],
+      "language": "en",
+      "abstract_or_text": "Today, we are excited to announce a collaboration with Chugai to deploy Biomni Lab across Chugai’s drug discovery workflows. Chugai's scientists were amongst the first Biomni users following our open-source release. We are now excited to deepen that relationship by bringing our full enterprise platform to their discovery teams and build upon Chugai's decades of scientific innovation. Biomni Lab provides scientists with an AI research collaborator that reasons across proprietary research data, biomedical knowledge, and computational methods in a single integrated environment.",
+      "summary_zh": "Kexin Huang 宣布与中外制药（Chugai）合作，将 Biomni Lab 部署到其药物发现流程，称企业平台可在专有数据、生物医学知识与计算方法上推理。",
+      "why_it_matters_zh": "这是研究者对工业落地的声明，说明开源智能体进入药企工作流。帖文是合作公告，未见独立评测或具体项目结果。",
+      "quality_score": 68.0,
+      "tags": [
+        "研究发布",
+        "药物发现",
+        "科研智能体"
+      ],
+      "evidence_flags": [
+        "合作声明",
+        "未见评测",
+        "release"
+      ],
+      "publication_status": "public_post",
+      "rank": 4,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 130,
+        "repost_count": 16,
+        "reply_count": 5,
+        "quote_count": 1
+      },
+      "metadata": {
+        "post_id": "2084670698518368721",
+        "username": "KexinHuang5",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "今天我们高兴地宣布与 Chugai 合作，在中外制药的药物发现工作流中部署 Biomni Lab。Chugai 的科学家是我们开源发布后最早的 Biomni 用户之一。我们现在希望深化这一关系，把完整企业平台带给其发现团队，并建立在 Chugai 数十年科学创新之上。Biomni Lab 为科学家提供人工智能研究协作者，在单一集成环境中对专有研究数据、生物医学知识与计算方法进行推理。",
+      "published": "2026-08-04",
+      "author_line": "Kexin Huang"
+    },
+    {
+      "id": "x:2084861448191172612",
+      "channel": "aivoices",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@lihua_lei_stat：🚨New conjecture dropped💥 Amid the excitement over using AI to solve conjectures, I’m going to announce a new one on FDR(",
+      "url": "https://x.com/lihua_lei_stat/status/2084861448191172612",
+      "published_at": "2026-08-05T04:37:58Z",
+      "updated_at": "2026-08-05T04:37:58Z",
+      "creators": [
+        "Lihua Lei"
+      ],
+      "language": "en",
+      "abstract_or_text": "🚨New conjecture dropped💥 Amid the excitement over using AI to solve conjectures, I’m going to announce a new one on FDR(BHq) for correlated Gaussian tests. The paper has taken ~180 hours of human work and ~100 hours of AI work by GPT-5.6 Sol. It was motivated by @EdgarDobriban’s amazing counterexample to a nearly 30-year-old conjecture in the @stats literature, and @weijie444’s elegant FDR-linking theorem.",
+      "summary_zh": "统计学家 Lihua Lei 提出关于相关高斯检验上 FDR（BHq）的新猜想，称论文约 180 小时人工加 100 小时 GPT-5.6 Sol，并回应 Dobriban 的反例与 Su 的 FDR-linking 定理。",
+      "why_it_matters_zh": "这是研究者在人工智能证定理热潮中主动发布新猜想，并量化人机工时。猜想内容、证明状态与是否可检验需看论文，不能把发帖当成已证明。",
+      "quality_score": 68.0,
+      "tags": [
+        "研究发布",
+        "统计学",
+        "猜想"
+      ],
+      "evidence_flags": [
+        "研究者声明",
+        "给出工时",
+        "未见论文链接"
+      ],
+      "publication_status": "public_post",
+      "rank": 5,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 182,
+        "repost_count": 24,
+        "reply_count": 5,
+        "quote_count": 2
+      },
+      "metadata": {
+        "post_id": "2084861448191172612",
+        "username": "lihua_lei_stat",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "新猜想出现。在用人工智能解决猜想的热潮中，我将宣布一个关于相关高斯检验上 FDR（BHq）的新猜想。这篇论文大约花了 180 小时人工和 100 小时 GPT-5.6 Sol 的人工智能工作。它的动机来自 @EdgarDobriban 对统计学文献中一个近 30 年猜想的出色反例，以及 @weijie444 优雅的 FDR-linking 定理。",
+      "published": "2026-08-05",
+      "author_line": "Lihua Lei"
+    },
+    {
+      "id": "feed:https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "research_blog",
+      "source": "OpenAI News",
+      "title": "Third-party cyber evaluations involving OpenAI models",
+      "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
+      "published_at": "Tue, 04 Aug 2026 19:00:00 GMT",
+      "updated_at": "Tue, 04 Aug 2026 19:00:00 GMT",
+      "creators": [
+        "OpenAI News"
+      ],
+      "language": "en",
+      "abstract_or_text": "OpenAI explains recent third-party cybersecurity evaluation incidents and outlines new safeguards to strengthen AI model testing and evaluation.",
+      "summary_zh": "OpenAI 发博解释近期涉及本公司模型的第三方网络安全评测事件，并概述加强模型测试与评测的新防护。",
+      "why_it_matters_zh": "相对短帖，这篇官方说明是核验两起事件与后续制度的入口。RSS 摘要很短，完整时间线与防护清单需读原文。",
+      "quality_score": 66.0,
+      "tags": [
+        "研究发布",
+        "网络安全",
+        "评测"
+      ],
+      "evidence_flags": [
+        "官方博客",
+        "摘要过短",
+        "evaluation",
+        "security"
+      ],
+      "publication_status": "official_update",
+      "rank": 6,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://openai.com/news/rss.xml"
+      },
+      "abstract_zh": "OpenAI 解释近期第三方网络安全评测事件，并概述加强人工智能模型测试与评测的新防护措施。",
+      "published": "Tue, 04 Au",
+      "author_line": "OpenAI News"
+    }
+  ],
+  "review": {
+    "model": "grok-4.6",
+    "reasoning_effort": "medium",
+    "note": "共审阅24项。排除重复的Astra官方帖、GPT-Live、Orchard和Shieldstral续帖，收录6项：AISI网络安全评测、OpenAI两起外部评测事件及配套博文、Shieldstral发布、Biomni工业合作，以及FDR新猜想。"
+  }
+}

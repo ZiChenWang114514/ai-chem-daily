@@ -1,0 +1,315 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-10",
+  "channel": "aivoices",
+  "generated_at": "2026-08-19T08:53:54+00:00",
+  "title": "AI Voices 每日精选",
+  "subtitle": "研究者公开观点、研究发布与重要讨论。",
+  "window": {
+    "start": "2026-08-06",
+    "end": "2026-08-10"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 27,
+    "candidates": 27,
+    "selected": 6,
+    "sources": {
+      "X": 9,
+      "Research blogs": 18
+    }
+  },
+  "source_status": {
+    "X": {
+      "state": "ok",
+      "count": 9
+    },
+    "Research blogs": {
+      "state": "ok",
+      "count": 18
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "feed:https://developer.nvidia.com/blog/run-local-agentic-ai-workflows-with-metas-muse-glimmer-on-nvidia/",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "research_blog",
+      "source": "NVIDIA Technical Blog",
+      "title": "Run Local Agentic AI Workflows with Meta’s Muse Glimmer on NVIDIA",
+      "url": "https://developer.nvidia.com/blog/run-local-agentic-ai-workflows-with-metas-muse-glimmer-on-nvidia/",
+      "published_at": "2026-08-10T13:27:19Z",
+      "updated_at": "2026-08-10T13:27:19Z",
+      "creators": [
+        "NVIDIA Technical Blog"
+      ],
+      "language": "en",
+      "abstract_or_text": "Meta returns to the open source ecosystem with the release of Muse Glimmer, a 30B open-weight dense model with a 120K+ context window built for local AI...",
+      "summary_zh": "NVIDIA 技术博客称 Meta 发布开源权重稠密模型 Muse Glimmer：约 300 亿参数、上下文窗口超过 120K，面向本地 AI 智能体工作负载。",
+      "why_it_matters_zh": "这是窗口内唯一的新开源权重模型发布信号，把本地长上下文智能体从云端接口拉回单机。RSS 摘要被截断，吞吐与硬件数字需对照原文，不能只凭导语认定可在所有消费级 GPU 上运行。",
+      "quality_score": 69.0,
+      "tags": [
+        "研究发布",
+        "开源模型"
+      ],
+      "evidence_flags": [
+        "官方博文",
+        "摘要被截断",
+        "open source",
+        "release"
+      ],
+      "publication_status": "official_update",
+      "rank": 1,
+      "featured": true,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://developer.nvidia.com/blog/feed/"
+      },
+      "abstract_zh": "Meta 带着 Muse Glimmer 回到开源生态：这是一个 300 亿参数的开源权重稠密模型，上下文窗口超过 120K，面向本地 AI……",
+      "published": "2026-08-10",
+      "author_line": "NVIDIA Technical Blog"
+    },
+    {
+      "id": "x:2085801349866729975",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@OpenAI：After evaluating one of our upcoming models, Astra, we're treating it as our first \"critical\" model for cybersecurity un",
+      "url": "https://x.com/OpenAI/status/2085801349866729975",
+      "published_at": "2026-08-07T18:52:48Z",
+      "updated_at": "2026-08-07T18:52:48Z",
+      "creators": [
+        "OpenAI"
+      ],
+      "language": "en",
+      "abstract_or_text": "After evaluating one of our upcoming models, Astra, we're treating it as our first \"critical\" model for cybersecurity under our Preparedness Framework. This is a scenario we've planned for, and we're putting additional controls in place to ensure Astra's further development happens safely and securely. We're working hard to make Astra broadly available, and get its advanced cyber capabilities into the hands of defenders.",
+      "summary_zh": "OpenAI 称在评估即将推出的 Astra 后，已按预备框架将其视为首个网络安全「关键」模型，并加设额外控制，同时希望把先进网络能力交给防御者。",
+      "why_it_matters_zh": "与同日低于阈值的 Daybreak 产品稿相比，这则声明仍是可引用的安全分级信号。没有公开评测表，critical 是政策标签，不是第三方鉴定。",
+      "quality_score": 71.0,
+      "tags": [
+        "研究发布",
+        "网络安全"
+      ],
+      "evidence_flags": [
+        "官方声明",
+        "未见评估数据",
+        "security"
+      ],
+      "publication_status": "public_post",
+      "rank": 2,
+      "featured": true,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 9653,
+        "repost_count": 844,
+        "reply_count": 823,
+        "quote_count": 493
+      },
+      "metadata": {
+        "post_id": "2085801349866729975",
+        "username": "OpenAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "在评估即将推出的模型 Astra 之后，我们按预备框架（Preparedness Framework）将其视为首个网络安全意义上的「关键」（critical）模型。这是我们预先规划过的情形，我们正在加设额外控制，以确保 Astra 的后续开发安全进行。我们正努力使 Astra 广泛可用，并将其先进的网络能力交到防御者手中。",
+      "published": "2026-08-07",
+      "author_line": "OpenAI"
+    },
+    {
+      "id": "x:2085901306342908157",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@Xudong07452910：分享一套很适合补「现代强化学习」的开源教程：Hands-On Modern RL。 它的学习路线很完整，从 CartPole、DQN、PPO 这些经典 RL，一直讲到 RLHF、DPO、GRPO、RLVR，再往后延伸到 Agentic RL",
+      "url": "https://x.com/Xudong07452910/status/2085901306342908157",
+      "published_at": "2026-08-08T01:30:00Z",
+      "updated_at": "2026-08-08T01:30:00Z",
+      "creators": [
+        "Xudong Han"
+      ],
+      "language": "zh",
+      "abstract_or_text": "分享一套很适合补「现代强化学习」的开源教程：Hands-On Modern RL。 它的学习路线很完整，从 CartPole、DQN、PPO 这些经典 RL，一直讲到 RLHF、DPO、GRPO、RLVR，再往后延伸到 Agentic RL、工具调用、多轮信用分配和 VLM RL。 我比较喜欢它的一点，是「实践优先」。很多章节都配了可以直接运行的代码、训练曲线和失败案例，比如从零实现 PPO、数学推理 GRPO、Mini Deep Research Agent，以及 VLM 的 GRPO 训练。",
+      "summary_zh": "Xudong Han 推荐 Hands-On Modern RL：从经典 RL 到 RLHF、GRPO、Agentic RL 与 VLM RL，并配有可运行代码、训练曲线和失败案例。",
+      "why_it_matters_zh": "周一窗口里仍是少有的可核对教材。作者偏好「实践优先」，这是推荐理由，不是对教程完整性的独立审计。",
+      "quality_score": 72.0,
+      "tags": [
+        "工具与实践",
+        "强化学习"
+      ],
+      "evidence_flags": [
+        "开源教程",
+        "作者推荐"
+      ],
+      "publication_status": "public_post",
+      "rank": 3,
+      "featured": true,
+      "category": "工具与实践",
+      "metrics": {
+        "like_count": 844,
+        "repost_count": 159,
+        "reply_count": 79,
+        "quote_count": 2
+      },
+      "metadata": {
+        "post_id": "2085901306342908157",
+        "username": "Xudong07452910",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "分享一套很适合补「现代强化学习」的开源教程：Hands-On Modern RL。 它的学习路线很完整，从 CartPole、DQN、PPO 这些经典 RL，一直讲到 RLHF、DPO、GRPO、RLVR，再往后延伸到 Agentic RL、工具调用、多轮信用分配和 VLM RL。 我比较喜欢它的一点，是「实践优先」。很多章节都配了可以直接运行的代码、训练曲线和失败案例，比如从零实现 PPO、数学推理 GRPO、Mini Deep Research Agent，以及 VLM 的 GRPO 训练。",
+      "published": "2026-08-08",
+      "author_line": "Xudong Han"
+    },
+    {
+      "id": "x:2086111492018221523",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@zarazhangrui：This paper gives a fancy name to a problem you can already feel in your bones \"The Tragedy of the Cognitive Commons.\" Ch",
+      "url": "https://x.com/zarazhangrui/status/2086111492018221523",
+      "published_at": "2026-08-08T15:25:12Z",
+      "updated_at": "2026-08-08T15:25:12Z",
+      "creators": [
+        "Zara Zhang"
+      ],
+      "language": "en",
+      "abstract_or_text": "This paper gives a fancy name to a problem you can already feel in your bones \"The Tragedy of the Cognitive Commons.\" Checking AI output requires deep expertise. Deep expertise comes from doing grunt work for years. And grunt work is the first thing AI eats So we're building systems that need expert supervision while dismantling the only known process for making experts The paper calls the shared pool of human expertise the \"cognitive commons.\" Every profession drinks from it. Nobody's refilling it.",
+      "summary_zh": "Zara Zhang 转述「认知公地的悲剧」：核对 AI 需要专家，专家来自苦活，而苦活最先被 AI 取代，于是专业知识池只取不补。",
+      "why_it_matters_zh": "它把监督成本与人才培养的张力说清楚了。仍是观点转述，未见论文或数据，不能当作劳动力市场的实证结论。",
+      "quality_score": 69.0,
+      "tags": [
+        "观点与讨论",
+        "专业能力"
+      ],
+      "evidence_flags": [
+        "作者观点",
+        "未见论文链接"
+      ],
+      "publication_status": "public_post",
+      "rank": 4,
+      "featured": false,
+      "category": "观点与讨论",
+      "metrics": {
+        "like_count": 12405,
+        "repost_count": 3231,
+        "reply_count": 336,
+        "quote_count": 361
+      },
+      "metadata": {
+        "post_id": "2086111492018221523",
+        "username": "zarazhangrui",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "这篇论文给一个你已经能直觉感到的问题起了个华丽的名字：「认知公地的悲剧」。核对 AI 输出需要深厚的专业能力。深厚的专业能力来自多年做苦活。而苦活正是 AI 最先吃掉的东西。于是我们一边构建需要专家监督的系统，一边拆掉目前已知唯一能培养专家的过程。论文把人类专业知识的共享池称为「认知公地」。每个行业都从中取水，却没有人在往里补给。",
+      "published": "2026-08-08",
+      "author_line": "Zara Zhang"
+    },
+    {
+      "id": "x:2085434713821565297",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@OpenAI：The new GPT-5.6 Sol powers all chats for paid users, including Instant, creating one consistent experience. In our high-",
+      "url": "https://x.com/OpenAI/status/2085434713821565297",
+      "published_at": "2026-08-06T18:35:55Z",
+      "updated_at": "2026-08-06T18:35:55Z",
+      "creators": [
+        "OpenAI"
+      ],
+      "language": "en",
+      "abstract_or_text": "The new GPT-5.6 Sol powers all chats for paid users, including Instant, creating one consistent experience. In our high-stakes factuality evaluation covering finance, medicine and law, the new GPT‑5.6 Sol produced 68% fewer responses with factual errors than GPT‑5.5 Instant.",
+      "summary_zh": "OpenAI 称 GPT-5.6 Sol 覆盖付费用户全部对话；在金融、医学和法律高风险事实性评估中，含事实错误的回复比 GPT-5.5 Instant 少 68%。",
+      "why_it_matters_zh": "窗口内仍然少有带对照百分比的官方评测。数字来自实验室自评，协议未公开。",
+      "quality_score": 71.0,
+      "tags": [
+        "研究发布",
+        "事实性评估"
+      ],
+      "evidence_flags": [
+        "给出数值",
+        "未见评估协议",
+        "evaluation"
+      ],
+      "publication_status": "public_post",
+      "rank": 5,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 1889,
+        "repost_count": 67,
+        "reply_count": 55,
+        "quote_count": 14
+      },
+      "metadata": {
+        "post_id": "2085434713821565297",
+        "username": "OpenAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "新的 GPT-5.6 Sol 为付费用户的所有对话提供支持，包括 Instant，从而形成一致的体验。在我们覆盖金融、医学和法律的高风险事实性评估中，新的 GPT-5.6 Sol 产生含事实错误的回复比 GPT-5.5 Instant 少 68%。",
+      "published": "2026-08-06",
+      "author_line": "OpenAI"
+    },
+    {
+      "id": "feed:https://openai.com/index/responding-next-frontier-critical-cyber-capabilities",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "research_blog",
+      "source": "OpenAI News",
+      "title": "Responding to the next frontier of critical cyber capabilities",
+      "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities",
+      "published_at": "Fri, 07 Aug 2026 15:20:00 GMT",
+      "updated_at": "Fri, 07 Aug 2026 15:20:00 GMT",
+      "creators": [
+        "OpenAI News"
+      ],
+      "language": "en",
+      "abstract_or_text": "OpenAI is sharing preliminary cybersecurity evaluations for Astra and the steps we’re taking to strengthen safeguards and security controls.",
+      "summary_zh": "OpenAI 博文分享 Astra 的初步网络安全评估，以及为加强防护与安全控制所采取的步骤。",
+      "why_it_matters_zh": "作为 Astra X 声明的书面对照，这篇博文更适合存档。摘要过短，是否足以支撑 critical 分级需读全文。",
+      "quality_score": 66.0,
+      "tags": [
+        "研究发布",
+        "网络安全"
+      ],
+      "evidence_flags": [
+        "官方博文",
+        "初步评估",
+        "evaluation",
+        "security"
+      ],
+      "publication_status": "official_update",
+      "rank": 6,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://openai.com/news/rss.xml"
+      },
+      "abstract_zh": "OpenAI 正在分享对 Astra 的初步网络安全评估，以及我们为加强防护措施与安全控制所采取的步骤。",
+      "published": "Fri, 07 Au",
+      "author_line": "OpenAI News"
+    }
+  ],
+  "review": {
+    "model": "grok-4.6",
+    "reasoning_effort": "medium",
+    "note": "共审阅27项，其中12项达到质量分65。新增 NVIDIA 对 Meta 开源权重模型 Muse Glimmer 的本地智能体部署说明；继续保留 Astra 关键模型声明、事实性评估数字，以及强化学习教程与认知公地讨论。排除重复的 Muse Code 帖、空摘要的 Hugging Face 博文、低于 65 分的 Daybreak 营销稿和企业案例。"
+  }
+}

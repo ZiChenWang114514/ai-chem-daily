@@ -1,132 +1,37 @@
 {
   "schema_version": "2.0",
-  "date": "2026-08-16",
+  "date": "2026-08-14",
   "channel": "aivoices",
   "generated_at": "2026-08-19T08:53:54+00:00",
   "title": "AI Voices 每日精选",
   "subtitle": "研究者公开观点、研究发布与重要讨论。",
   "window": {
-    "start": "2026-08-13",
-    "end": "2026-08-16"
+    "start": "2026-08-11",
+    "end": "2026-08-14"
   },
   "method": "公开来源采集、规则筛选与模型审阅",
   "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
   "stats": {
-    "fetched": 26,
-    "candidates": 26,
-    "selected": 7,
+    "fetched": 35,
+    "candidates": 35,
+    "selected": 6,
     "sources": {
-      "X": 15,
-      "Research blogs": 11
+      "X": 10,
+      "Research blogs": 25
     }
   },
   "source_status": {
     "X": {
       "state": "ok",
-      "count": 15
+      "count": 10
     },
     "Research blogs": {
       "state": "ok",
-      "count": 11
+      "count": 25
     }
   },
   "source_errors": [],
   "items": [
-    {
-      "id": "x:2088900801489928637",
-      "channel": "aivoices",
-      "related_channels": [
-        "engineering"
-      ],
-      "item_type": "social_post",
-      "source": "X",
-      "title": "@ArchiveExplorer：DeepSeek just killed the coding-agent industry. deepseek-harness: Open-source. Free. Claude Code's top plan costs 200/mo",
-      "url": "https://x.com/ArchiveExplorer/status/2088900801489928637",
-      "published_at": "2026-08-16T08:08:55Z",
-      "updated_at": "2026-08-16T08:08:55Z",
-      "creators": [
-        "Archive"
-      ],
-      "language": "en",
-      "abstract_or_text": "DeepSeek just killed the coding-agent industry. deepseek-harness: Open-source. Free. Claude Code's top plan costs 200/month. What it does: → Everything is a plugin - model adapters, tools, session logs, even the agent loop itself, all swappable from config → Built on Cordis, DeepSeek's own plugin runtime → One command to run: npx @deepseek-ai/dsh web",
-      "summary_zh": "ArchiveExplorer 称 DeepSeek 开源了 deepseek-harness：一切皆插件，模型适配器、工具、会话日志乃至智能体循环均可从配置替换，基于 Cordis 运行时，可用 npx @deepseek-ai/dsh web 一键启动；作者将其与 Claude Code 每月200美元套餐对比。",
-      "why_it_matters_zh": "这是窗口内新出现的开源编码智能体运行时讨论。插件化描述和包名可核对，但“杀死行业”是作者判断，发帖账号并非 DeepSeek 官方。",
-      "quality_score": 72.0,
-      "tags": [
-        "工具与实践",
-        "DeepSeek"
-      ],
-      "evidence_flags": [
-        "给出安装命令",
-        "作者观点",
-        "非官方账号"
-      ],
-      "publication_status": "public_post",
-      "rank": 1,
-      "featured": true,
-      "category": "工具与实践",
-      "metrics": {
-        "like_count": 2417,
-        "repost_count": 328,
-        "reply_count": 75,
-        "quote_count": 15
-      },
-      "metadata": {
-        "post_id": "2088900801489928637",
-        "username": "ArchiveExplorer",
-        "query_kind": "topics",
-        "harvest": "grok.x.search"
-      },
-      "abstract_zh": "DeepSeek 刚刚杀死了编码智能体行业。deepseek-harness：开源。免费。Claude Code 最高套餐每月 200 美元。它能做什么：→ 一切皆插件——模型适配器、工具、会话日志，甚至智能体循环本身，都可从配置中替换 → 基于 Cordis，即 DeepSeek 自有的插件运行时 → 一条命令即可运行：npx @deepseek-ai/dsh web",
-      "published": "2026-08-16",
-      "author_line": "Archive"
-    },
-    {
-      "id": "x:2088301795890044975",
-      "channel": "aivoices",
-      "related_channels": [],
-      "item_type": "social_post",
-      "source": "X",
-      "title": "@huggingface：The State of Open Models, Summer 2026 ☀️ frontier models are getting larger, but small models still dominate real-world ",
-      "url": "https://x.com/huggingface/status/2088301795890044975",
-      "published_at": "2026-08-14T16:28:41Z",
-      "updated_at": "2026-08-14T16:28:41Z",
-      "creators": [
-        "Hugging Face"
-      ],
-      "language": "en",
-      "abstract_or_text": "The State of Open Models, Summer 2026 ☀️ frontier models are getting larger, but small models still dominate real-world usage. Qwen leads local inference, followed by Gemma. AI agents are becoming a major force on the Hub Full picture on the blog 🤗 https://huggingface.co/blog/state-of-open-models-summer-2026",
-      "summary_zh": "Hugging Face 发布《开源模型现状：2026 年夏》：前沿模型继续变大，但小模型仍主导真实使用；本地推理以 Qwen 领先，Gemma 其次。",
-      "why_it_matters_zh": "这是基于 Hub 下载、点赞与衍生仓库的可核对观察，能把注意力与实际采用分开。指标不覆盖 API 与私有部署，作者也提醒勿当作市场份额。",
-      "quality_score": 72.0,
-      "tags": [
-        "研究发布",
-        "开源模型"
-      ],
-      "evidence_flags": [
-        "官方数据博客",
-        "仅覆盖Hub"
-      ],
-      "publication_status": "public_post",
-      "rank": 2,
-      "featured": true,
-      "category": "研究发布",
-      "metrics": {
-        "like_count": 246,
-        "repost_count": 54,
-        "reply_count": 43,
-        "quote_count": 13
-      },
-      "metadata": {
-        "post_id": "2088301795890044975",
-        "username": "huggingface",
-        "query_kind": "accounts",
-        "harvest": "grok.x.search"
-      },
-      "abstract_zh": "《开源模型现状，2026 年夏》。前沿模型越来越大，但小模型仍主导真实世界使用。Qwen 引领本地推理，其次是 Gemma。人工智能智能体正在成为 Hub 上的一股主要力量。完整图景见博客：https://huggingface.co/blog/state-of-open-models-summer-2026",
-      "published": "2026-08-14",
-      "author_line": "Hugging Face"
-    },
     {
       "id": "x:2087947724725665908",
       "channel": "aivoices",
@@ -157,7 +62,7 @@
         "security"
       ],
       "publication_status": "public_post",
-      "rank": 3,
+      "rank": 1,
       "featured": true,
       "category": "研究发布",
       "metrics": {
@@ -206,8 +111,8 @@
         "release"
       ],
       "publication_status": "public_post",
-      "rank": 4,
-      "featured": false,
+      "rank": 2,
+      "featured": true,
       "category": "研究发布",
       "metrics": {
         "like_count": 15771,
@@ -254,8 +159,8 @@
         "github"
       ],
       "publication_status": "public_post",
-      "rank": 5,
-      "featured": false,
+      "rank": 3,
+      "featured": true,
       "category": "工具与实践",
       "metrics": {
         "like_count": 1012,
@@ -274,102 +179,147 @@
       "author_line": "花叔"
     },
     {
-      "id": "x:2088302050706686198",
+      "id": "x:2087948368957894859",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@GoogleDeepMind：🔵 It shows strong gains over 3.6 Flash in key coding tasks like debugging and issue resolution. 🔵 It’s better at designi",
+      "url": "https://x.com/GoogleDeepMind/status/2087948368957894859",
+      "published_at": "2026-08-13T17:04:18Z",
+      "updated_at": "2026-08-13T17:04:18Z",
+      "creators": [
+        "Google DeepMind"
+      ],
+      "language": "en",
+      "abstract_or_text": "🔵 It shows strong gains over 3.6 Flash in key coding tasks like debugging and issue resolution. 🔵 It’s better at designing more functional web layouts and apps using fewer prompts. 🔵 It delivers improved reasoning and accuracy when completing real-world business workflows. Try it now in @Antigravity, with API access in @GoogleAIStudio and @AndroidStudio.",
+      "summary_zh": "Google DeepMind 称 Gemini 3.7 Flash 相对 3.6 Flash 在调试与问题修复上有明显提升，网页布局更省提示，并改善真实业务工作流中的推理与准确性。",
+      "why_it_matters_zh": "这是实验室对迭代版本的能力说明，并给出 Antigravity、AI Studio 与 Android Studio 的试用入口。未见基准数字或评测协议，属于定性宣传。",
+      "quality_score": 69.0,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "官方定性声称",
+        "未见基准数字"
+      ],
+      "publication_status": "public_post",
+      "rank": 4,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 556,
+        "repost_count": 37,
+        "reply_count": 33,
+        "quote_count": 30
+      },
+      "metadata": {
+        "post_id": "2087948368957894859",
+        "username": "GoogleDeepMind",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "它在调试和问题修复等关键编程任务上相对 3.6 Flash 有明显提升。它能用更少的提示设计出更可用的网页布局和应用。它在完成真实世界商务工作流时，推理与准确性有所改善。现在可在 Antigravity 中试用，并可通过 Google AI Studio 与 Android Studio 使用 API。",
+      "published": "2026-08-13",
+      "author_line": "Google DeepMind"
+    },
+    {
+      "id": "x:2087996496088297746",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@OpenAI：ChatGPT can now remember your activity across the apps and websites on your computer. With Computer History in the deskt",
+      "url": "https://x.com/OpenAI/status/2087996496088297746",
+      "published_at": "2026-08-13T20:15:32Z",
+      "updated_at": "2026-08-13T20:15:32Z",
+      "creators": [
+        "OpenAI"
+      ],
+      "language": "en",
+      "abstract_or_text": "ChatGPT can now remember your activity across the apps and websites on your computer. With Computer History in the desktop app, future interactions feel more personalized and require less explanation.",
+      "summary_zh": "OpenAI 称 ChatGPT 桌面应用新增 Computer History，可记住电脑上各应用与网站的活动，使后续对话更个性化、减少重复解释。",
+      "why_it_matters_zh": "这是官方对跨应用记忆的产品声明，直接涉及本地活动采集范围。帖文未说明默认开关、保留期限、企业管控或用户删除路径。",
+      "quality_score": 69.0,
+      "tags": [
+        "工具与实践",
+        "隐私"
+      ],
+      "evidence_flags": [
+        "官方产品声明",
+        "未见隐私细节"
+      ],
+      "publication_status": "public_post",
+      "rank": 5,
+      "featured": false,
+      "category": "工具与实践",
+      "metrics": {
+        "like_count": 12166,
+        "repost_count": 964,
+        "reply_count": 802,
+        "quote_count": 813
+      },
+      "metadata": {
+        "post_id": "2087996496088297746",
+        "username": "OpenAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "ChatGPT 现在可以记住你在电脑上各应用和网站中的活动。借助桌面应用中的 Computer History，后续互动会更个性化，也更少需要反复解释。",
+      "published": "2026-08-13",
+      "author_line": "OpenAI"
+    },
+    {
+      "id": "x:2088281537427235320",
       "channel": "aivoices",
       "related_channels": [
         "engineering"
       ],
       "item_type": "social_post",
       "source": "X",
-      "title": "@AndrewYNg：New: A map of the most important skills in AI Engineering. https://x.com/i/article/2088296780983107584",
-      "url": "https://x.com/AndrewYNg/status/2088302050706686198",
-      "published_at": "2026-08-14T16:29:42Z",
-      "updated_at": "2026-08-14T16:29:42Z",
+      "title": "@UnslothAI：Qwen3.8-27B can now be run locally! Run on 17GB RAM via Unsloth Dynamic GGUFs. Qwen3.8-27B is by far the strongest model",
+      "url": "https://x.com/UnslothAI/status/2088281537427235320",
+      "published_at": "2026-08-14T15:08:11Z",
+      "updated_at": "2026-08-14T15:08:11Z",
       "creators": [
-        "Andrew Ng"
+        "Unsloth AI"
       ],
       "language": "en",
-      "abstract_or_text": "New: A map of the most important skills in AI Engineering. https://x.com/i/article/2088296780983107584",
-      "summary_zh": "吴恩达发布一份人工智能工程最重要技能地图，并附长文链接，供对照课程与岗位能力讨论。",
-      "why_it_matters_zh": "作者在工程教育中的位置使其分类有参考价值，但帖文本身几乎没有论证。技能取舍是作者观点，细节需读原文。",
+      "abstract_or_text": "Qwen3.8-27B can now be run locally! Run on 17GB RAM via Unsloth Dynamic GGUFs. Qwen3.8-27B is by far the strongest model for its size. We also uploaded NVFP4 quants. GGUF: https://huggingface.co/unsloth/Qwen3.8-27B-GGUF Guide: https://unsloth.ai/docs/models/qwen3.8",
+      "summary_zh": "Unsloth 称 Qwen3.8-27B 可通过其 Dynamic GGUF 在约 17GB 内存上本地运行，并同时上传了 NVFP4 量化，附 Hugging Face 与文档链接。",
+      "why_it_matters_zh": "它把刚发布的开源权重接到可本地运行的量化发行，降低复现门槛。称该尺寸最强是作者判断，量化质量需自行对照官方权重。",
       "quality_score": 69.0,
       "tags": [
-        "观点与讨论"
+        "工具与实践"
       ],
       "evidence_flags": [
-        "作者观点",
-        "帖文极短"
+        "量化发行链接",
+        "强度为作者判断"
       ],
       "publication_status": "public_post",
       "rank": 6,
       "featured": false,
-      "category": "观点与讨论",
+      "category": "工具与实践",
       "metrics": {
-        "like_count": 22116,
-        "repost_count": 3622,
-        "reply_count": 386,
-        "quote_count": 406
+        "like_count": 5118,
+        "repost_count": 614,
+        "reply_count": 197,
+        "quote_count": 171
       },
       "metadata": {
-        "post_id": "2088302050706686198",
-        "username": "AndrewYNg",
-        "query_kind": "accounts",
+        "post_id": "2088281537427235320",
+        "username": "UnslothAI",
+        "query_kind": "topics",
         "harvest": "grok.x.search"
       },
-      "abstract_zh": "新内容：一份人工智能工程中最重要技能的地图。https://x.com/i/article/2088296780983107584",
+      "abstract_zh": "Qwen3.8-27B 现在可以在本地运行！通过 Unsloth Dynamic GGUF，可在 17GB 内存上运行。Qwen3.8-27B 是该尺寸下目前最强的模型。我们也上传了 NVFP4 量化。GGUF：https://huggingface.co/unsloth/Qwen3.8-27B-GGUF 指南：https://unsloth.ai/docs/models/qwen3.8",
       "published": "2026-08-14",
-      "author_line": "Andrew Ng"
-    },
-    {
-      "id": "x:2088324824863236248",
-      "channel": "aivoices",
-      "related_channels": [],
-      "item_type": "social_post",
-      "source": "X",
-      "title": "@AnthropicAI：As part of our Responsible Scaling Policy, we publish regular Risk Reports. These share detailed information on the risk",
-      "url": "https://x.com/AnthropicAI/status/2088324824863236248",
-      "published_at": "2026-08-14T18:00:12Z",
-      "updated_at": "2026-08-14T18:00:12Z",
-      "creators": [
-        "Anthropic"
-      ],
-      "language": "en",
-      "abstract_or_text": "As part of our Responsible Scaling Policy, we publish regular Risk Reports. These share detailed information on the risks of our systems and how prepared we are to address them. Our second Risk Report is now available: https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf",
-      "summary_zh": "Anthropic 按负责任扩展政策发布第二份风险报告，称其中详述其系统风险及应对准备程度，并给出可下载的 PDF 链接。",
-      "why_it_matters_zh": "定期风险报告是实验室安全治理的可核查材料。帖文未摘要具体风险等级或评估结果，判断需对照 PDF，且文本已经过编辑删减。",
-      "quality_score": 69.0,
-      "tags": [
-        "研究发布",
-        "安全"
-      ],
-      "evidence_flags": [
-        "官方PDF",
-        "文本已删减"
-      ],
-      "publication_status": "public_post",
-      "rank": 7,
-      "featured": false,
-      "category": "研究发布",
-      "metrics": {
-        "like_count": 2246,
-        "repost_count": 196,
-        "reply_count": 303,
-        "quote_count": 176
-      },
-      "metadata": {
-        "post_id": "2088324824863236248",
-        "username": "AnthropicAI",
-        "query_kind": "accounts",
-        "harvest": "grok.x.search"
-      },
-      "abstract_zh": "作为我们负责任扩展政策的一部分，我们定期发布风险报告。这些报告分享关于我们系统风险以及我们准备如何应对这些风险的详细信息。第二份风险报告现已发布：https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf",
-      "published": "2026-08-14",
-      "author_line": "Anthropic"
+      "author_line": "Unsloth AI"
     }
   ],
   "review": {
     "model": "grok-4.6",
     "reasoning_effort": "medium",
-    "note": "共审阅26项，其中15项达到质量分65。Qwen3.8、Ultrafast、Gemini、Computer History、橙皮书与 Unsloth 已在14日收录，开源模型观察、Anthropic 风险报告与水印、吴恩达技能地图和 AI4AI 转述已在15日收录，本日不再重复。达标且未用过的只有当日新帖 DeepSeek harness，故只收1项。 为使当日可独立阅读，从本窗口已审条目中补回若干未重复收录项。"
+    "note": "共审阅35项，其中18项达到质量分65。排除与前几日重复的 Linux/Mistral 线程、Gemini 一句话预告和空摘要博客，收录6项：OpenAI Ultrafast 吞吐声明、Qwen3.8 开源权重、DeepSeek Harness 教程、Gemini 3.7 Flash 能力说明、ChatGPT 电脑历史，以及 Unsloth 本地量化发布。"
   }
 }

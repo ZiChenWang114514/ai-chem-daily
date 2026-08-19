@@ -3,7 +3,7 @@
   "date": "2026-08-16",
   "generated_at": "2026-08-16T12:43:06+00:00",
   "title": "AIX每日精读",
-  "overview_zh": "2026年8月16日，五个频道中仅工程频道录得一项精选：llama.cpp 的官方软件发布 b10451，为 LoRA 张量加载加入文件范围检查。化学、生物、数学与观点频道的候选集均为空，今日没有足够高质量更新；因此本期未收录预印本、同行评议论文或公开观点，避免将软件更新混同为研究结论。",
+  "overview_zh": "2026年08月16日的历史日报，共 8 项精选。",
   "channel_highlights": {
     "aixchem": "今日没有足够高质量更新：候选集为空，未收录化学与 AI 相关的预印本或同行评议论文。",
     "aixbio": "今日没有足够高质量更新：候选集为空，未收录生命科学与 AI 相关的预印本或同行评议论文。",
@@ -66,18 +66,229 @@
       "id": "aivoices",
       "name": "AI Voices",
       "stats": {
-        "fetched": 0,
-        "candidates": 0,
-        "selected": 0,
+        "fetched": 26,
+        "candidates": 26,
+        "selected": 7,
         "sources": {
-          "X": 0,
-          "Research blogs": 0
+          "X": 15,
+          "Research blogs": 11
         }
       },
-      "source_errors": [
-        "X: HTTP 402"
-      ],
-      "items": []
+      "source_errors": [],
+      "items": [
+        {
+          "why_it_matters_zh": "这是窗口内新出现的开源编码智能体运行时讨论。插件化描述和包名可核对，但“杀死行业”是作者判断，发帖账号并非 DeepSeek 官方。",
+          "source": "X",
+          "creators": [
+            "Archive"
+          ],
+          "abstract_or_text": "DeepSeek just killed the coding-agent industry. deepseek-harness: Open-source. Free. Claude Code's top plan costs 200/month. What it does: → Everything is a plugin - model adapters, tools, session logs, even the agent loop itself, all swappable from config → Built on Cordis, DeepSeek's own plugin runtime → One command to run: npx @deepseek-ai/dsh web",
+          "id": "x:2088900801489928637",
+          "author_line": "Archive",
+          "category": "工具与实践",
+          "summary_zh": "ArchiveExplorer 称 DeepSeek 开源了 deepseek-harness：一切皆插件，模型适配器、工具、会话日志乃至智能体循环均可从配置替换，基于 Cordis 运行时，可用 npx @deepseek-ai/dsh web 一键启动；作者将其与 Claude Code 每月200美元套餐对比。",
+          "tags": [
+            "工具与实践",
+            "DeepSeek"
+          ],
+          "published": "2026-08-16",
+          "item_type": "social_post",
+          "language": "en",
+          "quality_score": 72.0,
+          "rank": 1,
+          "evidence_flags": [
+            "给出安装命令",
+            "作者观点",
+            "非官方账号"
+          ],
+          "url": "https://x.com/ArchiveExplorer/status/2088900801489928637",
+          "published_at": "2026-08-16T08:08:55Z",
+          "abstract_zh": "DeepSeek 刚刚杀死了编码智能体行业。deepseek-harness：开源。免费。Claude Code 最高套餐每月 200 美元。它能做什么：→ 一切皆插件——模型适配器、工具、会话日志，甚至智能体循环本身，都可从配置中替换 → 基于 Cordis，即 DeepSeek 自有的插件运行时 → 一条命令即可运行：npx @deepseek-ai/dsh web",
+          "featured": true,
+          "title": "@ArchiveExplorer：DeepSeek just killed the coding-agent industry. deepseek-harness: Open-source. Free. Claude Code's top plan costs 200/mo"
+        },
+        {
+          "why_it_matters_zh": "这是基于 Hub 下载、点赞与衍生仓库的可核对观察，能把注意力与实际采用分开。指标不覆盖 API 与私有部署，作者也提醒勿当作市场份额。",
+          "source": "X",
+          "creators": [
+            "Hugging Face"
+          ],
+          "abstract_or_text": "The State of Open Models, Summer 2026 ☀️ frontier models are getting larger, but small models still dominate real-world usage. Qwen leads local inference, followed by Gemma. AI agents are becoming a major force on the Hub Full picture on the blog 🤗 https://huggingface.co/blog/state-of-open-models-summer-2026",
+          "id": "x:2088301795890044975",
+          "author_line": "Hugging Face",
+          "category": "研究发布",
+          "summary_zh": "Hugging Face 发布《开源模型现状：2026 年夏》：前沿模型继续变大，但小模型仍主导真实使用；本地推理以 Qwen 领先，Gemma 其次。",
+          "tags": [
+            "研究发布",
+            "开源模型"
+          ],
+          "published": "2026-08-14",
+          "item_type": "social_post",
+          "language": "en",
+          "quality_score": 72.0,
+          "rank": 2,
+          "evidence_flags": [
+            "官方数据博客",
+            "仅覆盖Hub"
+          ],
+          "url": "https://x.com/huggingface/status/2088301795890044975",
+          "published_at": "2026-08-14T16:28:41Z",
+          "abstract_zh": "《开源模型现状，2026 年夏》。前沿模型越来越大，但小模型仍主导真实世界使用。Qwen 引领本地推理，其次是 Gemma。人工智能智能体正在成为 Hub 上的一股主要力量。完整图景见博客：https://huggingface.co/blog/state-of-open-models-summer-2026",
+          "featured": true,
+          "title": "@huggingface：The State of Open Models, Summer 2026 ☀️ frontier models are getting larger, but small models still dominate real-world "
+        },
+        {
+          "why_it_matters_zh": "这是官方对推理档位与硬件合作的产品声明，给出了可核对的吞吐数字。未见延迟分布、质量折损或对照基准，需对照 API 文档验证。",
+          "source": "X",
+          "creators": [
+            "OpenAI"
+          ],
+          "abstract_or_text": "Powered by @Cerebras, Ultrafast generates up to 750 tokens per second, bringing our most intelligent model to products and workflows where every second counts. Ultrafast is designed for businesses where faster frontier intelligence creates a measurable advantage, including real-time voice and customer support, commerce, coding and design, financial research, and security response.",
+          "id": "x:2087947724725665908",
+          "author_line": "OpenAI",
+          "category": "研究发布",
+          "summary_zh": "OpenAI 称由 Cerebras 驱动的 Ultrafast 最高可生成每秒 750 个 token，面向实时语音、客服、商务、编程与安全响应等对时延敏感的场景。",
+          "tags": [
+            "研究发布",
+            "推理"
+          ],
+          "published": "2026-08-13",
+          "item_type": "social_post",
+          "language": "en",
+          "quality_score": 71.0,
+          "rank": 3,
+          "evidence_flags": [
+            "官方吞吐声称",
+            "未见对照评测",
+            "security"
+          ],
+          "url": "https://x.com/OpenAI/status/2087947724725665908",
+          "published_at": "2026-08-13T17:01:44Z",
+          "abstract_zh": "由 Cerebras 驱动，Ultrafast 最高可生成每秒 750 个 token，把我们最智能的模型带进每一秒都要紧的产品与工作流。Ultrafast 面向那些更快的前沿智能能带来可测量优势的企业，包括实时语音与客户支持、商务、编程与设计、金融研究，以及安全响应。",
+          "featured": true,
+          "title": "@OpenAI：Powered by @Cerebras, Ultrafast generates up to 750 tokens per second, bringing our most intelligent model to products a"
+        },
+        {
+          "why_it_matters_zh": "这是实验室对开源权重的正式交付，参数量、上下文和许可证均可核对。称整体超过 Qwen3.7-Plus 是官方对比，未见公开对照表。",
+          "source": "X",
+          "creators": [
+            "Qwen"
+          ],
+          "abstract_or_text": "We promised open weights for Qwen3.8. Now, time to meet them! ⚡ Qwen3.8-27B: - A native multimodal dense model. With just 27B parameters, it outperforms Qwen3.7-Plus overall and shines in real-world coding & office workflows. - 262K native context, easily extendable to 1M tokens via YaRN. - Built for builders. Highly efficient, high-quality, and licensed under Apache 2.0. 🚀 The open weights for Qwen3.8-2.4T-A95B (Max-level) have also been released recently.",
+          "id": "x:2088280182356611304",
+          "author_line": "Qwen",
+          "category": "研究发布",
+          "summary_zh": "Qwen 发布 Qwen3.8-27B 开源权重：原生多模态稠密模型，原生上下文 26.2 万 token，可用 YaRN 扩到 100 万，许可证为 Apache 2.0。",
+          "tags": [
+            "研究发布",
+            "开源模型"
+          ],
+          "published": "2026-08-14",
+          "item_type": "social_post",
+          "language": "en",
+          "quality_score": 71.0,
+          "rank": 4,
+          "evidence_flags": [
+            "官方权重发布",
+            "对比为厂商声称",
+            "release"
+          ],
+          "url": "https://x.com/Alibaba_Qwen/status/2088280182356611304",
+          "published_at": "2026-08-14T15:02:48Z",
+          "abstract_zh": "我们承诺过为 Qwen3.8 提供开源权重。现在，来见见它们！Qwen3.8-27B：原生多模态稠密模型。仅 270 亿参数，整体表现超过 Qwen3.7-Plus，并在真实世界编程与办公工作流中表现出色。原生 26.2 万上下文，可通过 YaRN 轻松扩展到 100 万 token。为构建者而做。高效、高质量，并以 Apache 2.0 许可。Qwen3.8-2.4T-A95B（Max 级）的开源权重也已于近日发布。",
+          "featured": false,
+          "title": "@Alibaba_Qwen：We promised open weights for Qwen3.8. Now, time to meet them! ⚡ Qwen3.8-27B: - A native multimodal dense model. With jus"
+        },
+        {
+          "why_it_matters_zh": "仓库地址可核对，对理解 Harness 插件模型有参考价值。作者明确说由人工智能代写，内容应对照官方文档核验，不宜当作一手规范。",
+          "source": "X",
+          "creators": [
+            "花叔"
+          ],
+          "abstract_or_text": "是的，《DeepSeek Harness橙皮书📙》，总共120页，免费！开源！ https://github.com/alchaincyf/deepseek-harness-orange-book 这么短时间内能出这个东西，是的，当然是AI写的。我为啥要用AI写这个呢？ 因为我看到DeepSeek Harness说“一切皆插件”的时候，我感到很好奇，尤其想知道这部分插件和skill、MCP等概念之间的关系。",
+          "id": "x:2088105299328528463",
+          "author_line": "花叔",
+          "category": "工具与实践",
+          "summary_zh": "花叔发布 120 页开源《DeepSeek Harness 橙皮书》，说明自己用人工智能撰写，目的是理清插件与 skill、MCP 等概念的关系。",
+          "tags": [
+            "工具与实践"
+          ],
+          "published": "2026-08-14",
+          "item_type": "social_post",
+          "language": "zh",
+          "quality_score": 71.0,
+          "rank": 5,
+          "evidence_flags": [
+            "开源仓库",
+            "作者称由AI撰写",
+            "github"
+          ],
+          "url": "https://x.com/AlchainHust/status/2088105299328528463",
+          "published_at": "2026-08-14T03:27:53Z",
+          "abstract_zh": "是的，《DeepSeek Harness橙皮书📙》，总共120页，免费！开源！ https://github.com/alchaincyf/deepseek-harness-orange-book 这么短时间内能出这个东西，是的，当然是AI写的。我为啥要用AI写这个呢？ 因为我看到DeepSeek Harness说“一切皆插件”的时候，我感到很好奇，尤其想知道这部分插件和skill、MCP等概念之间的关系。",
+          "featured": false,
+          "title": "@AlchainHust：是的，《DeepSeek Harness橙皮书📙》，总共120页，免费！开源！ https://github.com/alchaincyf/deepseek-harness-orange-book 这么短时间内能出这个东西，是的，当然是AI"
+        },
+        {
+          "why_it_matters_zh": "作者在工程教育中的位置使其分类有参考价值，但帖文本身几乎没有论证。技能取舍是作者观点，细节需读原文。",
+          "source": "X",
+          "creators": [
+            "Andrew Ng"
+          ],
+          "abstract_or_text": "New: A map of the most important skills in AI Engineering. https://x.com/i/article/2088296780983107584",
+          "id": "x:2088302050706686198",
+          "author_line": "Andrew Ng",
+          "category": "观点与讨论",
+          "summary_zh": "吴恩达发布一份人工智能工程最重要技能地图，并附长文链接，供对照课程与岗位能力讨论。",
+          "tags": [
+            "观点与讨论"
+          ],
+          "published": "2026-08-14",
+          "item_type": "social_post",
+          "language": "en",
+          "quality_score": 69.0,
+          "rank": 6,
+          "evidence_flags": [
+            "作者观点",
+            "帖文极短"
+          ],
+          "url": "https://x.com/AndrewYNg/status/2088302050706686198",
+          "published_at": "2026-08-14T16:29:42Z",
+          "abstract_zh": "新内容：一份人工智能工程中最重要技能的地图。https://x.com/i/article/2088296780983107584",
+          "featured": false,
+          "title": "@AndrewYNg：New: A map of the most important skills in AI Engineering. https://x.com/i/article/2088296780983107584"
+        },
+        {
+          "why_it_matters_zh": "定期风险报告是实验室安全治理的可核查材料。帖文未摘要具体风险等级或评估结果，判断需对照 PDF，且文本已经过编辑删减。",
+          "source": "X",
+          "creators": [
+            "Anthropic"
+          ],
+          "abstract_or_text": "As part of our Responsible Scaling Policy, we publish regular Risk Reports. These share detailed information on the risks of our systems and how prepared we are to address them. Our second Risk Report is now available: https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf",
+          "id": "x:2088324824863236248",
+          "author_line": "Anthropic",
+          "category": "研究发布",
+          "summary_zh": "Anthropic 按负责任扩展政策发布第二份风险报告，称其中详述其系统风险及应对准备程度，并给出可下载的 PDF 链接。",
+          "tags": [
+            "研究发布",
+            "安全"
+          ],
+          "published": "2026-08-14",
+          "item_type": "social_post",
+          "language": "en",
+          "quality_score": 69.0,
+          "rank": 7,
+          "evidence_flags": [
+            "官方PDF",
+            "文本已删减"
+          ],
+          "url": "https://x.com/AnthropicAI/status/2088324824863236248",
+          "published_at": "2026-08-14T18:00:12Z",
+          "abstract_zh": "作为我们负责任扩展政策的一部分，我们定期发布风险报告。这些报告分享关于我们系统风险以及我们准备如何应对这些风险的详细信息。第二份风险报告现已发布：https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf",
+          "featured": false,
+          "title": "@AnthropicAI：As part of our Responsible Scaling Policy, we publish regular Risk Reports. These share detailed information on the risk"
+        }
+      ]
     },
     {
       "id": "engineering",

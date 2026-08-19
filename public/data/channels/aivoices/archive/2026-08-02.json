@@ -1,0 +1,278 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-02",
+  "channel": "aivoices",
+  "generated_at": "2026-08-19T08:53:54+00:00",
+  "title": "AI Voices 每日精选",
+  "subtitle": "研究者公开观点、研究发布与重要讨论。",
+  "window": {
+    "start": "2026-07-30",
+    "end": "2026-08-02"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 37,
+    "candidates": 37,
+    "selected": 5,
+    "sources": {
+      "X": 18,
+      "Research blogs": 19
+    }
+  },
+  "source_status": {
+    "X": {
+      "state": "ok",
+      "count": 18
+    },
+    "Research blogs": {
+      "state": "ok",
+      "count": 19
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "x:2083476852216369294",
+      "channel": "aivoices",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@polynoamial：We still haven’t solved math. Astra isn’t building new branches of mathematics, or posing interesting new conjectures. T",
+      "url": "https://x.com/polynoamial/status/2083476852216369294",
+      "published_at": "2026-08-01T08:56:05Z",
+      "updated_at": "2026-08-01T08:56:05Z",
+      "creators": [
+        "Noam Brown"
+      ],
+      "language": "en",
+      "abstract_or_text": "We still haven’t solved math. Astra isn’t building new branches of mathematics, or posing interesting new conjectures. Though I admit it’s hard to believe that tweet was only a year ago. A lot has happened since o3 was released.",
+      "summary_zh": "Noam Brown 补充称数学并未被解决：Astra 并没有建立新的数学分支，也没有提出有趣的新猜想，尽管距离那条旧帖只有一年。",
+      "why_it_matters_zh": "这是作者本人对 Astra“解决公开问题”声明的降温，有助于把结果定位为已知问题上的推进，而非数学被人工智能终结。属观点，不是新定理列表。",
+      "quality_score": 71.0,
+      "tags": [
+        "观点与讨论",
+        "数学推理",
+        "Astra"
+      ],
+      "evidence_flags": [
+        "作者观点",
+        "对自身声明的限定",
+        "release"
+      ],
+      "publication_status": "public_post",
+      "rank": 1,
+      "featured": true,
+      "category": "观点与讨论",
+      "metrics": {
+        "like_count": 1129,
+        "repost_count": 51,
+        "reply_count": 41,
+        "quote_count": 20
+      },
+      "metadata": {
+        "post_id": "2083476852216369294",
+        "username": "polynoamial",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "我们仍然没有解决数学。Astra 并没有建立新的数学分支，也没有提出有趣的新猜想。不过我承认，很难相信那条推文只是一年前发的。自 o3 发布以来发生了很多事。",
+      "published": "2026-08-01",
+      "author_line": "Noam Brown"
+    },
+    {
+      "id": "x:2083470822258467194",
+      "channel": "aivoices",
+      "related_channels": [
+        "aixmath",
+        "engineering"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@polynoamial：The cost of generating the proofs for all 10 of these breakthroughs combined was under 2,000 at Sol API prices. We’re ex",
+      "url": "https://x.com/polynoamial/status/2083470822258467194",
+      "published_at": "2026-08-01T08:32:07Z",
+      "updated_at": "2026-08-01T08:32:07Z",
+      "creators": [
+        "Noam Brown"
+      ],
+      "language": "en",
+      "abstract_or_text": "The cost of generating the proofs for all 10 of these breakthroughs combined was under 2,000 at Sol API prices. We’re excited to see what scientists and researchers are able to create with our upcoming Astra models!",
+      "summary_zh": "Noam Brown 称生成这 10 项突破的证明，按 Sol API 价格合计不到 2000，并指向即将发布的 Astra 模型。",
+      "why_it_matters_zh": "它把“科学推理突破”与推理成本联系起来，是可讨论的工程信息。数字来自作者口径，未见题单、token 明细与独立复现成本。",
+      "quality_score": 69.0,
+      "tags": [
+        "研究发布",
+        "推理成本",
+        "Astra"
+      ],
+      "evidence_flags": [
+        "给出成本口径",
+        "未见明细"
+      ],
+      "publication_status": "public_post",
+      "rank": 2,
+      "featured": true,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 3411,
+        "repost_count": 296,
+        "reply_count": 141,
+        "quote_count": 109
+      },
+      "metadata": {
+        "post_id": "2083470822258467194",
+        "username": "polynoamial",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "按 Sol API 价格，生成这 10 项突破的全部证明合计花费不到 2000。我们期待科学家与研究者能用即将推出的 Astra 模型创造出什么！",
+      "published": "2026-08-01",
+      "author_line": "Noam Brown"
+    },
+    {
+      "id": "x:2083183407132254242",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@GitHub_Daily：用 10 美元的开发板，256MB 内存，跑十亿参数的大模型，这事真有人做出来了。 PicoLM 是纯 C 写的推理程序，编译出来单个文件约 80KB 大小，零依赖，运行占 45MB 内存。 在树莓派 5 上每秒大约 10 个 Token，",
+      "url": "https://x.com/GitHub_Daily/status/2083183407132254242",
+      "published_at": "2026-07-31T13:30:02Z",
+      "updated_at": "2026-07-31T13:30:02Z",
+      "creators": [
+        "GitHubDaily"
+      ],
+      "language": "zh",
+      "abstract_or_text": "用 10 美元的开发板，256MB 内存，跑十亿参数的大模型，这事真有人做出来了。 PicoLM 是纯 C 写的推理程序，编译出来单个文件约 80KB 大小，零依赖，运行占 45MB 内存。 在树莓派 5 上每秒大约 10 个 Token，树莓派 4 是 8 个，十美元那块板子也有 1 个。 GitHub：https://github.com/RightNow-AI/picolm",
+      "summary_zh": "GitHubDaily 介绍 PicoLM：用纯 C 编写的约 80KB 无依赖推理程序，可在 256MB 内存、约 10 美元开发板上运行十亿参数模型，并给出树莓派速度。",
+      "why_it_matters_zh": "它提供可核对的仓库与资源占用数字，是边缘侧小模型推理的工程案例。帖文是二手介绍，未附对照评测或精度报告。",
+      "quality_score": 70.0,
+      "tags": [
+        "工具与实践",
+        "边缘推理"
+      ],
+      "evidence_flags": [
+        "仓库链接",
+        "二手转述",
+        "未见精度",
+        "github"
+      ],
+      "publication_status": "public_post",
+      "rank": 3,
+      "featured": true,
+      "category": "工具与实践",
+      "metrics": {
+        "like_count": 124,
+        "repost_count": 26,
+        "reply_count": 61,
+        "quote_count": 0
+      },
+      "metadata": {
+        "post_id": "2083183407132254242",
+        "username": "GitHub_Daily",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "用 10 美元的开发板，256MB 内存，跑十亿参数的大模型，这事真有人做出来了。 PicoLM 是纯 C 写的推理程序，编译出来单个文件约 80KB 大小，零依赖，运行占 45MB 内存。 在树莓派 5 上每秒大约 10 个 Token，树莓派 4 是 8 个，十美元那块板子也有 1 个。 GitHub：https://github.com/RightNow-AI/picolm",
+      "published": "2026-07-31",
+      "author_line": "GitHubDaily"
+    },
+    {
+      "id": "x:2083290842882510873",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@fchollet：We need open frameworks to evaluate model behavior. Discussions need to be grounded in auditable measurements rather tha",
+      "url": "https://x.com/fchollet/status/2083290842882510873",
+      "published_at": "2026-07-31T20:36:57Z",
+      "updated_at": "2026-07-31T20:36:57Z",
+      "creators": [
+        "François Chollet"
+      ],
+      "language": "en",
+      "abstract_or_text": "We need open frameworks to evaluate model behavior. Discussions need to be grounded in auditable measurements rather than \"us vs them\" vibes. @cyrilgorlla and the team at CTGT are doing important work in this space",
+      "summary_zh": "François Chollet 呼吁用开放框架、可审计测量来讨论模型行为，而不是阵营化的观感，并点名 CTGT 团队的工作。",
+      "why_it_matters_zh": "这是研究者对评测公共性的观点，提醒读者把能力争论落到可复核指标。帖文很短，未给出框架细节或数据。",
+      "quality_score": 66.0,
+      "tags": [
+        "观点与讨论",
+        "评测"
+      ],
+      "evidence_flags": [
+        "作者观点",
+        "未见框架细节"
+      ],
+      "publication_status": "public_post",
+      "rank": 4,
+      "featured": false,
+      "category": "观点与讨论",
+      "metrics": {
+        "like_count": 106,
+        "repost_count": 19,
+        "reply_count": 22,
+        "quote_count": 2
+      },
+      "metadata": {
+        "post_id": "2083290842882510873",
+        "username": "fchollet",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "我们需要开放的框架来评估模型行为。讨论应当建立在可审计的测量之上，而不是“我们对你们”的氛围。@cyrilgorlla 与 CTGT 的团队正在这一领域做重要工作。",
+      "published": "2026-07-31",
+      "author_line": "François Chollet"
+    },
+    {
+      "id": "feed:https://www.microsoft.com/en-us/research/blog/evolib-turning-experience-into-evolving-knowledge/",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "research_blog",
+      "source": "Microsoft Research",
+      "title": "EvoLib: Turning experience into evolving knowledge",
+      "url": "https://www.microsoft.com/en-us/research/blog/evolib-turning-experience-into-evolving-knowledge/",
+      "published_at": "Thu, 30 Jul 2026 16:00:00 +0000",
+      "updated_at": "Thu, 30 Jul 2026 16:00:00 +0000",
+      "creators": [
+        "Microsoft Research"
+      ],
+      "language": "en",
+      "abstract_or_text": "LLMs do not get smarter just by remembering more. EvoLib turns experience into evolving knowledge, taking reusable skills and insights that help models learn and adapt across tasks long after deployment. The post EvoLib: Turning experience into evolving knowledge appeared first on Microsoft Research .",
+      "summary_zh": "微软研究院发布 EvoLib：主张大模型不会只靠记住更多内容变强，而要把经验沉淀为可跨任务复用、在部署后仍能演化的技能与洞见。",
+      "why_it_matters_zh": "这是把“记忆”改成“可演化知识库”的研究博客。摘要未给出基准、技能库规模或对比实验。",
+      "quality_score": 65.0,
+      "tags": [
+        "研究发布",
+        "智能体",
+        "持续学习"
+      ],
+      "evidence_flags": [
+        "实验室博客",
+        "未见评测"
+      ],
+      "publication_status": "official_update",
+      "rank": 5,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://www.microsoft.com/en-us/research/feed/"
+      },
+      "abstract_zh": "大语言模型不会仅仅因为记住更多内容就变得更聪明。EvoLib 把经验转化为不断演化的知识，提取可复用的技能与洞见，帮助模型在部署之后仍能跨任务学习与适应。",
+      "published": "Thu, 30 Ju",
+      "author_line": "Microsoft Research"
+    }
+  ],
+  "review": {
+    "model": "grok-4.6",
+    "reasoning_effort": "medium",
+    "note": "共审阅37项。与前后日重叠的Astra主声明、机器人口号帖和降价营销不重复收录，收录5项：作者对Astra的降温与成本说明、EvoLib、开放评测呼吁，以及可核对仓库的PicoLM。"
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-04",
+  "channel": "aivoices",
+  "generated_at": "2026-08-19T08:53:54+00:00",
+  "title": "AI Voices 每日精选",
+  "subtitle": "研究者公开观点、研究发布与重要讨论。",
+  "window": {
+    "start": "2026-08-01",
+    "end": "2026-08-04"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 26,
+    "candidates": 26,
+    "selected": 4,
+    "sources": {
+      "X": 15,
+      "Research blogs": 11
+    }
+  },
+  "source_status": {
+    "X": {
+      "state": "ok",
+      "count": 15
+    },
+    "Research blogs": {
+      "state": "ok",
+      "count": 11
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "x:2084352161404920316",
+      "channel": "aivoices",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@OpenAI：An internal version of our next major model produced 10 new results on long-standing open problems in mathematics and th",
+      "url": "https://x.com/OpenAI/status/2084352161404920316",
+      "published_at": "2026-08-03T18:54:15Z",
+      "updated_at": "2026-08-03T18:54:15Z",
+      "creators": [
+        "OpenAI"
+      ],
+      "language": "en",
+      "abstract_or_text": "An internal version of our next major model produced 10 new results on long-standing open problems in mathematics and theoretical computer science, using roughly 2,000 worth of tokens at GPT-5.6 Sol API rates.",
+      "summary_zh": "OpenAI 官方称下一代主要模型的内部版本，在数学与理论计算机科学的长期公开问题上给出 10 项新结果，按 GPT-5.6 Sol API 价格约消耗价值 2000 的 token。",
+      "why_it_matters_zh": "这是实验室官方对先前研究者声明的背书，并把成本写进公告。同线程称将放手稿与 Lean 证书，问题清单与是否“新结果”需对照博文核验。",
+      "quality_score": 69.0,
+      "tags": [
+        "研究发布",
+        "数学推理"
+      ],
+      "evidence_flags": [
+        "官方声明",
+        "给出成本口径",
+        "未见定理名"
+      ],
+      "publication_status": "public_post",
+      "rank": 1,
+      "featured": true,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 14031,
+        "repost_count": 1010,
+        "reply_count": 584,
+        "quote_count": 373
+      },
+      "metadata": {
+        "post_id": "2084352161404920316",
+        "username": "OpenAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "我们下一代主要模型的一个内部版本，在数学与理论计算机科学的长期公开问题上产生了 10 项新结果，按 GPT-5.6 Sol API 价格约消耗价值 2000 的 token。",
+      "published": "2026-08-03",
+      "author_line": "OpenAI"
+    },
+    {
+      "id": "x:2084378415818579975",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@OpenAI：GPT-Live can listen while it speaks. To make that feel natural at ChatGPT scale, we rebuilt the voice stack from client ",
+      "url": "https://x.com/OpenAI/status/2084378415818579975",
+      "published_at": "2026-08-03T20:38:34Z",
+      "updated_at": "2026-08-03T20:38:34Z",
+      "creators": [
+        "OpenAI"
+      ],
+      "language": "en",
+      "abstract_or_text": "GPT-Live can listen while it speaks. To make that feel natural at ChatGPT scale, we rebuilt the voice stack from client to model. This new architecture keeps audio flowing continuously, so deeper reasoning and tool use don't interrupt the conversation.",
+      "summary_zh": "OpenAI 称 GPT-Live 可在说话的同时听，并从客户端到模型重建语音栈，使音频持续流动，较深推理与工具使用不中断对话。",
+      "why_it_matters_zh": "这是对实时语音架构的工程声明，指向“无轮次”连续交互。帖文未给出延迟、中断率或对比评测。",
+      "quality_score": 69.0,
+      "tags": [
+        "研究发布",
+        "语音",
+        "系统架构"
+      ],
+      "evidence_flags": [
+        "官方声明",
+        "未见评测"
+      ],
+      "publication_status": "public_post",
+      "rank": 2,
+      "featured": true,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 11033,
+        "repost_count": 962,
+        "reply_count": 562,
+        "quote_count": 297
+      },
+      "metadata": {
+        "post_id": "2084378415818579975",
+        "username": "OpenAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "GPT-Live 可以边说边听。为了在 ChatGPT 规模上让这种体验自然，我们从客户端到模型重建了语音栈。新架构让音频持续流动，因此更深的推理与工具使用不会打断对话。",
+      "published": "2026-08-03",
+      "author_line": "OpenAI"
+    },
+    {
+      "id": "x:2084635240644141317",
+      "channel": "aivoices",
+      "related_channels": [
+        "aixbio",
+        "aixchem"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@EricTopol：An AI biologist augmented discovery of disease mechanisms and targets for drug treatment. Working autonomously, trained ",
+      "url": "https://x.com/EricTopol/status/2084635240644141317",
+      "published_at": "2026-08-04T13:39:06Z",
+      "updated_at": "2026-08-04T13:39:06Z",
+      "creators": [
+        "Eric Topol"
+      ],
+      "language": "en",
+      "abstract_or_text": "An AI biologist augmented discovery of disease mechanisms and targets for drug treatment. Working autonomously, trained with >24 million publications and >600TB of biomedical data @natBME https://www.nature.com/articles/s41551-026-01769-6",
+      "summary_zh": "Eric Topol 介绍一篇 Nature Biomedical Engineering 论文：在超过 2400 万篇文献与 600TB 生物医学数据上训练的自主“AI 生物学家”，用于发现疾病机制与药物靶点。",
+      "why_it_matters_zh": "这是有期刊链接的研究者转述，属于可核对的二次传播。湿实验验证、对照与失败率需读原文，不能只看推文措辞。",
+      "quality_score": 69.0,
+      "tags": [
+        "研究发布",
+        "药物靶点",
+        "科研智能体"
+      ],
+      "evidence_flags": [
+        "论文链接",
+        "二手转述"
+      ],
+      "publication_status": "public_post",
+      "rank": 3,
+      "featured": true,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 468,
+        "repost_count": 109,
+        "reply_count": 7,
+        "quote_count": 8
+      },
+      "metadata": {
+        "post_id": "2084635240644141317",
+        "username": "EricTopol",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "一位人工智能生物学家增强了疾病机制与药物治疗靶点的发现。它自主工作，训练数据超过 2400 万篇文献和超过 600TB 生物医学数据。@natBME https://www.nature.com/articles/s41551-026-01769-6",
+      "published": "2026-08-04",
+      "author_line": "Eric Topol"
+    },
+    {
+      "id": "feed:https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "research_blog",
+      "source": "Microsoft Research",
+      "title": "Orchard: An open framework for scalable agentic AI",
+      "url": "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/",
+      "published_at": "Mon, 03 Aug 2026 16:00:00 +0000",
+      "updated_at": "Mon, 03 Aug 2026 16:00:00 +0000",
+      "creators": [
+        "Microsoft Research"
+      ],
+      "language": "en",
+      "abstract_or_text": "Orchard is an open-source framework for the research community to train and evaluate AI agents across task types. It reduces complexity while supporting strong performance from smaller models by enabling researchers to reuse the same infrastructure. The post Orchard: An open framework for scalable agentic AI appeared first on Microsoft Research .",
+      "summary_zh": "微软研究院开源 Orchard：供研究社区跨任务类型训练与评估智能体的框架，强调复用同一套基础设施，并支持较小模型取得较强表现。",
+      "why_it_matters_zh": "开源评测与训练底座会影响智能体研究的可复现性。摘要未给出基准数字、支持的任务类型清单或与现有框架的对比。",
+      "quality_score": 67.0,
+      "tags": [
+        "研究发布",
+        "智能体",
+        "开源框架"
+      ],
+      "evidence_flags": [
+        "实验室博客",
+        "开源声称",
+        "未见评测",
+        "performance"
+      ],
+      "publication_status": "official_update",
+      "rank": 4,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://www.microsoft.com/en-us/research/feed/"
+      },
+      "abstract_zh": "Orchard 是面向研究社区的开源框架，用于跨任务类型训练与评估人工智能智能体。它降低复杂度，同时通过让研究者复用同一套基础设施，支持较小模型取得较强表现。",
+      "published": "Mon, 03 Au",
+      "author_line": "Microsoft Research"
+    }
+  ],
+  "review": {
+    "model": "grok-4.6",
+    "reasoning_effort": "medium",
+    "note": "共审阅26项。将Astra从研究者声明推进到实验室官方口径，并收录GPT-Live、Nature生物医学论文转述与开源智能体框架Orchard；排除同一线程的Lean证书续帖、Noam原帖与截断存储博客。"
+  }
+}

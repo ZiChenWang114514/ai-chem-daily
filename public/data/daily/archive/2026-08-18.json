@@ -3,7 +3,7 @@
   "date": "2026-08-18",
   "generated_at": "2026-08-18T11:33:41+00:00",
   "title": "AIX每日精读",
-  "overview_zh": "今日精选以尚待同行评议的预印本和可直接采用的软件正式发布为主，未见入选的同行评议论文或公开观点。AI×化学关注药物发现、电解液微观结构与天然产物酶学；AI×生物呈现临床影像、罕见病电子病历和肿瘤分化研究。工程频道聚焦 llama.cpp 与 JAX 的兼容、模型支持和性能改进。AI×数学与 AI Voices 暂无足够高质量更新，预印本结果不应视为定论。",
+  "overview_zh": "2026年08月18日的历史日报，共 37 项精选。",
   "channel_highlights": {
     "aixchem": "三项均为预印本：AI虚拟筛选结合实验发现 SV2C 配体，机器学习模拟提出电解液多 Li+ 团簇，TRACER 用于萜类骨架发现；结论仍待后续验证。",
     "aixbio": "三项均为预印本：3D-CNN 用于脊柱转移灶 CT 分型，时序模型提示罕见病风险，VRK1 研究关联神经母细胞瘤未分化状态；临床转化仍需验证。",
@@ -1503,18 +1503,211 @@
       "id": "aivoices",
       "name": "AI Voices",
       "stats": {
-        "fetched": 7,
-        "candidates": 7,
-        "selected": 0,
+        "fetched": 31,
+        "candidates": 31,
+        "selected": 6,
         "sources": {
-          "X": 0,
-          "Research blogs": 7
+          "X": 18,
+          "Research blogs": 13
         }
       },
-      "source_errors": [
-        "X: RuntimeError: HTTP 402 额度不足，请在 X Developer Console 充值 credits"
-      ],
-      "items": []
+      "source_errors": [],
+      "items": [
+        {
+          "why_it_matters_zh": "这是一份可核对的公开课表，能反映当前教学中的研究主题分布，本身不是新实验结果。",
+          "source": "X",
+          "creators": [
+            "Wei Xu"
+          ],
+          "abstract_or_text": "Updated CS 8803 \"Large Language Model\" class at @GeorgiaTech this year for 2026! The reading list spans pretraining, MoE, reasoning, RL & self-play, agents, long-context, test-time scaling, diffusion LMs, safety, interpretability, and more. https://cocoxu.github.io/CS8803-LLM-spring2026/",
+          "id": "x:2089386438848622768",
+          "author_line": "Wei Xu",
+          "category": "工具与实践",
+          "summary_zh": "佐治亚理工 Wei Xu 更新 2026 年 CS 8803 大语言模型课程阅读清单，覆盖预训练、MoE、推理、自博弈强化学习、智能体、长上下文、测试时扩展、扩散语言模型、安全与可解释性。",
+          "tags": [
+            "工具与实践",
+            "课程",
+            "大语言模型",
+            "阅读清单"
+          ],
+          "published": "2026-08-17",
+          "item_type": "social_post",
+          "language": "en",
+          "quality_score": 83.0,
+          "rank": 1,
+          "evidence_flags": [
+            "公开课表",
+            "github"
+          ],
+          "url": "https://x.com/cocoweixu/status/2089386438848622768",
+          "published_at": "2026-08-17T16:18:40Z",
+          "abstract_zh": "已更新佐治亚理工今年 2026 年的 CS 8803「大语言模型」课程！阅读清单涵盖预训练、MoE、推理、强化学习与自博弈、智能体、长上下文、测试时扩展、扩散语言模型、安全、可解释性等。https://cocoxu.github.io/CS8803-LLM-spring2026/",
+          "featured": true,
+          "title": "@cocoweixu：Updated CS 8803 \"Large Language Model\" class at @GeorgiaTech this year for 2026! The reading list spans pretraining, MoE"
+        },
+        {
+          "why_it_matters_zh": "ω 是复杂度理论中的长期公开问题。帖文给出了具体数值并点名方法，但完整证明、改进幅度与可核验材料需对照正式文稿。",
+          "source": "X",
+          "creators": [
+            "Pushmeet Kohli"
+          ],
+          "abstract_or_text": "Matrix multiplication is the basic computational operation that powers modern computing (including AI). Yet, the theoretical fastest speed at which computers can multiply matrices (omega ω) is still unknown and has been a longstanding challenge for complexity theory and computer science. Today, we announce a new record for omega (ω<2.371177). This is the result of a great team effort between @GoogleDeepMind, our academic collaborators, and our Gemini-powered coding agent AlphaEvolve!",
+          "id": "x:2089717134129565763",
+          "author_line": "Pushmeet Kohli",
+          "category": "研究发布",
+          "summary_zh": "Pushmeet Kohli 宣布矩阵乘法指数新纪录 ω<2.371177，称由 Google DeepMind、学术合作者与 Gemini 驱动的编码智能体 AlphaEvolve 共同取得。",
+          "tags": [
+            "研究发布",
+            "AlphaEvolve",
+            "矩阵乘法",
+            "复杂度"
+          ],
+          "published": "2026-08-18",
+          "item_type": "social_post",
+          "language": "en",
+          "quality_score": 72.0,
+          "rank": 2,
+          "evidence_flags": [
+            "给出数值",
+            "未见证明全文"
+          ],
+          "url": "https://x.com/pushmeet/status/2089717134129565763",
+          "published_at": "2026-08-18T14:12:44Z",
+          "abstract_zh": "矩阵乘法是驱动现代计算（包括人工智能）的基本运算。然而，计算机做矩阵乘法在理论上的最快速度（omega ω）仍未知，一直是复杂度理论与计算机科学的长期挑战。今天我们宣布 ω 的新纪录（ω<2.371177）。这是 Google DeepMind、我们的学术合作者，以及由 Gemini 驱动的编码智能体 AlphaEvolve 共同努力的结果。",
+          "featured": true,
+          "title": "@pushmeet：Matrix multiplication is the basic computational operation that powers modern computing (including AI). Yet, the theoret"
+        },
+        {
+          "why_it_matters_zh": "虚拟细胞是计算生物学的高目标声明。帖文极短，未见评测、数据或可复现实验，只能作为发布信号，不能当作已验证结果。",
+          "source": "X",
+          "creators": [
+            "Eric Xing"
+          ],
+          "abstract_or_text": "We are proud to release the world's first virtual cell -- a multi-modal, multi-scale, dynamic, and stateful world model of the cell, the first step toward an AI-driven Digital Organism (AIDO).",
+          "id": "x:2089712585524605127",
+          "author_line": "Eric Xing",
+          "category": "研究发布",
+          "summary_zh": "Eric Xing 宣布发布所谓世界上第一个虚拟细胞：一个多模态、多尺度、动态且有状态的细胞世界模型，作为其 AI 驱动数字生物体（AIDO）的第一步。",
+          "tags": [
+            "研究发布",
+            "虚拟细胞",
+            "AIDO",
+            "世界模型"
+          ],
+          "published": "2026-08-18",
+          "item_type": "social_post",
+          "language": "en",
+          "quality_score": 71.0,
+          "rank": 3,
+          "evidence_flags": [
+            "发布声明",
+            "未见评测",
+            "release"
+          ],
+          "url": "https://x.com/ericxing/status/2089712585524605127",
+          "published_at": "2026-08-18T13:54:40Z",
+          "abstract_zh": "我们很荣幸发布世界上第一个虚拟细胞——一个多模态、多尺度、动态且有状态的细胞世界模型，这是迈向人工智能驱动的数字生物体（AIDO）的第一步。",
+          "featured": true,
+          "title": "@ericxing：We are proud to release the world's first virtual cell -- a multi-modal, multi-scale, dynamic, and stateful world model "
+        },
+        {
+          "why_it_matters_zh": "把已有数论结果做成可核验的形式化证明，比单纯宣布新界更可检查。帖文未给出 Lean 库链接或证明规模，仍需对照发布物。",
+          "source": "X",
+          "creators": [
+            "Axiom"
+          ],
+          "abstract_or_text": "We’re delighted to announce a milestone for AI-assisted mathematics: With AxiomProver, we've completed a machine-checkable formalization of the “BGP246 theorem,” the best-known bound on recurring small gaps between primes. Closest math has come to the Twin Prime Conjecture.",
+          "id": "x:2089732764279132449",
+          "author_line": "Axiom",
+          "category": "研究发布",
+          "summary_zh": "Axiom 称其 AxiomProver 完成了 BGP246 定理的可机器检验形式化，该定理给出素数小间隔的目前最佳已知界限。",
+          "tags": [
+            "研究发布",
+            "形式化证明",
+            "AxiomProver",
+            "数论"
+          ],
+          "published": "2026-08-18",
+          "item_type": "social_post",
+          "language": "en",
+          "quality_score": 69.0,
+          "rank": 4,
+          "evidence_flags": [
+            "形式化声称",
+            "未见库地址"
+          ],
+          "url": "https://x.com/axiommathai/status/2089732764279132449",
+          "published_at": "2026-08-18T15:14:51Z",
+          "abstract_zh": "我们很高兴宣布人工智能辅助数学的一项进展：借助 AxiomProver，我们完成了“BGP246 定理”的可机器检验形式化。该定理是关于素数之间反复出现的小间隔的目前最佳已知界限，也是目前最接近孪生素数猜想的结果。",
+          "featured": false,
+          "title": "@axiommathai：We’re delighted to announce a milestone for AI-assisted mathematics: With AxiomProver, we've completed a machine-checkab"
+        },
+        {
+          "why_it_matters_zh": "它提供一个较干净的实验设定，用来区分“学到新能力”和“激活已有知识”。本帖是二手转述，结论以原论文为准。",
+          "source": "X",
+          "creators": [
+            "Xudong Han"
+          ],
+          "abstract_or_text": "分享一个比较有意思的研究。研究者训练了一个「只学到小学五年级」的语言模型 LittleLearner。他们先做了一个 88B Token 的训练集，把五年级以上的概念、知识和词汇尽量过滤掉，再从头训练一个 5B 模型。论文 https://t.co/lW28SDGpIc",
+          "id": "x:2089666113726746731",
+          "author_line": "Xudong Han",
+          "category": "研究发布",
+          "summary_zh": "转述一项 LittleLearner 研究：用滤掉小学五年级以上概念的约880亿 token 数据从头训练50亿参数模型，以检验后续训练能否越过预训练知识边界。",
+          "tags": [
+            "研究发布",
+            "LittleLearner",
+            "预训练",
+            "知识边界"
+          ],
+          "published": "2026-08-18",
+          "item_type": "social_post",
+          "language": "zh",
+          "quality_score": 69.0,
+          "rank": 5,
+          "evidence_flags": [
+            "二手转述",
+            "论文链接"
+          ],
+          "url": "https://x.com/Xudong07452910/status/2089666113726746731",
+          "published_at": "2026-08-18T10:50:00Z",
+          "abstract_zh": "分享一个比较有意思的研究。研究者训练了一个「只学到小学五年级」的语言模型 LittleLearner。他们先做了一个 88B Token 的训练集，把五年级以上的概念、知识和词汇尽量过滤掉，再从头训练一个 5B 模型。论文 https://t.co/lW28SDGpIc",
+          "featured": false,
+          "title": "@Xudong07452910：分享一个比较有意思的研究。研究者训练了一个「只学到小学五年级」的语言模型 LittleLearner。他们先做了一个 88B Token 的训练集，把五年级以上的概念、知识和词汇尽量过滤掉，再从头训练一个 5B 模型。论文 https://"
+        },
+        {
+          "why_it_matters_zh": "把晚交互从专用库收进常用嵌入工具链，降低多向量检索的接入成本。文中指数大小与质量对比来自作者示例，需对照自身语料。",
+          "source": "Hugging Face",
+          "creators": [
+            "Hugging Face"
+          ],
+          "abstract_or_text": "",
+          "id": "feed:https://huggingface.co/blog/multi-vector-encoder",
+          "author_line": "Hugging Face",
+          "category": "工具与实践",
+          "summary_zh": "Sentence Transformers v6.0 新增 MultiVectorEncoder，把 ColBERT 式晚交互检索接入同一 API：可直接加载 PyLate 与 Stanford ColBERT 权重，按 token 保留向量并用 MaxSim 打分，也覆盖视觉文档检索。",
+          "tags": [
+            "工具与实践",
+            "Sentence Transformers",
+            "ColBERT",
+            "多向量",
+            "检索"
+          ],
+          "published": "Tue, 18 Au",
+          "item_type": "research_blog",
+          "language": "en",
+          "quality_score": 65.0,
+          "rank": 6,
+          "evidence_flags": [
+            "官方工程博客",
+            "给出代码示例"
+          ],
+          "url": "https://huggingface.co/blog/multi-vector-encoder",
+          "published_at": "Tue, 18 Aug 2026 00:00:00 GMT",
+          "abstract_zh": "Sentence Transformers 是用于使用和训练嵌入与重排序模型的 Python 库，面向检索增强生成、语义搜索等应用。v6.0 更新新增第四种模型类型 MultiVectorEncoder，用于 ColBERT 式晚交互检索。任何 PyLate 检查点以及任何 Stanford-NLP ColBERT 检查点都可以直接加载，colpali-engine 的视觉文档检索模型也可通过你已用于稠密、稀疏和重排序模型的同一 API 使用。普通嵌入模型把整段文本压缩成一个向量，而多向量模型为每个 token 保留一个向量，并用 MaxSim 算子对查询与文档打分。这保留了单个向量不得不平均掉的 token 级匹配信息，通常意味着更强的检索，代价是更大的索引。它也是视觉文档检索的先进做法：文本查询直接匹配页面图像，中间无需 OCR。",
+          "featured": false,
+          "title": "Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers"
+        }
+      ]
     },
     {
       "id": "engineering",

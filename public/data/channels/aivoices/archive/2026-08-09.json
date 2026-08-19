@@ -1,0 +1,323 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-08-09",
+  "channel": "aivoices",
+  "generated_at": "2026-08-19T08:53:54+00:00",
+  "title": "AI Voices 每日精选",
+  "subtitle": "研究者公开观点、研究发布与重要讨论。",
+  "window": {
+    "start": "2026-08-06",
+    "end": "2026-08-09"
+  },
+  "method": "公开来源采集、规则筛选与模型审阅",
+  "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
+  "stats": {
+    "fetched": 16,
+    "candidates": 16,
+    "selected": 6,
+    "sources": {
+      "X": 9,
+      "Research blogs": 7
+    }
+  },
+  "source_status": {
+    "X": {
+      "state": "ok",
+      "count": 9
+    },
+    "Research blogs": {
+      "state": "ok",
+      "count": 7
+    }
+  },
+  "source_errors": [],
+  "items": [
+    {
+      "id": "x:2085801349866729975",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@OpenAI：After evaluating one of our upcoming models, Astra, we're treating it as our first \"critical\" model for cybersecurity un",
+      "url": "https://x.com/OpenAI/status/2085801349866729975",
+      "published_at": "2026-08-07T18:52:48Z",
+      "updated_at": "2026-08-07T18:52:48Z",
+      "creators": [
+        "OpenAI"
+      ],
+      "language": "en",
+      "abstract_or_text": "After evaluating one of our upcoming models, Astra, we're treating it as our first \"critical\" model for cybersecurity under our Preparedness Framework. This is a scenario we've planned for, and we're putting additional controls in place to ensure Astra's further development happens safely and securely. We're working hard to make Astra broadly available, and get its advanced cyber capabilities into the hands of defenders.",
+      "summary_zh": "OpenAI 称评估即将推出的 Astra 后，已按预备框架将其列为首个网络安全「关键」模型，并加设额外控制，同时计划把其网络能力交给防御者。",
+      "why_it_matters_zh": "在较短的周日候选集里，这仍是最重要的实验室安全分级声明。未见评估数据，不能把 critical 标签理解成已公开的能力证明。",
+      "quality_score": 71.0,
+      "tags": [
+        "研究发布",
+        "网络安全"
+      ],
+      "evidence_flags": [
+        "官方声明",
+        "未见评估数据",
+        "security"
+      ],
+      "publication_status": "public_post",
+      "rank": 1,
+      "featured": true,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 9653,
+        "repost_count": 844,
+        "reply_count": 823,
+        "quote_count": 493
+      },
+      "metadata": {
+        "post_id": "2085801349866729975",
+        "username": "OpenAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "在评估即将推出的模型 Astra 之后，我们按预备框架（Preparedness Framework）将其视为首个网络安全意义上的「关键」（critical）模型。这是我们预先规划过的情形，我们正在加设额外控制，以确保 Astra 的后续开发安全进行。我们正努力使 Astra 广泛可用，并将其先进的网络能力交到防御者手中。",
+      "published": "2026-08-07",
+      "author_line": "OpenAI"
+    },
+    {
+      "id": "x:2085901306342908157",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@Xudong07452910：分享一套很适合补「现代强化学习」的开源教程：Hands-On Modern RL。 它的学习路线很完整，从 CartPole、DQN、PPO 这些经典 RL，一直讲到 RLHF、DPO、GRPO、RLVR，再往后延伸到 Agentic RL",
+      "url": "https://x.com/Xudong07452910/status/2085901306342908157",
+      "published_at": "2026-08-08T01:30:00Z",
+      "updated_at": "2026-08-08T01:30:00Z",
+      "creators": [
+        "Xudong Han"
+      ],
+      "language": "zh",
+      "abstract_or_text": "分享一套很适合补「现代强化学习」的开源教程：Hands-On Modern RL。 它的学习路线很完整，从 CartPole、DQN、PPO 这些经典 RL，一直讲到 RLHF、DPO、GRPO、RLVR，再往后延伸到 Agentic RL、工具调用、多轮信用分配和 VLM RL。 我比较喜欢它的一点，是「实践优先」。很多章节都配了可以直接运行的代码、训练曲线和失败案例，比如从零实现 PPO、数学推理 GRPO、Mini Deep Research Agent，以及 VLM 的 GRPO 训练。",
+      "summary_zh": "Xudong Han 介绍开源教程 Hands-On Modern RL，覆盖经典 RL 到 RLHF、GRPO、Agentic RL 与 VLM RL，并强调可运行代码、训练曲线和失败案例。",
+      "why_it_matters_zh": "对想补齐现代强化学习实践的读者是可核对的入口。这是推荐而非新论文，质量取决于仓库本身。",
+      "quality_score": 72.0,
+      "tags": [
+        "工具与实践",
+        "强化学习"
+      ],
+      "evidence_flags": [
+        "开源教程",
+        "作者推荐"
+      ],
+      "publication_status": "public_post",
+      "rank": 2,
+      "featured": true,
+      "category": "工具与实践",
+      "metrics": {
+        "like_count": 844,
+        "repost_count": 159,
+        "reply_count": 79,
+        "quote_count": 2
+      },
+      "metadata": {
+        "post_id": "2085901306342908157",
+        "username": "Xudong07452910",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "分享一套很适合补「现代强化学习」的开源教程：Hands-On Modern RL。 它的学习路线很完整，从 CartPole、DQN、PPO 这些经典 RL，一直讲到 RLHF、DPO、GRPO、RLVR，再往后延伸到 Agentic RL、工具调用、多轮信用分配和 VLM RL。 我比较喜欢它的一点，是「实践优先」。很多章节都配了可以直接运行的代码、训练曲线和失败案例，比如从零实现 PPO、数学推理 GRPO、Mini Deep Research Agent，以及 VLM 的 GRPO 训练。",
+      "published": "2026-08-08",
+      "author_line": "Xudong Han"
+    },
+    {
+      "id": "x:2086111492018221523",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@zarazhangrui：This paper gives a fancy name to a problem you can already feel in your bones \"The Tragedy of the Cognitive Commons.\" Ch",
+      "url": "https://x.com/zarazhangrui/status/2086111492018221523",
+      "published_at": "2026-08-08T15:25:12Z",
+      "updated_at": "2026-08-08T15:25:12Z",
+      "creators": [
+        "Zara Zhang"
+      ],
+      "language": "en",
+      "abstract_or_text": "This paper gives a fancy name to a problem you can already feel in your bones \"The Tragedy of the Cognitive Commons.\" Checking AI output requires deep expertise. Deep expertise comes from doing grunt work for years. And grunt work is the first thing AI eats So we're building systems that need expert supervision while dismantling the only known process for making experts The paper calls the shared pool of human expertise the \"cognitive commons.\" Every profession drinks from it. Nobody's refilling it.",
+      "summary_zh": "Zara Zhang 用「认知公地的悲剧」概括一种循环：核对 AI 需要专家，专家来自苦活，而苦活正被 AI 先吃掉。",
+      "why_it_matters_zh": "它把专业训练被自动化掏空的担忧说清楚了。这是作者对某篇论文的转述与评论，未见数据或链接，属于观点而非经验结果。",
+      "quality_score": 69.0,
+      "tags": [
+        "观点与讨论",
+        "专业能力"
+      ],
+      "evidence_flags": [
+        "作者观点",
+        "未见论文链接"
+      ],
+      "publication_status": "public_post",
+      "rank": 3,
+      "featured": true,
+      "category": "观点与讨论",
+      "metrics": {
+        "like_count": 12405,
+        "repost_count": 3231,
+        "reply_count": 336,
+        "quote_count": 361
+      },
+      "metadata": {
+        "post_id": "2086111492018221523",
+        "username": "zarazhangrui",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "这篇论文给一个你已经能直觉感到的问题起了个华丽的名字：「认知公地的悲剧」。核对 AI 输出需要深厚的专业能力。深厚的专业能力来自多年做苦活。而苦活正是 AI 最先吃掉的东西。于是我们一边构建需要专家监督的系统，一边拆掉目前已知唯一能培养专家的过程。论文把人类专业知识的共享池称为「认知公地」。每个行业都从中取水，却没有人在往里补给。",
+      "published": "2026-08-08",
+      "author_line": "Zara Zhang"
+    },
+    {
+      "id": "x:2085434713821565297",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@OpenAI：The new GPT-5.6 Sol powers all chats for paid users, including Instant, creating one consistent experience. In our high-",
+      "url": "https://x.com/OpenAI/status/2085434713821565297",
+      "published_at": "2026-08-06T18:35:55Z",
+      "updated_at": "2026-08-06T18:35:55Z",
+      "creators": [
+        "OpenAI"
+      ],
+      "language": "en",
+      "abstract_or_text": "The new GPT-5.6 Sol powers all chats for paid users, including Instant, creating one consistent experience. In our high-stakes factuality evaluation covering finance, medicine and law, the new GPT‑5.6 Sol produced 68% fewer responses with factual errors than GPT‑5.5 Instant.",
+      "summary_zh": "OpenAI 称 GPT-5.6 Sol 已成为付费用户全部对话的统一模型；在金融、医学和法律高风险事实性评估中，事实错误回复比 GPT-5.5 Instant 少 68%。",
+      "why_it_matters_zh": "同一窗口里带对照百分比的官方评测仍然稀缺。协议未公开，数字只能当作实验室自评。",
+      "quality_score": 71.0,
+      "tags": [
+        "研究发布",
+        "事实性评估"
+      ],
+      "evidence_flags": [
+        "给出数值",
+        "未见评估协议",
+        "evaluation"
+      ],
+      "publication_status": "public_post",
+      "rank": 4,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 1889,
+        "repost_count": 67,
+        "reply_count": 55,
+        "quote_count": 14
+      },
+      "metadata": {
+        "post_id": "2085434713821565297",
+        "username": "OpenAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "新的 GPT-5.6 Sol 为付费用户的所有对话提供支持，包括 Instant，从而形成一致的体验。在我们覆盖金融、医学和法律的高风险事实性评估中，新的 GPT-5.6 Sol 产生含事实错误的回复比 GPT-5.5 Instant 少 68%。",
+      "published": "2026-08-06",
+      "author_line": "OpenAI"
+    },
+    {
+      "id": "x:2085087000764568010",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering",
+        "aixmath"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@PrimeIntellect：Prime Agent is a general-purpose coding harness On ARC-AGI-3, it scores 95.5%, surpassing the human-expert baseline, but",
+      "url": "https://x.com/PrimeIntellect/status/2085087000764568010",
+      "published_at": "2026-08-05T19:34:14Z",
+      "updated_at": "2026-08-05T19:34:14Z",
+      "creators": [
+        "Prime Intellect"
+      ],
+      "language": "en",
+      "abstract_or_text": "Prime Agent is a general-purpose coding harness On ARC-AGI-3, it scores 95.5%, surpassing the human-expert baseline, but the gain is not benchmark-specific. We see major improvements across models when compared to their proprietary harnesses.",
+      "summary_zh": "Prime Intellect 称 Prime Agent 在 ARC-AGI-3 上得到 95.5%，超过人类专家基线，并称对多种模型的自带 harness 也有提升。",
+      "why_it_matters_zh": "周日候选很少，这条仍是窗口内少有的带分数智能体声明。未附复现材料，不宜当作已确认的新 SOTA。",
+      "quality_score": 74.0,
+      "tags": [
+        "研究发布",
+        "智能体评测"
+      ],
+      "evidence_flags": [
+        "给出数值",
+        "未见复现材料",
+        "benchmark"
+      ],
+      "publication_status": "public_post",
+      "rank": 5,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 2226,
+        "repost_count": 184,
+        "reply_count": 84,
+        "quote_count": 194
+      },
+      "metadata": {
+        "post_id": "2085087000764568010",
+        "username": "PrimeIntellect",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "Prime Agent 是一个通用编码 harness。在 ARC-AGI-3 上，它得到 95.5% 的分数，超过人类专家基线，但这一提升并非针对该基准特化。与各模型自带的专有 harness 相比，我们在多种模型上都看到了显著改进。",
+      "published": "2026-08-05",
+      "author_line": "Prime Intellect"
+    },
+    {
+      "id": "feed:https://openai.com/index/responding-next-frontier-critical-cyber-capabilities",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "research_blog",
+      "source": "OpenAI News",
+      "title": "Responding to the next frontier of critical cyber capabilities",
+      "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities",
+      "published_at": "Fri, 07 Aug 2026 15:20:00 GMT",
+      "updated_at": "Fri, 07 Aug 2026 15:20:00 GMT",
+      "creators": [
+        "OpenAI News"
+      ],
+      "language": "en",
+      "abstract_or_text": "OpenAI is sharing preliminary cybersecurity evaluations for Astra and the steps we’re taking to strengthen safeguards and security controls.",
+      "summary_zh": "OpenAI 博文称正在分享 Astra 的初步网络安全评估，以及为加强防护措施与安全控制所采取的步骤。",
+      "why_it_matters_zh": "与 Astra 的 X 声明对照，这篇是更正式的书面记录。摘要过短，具体评测与控制措施仍需读全文。",
+      "quality_score": 66.0,
+      "tags": [
+        "研究发布",
+        "网络安全"
+      ],
+      "evidence_flags": [
+        "官方博文",
+        "初步评估",
+        "evaluation",
+        "security"
+      ],
+      "publication_status": "official_update",
+      "rank": 6,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://openai.com/news/rss.xml"
+      },
+      "abstract_zh": "OpenAI 正在分享对 Astra 的初步网络安全评估，以及我们为加强防护措施与安全控制所采取的步骤。",
+      "published": "Fri, 07 Au",
+      "author_line": "OpenAI News"
+    }
+  ],
+  "review": {
+    "model": "grok-4.6",
+    "reasoning_effort": "medium",
+    "note": "共审阅16项，其中10项达到质量分65。排除 Zuckerberg 与 Meta 的重复 Muse 帖、免费用户权限营销帖，以及只有 Spaces 直播链接、无法核验内容的 Hugging Face 帖。今日保留 Astra 关键模型声明及其官方博文、带数字的事实性评估，以及强化学习教程与认知公地讨论。"
+  }
+}
