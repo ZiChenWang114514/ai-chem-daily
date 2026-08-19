@@ -166,7 +166,7 @@ function escapeHtml(value) {
     .replace(/"/g, "&quot;");
 }
 
-function formatTitleHtml(text) {
+function formatMarkupHtml(text) {
   return escapeHtml(text)
     .replace(/\$([^$]{1,80})\$/g, "$1")
     .replace(/\^\{([^{}]{1,40})\}/g, "<sup>$1</sup>")
@@ -176,9 +176,10 @@ function formatTitleHtml(text) {
     .replace(/_([+\-]?\d+)/g, "<sub>$1</sub>");
 }
 
-function setRichTitle(node, text) {
+function setRichText(node, text) {
+  if (!node) return;
   const holder = document.createElement("span");
-  holder.innerHTML = formatTitleHtml(text);
+  holder.innerHTML = formatMarkupHtml(text ?? "");
   node.replaceChildren(...holder.childNodes);
 }
 
@@ -537,7 +538,7 @@ function applyAbstractLanguage(root, item, lang) {
   const pair = abstractPair(item);
   const chosen = lang === "en" ? (pair.en || pair.zh) : (pair.zh || pair.en);
   const text = root.querySelector(".abstract-text");
-  if (text) text.textContent = chosen || "该来源未提供摘要或正文。";
+  if (text) setRichText(text, chosen || "该来源未提供摘要或正文。");
   root.querySelectorAll(".abstract-lang__btn").forEach((button) => {
     const active = button.dataset.lang === lang;
     button.classList.toggle("is-active", active);
@@ -635,17 +636,17 @@ function createItemCard(item, groupName) {
   else topic.textContent = item.category;
   const title = fragment.querySelector(".paper-title");
   title.href = item.url;
-  setRichTitle(title, displayTitle(item));
+  setRichText(title, displayTitle(item));
   const openHint = document.createElement("span");
   openHint.className = "sr-only";
   openHint.textContent = "（在新窗口打开）";
   title.appendChild(openHint);
   fragment.querySelector(".paper-meta").textContent = `${formatAuthorLine(item)} · ${(item.published_at || item.published || "日期暂缺").slice(0, 10)}`;
   const summary = item.summary_zh || "中文说明暂缺，请查看原始内容。";
-  fragment.querySelector(".summary-zh").textContent = summary;
+  setRichText(fragment.querySelector(".summary-zh"), summary);
   const why = fragment.querySelector(".why-it-matters");
   if (item.why_it_matters_zh && !sameText(item.why_it_matters_zh, item.summary_zh)) {
-    why.textContent = item.why_it_matters_zh;
+    setRichText(why, item.why_it_matters_zh);
   } else {
     why.remove();
   }
@@ -815,7 +816,10 @@ function renderHero(payload) {
     back.hidden = !history;
     back.href = page === "home" ? path("./") : "./";
   }
-  setText("subtitle", isHome ? (payload.overview_zh || "") : (payload.subtitle || payload.overview_zh || ""));
+  setRichText(
+    document.getElementById("subtitle"),
+    isHome ? (payload.overview_zh || "") : (payload.subtitle || payload.overview_zh || ""),
+  );
   setText("generated-time", formatGeneratedAt(payload.generated_at));
   const stats = isHome
     ? (payload.channels || []).reduce((acc, channel) => acc + Number(channel.stats?.selected || 0), 0)
