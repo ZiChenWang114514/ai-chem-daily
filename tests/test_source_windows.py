@@ -51,21 +51,24 @@ class SourceWindowTests(unittest.TestCase):
         self.assertEqual(openreview_invitation("ICLR.cc/2026/Conference"), "ICLR.cc/2026/Conference/-/Submission")
         self.assertEqual(openreview_invitation("TMLR/-/Submission"), "TMLR/-/Submission")
 
-    def test_x_queries_are_batched_and_capped(self):
+    def test_x_queries_are_batched_for_grok(self):
         watchlists = {
             "x_accounts": [f"user{i}" for i in range(34)],
             "x_topic_queries": ["one", "two", "three", "four"],
         }
-        queries = build_x_queries(watchlists)
+        queries = build_x_queries(watchlists, date(2026, 8, 16), date(2026, 8, 19))
         kinds = [kind for kind, _ in queries]
-        self.assertLessEqual(len(queries), 5)
-        self.assertEqual(kinds.count("topics"), 2)
-        self.assertGreaterEqual(kinds.count("accounts"), 2)
+        self.assertEqual(kinds.count("topics"), 4)
+        self.assertGreaterEqual(kinds.count("accounts"), 6)
         self.assertIn("from:user0", queries[0][1])
+        self.assertIn("since:2026-08-16", queries[0][1])
+        self.assertIn("until:2026-08-20", queries[0][1])
+        self.assertNotIn("api.x.com", queries[0][1])
 
     def test_http_error_messages_are_explicit(self):
-        self.assertIn("额度不足", http_error_message(HTTPError("https://api.x.com", 402, "Payment Required", hdrs=None, fp=None)))
-        self.assertIn("请求过于频繁", http_error_message(HTTPError("https://api.x.com", 429, "Too Many Requests", hdrs=None, fp=None)))
+        self.assertIn("额度不足", http_error_message(HTTPError("https://example.com", 402, "Payment Required", hdrs=None, fp=None)))
+        self.assertIn("请求过于频繁", http_error_message(HTTPError("https://example.com", 429, "Too Many Requests", hdrs=None, fp=None)))
+        self.assertNotIn("Developer Console", http_error_message(HTTPError("https://example.com", 402, "Payment Required", hdrs=None, fp=None)))
 
     def test_overview_leads_with_real_counts(self):
         channels = [
@@ -91,6 +94,11 @@ class PipelineContractTests(unittest.TestCase):
         self.assertIn("git diff failed with exit code", runner)
         self.assertIn("if not values:", pipeline)
         self.assertIn("within_window(published, start, end)", pipeline)
+        self.assertIn("x_harvest_protocol.md", runner)
+        self.assertNotIn("XBearerToken", runner)
+        self.assertNotIn("X_BEARER_TOKEN", runner)
+        self.assertNotIn("X_BEARER_TOKEN", pipeline)
+        self.assertNotIn("api.x.com", pipeline)
         self.assertIn("arXiv API returned no entries", (ROOT / "backend" / "daily_digest.py").read_text(encoding="utf-8"))
         self.assertIn("当日未更新，未纳入本期", (ROOT / "backend" / "publish_daily.py").read_text(encoding="utf-8"))
         self.assertNotIn('published[:10] != runtime.run_date.isoformat()', pipeline)

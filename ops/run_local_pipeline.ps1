@@ -19,18 +19,13 @@ if (Test-Path -LiteralPath $SettingsPath) {
     $LocalSettings = Import-PowerShellDataFile -LiteralPath $SettingsPath
     foreach ($Key in $LocalSettings.Keys) { $Settings[$Key] = $LocalSettings[$Key] }
 }
-$Secrets = @{ XBearerToken = ""; OpenReviewUsername = ""; OpenReviewPassword = "" }
+$Secrets = @{ OpenReviewUsername = ""; OpenReviewPassword = "" }
 if (Test-Path -LiteralPath $SecretsPath) {
     $LocalSecrets = Import-PowerShellDataFile -LiteralPath $SecretsPath
     foreach ($Key in $LocalSecrets.Keys) { $Secrets[$Key] = $LocalSecrets[$Key] }
 }
-$XBearerInjected = $false
 $OpenReviewUserInjected = $false
 $OpenReviewPassInjected = $false
-if (-not $env:X_BEARER_TOKEN -and $Secrets.XBearerToken) {
-    $env:X_BEARER_TOKEN = [string]$Secrets.XBearerToken
-    $XBearerInjected = $true
-}
 if (-not $env:OPENREVIEW_USERNAME -and $Secrets.OpenReviewUsername) {
     $env:OPENREVIEW_USERNAME = [string]$Secrets.OpenReviewUsername
     $OpenReviewUserInjected = $true
@@ -151,6 +146,10 @@ try {
         & $Git pull --ff-only origin main
         if ($LASTEXITCODE -ne 0) { throw "git pull failed" }
     }
+    $XCache = Join-Path $RepoRoot "work\source-cache\x\$RunDate.json.gz"
+    if (-not (Test-Path -LiteralPath $XCache)) {
+        Write-Warning "Grok X harvest cache missing: $XCache. AI Voices will skip X posts. See ops/grok/x_harvest_protocol.md"
+    }
     $CollectedChannels = @{}
     foreach ($Channel in $Channels) {
         $CollectedChannels[$Channel] = Invoke-Collection $Channel
@@ -188,9 +187,6 @@ try {
     }
 }
 finally {
-    if ($XBearerInjected) {
-        Remove-Item Env:X_BEARER_TOKEN -ErrorAction SilentlyContinue
-    }
     if ($OpenReviewUserInjected) {
         Remove-Item Env:OPENREVIEW_USERNAME -ErrorAction SilentlyContinue
     }

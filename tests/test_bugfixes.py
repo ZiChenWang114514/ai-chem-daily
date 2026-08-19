@@ -14,6 +14,7 @@ if str(BACKEND) not in sys.path:
     sys.path.insert(0, str(BACKEND))
 
 from aix_pipeline import CHANNELS, LIMITS, Runtime, fetch_openreview, fetch_x, publication_date  # noqa: E402
+from x_harvest import ingest_harvest, write_cache  # noqa: E402
 from apply_channel_curation import earlier_channel_keys, main as apply_channel_curation_main  # noqa: E402
 from apply_curation import main as apply_curation_main  # noqa: E402
 from build_channel_pages import render_channel_page  # noqa: E402
@@ -289,7 +290,7 @@ class CredentialCacheTests(unittest.TestCase):
     def test_openreview_and_x_use_cache_without_credentials(self):
         previous = {
             name: os.environ.pop(name, None)
-            for name in ("OPENREVIEW_USERNAME", "OPENREVIEW_PASSWORD", "X_BEARER_TOKEN")
+            for name in ("OPENREVIEW_USERNAME", "OPENREVIEW_PASSWORD")
         }
         try:
             with tempfile.TemporaryDirectory() as directory:
@@ -310,6 +311,43 @@ class CredentialCacheTests(unittest.TestCase):
                     os.environ.pop(name, None)
                 else:
                     os.environ[name] = value
+
+    def test_fetch_x_requires_grok_cache(self):
+        with tempfile.TemporaryDirectory() as directory:
+            runtime = Runtime(Path(directory), date(2026, 8, 19))
+            with self.assertRaisesRegex(RuntimeError, "Grok X"):
+                fetch_x(runtime, {})
+
+    def test_ingest_grok_posts_into_cache(self):
+        payload = {
+            "date": "2026-08-19",
+            "items": [
+                {
+                    "id": "1234567890",
+                    "username": "karpathy",
+                    "name": "Andrej",
+                    "text": "New LLM benchmark released",
+                    "created_at": "2026-08-18T12:00:00Z",
+                    "query_kind": "accounts",
+                    "metrics": {"like_count": 12, "repost_count": 3, "reply_count": 1, "quote_count": 0},
+                },
+                {
+                    "id": "999",
+                    "username": "someone",
+                    "text": "old post",
+                    "created_at": "2026-07-01T12:00:00Z",
+                },
+            ],
+        }
+        items = ingest_harvest(payload, date(2026, 8, 19))
+        self.assertEqual(len(items), 1)
+        self.assertEqual(items[0]["source"], "X")
+        self.assertEqual(items[0]["metadata"]["post_id"], "1234567890")
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_cache(root, date(2026, 8, 19), items)
+            runtime = Runtime(root, date(2026, 8, 19))
+            self.assertEqual(fetch_x(runtime)[0]["id"], items[0]["id"])
 
 
 class ChannelCurationDedupTests(unittest.TestCase):

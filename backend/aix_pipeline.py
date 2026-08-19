@@ -53,9 +53,7 @@ CATEGORIES = {
 }
 
 
-X_ACCOUNT_BATCH = 15
-X_TOPIC_LIMIT = 2
-X_MAX_RESULTS = 25
+GROK_X_ACCOUNT_BATCH = 6
 
 
 def utc_now() -> datetime:
@@ -75,7 +73,7 @@ def http_error_message(exc: urllib.error.HTTPError) -> str:
     except json.JSONDecodeError:
         name = ""
     if exc.code == 402:
-        return "HTTP 402 额度不足，请在 X Developer Console 充值 credits"
+        return "HTTP 402 额度不足"
     if exc.code == 429:
         return "HTTP 429 请求过于频繁"
     if "ChallengeRequired" in body or "ChallengeRequired" in name:
@@ -109,14 +107,29 @@ def collection_window(run_date: date, last_success: str | None = None) -> tuple[
     return start, run_date
 
 
-def build_x_queries(watchlists: dict[str, Any], account_batch: int = X_ACCOUNT_BATCH, topic_limit: int = X_TOPIC_LIMIT) -> list[tuple[str, str]]:
+def build_x_queries(
+    watchlists: dict[str, Any],
+    start: date | None = None,
+    end: date | None = None,
+    account_batch: int = GROK_X_ACCOUNT_BATCH,
+    topic_limit: int | None = None,
+) -> list[tuple[str, str]]:
     queries: list[tuple[str, str]] = []
+    date_clause = ""
+    if start and end:
+        date_clause = f" since:{start.isoformat()} until:{(end + timedelta(days=1)).isoformat()}"
     handles = watchlists.get("x_accounts", [])
     for index in range(0, len(handles), account_batch):
         batch = handles[index:index + account_batch]
-        queries.append(("accounts", f"({' OR '.join(f'from:{name}' for name in batch)}) -is:retweet"))
-    for query in watchlists.get("x_topic_queries", [])[:topic_limit]:
-        queries.append(("topics", query))
+        queries.append(("accounts", f"({' OR '.join(f'from:{name}' for name in batch)}) -is:retweet{date_clause}"))
+    topics = list(watchlists.get("x_topic_queries", []))
+    if topic_limit is not None:
+        topics = topics[:topic_limit]
+    for query in topics:
+        text = clean_text(query)
+        if date_clause and "since:" not in text:
+            text = f"{text}{date_clause}"
+        queries.append(("topics", text))
     return queries
 
 
@@ -432,46 +445,17 @@ def fetch_openreview(runtime: Runtime, watchlists: dict[str, Any]) -> list[dict[
     return runtime.cache("openreview", create)
 
 
-def fetch_x(runtime: Runtime, watchlists: dict[str, Any]) -> list[dict[str, Any]]:
-    def create() -> list[dict[str, Any]]:
-        bearer = os.getenv("X_BEARER_TOKEN", "")
-        if not bearer:
-            raise RuntimeError("X Bearer Token 未配置")
-        queries = build_x_queries(watchlists)
-        results: list[dict[str, Any]] = []
-        for index, (kind, query) in enumerate(queries):
-            params = urllib.parse.urlencode({
-                "query": query, "max_results": X_MAX_RESULTS,
-                "tweet.fields": "created_at,public_metrics,author_id,lang,entities",
-                "expansions": "author_id", "user.fields": "username,name,verified",
-            })
-            try:
-                payload, headers = request_json(f"https://api.x.com/2/tweets/search/recent?{params}", headers={"Authorization": f"Bearer {bearer}"})
-            except urllib.error.HTTPError as exc:
-                raise RuntimeError(http_error_message(exc)) from exc
-            users = {user["id"]: user for user in payload.get("includes", {}).get("users", [])}
-            for post in payload.get("data") or []:
-                author = users.get(post.get("author_id"), {})
-                username = clean_text(author.get("username"))
-                post_id = str(post.get("id"))
-                results.append({
-                    "id": item_id("x", post_id), "channel": "aivoices", "related_channels": [], "item_type": "social_post",
-                    "source": "X", "title": f"@{username}：{clean_text(post.get('text'))[:120]}",
-                    "url": f"https://x.com/{username}/status/{post_id}", "published_at": clean_text(post.get("created_at")),
-                    "updated_at": clean_text(post.get("created_at")), "creators": [clean_text(author.get("name")) or username],
-                    "language": clean_text(post.get("lang")) or "en", "abstract_or_text": clean_text(post.get("text")),
-                    "summary_zh": "", "why_it_matters_zh": "", "quality_score": 0, "tags": [kind], "evidence_flags": [],
-                    "publication_status": "public_post", "rank": 0, "featured": False, "category": "研究发布",
-                    "metrics": post.get("public_metrics") or {}, "metadata": {"post_id": post_id, "username": username, "query_kind": kind},
-                })
-            runtime.record_request("api.x.com", f"X:{kind}", "ok", len(payload.get("data") or []))
-            retry = int(headers.get("retry-after", "0") or 0)
-            if index + 1 < len(queries):
-                time.sleep(max(10, min(20, retry or 10)))
-        runtime.mark_success("x", len(results))
-        return results
+def fetch_x(runtime: Runtime, watchlists: dict[str, Any] | None = None) -> list[dict[str, Any]]:
+    del watchlists
 
-    return runtime.cache("x", create)
+    def create() -> list[dict[str, Any]]:
+        raise RuntimeError("未找到 Grok X 检索缓存。请先按 ops/grok/x_harvest_protocol.md 采集")
+
+    results = runtime.cache("x", create)
+    if results:
+        runtime.record_request("grok.x.search", "X", "ok", len(results))
+        runtime.mark_success("x", len(results))
+    return results
 
 
 def parse_feed(raw: bytes, source: str, url: str) -> list[dict[str, Any]]:
