@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-19T03:22:14+00:00",
+  "generated_at": "2026-08-19T07:01:38+00:00",
   "hub": {
     "id": "aix-daily",
     "name": "AIxDaily",
@@ -181,27 +181,25 @@
       "latest_date": "2026-08-19",
       "has_data": true,
       "stats": {
-        "fetched": 17,
-        "candidates": 17,
-        "selected": 1,
+        "fetched": 42,
+        "candidates": 42,
+        "selected": 10,
         "sources": {
-          "X": 0,
-          "Research blogs": 17
+          "X": 24,
+          "Research blogs": 18
         }
       },
       "source_status": {
         "X": {
-          "state": "failed",
-          "count": 0
+          "state": "ok",
+          "count": 24
         },
         "Research blogs": {
           "state": "ok",
-          "count": 17
+          "count": 18
         }
       },
-      "source_errors": [
-        "X: RuntimeError: HTTP 402 额度不足，请在 X Developer Console 充值 credits"
-      ]
+      "source_errors": []
     },
     {
       "id": "engineering",

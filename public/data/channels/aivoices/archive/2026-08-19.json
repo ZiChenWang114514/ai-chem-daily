@@ -2,7 +2,7 @@
   "schema_version": "2.0",
   "date": "2026-08-19",
   "channel": "aivoices",
-  "generated_at": "2026-08-18T23:08:09+00:00",
+  "generated_at": "2026-08-19T06:56:11+00:00",
   "title": "AI Voices 每日精选",
   "subtitle": "研究者公开观点、研究发布与重要讨论。",
   "window": {
@@ -12,70 +12,498 @@
   "method": "公开来源采集、规则筛选与模型审阅",
   "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
   "stats": {
-    "fetched": 17,
-    "candidates": 17,
-    "selected": 1,
+    "fetched": 42,
+    "candidates": 42,
+    "selected": 10,
     "sources": {
-      "X": 0,
-      "Research blogs": 17
+      "X": 24,
+      "Research blogs": 18
     }
   },
   "source_status": {
     "X": {
-      "state": "failed",
-      "count": 0
+      "state": "ok",
+      "count": 24
     },
     "Research blogs": {
       "state": "ok",
-      "count": 17
+      "count": 18
     }
   },
-  "source_errors": [
-    "X: RuntimeError: HTTP 402 额度不足，请在 X Developer Console 充值 credits"
-  ],
+  "source_errors": [],
   "items": [
     {
-      "id": "feed:https://developer.nvidia.com/blog/how-ai-coding-agents-can-unlock-materials-simulation-with-nvidia-alchemi-toolkit/",
+      "id": "x:2089842387845804246",
       "channel": "aivoices",
       "related_channels": [
-        "aixchem"
+        "aixchem",
+        "aixbio"
       ],
-      "item_type": "research_blog",
-      "source": "NVIDIA Technical Blog",
-      "title": "How AI Coding Agents Can Unlock Materials Simulation with NVIDIA ALCHEMI Toolkit",
-      "url": "https://developer.nvidia.com/blog/how-ai-coding-agents-can-unlock-materials-simulation-with-nvidia-alchemi-toolkit/",
-      "published_at": "2026-08-18T18:00:00Z",
-      "updated_at": "2026-08-18T18:00:00Z",
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@AnthropicAI：Many drugs work by binding to a specific target in the body and blocking or changing what it does. An important first st",
+      "url": "https://x.com/AnthropicAI/status/2089842387845804246",
+      "published_at": "2026-08-18T22:30:27Z",
+      "updated_at": "2026-08-18T22:30:27Z",
       "creators": [
-        "NVIDIA Technical Blog"
+        "Anthropic"
       ],
       "language": "en",
-      "abstract_or_text": "Atomistic simulation requires three things: knowledge of the science, compute-efficient implementation of simulations, and accessible interfaces to the...",
-      "summary_zh": "NVIDIA 官方技术博客探讨 AI 编程智能体如何借助 ALCHEMI Toolkit 促进材料模拟；可见导语将原子尺度模拟概括为三项要求：科学知识、计算高效的模拟实现和可访问的接口。",
-      "why_it_matters_zh": "编辑判断：它把编程智能体与材料模拟软件的可用性联系起来，值得关注。候选材料未给出具体机制、代码或评测结果，因此仅依据导语作保守收录。",
+      "abstract_or_text": "Many drugs work by binding to a specific target in the body and blocking or changing what it does. An important first step in the drug development process is designing a molecule that can bind tightly to its target. Traditionally, that's meant weeks or months of expert work per target, sifting through a large number of candidates to identify the few that work. We wanted to test if Claude could successfully design novel protein binders from scratch (also called de novo design). With a protein design prompt written by a human expert, Claude autonomously designed protein binders against 14 out of 15 targets. We then worked with Adaptyv Bio and Twist Bioscience, who independently built and tested the proteins Claude designed.",
+      "summary_zh": "Anthropic 称在专家撰写的蛋白设计提示下，Claude 对15个靶点中的14个自主设计了全新蛋白结合剂，并由 Adaptyv Bio 与 Twist Bioscience 独立合成与测试。",
+      "why_it_matters_zh": "这是实验室对通用模型参与药物发现前序步骤的公开声明。帖文未给出结合亲和力、命中率与对照设定，后续需对照技术报告与独立复现判断实际贡献。",
+      "quality_score": 69.0,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "公开声明",
+        "独立湿实验声称"
+      ],
+      "publication_status": "public_post",
+      "rank": 1,
+      "featured": true,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 7081,
+        "repost_count": 771,
+        "reply_count": 328,
+        "quote_count": 386
+      },
+      "metadata": {
+        "post_id": "2089842387845804246",
+        "username": "AnthropicAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "许多药物通过结合体内特定靶点并阻断或改变其功能而起效。药物开发的重要第一步是设计能与靶点紧密结合的分子。传统上，每个靶点需要专家花费数周或数月，从大量候选中筛出少数有效者。我们想测试 Claude 能否从零成功设计全新蛋白结合剂（即 de novo 设计）。在人类专家撰写的蛋白设计提示下，Claude 对15个靶点中的14个自主设计了蛋白结合剂。随后我们与 Adaptyv Bio 和 Twist Bioscience 合作，由他们独立构建并测试了 Claude 设计的蛋白。",
+      "published": "2026-08-18",
+      "author_line": "Anthropic"
+    },
+    {
+      "id": "x:2089777845187031262",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@OpenAI：As models become more capable, the risks associated with developing and testing them internally also grow. We temporaril",
+      "url": "https://x.com/OpenAI/status/2089777845187031262",
+      "published_at": "2026-08-18T18:13:59Z",
+      "updated_at": "2026-08-18T18:13:59Z",
+      "creators": [
+        "OpenAI"
+      ],
+      "language": "en",
+      "abstract_or_text": "As models become more capable, the risks associated with developing and testing them internally also grow. We temporarily paused reinforcement learning (RL) training on our latest models intended for deployment for two weeks while we hardened and red-teamed our research environments and expanded monitoring coverage. Our largest planned frontier RL run remains on hold while smaller-scale training and evaluations validate these safeguards and establish more evidence of alignment.",
+      "summary_zh": "OpenAI 称因内部开发与测试风险上升，已暂停拟部署模型的强化学习训练两周，最大规模前沿强化学习实验仍暂缓。",
+      "why_it_matters_zh": "这是实验室对训练节奏与内部安全评估的正式说明，属于可核查的公开观点，但未给出具体事件、评估指标或恢复条件。",
+      "quality_score": 74.0,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "官方声明",
+        "未见评估数据",
+        "evaluation"
+      ],
+      "publication_status": "public_post",
+      "rank": 2,
+      "featured": true,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 4639,
+        "repost_count": 403,
+        "reply_count": 532,
+        "quote_count": 393
+      },
+      "metadata": {
+        "post_id": "2089777845187031262",
+        "username": "OpenAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "随着模型能力增强，在内部开发与测试它们所伴随的风险也在上升。我们暂时暂停了拟用于部署的最新模型的强化学习（RL）训练两周，同时加固并红队测试研究环境，并扩大监测覆盖。在更小规模训练与评估验证这些防护措施、并积累更多对齐证据之前，我们计划中最大规模的前沿强化学习实验仍暂缓。",
+      "published": "2026-08-18",
+      "author_line": "OpenAI"
+    },
+    {
+      "id": "x:2089717134129565763",
+      "channel": "aivoices",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@pushmeet：Matrix multiplication is the basic computational operation that powers modern computing (including AI). Yet, the theoret",
+      "url": "https://x.com/pushmeet/status/2089717134129565763",
+      "published_at": "2026-08-18T14:12:44Z",
+      "updated_at": "2026-08-18T14:12:44Z",
+      "creators": [
+        "Pushmeet Kohli"
+      ],
+      "language": "en",
+      "abstract_or_text": "Matrix multiplication is the basic computational operation that powers modern computing (including AI). Yet, the theoretical fastest speed at which computers can multiply matrices (omega ω) is still unknown and has been a longstanding challenge for complexity theory and computer science. Today, we announce a new record for omega (ω<2.371177). This is the result of a great team effort between @GoogleDeepMind, our academic collaborators, and our Gemini-powered coding agent AlphaEvolve!",
+      "summary_zh": "Pushmeet Kohli 宣布矩阵乘法指数新纪录 ω<2.371177，称由 Google DeepMind、学术合作者与 Gemini 驱动的编码智能体 AlphaEvolve 共同取得。",
+      "why_it_matters_zh": "ω 是复杂度理论中的长期公开问题。帖文给出了具体数值并点名方法，但完整证明、改进幅度与可核验材料需对照正式文稿。",
+      "quality_score": 72.0,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "给出数值",
+        "未见证明全文"
+      ],
+      "publication_status": "public_post",
+      "rank": 3,
+      "featured": true,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 3156,
+        "repost_count": 327,
+        "reply_count": 57,
+        "quote_count": 49
+      },
+      "metadata": {
+        "post_id": "2089717134129565763",
+        "username": "pushmeet",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "矩阵乘法是驱动现代计算（包括人工智能）的基本运算。然而，计算机做矩阵乘法在理论上的最快速度（omega ω）仍未知，一直是复杂度理论与计算机科学的长期挑战。今天我们宣布 ω 的新纪录（ω<2.371177）。这是 Google DeepMind、我们的学术合作者，以及由 Gemini 驱动的编码智能体 AlphaEvolve 共同努力的结果。",
+      "published": "2026-08-18",
+      "author_line": "Pushmeet Kohli"
+    },
+    {
+      "id": "x:2089732764279132449",
+      "channel": "aivoices",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@axiommathai：We’re delighted to announce a milestone for AI-assisted mathematics: With AxiomProver, we've completed a machine-checkab",
+      "url": "https://x.com/axiommathai/status/2089732764279132449",
+      "published_at": "2026-08-18T15:14:51Z",
+      "updated_at": "2026-08-18T15:14:51Z",
+      "creators": [
+        "Axiom"
+      ],
+      "language": "en",
+      "abstract_or_text": "We’re delighted to announce a milestone for AI-assisted mathematics: With AxiomProver, we've completed a machine-checkable formalization of the “BGP246 theorem,” the best-known bound on recurring small gaps between primes. Closest math has come to the Twin Prime Conjecture.",
+      "summary_zh": "Axiom 称其 AxiomProver 完成了 BGP246 定理的可机器检验形式化，该定理给出素数小间隔的目前最佳已知界限。",
+      "why_it_matters_zh": "把已有数论结果做成可核验的形式化证明，比单纯宣布新界更可检查。帖文未给出 Lean 库链接或证明规模，仍需对照发布物。",
+      "quality_score": 69.0,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "形式化声称",
+        "未见库地址"
+      ],
+      "publication_status": "public_post",
+      "rank": 4,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 754,
+        "repost_count": 101,
+        "reply_count": 30,
+        "quote_count": 40
+      },
+      "metadata": {
+        "post_id": "2089732764279132449",
+        "username": "axiommathai",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "我们很高兴宣布人工智能辅助数学的一项进展：借助 AxiomProver，我们完成了“BGP246 定理”的可机器检验形式化。该定理是关于素数之间反复出现的小间隔的目前最佳已知界限，也是目前最接近孪生素数猜想的结果。",
+      "published": "2026-08-18",
+      "author_line": "Axiom"
+    },
+    {
+      "id": "x:2089712585524605127",
+      "channel": "aivoices",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@ericxing：We are proud to release the world's first virtual cell -- a multi-modal, multi-scale, dynamic, and stateful world model ",
+      "url": "https://x.com/ericxing/status/2089712585524605127",
+      "published_at": "2026-08-18T13:54:40Z",
+      "updated_at": "2026-08-18T13:54:40Z",
+      "creators": [
+        "Eric Xing"
+      ],
+      "language": "en",
+      "abstract_or_text": "We are proud to release the world's first virtual cell -- a multi-modal, multi-scale, dynamic, and stateful world model of the cell, the first step toward an AI-driven Digital Organism (AIDO).",
+      "summary_zh": "Eric Xing 宣布发布 AIDO Cell 预览：一个多模态、多尺度、有状态的细胞世界模型，作为其所谓 AI 驱动数字生物体的第一步。",
+      "why_it_matters_zh": "虚拟细胞是计算生物学的高目标声明。帖文极短，未见评测、数据或可复现实验，只能作为发布信号，不能当作已验证结果。",
+      "quality_score": 71.0,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "发布声明",
+        "未见评测",
+        "release"
+      ],
+      "publication_status": "public_post",
+      "rank": 5,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 2881,
+        "repost_count": 306,
+        "reply_count": 68,
+        "quote_count": 36
+      },
+      "metadata": {
+        "post_id": "2089712585524605127",
+        "username": "ericxing",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "我们很荣幸发布世界上第一个虚拟细胞——一个多模态、多尺度、动态且有状态的细胞世界模型，这是迈向人工智能驱动的数字生物体（AIDO）的第一步。",
+      "published": "2026-08-18",
+      "author_line": "Eric Xing"
+    },
+    {
+      "id": "x:2089887182810931491",
+      "channel": "aivoices",
+      "related_channels": [
+        "aixchem",
+        "aixbio"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@RuxandraTeslo：Claude Science is an amazing tool. But, as @pdhsu has pointed out, these binders weren’t designed by Claude, but rather ",
+      "url": "https://x.com/RuxandraTeslo/status/2089887182810931491",
+      "published_at": "2026-08-19T01:28:27Z",
+      "updated_at": "2026-08-19T01:28:27Z",
+      "creators": [
+        "Ruxandra Teslo"
+      ],
+      "language": "en",
+      "abstract_or_text": "Claude Science is an amazing tool. But, as @pdhsu has pointed out, these binders weren’t designed by Claude, but rather by domain-specific models, most of which are publicly available, like RFdiffusion. Maybe this is a good time to explain the whole science behind this a bit, as well as the history of these models.",
+      "summary_zh": "Ruxandra Teslo 认为 Anthropic 展示的结合剂并非由 Claude 直接设计，而是由 RFdiffusion 等已公开的领域专用模型生成，Claude 更像编排界面。",
+      "why_it_matters_zh": "它把实验室宣传与蛋白设计方法史分开，提醒读者区分通用模型与已有结构生成模型的贡献，适合与官方帖对照阅读。",
+      "quality_score": 71.0,
+      "tags": [
+        "观点与讨论"
+      ],
+      "evidence_flags": [
+        "作者观点",
+        "方法史说明"
+      ],
+      "publication_status": "public_post",
+      "rank": 6,
+      "featured": false,
+      "category": "观点与讨论",
+      "metrics": {
+        "like_count": 171,
+        "repost_count": 27,
+        "reply_count": 8,
+        "quote_count": 3
+      },
+      "metadata": {
+        "post_id": "2089887182810931491",
+        "username": "RuxandraTeslo",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "Claude Science 是很有用的工具。但正如 @pdhsu 指出的，这些结合剂并不是由 Claude 设计的，而是由领域专用模型设计的，其中多数已经公开，例如 RFdiffusion。也许现在适合稍稍解释这件事背后的科学，以及这些模型的历史。",
+      "published": "2026-08-19",
+      "author_line": "Ruxandra Teslo"
+    },
+    {
+      "id": "x:2089826089237410019",
+      "channel": "aivoices",
+      "related_channels": [
+        "aixbio",
+        "aixmath"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@marinkazitnik：Do LLMs know when they have enough information to answer, and what to ask a human when they don’t? We spend a lot of tim",
+      "url": "https://x.com/marinkazitnik/status/2089826089237410019",
+      "published_at": "2026-08-18T21:25:41Z",
+      "updated_at": "2026-08-18T21:25:41Z",
+      "creators": [
+        "Marinka Zitnik"
+      ],
+      "language": "en",
+      "abstract_or_text": "Do LLMs know when they have enough information to answer, and what to ask a human when they don’t? We spend a lot of time developing agents that can answer the questions we ask them. But the reverse direction gets much less attention: when the prompt does not contain enough information, can a model recognize what is missing and ask for it? Paper: https://t.co/xlWmIwZ4Mt",
+      "summary_zh": "Marinka Zitnik 介绍一项工作：当提示信息不足时，模型能否识别缺失变量并向人追问，而不仅是回答给定问题。",
+      "why_it_matters_zh": "它把智能体评价从“会不会答”转到“知不知道自己缺什么”，与临床和生物网络决策直接相关。帖文给出问题设定并附论文链接，细节需读原文。",
       "quality_score": 65.0,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "论文链接",
+        "摘要不完整"
+      ],
+      "publication_status": "public_post",
+      "rank": 7,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 22,
+        "repost_count": 2,
+        "reply_count": 1,
+        "quote_count": 1
+      },
+      "metadata": {
+        "post_id": "2089826089237410019",
+        "username": "marinkazitnik",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "大语言模型是否知道自己何时已有足够信息作答，以及在不够时该向人问什么？我们花很多时间开发能回答我们所提问题的智能体，反向问题却少得多：当提示不含足够信息时，模型能否识别缺了什么并去询问？论文：https://t.co/xlWmIwZ4Mt",
+      "published": "2026-08-18",
+      "author_line": "Marinka Zitnik"
+    },
+    {
+      "id": "x:2089666113726746731",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@Xudong07452910：分享一个比较有意思的研究。研究者训练了一个「只学到小学五年级」的语言模型 LittleLearner。他们先做了一个 88B Token 的训练集，把五年级以上的概念、知识和词汇尽量过滤掉，再从头训练一个 5B 模型。论文 https://",
+      "url": "https://x.com/Xudong07452910/status/2089666113726746731",
+      "published_at": "2026-08-18T10:50:00Z",
+      "updated_at": "2026-08-18T10:50:00Z",
+      "creators": [
+        "Xudong Han"
+      ],
+      "language": "zh",
+      "abstract_or_text": "分享一个比较有意思的研究。研究者训练了一个「只学到小学五年级」的语言模型 LittleLearner。他们先做了一个 88B Token 的训练集，把五年级以上的概念、知识和词汇尽量过滤掉，再从头训练一个 5B 模型。论文 https://t.co/lW28SDGpIc",
+      "summary_zh": "转述一项 LittleLearner 研究：用滤掉小学五年级以上概念的约880亿 token 数据从头训练50亿参数模型，以检验后续训练能否越过预训练知识边界。",
+      "why_it_matters_zh": "它提供一个较干净的实验设定，用来区分“学到新能力”和“激活已有知识”。本帖是二手转述，结论以原论文为准。",
+      "quality_score": 69.0,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "二手转述"
+      ],
+      "publication_status": "public_post",
+      "rank": 8,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 717,
+        "repost_count": 105,
+        "reply_count": 76,
+        "quote_count": 16
+      },
+      "metadata": {
+        "post_id": "2089666113726746731",
+        "username": "Xudong07452910",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "分享一个比较有意思的研究。研究者训练了一个「只学到小学五年级」的语言模型 LittleLearner。他们先做了一个 88B Token 的训练集，把五年级以上的概念、知识和词汇尽量过滤掉，再从头训练一个 5B 模型。论文 https://t.co/lW28SDGpIc",
+      "published": "2026-08-18",
+      "author_line": "Xudong Han"
+    },
+    {
+      "id": "x:2089817361604063739",
+      "channel": "aivoices",
+      "related_channels": [
+        "engineering"
+      ],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@jeremyphoward：The amazingly fast (only 30M!) and extremely accurate @answerdotai ColBERT model is now supported in Sentence Transforme",
+      "url": "https://x.com/jeremyphoward/status/2089817361604063739",
+      "published_at": "2026-08-18T20:51:00Z",
+      "updated_at": "2026-08-18T20:51:00Z",
+      "creators": [
+        "Jeremy Howard"
+      ],
+      "language": "en",
+      "abstract_or_text": "The amazingly fast (only 30M!) and extremely accurate @answerdotai ColBERT model is now supported in Sentence Transformers to make it easy to create and query embedding indexes locally directly in Python!",
+      "summary_zh": "Jeremy Howard 称 answer.ai 的约3000万参数 ColBERT 模型已进入 Sentence Transformers，可在本地 Python 中建立和查询嵌入索引。",
+      "why_it_matters_zh": "把 late-interaction 检索接到常用库，降低本地多向量检索的接入成本。帖文是发布说明，未给出新的对比评测数字。",
+      "quality_score": 72.0,
       "tags": [
         "工具与实践"
       ],
       "evidence_flags": [
-        "原文摘要为截断导语；未见具体实现与评测细节"
+        "库发布",
+        "未见新评测"
       ],
-      "publication_status": "official_update",
-      "rank": 1,
-      "featured": true,
+      "publication_status": "public_post",
+      "rank": 9,
+      "featured": false,
       "category": "工具与实践",
-      "metrics": {},
-      "metadata": {
-        "feed_url": "https://developer.nvidia.com/blog/feed/"
+      "metrics": {
+        "like_count": 284,
+        "repost_count": 26,
+        "reply_count": 7,
+        "quote_count": 1
       },
-      "abstract_zh": "原子尺度模拟需要三样东西：科学知识、计算效率高的模拟实现，以及可访问的界面，以便……",
+      "metadata": {
+        "post_id": "2089817361604063739",
+        "username": "jeremyphoward",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "answer.ai 那个速度极快（仅约3000万参数）、准确度很高的 ColBERT 模型现在已得到 Sentence Transformers 支持，可以在本地用 Python 直接创建和查询嵌入索引。",
       "published": "2026-08-18",
-      "author_line": "NVIDIA Technical Blog"
+      "author_line": "Jeremy Howard"
+    },
+    {
+      "id": "x:2089386438848622768",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@cocoweixu：Updated CS 8803 \"Large Language Model\" class at @GeorgiaTech this year for 2026! The reading list spans pretraining, MoE",
+      "url": "https://x.com/cocoweixu/status/2089386438848622768",
+      "published_at": "2026-08-17T16:18:40Z",
+      "updated_at": "2026-08-17T16:18:40Z",
+      "creators": [
+        "Wei Xu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Updated CS 8803 \"Large Language Model\" class at @GeorgiaTech this year for 2026! The reading list spans pretraining, MoE, reasoning, RL & self-play, agents, long-context, test-time scaling, diffusion LMs, safety, interpretability, and more. https://cocoxu.github.io/CS8803-LLM-spring2026/",
+      "summary_zh": "佐治亚理工 Wei Xu 更新 2026 年 CS 8803 大语言模型课程阅读清单，覆盖预训练、MoE、推理、自博弈强化学习、智能体、长上下文、测试时扩展、扩散语言模型、安全与可解释性。",
+      "why_it_matters_zh": "这是一份可核对的公开课表，能反映当前教学中的研究主题分布，本身不是新实验结果。",
+      "quality_score": 83.0,
+      "tags": [
+        "工具与实践"
+      ],
+      "evidence_flags": [
+        "公开课表",
+        "github"
+      ],
+      "publication_status": "public_post",
+      "rank": 10,
+      "featured": false,
+      "category": "工具与实践",
+      "metrics": {
+        "like_count": 1370,
+        "repost_count": 231,
+        "reply_count": 10,
+        "quote_count": 4
+      },
+      "metadata": {
+        "post_id": "2089386438848622768",
+        "username": "cocoweixu",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      },
+      "abstract_zh": "已更新佐治亚理工今年 2026 年的 CS 8803「大语言模型」课程！阅读清单涵盖预训练、MoE、推理、强化学习与自博弈、智能体、长上下文、测试时扩展、扩散语言模型、安全、可解释性等。https://cocoxu.github.io/CS8803-LLM-spring2026/",
+      "published": "2026-08-17",
+      "author_line": "Wei Xu"
     }
   ],
   "review": {
-    "model": "gpt-5.6-terra",
+    "model": "grok-4.6",
     "reasoning_effort": "high",
-    "note": "共审阅17项。按质量分阈值有3项符合；其中2项未提供可准确翻译的原文摘要，证据不足，未收录。"
+    "note": "共审阅42项，其中17项达到质量分65。排除同一线程的重复帖、营销竞赛和无实质信息的短评，收录10项：实验室公开实验与安全声明、可核验的形式化数学结果、研究者对蛋白设计声明的纠正，以及工具与课程更新。"
   }
 }

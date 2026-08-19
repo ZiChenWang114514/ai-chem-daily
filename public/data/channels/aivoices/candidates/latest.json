@@ -2,9 +2,568 @@
   "schema_version": "2.0",
   "date": "2026-08-19",
   "channel": "aivoices",
-  "generated_at": "2026-08-18T23:08:09+00:00",
-  "count": 17,
+  "generated_at": "2026-08-19T06:56:11+00:00",
+  "count": 42,
   "items": [
+    {
+      "id": "x:2089386438848622768",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@cocoweixu：Updated CS 8803 \"Large Language Model\" class at @GeorgiaTech this year for 2026! The reading list spans pretraining, MoE",
+      "url": "https://x.com/cocoweixu/status/2089386438848622768",
+      "published_at": "2026-08-17T16:18:40Z",
+      "updated_at": "2026-08-17T16:18:40Z",
+      "creators": [
+        "Wei Xu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Updated CS 8803 \"Large Language Model\" class at @GeorgiaTech this year for 2026! The reading list spans pretraining, MoE, reasoning, RL & self-play, agents, long-context, test-time scaling, diffusion LMs, safety, interpretability, and more. https://cocoxu.github.io/CS8803-LLM-spring2026/",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 83,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "github"
+      ],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 1370,
+        "repost_count": 231,
+        "reply_count": 10,
+        "quote_count": 4
+      },
+      "metadata": {
+        "post_id": "2089386438848622768",
+        "username": "cocoweixu",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089777845187031262",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@OpenAI：As models become more capable, the risks associated with developing and testing them internally also grow. We temporaril",
+      "url": "https://x.com/OpenAI/status/2089777845187031262",
+      "published_at": "2026-08-18T18:13:59Z",
+      "updated_at": "2026-08-18T18:13:59Z",
+      "creators": [
+        "OpenAI"
+      ],
+      "language": "en",
+      "abstract_or_text": "As models become more capable, the risks associated with developing and testing them internally also grow. We temporarily paused reinforcement learning (RL) training on our latest models intended for deployment for two weeks while we hardened and red-teamed our research environments and expanded monitoring coverage. Our largest planned frontier RL run remains on hold while smaller-scale training and evaluations validate these safeguards and establish more evidence of alignment.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 74,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "evaluation"
+      ],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 4639,
+        "repost_count": 403,
+        "reply_count": 532,
+        "quote_count": 393
+      },
+      "metadata": {
+        "post_id": "2089777845187031262",
+        "username": "OpenAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089777846583763370",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@OpenAI：We’re sharing the concrete changes we’re making to strengthen monitoring, security, and alignment as capabilities advanc",
+      "url": "https://x.com/OpenAI/status/2089777846583763370",
+      "published_at": "2026-08-18T18:13:59Z",
+      "updated_at": "2026-08-18T18:13:59Z",
+      "creators": [
+        "OpenAI"
+      ],
+      "language": "en",
+      "abstract_or_text": "We’re sharing the concrete changes we’re making to strengthen monitoring, security, and alignment as capabilities advance. We’ve introduced stronger workload and network isolation, continuous security testing, and expanded multistage monitoring for higher-risk training, evaluations, and tool-using inference. These safeguards are designed to detect concerning behavior quickly and limit what systems can access or affect.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 73,
+      "tags": [
+        "工具与实践"
+      ],
+      "evidence_flags": [
+        "evaluation",
+        "security"
+      ],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "工具与实践",
+      "metrics": {
+        "like_count": 598,
+        "repost_count": 18,
+        "reply_count": 34,
+        "quote_count": 12
+      },
+      "metadata": {
+        "post_id": "2089777846583763370",
+        "username": "OpenAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089817361604063739",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@jeremyphoward：The amazingly fast (only 30M!) and extremely accurate @answerdotai ColBERT model is now supported in Sentence Transforme",
+      "url": "https://x.com/jeremyphoward/status/2089817361604063739",
+      "published_at": "2026-08-18T20:51:00Z",
+      "updated_at": "2026-08-18T20:51:00Z",
+      "creators": [
+        "Jeremy Howard"
+      ],
+      "language": "en",
+      "abstract_or_text": "The amazingly fast (only 30M!) and extremely accurate @answerdotai ColBERT model is now supported in Sentence Transformers to make it easy to create and query embedding indexes locally directly in Python!",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 72,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 284,
+        "repost_count": 26,
+        "reply_count": 7,
+        "quote_count": 1
+      },
+      "metadata": {
+        "post_id": "2089817361604063739",
+        "username": "jeremyphoward",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089717134129565763",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@pushmeet：Matrix multiplication is the basic computational operation that powers modern computing (including AI). Yet, the theoret",
+      "url": "https://x.com/pushmeet/status/2089717134129565763",
+      "published_at": "2026-08-18T14:12:44Z",
+      "updated_at": "2026-08-18T14:12:44Z",
+      "creators": [
+        "Pushmeet Kohli"
+      ],
+      "language": "en",
+      "abstract_or_text": "Matrix multiplication is the basic computational operation that powers modern computing (including AI). Yet, the theoretical fastest speed at which computers can multiply matrices (omega ω) is still unknown and has been a longstanding challenge for complexity theory and computer science. Today, we announce a new record for omega (ω<2.371177). This is the result of a great team effort between @GoogleDeepMind, our academic collaborators, and our Gemini-powered coding agent AlphaEvolve!",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 72,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 3156,
+        "repost_count": 327,
+        "reply_count": 57,
+        "quote_count": 49
+      },
+      "metadata": {
+        "post_id": "2089717134129565763",
+        "username": "pushmeet",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2088900801489928637",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@ArchiveExplorer：DeepSeek just killed the coding-agent industry. deepseek-harness: Open-source. Free. Claude Code's top plan costs 200/mo",
+      "url": "https://x.com/ArchiveExplorer/status/2088900801489928637",
+      "published_at": "2026-08-16T08:08:55Z",
+      "updated_at": "2026-08-16T08:08:55Z",
+      "creators": [
+        "Archive"
+      ],
+      "language": "en",
+      "abstract_or_text": "DeepSeek just killed the coding-agent industry. deepseek-harness: Open-source. Free. Claude Code's top plan costs 200/month. What it does: → Everything is a plugin - model adapters, tools, session logs, even the agent loop itself, all swappable from config → Built on Cordis, DeepSeek's own plugin runtime → One command to run: npx @deepseek-ai/dsh web",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 72,
+      "tags": [
+        "工具与实践"
+      ],
+      "evidence_flags": [],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "工具与实践",
+      "metrics": {
+        "like_count": 2417,
+        "repost_count": 328,
+        "reply_count": 75,
+        "quote_count": 15
+      },
+      "metadata": {
+        "post_id": "2088900801489928637",
+        "username": "ArchiveExplorer",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089842395722678689",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@AnthropicAI：We're also publishing a technical report: https://www-cdn.anthropic.com/30bf50e22a01388bb29bf077ee3f244531594b7a.pdf And",
+      "url": "https://x.com/AnthropicAI/status/2089842395722678689",
+      "published_at": "2026-08-18T22:30:29Z",
+      "updated_at": "2026-08-18T22:30:29Z",
+      "creators": [
+        "Anthropic"
+      ],
+      "language": "en",
+      "abstract_or_text": "We're also publishing a technical report: https://www-cdn.anthropic.com/30bf50e22a01388bb29bf077ee3f244531594b7a.pdf And open-sourcing our prompts and data here: https://huggingface.co/datasets/Anthropic/claude-protein-binder-design/tree/main",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 71,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "dataset"
+      ],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 301,
+        "repost_count": 16,
+        "reply_count": 14,
+        "quote_count": 5
+      },
+      "metadata": {
+        "post_id": "2089842395722678689",
+        "username": "AnthropicAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089887182810931491",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@RuxandraTeslo：Claude Science is an amazing tool. But, as @pdhsu has pointed out, these binders weren’t designed by Claude, but rather ",
+      "url": "https://x.com/RuxandraTeslo/status/2089887182810931491",
+      "published_at": "2026-08-19T01:28:27Z",
+      "updated_at": "2026-08-19T01:28:27Z",
+      "creators": [
+        "Ruxandra Teslo"
+      ],
+      "language": "en",
+      "abstract_or_text": "Claude Science is an amazing tool. But, as @pdhsu has pointed out, these binders weren’t designed by Claude, but rather by domain-specific models, most of which are publicly available, like RFdiffusion. Maybe this is a good time to explain the whole science behind this a bit, as well as the history of these models.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 71,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 171,
+        "repost_count": 27,
+        "reply_count": 8,
+        "quote_count": 3
+      },
+      "metadata": {
+        "post_id": "2089887182810931491",
+        "username": "RuxandraTeslo",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089941544581403107",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@jietang：Thoughts About Scaling Law Scaling, but not only of parameters. Every model release now ends with the same question: how",
+      "url": "https://x.com/jietang/status/2089941544581403107",
+      "published_at": "2026-08-19T05:04:28Z",
+      "updated_at": "2026-08-19T05:04:28Z",
+      "creators": [
+        "jietang"
+      ],
+      "language": "en",
+      "abstract_or_text": "Thoughts About Scaling Law Scaling, but not only of parameters. Every model release now ends with the same question: how many parameters? Parameter count is only meaningful alongside three others — how much data you have, where you intend to spend your compute, and who will run the model, under what conditions.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 71,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "release"
+      ],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 970,
+        "repost_count": 125,
+        "reply_count": 52,
+        "quote_count": 40
+      },
+      "metadata": {
+        "post_id": "2089941544581403107",
+        "username": "jietang",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089712585524605127",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@ericxing：We are proud to release the world's first virtual cell -- a multi-modal, multi-scale, dynamic, and stateful world model ",
+      "url": "https://x.com/ericxing/status/2089712585524605127",
+      "published_at": "2026-08-18T13:54:40Z",
+      "updated_at": "2026-08-18T13:54:40Z",
+      "creators": [
+        "Eric Xing"
+      ],
+      "language": "en",
+      "abstract_or_text": "We are proud to release the world's first virtual cell -- a multi-modal, multi-scale, dynamic, and stateful world model of the cell, the first step toward an AI-driven Digital Organism (AIDO).",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 71,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "release"
+      ],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 2881,
+        "repost_count": 306,
+        "reply_count": 68,
+        "quote_count": 36
+      },
+      "metadata": {
+        "post_id": "2089712585524605127",
+        "username": "ericxing",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089842387845804246",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@AnthropicAI：Many drugs work by binding to a specific target in the body and blocking or changing what it does. An important first st",
+      "url": "https://x.com/AnthropicAI/status/2089842387845804246",
+      "published_at": "2026-08-18T22:30:27Z",
+      "updated_at": "2026-08-18T22:30:27Z",
+      "creators": [
+        "Anthropic"
+      ],
+      "language": "en",
+      "abstract_or_text": "Many drugs work by binding to a specific target in the body and blocking or changing what it does. An important first step in the drug development process is designing a molecule that can bind tightly to its target. Traditionally, that's meant weeks or months of expert work per target, sifting through a large number of candidates to identify the few that work. We wanted to test if Claude could successfully design novel protein binders from scratch (also called de novo design). With a protein design prompt written by a human expert, Claude autonomously designed protein binders against 14 out of 15 targets. We then worked with Adaptyv Bio and Twist Bioscience, who independently built and tested the proteins Claude designed.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 69,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 7081,
+        "repost_count": 771,
+        "reply_count": 328,
+        "quote_count": 386
+      },
+      "metadata": {
+        "post_id": "2089842387845804246",
+        "username": "AnthropicAI",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089732764279132449",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@axiommathai：We’re delighted to announce a milestone for AI-assisted mathematics: With AxiomProver, we've completed a machine-checkab",
+      "url": "https://x.com/axiommathai/status/2089732764279132449",
+      "published_at": "2026-08-18T15:14:51Z",
+      "updated_at": "2026-08-18T15:14:51Z",
+      "creators": [
+        "Axiom"
+      ],
+      "language": "en",
+      "abstract_or_text": "We’re delighted to announce a milestone for AI-assisted mathematics: With AxiomProver, we've completed a machine-checkable formalization of the “BGP246 theorem,” the best-known bound on recurring small gaps between primes. Closest math has come to the Twin Prime Conjecture.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 69,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 754,
+        "repost_count": 101,
+        "reply_count": 30,
+        "quote_count": 40
+      },
+      "metadata": {
+        "post_id": "2089732764279132449",
+        "username": "axiommathai",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089666113726746731",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@Xudong07452910：分享一个比较有意思的研究。研究者训练了一个「只学到小学五年级」的语言模型 LittleLearner。他们先做了一个 88B Token 的训练集，把五年级以上的概念、知识和词汇尽量过滤掉，再从头训练一个 5B 模型。论文 https://",
+      "url": "https://x.com/Xudong07452910/status/2089666113726746731",
+      "published_at": "2026-08-18T10:50:00Z",
+      "updated_at": "2026-08-18T10:50:00Z",
+      "creators": [
+        "Xudong Han"
+      ],
+      "language": "zh",
+      "abstract_or_text": "分享一个比较有意思的研究。研究者训练了一个「只学到小学五年级」的语言模型 LittleLearner。他们先做了一个 88B Token 的训练集，把五年级以上的概念、知识和词汇尽量过滤掉，再从头训练一个 5B 模型。论文 https://t.co/lW28SDGpIc",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 69,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 717,
+        "repost_count": 105,
+        "reply_count": 76,
+        "quote_count": 16
+      },
+      "metadata": {
+        "post_id": "2089666113726746731",
+        "username": "Xudong07452910",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089826089237410019",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@marinkazitnik：Do LLMs know when they have enough information to answer, and what to ask a human when they don’t? We spend a lot of tim",
+      "url": "https://x.com/marinkazitnik/status/2089826089237410019",
+      "published_at": "2026-08-18T21:25:41Z",
+      "updated_at": "2026-08-18T21:25:41Z",
+      "creators": [
+        "Marinka Zitnik"
+      ],
+      "language": "en",
+      "abstract_or_text": "Do LLMs know when they have enough information to answer, and what to ask a human when they don’t? We spend a lot of time developing agents that can answer the questions we ask them. But the reverse direction gets much less attention: when the prompt does not contain enough information, can a model recognize what is missing and ask for it? Paper: https://t.co/xlWmIwZ4Mt",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 65,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 22,
+        "repost_count": 2,
+        "reply_count": 1,
+        "quote_count": 1
+      },
+      "metadata": {
+        "post_id": "2089826089237410019",
+        "username": "marinkazitnik",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      }
+    },
     {
       "id": "feed:https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
       "channel": "aivoices",
@@ -165,6 +724,86 @@
       }
     },
     {
+      "id": "x:2089366903294689304",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@Max__Kuznetsov：Pocket-conditioned ligand generation is like finding the right key for a lock. We explore this in 3D-Fit, a benchmark fo",
+      "url": "https://x.com/Max__Kuznetsov/status/2089366903294689304",
+      "published_at": "2026-08-17T15:01:02Z",
+      "updated_at": "2026-08-17T15:01:02Z",
+      "creators": [
+        "Maksim Kuznetsov"
+      ],
+      "language": "en",
+      "abstract_or_text": "Pocket-conditioned ligand generation is like finding the right key for a lock. We explore this in 3D-Fit, a benchmark for 3D ligand generation under realistic spatial constraints. The results show that modern foundation models can follow local 3D constraints surprisingly well, but satisfying these constraints does not always translate into physically plausible poses or strong docking scores.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 64,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "benchmark"
+      ],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 20,
+        "repost_count": 3,
+        "reply_count": 2,
+        "quote_count": 2
+      },
+      "metadata": {
+        "post_id": "2089366903294689304",
+        "username": "Max__Kuznetsov",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089025611587334546",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@LigengZhu：Humanfia team ranks #1 on lean-eval by token-maxing. The total token cost is less than 50k. We use a smart agent flow to",
+      "url": "https://x.com/LigengZhu/status/2089025611587334546",
+      "published_at": "2026-08-16T16:24:52Z",
+      "updated_at": "2026-08-16T16:24:52Z",
+      "creators": [
+        "Ligeng Zhu"
+      ],
+      "language": "en",
+      "abstract_or_text": "Humanfia team ranks #1 on lean-eval by token-maxing. The total token cost is less than 50k. We use a smart agent flow to launch the loop to get the good ranking, while most of authors are not majoring in math.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 64,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 41,
+        "repost_count": 13,
+        "reply_count": 3,
+        "quote_count": 3
+      },
+      "metadata": {
+        "post_id": "2089025611587334546",
+        "username": "LigengZhu",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
       "id": "feed:https://openai.com/index/the-defenders-window",
       "channel": "aivoices",
       "related_channels": [],
@@ -188,6 +827,76 @@
       "evidence_flags": [
         "security"
       ],
+      "publication_status": "official_update",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {},
+      "metadata": {
+        "feed_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "id": "x:2088929910760866265",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@ylecun：That's my point. Notions of Good and Bad are in the eye of the beholder. Hence we need a wide diversity of AI assistants",
+      "url": "https://x.com/ylecun/status/2088929910760866265",
+      "published_at": "2026-08-16T10:04:35Z",
+      "updated_at": "2026-08-16T10:04:35Z",
+      "creators": [
+        "Yann LeCun"
+      ],
+      "language": "en",
+      "abstract_or_text": "That's my point. Notions of Good and Bad are in the eye of the beholder. Hence we need a wide diversity of AI assistants/agents, or else the dominant supplier will decide what's good or bad.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 63,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 36,
+        "repost_count": 1,
+        "reply_count": 6,
+        "quote_count": 0
+      },
+      "metadata": {
+        "post_id": "2088929910760866265",
+        "username": "ylecun",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "feed:https://openai.com/index/chatgpt-ads-expands-across-europe",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "research_blog",
+      "source": "OpenAI News",
+      "title": "ChatGPT Ads expands across Europe",
+      "url": "https://openai.com/index/chatgpt-ads-expands-across-europe",
+      "published_at": "Tue, 18 Aug 2026 22:00:00 GMT",
+      "updated_at": "Tue, 18 Aug 2026 22:00:00 GMT",
+      "creators": [
+        "OpenAI News"
+      ],
+      "language": "en",
+      "abstract_or_text": "ChatGPT Ads is expanding to 31 European markets. Learn how advertisers can reach people as they explore, compare options, and make decisions.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 62,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [],
       "publication_status": "official_update",
       "rank": 0,
       "featured": false,
@@ -226,6 +935,86 @@
       "metrics": {},
       "metadata": {
         "feed_url": "https://developer.nvidia.com/blog/feed/"
+      }
+    },
+    {
+      "id": "x:2089717367073116538",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@BiologyAIDaily：Protein Structure Prediction: From Evolutionary Constraints to Generative Modeling This review reframes protein structur",
+      "url": "https://x.com/BiologyAIDaily/status/2089717367073116538",
+      "published_at": "2026-08-18T14:13:40Z",
+      "updated_at": "2026-08-18T14:13:40Z",
+      "creators": [
+        "Biology+AI Daily"
+      ],
+      "language": "en",
+      "abstract_or_text": "Protein Structure Prediction: From Evolutionary Constraints to Generative Modeling This review reframes protein structure prediction as a sequence of methodological shifts rather than a simple timeline of “better models”, organizing the field into four phases and three cross-cutting transitions.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 62,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 24,
+        "repost_count": 7,
+        "reply_count": 0,
+        "quote_count": 0
+      },
+      "metadata": {
+        "post_id": "2089717367073116538",
+        "username": "BiologyAIDaily",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089647162518819243",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@prior_labs：We’re happy to announce our first release in relational learning at Prior Labs, continuing our commitment to open scienc",
+      "url": "https://x.com/prior_labs/status/2089647162518819243",
+      "published_at": "2026-08-18T09:34:41Z",
+      "updated_at": "2026-08-18T09:34:41Z",
+      "creators": [
+        "Prior Labs"
+      ],
+      "language": "en",
+      "abstract_or_text": "We’re happy to announce our first release in relational learning at Prior Labs, continuing our commitment to open science. We open-source RelArena-α, TabPFN-Rel, and an alpha version of the Relational Predictive Interface (RPI).",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 62,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "release"
+      ],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 33,
+        "repost_count": 11,
+        "reply_count": 0,
+        "quote_count": 3
+      },
+      "metadata": {
+        "post_id": "2089647162518819243",
+        "username": "prior_labs",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
       }
     },
     {
@@ -536,6 +1325,203 @@
       "metrics": {},
       "metadata": {
         "feed_url": "https://research.google/blog/rss/"
+      }
+    },
+    {
+      "id": "x:2089790388345205030",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@allen_ai：A model can sound like it knows a drug—even when it doesn’t. Researchers at @UTAustin, @Northeastern, & @UTMDAnderson fo",
+      "url": "https://x.com/allen_ai/status/2089790388345205030",
+      "published_at": "2026-08-18T19:03:49Z",
+      "updated_at": "2026-08-18T19:03:49Z",
+      "creators": [
+        "Ai2"
+      ],
+      "language": "en",
+      "abstract_or_text": "A model can sound like it knows a drug—even when it doesn’t. Researchers at @UTAustin, @Northeastern, & @UTMDAnderson found LLMs often lack drug-specific knowledge and instead lean on morphology. Because Olmo is open, they could use it to trace why. https://allenai.org/blog/olmo-drug-morphology",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 61,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 14,
+        "repost_count": 2,
+        "reply_count": 4,
+        "quote_count": 4
+      },
+      "metadata": {
+        "post_id": "2089790388345205030",
+        "username": "allen_ai",
+        "query_kind": "accounts",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2088915496632807759",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@anselmlevskaya：Here's recent apt commentary (open) and paper (paywall) on how little we've gotten so far from AI drug discovery, and ho",
+      "url": "https://x.com/anselmlevskaya/status/2088915496632807759",
+      "published_at": "2026-08-16T09:07:19Z",
+      "updated_at": "2026-08-16T09:07:19Z",
+      "creators": [
+        "Anselm Levskaya"
+      ],
+      "language": "en",
+      "abstract_or_text": "Here's recent apt commentary (open) and paper (paywall) on how little we've gotten so far from AI drug discovery, and how companies are applying AI to the parts of therapeutic development least likely to move the needle: https://www.science.org/content/blog-post/so-how-ai-drug-discovery-doing-really https://www.nature.com/articles/s41573-026-01496-2",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 60,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 37,
+        "repost_count": 5,
+        "reply_count": 2,
+        "quote_count": 2
+      },
+      "metadata": {
+        "post_id": "2088915496632807759",
+        "username": "anselmlevskaya",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089770351827816669",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@kaanbuildsai：CAPRI shows that LLM-generated proof edits can be audited without breaking Isabelle's trust model. The workflow records ",
+      "url": "https://x.com/kaanbuildsai/status/2089770351827816669",
+      "published_at": "2026-08-18T17:44:12Z",
+      "updated_at": "2026-08-18T17:44:12Z",
+      "creators": [
+        "Kaan Can Guven"
+      ],
+      "language": "en",
+      "abstract_or_text": "CAPRI shows that LLM-generated proof edits can be audited without breaking Isabelle's trust model. The workflow records every prompt, candidate, and hash, then runs a separate contract checker that only allows edits flagged in a machine-readable edit contract.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 59,
+      "tags": [
+        "研究发布"
+      ],
+      "evidence_flags": [
+        "breaking"
+      ],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "研究发布",
+      "metrics": {
+        "like_count": 0,
+        "repost_count": 0,
+        "reply_count": 0,
+        "quote_count": 0
+      },
+      "metadata": {
+        "post_id": "2089770351827816669",
+        "username": "kaanbuildsai",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089496249376342119",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@DanKornas：Formalizing a math problem in Lean usually starts with tedious translation. This repo handles that first pass. MathCode ",
+      "url": "https://x.com/DanKornas/status/2089496249376342119",
+      "published_at": "2026-08-17T23:35:01Z",
+      "updated_at": "2026-08-17T23:35:01Z",
+      "creators": [
+        "Dan Kornas"
+      ],
+      "language": "en",
+      "abstract_or_text": "Formalizing a math problem in Lean usually starts with tedious translation. This repo handles that first pass. MathCode is a terminal AI coding assistant that turns plain-language math problems into Lean 4 theorems and attempts formal proofs.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 59,
+      "tags": [
+        "工具与实践"
+      ],
+      "evidence_flags": [],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "工具与实践",
+      "metrics": {
+        "like_count": 22,
+        "repost_count": 3,
+        "reply_count": 2,
+        "quote_count": 0
+      },
+      "metadata": {
+        "post_id": "2089496249376342119",
+        "username": "DanKornas",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
+      }
+    },
+    {
+      "id": "x:2089757528263721292",
+      "channel": "aivoices",
+      "related_channels": [],
+      "item_type": "social_post",
+      "source": "X",
+      "title": "@curiouswavefn：An unusual and central feature of this work is that the theorem, proof, and formalization were produced through an AI-le",
+      "url": "https://x.com/curiouswavefn/status/2089757528263721292",
+      "published_at": "2026-08-18T16:53:15Z",
+      "updated_at": "2026-08-18T16:53:15Z",
+      "creators": [
+        "Ash Jogalekar"
+      ],
+      "language": "en",
+      "abstract_or_text": "An unusual and central feature of this work is that the theorem, proof, and formalization were produced through an AI-led workflow under human direction. OpenAI Codex generated the initial candidate argument and, after iterative repair, the Lean formalization. Lean’s kernel accepted the exact final theorem with no project-defined axioms or admitted lemmas.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 55,
+      "tags": [
+        "工具与实践"
+      ],
+      "evidence_flags": [],
+      "publication_status": "public_post",
+      "rank": 0,
+      "featured": false,
+      "category": "工具与实践",
+      "metrics": {
+        "like_count": 1,
+        "repost_count": 0,
+        "reply_count": 0,
+        "quote_count": 0
+      },
+      "metadata": {
+        "post_id": "2089757528263721292",
+        "username": "curiouswavefn",
+        "query_kind": "topics",
+        "harvest": "grok.x.search"
       }
     }
   ]

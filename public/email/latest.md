@@ -1,6 +1,6 @@
 # AIxDaily · 2026-08-19
 
-今日精选：AI × Chem 16 项，AI × Bio 14 项，AI × Math 7 项，AI Voices 1 项，Engineering 8 项。今日五频道共同日期为8月19日。科研栏目以预印本为主：化学聚焦分子生成横向评测、复杂天然产物逆合成与晶体配体坐标验证；生物关注表型—基因关联外部核验和人群级EHR模型；数学考察可机检构造、缺失前提推理及概率逻辑护栏。入选条目中未见同行评议论文。AI声音仅有一篇NVIDIA公开技术博客，缺少具体机制与评测；工程栏目集中于软件发布。
+今日精选：AI × Chem 16 项，AI × Bio 14 项，AI × Math 7 项，AI Voices 10 项，Engineering 8 项。今日五频道共同日期为8月19日。科研栏目以预印本为主：化学聚焦分子生成横向评测、复杂天然产物逆合成与晶体配体坐标验证；生物关注表型—基因关联外部核验和人群级EHR模型；数学考察可机检构造、缺失前提推理及概率逻辑护栏。入选条目中未见同行评议论文。AI Voices 首次写入 Grok 检索的公开帖，覆盖蛋白结合剂实验声明、强化学习训练暂停、矩阵乘法指数新纪录与形式化数论结果。工程栏目集中于软件发布。
 
 ## AI × Chem
 
@@ -34,9 +34,11 @@
 
 ## AI Voices
 
-采集 17，候选 17，精选 1。来源状态：X: RuntimeError: HTTP 402 额度不足，请在 X Developer Console 充值 credits
+采集 42，候选 42，精选 10。来源状态：各来源已完成
 
-- [How AI Coding Agents Can Unlock Materials Simulation with NVIDIA ALCHEMI Toolkit](https://developer.nvidia.com/blog/how-ai-coding-agents-can-unlock-materials-simulation-with-nvidia-alchemi-toolkit/) — NVIDIA 官方技术博客探讨 AI 编程智能体如何借助 ALCHEMI Toolkit 促进材料模拟；可见导语将原子尺度模拟概括为三项要求：科学知识、计算高效的模拟实现和可访问的接口。
+- [@AnthropicAI：Many drugs work by binding to a specific target in the body and blocking or changing what it does. An important first st](https://x.com/AnthropicAI/status/2089842387845804246) — Anthropic 称在专家撰写的蛋白设计提示下，Claude 对15个靶点中的14个自主设计了全新蛋白结合剂，并由 Adaptyv Bio 与 Twist Bioscience 独立合成与测试。
+- [@OpenAI：As models become more capable, the risks associated with developing and testing them internally also grow. We temporaril](https://x.com/OpenAI/status/2089777845187031262) — OpenAI 称因内部开发与测试风险上升，已暂停拟部署模型的强化学习训练两周，最大规模前沿强化学习实验仍暂缓。
+- [@pushmeet：Matrix multiplication is the basic computational operation that powers modern computing (including AI). Yet, the theoret](https://x.com/pushmeet/status/2089717134129565763) — Pushmeet Kohli 宣布矩阵乘法指数新纪录 ω<2.371177，称由 Google DeepMind、学术合作者与 Gemini 驱动的编码智能体 AlphaEvolve 共同取得。
 
 [查看频道专页](https://zichenwang114514.github.io/ai-x-daily/channels/aivoices/)
 

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-19T02:27:02+00:00",
+  "generated_at": "2026-08-19T07:01:38+00:00",
   "timezone": "Asia/Shanghai",
   "metrics": [
     "selected",
@@ -425,9 +425,9 @@
     {
       "date": "2026-08-19",
       "channel": "aivoices",
-      "fetched": 17,
-      "candidates": 17,
-      "selected": 1,
+      "fetched": 42,
+      "candidates": 42,
+      "selected": 10,
       "kind": "json",
       "href": "data/channels/aivoices/archive/2026-08-19.json"
     },
