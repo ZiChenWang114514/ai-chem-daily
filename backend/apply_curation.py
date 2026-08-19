@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 
 from aix_pipeline import LIMITS
-from daily_digest import archive_index_entry, clean_text, load_json, looks_cjk, publish_tags, render_email, slim_public_item, upsert_archive_index, write_json
+from daily_digest import archive_index_entry, author_line, clean_text, load_json, looks_cjk, publish_tags, render_email, slim_public_item, upsert_archive_index, write_json
 
 
 ALLOWED_CATEGORIES = {"方法与模型", "分子与药物发现", "结构与生物", "材料与催化"}
@@ -71,13 +71,8 @@ def main() -> int:
         reviewed_tags = [clean_text(value) for value in (item.get("tags") or []) if clean_text(value)]
         paper["tags"] = publish_tags(category, reviewed_tags)
         paper["evidence_flags"] = [clean_text(value) for value in (item.get("evidence_flags") or []) if clean_text(value)][:5]
-        authors = paper.get("authors") or []
-        if not authors:
-            paper["author_line"] = "作者信息暂缺"
-        elif len(authors) <= 3:
-            paper["author_line"] = ", ".join(authors)
-        else:
-            paper["author_line"] = f"{', '.join(authors[:3])} 等 {len(authors)} 人"
+        authors = paper.get("authors") or paper.get("creators") or []
+        paper["author_line"] = author_line(authors)
         papers.append(paper)
 
     latest["items"] = [slim_public_item(paper, include_abstract=True, clip_release=True) for paper in papers]

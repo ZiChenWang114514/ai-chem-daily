@@ -17,7 +17,7 @@ from aix_pipeline import CHANNELS, LIMITS, Runtime, fetch_openreview, fetch_x, p
 from apply_channel_curation import earlier_channel_keys, main as apply_channel_curation_main  # noqa: E402
 from apply_curation import main as apply_curation_main  # noqa: E402
 from build_channel_pages import render_channel_page  # noqa: E402
-from daily_digest import archive_index_entry, looks_cjk, parse_date, publish_tags, slim_public_item, upsert_archive_index  # noqa: E402
+from daily_digest import archive_index_entry, author_line, looks_cjk, parse_date, publish_tags, slim_public_item, upsert_archive_index  # noqa: E402
 from hub_publish import build_hub_interfaces  # noqa: E402
 from import_intake import publish_generic_digest, safe_channel, safe_date  # noqa: E402
 from import_legacy import item_id  # noqa: E402
@@ -393,7 +393,7 @@ class ChannelPageTests(unittest.TestCase):
         self.assertIn("../../data/channels/aixmath/latest.json", page)
         self.assertIn("../../assets/collection.js", render_channel_page('<body data-page="home" data-root=""><script src="assets/collection.js"></script>', "aixmath"))
         self.assertIn("../../library/", render_channel_page('<body data-page="home" data-root=""><a href="library/">收藏</a>', "aixmath"))
-        self.assertIn('aria-label="AIX每日精读首页"', render_channel_page('<body data-page="home" data-root=""><a href="./" aria-label="AIX每日精读首页">AIX每日精读</a>', "aixmath"))
+        self.assertIn('aria-label="AIxDaily 首页"', render_channel_page('<body data-page="home" data-root=""><a href="./" aria-label="AIxDaily 首页">AIxDaily</a>', "aixmath"))
         with self.assertRaises(ValueError):
             render_channel_page("<body></body>", "aixmath")
 
@@ -436,6 +436,10 @@ class LibraryPageTests(unittest.TestCase):
         self.assertIn("bindDebouncedSearch", script)
         self.assertIn("收起摘要", script)
         self.assertIn("itemAnchor", script)
+        self.assertIn("formatAuthorLine", script)
+        self.assertIn("HUB_SOURCES", script)
+        self.assertIn("medRxiv", script)
+        self.assertIn("GitHub Releases", script)
         self.assertIn("copyItemLink", script)
         self.assertIn("ArrowLeft", script)
         self.assertIn("copy-link", home)
@@ -464,7 +468,11 @@ class FrontendPerformanceTests(unittest.TestCase):
         self.assertNotIn("no-store", (ROOT / "public" / "assets" / "app.js").read_text(encoding="utf-8"))
         self.assertNotIn("no-store", task)
         self.assertIn("hero.webp", task)
-        self.assertIn("AIX每日精读", home)
+        self.assertIn("AIxDaily", home)
+        self.assertIn('id="hero-title">今日研究更新', home)
+        self.assertIn('id="channel-title">频道', home)
+        self.assertIn("history-button__chevron", home)
+        self.assertNotIn(">⌄</span>", home)
 
     def test_display_images_have_webp_companions(self):
         art = ROOT / "public" / "assets" / "art"
@@ -475,6 +483,19 @@ class FrontendPerformanceTests(unittest.TestCase):
             self.assertTrue(jpeg.exists(), jpeg)
             self.assertLess(webp.stat().st_size, 80_000)
             self.assertLess(jpeg.stat().st_size, 80_000)
+
+
+class AuthorLineTests(unittest.TestCase):
+    def test_author_line_keeps_every_name(self):
+        names = [
+            "Pedro de Sena Murteira Pinheiro",
+            "Jefferson Muniz Alves da Silva",
+            "Bárbara da Silva Mascarenhas de Jesus",
+            "Daniel Alencar Rodrigues",
+            "Lídia Moreira Lima",
+        ]
+        self.assertEqual(author_line(names), ", ".join(names))
+        self.assertNotIn("等", author_line(names))
 
 
 class ArchiveIndexContractTests(unittest.TestCase):

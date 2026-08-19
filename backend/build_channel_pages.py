@@ -28,7 +28,7 @@ def render_channel_page(source: str, channel: str) -> str:
     page = page.replace("assets/art/hero.jpg", f"assets/art/{channel}.jpg")
     page = page.replace('href="task/"', 'href="../../task/"').replace('href="api/', 'href="../../api/')
     page = page.replace('href="library/"', 'href="../../library/"')
-    page = page.replace('href="./" aria-label="AIX每日精读首页"', 'href="../../" aria-label="AIX每日精读首页"')
+    page = page.replace('href="./" aria-label="AIxDaily 首页"', 'href="../../" aria-label="AIxDaily 首页"')
     page = page.replace('href="./" aria-current="page"', 'href="../../"')
     page = page.replace('href="channels/', 'href="../')
     page = page.replace(
@@ -40,7 +40,7 @@ def render_channel_page(source: str, channel: str) -> str:
         '<a class="channel-nav__item" href="../../">',
     )
     page = page.replace('id="eyebrow">今日精选', f"id=\"eyebrow\">{kicker}")
-    page = page.replace('id="hero-title">五个频道的研究更新', f'id="hero-title">{title}')
+    page = page.replace('id="hero-title">今日研究更新', f'id="hero-title">{title}')
     if f'data-channel="{channel}"' not in page:
         raise ValueError(f"Channel page for {channel} is missing data-channel after rewrite")
     return page

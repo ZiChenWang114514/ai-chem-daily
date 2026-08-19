@@ -21,7 +21,19 @@ const state = {
   abstractsPromise: null,
   activityScheduled: false,
 };
-const SITE_NAME = "AIX每日精读";
+const SITE_NAME = "AIxDaily";
+const HUB_SOURCES = [
+  "arXiv",
+  "bioRxiv",
+  "ChemRxiv",
+  "medRxiv",
+  "Europe PMC",
+  "OpenReview",
+  "X",
+  "研究博客",
+  "GitHub Releases",
+  "官方更新日志",
+];
 const COLLECTION_KEY = AixCollection.KEY;
 const UNTAGGED_LABEL = AixCollection.UNTAGGED;
 const channelNames = {
@@ -604,8 +616,7 @@ function createItemCard(item, groupName) {
   openHint.className = "sr-only";
   openHint.textContent = "（在新窗口打开）";
   title.appendChild(openHint);
-  const creators = item.author_line || (item.creators || []).slice(0, 3).join(", ") || "作者信息暂缺";
-  fragment.querySelector(".paper-meta").textContent = `${creators} · ${(item.published_at || item.published || "日期暂缺").slice(0, 10)}`;
+  fragment.querySelector(".paper-meta").textContent = `${formatAuthorLine(item)} · ${(item.published_at || item.published || "日期暂缺").slice(0, 10)}`;
   const summary = item.summary_zh || "中文说明暂缺，请查看原始内容。";
   fragment.querySelector(".summary-zh").textContent = summary;
   const why = fragment.querySelector(".why-it-matters");
@@ -697,11 +708,36 @@ function renderItems() {
   focusItemFromHash();
 }
 
+function formatAuthorLine(item) {
+  const names = [...(item.creators || [])]
+    .map((name) => String(name || "").trim())
+    .filter(Boolean);
+  if (names.length) return names.join(", ");
+  const fallback = String(item.author_line || "").replace(/\s*等\s*\d+\s*人\s*$/u, "").trim();
+  return fallback || "作者信息暂缺";
+}
+
+function configuredSources() {
+  const channels = state.manifest?.channels || [];
+  if (page === "home") {
+    return channels.flatMap((channel) => channel.sources || []);
+  }
+  const current = channels.find((channel) => channel.id === channelId);
+  return current?.sources || [];
+}
+
 function renderSourceFilters() {
   const container = document.getElementById("source-filters");
+  if (!container) return;
   container.replaceChildren();
-  const sources = ["all", ...new Set(payloadItems().map((item) => item.source).filter(Boolean))];
-  sources.forEach((source) => {
+  const seen = new Set();
+  const sources = [];
+  for (const source of [...HUB_SOURCES, ...configuredSources(), ...payloadItems().map((item) => item.source)]) {
+    if (!source || seen.has(source)) continue;
+    seen.add(source);
+    sources.push(source);
+  }
+  ["all", ...sources].forEach((source) => {
     const button = document.createElement("button");
     button.className = `filter-chip${source === state.source ? " is-active" : ""}`;
     button.type = "button";
@@ -746,7 +782,7 @@ function renderHero(payload) {
   const title = document.getElementById("hero-title");
   if (title) {
     title.textContent = isHome
-      ? (history ? "这一天的研究更新" : "五个频道的研究更新")
+      ? (history ? "这一天的研究更新" : "今日研究更新")
       : (channelTitles[channelId] || channelNames[channelId] || payload.title || "每日精选");
   }
   setText("papers-title", history ? "当日内容" : "今日内容");
@@ -1078,6 +1114,7 @@ function visibleLibraryRecords() {
       record.abstract_or_text,
       record.source,
       record.author_line,
+      ...(record.creators || []),
       record.category,
       record.channel_name,
       ...(record.tags || []),

@@ -7,7 +7,7 @@ import argparse
 from pathlib import Path
 
 from aix_pipeline import CHANNELS, LIMITS, THRESHOLDS, natural_key
-from daily_digest import archive_index_entry, clean_text, load_json, looks_cjk, publish_tags, slim_public_item, write_json
+from daily_digest import archive_index_entry, author_line, clean_text, load_json, looks_cjk, publish_tags, slim_public_item, write_json
 from publish_daily import SITE_URL, build as build_daily
 
 
@@ -94,8 +94,8 @@ def main() -> int:
             "featured": rank <= 3,
         })
         item["published"] = str(item.get("published_at", ""))[:10]
-        creators = item.get("creators") or []
-        item["author_line"] = ", ".join(creators[:3]) + (f" 等 {len(creators)} 人" if len(creators) > 3 else "") if creators else "作者信息暂缺"
+        creators = item.get("creators") or item.get("authors") or []
+        item["author_line"] = author_line(creators)
         output.append(slim_public_item(item, include_abstract=True, clip_release=True))
 
     latest["items"] = output

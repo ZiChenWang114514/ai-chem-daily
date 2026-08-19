@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AIX每日精读：化学、生物、数学、公开观点与工程更新的每日精选。">
+  <meta name="description" content="AIxDaily：化学、生物、数学、公开观点与工程更新的每日精选。">
   <meta name="theme-color" content="#122033">
-  <meta property="og:title" content="AIX每日精读">
+  <meta property="og:title" content="AIxDaily">
   <meta property="og:description" content="化学、生物、数学、公开观点与工程更新的每日精选。">
   <meta property="og:image" content="https://zichenwang114514.github.io/ai-x-daily/assets/art/aixchem.jpg">
-  <title>AIX每日精读</title>
+  <title>AIxDaily</title>
   <script>
     try {
       var pref = localStorage.getItem("aix-daily.theme.v1");
@@ -33,17 +33,17 @@
   <header class="site-header">
     <div class="shell site-header__inner">
       <nav class="topbar" aria-label="主要导航">
-        <a class="brand" href="../../" aria-label="AIX每日精读首页">
+        <a class="brand" href="../../" aria-label="AIxDaily 首页">
           <img class="brand__mark" src="../../assets/logo.svg" width="36" height="36" alt="">
-          <span class="brand__name">AIX每日精读</span>
+          <span class="brand__name">AIxDaily</span>
         </a>
         <div class="topbar__actions">
           <button class="theme-button" data-theme-button type="button" aria-label="外观：跟随系统">外观</button>
           <a class="library-link" href="../../library/">收藏<span class="library-count" data-library-count hidden></span></a>
           <div class="history-anchor">
-            <button class="history-button" id="history-button" type="button" aria-expanded="false" aria-controls="history-panel">
+            <button class="history-button" id="history-button" type="button" aria-expanded="false" aria-controls="history-panel" aria-haspopup="true">
               历史日报
-              <span aria-hidden="true">⌄</span>
+              <span class="history-button__chevron" aria-hidden="true"></span>
             </button>
             <div class="history-panel" id="history-panel" hidden>
               <div class="history-panel__head">
@@ -96,7 +96,7 @@
   <main class="shell main-content">
     <section class="channel-overview" data-home-only aria-labelledby="channel-title">
       <div class="section-heading">
-        <h2 id="channel-title">五个频道</h2>
+        <h2 id="channel-title">频道</h2>
       </div>
       <div class="channel-cards" id="channel-cards" aria-live="polite"></div>
     </section>
@@ -154,7 +154,7 @@
   <footer class="site-footer">
     <div class="shell footer-grid">
       <div>
-        <strong>AIX每日精读</strong>
+        <strong>AIxDaily</strong>
         <p>化学、生物、数学、公开观点与工程更新的每日精选。</p>
       </div>
       <div class="footer-note">

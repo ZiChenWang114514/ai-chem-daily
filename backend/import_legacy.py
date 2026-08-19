@@ -211,7 +211,7 @@ def compose_daily(day: str) -> dict[str, Any]:
         "schema_version": "2.0",
         "date": day,
         "generated_at": existing.get("generated_at") or datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "title": "AIX每日精读",
+        "title": "AIxDaily",
         "overview_zh": overview,
         "channel_highlights": highlights,
         "channels": channels,

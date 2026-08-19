@@ -222,6 +222,18 @@ body:not([data-page="home"]) [data-home-only] { display: none !important; }
 }
 .history-button:hover,
 .history-button:focus-visible { color: #fff; }
+.history-button__chevron {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  transform-origin: 50% 40%;
+  transition: transform 0.18s ease;
+}
+.history-button[aria-expanded="true"] .history-button__chevron {
+  transform: rotate(180deg);
+}
 .history-panel {
   position: absolute;
   top: calc(100% + 10px);
@@ -717,7 +729,13 @@ body:not([data-page="home"]) [data-home-only] { display: none !important; }
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.paper-meta { margin: 7px 0 8px; color: var(--sub); font-size: 12px; }
+.paper-meta {
+  margin: 7px 0 8px;
+  color: var(--sub);
+  font-size: 12px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
 .tag-list { display: flex; gap: 6px; flex-wrap: wrap; }
 .tag {
   padding: 3px 8px;

@@ -69,8 +69,18 @@ const AixCollection = (() => {
     return String(item?.title || "").trim() || "未命名条目";
   }
 
+  function formatAuthorLine(item) {
+    const names = [...(item.creators || [])]
+      .map((name) => String(name || "").trim())
+      .filter(Boolean);
+    if (names.length) return names.join(", ");
+    const fallback = String(item.author_line || "").replace(/\s*等\s*\d+\s*人\s*$/u, "").trim();
+    return fallback;
+  }
+
   function toRecord(item, existing) {
     const channel = item.channel || existing?.channel || document.body.dataset.channel || "";
+    const creators = (item.creators && item.creators.length ? item.creators : existing?.creators) || [];
     return {
       id: key(item),
       title: titleOf(item),
@@ -80,7 +90,8 @@ const AixCollection = (() => {
       channel_name: item.channel_name || existing?.channel_name || channelName(channel),
       category: item.category || existing?.category || "",
       tags: [...new Set((item.tags || existing?.tags || []).filter(Boolean))],
-      author_line: item.author_line || existing?.author_line || "",
+      creators,
+      author_line: formatAuthorLine({ creators, author_line: item.author_line || existing?.author_line || "" }),
       published: String(item.published_at || item.published || existing?.published || "").slice(0, 10),
       summary_zh: item.summary_zh || existing?.summary_zh || "",
       why_it_matters_zh: item.why_it_matters_zh || existing?.why_it_matters_zh || "",

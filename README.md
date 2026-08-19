@@ -1,6 +1,6 @@
-# AIX每日精读
+# AIxDaily
 
-AIX每日精读在 Windows 本地完成每日采集与 Codex 审阅，使用 GitHub Pages 发布。AI × Chem、AI × Bio、AI × Math、AI Voices 与 Engineering 五个频道均已启用。
+AIxDaily 在 Windows 本地完成每日采集与 Codex 审阅，使用 GitHub Pages 发布。AI × Chem、AI × Bio、AI × Math、AI Voices 与 Engineering 五个频道均已启用。
 
 ## 每日流程
 

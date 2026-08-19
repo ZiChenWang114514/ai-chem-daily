@@ -182,8 +182,8 @@ def looks_cjk(value: Any) -> bool:
     return marks >= 8 and marks / max(len(text), 1) >= 0.18
 
 
-SITE_NAME = "AIX每日精读"
-SITE_TITLE = "AIX每日精读"
+SITE_NAME = "AIxDaily"
+SITE_TITLE = "AIxDaily"
 RELEASE_ABSTRACT_LIMIT = 500
 JUNK_TAG_STEMS = {
     "chem",
@@ -682,11 +682,8 @@ def select_papers(candidates: list[Paper], limit: int) -> tuple[list[Paper], str
 
 
 def author_line(authors: list[str]) -> str:
-    if not authors:
-        return "作者信息暂缺"
-    if len(authors) <= 3:
-        return ", ".join(authors)
-    return f"{', '.join(authors[:3])} 等 {len(authors)} 人"
+    names = [clean_text(name) for name in (authors or []) if clean_text(name)]
+    return ", ".join(names) if names else "作者信息暂缺"
 
 
 def digest_payload(
