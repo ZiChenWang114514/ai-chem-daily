@@ -1,56 +1,10 @@
 {
   "schema_version": "2.0",
-  "date": "2026-08-20",
+  "date": "2026-08-21",
   "channel": "aixchem",
-  "generated_at": "2026-08-20T06:14:30+00:00",
+  "generated_at": "2026-08-20T23:14:45+00:00",
   "count": 60,
   "items": [
-    {
-      "id": "biorxiv:10.64898/2026.08.14.744939",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixbio",
-        "aixmath"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Systematic Benchmarking of AI-Based Molecular Generation Models for Structure-Based Drug Design",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744939",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Kumar, H.",
-        "Yang, Z.",
-        "Yu, Y.",
-        "Wen, J.",
-        "Kim, P.",
-        "zhou, X."
-      ],
-      "language": "en",
-      "abstract_or_text": "Generative artificial intelligence is accelerating molecular design, yet the relative suitability of available models for different targets and stages of preclinical drug discovery remains unclear. Here we benchmarked 12 molecular generation and optimization methods across 176 curated protein ligand systems spanning diverse therapeutic target classes, with experimentally validated ligands providing reference chemical space. The evaluated methods encompassed pocket conditioned 3D generation, diffusion and flow based modeling, autoregressive construction, reference conditioned optimization and synthesis-aware design. Performance was assessed using operational robustness, chemical validity, uniqueness, molecular and scaffold diversity, quantitative estimate of drug likeness, synthetic accessibility, docking, physicochemical and ADMET properties, and computational resource requirements. The results revealed architecture dependent trade off such as receptor conditioned methods exploited binding pocket geometry, flow based approaches enabled efficient sampling, reference-conditioned methods favored analogue generation, and synthesis-aware approaches improved chemical feasibility, but no method consistently optimized all criteria. To address the functional potential of generated molecules, we further developed a state aware functional classifier (SAFC) that integrates molecular dynamics derived receptor ensembles, ensemble docking and protein ligand interaction graphs. SAFC provided dynamics aware functional activity rankings for generated molecules that were partly complementary to docking, drug likeness and synthetic accessibility scores. These findings support hybrid, stage specific deployment of generative models rather than reliance on any single architecture or evaluation metric. This study provides practical guidelines for generative AI based preclinical drug development processes.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 92,
-      "tags": [
-        "分子与药物发现"
-      ],
-      "evidence_flags": [
-        "benchmark",
-        "experimental",
-        "clinical",
-        "evaluation",
-        "performance"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "分子与药物发现",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.14.744939",
-        "arxiv_id": ""
-      }
-    },
     {
       "id": "arxiv:2608.18982v1",
       "channel": "aixchem",
@@ -139,6 +93,88 @@
       }
     },
     {
+      "id": "biorxiv:10.64898/2026.08.17.745351",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Resolution-standardized evaluation of ligand atomic coordinates in crystallographic structures using machine learning",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.17.745351",
+      "published_at": "2026-08-18",
+      "updated_at": "2026-08-18",
+      "creators": [
+        "Miyaguchi, I.",
+        "Hata, H.",
+        "Kuribayashi, T.",
+        "Takahashi, S.",
+        "Kashima, A.",
+        "Murasaki, K.",
+        "Matsumoto, S.",
+        "Terayama, K.",
+        "Ohta, M.",
+        "Ikeguchi, M."
+      ],
+      "language": "en",
+      "abstract_or_text": "Accurate assessment of ligand coordinate-density consistency across different resolutions remains challenging in macromolecular crystallography. We introduce the atomic Box Correlation Coefficient (aBCC), an atom-level metric for evaluating the consistency between ligand atomic coordinates and electron density in a resolution-standardized framework. To predict aBCC values from electron-density maps, we developed QAEmap, a machine-learning model based on three-dimensional convolutional neural networks (3D-CNNs). The model was trained using Fourier-truncated electron-density maps and corresponding ligand coordinates generated from high-resolution structures in the Protein Data Bank. It was evaluated using both Fourier-truncated electron-density maps and experimentally determined PDB structures. was evaluated using both Fourier-truncated electron-density maps and experimentally determined PDB structures.The prediction accuracy gradually decreased with decreasing resolution, but remained reliable up to [~]3.5 [A]. These results demonstrate that aBCC enables resolution-standardized atom-wise evaluation of coordinate-density consistency across different resolutions and provide a foundation for further development and refinement of machine learning-based coordinate validation. SynopsisWe introduce the atomic box correlation coefficient (aBCC), a machine learning-based metric for the resolution-standardized atom-level evaluation of ligand coordinate-density consistency in crystallographic structures. aBCC provides a common framework for assessing and communicating the local coordinate reliability between structural biologists and researchers in structure-based drug discovery.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 84,
+      "tags": [
+        "分子与药物发现"
+      ],
+      "evidence_flags": [
+        "experimental",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.17.745351",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.19.745667",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "PandaDock: An Open-Source Molecular Docking Platform with Flexible-Ligand Search and Equivariant Neural Scoring",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.19.745667",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
+      "creators": [
+        "Panda, P. K."
+      ],
+      "language": "en",
+      "abstract_or_text": "We present PandaDock, an open-source molecular docking platform implementing flexible-ligand conformational search with analytic gradients, a precomputed affinity grid engine, specialized modules for induced-fit, metal-coordination and tethered docking, and an SE(3)-equivariant graph neural network scoring function trained at scale. Ligand flexibility is represented as a torsion tree and pose parameters are optimized by Monte Carlo with Metropolis acceptance refined by L-BFGS, with rotational gradients obtained in closed form through the derivative of the SO(3) exponential map rather than by finite differences. Affinity grids are built by a blocked neighbor-selection scheme that is exact and 5.6-9.7x faster than dense evaluation, and may be cached across ligands sharing a receptor and site, reducing a six-ligand series from 29.3 s to 10.4 s. On 814 protein-ligand complexes spanning 14 target families, PandaDock recovers a pose within 2 Angstroms of the crystal geometry in 33.7% of cases at rank 1 and in 57.0% of cases within the returned ensemble. The GNN scoring function is trained on 741,706 co-folded complexes from SAIR under target-disjoint splits, reaching a Pearson r of 0.407 on 90,219 held-out complexes and transferring to 202 independent crystal structures with measured Ki, Kd, IC50 or EC50 at r = 0.467. We report the model against three controls, a target-mean predictor, a ligand-descriptor-only baseline, and within-target correlations, and document both where it performs and where it does not, including its unsuitability for pose rescoring. On an independent 30-compound series against a single GABAA receptor target, PandaDock's empirical scoring function ranks 8th of 25 methods evaluated, ahead of every AutoDock Vina and Vinardo configuration tested, while the GNN scores below Vina, consistent with the within-target ceiling identified on SAIR. At full scale on the PDBbind v2020 refined set (n = 4,640, native crystal poses), the fully independent SAIR model reaches r = 0.531, and a dedicated model trained on PDBbind alone under a target-disjoint split reaches r = 0.690 on its own held-out test complexes, the strongest evidence in this work that PandaDock's affinity predictions generalize. PandaDock is distributed under an open-source license at https://github.com/pritampanda15/PandaDock with a complete command-line interface and a reproducible benchmarking harness.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 83,
+      "tags": [
+        "分子与药物发现"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "github",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.19.745667",
+        "arxiv_id": ""
+      }
+    },
+    {
       "id": "chemrxiv:10.26434/chemrxiv.15007537/v1",
       "channel": "aixchem",
       "related_channels": [],
@@ -182,36 +218,42 @@
       }
     },
     {
-      "id": "chemrxiv:10.26434/chemrxiv-2025-t1gtk/v6",
+      "id": "chemrxiv:10.26434/chemrxiv.15005684/v2",
       "channel": "aixchem",
-      "related_channels": [],
+      "related_channels": [
+        "aixbio"
+      ],
       "item_type": "paper",
       "source": "ChemRxiv",
-      "title": "Advances in Machine Learning, Limitations, and Performance Insight of Commonly used Computation Chemistry Methods for Solvation Free Energy Estimation",
-      "url": "https://doi.org/10.26434/chemrxiv-2025-t1gtk/v6",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-17",
+      "title": "FRIE: Machine Learning Models for Interfragment Interaction Energies among Amino Acid Residues Based on Quantum Mechanical Data from FMODB",
+      "url": "https://doi.org/10.26434/chemrxiv.15005684/v2",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
       "creators": [
-        "Chengze Yang"
+        "Tomohiro Sato",
+        "Chiduru Watanabe",
+        "Yoshio Okiyama",
+        "Teruki Honma"
       ],
       "language": "en",
-      "abstract_or_text": "The accurate calculation of Gibbs free energy is a cornerstone of modern computational chemistry, essential for predicting the spontaneity of chemical reactions and the stability of molecular systems. Solvation free energy change is a fundamental thermodynamic quantity that describes the free energy change associated with transferring a solute from the gas phase into a solvent. It is particularly useful for estimating reaction rates and pathways of organic reactions, most of which occur in the liquid phase, and has important applications in organic synthesis, biochemistry, and drug discovery. 1 Central and persistent challenges are the choice of implicit and explicit models, delicate balance between achieving high accuracy in quantum mechanical descriptions of electronic structure and performing the extensive configurational sampling required to capture entropic effects, continual evolving of foundational statistical mechanics methods such as Free Energy Perturbation (FEP) and Thermodynamic Integration (TI) to more sophisticated multiscale and hybrid approaches for higher computational efficiency. 2,3,4 This report provides an overview of the theoretical frameworks, implementations, and predictive accuracy of commonly used methods for calculating solvation free energy , assessing classical alchemical methods, quantum chemistry based methods, and hybrid QM/MM approaches, while also addressing practical considerations. Finally, we examine the potential transformative role of emerging methods such as machine learning, which are poised to accelerate these calculations, making rigorous, large-scale free energy simulations feasible and better balancing the cost-accuracy trade-off that has long constrained the field. 5,6",
+      "abstract_or_text": "In recent years, quantum mechanical-based methods have offered superior accuracy for drug discovery; however, their high computational costs have limited their application in the late stages of molecular optimization. To overcome this efficiency bottleneck and enable rapid, large-scale structural biology assessments, in this study, we developed Fragment Regression Model for Interaction Energy (FRIE), a machine learning framework designed to predict interfragment interaction energies calculated using the fragment molecular orbital (FMO) method. This model focuses exclusively on interactions between amino acid residues within protein structures and establishes a robust baseline for macromolecular evaluation. Using the comprehensive FMO database named FMODB (https://drugdesign.riken.jp/FMODB/), we compiled a dataset comprising over 11 million amino acid residue pairs derived from 6,329 unique Protein Data Bank entries. Heavy atom distance matrices and formal charges were extracted as molecular explanatory descriptors to train and compare multiple machine learning algorithms. Among them, the Extra Trees Regressor model exhibited the highest predictive precision, achieving an average R 2 of 0.914 and an RMSE of 1.953 kcal/mol across 210 amino acid residue pairs. Furthermore, pair interaction energy decomposition analysis demonstrated that FRIE performed exceptionally well in predicting electrostatic interactions but encountered relatively greater difficulty with aromatic systems. Finally, external validation on AlphaFold2-predicted protein structures yielded high accuracy (R 2 ≥ 0.958), proving the model’s robustness and its potential for rapid evaluation of model structures, effectively bridging quantum chemical accuracy and computational efficiency.",
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "quality_score": 82,
+      "quality_score": 81,
       "tags": [
-        "分子与药物发现"
+        "结构与生物"
       ],
       "evidence_flags": [
-        "performance"
+        "dataset",
+        "evaluation"
       ],
       "publication_status": "preprint",
       "rank": 0,
       "featured": false,
-      "category": "分子与药物发现",
+      "category": "结构与生物",
       "metrics": {},
       "metadata": {
-        "doi": "10.26434/chemrxiv-2025-t1gtk/v6",
+        "doi": "10.26434/chemrxiv.15005684/v2",
         "arxiv_id": ""
       }
     },
@@ -253,46 +295,143 @@
       }
     },
     {
-      "id": "biorxiv:10.64898/2026.08.17.745351",
+      "id": "biorxiv:10.1101/2025.09.29.679228",
       "channel": "aixchem",
       "related_channels": [],
       "item_type": "paper",
       "source": "bioRxiv",
-      "title": "Resolution-standardized evaluation of ligand atomic coordinates in crystallographic structures using machine learning",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.17.745351",
-      "published_at": "2026-08-18",
-      "updated_at": "2026-08-18",
+      "title": "Tyrosine phosphorylation and the inhibitory C-terminal SAM domain moderately affect transient interactions in a EphA2 cytoplasmic fragment in solution: A combined experimental and molecular modeling study.",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.09.29.679228",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
       "creators": [
-        "Miyaguchi, I.",
-        "Hata, H.",
-        "Kuribayashi, T.",
-        "Takahashi, S.",
-        "Kashima, A.",
-        "Murasaki, K.",
-        "Matsumoto, S.",
-        "Terayama, K.",
-        "Ohta, M.",
-        "Ikeguchi, M."
+        "Shrestha, P.",
+        "Sahoo, A. R.",
+        "Iannucci, M.",
+        "Willard, B.",
+        "Buck, M."
       ],
       "language": "en",
-      "abstract_or_text": "Accurate assessment of ligand coordinate-density consistency across different resolutions remains challenging in macromolecular crystallography. We introduce the atomic Box Correlation Coefficient (aBCC), an atom-level metric for evaluating the consistency between ligand atomic coordinates and electron density in a resolution-standardized framework. To predict aBCC values from electron-density maps, we developed QAEmap, a machine learning model based on three-dimensional convolutional neural networks (3D-CNNs). The model was trained using Fourier-truncated electron-density maps and corresponding ligand coordinates generated from high-resolution structures in the Protein Data Bank. It was evaluated using both Fourier-truncated electron-density maps and experimentally determined PDB structures. was evaluated using both Fourier-truncated electron-density maps and experimentally determined PDB structures.The prediction accuracy gradually decreased with decreasing resolution, but remained reliable up to ~3.5 angstrom. These results demonstrate that aBCC enables resolution-standardized atom-wise evaluation of coordinate-density consistency across different resolutions and provide a foundation for further development and refinement of machine learning-based coordinate validation.",
+      "abstract_or_text": "Eph receptors, the largest family of receptor tyrosine kinases (RTKs), orchestrate diverse developmental processes, including axon guidance, tissue patterning, and cell positioning, while also contributing to adult functions such as synaptogenesis and tissue homeostasis. Proteolytic cleavage of Eph receptors by neurodegeneration-associated proteases generates a membrane-detached intracellular region (ICR) fragment whose structural organization and signaling remain poorly understood. Here, we characterize a model for such a fragment from EphA2 and discover that the juxtamembrane region, the kinase domain, and the C terminally linked sterile motif (SAM) domain comprise a configurational ensemble of domain contacts and orientations which inhibit the intermolecular interactions and tyrosine cross-phosphorylation. Recombinant EphA2 ICR expressed in E. coli retains catalytic activity and undergoes autophosphorylation at multiple tyrosine residues which have previously been identified in eukaryotic systems. Phosphorylation weakens intramolecular interactions, as measured by microscale thermophoresis, indicating a phosphorylation-dependent remodeling of the ICR. While AlphaFold2-Multimer (AF2M) and Alphafold3 (AF3) predictions as well as available crystal structures provide only limited insight into these configurational states, coarse-grained molecular dynamics simulations using the Martini 3 force field reveal highly dynamic and predominantly transient interactions between the kinase and SAM domains that cluster at two discrete regions on the kinase surface. NMR spectroscopy of isotopically labeled EphA2 SAM suggests non-canonical intramolecular contacts that preserve the canonical SAM interaction interface for binding of partner proteins. Addition of the SHIP2 SAM domain promotes formation of the canonical EphA2 and SHIP2 SAM complex while also revealing previously unrecognized interactions of the kinase domain on the SHIP2 SAM domain. Collectively, these findings establish the EphA2 ICR as a dynamic, phosphorylation-responsive signaling module in which transient intramolecular interactions regulate accessibility of several interfaces for binding. Thus, the proteolytically released EphA2 intracellular fragment is likely to have distinct characteristics in cancer and neurodegenerative disease, compared to the membrane bound form in the full receptor.",
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "quality_score": 81,
+      "quality_score": 80,
       "tags": [
-        "方法与模型"
+        "材料与催化"
       ],
       "evidence_flags": [
         "experimental",
+        "release"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.1101/2025.09.29.679228",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.13.744307",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Delivery of small interfering RNA and antisense oligonucleotides across the blood-brain barrier with monovalent transferrin receptor 1 binding VHH-Fc fusion proteins",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.13.744307",
+      "published_at": "2026-08-18",
+      "updated_at": "2026-08-18",
+      "creators": [
+        "Huggins, I. J.",
+        "Carrer, M.",
+        "Santos, J. A.",
+        "Fazio, M.",
+        "Holguin, B.",
+        "Phi, S.",
+        "Prakash, T. P.",
+        "Afetian, M.",
+        "Bakooshli, M. A.",
+        "Klein, S. K.",
+        "Galindo-Murillo, R.",
+        "Rodriguez, A. A.",
+        "Kamme, F.",
+        "Gaus, H.",
+        "Chappell, A.",
+        "Bravo-Hernandez, M.",
+        "Pinto-Duarte, A.",
+        "Quinones, R.",
+        "Jacquot, G.",
+        "David, M.",
+        "Rigo, F.",
+        "Kordasiewicz, H. B.",
+        "Zhao, H. T.",
+        "Jafar-nejad, P.",
+        "Tanowitz, M.",
+        "Swayze, E. E."
+      ],
+      "language": "en",
+      "abstract_or_text": "The blood-brain barrier (BBB) is a highly selective cell layer that restricts the diffusion of diverse chemical entities into the central nervous system (CNS) from systemic circulation. Macromolecular therapeutics including oligonucleotides, peptides, and monoclonal antibodies exhibit only minimal brain distribution after systemic dosing due to exclusion by the BBB. Receptor-mediated transcytosis (RMT) has evolved to transport vital cargo across the BBB through a specialized vesicular transport pathway. Transferrin receptor 1 (TfR1) shuttles transferrin, its natural ligand, across the BBB, as well as TfR1-binding IgG antibodies and conjugates. Here, we describe a novel monovalent TfR1-binding VHH-Fc for the delivery of oligonucleotide cargo, including antisense oligonucleotides (ASOs) and small interfering RNAs (siRNAs) across the BBB in rodents and non-human primates (NHPs), supporting the translational potential of the VHH-antisense RMT platform for the treatment of neurological disorders. We explore the role of binding affinity, conjugation site, drug-antibody ratio (DAR), and conjugation chemistry, and determine that binding affinity, DAR and conjugation site are major determinants of RMT capacity and brain activity of siRNAs delivered across the BBB. Graphical Abstract / Highlights O_FIG O_LINKSMALLFIG WIDTH=200 HEIGHT=81 SRC=\"FIGDIR/small/744307v1_ufig1.gif\" ALT=\"Figure 1\"> View larger version (24K): org.highwire.dtl.DTLVardef@285ecdorg.highwire.dtl.DTLVardef@682155org.highwire.dtl.DTLVardef@647ebeorg.highwire.dtl.DTLVardef@1bcec25_HPS_FORMAT_FIGEXP M_FIG C_FIG - Anti-TfR1 (-TfR1) VHH ligands formatted as heterodimeric, 2-chain monovalent VHH-Fc were engineered for conjugation to siRNA and ASO. - Systematic in vivo evaluation of VHH clones spanning a range of TfR1 binding affinities revealed a relationship between TfR1 binding affinity and the CNS activity of intravenously dosed VHH-Fc-siRNA conjugates. - By optimizing TfR1 binding affinity, conjugation site, and conjugation chemistry, we identified VHH-Fc-siRNA molecules that efficiently cross the BBB via receptor-mediated transcytosis and reduce target mRNA across CNS tissues, including deeper brain regions, after intravenous (IV) or subcutaneous (SC) dosing in mice and non-human primates (NHPs).",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 80,
+      "tags": [
+        "分子与药物发现"
+      ],
+      "evidence_flags": [
+        "in vivo",
         "evaluation"
       ],
       "publication_status": "preprint",
       "rank": 0,
       "featured": false,
-      "category": "方法与模型",
+      "category": "分子与药物发现",
       "metrics": {},
       "metadata": {
-        "doi": "10.64898/2026.08.17.745351",
+        "doi": "10.64898/2026.08.13.744307",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.17.745149",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A multi-agent molecular optimization framework leads to a rapid-recovery intravenous anesthetic candidate with an improved safety margin",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.17.745149",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
+      "creators": [
+        "Xue, Z.",
+        "Liu, X."
+      ],
+      "language": "en",
+      "abstract_or_text": "Lead optimization, the systematic refinement of therapeutic compounds through iterative structural modification, faces a dual challenge in modern drug discovery: navigating astronomically vast molecular design spaces while balancing conflicting demands on potency, pharmacokinetics, and safety. We present MASCOT (Multi-Agent SearCh for molecular OpTimization), a role-specialized multi-agent framework for molecular optimization. Integrated with a chemically constrained graph-editing search, MASCOT coordinates three specialized agents: a trade-off agent that reprioritizes competing objectives, a strategy agent that adapts how molecular edits are proposed, and a reflection agent that distills lessons from previous decisions. Computational experiments showed that MASCOT achieved the best performance over competing methods on six benchmark settings. On the SARS-CoV-2 main protease task, its mean docking-score improvement was 3.6 times that of the strongest baseline. Applied to the clinically used anesthetic remimazolam (RM), MASCOT prioritized RM-1, which showed a shorter liver microsomal half-life, higher brain exposure, and a larger therapeutic index than RM. Subsequent derivative design yielded RM-7. Extensive animal studies established RM-7 as a rapid-recovery intravenous anesthetic candidate with greater potency, faster functional recovery, a wider safety margin, and preserved flumazenil reversibility. These results demonstrate that multi-agent coordination can link adaptive molecular search to medicinal chemistry and experimental pharmacology.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 79,
+      "tags": [
+        "分子与药物发现"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "experimental",
+        "clinical",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.17.745149",
         "arxiv_id": ""
       }
     },
@@ -376,51 +515,61 @@
       }
     },
     {
-      "id": "biorxiv:10.64898/2026.08.11.744237",
+      "id": "biorxiv:10.64898/2026.08.16.745117",
       "channel": "aixchem",
       "related_channels": [
-        "aixbio"
+        "aixbio",
+        "aixmath"
       ],
       "item_type": "paper",
       "source": "bioRxiv",
-      "title": "Discovery of Selective Small-Molecule Ligands of SV2C by AI-Enhanced Virtual Screening and Experimental Validation",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.11.744237",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-16",
+      "title": "An AI System for Autonomous Algorithm Evolution in Drug Development",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.16.745117",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
       "creators": [
-        "Brueckner, A. C.",
-        "Martin, M. F.",
-        "Khuttan, S.",
-        "Shields, B.",
-        "Mittal, A.",
-        "Schreiber, J. A.",
-        "Salomon-Ferrer, R.",
-        "Bortolato, A.",
-        "Salahpour, A.",
-        "Bucher, M. L.",
-        "Coleman, J. A.",
-        "Miller, G. W."
+        "Zhou, Z.",
+        "Nan, Y.",
+        "Mou, M.",
+        "Qian, Y.",
+        "Liu, Y.",
+        "Zuo, Z.",
+        "Yang, H.",
+        "Xu, W.",
+        "Li, B.",
+        "Jiang, W.",
+        "Ren, Y.",
+        "Liao, Y.",
+        "Wang, Y.",
+        "Li, Y.",
+        "Yang, Q.",
+        "Xi, Z.",
+        "Mi, T.",
+        "Sun, H.",
+        "Liu, P.",
+        "Zhu, F."
       ],
       "language": "en",
-      "abstract_or_text": "Synaptic vesicle glycoprotein 2C (SV2C) is a vesicular protein enriched in dopaminergic neurons of the basal ganglia that modulates dopamine storage and release, and its disruption is implicated in Parkinsons disease (PD). Despite strong genetic and pathological links to PD, there are no selective small-molecule probes for SV2C. Here, we describe an AI-enhanced virtual screening (VS) and experimental campaign that identified multiple novel chemotypes with low-micromolar affinity and marked selectivity for SV2C over SV2A and SV2B, starting from a large, general-purpose commercial library. Because no full-length high-resolution SV2C structure was available, we built a homology model using SV2A cryo-EM structures as templates and characterized its conformational landscape by molecular dynamics (MD) and Gaussian accelerated MD (GaMD) simulations in apo form and in complex with known SV2 ligands (plosaracetam, levetiracetam, brivaracetam, and padsevonil). A convolutional neural network-based scoring function (CNN VS), retrospectively validated on a manually curated 39-ligand SV2A benchmark (r = 0.72 vs experimental pIC50), was then applied in a multi-stage funnel to 5.96 million Mcule in-stock compounds, which were sequentially filtered to 3.19 million CNS-relevant molecules before docking and rescoring. From 94 VS-prioritized candidates, 71 compounds were experimentally profiled in an orthogonal primary assay cascade combining a thermal shift assay (TSA) with a [3H]-padsevonil scintillation proximity assay (SPA), followed by Ki determination and isoform selectivity profiling for key hits. This campaign yielded 22 active molecules (31% hit rate) that naturally segregated into two categories: compounds that showed primary site competition, and compounds that did not show primary site competition with [3H]-padsevonil. A subset of competitor compounds also showed thermostabilization activity. Among these, compounds 36 and 56 emerged as particularly attractive leads, with Ki values of 24.6 {micro}M and 3.25 {micro}M at SV2C, respectively, and >10-fold selectivity versus SV2A; compound 56 also maintained[~] 12-fold selectivity relative to SV2B. A complementary subset of SV2C-selective hits behaved as padsevonil-site competitors, providing a lead set that will serve as a template for functional characterization and future drug development for conditions that affect dopaminergic signaling. Docking analysis suggests a common binding mode anchored by conserved tryptophan residues in the SV2 pocket, a prediction independently confirmed by an unpublished SV2A- plosaracetam cryo-EM structure showing 0.76 [A] binding-site C RMSD relative to the SV2C model and complete conservation of the tryptophan cage. Subtle differences in the luminal domain and transmembrane region point to the structural determinants underlying isoform selectivity. Collectively, these results demonstrate that an AI-driven VS pipeline, tightly integrated with medium-throughput biophysical assays, can deliver selective SV2C binders from a general chemical library on a structurally under-characterized membrane target. The identified hits provide multiple starting points for hit-to-lead optimization and tools for probing SV2C biology and its role in PD.",
+      "abstract_or_text": "Artificial intelligence (AI) is increasingly permeating the drug development pipeline. Numerous algorithms for accelerating this multi-stage and multi-task process have been constructed, which depends heavily on expert design and labor-intensive task-specific optimization. Given that AI-driven acceleration of drug development is recognized as a cumulative, often synergistic, effect across multiple stages, the autonomous evolution of existing algorithms across the entire pipeline is demanded to achieve a holistic advancement. Here, we present DrugEvolve, a multi-role large language model system for systematic and autonomous algorithm evolution in drug development. DrugEvolve realizes a closed-loop evolution process by incorporating Researcher, Engineer, and Analyst domains, and enables an iterative design, implementation, evaluation, and refinement of algorithm by leveraging scientific knowledge and accumulated evolutionary experience. Across eleven representative tasks spanning target identification, drug discovery, preclinical study, and clinical trial, DrugEvolve autonomously evolved the corresponding task-specific algorithms and achieved substantial performance enhancement on 120 benchmark test sets. Moreover, it showed robust generalizabilities across heterogeneous data modalities (ranging from biological sequence and graph to molecular topology and textual language), and realized gains in both predictive and generative tasks. Collectively, this AI system can serve not only as an algorithmic infrastructure for drug development, but also as a transferable paradigm for broader scientific domains.",
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "quality_score": 79,
+      "quality_score": 78,
       "tags": [
-        "分子与药物发现"
+        "方法与模型"
       ],
       "evidence_flags": [
         "benchmark",
-        "experimental",
-        "release"
+        "clinical",
+        "evaluation",
+        "performance"
       ],
       "publication_status": "preprint",
       "rank": 0,
       "featured": false,
-      "category": "分子与药物发现",
+      "category": "方法与模型",
       "metrics": {},
       "metadata": {
-        "doi": "10.64898/2026.08.11.744237",
+        "doi": "10.64898/2026.08.16.745117",
         "arxiv_id": ""
       }
     },
@@ -460,45 +609,81 @@
       }
     },
     {
-      "id": "arxiv:2608.16111v1",
+      "id": "chemrxiv:10.26434/chemrxiv.15007670/v1",
       "channel": "aixchem",
       "related_channels": [],
       "item_type": "paper",
-      "source": "arXiv",
-      "title": "RetroMPA: A Molecular Property-Aware Auxiliary Framework for Enhancing Retrosynthesis Prediction",
-      "url": "https://arxiv.org/abs/2608.16111v1",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
+      "source": "ChemRxiv",
+      "title": "Chemical Similarity-Informed Machine Learning for Navigating Multi-Component Polymeric Material Design Space",
+      "url": "https://doi.org/10.26434/chemrxiv.15007670/v1",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
       "creators": [
-        "Mianzhi Liu",
-        "Fan Xiao",
-        "Zhiliang Yu",
-        "Huayang Huang",
-        "Yuke Li",
-        "Yi Yang",
-        "Wenbo Liu",
-        "Yu Wu"
+        "Bradley Lamb",
+        "Sri Vishnuvardhan Reddy Akepati",
+        "Saroj Upreti",
+        "Xiaodan Gu",
+        "Boran Ma"
       ],
       "language": "en",
-      "abstract_or_text": "Retrosynthesis is a cornerstone of drug discovery and organic synthesis. While data-driven deep learning models have shown remarkable progress, they autonomously learn reaction patterns from extensive datasets with limited integration of established chemical knowledge as priors. To address this limitation, we introduce RetroMPA, a molecular property-aware, post-hoc enhancement module that injects chemical knowledge into the retrosynthesis pipeline. Rather than functioning as an independent SMILES sequence generator, RetroMPA is a broadly applicable, model-agnostic chemical filter designed to recalibrate and optimize the predictive pathways of existing algorithms. This plug-and-play framework integrates seamlessly with a range of data-driven retrosynthesis methods, enhancing outputs without modifying model architecture or requiring resource-intensive retraining. By leveraging a property-aware latent embedding space, RetroMPA consistently improves top-1 accuracy across eight representative retrosynthesis models by an average of 5.50% on USPTO-50K. Furthermore, we validate its scalability on the large-scale USPTO-Full dataset, achieving an average improvement of about 2.03% across both template-based and template-free architectures. Wet-lab experiments provide preliminary support for the practical utility of the framework. These syntheses confirmed viable, previously unreported substrate combinations for classic reaction paradigms---specifically, Suzuki-Miyaura coupling, Bucherer reaction, and Friedel-Crafts acylation---suggesting that RetroMPA can operate beyond mere data fitting. The code is open-sourced at https://github.com/MengzhouLu/RetroMPA.",
+      "abstract_or_text": "Chemical representation remains a central obstacle to applying machine learning (ML) in polymer science, and the difficulty compounds in multi-component formulations, where each polymer, solvent, and additive must be featurized independently and the inter-component interactions that often govern material properties go unencoded. Here we introduce a similarityinformed ML framework that, instead of encoding explicit chemical structures, represents each system by the pairwise chemical similarity between its components and uses these scalars as training features. Because it depends on relative similarity rather than on specific structural features, the representation is low-dimensional and inherently chemistry-agnostic. We validate the framework on block copolymer (BCP) thin films processed by non-volatile additive solvent annealing (NVASA) and blending, using high-throughput GISAXS analysis to assemble a dataset of over 700 nanoscale morphology measurements. Collapsing thousands of structural features into only 49 similarity descriptors, the framework matches the accuracy of the state-of-the-art full-feature and deep-learning baselines, with test R2 values of 0.986 for domain spacing and 0.835 for FWHM, while training in minutes rather than hours and yielding interpretability at the level of component pairs through SHAP analysis. An uncertainty-based active learning strategy reaches comparable accuracy using only 11% of the training data. Most importantly, the framework generalizes to 10 BCP thin films built from 5 previously unseen polymers and 2 unseen solvents (validation R2 of 0.928 for domain spacing) and transfers to an independent polymer solubility classification task, where it outperforms a Morgan-fingerprint benchmark on unseen chemistries. Together, these results establish a computationally efficient, interpretable, and generalizable representation of polymer chemistry for ML, enabling rapid exploration of vast chemical and processing spaces.",
       "summary_zh": "",
       "why_it_matters_zh": "",
       "quality_score": 77,
       "tags": [
-        "分子与药物发现"
+        "材料与催化"
       ],
       "evidence_flags": [
+        "benchmark",
         "dataset",
-        "github"
+        "state-of-the-art"
       ],
       "publication_status": "preprint",
       "rank": 0,
       "featured": false,
-      "category": "分子与药物发现",
+      "category": "材料与催化",
       "metrics": {},
       "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.16111v1"
+        "doi": "10.26434/chemrxiv.15007670/v1",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.17.745284",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Single-Molecule Proteomics via a Dynamic Translocase and Physics-Informed Machine Learning",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.17.745284",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
+      "creators": [
+        "Taylor, J. E.",
+        "Sharma, P.",
+        "Krantz, B."
+      ],
+      "language": "en",
+      "abstract_or_text": "Single-molecule protein sequencing promises to democratize clinical proteomics, but platforms retrofitting static DNA-sequencing nanopores face a fundamental biophysical bottleneck: they only measure one-dimensional excluded volume. Consequently, these static calipers struggle to resolve isobaric residues, requiring complex DNA-handle chemistries and target concentrations that exceed clinically relevant abundance ranges. Here, we introduce a dynamical, target-docking translocase engine--the anthrax toxin protective antigen (PA)--as a label-free single-molecule peptide sensor. By extracting the multi-state thermodynamic friction generated as the pore's active site dynamically \"breathes\" around translocating analytes, we trained a physics-informed machine learning (PIML) architecture to classify a 20-member guest-host peptide library panel representing all 20 canonical amino acids at the single-event level. Operating at low nanomolar concentrations under a 35-millisecond thermodynamic read constraint, the translocase resolved isobaric variants (leucine and isoleucine). Furthermore, we achieved 98.02 (+/-0.05)% classification accuracy on a panel of five un-tagged, native clinical biomarkers (e.g., KRAS G12D, angiotensin, bradykinin). Transitioning from static volumetric measurement to time-domain thermodynamic fingerprinting establishes the requisite protein nanopore hardware for de novo proteomics.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 76,
+      "tags": [
+        "结构与生物"
+      ],
+      "evidence_flags": [
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.17.745284",
+        "arxiv_id": ""
       }
     },
     {
@@ -712,263 +897,6 @@
       }
     },
     {
-      "id": "biorxiv:10.64898/2026.08.13.744307",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixbio"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Delivery of small interfering RNA and antisense oligonucleotides across the blood-brain barrier with monovalent transferrin receptor 1 binding VHH-Fc fusion proteins",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.13.744307",
-      "published_at": "2026-08-18",
-      "updated_at": "2026-08-18",
-      "creators": [
-        "Huggins, I. J.",
-        "Carrer, M.",
-        "Santos, J. A.",
-        "Fazio, M.",
-        "Holguin, B.",
-        "Phi, S.",
-        "Prakash, T. P.",
-        "Afetian, M.",
-        "Bakooshli, M. A.",
-        "Klein, S. K.",
-        "Galindo-Murillo, R.",
-        "Rodriguez, A. A.",
-        "Kamme, F.",
-        "Gaus, H.",
-        "Chappell, A.",
-        "Bravo-Hernandez, M.",
-        "Pinto-Duarte, A.",
-        "Quinones, R.",
-        "Jacquot, G.",
-        "David, M.",
-        "Rigo, F.",
-        "Kordasiewicz, H. B.",
-        "Zhao, H. T.",
-        "Jafar-nejad, P.",
-        "Tanowitz, M.",
-        "Swayze, E. E."
-      ],
-      "language": "en",
-      "abstract_or_text": "The blood-brain barrier (BBB) is a highly selective cell layer that restricts the diffusion of diverse chemical entities into the central nervous system (CNS) from systemic circulation. Macromolecular therapeutics including oligonucleotides, peptides, and monoclonal antibodies exhibit only minimal brain distribution after systemic dosing due to exclusion by the BBB. Receptor-mediated transcytosis (RMT) has evolved to transport vital cargo across the BBB through a specialized vesicular transport pathway. Transferrin receptor 1 (TfR1) shuttles transferrin, its natural ligand, across the BBB, as well as TfR1-binding IgG antibodies and conjugates. Here, we describe a novel monovalent TfR1-binding VHH-Fc for the delivery of oligonucleotide cargo, including antisense oligonucleotides (ASOs) and small interfering RNAs (siRNAs) across the BBB in rodents and non-human primates (NHPs), supporting the translational potential of the VHH-antisense RMT platform for the treatment of neurological disorders. We explore the role of binding affinity, conjugation site, drug-antibody ratio (DAR), and conjugation chemistry, and determine that binding affinity, DAR and conjugation site are major determinants of RMT capacity and brain activity of siRNAs delivered across the BBB.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 76,
-      "tags": [
-        "分子与药物发现"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "分子与药物发现",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.13.744307",
-        "arxiv_id": ""
-      }
-    },
-    {
-      "id": "arxiv:2608.17170v1",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "arXiv",
-      "title": "Synthesizing Feature Extractors: An Agentic Approach for Algorithm Selection",
-      "url": "https://arxiv.org/abs/2608.17170v1",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Hai Xia",
-        "Carlos Ansótegui",
-        "Stefan Szeider"
-      ],
-      "language": "en",
-      "abstract_or_text": "Algorithm selection for constraint satisfaction problems requires extracting features that capture problem structure. Manually designing feature extractors demands deep domain expertise and quickly becomes a bottleneck when new problem classes appear. We present an automated approach that uses Large Language Models (LLMs) in an agentic check--fix--verify loop to synthesize executable Python scripts that act as interpretable, problem-specific feature extractors. Given a high-level MiniZinc model and an instance, the LLM agent generates code that constructs a typed graph representation and computes structural properties such as graph density, variable clustering, and constraint tightness. We evaluate our approach on three combinatorial problems (vehicle routing, car sequencing, fixed-length error-correcting codes) with a portfolio of five state-of-the-art solvers. The synthesized extractors yield algorithm selectors that consistently outperform both expert-curated mzn2feat features (up to 8.3 percentage points (pp) test-set accuracy on FLECC) and the best transformer-based trans2feat variants. In the meanwhile, the synthesized feature extractors remain inspectable.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 76,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "state-of-the-art"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.17170v1"
-      }
-    },
-    {
-      "id": "arxiv:2608.16094v1",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixbio"
-      ],
-      "item_type": "paper",
-      "source": "arXiv",
-      "title": "Protein Structure Prediction: From Evolutionary Constraints to Generative Modeling",
-      "url": "https://arxiv.org/abs/2608.16094v1",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Wengan He",
-        "Yongsheng Luo",
-        "Lihong Jiang",
-        "Wenhui Xu",
-        "Yu Li"
-      ],
-      "language": "en",
-      "abstract_or_text": "Accurate protein structure prediction is fundamental to structural biology because protein structure underlies molecular function and provides a basis for mechanistic interpretation. Recent advances in deep learning have transformed the field from multiple sequence alignment (MSA)-driven monomer folding into broader frameworks capable of modeling protein complexes and increasingly heterogeneous molecular systems. Existing reviews have summarized this progress from the perspectives of representative models, application domains, and protein design. Building on these efforts, this review focuses on the methodological evolution of the field itself. It examines recent developments through three closely related dimensions: representations and data, architectures and learning strategies, and confidence and evaluation. Within this perspective, the field is organized into four methodological phases and three cross-cutting transitions: from explicit evolutionary coupling features and early contact prediction to learned sequence representations in AlphaFold2, RoseTTAFold, and ESMFold; from protein-only monomer folding to increasingly integrated modeling of heterogeneous molecular systems in AlphaFold-Multimer, RoseTTAFoldNA, and AlphaFold3; and, more recently, from prediction-oriented structure inference to design-oriented generative modeling in RFdiffusion and related frameworks. This framework provides a clearer understanding of how methodological shifts have shaped the capabilities, limitations, and practical roles of recent models.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 76,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "evaluation"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.16094v1"
-      }
-    },
-    {
-      "id": "biorxiv:10.1101/2025.07.20.665723",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixbio"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "A contextualised protein language model reveals the functional syntax of bacterial evolution",
-      "url": "https://www.biorxiv.org/content/10.1101/2025.07.20.665723",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Wiatrak, M.",
-        "Abelson, D. C.",
-        "Mikhaylenko, R.",
-        "Vinas Torne, R.",
-        "Ntemourtsidou, M.",
-        "Dinan, A. M.",
-        "Arora, D.",
-        "Horsfield, S. T.",
-        "Lees, J.",
-        "Brbic, M.",
-        "Weimann, A.",
-        "Floto, R. A."
-      ],
-      "language": "en",
-      "abstract_or_text": "Bacteria have evolved a vast diversity of functions and behaviours that are currently incompletely understood and poorly predicted from DNA sequence alone. To understand the syntax of bacterial evolution and discover genome-to-phenotype relationships, we curated over 1.3 million genomes spanning bacterial phylogenetic space, represented each as an ordered sequence of proteins, and used these sequences to train a transformer-based, contextualised protein language model, Bacformer. By pretraining on genome-wide evolutionary patterns, Bacformer captures the compositional and positional relationships of proteins and thereby provides a whole-genome framework for linking genomic organisation and content to measurable bacterial traits. We demonstrate the ability of Bacformer to accurately predict protein-protein interactions; uncover operon structure, which we validated experimentally; infer important phenotypic traits, including antimicrobial resistance, while revealing likely causal genes; and design template synthetic proteomes with desirable properties. Thus, Bacformer establishes a genomic foundation model that reveals the evolutionary rules governing bacterial gene organisation, function, and phenotype, opening a route to systematic whole-genome engineering.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 76,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "experimental"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.1101/2025.07.20.665723",
-        "arxiv_id": ""
-      }
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv.15007484/v1",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixmath"
-      ],
-      "item_type": "paper",
-      "source": "ChemRxiv",
-      "title": "Integrating Multi-Task Surrogate Modelling with Reinforcement Learning for Autonomous CO2 Reduction Catalyst Discovery: A Proof-of-Concept Framework",
-      "url": "https://doi.org/10.26434/chemrxiv.15007484/v1",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Samrat Chakraborty"
-      ],
-      "language": "en",
-      "abstract_or_text": "Computational design of heterogeneous catalysts for CO2 reduction remains constrained by the prohibitive cost of density functional theory (DFT) calculations and the vast compositional search space of transition-metal alloys. We present a proof-of-concept framework that integrates three AI components: (i) a multi-task neural network surrogate trained on physics-informed synthetic data that simultaneously predicts activation energy (R2 = 0.984), turnover frequency (R2 = 0.984), selectivity (R2 = 0.974), and stability (R2 = 0.559); (ii) a proximal policy optimisation (PPO) agent that autonomously navigates an 18-dimensional action space of metal–facet–alloy compo-sitions, identifying Fe(111) as the top-ranked catalyst within the synthetic model (TOF = 103.93 s−1, selectivity = 0.72); and (iii) an explainability pipeline (SHAP, learned attention, counterfactuals) that recovers the dband centre as the dominant descriptor—providing an internal-consistency check on the physics encoded in the data generator. All synthetic targets are grounded in established computational catalysis models: Sabatierprinciple volcano curves, Brønsted–Evans–Polanyi rela-tions, and a dual-volcano competitive-kinetics selectivity model for CO2RR versus HER. We discuss the frame-work’s limitations—including the discrepancy between our synthetic prediction and experimental Faradaic-efficiency trends—with full transparency and propose a path toward DFT-validated deployment.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 76,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "experimental"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.26434/chemrxiv.15007484/v1",
-        "arxiv_id": ""
-      }
-    },
-    {
-      "id": "arxiv:2608.15900v1",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "arXiv",
-      "title": "Crystal-structure design by agentic AI in a language of motifs",
-      "url": "https://arxiv.org/abs/2608.15900v1",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-16",
-      "creators": [
-        "Dinh-Khiet Le",
-        "Minh-Quyet Ha",
-        "Hong-Phuc Vu-Dinh",
-        "Takashi Miyake",
-        "Hiori Kino",
-        "Hieu-Chi Dam"
-      ],
-      "language": "en",
-      "abstract_or_text": "Data-driven materials discovery interpolates more reliably than it extrapolates and seldom reaches new structure types. We present MatEvolve, an agentic-AI framework designing crystals, proposing each candidate with a stated rationale and testing it. The agent reasons in an interpretable language of motifs, writing each crystal as a motif profile that describes the recurring geometric patterns---the motifs---composing it. The motif profile serves not merely as a description of a material but as the medium for material design: the agent edits the profile and constructs a crystal from the modified one, and the most promising candidates are validated by first-principles calculation. Applied to the design of rare-earth-lean permanent magnets, MatEvolve---built on the state-of-the-art language model Claude Fable~5 without fine-tuning---reaches new structural prototypes more than three times as often as generative models under an equal validation budget, at a comparable on-target-magnet rate. Beyond design, analysing the discovered crystals' human-readable profiles reveals structure--property relationships.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 76,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "state-of-the-art"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.15900v1"
-      }
-    },
-    {
       "id": "arxiv:2608.19117v1",
       "channel": "aixchem",
       "related_channels": [],
@@ -1008,79 +936,77 @@
       }
     },
     {
-      "id": "arxiv:2608.15760v1",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixmath"
-      ],
-      "item_type": "paper",
-      "source": "arXiv",
-      "title": "Machine Learning Approaches to Decoding Topological Quantum Codes",
-      "url": "https://arxiv.org/abs/2608.15760v1",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-16",
-      "creators": [
-        "Changwon Lee",
-        "Tak Hur",
-        "Jeongwoo Jae",
-        "Daniel K. Park"
-      ],
-      "language": "en",
-      "abstract_or_text": "Decoding is an essential component of quantum error correction (QEC), translating stabilizer measurement outcomes into corrective actions that suppress logical errors and preserve logical quantum information. Building fault-tolerant architectures requires increasing the code distance, which in turn places growing demands on decoding accuracy, scalability, and practical deployability. While a wide range of decoding algorithms have been proposed and demonstrated, achieving reliable, scalable, and real-time decoding remains a significant challenge. Machine-learning (ML) approaches are particularly well suited to this setting, as quantum error decoding is fundamentally a problem of processing large volumes of classical data with complex spatiotemporal correlations. This chapter surveys ML-based methods for quantum error decoding, with a focus on topological codes and an emphasis on architectural principles, practical performance, and real-time considerations. We first frame decoding as a learning problem and outline key paradigms, including discriminative, generative, and reinforcement-learning formulations. We then introduce the neural network building blocks that underpin most contemporary neural decoders and discuss how these components can be integrated to balance expressivity, scalability, and latency. Building on this architectural perspective, we review recent progress and benchmarks in neural decoding for memory experiments, and discuss real-time decoding, open challenges, and future directions toward scalable fault-tolerant quantum computing.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 75,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "benchmark",
-        "performance"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.15760v1"
-      }
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv.15007465/v1",
+      "id": "biorxiv:10.64898/2026.08.19.745802",
       "channel": "aixchem",
       "related_channels": [
         "aixbio"
       ],
       "item_type": "paper",
-      "source": "ChemRxiv",
-      "title": "A Functional Taxonomy of Artificial Intelligence Methods in Liquid Biopsy",
-      "url": "https://doi.org/10.26434/chemrxiv.15007465/v1",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-17",
+      "source": "bioRxiv",
+      "title": "Ancient human mitochondrial genomes encode antimicrobial peptides",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.19.745802",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
       "creators": [
-        "Samuel Long",
-        "Abigail Long"
+        "Torres, M. D. T.",
+        "Ali, A.",
+        "Lee, H.-S.",
+        "Wan, F.",
+        "de la Fuente-Nunez, C."
       ],
       "language": "en",
-      "abstract_or_text": "While early literature in AI-driven biofluid diagnostics primarily lists algorithms by machine learning topology (e.g., Random Forests vs. Convolutional Neural Networks), such taxonomic schemes fail to capture an algorithm's functional role within the clinical diagnostic workflow (AbdelHamid et al., 2026; Long & Long, 2026; Sisca et al., 2026). Building upon our 7-layer reference architecture for AI-enabled liquid biopsy (Long & Long, 2026), this paper (framework paper 2) presents an 8-level Functional Taxonomy of Artificial Intelligence Methods in Liquid Biopsy. Rather than categorizing models by their computational architecture, this framework classifies algorithms by their operational objective within the biofluid processing continuum: Level 1 (Data Acquisition AI), Level 2 (Quality-Control AI), Level 3 (Signal Enhancement AI), Level 4 (Feature Discovery AI), Level 5 (Prediction AI), Level 6 (Decision-Support AI), Level 7 (Generative AI), and Level 8 (Autonomous AI Agents). We demonstrate how this operational classification bridges wet-lab robotics, bioinformatic denoising, multi-omic latent space modeling, and closed-loop diagnostic orchestration (Long & Long, 2026). Standardizing AI methods by functional utility provides a common vocabulary for bioinformaticians, machine learning engineers, regulatory bodies, and clinicians, facilitating the translation of multi-omic liquid biopsy systems into scalable precision oncology.",
+      "abstract_or_text": "Mitochondria are bacteria-derived organelles that coordinate major innate immune pathways, but whether mitochondrial genomes themselves encode direct antimicrobial functions is underexplored. Here, we test the hypothesis that ancient human mitochondrial DNA is not only an evolutionary record, but also contains encrypted peptide sequences with the capacity to contribute to host defense. Because mitochondria descend from a bacterial endosymbiont and retain bacterial-like molecular features, we reasoned that their compact genomes might preserve sequence fragments capable of engaging bacterial-like membranes or bacterial physiology. We mined 2,025 ancient human mitochondrial genomes using a computational pipeline that couples ORF extraction and deep learning, identifying 65 candidate peptides that we term mitochondrins. We synthesized 38 candidates and experimentally validated 14 as antimicrobials against clinically relevant Gram-negative and Gram-positive bacteria. Active mitochondrins were not defined by length, charge, or helicity alone; instead, potency depended on precise hydrophobic-cationic patterning, with nested peptide families revealing how single motif-level changes can switch activity on or off. Mechanistic assays showed that mitochondrins span multiple antibacterial modalities, from strong membrane disruption to potent activity with limited membrane perturbation, suggesting noncanonical or multi-step killing mechanisms. Several peptides displayed low cytotoxicity toward human cells, and one representative mitochondrin reduced bacterial burden in a murine skin abscess model. These findings provide a biochemical basis for the hypothesis that mitochondrial genomes may contribute to innate immunity.",
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "quality_score": 75,
+      "quality_score": 74,
       "tags": [
-        "方法与模型"
+        "结构与生物"
       ],
       "evidence_flags": [
+        "experimental",
         "clinical"
       ],
       "publication_status": "preprint",
       "rank": 0,
       "featured": false,
-      "category": "方法与模型",
+      "category": "结构与生物",
       "metrics": {},
       "metadata": {
-        "doi": "10.26434/chemrxiv.15007465/v1",
+        "doi": "10.64898/2026.08.19.745802",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.18.745526",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Mechanistic Dissection of Entropic Penalty upon Ligand Binding and Molecular Flexibility via Molecular Dynamics Simulations and Machine Learning",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.18.745526",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
+      "creators": [
+        "Hung, T. I.",
+        "Vig, E.",
+        "Chang, C.-e."
+      ],
+      "language": "en",
+      "abstract_or_text": "Molecular flexibility governs how molecules behave, reorganize, and respond to their environment. Although experiments measure molar entropy for small molecules and molecular dynamics (MD) simulations capture molecular motions, quantifying configuration entropy and the concerted internal motions such as torsion rotations, angle bending, and their couplings are central to understanding thermodynamic behavior but remains challenging. To dissect these contributions, we used MD trajectories and developed an internal coordinate PC-entropy (iPC-entropy) method to probe the origins of entropy and reveal how specific motions shape the thermodynamic landscape. The studies accurately captured molar entropy, identified key torsional motions as major contributors, and uncovered a critical angle-torsion coupling in which angle bending was strongly correlated with torsional rotation, a coupling that increases nonlinearly with molecular size. Evaluating entropic changes upon protein-ligand binding reveals that dominant entropic penalty arises from ligand dihedral rigidification rather than protein reorganization and highlights the specific dihedral rotations that become restricted. We also suggest systematic corrections for approaches considering solely rotamers to reliably reproduce the relative entropic penalty in computer-aided drug discovery. Together, our findings elucidate the molecular origins of entropy and entropy changes. In addition, we can quantify and illustrate the internal motions that strongly shape binding thermodynamics, thereby offering mechanistic insights to guide drug development.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 74,
+      "tags": [
+        "分子与药物发现"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.18.745526",
         "arxiv_id": ""
       }
     },
@@ -1123,173 +1049,6 @@
       "metrics": {},
       "metadata": {
         "doi": "10.64898/2026.07.27.741045",
-        "arxiv_id": ""
-      }
-    },
-    {
-      "id": "arxiv:2608.16661v1",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "arXiv",
-      "title": "Turning spectra into images improves plant trait retrieval with 2D-CNNs",
-      "url": "https://arxiv.org/abs/2608.16661v1",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Javier Lopatin",
-        "Teja Kattenborn",
-        "Eya Cherif",
-        "Sebastián Moreno"
-      ],
-      "language": "en",
-      "abstract_or_text": "Hyperspectral reflectance spectroscopy enables non-destructive estimation of plant functional traits, yet current deep learning approaches process spectra as one-dimensional sequences, which limits how they capture long-range inter-band dependencies. We asked whether transforming 1D spectra into 2D image representations improves multi-trait prediction with convolutional neural networks (CNN). We compared nine transformations using EfficientNet-B0 on the GreenHyperSpectra dataset (7,897 labeled spectra, eight traits, 400-2450 nm), benchmarked against published 1D CNN results on the same split. Trained from scratch, the simplest transformation, a direct Reshape of the spectrum into a 2D grid, performed best (R^2 = 0.684 \\pm 0.001) and improved on the state-of-the-art 1D baseline (R^2 = 0.587, +0.097). We then pretrained a 2D masked autoencoder (MAE-2D) on 139,000 unlabeled spectral images. Linear probing, which freezes the encoder and trains only a multilayer perceptron head, reached R^2 = 0.646 and exceeded every 1D self-supervised counterpart, including the fine-tuned MAE-1D (R^2 = 0.641). Under cross-dataset evaluation all models lost most of their accuracy and none beat the 1D baseline significantly. To identify which wavelengths drive each prediction, we applied Integrated Gradients and Grad-CAM and unfolded band importance back to the spectral axis. Protein (r = 0.45) and leaf water (r = 0.33) agreed with sensitivities simulated by the PROSAIL radiative-transfer model, while carotenoids (r = 0.06) and leaf area index (r = -0.11) did not, showing that the model reads established leaf chemistry for traits with sharp absorption features. The representational advantage of 2D spectral images, rather than architectural complexity or ImageNet pretraining, drives the gain over 1D approaches.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 74,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "benchmark",
-        "dataset",
-        "state-of-the-art",
-        "evaluation"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.16661v1"
-      }
-    },
-    {
-      "id": "arxiv:2608.16594v1",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixbio",
-        "aixmath"
-      ],
-      "item_type": "paper",
-      "source": "arXiv",
-      "title": "CACSurv: Concordance-Aligned Comparative Learning with Large Language Models for Cancer Survival Prediction",
-      "url": "https://arxiv.org/abs/2608.16594v1",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Tianqi Xiang",
-        "Qixiang Zhang",
-        "Xinpeng Ding",
-        "Yi Li",
-        "Xiaomeng Li"
-      ],
-      "language": "en",
-      "abstract_or_text": "Cancer survival prediction supports treatment planning, risk stratification, and follow-up management. Existing methods use structured clinical variables, whole-slide images, genomic profiles, or multimodal inputs, while patient reports remain underexplored. We study report-centric survival prediction using reports that organize pathological, clinical, and molecular evidence. Large language models (LLMs) can reason over such reports, but case-wise time regression introduces two mismatches. First, a formulation mismatch arises because survival evaluation depends on ordering comparable patients, whereas independent time predictions do not enforce ranking consistency. Second, a supervision mismatch arises because a censored patient's observed time indicates survival beyond that point and cannot serve as an exact regression target, although it still implies orderings relative to patients who died earlier. To address these mismatches, we propose CACSurv, a Concordance-Aligned Comparative framework for report-centric survival prediction. CACSurv reformulates survival modeling as mini-cohort comparative reasoning, where an LLM predicts relative prognostic orderings. We introduce concordance-aligned rewards derived from comparable relations under right censoring, enabling censored outcomes to provide ranking supervision without exact event-time targets. At inference, Monte Carlo Reference Aggregation compares each patient with sampled references and aggregates positions into a cohort-level ranking. We establish TCGA-SurvReport, a benchmark covering six TCGA cancer cohorts. CACSurv achieves the highest C-index on all six cohorts and an average C-index of 0.722, outperforming the strongest published survival model by 6.5 percentage points and the strongest LLM time-regression baseline by 4.2 percentage points. Our code, models, and dataset will be available at https://github.com/xmed-lab/CACSurv.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 74,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "benchmark",
-        "dataset",
-        "github",
-        "clinical",
-        "evaluation"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.16594v1"
-      }
-    },
-    {
-      "id": "arxiv:2608.16513v1",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "arXiv",
-      "title": "MLLM-Guided Semantic Correction for Text-to-Video Generation",
-      "url": "https://arxiv.org/abs/2608.16513v1",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Junhao Chen",
-        "Zheqi Lv",
-        "Keting Yin",
-        "Shengyu Zhang",
-        "Zhou Zhao",
-        "Feiyang Chen",
-        "Xinyu Duan",
-        "Baoxing Huai",
-        "Fei Wu"
-      ],
-      "language": "en",
-      "abstract_or_text": "Recent advances in diffusion models and Transformer architectures have led to significant progress in text-to-video generation. However, these models often suffer from semantic errors such as missing objects, incorrect attributes, or mismatched actions. Although some semantic correction methods perform optimization before sampling or refinement after sampling, how to detect and correct semantic deviations during the video generation process remains underexplored. In this paper, we introduce a training-free, interpretable mid-generation correction framework that integrates multimodal large language model (MLLM) feedback directly into the diffusion sampling loop. Our framework achieves diffusion trajectory correction by injecting semantic evaluation signals during video synthesis, enabling the model to optimize the generated content through continuous self-reflection. We propose two key modules: a Semantic Assessment Supervisor that generates intermediate preview frames for semantic evaluations and deviation diagnostics, and a Semantic Modification Assistant that corrects semantic drift during inference via a controllable latent trajectory intervention. Our method improves semantic alignment, visual fidelity, and temporal consistency without modifying model parameters. We validate the effectiveness of our approach through extensive experiments across multiple benchmarks.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 74,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "benchmark",
-        "evaluation"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.16513v1"
-      }
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv.15007504/v1",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "ChemRxiv",
-      "title": "G2RINS: A Generative String-and-Graph Polymer Representation to Assist Computational Materials Discovery",
-      "url": "https://doi.org/10.26434/chemrxiv.15007504/v1",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Gervasio Zaldivar",
-        "Yuan Tian",
-        "Ge Sun",
-        "Chryssa Kappatou",
-        "Philipp Eiden",
-        "Niklas B. Wulkow",
-        "Volker Settels",
-        "Juan J. de Pablo"
-      ],
-      "language": "en",
-      "abstract_or_text": "There is considerable interest in developing generative models for the design of new polymeric materials. A major challenge towards the development of such models is designing machine-readable representations that capture the hierarchical and stochastic nature of polymers. In this work, we introduce G2RINS, a generative line and graph notation that builds on G-BigSMILES to account for the multistep hierarchical microstructure of real polymers by properly describing prepolymers and branching. This new string representation considerably improves the descriptive capabilities of the overall framework. Additionally, our dedicated Python implementation automatically converts G2RINS strings into generative graphs to create meaningful polymer chain ensembles. Together, the G2RINS string, graph, and generated ensembles serve as versatile tools for database labeling, high-throughput molecular dynamics (MD) simulations, machine learning (ML) modeling, and fingerprinting. Ultimately, G2RINS provides a multilevel, machine-readable representation with the potential to dramati-",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 74,
-      "tags": [
-        "材料与催化"
-      ],
-      "evidence_flags": [],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "材料与催化",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.26434/chemrxiv.15007504/v1",
         "arxiv_id": ""
       }
     },
@@ -1411,6 +1170,43 @@
       }
     },
     {
+      "id": "chemrxiv:10.26434/chemrxiv.15007349/v2",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "BEAVER: A Multi-Agent Framework for Evidence-Grounded Answering and Property-Constrained Design of Degradable Polymers",
+      "url": "https://doi.org/10.26434/chemrxiv.15007349/v2",
+      "published_at": "2026-08-19",
+      "updated_at": "2026-08-20",
+      "creators": [
+        "Xuerui Fang",
+        "Boyuan Zhang",
+        "Meifang Zhu",
+        "Jin Wen"
+      ],
+      "language": "en",
+      "abstract_or_text": "Degradable polymers are an important research area in materials science because of their environmental compatibility and tunable degradation. Scientific agents could accelerate discovery by integrating fragmented literature with heterogeneous property data, but two challenges remain: retrieving relevant evidence with sufficient coverage and converting it into traceable reasoning and multi-property-constrained material design. Here, we present BEAVER, an evidence-grounded multi-agent framework for scientific question answering and degradable polymer design. Its Intent-Planner architecture coordinates hybrid retrieval-augmented generation in two workflows: Query Mode for evidence-grounded question answering and Design Mode for candidate generation and assessment under property constraints. Across retrieval, question-answering, and design benchmarks, BEAVER translated higher-quality evidence into more reliable outputs. Reranking increased the overall RAGAS score by more than 0.08 on average across the chunk-level retrieval settings, while the reranked chunk-level hybrid configuration achieved the best balance between recall and relevance. In question answering, BEAVER obtained a bidirectional mean Overall score of 8.77, compared with 8.42 for the strongest closed-book baseline. In coupled-property design, it performed comparably to representative frontier LLMs while providing clearer evidence traceability, more complete constraint handling, and more explicit analysis of risks and uncertainties. Overall, BEAVER offers a traceable and extensible framework that unifies hybrid retrieval, evidence-grounded reasoning, and property-constrained design for degradable polymer research.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 73,
+      "tags": [
+        "材料与催化"
+      ],
+      "evidence_flags": [
+        "benchmark"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007349/v2",
+        "arxiv_id": ""
+      }
+    },
+    {
       "id": "chemrxiv:10.26434/chemrxiv.15007288/v2",
       "channel": "aixchem",
       "related_channels": [],
@@ -1509,209 +1305,6 @@
       }
     },
     {
-      "id": "arxiv:2608.17153v1",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixmath"
-      ],
-      "item_type": "paper",
-      "source": "arXiv",
-      "title": "Towards Safer RAG: Only Agents Capable of System 2 Thinking may Access Untrusted Documents",
-      "url": "https://arxiv.org/abs/2608.17153v1",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Mehrdad Ghassabi"
-      ],
-      "language": "en",
-      "abstract_or_text": "Retrieval-Augmented Generation (RAG) has significantly enhanced the performance of large language models (LLMs), yet these systems remain vulnerable to knowledge-poisoning attacks, in which misinformation in retrieved documents can influence the model's final outputs. Notably, an LLM may correctly detect that a document contains incorrect information while nevertheless being influenced by it. Prior work has addressed this vulnerability through the Cordon Principle, which prevents models responsible for final answer synthesis from directly accessing raw evidence. Although effective, this strict isolation can introduce substantial computational overhead. In this work, we propose a refined security principle: only agents capable of deliberative System 2 reasoning may access untrusted documents. To evaluate this principle, we introduce novel metrics that quantify the discrepancy between misinformation detection and downstream influence. We then empirically compare state-of-the-art reasoning language models with standard language models across these metrics. Our results show that reasoning-capable models are substantially more robust to corrupted evidence, without requiring the strict isolation imposed by the Cordon Principle. These findings provide empirical support for our refined principle and suggest a more practical foundation for secure RAG system design.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 73,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "state-of-the-art",
-        "security",
-        "performance"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.17153v1"
-      }
-    },
-    {
-      "id": "arxiv:2608.16519v1",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "arXiv",
-      "title": "Data-Driven Reconstruction of Spatially Resolved Electron and Ion Energy Distributions from Macroscopic Plasma Quantities with Deep Neural Networks",
-      "url": "https://arxiv.org/abs/2608.16519v1",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Libin Varghese",
-        "Kaushik Prajapati",
-        "Bhaskar Chaudhury"
-      ],
-      "language": "en",
-      "abstract_or_text": "Spatially resolved EEDFs/IEDFs provide essential kinetic information about low-temperature plasmas (LTPs) and play a central role in determining transport, chemical reaction rates, and plasma surface interactions. While kinetic simulations directly resolve these distributions, experimental measurements remain challenging and are often invasive, spatially limited, or require assumptions regarding the distribution shape such as a Maxwellian. However, several macroscopic plasma observables can be measured non-invasively using advanced diagnostic techniques, providing spatially resolved information about the plasma state. An important inverse problem is therefore whether readily measurable macroscopic plasma quantities contain sufficient information to reconstruct the underlying kinetic state. In this work, we investigate this problem by learning a nonlinear mapping from spatially resolved macroscopic plasma observables to the corresponding spatially resolved EEDFs/IEDFs using a deep learning framework. Paired datasets comprising 2D macroscopic observables and spatially resolved EDFs are generated using 2D-3V PIC-MCC simulations. Three representative learning paradigms, a U-Net, a FNO, and a MeshGraphNet, are employed in this study to learn this inverse mapping. The predicted EDFs reproduce both bulk plasma and sheath characteristics with good agreement to the PIC-MCC reference data, with the FNO providing the best overall performance. Beyond conventional metrics, physics-based validation demonstrates that the reconstructed EDFs accurately recover the corresponding density and temperature, and rate coefficients. These results demonstrate that macroscopic plasma observables encode sufficient information to infer important kinetic properties in LTPs, providing a potential foundation for surrogate kinetic modeling and next-generation plasma diagnostics.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 73,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "dataset",
-        "experimental",
-        "performance"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.16519v1"
-      }
-    },
-    {
-      "id": "arxiv:2608.16507v1",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixbio"
-      ],
-      "item_type": "paper",
-      "source": "arXiv",
-      "title": "Large language models as synthetic clinical experts to inform longitudinal rare-disease modeling",
-      "url": "https://arxiv.org/abs/2608.16507v1",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Clemens Schächter",
-        "Astrid Pechmann",
-        "Janbernd Kirschner",
-        "Jan Hasenauer",
-        "Harald Binder"
-      ],
-      "language": "en",
-      "abstract_or_text": "Due to the limited amount of information, modeling longitudinal rare-disease data can benefit from integrating clinical knowledge. Yet, elicitation of expert knowledge and formalization for model fitting is challenging, in particular due to limited time of clinical experts. To nevertheless make domain knowledge accessible during model fitting, we use large language models (LLMs) as synthetic clinical experts to supervise a variational-autoencoder-based approach that learns low-dimensional latent summaries of visit-level observations. Specifically, LLMs are queried offline on textual descriptions of patient observations to obtain judgments, e.g., the suspected clinical category. To improve the variational autoencoder fit, we train a differentiable surrogate model on these judgments and augment the loss function to encourage reconstructions that preserve the clinical-label distribution of their corresponding input profile. In an application to longitudinal motor-function assessments from children with spinal muscular atrophy, we map visit-level clinical profiles to low-dimensional representations that are linked by a multivariate mixed-effects model. The synthetic expert loss discourages reconstructions that remain numerically close in data space but alter the clinical interpretation of the reconstructed motor function profile, such as by crossing a disease-type boundary. We thus reduced disagreement between original and reconstructed SMA type labels from about 11 to 7 percent. Furthermore, informing the latent representation by the synthetic expert improved prediction of motor function milestones compared with unsupervised latent representations and a data-level baseline. These results suggest that incorporating LLMs into model fitting can make clinical knowledge available to representation learning and improve clinical faithfulness for longitudinal rare-disease data.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 73,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "clinical"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.16507v1"
-      }
-    },
-    {
-      "id": "arxiv:2608.16273v1",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixbio",
-        "aixmath"
-      ],
-      "item_type": "paper",
-      "source": "arXiv",
-      "title": "Foresight-England: Development of a National-Scale Generative AI Model of Electronic Health Records for Medical Event Prediction across the COVID-19 Pandemic",
-      "url": "https://arxiv.org/abs/2608.16273v1",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Simon Ellershaw",
-        "Christopher Tomlinson",
-        "Zeljko Kraljevic",
-        "Spiros Denaxas",
-        "Harry Hemingway",
-        "Cathie Sudlow",
-        "Angela M. Wood",
-        "Anoop D. Shah",
-        "Richard Dobson"
-      ],
-      "language": "en",
-      "abstract_or_text": "Foresight-England (Foresight-E) is the first national-scale generative foundation model of electronic health records (EHRs), developed as a research pilot strictly for COVID-19 research. We evaluated its ability to model the direct and indirect effects of the pandemic. Trained from scratch entirely within the NHS England Secure Data Environment, Foresight-E is a 243-million-parameter transformer decoder. It was trained and evaluated on de-identified, longitudinal EHRs of approximately 61 million individuals, integrating primary/secondary care, death registrations, and COVID-19 data. Training and validation used a 90% subset (54.9 million) spanning November 2018 to December 2022; the remaining 10% (6.1 million) was held out for evaluation. Foresight-E models patient timelines autoregressively, predicting the next medical event given their prior history. At inference, it operates zero-shot, predicting any concept in its ~40,000-code vocabulary without task-specific training. Our tokenisation scheme retains the clinical granularity of ICD-10, OPCS-4, and SNOMED CT codes, jointly representing absolute and relative timing. We designed an evaluation framework for 30-day COVID-19 hospitalisation and mortality, including subgroup analyses by demographic factors and vaccination status. To assess generalisation to unseen future data and the pandemic's indirect effects, we tested the model on medical events from 2023 (beyond its training period), benchmarking against logistic regression and XGBoost. As detailed in the Project Status section, NHS England has paused access to data for the Foresight-E project, meaning quantitative results are currently unavailable. Instead, we share our strategy for tokenisation, architecture, training, inference, and evaluation as a methodological template and case study in the challenges of building population-scale EHR foundation models.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 73,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "benchmark",
-        "clinical",
-        "evaluation"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.16273v1"
-      }
-    },
-    {
-      "id": "arxiv:2608.15979v1",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixmath"
-      ],
-      "item_type": "paper",
-      "source": "arXiv",
-      "title": "ALPS: Measuring Valid Creativity in Large Language Models with Mathematical Construction",
-      "url": "https://arxiv.org/abs/2608.15979v1",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Eric Xie",
-        "Wenqian Ye",
-        "Aidong Zhang"
-      ],
-      "language": "en",
-      "abstract_or_text": "Large language models produce outputs presented as discoveries - new proofs, conjectures, or molecules. Whether such an output that appears creative is truly original and effective is hard to establish: open-ended outputs require subjective judgment, the output may replicate something seen in training, or the task may be too simple to need creativity. We present ALPS (Austin-Law Proof-Synthesis), a benchmark that designs a task to measure valid creativity: producing a solution that is original and can be proven correct. Each instance is a single equational law, certified to require either the construction of an infinite mathematical structure satisfying the law, or a proof that no such structure exists. Submissions are verified by automated proof checking with no human involvement, and a public generator produces new instances without limit, so LLMs are never evaluated on problems they may have seen. A portfolio of eight configurations of leading automated provers resolves 2.2% of the 4,141-law evaluation pool, and a twentyfold budget increase adds 0.6%: the obstacle is not compute, but the absence of any method that produces the tailored structure each law requires. Under a fixed protocol, the strongest reasoning model we test succeeds in 14% of instances on the proof side, but none on the construction side. The remaining 97.2% of the pool is unresolved at every configuration and budget we test. We release ALPS in full: the corpus, the generator, and the automated judge.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 73,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "benchmark",
-        "evaluation",
-        "release"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.15979v1"
-      }
-    },
-    {
       "id": "chemrxiv:10.26434/chemrxiv.15007551/v1",
       "channel": "aixchem",
       "related_channels": [
@@ -1796,78 +1389,37 @@
       }
     },
     {
-      "id": "chemrxiv:10.26434/chemrxiv.15007499/v1",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "ChemRxiv",
-      "title": "Agentic AI in Process Analytical Technology: LLM Assistants for Chemometric Workflows",
-      "url": "https://doi.org/10.26434/chemrxiv.15007499/v1",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
-      "creators": [
-        "Jan G. Rittig",
-        "Luise F. Kaven",
-        "Philippe Schwaller"
-      ],
-      "language": "en",
-      "abstract_or_text": "Modern manufacturing in chemical and pharmaceutical industries increasingly depends on real-time analytical insight to maintain quality, safety, and flexibility. Yet, turning process measurements into actionable analyses still depends on scarce chemometric expertise and manual workflows. Herein, we adapt agentic AI to the process analytical technology (PAT) domain by developing PAT agents that combine large language models (LLMs) with validated open-source and commercial chemometric software, including RamanSPy, SpectroChemPy and PEAXACT, under a multi-agent orchestrator. We benchmark the agents on nine real-world Raman data-analytics tasks of varying complexity, across three user personas, and several LLM backbones. The PAT agents with frontier LLMs solve analytical tasks at 93–96% pass rate, while numerical claims are grounded in actual tool outputs, and are thus physically consistent and reliable. The agents translate individual user requests into adaptive analytical workflows, halt and request clarification on inconsistent inputs, and remain reviewable through structured logs of every tool call and state transition. These results establish PAT agents as transparent digital coworkers that expand access to advanced process analytics and support more adaptive, data-rich manufacturing, while expert chemometric oversight remains critical for industrial deployment.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 73,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "benchmark"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.26434/chemrxiv.15007499/v1",
-        "arxiv_id": ""
-      }
-    },
-    {
-      "id": "arxiv:2608.15669v1",
+      "id": "biorxiv:10.64898/2026.08.16.745129",
       "channel": "aixchem",
       "related_channels": [
         "aixbio"
       ],
       "item_type": "paper",
-      "source": "arXiv",
-      "title": "Large Discovery Models: Empirically-grounded Model-Based Open-Ended Search",
-      "url": "https://arxiv.org/abs/2608.15669v1",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-16",
+      "source": "bioRxiv",
+      "title": "ETAP-CLF: an ESM3-based transformer attention framework for binary protein classification",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.16.745129",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
       "creators": [
-        "Zhongwei Yu",
-        "Yan Song",
-        "Xue Yan",
-        "Anjie Liu",
-        "Xingyu Lu",
-        "Yihang Chen",
-        "Huichi Zhou",
-        "Siyuan Guo",
-        "Luoyang Sun",
-        "Sihan Chen",
-        "Xiangning Yu",
-        "Jun Wang"
+        "Ren, J.",
+        "Jiang, H.",
+        "Li, P.",
+        "Yang, X.",
+        "Mei, L.",
+        "Tong, H.",
+        "Lin, L."
       ],
       "language": "en",
-      "abstract_or_text": "Scientific discovery often involves optimising expensive-to-evaluate objectives over vast, structured, and open-ended hypothesis spaces, such as molecules, protein sequences, and computer programs. Generative models such as large language models (LLMs) provide expressive priors over such spaces, but their likelihoods and self-assessments are unreliable proxies for the objectives and calibrated epistemic uncertainty, especially for novel candidates outside the observed data distribution. We introduce the Large Discovery Model (LDM), an empirically grounded recurrent architecture that couples a generative model with a Bayesian non-parametric reward surrogate model. The generative model proposes and refines candidate designs, while the surrogate predicts their performance and quantifies uncertainty, yielding an uncertainty-aware value that guides candidate generation, refinement, and selection. The discovery memory and the surrogate model are continually updated as each new experimental observation arrives. We evaluate LDM on three scenarios spanning different design modalities and objectives, including neural-network training, antibody design, and molecular optimisation. Compared to LLM-only reflection or traditional statistical search across these domains, LDM achieves a 2.4\\times greater reduction in validation BPB, an 18.2\\% relative decrease in binding energy, and more than 60\\% relative gains in molecular multi-objective performance. These results suggests that LDM could serve as a general-purpose discovery engine for effective search over open-ended hypothesis spaces.",
+      "abstract_or_text": "Binary protein classification supports diverse tasks in computational biology, including pathway-membership inference and sequence-based candidate prioritization. Protein language models generate information-rich residue-level representations, but downstream classifiers commonly compress them using fixed pooling operations that may discard task-relevant sequence context. We present ETAP-CLF, a compact framework that combines pretrained per-residue ESM3 embeddings with lightweight transformer contextualization and learned attention pooling to classify variable-length proteins and generate residue-level attention scores. The ESM3 parameters remained frozen, and the same ETAP-CLF architecture and hyperparameter configuration were used across ferroptosis-, senescence-, and pyroptosis-associated protein prediction. ETAP-CLF achieved AUROCs of 0.98, 0.95 and 0.91 for these tasks, respectively. In the ferroptosis benchmark, ETAP-CLF outperformed the evaluated published models. These results demonstrate that a common downstream design can adapt to multiple process-associated classification tasks without fine-tuning the task-specific model architecture. ETAP-CLF provides a generalizable approach for sequence-based protein prioritization and a basis for broader evaluation across binary protein-classification problems.",
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "quality_score": 73,
+      "quality_score": 72,
       "tags": [
         "方法与模型"
       ],
       "evidence_flags": [
-        "experimental",
-        "performance"
+        "benchmark",
+        "evaluation"
       ],
       "publication_status": "preprint",
       "rank": 0,
@@ -1875,44 +1427,85 @@
       "category": "方法与模型",
       "metrics": {},
       "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.15669v1"
+        "doi": "10.64898/2026.08.16.745129",
+        "arxiv_id": ""
       }
     },
     {
-      "id": "arxiv:2608.15396v1",
+      "id": "biorxiv:10.64898/2026.08.17.745346",
       "channel": "aixchem",
       "related_channels": [],
       "item_type": "paper",
-      "source": "arXiv",
-      "title": "Large Language Model Assisted Operational Monitoring for Battery Energy Storage System Integrated Power Distribution Networks",
-      "url": "https://arxiv.org/abs/2608.15396v1",
-      "published_at": "2026-08-15",
-      "updated_at": "2026-08-15",
+      "source": "bioRxiv",
+      "title": "Makeshift: a lightweight software for accessing and analyzing NMR data and protein dynamics",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.17.745346",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
       "creators": [
-        "Azmeer Akhtar",
-        "Md Fazley Rafy",
-        "Anurag K. Srivastava"
+        "El Nesr, G.",
+        "Wayment-Steele, H. K."
       ],
       "language": "en",
-      "abstract_or_text": "Battery energy storage systems (BESS) are increasingly used in distribution networks for voltage regulation and demand response, which increases the volume and complexity of operational telemetry available to grid operators. This paper presents an AI-enabled monitoring framework that connects a large language model (LLM) interface with a structured telemetry database for BESS-integrated distribution system analysis. Operator questions are submitted in natural language and translated into validated SQL queries using predefined database schema information and approved KPI views. Retrieved measurements, including bus voltages, state of charge, active power, and reactive power, are evaluated against engineering constraints for voltage limits, BESS operation, and demand response tracking. The framework is validated using hardware-in-the-loop co-simulation data from a BESS-equipped distribution feeder operating under reactive power-based voltage control and price-driven demand response. Case studies show that the framework generates valid database queries, identifies repeated voltage violations, detects reactive power overshoot, and evaluates active-power tracking performance. The results show that LLM-assisted monitoring can connect structured grid telemetry with automated engineering assessment for BESS operation analysis.",
+      "abstract_or_text": "Nuclear magnetic resonance (NMR) spectroscopy yields rich residue-level information on biomolecular dynamics and chemical environments, two frontiers for quantitative predictive methods in biochemistry. Decades of data are publicly archived in the Biological Magnetic Resonance Data Bank (BMRB)1, yet in practice, this information remains difficult to access and interpret at scale and within computational workflows. Here we present makeshift, an open-source Python package for accessing, curating, and analyzing NMR datasets. Users can readily retrieve and parse BMRB entries and perform essential analyses such as chemical shift re-referencing, secondary structure propensity prediction, and interpretation of relaxation datasets for dynamics. We re-implemented several widely-used NMR data calculations which were not open-source or available in Python and validated our implementations against the original implementations. By integrating data access, processing, and analysis into a single Python interface, makeshift lowers the barrier for reproducible, scalable analysis and machine learning applications using biomolecular NMR data.",
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "quality_score": 73,
+      "quality_score": 72,
       "tags": [
-        "方法与模型"
+        "结构与生物"
       ],
       "evidence_flags": [
-        "performance"
+        "dataset"
       ],
       "publication_status": "preprint",
       "rank": 0,
       "featured": false,
-      "category": "方法与模型",
+      "category": "结构与生物",
       "metrics": {},
       "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.15396v1"
+        "doi": "10.64898/2026.08.17.745346",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15000154/v2",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "An Integrated Workflow for Exosome Capture, Recognition-Guided Proximity Labeling of Surface Proteins, and Release",
+      "url": "https://doi.org/10.26434/chemrxiv.15000154/v2",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
+      "creators": [
+        "Yoshihiro Ueda",
+        "Yoshiyuki Manabe",
+        "Sayoko Saito",
+        "Kanae Sano",
+        "Yuka Furukawa",
+        "Hiroaki Tateno",
+        "Kounosuke Oisaki"
+      ],
+      "language": "en",
+      "abstract_or_text": "Chemical modification of extracellular-vesicle surfaces provides molecular handles for vesicle analysis and functionalization, but conventional covalent labeling offers limited spatial control, whereas established proximity-labeling approaches commonly require genetically encoded catalysts. Here, we report a non-genetic strategy that uses molecular recognition to organize exosome capture, surface-proximal covalent labeling, and release within an integrated chemical workflow. Horseradish peroxidase conjugated to an anti-CD63 antibody or to the phosphatidylserine-binding protein Tim4 converted recognition at the vesicle surface into localized oxidative activation of externally supplied labeling reagents, enabling recognition-dependent biotin labeling. The reversible, Ca²⁺-dependent Tim4–phosphatidylserine interaction was then used to connect affinity capture and Tim4-guided labeling with EDTA-induced release of the labeled particles. This work demonstrates how reversible biomolecular recognition can coordinate separation, localized catalysis, and product recovery, providing a design framework for the chemical modification of nanoscale biological assemblies.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 72,
+      "tags": [
+        "结构与生物"
+      ],
+      "evidence_flags": [
+        "release"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15000154/v2",
+        "arxiv_id": ""
       }
     },
     {
@@ -2021,7 +1614,7 @@
         "Thomson, M."
       ],
       "language": "en",
-      "abstract_or_text": "Computational design has transformed many fields of engineering, where simulators can explore millions of candidate design configurations before experimental development and testing. Therapeutic design in biomedicine has resisted computational design approaches because disease progression and therapeutic response emerge from interactions among many cell types within human tissue, governed by biochemical parameters that are largely unknown and potentially unknowable. Here, we introduce the Cell Interaction Foundation Model (CIFM), a virtual tissue model that forward-simulates the transcriptional dynamics of cells in human tissue under arbitrary therapeutic conditions based upon a spatial transcriptomic seed. CIFM is a geometric graph neural network trained by self-supervised masked-transcriptome prediction on millions of cellular microenvironments spanning human tissue types and disease states; generative, auto-regressive, monte-carlo play-out, then, simulates transcriptional dynamics under combinatorial perturbations from a spatial transcriptomic seed. We validate CIFM by showing accuracy gains in gene expression prediction and imputation, disease classification, recapitulation of perturbation responses in prostate cancer models, and recovery of T cell-tumor signaling measured in cell-cell sequencing experiments. Beyond such conventional tasks, CIFM enables target identification and therapeutic design through generative tissue simulation play-outs. Analyzing over 10^6 single and combinatorial perturbations, CIFM designs immunotherapy strategies for cancer and autoimmune disease that exploit combinatorial manipulation of signaling pathways to induce or suppress immune activation. Broadly, CIFM shows how generative artificial intelligence methods can be applied to model emergent behavior in highly interacting biological systems, yielding new approaches to fundamental understanding of tissue behavior as well as large-scale therapeutic design.",
+      "abstract_or_text": "Computational design has transformed many fields of engineering, where simulators can explore millions of candidate design configurations before experimental development and testing. Therapeutic design in biomedicine has resisted computational design approaches because disease progression and therapeutic response emerge from interactions among many cell types within human tissue, governed by biochemical parameters that are largely unknown and potentially unknowable. Here, we introduce the Cell Interaction Foundation Model (CIFM), a virtual tissue model that forward-simulates the transcriptional dynamics of cells in human tissue under arbitrary therapeutic conditions based upon a spatial transcriptomic seed. CIFM is a geometric graph neural network trained by self-supervised masked-transcriptome prediction on millions of cellular microenvironments spanning human tissue types and disease states; generative, auto-regressive, monte-carlo play-out, then, simulates transcriptional dynamics under combinatorial perturbations from a spatial transcriptomic seed. We validate CIFM by showing accuracy gains in gene expression prediction and imputation, disease classification, recapitulation of perturbation responses in prostate cancer models, and recovery of T cell-tumor signaling measured in cell-cell sequencing experiments. Beyond such conventional tasks, CIFM enables target identification and therapeutic design through generative tissue simulation play-outs. Analyzing over 106 single and combinatorial perturbations, CIFM designs immunotherapy strategies for cancer and autoimmune disease that exploit combinatorial manipulation of signaling pathways to induce or suppress immune activation. Broadly, CIFM shows how generative artificial intelligence methods can be applied to model emergent behavior in highly interacting biological systems, yielding new approaches to fundamental understanding of tissue behavior as well as large-scale therapeutic design.",
       "summary_zh": "",
       "why_it_matters_zh": "",
       "quality_score": 72,
@@ -2042,213 +1635,96 @@
       }
     },
     {
-      "id": "arxiv:2608.16045v1",
+      "id": "biorxiv:10.64898/2025.12.21.695803",
       "channel": "aixchem",
       "related_channels": [
-        "aixmath"
+        "aixbio"
       ],
       "item_type": "paper",
-      "source": "arXiv",
-      "title": "Walk Before You Run: The Importance of Data Exploration for Data Analysis Agents",
-      "url": "https://arxiv.org/abs/2608.16045v1",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
+      "source": "bioRxiv",
+      "title": "OTRec: Deep learning recommender for prospective druggable disease-target associations",
+      "url": "https://www.biorxiv.org/content/10.64898/2025.12.21.695803",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
       "creators": [
-        "Yike Yuan",
-        "Virum Ranka",
-        "Tina Lasisi",
-        "Lin Ma"
+        "Ofer, D.",
+        "Linial, M."
       ],
       "language": "en",
-      "abstract_or_text": "LLM-based data-analysis tools are increasingly used to help users analyze messy spreadsheets and workbooks, from answering questions over uploaded files to generating code, summaries, and visualizations. These systems are often evaluated by the correctness of their final downstream answers. However, reliable data analysis also depends on an earlier step: understanding what the dataset contains before solving the requested task. For complex workbooks, this Data Exploration step includes identifying the logical tables behind physical sheets, interpreting column semantics, recovering keys and relationships, and detecting quality issues. In current tools and benchmarks, this step is usually left implicit, creating a gap between downstream task performance and the dataset understanding needed for reliable, human-checkable analysis. Our key contribution is to identify this overlooked gap, make Data Exploration a first-class evaluation target, and show through downstream experiments that stronger Data Exploration support improves task performance. To evaluate dataset understanding directly, we introduce two benchmark settings: a real multi-sheet workbook benchmark based on a Vitamin D study dataset, and an extension of DSBench with schema-fixed Data Exploration artifacts. In both settings, systems are evaluated by the quality of a structured artifact capturing tables, columns, semantic roles, relationships, and profiling signals. Our results show that strong LLMs and data-analysis agents still miss important logical structure even when they read spreadsheet content. Furthermore, explicit Data Exploration support often improves downstream correctness, suggesting it should be treated as a first-class, inspectable stage in LLM data-analysis workflows and a natural human-in-the-loop checkpoint where domain experts can review and correct the artifact before downstream analysis proceeds.",
+      "abstract_or_text": "Identifying druggable disease--target associations remains a central challenge in translational medicine, limiting therapeutic discovery and repurposing. Here, we present OTRec, a deep learning--based recommender system that ranks such associations at scale and evaluates them in a temporal hold-out setting. Unlike approaches that rely on manually curated or aggregated evidence scores, OTRec employs a two-tower architecture to learn latent representations from 663,351 disease--target pairs. The model integrates heterogeneous inputs, including textual descriptions, ontology-derived features, and biological annotations such as tractability, Gene Ontology (GO) terms, and pathway information. We perform temporal validation by training on the 2022 Open Targets (OT) release and evaluating on clinical trial data from 2025. OTRec improves on the retrospective OT association score (ROC-AUC: 0.872 {+/-} 0.005 vs 0.559; PR-AUC: 0.288 {+/-} 0.009 vs. 0.08). In 5x5 target-disjoint cross-validation, OTRec reaches ROC-AUC 0.950 and PR-AUC 0.844) improving on the OT evidence score (ROC-AUC 0.91; PR-AUC 0.45). We rank the druggable genome across ~19,000 OT platform (OTP) diseases and release ~282,500 candidate associations above a 0.65 score threshold (in-distribution CV precision 0.92), covering 4,346 diseases including 2,322 orphan diseases, through an interactive prediction platform.",
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "quality_score": 72,
+      "quality_score": 71,
       "tags": [
-        "方法与模型"
+        "分子与药物发现"
       ],
       "evidence_flags": [
-        "benchmark",
-        "dataset",
-        "evaluation",
-        "performance"
+        "prospective",
+        "clinical",
+        "release"
       ],
       "publication_status": "preprint",
       "rank": 0,
       "featured": false,
-      "category": "方法与模型",
+      "category": "分子与药物发现",
       "metrics": {},
       "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.16045v1"
+        "doi": "10.64898/2025.12.21.695803",
+        "arxiv_id": ""
       }
     },
     {
-      "id": "arxiv:2608.15964v1",
+      "id": "biorxiv:10.1101/2024.01.29.577750",
       "channel": "aixchem",
-      "related_channels": [],
+      "related_channels": [
+        "aixbio"
+      ],
       "item_type": "paper",
-      "source": "arXiv",
-      "title": "LLMs Get Smarter from Targeted Synthetic Multilingual Data",
-      "url": "https://arxiv.org/abs/2608.15964v1",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-16",
+      "source": "bioRxiv",
+      "title": "Structure-enabled enzyme function prediction unveils elusive terpenoid biosynthesis in archaea",
+      "url": "https://www.biorxiv.org/content/10.1101/2024.01.29.577750",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
       "creators": [
-        "Ishika Agarwal",
-        "Arkajyoti Charaborty",
-        "Tanner Sorensen",
-        "Neha Gupta",
-        "Andreas Stolcke"
+        "Samusevich, R.",
+        "Akmese, S. M.",
+        "Hebra, T.",
+        "Bushuiev, R.",
+        "Engst, M.",
+        "Kulhanek, J.",
+        "Bushuiev, A.",
+        "Smith, J. D.",
+        "Calounova, T.",
+        "Smrckova, H.",
+        "Molineris, M.",
+        "Schwartz, R.",
+        "Svoboda, A.",
+        "Chatpatanasiri, R.",
+        "Kampranis, S. C.",
+        "Major, D. T.",
+        "Sivic, J.",
+        "Pluskal, T."
       ],
       "language": "en",
-      "abstract_or_text": "Language-specific competency (LSC) is the phenomenon of a language model performing better or worse depending on the language of the prompt. In other words, a language model outputs different (and potentially incorrect) responses to the same semantic query when prompted in different languages. Prior work attributes this to an internal misalignment of semantic representation across languages. Currently, there are two main approaches to address LSC in the literature: (1) routing all queries through English, improving performance, but limiting language expressivity to English; or (2) training on language-balanced data, equalizing model performance across languages, but reducing overall performance. In this work, we take a data centric perspective and introduce HOTFIXR: Hardness Optimized Training data For Improving X-Lingual Reasoning. It is a data generation framework that uses models to probe and learn a student model's multilingual weaknesses, and generates data to mitigate them. HOTFIXR can generate multilingual synthetic training data that can improve multilingual performance. We evaluate on three in-distribution tasks, three out-of-distribution tasks, and four out-of-distribution languages. On average, HOTFIXR (1) improves in-distribution performance by 6.2%, (2) reduces catastrophic forgetting (induced by fine-tuning) on OOD tasks by 3.7%, and (3) on OOD languages by 7.1%. Overall, as many real-world applications requires multilingual LLMs, our work contributes to the efforts of making LLMs multilingually proficient. We will release code upon acceptance.",
+      "abstract_or_text": "The exponential growth of uncharacterized enzyme sequences in genomic repositories demands novel tools for functional annotation. Here, we combined alignment-driven structural domain analysis with protein language models to create EnzymeExplorer, a machine-learning pipeline for enzyme function prediction. We applied this approach to terpene synthases (TPSs), which present an ideal model case because they catalyze complex carbocationic rearrangements with unpredictable product outcomes. We detected new structural domains and achieved significantly higher average precision than existing methods for function prediction. By analyzing the UniRef90 database, we identified TPSs overlooked by existing computational methods. Remarkably, we discovered and experimentally confirmed three archaeal TPSs, expanding the known taxonomic distribution of TPS catalysis to a new domain of life. Further in silico screening of archaeal proteomes revealed that terpene biosynthesis is widespread across Archaea. Our approach offers a powerful framework for characterizing enzyme \"dark matter\" in the rapidly expanding genomic and metagenomic datasets.",
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "quality_score": 72,
+      "quality_score": 71,
       "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "release",
-        "performance"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.15964v1"
-      }
-    },
-    {
-      "id": "arxiv:2608.15931v1",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "arXiv",
-      "title": "PLSQLBench: Benchmarking LLM Systems for Executable Procedural Database Programming",
-      "url": "https://arxiv.org/abs/2608.15931v1",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-16",
-      "creators": [
-        "Marianne Menglin Liu",
-        "Leonid Boytsov",
-        "Daniel W. Peterson",
-        "Pramuditha Perera",
-        "Rongguang Wang",
-        "Sai Ashish Somayajula",
-        "Syed Hamza Rafique",
-        "Rohit Saini",
-        "Shubham Pathak",
-        "Sujeeth Bharadwaj",
-        "Tao Sheng",
-        "Graham Horwood",
-        "Fahad Shah",
-        "Ankan Bansal",
-        "Sujith Ravi",
-        "Dan Roth"
-      ],
-      "language": "en",
-      "abstract_or_text": "We present PLSQLBench, to our knowledge the first benchmark for evaluating whether LLMs can write executable PL/SQL programs, with correctness measured through execution-based tests. Existing LLM evaluations largely target general-purpose code generation or declarative text-to-SQL, leaving procedural database programming underexplored. PLSQLBench contains 2,865 instances: 2,594 single-turn tasks and 271 multi-turn conversations spanning 978 turns. The benchmark combines complex schema-grounded tasks over enterprise-style Spider 2 databases, simpler schema-grounded tasks derived from Spider, and MBPP-derived procedural problems, covering varying levels of database grounding and procedural complexity. Experiments with eight LLMs reveal recurring difficulties in schema grounding, PL/SQL dialect fidelity, procedural control flow, exception handling, and cross-turn consistency. Tool-augmented LLM agents improve performance on several schema-grounded evaluations, although substantial gaps remain. These results highlight procedural database programming capabilities not directly assessed by conventional code generation or text-to-SQL benchmarks. Our code is available at https://github.com/oracle-samples/plsqlbench.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 72,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "benchmark",
-        "github",
-        "evaluation",
-        "performance"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.15931v1"
-      }
-    },
-    {
-      "id": "arxiv:2608.15109v1",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "arXiv",
-      "title": "Constraint-Aware Synthetic Tabular Data Generation via Inter-Column Constraint Discovery with LLM Agents",
-      "url": "https://arxiv.org/abs/2608.15109v1",
-      "published_at": "2026-08-15",
-      "updated_at": "2026-08-15",
-      "creators": [
-        "Jianxing Zhao",
-        "Mao Guan",
-        "Dongyu Liu"
-      ],
-      "language": "en",
-      "abstract_or_text": "Generating structurally valid synthetic tabular data remains difficult: outputs with high statistical fidelity and downstream utility can still violate semantically meaningful domain constraints. We study the discovery and enforcement of three complementary inter-column constraint families---equations, linear inequalities, and logical dependencies. Our unified tool-grounded workflow represents all three as machine-executable hypotheses and applies a common interface for full-table validation, deterministic diagnosis, and counterexample-guided revision. A generator-agnostic postprocessor coordinates family-specific repairs on outputs from unchanged tabular generators. Across curated behavioral audits and end-to-end evaluations, the complete workflow improves held-out violation detection over one-shot direct prompting, while postprocessing yields zero measured violations for every retained, applicable constraint, improves downstream utility on most datasets, and largely preserves univariate marginals.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 72,
-      "tags": [
-        "方法与模型"
+        "结构与生物"
       ],
       "evidence_flags": [
         "dataset",
-        "evaluation"
+        "experimental"
       ],
       "publication_status": "preprint",
       "rank": 0,
       "featured": false,
-      "category": "方法与模型",
+      "category": "结构与生物",
       "metrics": {},
       "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.15109v1"
-      }
-    },
-    {
-      "id": "arxiv:2608.15032v1",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "arXiv",
-      "title": "Handoff-H1: An Orchestrated Vision-Agent System for Material Quantity Takeoff from Construction Blueprints",
-      "url": "https://arxiv.org/abs/2608.15032v1",
-      "published_at": "2026-08-15",
-      "updated_at": "2026-08-15",
-      "creators": [
-        "Bruno Chicelli",
-        "Henrique Alves",
-        "Rodrigo Anselmo",
-        "Joshua Weinberg",
-        "Felipe Lemos",
-        "Jan Baryla"
-      ],
-      "language": "en",
-      "abstract_or_text": "Converting a set of architectural blueprints into a complete material quantity takeoff requires visual perception across drawing sheets, dimensional and multi-hop reasoning, and grounding in construction conventions that the drawings never state. We present Handoff-H1, a takeoff system built from three layers: purpose-built computer-vision models that extract primitives; tool-using agents equipped with image operations and in-house visual-task tools, including CV-model-backed counting, detection and plan decomposition; and a persistent, hierarchically structured project foundation, grounded in a curated construction knowledge base. We evaluate on the Construction Blueprint Takeoff Benchmark: 10 real residential blueprint sets paired with consensus-validated expert takeoffs - 2,009 verified line items, restricted for scoring to the 1,348 primary-tier materials that drive an estimate - scored per trade by an LLM judge on material coverage and quantity Precision@25% (P@.25) and combined into a weighted composite. Under identical scoring from the raw PDF, seven frontier and open-weight models span composites of 35-61, and independent professional estimators - scored against the same reconciled gold standard - post 77.6% (65.5% coverage, 87.9% P@.25). Handoff-H1, working end-to-end from the raw PDF, reaches 81.6% (86.1% coverage, 78.8% P@.25): roughly 20 points above the strongest frontier agent, and above the independent estimators by pairing near-human quantity precision with coverage they do not reach. The evaluation harness is public for the open harbor framework; the blueprint sets and ground truth are available upon request for research use.",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 72,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "benchmark",
-        "evaluation"
-      ],
-      "publication_status": "preprint",
-      "rank": 0,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.15032v1"
+        "doi": "10.1101/2024.01.29.577750",
+        "arxiv_id": ""
       }
     },
     {
@@ -2491,6 +1967,531 @@
       "metrics": {},
       "metadata": {
         "doi": "10.26434/chemrxiv.15007559/v1",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15001485/v2",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "A Novel QSPR Workflow for Predicting Molecular Critical Properties: Balancing Accuracy, Applicability, and Explainability",
+      "url": "https://doi.org/10.26434/chemrxiv.15001485/v2",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
+      "creators": [
+        "Xurui Li",
+        "Zhiguo Gan",
+        "Jiaming Zhang",
+        "Hongxi Zeng",
+        "Zheng Liu",
+        "Diannan Lu"
+      ],
+      "language": "en",
+      "abstract_or_text": "The critical point is the endpoint of the vapor–liquid coexistence curve of a pure substance and plays a key role in thermophysical property calculations. However, due to the limited availability of high-precision experimental data, most thermophysical property datasets are typically small. Their modeling faces challenges in terms of accuracy, applicability, and explainability. To address these issues, this work proposes a workflow for QSPR modeling of thermophysical properties by considering multiple aspects. The workflow uses RDKit, Mordred, and PubChemFP to calculate molecular 2D descriptors, and uses Gaussian to optimize molecular conformations and calculate molecular 3D descriptors. Based on these descriptors, Boruta-based multi-round feature selection combined with the EM algorithm is used to estimate and identify important features related to the modeling target. Appropriate models can then be selected for prediction. For critical properties modeling, the proposed approach achieves impressive test-set prediction AARDs of 2.31% for T c and 5.98% for P c . From the perspective of extrapolation, its accuracy is better than that of existing state-of-the-art machine learning models. Because molecular descriptors are used as modeling features, the model has better applicability than GNN models. The workflow further proposes the use of Uniform Manifold Approximation and Projection combined with SHAP to identify and interpret relevant features for molecules in specific clusters. In addition, from a physical perspective, it proposes a strategy for the targeted improvement of the model, providing new insights into explainability. In the future, this workflow is expected to be extended to a wider range of thermophysical property modeling tasks and to provide a general framework for thermodynamic property prediction based on small datasets.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 70,
+      "tags": [
+        "分子与药物发现"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "experimental",
+        "state-of-the-art"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15001485/v2",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "arxiv:2608.18733v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Flama: a Python framework for development and deployment of production-ready APIs, machine learning, and LLM services",
+      "url": "https://arxiv.org/abs/2608.18733v1",
+      "published_at": "2026-08-19",
+      "updated_at": "2026-08-19",
+      "creators": [
+        "José A. Perdiguero López",
+        "Miguel A. Durán-Olivencia"
+      ],
+      "language": "en",
+      "abstract_or_text": "We present Flama, an open-source Python framework for developing and deploying production-ready web APIs, machine learning services, and large-language-model (LLM) applications. Built on the Asynchronous Server Gateway Interface (ASGI), Flama offers a type-driven, async-first programming model that unifies REST API development, predictive model serving, and generative AI inference in one architecture. It is organised around seven subsystems: a component-based dependency injection system resolving handler parameters from type annotations at startup; a pluggable schema layer supporting Pydantic, Marshmallow and Typesystem behind a single adapter; an automatic CRUD generator turning a SQLAlchemy table and a schema class into REST endpoints backed by the Repository and Unit of Work patterns; a portable binary format (.flm) packaging models from scikit-learn, TensorFlow, PyTorch and Hugging Face Transformers with their metadata for zero-code deployment; a multi-backend LLM server running vLLM (Linux/CUDA) or MLX (Apple Silicon) and exposing four wire protocols (OpenAI, Anthropic, Ollama, and a native streaming dialect) through a shared codec; a Rust-accelerated core compiled via Maturin for routing, JSON encoding, compression and parsing; and a Model Context Protocol module turning any application into an MCP server over JSON-RPC 2.0. Built-in capabilities include JWT authentication, two pagination strategies, background tasks in threads or processes, WebSocket endpoints, Server-Sent Event and NDJSON streaming, OpenAPI 3.2.0 generation from handler signatures, and a command-line interface for running applications and for serving, packaging and inspecting models. We describe the architecture, present the programming model through worked examples, and compare Flama with existing frameworks, model serving platforms and LLM inference engines.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 70,
+      "tags": [
+        "方法与模型"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.18733v1"
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.18.745571",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio",
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "A Biologically Informed Heterogeneous Graph Neural Network for Multi-Task Prediction of ncRNA-Metastasis-Cancer Interactions",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.18.745571",
+      "published_at": "2026-08-19",
+      "updated_at": "2026-08-19",
+      "creators": [
+        "Midjani, F.",
+        "Shaghouzi, M.",
+        "Dehqan Banadaki, A.",
+        "Rahimikashkooli, N.",
+        "Keshtkar, F. Z.",
+        "Malekpour, M.",
+        "Hashemi, S.",
+        "G. Hernandez-Barco, Y.",
+        "Soleymanjahi, S."
+      ],
+      "language": "en",
+      "abstract_or_text": "Metastasis involves context-dependent molecular interactions in which non-coding RNAs, particularly miRNAs and circRNAs, play important regulatory roles. However, existing computational approaches generally do not jointly represent cancer type, metastatic event, and cancer-specific metastatic context. We developed a context-aware multi-task heterogeneous graph neural network (GNN) for predicting ncRNA associations with cancer types and metastatic events. The framework integrates multiple biological repositories into a heterogeneous graph representing ncRNAs, cancers, metastatic event types (METs), and cancer-specific metastatic instances (CSMIs). The model performs six link-prediction tasks using a hierarchical transformer-based encoder and multi-relational TuckER decoder. Across ten independently initialized runs evaluated on the RNA-group-disjoint held-out test set, the model achieved a global AUROC of (0.8801 {+/-} 0.0118) and an F1 score of (0.8260 {+/-} 0.0071). All three ablation variants yielded lower AUROC, with the largest reduction under independent task training. Case studies in pancreatic cancer, colorectal cancer, and hepatocellular carcinoma provided disease-level, event-level, and expression-based support, respectively, for top-ranked candidate associations. The framework enables context-specific prioritization of ncRNA-cancer-metastasis associations for experimental evaluation.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 70,
+      "tags": [
+        "方法与模型"
+      ],
+      "evidence_flags": [
+        "experimental",
+        "ablation",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.18.745571",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.741835",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "High-Content Screening Identifies Dithiocarbamates As A Class Of Chemicals That Disrupts TDP-43 Proteostasis",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.741835",
+      "published_at": "2026-08-19",
+      "updated_at": "2026-08-19",
+      "creators": [
+        "Fragola, G.",
+        "weeks, R. D.",
+        "Wolter, J.",
+        "Bryan, A. F.",
+        "Kapfer, K. N.",
+        "Tian, X.",
+        "Necarsulmer, J. C.",
+        "Evangelista, B. A.",
+        "Bhat, V.",
+        "Arooji, O. K.",
+        "Beltran, A. S.",
+        "Brennan, T. A.",
+        "Niederhuber, M. J.",
+        "Hepperla, A.",
+        "Collins, L. B.",
+        "Islam Williams, T.",
+        "Ezzell, A. J.",
+        "Planchart, A.",
+        "Cohen, T."
+      ],
+      "language": "en",
+      "abstract_or_text": "Transactive response DNA-binding protein 43 (TDP-43) aggregation and loss of function are hallmark features of amyotrophic lateral sclerosis (ALS) and frontotemporal dementia (FTD) among other neurodegenerative diseases. Despite epidemiological evidence linking environmental exposures to neurodegeneration, few toxicants have been directly associated with neurodegeneration. Here, we performed a high-content imaging screen, using a library of over a thousand chemical compounds that are considered high risk for human exposure and identified 21 toxicants that drive TDP 43 aggregation. Among the top chemical hits, five belonged to the dithiocarbamate (DTC) class of thiol reactive compounds including the agricultural pesticides thiram and ziram. Thiram directly promoted TDP-43 cysteine oxidation and intermolecular crosslinking, whereas ziram induced TDP-43 aggregation via zinc imbalance and enhanced oxidative stress, suggesting DTCs disrupt redox homeostasis. In primary neurons and human iPSC-derived neurons, DTCs led to TDP-43 aggregation and prominent splicing defects consistent with loss of TDP-43 function. In exposed zebrafish, DTCs impaired TDP-43 function and triggered widespread transcriptional changes reflected by perturbed stress response and metabolic signatures. By combining TDP-43 loss of function mutations with chemical exposures, we observed accelerated TDP-43 loss of function and chemical-induced aggregation, supporting a multiple hit mechanism driving TDP-43 dysfunction. Together, these findings identify DTCs, particularly those used as agricultural pesticides, as dominant modifiers of TDP-43 proteostasis and identify redox imbalance and zinc homeostasis as a central molecular mechanism linking toxicant exposure to TDP-43 proteinopathy.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 70,
+      "tags": [
+        "结构与生物"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.741835",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "arxiv:2608.18072v1",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Multi-Agent AI System for Radiology Report Structuring and Quality Assurance with Independent Radiologist Evaluation",
+      "url": "https://arxiv.org/abs/2608.18072v1",
+      "published_at": "2026-08-18",
+      "updated_at": "2026-08-18",
+      "creators": [
+        "Iryna Hartsock",
+        "Cesar Lam",
+        "Christopher Otteni",
+        "Aliya Qayyum",
+        "Robert Gatenby",
+        "Cyrillo Araujo",
+        "Ghulam Rasool"
+      ],
+      "language": "en",
+      "abstract_or_text": "Purpose: To develop and evaluate a locally deployed multi-agent AI system for radiology report structuring and quality assurance. Materials and Methods: This retrospective study included 638 radiology reports from CT examinations of the chest, abdomen, and pelvis dictated by 15 board-certified radiologists in 2023 and 2024. A multi-agent AI pipeline was developed to perform report structuring and quality assurance (QA). The system structured the report into standardized anatomical sections at the sentence level using regex rules and local large language models. It also detected mismatches between the Findings and Impression sections, or within sections; gender-anatomy conflicts; and undocumented communication of critical findings. Two board-certified radiologists independently evaluated a 45-report subset. Results: The multi-agent system structured the Findings sections of all reports (22,270 sentences) into a predefined anatomical format while retaining the original report content. The system flagged 90 (14.1%) reports, most commonly for section mismatches (80 reports, 12.5%). In the radiologist evaluation, both reviewers agreed that 31 (69%) were correctly restructured, 2 reports (4%) were incorrectly restructured, and disagreed on the remaining 12 reports (27%). Both reviewers agreed that no clinically important information was omitted and no fabricated content was introduced. Overall QA performance was rated as \"excellent\" or \"good\" in 84% of the evaluated reports, with the remaining reports rated as \"fair\". Conclusion: A locally deployed multi-agent AI system combined radiology report structuring and quality assurance within a single workflow. The system demonstrated favorable performance in radiologist evaluation. Such systems may support standardization of reporting and quality assurance in radiology practice.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 70,
+      "tags": [
+        "方法与模型"
+      ],
+      "evidence_flags": [
+        "clinical",
+        "evaluation",
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.18072v1"
+      }
+    },
+    {
+      "id": "arxiv:2608.17796v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Diff-DDoS: Realistic Cyber-Physical Attack Synthesis and Robust Detection for 5G-Enabled CPS Using Tabular Diffusion Models",
+      "url": "https://arxiv.org/abs/2608.17796v1",
+      "published_at": "2026-08-18",
+      "updated_at": "2026-08-18",
+      "creators": [
+        "Bilal Hussain",
+        "Xiao Tang",
+        "Qinghe Du",
+        "Tan Li",
+        "Muhammad Azhar",
+        "Danista Khan"
+      ],
+      "language": "en",
+      "abstract_or_text": "Deep learning-based DDoS detectors for 5G-enabled cyber-physical systems face scarce labeled attack data and unrealistic synthetic substitutes, which limit robustness against adaptive adversaries. Detectors trained on hand-crafted attacks with fixed scaling multipliers degrade catastrophically (F1-score drops of about 47 percent to 100 percent, depending on scenario) when confronted with realistic, distribution-preserving samples. We propose Diff-DDoS, a three-phase framework for realistic attack synthesis and robust detection using tabular diffusion models. Phase 1 trains a baseline CNN cell-level detector on spatiotemporal grids from call detail records (CDRs). Phase 2 trains a tabular denoising diffusion probabilistic model (TabDDPM) on normal CDR aggregates to generate realistic attacks and expose detector vulnerabilities. Phase 3 introduces adversarial diffusion training (ADT), using inverse classifier guidance to generate hard yet distribution-preserving samples until the detector converges. On a Milano CDR dataset across SMS-flooding, silent-call, Internet-signaling, and blended scenarios, ResNet50 with ADT recovers F1-scores of 79.62 percent (silent-call), 100 percent (Internet), and 92.79 percent (blended). After validation-based threshold calibration, ADT reaches 100 percent SMS F1 versus 47.3 percent for CTGAN, and matches the strongest gradient-based adversarial-training baseline on silent-call. These results support tabular diffusion models for stress-testing and hardening intrusion detectors in data-scarce 5G cyber-physical deployments.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 70,
+      "tags": [
+        "方法与模型"
+      ],
+      "evidence_flags": [
+        "dataset"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.17796v1"
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.19.745713",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Species Context Reverses PPIP5K Control of Fungal Morphogenesis and Actin Organization",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.19.745713",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
+      "creators": [
+        "Fleig, U.",
+        "Koc, E.",
+        "Juhran, L.",
+        "Emmerich, V.",
+        "Alcazar-Roman, A. R.",
+        "Bartsch, S. M.",
+        "Saiardi, A.",
+        "van Wijlick, L.",
+        "Postma, J.",
+        "Lenz, T.",
+        "Fiedler, D.",
+        "Feldbruegge, M.",
+        "Stuehler, K.",
+        "Span, I."
+      ],
+      "language": "en",
+      "abstract_or_text": "Inositol pyrophosphates are conserved signaling molecules synthesized by the bifunctional PPIP5K enzymes, but how their cellular functions diversify across species remains poorly understood. Here, we compared the PPIP5K enzyme Asp1 in the fission yeasts Schizosaccharomyces pombe and Schizosaccharomyces japonicus and in the distantly related fungus Ustilago maydis. All three homologs retained a conserved kinase-phosphatase architecture and catalytic activity. However, whereas Asp1 produced broadly similar effects on actin organization and morphogenesis in S. pombe and U. maydis, its regulatory output was reversed in S. japonicus. In S. pombe and U. maydis, Asp1 positively supported Arp2/3-dependent actin functions, as loss of Asp1 increased sensitivity to the Arp2/3 inhibitor CK666. In contrast, deletion of asp1 in S. japonicus conferred strong CK666 resistance and caused excessive, spatially deregulated actin-patch organization. This opposing cytoskeletal phenotype was mirrored at the level of morphogenesis: Asp1 restricted the yeast-to-hypha transition in S. japonicus, whereas Asp1 was required for pseudohyphal growth in S. pombe and for filamentous development in U. maydis. However, the negative regulatory activity observed in S. japonicus was not an intrinsic property of the SjAsp1 protein. When expressed in S. pombe, SjAsp1 promoted invasive pseudohyphal growth, reproducing the regulatory output of the S. pombe Asp1 morphogenesis pathway rather than that of its native species. Similarly, SjAsp1 supported Arp2/3 functions when expressed in S. pombe. Thus, SjAsp1 adopted the functional behavior imposed by the host cellular environment. S. pombe Asp1 was originally identified as a suppressor of Arp2/3-complex mutant phenotypes, establishing a genetic connection between Asp1 and the actin nucleator. Extending this link, affinity enrichment with inositol pyrophosphates reagents recovered all seven subunits of the S. pombe Arp2/3 complex, providing biochemical support for a potential association between inositol pyrophosphate and Arp2/3. Together, these findings identify S. japonicus as a functional outlier in which a conserved PPIP5K pathway produces an opposing biological output. They further demonstrate that this divergence is determined primarily by species-specific cellular networks rather than by intrinsic differences in the Asp1 protein.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 69,
+      "tags": [
+        "结构与生物"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.19.745713",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.15.745007",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "CryoForge: A Self-Correcting Agent for Cryo-EM Model Building That Learns When to Act and When to Stop",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.15.745007",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
+      "creators": [
+        "Feng, W.",
+        "Jiang, y.",
+        "Sun, F.",
+        "Yang, J.",
+        "Gao, X.",
+        "Zhang, F.",
+        "Han, R."
+      ],
+      "language": "en",
+      "abstract_or_text": "Automated atomic model building has accelerated cryo-EM structure determination, but different builders leave distinct residual error profiles requiring expert inspection. The post-building challenge is to decide which local interpretations are sufficiently supported by experimental evidence to be retained, corrected or rejected. Here we introduce CryoForge, an evidence-gated post-builder agent that separates repair proposal from repair acceptance. Rule and learning-based components identify candidate regions and prioritize legal actions, whereas an independent evidence gate evaluates each edit using map and half-map support, stereochemistry, connectivity and local structural context. Supported edits are retained; unsupported or conflicting modifications are rejected, rolled back, stopped or escalated for expert review. Across a resolution-stratified benchmark, 84.9% of 26,153 released trajectories yielded standard validated improvements and 3.7% yielded low-confidence partial improvements, with no quality-degrading edit retained in the final promoted models. Relative to rule-only control, learned prioritization reduced non-improving candidates and harmful actions while preserving global structural stability. External evaluations using an alternative initializer, same-team automated/manual-assisted challenge submissions and three recently released complex assemblies showed that CryoForge adapts to distinct residual error phenotypes and performs bounded, evidence-supported correction without uncontrolled remodeling. CryoForge provides a builder-independent, scalable and auditable correction layer between automated model generation and expert structural interpretation.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 69,
+      "tags": [
+        "结构与生物"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "experimental",
+        "evaluation",
+        "release"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.15.745007",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "arxiv:2608.19009v1",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixmath"
+      ],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "Grading the Graders: Verification Autonomy Levels (L0-L5) for LLM Reasoning",
+      "url": "https://arxiv.org/abs/2608.19009v1",
+      "published_at": "2026-08-19",
+      "updated_at": "2026-08-19",
+      "creators": [
+        "Yajie Yin"
+      ],
+      "language": "en",
+      "abstract_or_text": "Large language models (LLMs) are increasingly paired with verifiers (step checkers, self-consistency filters, tool-based fact checkers, formal proof assistants) that claim to detect the model's errors. Yet the verification literature uses the word \"level\" to mean at least five different things: verification granularity, concept abstraction, risk tier, system-stack layer, and the epistemic source of the ground truth. We propose Verification Autonomy Levels (VAL), a meta-standard classifying verification schemes along a single axis: where does the verification spec come from, and what does the verdict guarantee? VAL ranges from L0 (LLM self-declaration, no deterministic anchor) through L2 (objective ground truth, correctness only) to L3/L4 (decidable systems with single-property or domain-level completeness), with L5 impossible in the unrestricted case. Central to VAL is the completeness blind spot: substitution- and sampling-based verifiers can confirm that proposed candidates hold, but cannot prove that no candidate was missed. We further identify a dichotomy the literature has not stated: completeness is reachable only for formally specifiable properties, while empirical open-world verification (fact-checking, diagnosis) caps at anchored correctness (L2). We document this across four domains (symbolic mathematics, behavior monitoring, medical diagnosis, and code generation) and in the strongest existing formal-verification baseline, whose authors note the verifier \"focuses on the correctness of each step.\" We show the levels of granularity, concept hierarchy, risk, and system stack are orthogonal to VAL, resolving a systematic conflation across 17 surveyed papers. Code and full assessment are released as supplementary material.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 69,
+      "tags": [
+        "方法与模型"
+      ],
+      "evidence_flags": [
+        "release"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.19009v1"
+      }
+    },
+    {
+      "id": "arxiv:2608.18933v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "arXiv",
+      "title": "SkillForge: Self-Distilling Agents for Project-Specific Issue Resolution",
+      "url": "https://arxiv.org/abs/2608.18933v1",
+      "published_at": "2026-08-19",
+      "updated_at": "2026-08-19",
+      "creators": [
+        "Silin Chen",
+        "Han Li",
+        "Xiaodong Gu",
+        "Yuling Shi",
+        "Haibing Guan"
+      ],
+      "language": "en",
+      "abstract_or_text": "Large language model (LLM) based agents have demonstrated remarkable proficiency in automated software issue resolution, yet they often struggle to resolve issues in a specific repository because they lack project-specific knowledge. Existing self-evolving approaches acquire such knowledge from repository history or online repair trajectories, but they either depend on available historical issue-resolution signals or incur substantial per-issue test-time exploration cost. In this paper, we propose SkillForge, a self-distillation framework that proactively acquires project-specific knowledge from the repository itself. Instead of waiting for real issues to expose project-specific knowledge gaps, SkillForge synthesizes project-specific issues by re-implementing test-covered core functionalities of the repository. By resolving these synthetic issues, SkillForge distills reusable project-specific knowledge into entity-grounded skills and associates them with relevant repository entities for future issue resolution. Extensive experiments using both open-source and closed-source models show that SkillForge consistently improves issue resolution performance over strong baselines. These results demonstrate that proactively acquiring project-specific knowledge before solving real issues substantially improves downstream software issue resolution.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 69,
+      "tags": [
+        "方法与模型"
+      ],
+      "evidence_flags": [
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "",
+        "arxiv_id": "2608.18933v1"
+      }
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.14.744667",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Percolation-inspired criticality in complement activation: universal scaling and transport-limited complement surface amplification",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744667",
+      "published_at": "2026-08-19",
+      "updated_at": "2026-08-19",
+      "creators": [
+        "Monson, S.",
+        "Kulkarni, S.",
+        "Myerson, J.",
+        "Brenner, J.",
+        "Radhakrishnan, R."
+      ],
+      "language": "en",
+      "abstract_or_text": "The collective spatial phenomenon of complement protein opsonization on nanoparticle surfaces is a key component of the immune response to viruses, engineered nanoparticles, and diseased cells. Recent work showed this opsonization follows a sharp, percolation-like transition versus the spacing d between surface-bound attachment sites, leaving two open questions: 1) whether the transition exhibits hallmarks of true criticality, such as diverging susceptibility, and 2) whether it can be distinguished from an alternative first-order cooperative (Hill-type) process producing an equally sharp threshold without true criticality. Here, we resolve both questions using a hierarchical statistical-mechanics treatment spanning stochastic, mean-field, and spatial reaction-diffusion models. The variance of two order parameters, peak complement activity and activation lifetime, diverges near threshold and sharpens systematically with system size, the defining signature of a critical point rather than a smooth cooperative response. Extending the analysis across site spacing and intrinsic kinetic rate constants traces a two-dimensional locus of critical points with consistent critical exponents throughout, establishing a single, robust universality class. The mean-field dynamic exponent for activation lifetime agrees quantitatively with the exact value predicted for the general epidemic process. Finally, a reaction-diffusion model of the nanoparticle surface shows the critical locus is set by a diffusion-limited length scale, establishing complement percolation as a fundamentally transport-limited surface reaction. These results place complement activation within the percolation universality class and identify the physical parameters, diffusion, catalysis, and decay, that govern its critical threshold, with direct implications for rational design of complement-evading nanomaterials, immunology, and evolutionary biology.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 69,
+      "tags": [
+        "材料与催化"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.14.744667",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007587/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Cross-Coupling of Transiently Stable Heterocyclic Organolithiums",
+      "url": "https://doi.org/10.26434/chemrxiv.15007587/v1",
+      "published_at": "2026-08-18",
+      "updated_at": "2026-08-18",
+      "creators": [
+        "Piyas Saha",
+        "Francisco José Aguilar Troyano",
+        "Soumitra Ghosh",
+        "Stephen G. Newman"
+      ],
+      "language": "en",
+      "abstract_or_text": "The use of organolithium reagents in cross-coupling (the Murahashi coupling) has undergone a resurgence over the past decade, driven by the discovery that modern ligands and catalysts can promote productive couplings that outcompete common side reactions. Despite this progress, most reported methods rely on stable, well-behaved organolithium partners such as n-BuLi and PhLi, leaving many synthetically valuable but highly sensitive heterocyclic organolithiums outside the practical scope. In this work, we employ high-throughput experimentation (HTE) to identify catalytic systems that enable C–C bond formation on minute or subminute time scales. These ultrafast conditions enable coupling of sensitive organolithium species, such as lithiated pyridines and quinolines, before they decompose under conventional conditions. We identify several complementary, top-performing catalyst systems that address the different challenges encountered across nucleophile-electrophile combinations, including catalyst inhibition, side reactions, and rapid organolithium decomposition. Limits of the batch protocol are identified and overcome through development of an alternative flash-chemistry protocol that further expands the scope to organolithium reagents that decompose on time scales of seconds. Together, these studies establish a practical strategy for coupling transient heterocyclic organolithiums and substantially expand the scope of the Murahashi reaction.",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 69,
+      "tags": [
+        "分子与药物发现"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007587/v1",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007561/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Self-Optimizing GPU Kernels for Computational Chemistry: An Autonomous Acceleration Laboratory",
+      "url": "https://doi.org/10.26434/chemrxiv.15007561/v1",
+      "published_at": "2026-08-18",
+      "updated_at": "2026-08-18",
+      "creators": [
+        "Horacio Pérez-Sánchez"
+      ],
+      "language": "en",
+      "abstract_or_text": "Accelerating scientific code on GPUs is central to high performance computing, but finding the best strategy for a given kernel still demands manual experimentation and deep parallel-programming expertise. We present an autonomous laboratory that automates the whole loop: it takes a sequential kernel, proposes optimization hypotheses, emits real CUDA, compiles and runs it on a remote GPU server, verifies it against a gold reference, and iterates. The laboratory supports three ways of writing the kernel, all judged by one external gate: (A) a deterministic search over a hand-built catalog of GPU techniques, with no language model at run time; (B) a language model, local or cloud, that writes each kernel from scratch; and (C) an autonomous coding agent (Codex CLI) that drives the loop by itself. The single external gate is what keeps every number honest: it first checks correctness (the GPU checksum must match the sequential gold to a set tolerance) and only then checks timing (a roofline floor plus a wall-clock guard prove the",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 69,
+      "tags": [
+        "方法与模型"
+      ],
+      "evidence_flags": [
+        "performance"
+      ],
+      "publication_status": "preprint",
+      "rank": 0,
+      "featured": false,
+      "category": "方法与模型",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007561/v1",
         "arxiv_id": ""
       }
     }

@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-20T06:39:50+00:00",
+  "generated_at": "2026-08-20T23:37:00+00:00",
   "timezone": "Asia/Shanghai",
-  "expected_date": "2026-08-20",
-  "latest_date": "2026-08-20",
+  "expected_date": "2026-08-21",
+  "latest_date": "2026-08-21",
   "state": "fresh",
   "active_channels": [
     "aixchem",
@@ -23,80 +23,80 @@
   "channels": {
     "aixchem": {
       "state": "success",
-      "latest_date": "2026-08-20",
-      "updated_at": "2026-08-20T06:14:30+00:00",
+      "latest_date": "2026-08-21",
+      "updated_at": "2026-08-20T23:14:45+00:00",
       "source_errors": [],
       "stats": {
-        "fetched": 2196,
+        "fetched": 1250,
         "candidates": 60,
         "selected": 16,
         "sources": {
-          "arXiv": 1233,
-          "bioRxiv": 816,
-          "ChemRxiv": 170
+          "arXiv": 521,
+          "bioRxiv": 600,
+          "ChemRxiv": 138
         }
       }
     },
     "aixbio": {
       "state": "success",
-      "latest_date": "2026-08-20",
-      "updated_at": "2026-08-20T06:34:56+00:00",
+      "latest_date": "2026-08-21",
+      "updated_at": "2026-08-20T23:15:44+00:00",
       "source_errors": [],
       "stats": {
-        "fetched": 2330,
+        "fetched": 1259,
         "candidates": 60,
-        "selected": 13,
+        "selected": 14,
         "sources": {
-          "arXiv": 1233,
-          "bioRxiv": 816,
-          "medRxiv": 261,
-          "Europe PMC": 47
+          "arXiv": 521,
+          "bioRxiv": 600,
+          "medRxiv": 149,
+          "Europe PMC": 0
         }
       }
     },
     "aixmath": {
       "state": "success",
-      "latest_date": "2026-08-20",
-      "updated_at": "2026-08-20T06:15:26+00:00",
+      "latest_date": "2026-08-21",
+      "updated_at": "2026-08-20T23:15:45+00:00",
       "source_errors": [
         "OpenReview: RuntimeError: 未配置 OpenReview 账号"
       ],
       "stats": {
-        "fetched": 1233,
+        "fetched": 521,
         "candidates": 60,
-        "selected": 16,
+        "selected": 9,
         "sources": {
-          "arXiv": 1233,
+          "arXiv": 521,
           "OpenReview": 0
         }
       }
     },
     "aivoices": {
       "state": "success",
-      "latest_date": "2026-08-20",
-      "updated_at": "2026-08-20T06:16:05+00:00",
+      "latest_date": "2026-08-21",
+      "updated_at": "2026-08-20T23:16:26+00:00",
       "source_errors": [],
       "stats": {
-        "fetched": 62,
+        "fetched": 82,
         "candidates": 60,
         "selected": 10,
         "sources": {
-          "X": 37,
-          "Research blogs": 25
+          "X": 58,
+          "Research blogs": 24
         }
       }
     },
     "engineering": {
       "state": "success",
-      "latest_date": "2026-08-20",
-      "updated_at": "2026-08-20T06:18:21+00:00",
+      "latest_date": "2026-08-21",
+      "updated_at": "2026-08-20T23:18:45+00:00",
       "source_errors": [],
       "stats": {
-        "fetched": 45,
-        "candidates": 45,
-        "selected": 7,
+        "fetched": 46,
+        "candidates": 46,
+        "selected": 9,
         "sources": {
-          "GitHub Releases": 45
+          "GitHub Releases": 46
         }
       }
     }

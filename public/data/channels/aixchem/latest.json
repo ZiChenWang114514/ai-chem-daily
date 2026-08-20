@@ -1,68 +1,63 @@
 {
   "schema_version": "2.0",
-  "date": "2026-08-20",
+  "date": "2026-08-21",
   "channel": "aixchem",
-  "generated_at": "2026-08-20T06:14:30+00:00",
+  "generated_at": "2026-08-20T23:14:45+00:00",
   "title": "AI × Chem 每日精选",
   "subtitle": "预印本、方法、数据集与实验验证的每日精选。",
   "window": {
-    "start": "2026-08-17",
-    "end": "2026-08-20"
+    "start": "2026-08-18",
+    "end": "2026-08-21"
   },
   "method": "公开来源采集、规则筛选与模型审阅",
   "method_note": "系统保存当日公开元数据，依据频道主题与证据信号筛选候选，随后由指定模型阅读全文摘要并完成精选。",
   "stats": {
-    "fetched": 2196,
+    "fetched": 1250,
     "candidates": 60,
     "selected": 16,
     "sources": {
-      "arXiv": 1233,
-      "bioRxiv": 816,
-      "ChemRxiv": 170
+      "arXiv": 521,
+      "bioRxiv": 600,
+      "ChemRxiv": 138
     }
   },
   "source_status": {
     "arXiv": {
       "state": "ok",
-      "count": 1233
+      "count": 521
     },
     "bioRxiv": {
       "state": "ok",
-      "count": 816
+      "count": 600
     },
     "ChemRxiv": {
       "state": "ok",
-      "count": 170
+      "count": 138
     }
   },
   "source_errors": [],
   "items": [
     {
-      "id": "biorxiv:10.64898/2026.08.14.744939",
+      "id": "biorxiv:10.64898/2026.08.17.745149",
       "channel": "aixchem",
       "related_channels": [
-        "aixbio",
-        "aixmath"
+        "aixbio"
       ],
       "item_type": "paper",
       "source": "bioRxiv",
-      "title": "Systematic Benchmarking of AI-Based Molecular Generation Models for Structure-Based Drug Design",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744939",
-      "published_at": "2026-08-17",
-      "updated_at": "2026-08-17",
+      "title": "A multi-agent molecular optimization framework leads to a rapid-recovery intravenous anesthetic candidate with an improved safety margin",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.17.745149",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
       "creators": [
-        "Kumar, H.",
-        "Yang, Z.",
-        "Yu, Y.",
-        "Wen, J.",
-        "Kim, P.",
-        "zhou, X."
+        "Xue, Z.",
+        "Liu, X."
       ],
       "language": "en",
-      "abstract_or_text": "Generative artificial intelligence is accelerating molecular design, yet the relative suitability of available models for different targets and stages of preclinical drug discovery remains unclear. Here we benchmarked 12 molecular generation and optimization methods across 176 curated protein ligand systems spanning diverse therapeutic target classes, with experimentally validated ligands providing reference chemical space. The evaluated methods encompassed pocket conditioned 3D generation, diffusion and flow based modeling, autoregressive construction, reference conditioned optimization and synthesis-aware design. Performance was assessed using operational robustness, chemical validity, uniqueness, molecular and scaffold diversity, quantitative estimate of drug likeness, synthetic accessibility, docking, physicochemical and ADMET properties, and computational resource requirements. The results revealed architecture dependent trade off such as receptor conditioned methods exploited binding pocket geometry, flow based approaches enabled efficient sampling, reference-conditioned methods favored analogue generation, and synthesis-aware approaches improved chemical feasibility, but no method consistently optimized all criteria. To address the functional potential of generated molecules, we further developed a state aware functional classifier (SAFC) that integrates molecular dynamics derived receptor ensembles, ensemble docking and protein ligand interaction graphs. SAFC provided dynamics aware functional activity rankings for generated molecules that were partly complementary to docking, drug likeness and synthetic accessibility scores. These findings support hybrid, stage specific deployment of generative models rather than reliance on any single architecture or evaluation metric. This study provides practical guidelines for generative AI based preclinical drug development processes.",
-      "summary_zh": "在176个蛋白—配体体系上比较12类分子生成与优化方法，并以SAFC结合受体构象集合、集合对接和相互作用图，为生成分子给出具备动力学信息的功能排序。",
-      "why_it_matters_zh": "覆盖规模大且评价维度完整，清楚显示各类生成架构各有适用场景；实验配体只作为参照化学空间，生成分子的功能活性仍主要由计算评估支持。",
-      "quality_score": 92.0,
+      "abstract_or_text": "Lead optimization, the systematic refinement of therapeutic compounds through iterative structural modification, faces a dual challenge in modern drug discovery: navigating astronomically vast molecular design spaces while balancing conflicting demands on potency, pharmacokinetics, and safety. We present MASCOT (Multi-Agent SearCh for molecular OpTimization), a role-specialized multi-agent framework for molecular optimization. Integrated with a chemically constrained graph-editing search, MASCOT coordinates three specialized agents: a trade-off agent that reprioritizes competing objectives, a strategy agent that adapts how molecular edits are proposed, and a reflection agent that distills lessons from previous decisions. Computational experiments showed that MASCOT achieved the best performance over competing methods on six benchmark settings. On the SARS-CoV-2 main protease task, its mean docking-score improvement was 3.6 times that of the strongest baseline. Applied to the clinically used anesthetic remimazolam (RM), MASCOT prioritized RM-1, which showed a shorter liver microsomal half-life, higher brain exposure, and a larger therapeutic index than RM. Subsequent derivative design yielded RM-7. Extensive animal studies established RM-7 as a rapid-recovery intravenous anesthetic candidate with greater potency, faster functional recovery, a wider safety margin, and preserved flumazenil reversibility. These results demonstrate that multi-agent coordination can link adaptive molecular search to medicinal chemistry and experimental pharmacology.",
+      "summary_zh": "MASCOT 将化学约束图编辑搜索与三个职责专门化智能体结合，用于在效力、药代和安全性之间进行先导化合物优化。它在6项基准设置中表现最佳，并由 remimazolam 衍生物 RM-7 的动物研究给出实验延伸：该候选物显示出更高效力、更快功能恢复、更宽安全窗及保留的 flumazenil 可逆性。",
+      "why_it_matters_zh": "这项工作把多智能体分子搜索推进到可检验的药理实验候选物，实验药效和安全性证据显著增强了其转化价值。需留意结果集中于一个麻醉剂优化系列，跨靶点、合成可行性及临床可重复性仍有待验证。",
+      "quality_score": 79.0,
       "tags": [
         "分子与药物发现"
       ],
@@ -70,7 +65,6 @@
         "benchmark",
         "experimental",
         "clinical",
-        "evaluation",
         "performance"
       ],
       "publication_status": "preprint",
@@ -79,51 +73,44 @@
       "category": "分子与药物发现",
       "metrics": {},
       "metadata": {
-        "doi": "10.64898/2026.08.14.744939",
+        "doi": "10.64898/2026.08.17.745149",
         "arxiv_id": ""
       },
-      "abstract_zh": "生成式人工智能正在加速分子设计，但现有模型对于不同靶标和临床前药物发现不同阶段的相对适用性仍不清楚。在此，我们在176个经整理的蛋白—配体体系上，对12种分子生成与优化方法进行了基准测试；这些体系覆盖多样的治疗靶标类别，并以经实验验证的配体提供参考化学空间。所评估的方法包括口袋条件化3D生成、扩散和流模型、自回归构建、参考条件化优化以及合成感知设计。性能评估涵盖运行稳健性、化学有效性、唯一性、分子与骨架多样性、类药性定量估计、合成可及性、对接、理化与ADMET性质，以及计算资源需求。结果显示出依赖架构的权衡：受体条件化方法利用结合口袋几何结构，流方法能够高效采样，参考条件化方法偏向类似物生成，合成感知方法改善化学可行性，但没有任何一种方法能持续优化所有指标。为评估生成分子的功能潜力，我们还开发了状态感知功能分类器（SAFC），它整合由分子动力学获得的受体构象集合、集合对接和蛋白—配体相互作用图。SAFC为生成分子提供了具有动力学信息的功能活性排序，该排序与对接、类药性和合成可及性评分部分互补。这些发现支持按阶段混合部署生成模型，而不应依赖任何单一架构或评价指标。本研究为基于生成式AI的临床前药物开发流程提供了实用指导。",
-      "published": "2026-08-17",
-      "author_line": "Kumar, H., Yang, Z., Yu, Y., Wen, J., Kim, P., zhou, X."
+      "abstract_zh": "先导优化即通过迭代结构修饰系统性改良治疗化合物，在现代药物发现中面临双重挑战：既要在天文数字般庞大的分子设计空间中导航，又要平衡效力、药代动力学和安全性这些相互冲突的要求。我们提出 MASCOT（Multi-Agent SearCh for molecular OpTimization），一种用于分子优化的角色专门化多智能体框架。MASCOT 与化学约束图编辑搜索结合，协调三个专门智能体：重新排序竞争目标的权衡智能体、调整分子编辑提议方式的策略智能体，以及从既往决策中提炼经验的反思智能体。计算实验表明，MASCOT 在6项基准设置中取得了优于竞争方法的最佳表现。在 SARS-CoV-2 主蛋白酶任务中，其平均对接评分改善幅度为最强基线的3.6倍。应用于临床使用的麻醉剂 remimazolam（RM）时，MASCOT 优先选择了 RM-1；与 RM 相比，RM-1 具有更短的肝微粒体半衰期、更高的脑暴露和更大的治疗指数。随后进行的衍生物设计得到 RM-7。广泛的动物研究证实，RM-7 是一种快速恢复的静脉麻醉候选物，具有更高效力、更快的功能恢复、更宽的安全窗，并保留 flumazenil 可逆性。这些结果表明，多智能体协同可将自适应分子搜索与药物化学及实验药理学联系起来。",
+      "published": "2026-08-20",
+      "author_line": "Xue, Z., Liu, X."
     },
     {
-      "id": "biorxiv:10.64898/2026.08.11.744237",
+      "id": "arxiv:2608.18982v1",
       "channel": "aixchem",
       "related_channels": [
         "aixbio"
       ],
       "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Discovery of Selective Small-Molecule Ligands of SV2C by AI-Enhanced Virtual Screening and Experimental Validation",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.11.744237",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-16",
+      "source": "arXiv",
+      "title": "Monroe: A Molecular Foundation Model for In-Context Probabilistic Inference",
+      "url": "https://arxiv.org/abs/2608.18982v1",
+      "published_at": "2026-08-19",
+      "updated_at": "2026-08-19",
       "creators": [
-        "Brueckner, A. C.",
-        "Martin, M. F.",
-        "Khuttan, S.",
-        "Shields, B.",
-        "Mittal, A.",
-        "Schreiber, J. A.",
-        "Salomon-Ferrer, R.",
-        "Bortolato, A.",
-        "Salahpour, A.",
-        "Bucher, M. L.",
-        "Coleman, J. A.",
-        "Miller, G. W."
+        "Blazej Banaszewski",
+        "Andrew W. Fitzgibbon"
       ],
       "language": "en",
-      "abstract_or_text": "Synaptic vesicle glycoprotein 2C (SV2C) is a vesicular protein enriched in dopaminergic neurons of the basal ganglia that modulates dopamine storage and release, and its disruption is implicated in Parkinsons disease (PD). Despite strong genetic and pathological links to PD, there are no selective small-molecule probes for SV2C. Here, we describe an AI-enhanced virtual screening (VS) and experimental campaign that identified multiple novel chemotypes with low-micromolar affinity and marked selectivity for SV2C over SV2A and SV2B, starting from a large, general-purpose commercial library. Because no full-length high-resolution SV2C structure was available, we built a homology model using SV2A cryo-EM structures as templates and characterized its conformational landscape by molecular dynamics (MD) and Gaussian accelerated MD (GaMD) simulations in apo form and in complex with known SV2 ligands (plosaracetam, levetiracetam, brivaracetam, and padsevonil). A convolutional neural network-based scoring function (CNN VS), retrospectively validated on a manually curated 39-ligand SV2A benchmark (r = 0.72 vs experimental pIC50), was then applied in a multi-stage funnel to 5.96 million Mcule in-stock compounds, which were sequentially filtered to 3.19 million CNS-relevant molecules before docking and rescoring. From 94 VS-prioritized candidates, 71 compounds were experimentally profiled in an orthogonal primary assay cascade combining a thermal shift assay (TSA) with a [3H]-padsevonil scintillation proximity assay (SPA), followed by Ki determination and isoform selectivity profiling for key hits. This campaign yielded 22 active molecules (31% hit rate) that naturally segregated into two categories: compounds that showed primary site competition, and compounds that did not show primary site competition with [3H]-padsevonil. A subset of competitor compounds also showed thermostabilization activity. Among these, compounds 36 and 56 emerged as particularly attractive leads, with Ki values of 24.6 {micro}M and 3.25 {micro}M at SV2C, respectively, and >10-fold selectivity versus SV2A; compound 56 also maintained[~] 12-fold selectivity relative to SV2B. A complementary subset of SV2C-selective hits behaved as padsevonil-site competitors, providing a lead set that will serve as a template for functional characterization and future drug development for conditions that affect dopaminergic signaling. Docking analysis suggests a common binding mode anchored by conserved tryptophan residues in the SV2 pocket, a prediction independently confirmed by an unpublished SV2A- plosaracetam cryo-EM structure showing 0.76 [A] binding-site C RMSD relative to the SV2C model and complete conservation of the tryptophan cage. Subtle differences in the luminal domain and transmembrane region point to the structural determinants underlying isoform selectivity. Collectively, these results demonstrate that an AI-driven VS pipeline, tightly integrated with medium-throughput biophysical assays, can deliver selective SV2C binders from a general chemical library on a structurally under-characterized membrane target. The identified hits provide multiple starting points for hit-to-lead optimization and tools for probing SV2C biology and its role in PD.",
-      "summary_zh": "以AI增强虚拟筛选和中等通量生物物理检测，从596万商业化合物中找到多类选择性SV2C小分子配体，其中化合物56对SV2C的Ki为3.25 μM。",
-      "why_it_matters_zh": "计算筛选与71个化合物的正交实验检测紧密衔接，为结构信息不足的膜蛋白发现探针提供了实例；命中物仍处于低微摩尔级，功能表征和先导优化尚待完成。",
-      "quality_score": 79.0,
+      "abstract_or_text": "Bioassay activity prediction is often data-limited because drug-discovery datasets rely on time-consuming and expensive wet-lab experiments for data generation and evaluation. This challenge has inspired recent research into molecular foundation models (MFMs), which aim to encode general-purpose chemical knowledge into molecular representations that generalize well in data-constrained scenarios. This paper presents Monroe, a new MFM with several innovations over the existing state of the art: increased scale allowing pre-training on over 81 million molecules from the PM6 quantum chemistry dataset; improved graph representation of stereochemistry; improved training losses including conformer denoising and embedding decorrelation; improved multi-task learning; and the use of a prior-data-fitted model (TabPFN) for downstream in-context prediction. Our evaluations use a principled pairwise comparison framework that measures statistically significant performance differences. Across established Polaris benchmarks, Monroe matches or exceeds existing MFMs, while on activity cliff benchmarks, designed to assess utility for molecular discovery, it achieves significant improvements over prior methods. Finally, ablation and transfer experiments show that PFN-based downstream predictors also substantially improve two leading existing models, MiniMol and CheMeleon, yielding new state-of-the-art variants we call MiniMol_PFN and CheMeleon_PFN, suggesting that our downstream adaptation strategy generalizes beyond Monroe. Source code is at github.com/blazejba/monroe.",
+      "summary_zh": "Monroe 是面向低数据生物测定预测的分子基础模型：在超过8,100万 PM6 分子上预训练，改进立体化学图表示、构象去噪和多任务训练，并以 TabPFN 进行上下文下游预测。在 Polaris 与 activity cliff 基准上，它达到或超过已有模型；其 PFN 下游策略也提升了 MiniMol 和 CheMeleon。",
+      "why_it_matters_zh": "大规模量子化学预训练与统计显著性比较、消融和迁移实验共同构成较完整的模型证据，适合关注低数据药物发现。其结论目前仍来自基准任务和预印本，真实项目中的前瞻性命中率及计算成本值得继续观察。",
+      "quality_score": 84.0,
       "tags": [
         "分子与药物发现"
       ],
       "evidence_flags": [
         "benchmark",
-        "experimental",
-        "release"
+        "dataset",
+        "github",
+        "state-of-the-art",
+        "ablation",
+        "evaluation"
       ],
       "publication_status": "preprint",
       "rank": 2,
@@ -131,12 +118,12 @@
       "category": "分子与药物发现",
       "metrics": {},
       "metadata": {
-        "doi": "10.64898/2026.08.11.744237",
-        "arxiv_id": ""
+        "doi": "",
+        "arxiv_id": "2608.18982v1"
       },
-      "abstract_zh": "突触囊泡糖蛋白2C（SV2C）是一种富集于基底神经节多巴胺能神经元中的囊泡蛋白，调节多巴胺储存与释放；其功能受损与帕金森病（PD）有关。尽管SV2C与PD具有很强的遗传学和病理学关联，目前尚无选择性SV2C小分子探针。在此，我们描述了一项AI增强的虚拟筛选（VS）与实验研究，从一个大型通用商业化合物库中鉴定出多种新型化学型；它们对SV2C具有低微摩尔亲和力，并相对于SV2A和SV2B表现出显著选择性。由于尚无全长高分辨率SV2C结构，我们以SV2A冷冻电镜结构为模板构建同源模型，并通过无配体状态以及与已知SV2配体（plosaracetam、levetiracetam、brivaracetam和padsevonil）形成复合物时的分子动力学（MD）和高斯加速分子动力学（GaMD）模拟，表征其构象景观。随后，将基于卷积神经网络的评分函数（CNN VS）用于多阶段筛选流程；该函数在人工整理的39种配体SV2A基准集上进行了回顾性验证（与实验pIC50的r = 0.72）。该流程从596万种Mcule现货化合物开始，先后筛至319万种与中枢神经系统相关的分子，再进行对接和重评分。在94个VS优选候选物中，71个化合物经正交初筛级联检测，检测结合热转变实验（TSA）和[3H]-padsevonil闪烁邻近实验（SPA），随后测定关键命中物的Ki并进行同工型选择性分析。该研究得到22个活性分子（31%命中率），自然分为两类：与主位点竞争的化合物，以及不与[3H]-padsevonil竞争主位点的化合物。部分竞争性化合物还显示出热稳定化活性。其中，化合物36和56成为尤其有吸引力的先导物，对SV2C的Ki分别为24.6 μM和3.25 μM，且相对于SV2A具有超过10倍的选择性；化合物56相对于SV2B也维持约12倍选择性。一组SV2C选择性命中物还表现为padsevonil位点竞争者，为功能表征和未来针对影响多巴胺能信号疾病的药物开发提供先导集合。对接分析提示一种由SV2口袋中保守色氨酸残基锚定的共同结合模式；一项未发表的SV2A–plosaracetam冷冻电镜结构独立证实该预测，其结合位点相对于SV2C模型的C RMSD为0.76 Å，且色氨酸笼完全保守。腔内结构域和跨膜区的细微差异提示了同工型选择性背后的结构决定因素。总体而言，这些结果表明，紧密整合中等通量生物物理实验的AI驱动VS流程，能够从通用化学库中为结构表征不足的膜靶标获得选择性SV2C结合物。所鉴定的命中物为命中至先导优化以及探究SV2C生物学和其在PD中作用的工具提供了多个起点。",
-      "published": "2026-08-16",
-      "author_line": "Brueckner, A. C., Martin, M. F., Khuttan, S., Shields, B., Mittal, A., Schreiber, J. A., Salomon-Ferrer, R., Bortolato, A., Salahpour, A., Bucher, M. L., Coleman, J. A., Miller, G. W."
+      "abstract_zh": "由于药物发现数据集依赖耗时且昂贵的湿实验来生成数据并进行评估，生物测定活性预测常常受到数据不足的限制。这一挑战推动了近期对分子基础模型（MFMs）的研究；其目标是将通用化学知识编码为在数据受限情形下仍能良好泛化的分子表示。本文提出 Monroe，一种相对于现有最佳方法具有多项创新的新 MFM：规模扩大，可在来自 PM6 量子化学数据集的超过8,100万个分子上预训练；改进的立体化学图表示；包括构象去噪和嵌入去相关在内的改进训练损失；改进的多任务学习；以及使用先验数据拟合模型（TabPFN）进行下游上下文预测。我们的评估采用一种严谨的成对比较框架，用以衡量具有统计显著性的性能差异。在既有 Polaris 基准上，Monroe 达到或超过现有 MFM；而在旨在评估分子发现实用性的 activity cliff 基准上，它相对既有方法取得显著改进。最后，消融和迁移实验表明，基于 PFN 的下游预测器也大幅提升了两个领先既有模型 MiniMol 和 CheMeleon，形成我们称为 MiniMol_PFN 和 CheMeleon_PFN 的新最佳变体，说明我们的下游适配策略可泛化至 Monroe 之外。源代码见 github.com/blazejba/monroe。",
+      "published": "2026-08-19",
+      "author_line": "Blazej Banaszewski, Andrew W. Fitzgibbon"
     },
     {
       "id": "arxiv:2608.18940v1",
@@ -160,8 +147,8 @@
       ],
       "language": "en",
       "abstract_or_text": "Single-step retrosynthesis is a central component of computer-aided synthesis planning, yet its intrinsically one-to-many nature is poorly captured by single-answer evaluation and benchmarking protocols. To address this, we introduce Top-K prompting as a robust training and inference paradigm to better capture diverse, plausible reaction predictions. We compile CREED-CCV-2+USPTO-XL, an ultra-large-scale dataset of ~45.6 million verified reactions to train the C3LM (Chemistry Constraint-Consistent Language Model). By integrating fine-tuning with ChemCensor-based and novelty-oriented rewards, our model achieves state-of-the-art performance on the OOD URSA-expert-2026 benchmark. Further analysis of reaction uniqueness shows that LLMs and conventional models explore complementary reaction spaces, motivating ensemble-based retrosynthesis systems. Overall, our results establish Top-K, plausibility-aware training as a practical new direction for robust future LLM-based synthesis planning.",
-      "summary_zh": "构建含约4560万条已验证反应的CREED-CCV-2+USPTO-XL，训练C3LM，并以Top-K提示和化学合理性、创新性奖励改进单步逆合成。",
-      "why_it_matters_zh": "直接针对逆合成一对多预测与单答案评测不匹配的问题，且在OOD基准上报告领先性能；训练数据构成、奖励设计和化学可执行性仍需在真实合成任务中进一步检验。",
+      "summary_zh": "该研究以 Top-K 提示训练 C3LM，使单步逆合成可表达多个化学上合理的答案；模型在约4,560万条经验证反应组成的 CREED-CCV-2+USPTO-XL 上训练，并结合 ChemCensor 与新颖性奖励。在 OOD URSA-expert-2026 基准中报告了最佳表现，并分析了 LLM 与传统模型的互补反应空间。",
+      "why_it_matters_zh": "它正面处理逆合成一对多属性，并采用超大规模反应集和分布外专家基准，方法设计具有明确化学指向性。仍应审视“合理性”和新颖性奖励的具体定义，以及基准表现能否转化为可执行的多步合成路线。",
       "quality_score": 84.0,
       "tags": [
         "方法与模型"
@@ -182,40 +169,34 @@
         "doi": "",
         "arxiv_id": "2608.18940v1"
       },
-      "abstract_zh": "单步逆合成是计算机辅助合成规划的核心组成部分，但其内在的一对多性质未被单答案评价和基准测试协议充分捕捉。为解决这一问题，我们提出Top-K提示，将其作为更好捕捉多样且合理反应预测的稳健训练和推理范式。我们汇编了CREED-CCV-2+USPTO-XL，这是一个包含约4560万条已验证反应的超大规模数据集，用于训练C3LM（Chemistry Constraint-Consistent Language Model）。通过整合微调以及基于ChemCensor和面向新颖性的奖励，我们的模型在OOD URSA-expert-2026基准上实现了最先进性能。对反应唯一性的进一步分析显示，LLM和传统模型探索互补的反应空间，因而支持基于集成的逆合成系统。总体而言，我们的结果将Top-K、化学合理性感知训练确立为稳健的未来LLM合成规划的实用途径。",
+      "abstract_zh": "单步逆合成是计算机辅助合成规划的核心组成部分，但其内在的一对多性质未能被单答案评估和基准协议充分捕捉。为解决这一问题，我们引入 Top-K prompting，作为一种稳健的训练与推理范式，以更好地捕捉多样且合理的反应预测。我们汇编 CREED-CCV-2+USPTO-XL，这是一个由约4,560万条经验证反应组成的超大规模数据集，用于训练 C3LM（Chemistry Constraint-Consistent Language Model）。通过整合微调、基于 ChemCensor 的奖励和面向新颖性的奖励，我们的模型在 OOD URSA-expert-2026 基准上实现了最佳性能。对反应独特性的进一步分析显示，LLM 与传统模型探索了互补的反应空间，从而推动基于集成的逆合成系统。总体而言，我们的结果确立了 Top-K 和合理性感知训练作为未来稳健 LLM 逆合成规划的实用途径。",
       "published": "2026-08-19",
       "author_line": "Bogdan Zagribelnyy, Ivan Ilin, Nikita Bondarev, Maksim Kuznetsov, Mathieu Reymond, Vladimir Aladinskiy, Alex Aliper, Alex Zhavoronkov"
     },
     {
-      "id": "arxiv:2608.18982v1",
+      "id": "biorxiv:10.64898/2026.08.19.745667",
       "channel": "aixchem",
-      "related_channels": [
-        "aixbio"
-      ],
+      "related_channels": [],
       "item_type": "paper",
-      "source": "arXiv",
-      "title": "Monroe: A Molecular Foundation Model for In-Context Probabilistic Inference",
-      "url": "https://arxiv.org/abs/2608.18982v1",
-      "published_at": "2026-08-19",
-      "updated_at": "2026-08-19",
+      "source": "bioRxiv",
+      "title": "PandaDock: An Open-Source Molecular Docking Platform with Flexible-Ligand Search and Equivariant Neural Scoring",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.19.745667",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
       "creators": [
-        "Blazej Banaszewski",
-        "Andrew W. Fitzgibbon"
+        "Panda, P. K."
       ],
       "language": "en",
-      "abstract_or_text": "Bioassay activity prediction is often data-limited because drug-discovery datasets rely on time-consuming and expensive wet-lab experiments for data generation and evaluation. This challenge has inspired recent research into molecular foundation models (MFMs), which aim to encode general-purpose chemical knowledge into molecular representations that generalize well in data-constrained scenarios. This paper presents Monroe, a new MFM with several innovations over the existing state of the art: increased scale allowing pre-training on over 81 million molecules from the PM6 quantum chemistry dataset; improved graph representation of stereochemistry; improved training losses including conformer denoising and embedding decorrelation; improved multi-task learning; and the use of a prior-data-fitted model (TabPFN) for downstream in-context prediction. Our evaluations use a principled pairwise comparison framework that measures statistically significant performance differences. Across established Polaris benchmarks, Monroe matches or exceeds existing MFMs, while on activity cliff benchmarks, designed to assess utility for molecular discovery, it achieves significant improvements over prior methods. Finally, ablation and transfer experiments show that PFN-based downstream predictors also substantially improve two leading existing models, MiniMol and CheMeleon, yielding new state-of-the-art variants we call MiniMol_PFN and CheMeleon_PFN, suggesting that our downstream adaptation strategy generalizes beyond Monroe. Source code is at github.com/blazejba/monroe.",
-      "summary_zh": "Monroe以超过8100万PM6分子预训练，并结合立体化学图表示、构象去噪及TabPFN下游推断，在Polaris和activity cliff基准上比较分子基础模型。",
-      "why_it_matters_zh": "将预训练规模、表征、训练目标与下游预测共同纳入成体系比较，并含消融和迁移实验；性能来自基准评估，能否转化为前瞻性实验命中仍未在摘要中呈现。",
-      "quality_score": 84.0,
+      "abstract_or_text": "We present PandaDock, an open-source molecular docking platform implementing flexible-ligand conformational search with analytic gradients, a precomputed affinity grid engine, specialized modules for induced-fit, metal-coordination and tethered docking, and an SE(3)-equivariant graph neural network scoring function trained at scale. Ligand flexibility is represented as a torsion tree and pose parameters are optimized by Monte Carlo with Metropolis acceptance refined by L-BFGS, with rotational gradients obtained in closed form through the derivative of the SO(3) exponential map rather than by finite differences. Affinity grids are built by a blocked neighbor-selection scheme that is exact and 5.6-9.7x faster than dense evaluation, and may be cached across ligands sharing a receptor and site, reducing a six-ligand series from 29.3 s to 10.4 s. On 814 protein-ligand complexes spanning 14 target families, PandaDock recovers a pose within 2 Angstroms of the crystal geometry in 33.7% of cases at rank 1 and in 57.0% of cases within the returned ensemble. The GNN scoring function is trained on 741,706 co-folded complexes from SAIR under target-disjoint splits, reaching a Pearson r of 0.407 on 90,219 held-out complexes and transferring to 202 independent crystal structures with measured Ki, Kd, IC50 or EC50 at r = 0.467. We report the model against three controls, a target-mean predictor, a ligand-descriptor-only baseline, and within-target correlations, and document both where it performs and where it does not, including its unsuitability for pose rescoring. On an independent 30-compound series against a single GABAA receptor target, PandaDock's empirical scoring function ranks 8th of 25 methods evaluated, ahead of every AutoDock Vina and Vinardo configuration tested, while the GNN scores below Vina, consistent with the within-target ceiling identified on SAIR. At full scale on the PDBbind v2020 refined set (n = 4,640, native crystal poses), the fully independent SAIR model reaches r = 0.531, and a dedicated model trained on PDBbind alone under a target-disjoint split reaches r = 0.690 on its own held-out test complexes, the strongest evidence in this work that PandaDock's affinity predictions generalize. PandaDock is distributed under an open-source license at https://github.com/pritampanda15/PandaDock with a complete command-line interface and a reproducible benchmarking harness.",
+      "summary_zh": "PandaDock 是开源分子对接平台，结合柔性配体搜索、预计算亲和力网格、诱导契合/金属配位/锚定对接模块和 SE(3) 等变 GNN 评分。作者在814个复合物、SAIR 目标隔离切分、独立晶体结构及30个化合物系列上报告姿势与亲和力评估，也明确指出其 GNN 不适合姿势重评分。",
+      "why_it_matters_zh": "开源实现、可复现基准和多层次独立测试使其具有实际工具价值；对失败模式的报告也提升了可信度。姿势首位成功率为33.7%，亲和力相关性在严格目标隔离设置下仍有限，使用时应与实验筛选或互补评分结合。",
+      "quality_score": 83.0,
       "tags": [
         "分子与药物发现"
       ],
       "evidence_flags": [
         "benchmark",
-        "dataset",
         "github",
-        "state-of-the-art",
-        "ablation",
         "evaluation"
       ],
       "publication_status": "preprint",
@@ -224,17 +205,62 @@
       "category": "分子与药物发现",
       "metrics": {},
       "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.18982v1"
+        "doi": "10.64898/2026.08.19.745667",
+        "arxiv_id": ""
       },
-      "abstract_zh": "由于药物发现数据集依赖耗时且昂贵的湿实验来生成和评估数据，生物测定活性预测常常受到数据不足的限制。这一挑战推动了近期对分子基础模型（MFM）的研究，其目标是将通用化学知识编码到分子表征中，使其能在数据受限情境下良好泛化。本文提出Monroe，一种相对于现有最先进技术具有多项创新的新MFM：规模增大，可在来自PM6量子化学数据集的超过8100万个分子上预训练；改进的立体化学图表示；改进的训练损失，包括构象去噪和嵌入去相关；改进的多任务学习；以及使用先验数据拟合模型（TabPFN）进行下游上下文内预测。我们的评估采用一种原则明确的成对比较框架，用于测量具有统计显著性的性能差异。在既有Polaris基准上，Monroe达到或超过现有MFM；在旨在评估分子发现实用性的activity cliff基准上，它相对于既有方法取得显著改进。最后，消融和迁移实验显示，基于PFN的下游预测器也显著改进了两个领先既有模型MiniMol和CheMeleon，产生我们称为MiniMol_PFN和CheMeleon_PFN的新最先进变体，提示该下游适配策略可推广到Monroe之外。源代码位于github.com/blazejba/monroe。",
-      "published": "2026-08-19",
-      "author_line": "Blazej Banaszewski, Andrew W. Fitzgibbon"
+      "abstract_zh": "我们提出 PandaDock，一个开源分子对接平台，实施具有解析梯度的柔性配体构象搜索、预计算亲和力网格引擎、用于诱导契合、金属配位和锚定对接的专用模块，以及经过大规模训练的 SE(3) 等变图神经网络评分函数。配体柔性由扭转树表示，姿势参数通过带 Metropolis 接受的 Monte Carlo 优化，并由 L-BFGS 细化；旋转梯度通过 SO(3) 指数映射的导数以闭式形式获得，而非通过有限差分。亲和力网格由精确的分块邻居选择方案构建，比稠密计算快5.6–9.7倍，并可在共享受体和位点的配体之间缓存，使一个六配体系列的时间从29.3 s 降至10.4 s。在覆盖14个靶标家族的814个蛋白质–配体复合物上，PandaDock 在首位时有33.7%的案例恢复出距晶体几何2 Å以内的姿势，在返回的构象集合中该比例为57.0%。GNN 评分函数在 SAIR 的741,706个共折叠复合物上按靶标隔离切分训练，在90,219个留出复合物上达到 Pearson r = 0.407，并迁移至202个具有实测 Ki、Kd、IC50 或 EC50 的独立晶体结构，得到 r = 0.467。我们针对三个对照报告该模型：靶标均值预测器、仅配体描述符基线和靶标内相关性；并记录它的适用之处与不适用之处，包括其不适用于姿势重评分。在针对单一 GABAA 受体靶标的独立30化合物系列上，PandaDock 的经验评分函数在所评估的25种方法中排名第8，领先于每一种受测 AutoDock Vina 和 Vinardo 配置；GNN 评分低于 Vina，这与 SAIR 所揭示的靶标内上限一致。在完整规模的 PDBbind v2020 refined set（n = 4,640，原生晶体姿势）上，完全独立的 SAIR 模型达到 r = 0.531；而一个仅在 PDBbind 上按靶标隔离切分训练的专用模型，在其自身留出测试复合物上达到 r = 0.690，这是本工作中 PandaDock 亲和力预测能够泛化的最强证据。PandaDock 以开源许可证在 https://github.com/pritampanda15/PandaDock 发布，提供完整命令行界面和可复现的基准测试工具。",
+      "published": "2026-08-20",
+      "author_line": "Panda, P. K."
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15005684/v2",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "FRIE: Machine Learning Models for Interfragment Interaction Energies among Amino Acid Residues Based on Quantum Mechanical Data from FMODB",
+      "url": "https://doi.org/10.26434/chemrxiv.15005684/v2",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
+      "creators": [
+        "Tomohiro Sato",
+        "Chiduru Watanabe",
+        "Yoshio Okiyama",
+        "Teruki Honma"
+      ],
+      "language": "en",
+      "abstract_or_text": "In recent years, quantum mechanical-based methods have offered superior accuracy for drug discovery; however, their high computational costs have limited their application in the late stages of molecular optimization. To overcome this efficiency bottleneck and enable rapid, large-scale structural biology assessments, in this study, we developed Fragment Regression Model for Interaction Energy (FRIE), a machine learning framework designed to predict interfragment interaction energies calculated using the fragment molecular orbital (FMO) method. This model focuses exclusively on interactions between amino acid residues within protein structures and establishes a robust baseline for macromolecular evaluation. Using the comprehensive FMO database named FMODB (https://drugdesign.riken.jp/FMODB/), we compiled a dataset comprising over 11 million amino acid residue pairs derived from 6,329 unique Protein Data Bank entries. Heavy atom distance matrices and formal charges were extracted as molecular explanatory descriptors to train and compare multiple machine learning algorithms. Among them, the Extra Trees Regressor model exhibited the highest predictive precision, achieving an average R 2 of 0.914 and an RMSE of 1.953 kcal/mol across 210 amino acid residue pairs. Furthermore, pair interaction energy decomposition analysis demonstrated that FRIE performed exceptionally well in predicting electrostatic interactions but encountered relatively greater difficulty with aromatic systems. Finally, external validation on AlphaFold2-predicted protein structures yielded high accuracy (R 2 ≥ 0.958), proving the model’s robustness and its potential for rapid evaluation of model structures, effectively bridging quantum chemical accuracy and computational efficiency.",
+      "summary_zh": "FRIE 以 FMODB 中6,329个 PDB 条目、逾1,100万对氨基酸残基的 FMO 相互作用能训练机器学习模型。Extra Trees Regressor 在210类残基对上获得平均 R²=0.914、RMSE=1.953 kcal/mol，并在 AlphaFold2 预测结构外部测试中保持 R²≥0.958；其对芳香体系的预测较弱。",
+      "why_it_matters_zh": "该工作将量子力学片段分子轨道能量扩展为可大规模调用的蛋白结构评估指标，数据体量和外部验证都较有说服力。模型目前只覆盖氨基酸残基间相互作用，且芳香相互作用误差更大，不能直接替代完整的蛋白–配体量子化学计算。",
+      "quality_score": 81.0,
+      "tags": [
+        "结构与生物"
+      ],
+      "evidence_flags": [
+        "dataset",
+        "evaluation"
+      ],
+      "publication_status": "preprint",
+      "rank": 5,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15005684/v2",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "近年来，基于量子力学的方法为药物发现提供了更高的准确性；然而，其高计算成本限制了其在分子优化后期的应用。为克服这一效率瓶颈并实现快速、大规模的结构生物学评估，本研究开发了片段相互作用能回归模型（FRIE），这是一个旨在预测由片段分子轨道（FMO）方法计算的片段间相互作用能的机器学习框架。该模型专注于蛋白质结构中氨基酸残基之间的相互作用，并为大分子评估建立了稳健基线。利用名为 FMODB（https://drugdesign.riken.jp/FMODB/）的综合 FMO 数据库，我们汇编了一个数据集，其中包含来自6,329个独特 Protein Data Bank 条目的超过1,100万对氨基酸残基。提取重原子距离矩阵和形式电荷作为分子解释描述符，用于训练和比较多种机器学习算法。其中，Extra Trees Regressor 模型显示出最高预测精度，在210类氨基酸残基对上取得平均 R² 为0.914、RMSE 为1.953 kcal/mol。进一步的对相互作用能分解分析表明，FRIE 在预测静电相互作用方面表现异常出色，但在芳香体系上遇到相对更大的困难。最后，对 AlphaFold2 预测蛋白质结构的外部验证获得高准确度（R² ≥ 0.958），证明该模型的稳健性及其快速评估模型结构的潜力，有效连接了量子化学准确性与计算效率。",
+      "published": "2026-08-20",
+      "author_line": "Tomohiro Sato, Chiduru Watanabe, Yoshio Okiyama, Teruki Honma"
     },
     {
       "id": "biorxiv:10.64898/2026.08.17.745351",
       "channel": "aixchem",
-      "related_channels": [],
+      "related_channels": [
+        "aixbio"
+      ],
       "item_type": "paper",
       "source": "bioRxiv",
       "title": "Resolution-standardized evaluation of ligand atomic coordinates in crystallographic structures using machine learning",
@@ -254,27 +280,27 @@
         "Ikeguchi, M."
       ],
       "language": "en",
-      "abstract_or_text": "Accurate assessment of ligand coordinate-density consistency across different resolutions remains challenging in macromolecular crystallography. We introduce the atomic Box Correlation Coefficient (aBCC), an atom-level metric for evaluating the consistency between ligand atomic coordinates and electron density in a resolution-standardized framework. To predict aBCC values from electron-density maps, we developed QAEmap, a machine learning model based on three-dimensional convolutional neural networks (3D-CNNs). The model was trained using Fourier-truncated electron-density maps and corresponding ligand coordinates generated from high-resolution structures in the Protein Data Bank. It was evaluated using both Fourier-truncated electron-density maps and experimentally determined PDB structures. was evaluated using both Fourier-truncated electron-density maps and experimentally determined PDB structures.The prediction accuracy gradually decreased with decreasing resolution, but remained reliable up to ~3.5 angstrom. These results demonstrate that aBCC enables resolution-standardized atom-wise evaluation of coordinate-density consistency across different resolutions and provide a foundation for further development and refinement of machine learning-based coordinate validation.",
-      "summary_zh": "提出原子级aBCC指标和3D-CNN模型QAEmap，以统一分辨率的方式评价晶体结构中配体坐标与电子密度的一致性，并在实验PDB结构上评估。",
-      "why_it_matters_zh": "为结构生物学中的配体模型质控提供了原子分辨率工具，实验结构参与评估；预测精度会随分辨率降低而下降，摘要所示可靠范围约至3.5 Å。",
-      "quality_score": 81.0,
+      "abstract_or_text": "Accurate assessment of ligand coordinate-density consistency across different resolutions remains challenging in macromolecular crystallography. We introduce the atomic Box Correlation Coefficient (aBCC), an atom-level metric for evaluating the consistency between ligand atomic coordinates and electron density in a resolution-standardized framework. To predict aBCC values from electron-density maps, we developed QAEmap, a machine-learning model based on three-dimensional convolutional neural networks (3D-CNNs). The model was trained using Fourier-truncated electron-density maps and corresponding ligand coordinates generated from high-resolution structures in the Protein Data Bank. It was evaluated using both Fourier-truncated electron-density maps and experimentally determined PDB structures. was evaluated using both Fourier-truncated electron-density maps and experimentally determined PDB structures.The prediction accuracy gradually decreased with decreasing resolution, but remained reliable up to [~]3.5 [A]. These results demonstrate that aBCC enables resolution-standardized atom-wise evaluation of coordinate-density consistency across different resolutions and provide a foundation for further development and refinement of machine learning-based coordinate validation. SynopsisWe introduce the atomic box correlation coefficient (aBCC), a machine learning-based metric for the resolution-standardized atom-level evaluation of ligand coordinate-density consistency in crystallographic structures. aBCC provides a common framework for assessing and communicating the local coordinate reliability between structural biologists and researchers in structure-based drug discovery.",
+      "summary_zh": "该研究提出原子级 Box Correlation Coefficient（aBCC）及3D-CNN 模型 QAEmap，用统一分辨率尺度衡量蛋白晶体结构中配体坐标与电子密度的一致性。模型由高分辨率 PDB 结构生成的傅里叶截断密度图训练，并在模拟截断图和实验 PDB 结构上测试，在约3.5 Å以内保持可靠预测。",
+      "why_it_matters_zh": "它瞄准结构导向药物发现常被忽略的配体局部坐标质量问题，可帮助更谨慎地解释结合模式。分辨率降低时准确性下降，且证据主要是结构数据评估；在不同实验室和难解析配体上的实用性仍需扩大验证。",
+      "quality_score": 84.0,
       "tags": [
-        "方法与模型"
+        "分子与药物发现"
       ],
       "evidence_flags": [
         "experimental",
         "evaluation"
       ],
       "publication_status": "preprint",
-      "rank": 5,
+      "rank": 6,
       "featured": false,
-      "category": "方法与模型",
+      "category": "分子与药物发现",
       "metrics": {},
       "metadata": {
         "doi": "10.64898/2026.08.17.745351",
         "arxiv_id": ""
       },
-      "abstract_zh": "在大分子晶体学中，准确评估不同分辨率下配体坐标与电子密度的一致性仍具挑战。我们提出原子Box Correlation Coefficient（aBCC），一种在分辨率标准化框架中评价配体原子坐标与电子密度一致性的原子级指标。为从电子密度图预测aBCC值，我们开发了QAEmap，一种基于三维卷积神经网络（3D-CNN）的机器学习模型。该模型使用由Protein Data Bank高分辨率结构生成的傅里叶截断电子密度图及相应配体坐标进行训练。模型在傅里叶截断电子密度图和实验测定的PDB结构上进行了评估。预测准确性随分辨率降低逐步下降，但至约3.5 Å仍保持可靠。这些结果表明，aBCC能够在不同分辨率间以标准化方式逐原子评价坐标—密度一致性，并为进一步开发和改进基于机器学习的坐标验证提供基础。",
+      "abstract_zh": "在大分子晶体学中，跨不同分辨率准确评估配体坐标–密度一致性仍具挑战。我们引入原子 Box Correlation Coefficient（aBCC），这是一种在分辨率标准化框架中评估配体原子坐标与电子密度一致性的原子级指标。为从电子密度图预测 aBCC 值，我们开发了 QAEmap，这是一种基于三维卷积神经网络（3D-CNNs）的机器学习模型。该模型使用由 Protein Data Bank 高分辨率结构生成的傅里叶截断电子密度图及相应配体坐标进行训练。它同时使用傅里叶截断电子密度图和实验确定的 PDB 结构进行评估。它同时使用傅里叶截断电子密度图和实验确定的 PDB 结构进行评估。预测准确度随分辨率降低而逐渐下降，但在约3.5 Å以内仍保持可靠。这些结果表明，aBCC 可实现跨不同分辨率的、经分辨率标准化的逐原子坐标–密度一致性评估，并为机器学习坐标验证的进一步开发和完善奠定基础。概要：我们引入原子 box correlation coefficient（aBCC），一种基于机器学习的指标，用于在晶体学结构中以分辨率标准化方式逐原子评估配体坐标–密度一致性。aBCC 为评估和交流局部坐标可靠性提供共同框架，服务于结构生物学家和结构导向药物发现研究者。",
       "published": "2026-08-18",
       "author_line": "Miyaguchi, I., Hata, H., Kuribayashi, T., Takahashi, S., Kashima, A., Murasaki, K., Matsumoto, S., Terayama, K., Ohta, M., Ikeguchi, M."
     },
@@ -295,8 +321,8 @@
       ],
       "language": "en",
       "abstract_or_text": "Pretrained molecular language models are increasingly used as molecular encoders for learning structure-property relationships. However, their practical suitability for molecular discovery within and beyond their pretraining domain remains unclear. Herein, we systematically benchmark four molecular language models across six virtual molecular libraries spanning drug discovery, organic materials, and catalysis. Native molecular language model embeddings show substantial variation in discovery performance across libraries, whereas molecular fingerprints provide a consistently strong and robust baseline. Consistent with a potential domain-representation mismatch, we show that explicit domain adaptation substantially improves representation performance. Fine-tuning molecular language model encoders on structures from the target virtual library consistently improves sample efficiency, with several adapted encoders emerging as the top-performing representations across the benchmark tasks. These results show that molecular representation quality depends strongly on the target domain and that explicit adaptation can improve the practical utility of molecular foundation models. More broadly, our findings establish domain-adapted molecular representations as a promising strategy for sample-efficient adaptive decision making in virtual screening and self-driving laboratories.",
-      "summary_zh": "在药物、材料和催化相关的6个虚拟分子库中比较4种分子语言模型，并表明以目标库结构进行显式领域适配可提高样本效率。",
-      "why_it_matters_zh": "给出分子基础模型跨领域使用时的实证提醒，并保留分子指纹这一强基线；结果主要来自虚拟库基准，尚未显示自驱动实验室中的前瞻性收益。",
+      "summary_zh": "该研究在药物、材料和催化共6个虚拟分子库上系统比较4种分子语言模型。原生嵌入的发现性能随领域大幅变化，而针对目标库结构进行微调可稳定提高样本效率，并在多项任务中获得最佳表示。",
+      "why_it_matters_zh": "论文为“预训练分子表示可直接通用”的常见假设提供了跨领域的反例，并给出可操作的领域适配路线，适用于虚拟筛选与自驱实验室。结果仍依赖所选虚拟库和表征任务，微调所需数据量及对真正未知化学空间的外推范围值得审查。",
       "quality_score": 81.0,
       "tags": [
         "材料与催化"
@@ -306,7 +332,7 @@
         "performance"
       ],
       "publication_status": "preprint",
-      "rank": 6,
+      "rank": 7,
       "featured": false,
       "category": "材料与催化",
       "metrics": {},
@@ -314,90 +340,9 @@
         "doi": "",
         "arxiv_id": "2608.17567v1"
       },
-      "abstract_zh": "预训练分子语言模型正越来越多地被用作学习结构—性质关系的分子编码器。然而，其在预训练领域内外用于实际分子发现的适用性仍不清楚。本文系统比较了4种分子语言模型在6个虚拟分子库中的表现，这些分子库覆盖药物发现、有机材料和催化。原生分子语言模型嵌入在不同分子库上的发现性能差异很大，而分子指纹提供了持续强劲且稳健的基线。与潜在的领域—表征失配一致，我们表明显式领域适配能显著改善表征性能。以目标虚拟库中的结构对分子语言模型编码器进行微调，能够持续改善样本效率；若干经适配的编码器在基准任务中成为表现最佳的表征。这些结果表明，分子表征质量强烈依赖目标领域，显式适配能够改善分子基础模型的实际效用。更广泛而言，我们的发现将领域适配的分子表征确立为虚拟筛选和自驱动实验室中进行高样本效率自适应决策的一种有前景策略。",
+      "abstract_zh": "预训练分子语言模型正日益被用作学习结构–性质关系的分子编码器。然而，其在预训练领域内外用于分子发现的实际适用性仍不清楚。本文系统地在横跨药物发现、有机材料和催化的6个虚拟分子库中对4种分子语言模型进行基准测试。原生分子语言模型嵌入在不同分子库中的发现性能变化很大，而分子指纹提供了始终强劲且稳健的基线。与潜在的领域–表示不匹配一致，我们显示显式领域适配可大幅改善表示性能。在目标虚拟库的结构上微调分子语言模型编码器，可始终提高样本效率；若干适配后的编码器在基准任务中成为表现最佳的表示。这些结果显示，分子表示质量强烈依赖目标领域，显式适配可提高分子基础模型的实际效用。更广泛地说，我们的发现确立了领域适配分子表示作为虚拟筛选和自驱实验室中实现高样本效率自适应决策的有前景策略。",
       "published": "2026-08-18",
       "author_line": "Henrik Wille, Luis-Finley Schütz, Felix Strieth-Kalthoff"
-    },
-    {
-      "id": "arxiv:2608.15900v1",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "arXiv",
-      "title": "Crystal-structure design by agentic AI in a language of motifs",
-      "url": "https://arxiv.org/abs/2608.15900v1",
-      "published_at": "2026-08-16",
-      "updated_at": "2026-08-16",
-      "creators": [
-        "Dinh-Khiet Le",
-        "Minh-Quyet Ha",
-        "Hong-Phuc Vu-Dinh",
-        "Takashi Miyake",
-        "Hiori Kino",
-        "Hieu-Chi Dam"
-      ],
-      "language": "en",
-      "abstract_or_text": "Data-driven materials discovery interpolates more reliably than it extrapolates and seldom reaches new structure types. We present MatEvolve, an agentic-AI framework designing crystals, proposing each candidate with a stated rationale and testing it. The agent reasons in an interpretable language of motifs, writing each crystal as a motif profile that describes the recurring geometric patterns---the motifs---composing it. The motif profile serves not merely as a description of a material but as the medium for material design: the agent edits the profile and constructs a crystal from the modified one, and the most promising candidates are validated by first-principles calculation. Applied to the design of rare-earth-lean permanent magnets, MatEvolve---built on the state-of-the-art language model Claude Fable~5 without fine-tuning---reaches new structural prototypes more than three times as often as generative models under an equal validation budget, at a comparable on-target-magnet rate. Beyond design, analysing the discovered crystals' human-readable profiles reveals structure--property relationships.",
-      "summary_zh": "MatEvolve以可解释的结构基元语言生成和修改晶体，并用第一性原理计算验证候选物；在稀土减量永磁体设计中更常发现新结构原型。",
-      "why_it_matters_zh": "把生成式材料设计与可读的结构描述及第一性原理验证联系起来，适合讨论新结构探索；比较结果依赖既定验证预算和特定永磁体任务，外推范围仍有限。",
-      "quality_score": 76.0,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "state-of-the-art"
-      ],
-      "publication_status": "preprint",
-      "rank": 7,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "",
-        "arxiv_id": "2608.15900v1"
-      },
-      "abstract_zh": "数据驱动材料发现更可靠地进行插值，很少能到达新的结构类型。我们提出MatEvolve，一个用于晶体设计的智能体AI框架，它为每个候选物提出带有明确理由的建议并进行测试。该智能体以可解释的基元语言进行推理，将每种晶体写成一个基元图谱，描述构成该晶体的重复几何模式——基元。基元图谱不仅是材料的描述，也是材料设计的媒介：智能体编辑该图谱，并由修改后的图谱构建晶体；最有前景的候选物通过第一性原理计算验证。在稀土减量永磁体设计中，MatEvolve基于最先进语言模型Claude Fable 5构建且未进行微调，在相同验证预算下发现新结构原型的频率超过生成模型三倍，同时具有相当的目标磁体命中率。除设计外，对所发现晶体人类可读图谱的分析揭示了结构—性质关系。",
-      "published": "2026-08-16",
-      "author_line": "Dinh-Khiet Le, Minh-Quyet Ha, Hong-Phuc Vu-Dinh, Takashi Miyake, Hiori Kino, Hieu-Chi Dam"
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv.15001387/v2",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "ChemRxiv",
-      "title": "Local Symmetry Breaking and Correlated Fluctuations in Quantum Materials from Atomistic Foundation Models",
-      "url": "https://doi.org/10.26434/chemrxiv.15001387/v2",
-      "published_at": "2026-08-19",
-      "updated_at": "2026-08-19",
-      "creators": [
-        "Ouail Zakary",
-        "Weiguo Yin",
-        "Niraj Aryal"
-      ],
-      "language": "en",
-      "abstract_or_text": "Short-range structural distortions retained within nominally high-symmetry crystals underlie the anomalous physical properties of many advanced materials. These distortions reflect local symmetry breaking and correlated fluctuations extending over nanometer length scales and picosecond timescales, making their accurate modeling challenging. Here, we demonstrate that such distortions can be modeled using a machine learning-based framework, taking RuP, the parent compound of ruthenium-pnictide superconductors, as a representative quantum material. By fine-tuning an atomistic foundation model on ab initio molecular dynamics data, we obtain an interatomic potential that captures the temperature-dependent structural evolution of RuP. The simulations reveal a two-stage phase transition, with local monoclinic distortions persisting within the average high-symmetry phase well above the transition, indicating local symmetry breaking and correlated fluctuations. Electronic-structure calculations and phonon analysis connect these distortions to the evolution of the electronic state and the dynamical instability of the high-symmetry phase. Our results establish fine-tuned atomistic foundation models as a practical route for resolving short-range structural distortions in materials with complex phase behavior.",
-      "summary_zh": "以RuP为例，在ab initio分子动力学数据上微调原子基础模型，模拟局部对称性破缺、相关涨落及其与电子态和声子不稳定性的关系。",
-      "why_it_matters_zh": "将原子基础模型连接到量子材料短程畸变和相变问题，并以电子结构与声子分析交叉检验；结论集中于RuP这一代表体系，材料普适性仍需更多案例支持。",
-      "quality_score": 79.0,
-      "tags": [
-        "材料与催化"
-      ],
-      "evidence_flags": [
-        "breaking"
-      ],
-      "publication_status": "preprint",
-      "rank": 8,
-      "featured": false,
-      "category": "材料与催化",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.26434/chemrxiv.15001387/v2",
-        "arxiv_id": ""
-      },
-      "abstract_zh": "名义上高对称晶体中保留的短程结构畸变，是许多先进材料异常物性的重要基础。这些畸变体现为延伸至纳米尺度和皮秒时间尺度的局部对称性破缺与相关涨落，因此难以准确建模。在此，我们展示了可用基于机器学习的框架对这类畸变建模，并以钌磷化物超导体的母体化合物RuP作为代表性量子材料。通过在ab initio分子动力学数据上微调原子基础模型，我们获得了能够捕捉RuP随温度变化结构演化的原子间势。模拟揭示了两阶段相变：局部单斜畸变在转变温度以上很高的平均高对称相中仍然存在，显示出局部对称性破缺与相关涨落。电子结构计算和声子分析将这些畸变与电子态演化及高对称相的动力学不稳定性联系起来。我们的结果将微调的原子基础模型确立为解析具有复杂相行为材料中短程结构畸变的实用途径。",
-      "published": "2026-08-19",
-      "author_line": "Ouail Zakary, Weiguo Yin, Niraj Aryal"
     },
     {
       "id": "arxiv:2608.17381v1",
@@ -423,8 +368,8 @@
       ],
       "language": "en",
       "abstract_or_text": "Biomolecular design underpins applications from molecular recognition to therapeutics and synthetic biology, yet de novo interaction design remains challenging-especially for DNA/RNA, underexplored non-protein modalities with scarce, heterogeneous complex data and sharper geometric and chemical constraints. We introduce MCTH (Monte Carlo Tree Hallucination), an inference-only framework that casts all-atom sequence-structure co-design as uncertainty-aware planning over hallucinated states from pretrained folding and inverse-folding models, with optional biophysical control within the same decision loop. MCTH treats these models as frozen black-box operators and uses Monte Carlo Tree Search to allocate a fixed inference budget across competing design trajectories, incorporating model confidence and uncertainty, as well as cross-expert consensus/disagreement when multiple predictors are available. Across protein-RNA, protein-DNA, protein-protein, and protein-ligand design, matched-budget experiments show that adaptive search improves over simpler sampling and cycling strategies, while held-out AlphaFold3 and Chai-1 evaluations demonstrate transfer beyond the search-time oracle. MCTH provides a shared planning layer across modalities while allowing task-specific folding, inverse-folding, and biophysical modules, requiring no fine-tuning or backpropagation through component models.",
-      "summary_zh": "MCTH把全原子序列—结构共设计表示为对预训练折叠与逆折叠模型幻觉状态的蒙特卡洛树搜索，并在蛋白—RNA、蛋白—DNA、蛋白—蛋白及蛋白—配体设计上测试。",
-      "why_it_matters_zh": "统一覆盖多种生物分子相互作用设计，并以保留的AlphaFold3和Chai-1评估测试迁移性；属于推理时框架，结论仍来自模型评估而非新设计体的实验验证。",
+      "summary_zh": "MCTH 用 Monte Carlo Tree Search 在冻结的折叠与逆折叠模型生成状态之间分配推理预算，实现蛋白–RNA、蛋白–DNA、蛋白–蛋白及蛋白–配体的全原子序列–结构协同设计。匹配预算实验优于简单采样和循环策略，并通过未参与搜索的 AlphaFold3 与 Chai-1 评估显示迁移性。",
+      "why_it_matters_zh": "它将不确定性、模型间共识和生物物理约束纳入同一设计搜索过程，并覆盖多种生物分子相互作用类型。验证仍以预测器评估为主；生成构象的实验结构和功能验证将决定其真实设计价值。",
       "quality_score": 79.0,
       "tags": [
         "结构与生物"
@@ -433,7 +378,7 @@
         "evaluation"
       ],
       "publication_status": "preprint",
-      "rank": 9,
+      "rank": 8,
       "featured": false,
       "category": "结构与生物",
       "metrics": {},
@@ -441,9 +386,132 @@
         "doi": "",
         "arxiv_id": "2608.17381v1"
       },
-      "abstract_zh": "生物分子设计支撑从分子识别到治疗学和合成生物学的应用，但从头相互作用设计仍具挑战，尤其是DNA/RNA这类研究不足的非蛋白模态；它们的复合物数据稀少且异质，几何与化学约束更严格。我们引入MCTH（Monte Carlo Tree Hallucination），一种纯推理框架，将全原子序列—结构共设计视为对来自预训练折叠和逆折叠模型的幻觉状态进行不确定性感知规划，并可在同一决策循环中加入可选的生物物理控制。MCTH将这些模型视为冻结的黑箱算子，并使用蒙特卡洛树搜索在相互竞争的设计轨迹之间分配固定推理预算，同时纳入模型置信度与不确定性，以及存在多个预测器时跨专家的一致性或分歧。在蛋白—RNA、蛋白—DNA、蛋白—蛋白和蛋白—配体设计中，预算匹配实验显示，自适应搜索优于更简单的采样和循环策略；保留的AlphaFold3和Chai-1评估表明其可迁移到搜索时所用预言器之外。MCTH提供跨模态的共享规划层，同时允许任务特异的折叠、逆折叠和生物物理模块，无需微调，也无需通过组件模型反向传播。",
+      "abstract_zh": "生物分子设计支撑着从分子识别到治疗学和合成生物学的应用，但从头相互作用设计仍具挑战，尤其是 DNA/RNA：这些尚未被充分探索的非蛋白质模态具有稀缺、异质的复合物数据以及更严格的几何和化学约束。我们引入 MCTH（Monte Carlo Tree Hallucination），一种仅推理框架，它将全原子序列–结构协同设计表述为在预训练折叠和逆折叠模型产生的幻觉状态上进行不确定性感知规划，并可在同一决策循环中加入可选生物物理控制。MCTH 将这些模型视为冻结的黑箱算子，并使用 Monte Carlo Tree Search 在相互竞争的设计轨迹之间分配固定推理预算，整合模型置信度和不确定性，以及在可用多个预测器时的跨专家共识/分歧。在蛋白–RNA、蛋白–DNA、蛋白–蛋白和蛋白–配体设计中，匹配预算实验显示，自适应搜索优于更简单的采样和循环策略；而留出的 AlphaFold3 和 Chai-1 评估证明了超越搜索时预言器的迁移能力。MCTH 在模态间提供共享规划层，同时允许采用任务专用的折叠、逆折叠和生物物理模块，不需要微调或通过组件模型进行反向传播。",
       "published": "2026-08-18",
       "author_line": "Xuefeng Liu, Mingxuan Cao, Xiao Luo, Songhao Jiang, Tobin Sosnick, Jinbo Xu, Louis Maher, Rick Stevens"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15007670/v1",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Chemical Similarity-Informed Machine Learning for Navigating Multi-Component Polymeric Material Design Space",
+      "url": "https://doi.org/10.26434/chemrxiv.15007670/v1",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
+      "creators": [
+        "Bradley Lamb",
+        "Sri Vishnuvardhan Reddy Akepati",
+        "Saroj Upreti",
+        "Xiaodan Gu",
+        "Boran Ma"
+      ],
+      "language": "en",
+      "abstract_or_text": "Chemical representation remains a central obstacle to applying machine learning (ML) in polymer science, and the difficulty compounds in multi-component formulations, where each polymer, solvent, and additive must be featurized independently and the inter-component interactions that often govern material properties go unencoded. Here we introduce a similarityinformed ML framework that, instead of encoding explicit chemical structures, represents each system by the pairwise chemical similarity between its components and uses these scalars as training features. Because it depends on relative similarity rather than on specific structural features, the representation is low-dimensional and inherently chemistry-agnostic. We validate the framework on block copolymer (BCP) thin films processed by non-volatile additive solvent annealing (NVASA) and blending, using high-throughput GISAXS analysis to assemble a dataset of over 700 nanoscale morphology measurements. Collapsing thousands of structural features into only 49 similarity descriptors, the framework matches the accuracy of the state-of-the-art full-feature and deep-learning baselines, with test R2 values of 0.986 for domain spacing and 0.835 for FWHM, while training in minutes rather than hours and yielding interpretability at the level of component pairs through SHAP analysis. An uncertainty-based active learning strategy reaches comparable accuracy using only 11% of the training data. Most importantly, the framework generalizes to 10 BCP thin films built from 5 previously unseen polymers and 2 unseen solvents (validation R2 of 0.928 for domain spacing) and transfers to an independent polymer solubility classification task, where it outperforms a Morgan-fingerprint benchmark on unseen chemistries. Together, these results establish a computationally efficient, interpretable, and generalizable representation of polymer chemistry for ML, enabling rapid exploration of vast chemical and processing spaces.",
+      "summary_zh": "该研究以组分间成对化学相似度替代显式结构特征，建立多组分聚合物材料的低维、可解释机器学习表示。在含700余个 GISAXS 形貌测量的数据集上，它以49个描述符达到强基线精度，并以11%的训练数据完成主动学习；对未见聚合物和溶剂及独立溶解度任务也展示了迁移。",
+      "why_it_matters_zh": "对于配方复杂、数据有限的聚合物体系，这种表示兼具较低训练成本、解释性和外部化学泛化测试，具有直接的材料设计价值。其成功目前基于特定 BCP 薄膜加工场景，相似度度量选择及向更多性质、加工条件的迁移仍需检验。",
+      "quality_score": 77.0,
+      "tags": [
+        "材料与催化"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "dataset",
+        "state-of-the-art"
+      ],
+      "publication_status": "preprint",
+      "rank": 9,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15007670/v1",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "化学表示仍是将机器学习（ML）应用于聚合物科学的核心障碍；在多组分配方中，这一困难进一步加剧，因为每种聚合物、溶剂和添加剂都必须独立特征化，而常常决定材料性质的组分间相互作用并未被编码。本文引入一种相似度知情的 ML 框架；它不编码显式化学结构，而是以各组分之间的成对化学相似度来表示每个体系，并将这些标量用作训练特征。由于依赖相对相似度而非特定结构特征，该表示是低维的，并且天然不依赖于特定化学。我们在经非挥发性添加剂溶剂退火（NVASA）和共混处理的嵌段共聚物（BCP）薄膜上验证该框架，利用高通量 GISAXS 分析建立了一个包含700余项纳米尺度形貌测量的数据集。该框架将数千个结构特征压缩为仅49个相似度描述符，在域间距上获得测试 R² 为0.986、在 FWHM 上获得0.835，与最佳全特征和深度学习基线的准确度相当；训练仅需数分钟而非数小时，并通过 SHAP 分析在组分对层面提供可解释性。一种基于不确定性的主动学习策略仅用11%的训练数据便达到可比准确度。最重要的是，该框架可泛化至由5种此前未见聚合物和2种未见溶剂构成的10种 BCP 薄膜（域间距验证 R² 为0.928），并迁移至独立的聚合物溶解度分类任务，在未见化学体系上优于 Morgan-fingerprint 基准。总体而言，这些结果确立了一种计算高效、可解释且可泛化的聚合物化学 ML 表示，可实现对巨大化学和加工空间的快速探索。",
+      "published": "2026-08-20",
+      "author_line": "Bradley Lamb, Sri Vishnuvardhan Reddy Akepati, Saroj Upreti, Xiaodan Gu, Boran Ma"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15001387/v2",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "ChemRxiv",
+      "title": "Local Symmetry Breaking and Correlated Fluctuations in Quantum Materials from Atomistic Foundation Models",
+      "url": "https://doi.org/10.26434/chemrxiv.15001387/v2",
+      "published_at": "2026-08-19",
+      "updated_at": "2026-08-19",
+      "creators": [
+        "Ouail Zakary",
+        "Weiguo Yin",
+        "Niraj Aryal"
+      ],
+      "language": "en",
+      "abstract_or_text": "Short-range structural distortions retained within nominally high-symmetry crystals underlie the anomalous physical properties of many advanced materials. These distortions reflect local symmetry breaking and correlated fluctuations extending over nanometer length scales and picosecond timescales, making their accurate modeling challenging. Here, we demonstrate that such distortions can be modeled using a machine learning-based framework, taking RuP, the parent compound of ruthenium-pnictide superconductors, as a representative quantum material. By fine-tuning an atomistic foundation model on ab initio molecular dynamics data, we obtain an interatomic potential that captures the temperature-dependent structural evolution of RuP. The simulations reveal a two-stage phase transition, with local monoclinic distortions persisting within the average high-symmetry phase well above the transition, indicating local symmetry breaking and correlated fluctuations. Electronic-structure calculations and phonon analysis connect these distortions to the evolution of the electronic state and the dynamical instability of the high-symmetry phase. Our results establish fine-tuned atomistic foundation models as a practical route for resolving short-range structural distortions in materials with complex phase behavior.",
+      "summary_zh": "作者以 RuP 为代表量子材料，在 ab initio 分子动力学数据上微调原子基础模型，得到可再现温度依赖结构演化的原子间势。模拟揭示局部单斜畸变可在平均高对称相中持续存在，并与电子结构演化和声子动力学不稳定性相联系。",
+      "why_it_matters_zh": "该研究展示基础模型如何以接近原子模拟的方式研究纳米尺度、皮秒尺度的局域对称性破缺，对复杂相变材料研究很有吸引力。证据聚焦 RuP 单一代表体系，势函数在相图其他区域及不同材料家族中的可靠程度仍需独立验证。",
+      "quality_score": 79.0,
+      "tags": [
+        "材料与催化"
+      ],
+      "evidence_flags": [
+        "breaking"
+      ],
+      "publication_status": "preprint",
+      "rank": 10,
+      "featured": false,
+      "category": "材料与催化",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.26434/chemrxiv.15001387/v2",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "在名义上高对称晶体中保留的短程结构畸变，是许多先进材料异常物理性质的基础。这些畸变反映了局域对称性破缺和延伸至纳米长度尺度、皮秒时间尺度的关联涨落，使其准确建模颇具挑战。本文以钌磷化物超导体的母体化合物 RuP 为代表量子材料，展示可使用基于机器学习的框架对此类畸变进行建模。通过在 ab initio 分子动力学数据上微调原子基础模型，我们获得了一个能捕捉 RuP 温度依赖结构演化的原子间势。模拟揭示两阶段相变：局部单斜畸变在转变温度以上、平均高对称相中仍持续存在，表明存在局域对称性破缺和关联涨落。电子结构计算和声子分析将这些畸变与电子态演化及高对称相的动力学不稳定性联系起来。我们的结果确立了经微调的原子基础模型作为解析具有复杂相行为材料中短程结构畸变的实用途径。",
+      "published": "2026-08-19",
+      "author_line": "Ouail Zakary, Weiguo Yin, Niraj Aryal"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.17.745284",
+      "channel": "aixchem",
+      "related_channels": [
+        "aixbio"
+      ],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Single-Molecule Proteomics via a Dynamic Translocase and Physics-Informed Machine Learning",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.17.745284",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
+      "creators": [
+        "Taylor, J. E.",
+        "Sharma, P.",
+        "Krantz, B."
+      ],
+      "language": "en",
+      "abstract_or_text": "Single-molecule protein sequencing promises to democratize clinical proteomics, but platforms retrofitting static DNA-sequencing nanopores face a fundamental biophysical bottleneck: they only measure one-dimensional excluded volume. Consequently, these static calipers struggle to resolve isobaric residues, requiring complex DNA-handle chemistries and target concentrations that exceed clinically relevant abundance ranges. Here, we introduce a dynamical, target-docking translocase engine--the anthrax toxin protective antigen (PA)--as a label-free single-molecule peptide sensor. By extracting the multi-state thermodynamic friction generated as the pore's active site dynamically \"breathes\" around translocating analytes, we trained a physics-informed machine learning (PIML) architecture to classify a 20-member guest-host peptide library panel representing all 20 canonical amino acids at the single-event level. Operating at low nanomolar concentrations under a 35-millisecond thermodynamic read constraint, the translocase resolved isobaric variants (leucine and isoleucine). Furthermore, we achieved 98.02 (+/-0.05)% classification accuracy on a panel of five un-tagged, native clinical biomarkers (e.g., KRAS G12D, angiotensin, bradykinin). Transitioning from static volumetric measurement to time-domain thermodynamic fingerprinting establishes the requisite protein nanopore hardware for de novo proteomics.",
+      "summary_zh": "该工作用炭疽毒素保护性抗原（PA）构建动态靶标对接转位酶单分子肽传感器，并用物理知情机器学习从时间域热力学摩擦指纹识别肽。它在低纳摩尔浓度、35 ms 读出条件下区分 leucine/isoleucine，并在5种未标记临床生物标志物上报告98.02（±0.05）%分类准确率。",
+      "why_it_matters_zh": "动态转位机制与 PIML 的结合为无标记单分子蛋白质组学提供了有实验支撑的新测量范式，也回应了静态纳米孔的异质量残基难题。当前测试库规模较小，临床复杂样本中的通量、误判率和完整蛋白序列覆盖仍是关键问题。",
+      "quality_score": 76.0,
+      "tags": [
+        "结构与生物"
+      ],
+      "evidence_flags": [
+        "clinical"
+      ],
+      "publication_status": "preprint",
+      "rank": 11,
+      "featured": false,
+      "category": "结构与生物",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.17.745284",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "单分子蛋白质测序有望普及临床蛋白质组学，但对静态 DNA 测序纳米孔进行改造的平台面临根本生物物理瓶颈：它们只能测量一维排除体积。因此，这些静态卡尺难以分辨等质量残基，需要复杂的 DNA 把手化学以及高于临床相关丰度范围的靶标浓度。本文引入一种动态靶标对接转位酶引擎——炭疽毒素保护性抗原（PA）——作为无标记单分子肽传感器。通过提取孔活性位点在转运分析物周围动态“呼吸”时产生的多状态热力学摩擦，我们训练了物理知情机器学习（PIML）架构，在单事件层面分类一个代表全部20种标准氨基酸的20成员客体–主体肽文库面板。在低纳摩尔浓度和35毫秒热力学读出约束下运行时，该转位酶区分了等质量变体（leucine 和 isoleucine）。此外，我们在5种未加标签的天然临床生物标志物面板（例如 KRAS G12D、angiotensin、bradykinin）上实现98.02（±0.05）%的分类准确率。从静态体积测量转向时间域热力学指纹，建立了从头蛋白质组学所需的蛋白质纳米孔硬件。",
+      "published": "2026-08-20",
+      "author_line": "Taylor, J. E., Sharma, P., Krantz, B."
     },
     {
       "id": "arxiv:2608.18604v1",
@@ -466,8 +534,8 @@
       ],
       "language": "en",
       "abstract_or_text": "Simultaneously engineering multiple protein properties remains a major challenge. Existing machine learning-based pipelines for protein engineering often model properties separately, failing to capture their dependencies and trade-offs. Here, we systematically evaluate how Bayesian parameterization on Multitask Neural Networks can enable robust simultaneous protein engineering under scarce, noisy experimental data. We curated a comprehensive set of 27 multiparameter protein datasets. Then, we compared three algorithm architectures spanning low to full Bayesian parameterization across 16 sequence representations and dimensionality reduction (2,592 models). Bayesian Last Layer models delivered the strongest overall accuracy, generalization, and calibration, ranking as the top-performing model on 70% of benchmark datasets. Dimensionality reduction improved predictive performance by up to 42% and enhanced calibration up to 57% across architectures. Notably, simple One-Hot encoding achieved top performance on 25% of benchmark datasets, particularly with larger datasets. These results establish practical design principles for reliable and data-efficient multiparameter protein engineering.",
-      "summary_zh": "在27个多参数蛋白数据集、16种序列表征和2592个模型上，系统比较多任务贝叶斯神经网络；Bayesian Last Layer在多数基准中表现最佳。",
-      "why_it_matters_zh": "直面蛋白工程中的多性质耦合与数据稀缺问题，比较规模和校准分析较完整；结果仍以整理数据集为主，未给出新的实验设计验证。",
+      "summary_zh": "该研究汇集27个多参数蛋白数据集，系统比较不同 Bayesian 参数化程度、16种序列表征和降维策略，共评估2,592个模型。Bayesian Last Layer 在70%的基准数据集上居首；降维可将预测性能提高至42%、校准性提高至57%，而 One-Hot 在较大数据集上仍具竞争力。",
+      "why_it_matters_zh": "论文以大规模系统比较而非单一模型展示多目标蛋白工程的稳健设计原则，尤其关注数据稀缺和噪声情形。基准提升未必等同于实验迭代中的成功率，任务间数据泄漏控制及实际突变库验证值得继续关注。",
       "quality_score": 76.0,
       "tags": [
         "方法与模型"
@@ -479,7 +547,7 @@
         "performance"
       ],
       "publication_status": "preprint",
-      "rank": 10,
+      "rank": 12,
       "featured": false,
       "category": "方法与模型",
       "metrics": {},
@@ -487,116 +555,91 @@
         "doi": "",
         "arxiv_id": "2608.18604v1"
       },
-      "abstract_zh": "同时工程化多种蛋白性质仍是一项重大挑战。现有基于机器学习的蛋白工程流程常将各项性质分别建模，未能捕捉它们的依赖关系和权衡。在此，我们系统评估贝叶斯参数化多任务神经网络如何在稀少且有噪声的实验数据下实现稳健的同步蛋白工程。我们整理了27个多参数蛋白数据集。随后，我们比较了跨越低度至完全贝叶斯参数化的3种算法架构、16种序列表征和降维方案，共计2592个模型。Bayesian Last Layer模型在整体准确性、泛化能力和校准方面表现最强，在70%的基准数据集上位列第一。降维使各架构的预测性能最高提高42%，校准最高改善57%。值得注意的是，简单的One-Hot编码在25%的基准数据集上达到最佳性能，尤其是在较大数据集上。这些结果为可靠且数据高效的多参数蛋白工程确立了实用设计原则。",
+      "abstract_zh": "同时工程化多种蛋白质性质仍是一项重大挑战。现有基于机器学习的蛋白质工程流程常常分别建模各项性质，未能捕捉它们的依赖关系和权衡。本文系统评估多任务神经网络上的 Bayesian 参数化如何在稀缺、带噪实验数据下实现稳健的同步蛋白质工程。我们整理了一套全面的27个多参数蛋白质数据集。随后，我们比较了横跨低度至完全 Bayesian 参数化的三种算法架构、16种序列表征和降维方法（共2,592个模型）。Bayesian Last Layer 模型提供了最强的总体准确度、泛化能力和校准性，在70%的基准数据集中位列最佳模型。降维使各架构的预测性能最高提高42%，校准性最高提高57%。值得注意的是，简单的 One-Hot 编码在25%的基准数据集中取得最佳性能，尤其是在较大数据集上。这些结果确立了可靠且数据高效的多参数蛋白质工程实用设计原则。",
       "published": "2026-08-19",
       "author_line": "Fabio Herrera-Rocha, David Medina-Ortiz, Desiree Wyrzykala, Tharun Srinivasan Sudha, Mehdi D. Davari"
     },
     {
-      "id": "biorxiv:10.1101/2025.07.21.665832",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixbio",
-        "aixmath"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Modality-chain reasoning enables multimodal protein modelling and design",
-      "url": "https://www.biorxiv.org/content/10.1101/2025.07.21.665832",
-      "published_at": "2026-08-18",
-      "updated_at": "2026-08-18",
-      "creators": [
-        "Liu, C.",
-        "Chao, L.",
-        "Ji, S.",
-        "Wang, H.",
-        "Zhou, G.",
-        "Zheng, J.",
-        "Hong, D.",
-        "Guo, Y.",
-        "Jiang, T.",
-        "Gao, Z.",
-        "Yang, M.",
-        "Pan, J.",
-        "Li, S. Z.",
-        "Zhang, X."
-      ],
-      "language": "en",
-      "abstract_or_text": "Reasoning has emerged as a central capability of large language models, yet how it should be formulated for scientific foundation models remains unclear because scientific knowledge is distributed across interdependent, domain-specific representations. Here we introduce modality-chain reasoning, which organizes representations into ordered computational chains, each conditioning prediction or generation of the next. Based on this principle, we develop ProteinReasoner, a multimodal generative protein foundation model that sequentially connects amino acid sequence, evolutionary constraints and three-dimensional structure within a shared autoregressive architecture. Across zero-shot structure prediction, inverse folding and fitness prediction, ProteinReasoner outperformed two multimodal protein foundation models, while controlled comparisons supported the functional contribution of the modality chain. We further extended this principle beyond pretraining: reorganizing the chain across successive structural states enabled multiple-conformation prediction, while introducing experimental feedback as an additional modality enabled an in-context learning paradigm for protein optimization without target-specific parameter updates. In particular, across thermostability and affinity-maturation evaluations, this paradigm improved over matched fine-tuned models and showed stronger mean performance than target-specific active-learning baselines. These results establish modality-chain reasoning as a unified and effective foundation-modelling strategy in protein science. More broadly, they suggest a general route towards reasoning across interdependent representations in other scientific domains.",
-      "summary_zh": "ProteinReasoner以序列、进化约束和三维结构的有序模态链构建多模态生成蛋白基础模型，并在结构预测、逆折叠、适应度及实验反馈优化中评估。",
-      "why_it_matters_zh": "提出可迁移到科学基础模型的“模态链推理”组织方式，并报告对基线和主动学习方法的改进；具体实验规模、靶标难度与复现实验细节未在摘要中说明。",
-      "quality_score": 73.0,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "experimental",
-        "evaluation",
-        "performance"
-      ],
-      "publication_status": "preprint",
-      "rank": 11,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.1101/2025.07.21.665832",
-        "arxiv_id": ""
-      },
-      "abstract_zh": "推理已成为大语言模型的核心能力，但由于科学知识分布在相互依赖、特定领域的表征之中，如何为科学基础模型构建推理仍不清楚。我们提出模态链推理，它将表征组织为有序计算链，每一个表征条件化下一个表征的预测或生成。基于这一原则，我们开发了ProteinReasoner，一种多模态生成蛋白基础模型，在共享自回归架构中依次连接氨基酸序列、进化约束和三维结构。在零样本结构预测、逆折叠和适应度预测中，ProteinReasoner优于两个多模态蛋白基础模型；受控比较支持模态链的功能贡献。我们还将这一原则扩展到预训练之外：通过重组连续结构状态中的链实现多构象预测；通过将实验反馈作为额外模态引入，实现了无需靶标特异参数更新的蛋白优化上下文内学习范式。特别是在热稳定性和亲和力成熟评价中，这一范式优于预算匹配的微调模型，并显示出强于靶标特异主动学习基线的平均性能。这些结果将模态链推理确立为蛋白科学中统一且有效的基础模型策略。更广泛地说，它们提示了一条在其他科学领域中跨相互依赖表征进行推理的通用途径。",
-      "published": "2026-08-18",
-      "author_line": "Liu, C., Chao, L., Ji, S., Wang, H., Zhou, G., Zheng, J., Hong, D., Guo, Y., Jiang, T., Gao, Z., Yang, M., Pan, J., Li, S. Z., Zhang, X."
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv.15007288/v2",
+      "id": "arxiv:2608.19117v1",
       "channel": "aixchem",
       "related_channels": [],
       "item_type": "paper",
-      "source": "ChemRxiv",
-      "title": "ALIGNing Learned Representations: Domain-General Models Triangulate Physicochemical Interactions in Analytical Separations",
-      "url": "https://doi.org/10.26434/chemrxiv.15007288/v2",
+      "source": "arXiv",
+      "title": "Enhancing EBSD throughput of battery electrode materials using super-resolution generative adversarial networks",
+      "url": "https://arxiv.org/abs/2608.19117v1",
       "published_at": "2026-08-19",
       "updated_at": "2026-08-19",
       "creators": [
-        "Daniel Domingo-Fern´andez",
-        "Cailum M. K. Stienstra",
-        "Yen-Nhi Hoang",
-        "Chen Zhao",
-        "Alisa Hui",
-        "Emir Nazdrajić",
-        "Pelle Simpson",
-        "Aurelie Roux",
-        "Augest Allen",
-        "Michael Widrich",
-        "W. Scott Hopkins"
+        "John Mangum",
+        "Andrew Glaws",
+        "Francois Usseglio-Viretta",
+        "Steven Spurgeon",
+        "Donal Finegan"
       ],
       "language": "en",
-      "abstract_or_text": "Despite rapid progress, foundation models for chemistry have yet to consistently deliver broadly transferable, experiment-grounded representations for structure-to-measurement tasks in practice. This reflects both the scarcity and fragmentation of experimental datasets and the weak alignment between common molecular representations (e.g., SMILES and graphs) and measured chemical behaviour. Here, we formalize domain-general models: pretrained models constrained across multiple measurement contexts within a physically coherent domain to learn transferable chemical representations that capture how molecular structure gives rise to experimental observables. Using liquid chromatography as a testbed, we develop ALIGN and show that it outperforms conventional baselines, including foundation models and transfer learning approaches, across diverse chromatographic contexts while retaining performance in data-limited and chemically out-of-distribution settings. By training across multiple chromatographic methods, ALIGN triangulates an underlying physicochemical interaction space, with each method providing a complementary projection that constrains the learned representation. We show that ALIGN learns embeddings consistent with physicochemical properties and chromatographic principles and provide evidence for a mechanism underlying improved method-specific adaptation. These representations transfer to related analytical modalities, including GC, CCS, and DMS, suggesting that these measurements encode overlapping physicochemical relationships. Together, these results demonstrate the value of physically grounded representation learning and suggest that domain-general approaches may extend to other fragmented scientific domains.",
-      "summary_zh": "提出ALIGN，在多个液相色谱测量情境中约束预训练表征，以学习可迁移的物理化学相互作用空间，并考察其向GC、CCS和DMS的迁移。",
-      "why_it_matters_zh": "以实验测量为中心改进化学表征学习，对数据稀缺和化学分布外情境有直接价值；跨分析模态的结论仍需更广泛仪器、化学空间和独立数据验证。",
-      "quality_score": 73.0,
+      "abstract_or_text": "Quantitative microstructural characterization of Li-ion battery electrode materials using electron backscatter diffraction (EBSD) has been proven as a critical method for optimizing cell performance. However, the inherently slow nature of EBSD can hinder the throughput of analyses needed for statistical representation of a material microstructure being developed. This work demonstrates a machine learning super-resolution framework using a generative adversarial network (SRGAN) to significantly increase EBSD throughput. The SRGAN model was trained on EBSD data of LiNixMnyCozO2 (NMC) cathode particles to computationally enhance low-resolution datasets and its performance is compared against classical interpolation methods across various upscaling factors (2x to 12x). Both qualitative image metrics and quantitative microstructural analysis verified that the SRGAN systematically outperformed classical methods, particularly in preserving small grains and maintaining realistic grain boundaries. We demonstrate that a 5x upscaling factor, corresponding to a 25x speed-up in acquisition time or a 25x larger field of view, is practical while maintaining acceptable accuracy in key metrics like grain size and shape. For instance, at 5x upscaling, relative errors were +5.7%, +8.2%, and -14.6% on grain area-equivalent diameter, grain maximum sphere-inscribed diameter, and grain boundary length, respectively. The SRGAN methodology developed in this work significantly enhances the efficiency of EBSD acquisition for more statistically robust microstructural dataset, enabling EBSD as a high-throughput characterization tool for materials research and industrial process development.",
+      "summary_zh": "研究以 LiNixMnyCozO2（NMC）正极 EBSD 数据训练 SRGAN，对低分辨率表征进行超分辨重建。在2×至12×放大比较中，SRGAN 比经典插值更能保留细小晶粒和真实晶界；5×放大可使采集速度提高25倍，并给出粒径、形状和晶界长度的定量误差。",
+      "why_it_matters_zh": "它把生成模型用于电池材料显微结构表征吞吐量瓶颈，并以图像与材料统计指标共同验证，具有明确的实验流程意义。放大重建可能掩盖罕见缺陷或引入伪结构，模型跨不同电极化学组成、仪器和制样条件的稳定性尚需验证。",
+      "quality_score": 75.0,
       "tags": [
-        "方法与模型"
+        "材料与催化"
       ],
       "evidence_flags": [
         "dataset",
-        "experimental",
         "performance"
       ],
       "publication_status": "preprint",
-      "rank": 12,
+      "rank": 13,
       "featured": false,
-      "category": "方法与模型",
+      "category": "材料与催化",
       "metrics": {},
       "metadata": {
-        "doi": "10.26434/chemrxiv.15007288/v2",
-        "arxiv_id": ""
+        "doi": "",
+        "arxiv_id": "2608.19117v1"
       },
-      "abstract_zh": "尽管取得快速进展，化学基础模型尚未能在实践中持续提供广泛可迁移且以实验为基础的结构—测量任务表征。这反映出实验数据集稀少且碎片化，以及常见分子表征（如SMILES和图）与实测化学行为之间的对应关系较弱。在此，我们形式化定义领域通用模型：在物理上连贯的领域内，跨多个测量情境施加约束的预训练模型，用以学习能够捕捉分子结构如何产生实验可观测量的可迁移化学表征。以液相色谱为试验平台，我们开发ALIGN，并表明它在多种色谱情境中优于传统基线，包括基础模型和迁移学习方法，同时在数据受限及化学分布外情境中保持性能。通过跨多种色谱方法训练，ALIGN对潜在物理化学相互作用空间进行三角定位，每种方法都提供互补投影并约束所学表征。我们表明，ALIGN学习到与物理化学性质和色谱原理一致的嵌入，并提供改善方法特异适配机制的证据。这些表征可迁移到相关分析模态，包括GC、CCS和DMS，提示这些测量编码了重叠的物理化学关系。总体而言，这些结果展示了物理基础表征学习的价值，并提示领域通用方法可扩展到其他碎片化科学领域。",
+      "abstract_zh": "使用电子背散射衍射（EBSD）对锂离子电池电极材料进行定量微结构表征，已被证明是优化电池性能的关键方法。然而，EBSD 固有的缓慢特性会阻碍获得材料微结构统计代表性所需分析的吞吐量。本工作展示一种使用生成对抗网络（SRGAN）的机器学习超分辨框架，可显著提高 EBSD 吞吐量。SRGAN 模型在 LiNixMnyCozO2（NMC）正极颗粒的 EBSD 数据上训练，以计算方式增强低分辨率数据集；其性能在各种放大倍数（2×至12×）下与经典插值方法比较。定性图像指标和定量微结构分析均证实，SRGAN 系统性优于经典方法，尤其在保留小晶粒和维持真实晶界方面。我们表明，5×放大倍数是实用的，相当于采集时间加快25倍或视野扩大25倍，同时在晶粒尺寸和形状等关键指标上保持可接受的准确度。例如，在5×放大时，晶粒面积等效直径、晶粒最大内接球直径和晶界长度的相对误差分别为+5.7%、+8.2%和-14.6%。本工作开发的 SRGAN 方法显著提升 EBSD 采集效率，以获得统计上更稳健的微结构数据集，使 EBSD 成为材料研究和工业过程开发中的高通量表征工具。",
       "published": "2026-08-19",
-      "author_line": "Daniel Domingo-Fern´andez, Cailum M. K. Stienstra, Yen-Nhi Hoang, Chen Zhao, Alisa Hui, Emir Nazdrajić, Pelle Simpson, Aurelie Roux, Augest Allen, Michael Widrich, W. Scott Hopkins"
+      "author_line": "John Mangum, Andrew Glaws, Francois Usseglio-Viretta, Steven Spurgeon, Donal Finegan"
     },
     {
-      "id": "biorxiv:10.64898/2026.08.14.744937",
+      "id": "biorxiv:10.64898/2026.08.18.745526",
+      "channel": "aixchem",
+      "related_channels": [],
+      "item_type": "paper",
+      "source": "bioRxiv",
+      "title": "Mechanistic Dissection of Entropic Penalty upon Ligand Binding and Molecular Flexibility via Molecular Dynamics Simulations and Machine Learning",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.18.745526",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
+      "creators": [
+        "Hung, T. I.",
+        "Vig, E.",
+        "Chang, C.-e."
+      ],
+      "language": "en",
+      "abstract_or_text": "Molecular flexibility governs how molecules behave, reorganize, and respond to their environment. Although experiments measure molar entropy for small molecules and molecular dynamics (MD) simulations capture molecular motions, quantifying configuration entropy and the concerted internal motions such as torsion rotations, angle bending, and their couplings are central to understanding thermodynamic behavior but remains challenging. To dissect these contributions, we used MD trajectories and developed an internal coordinate PC-entropy (iPC-entropy) method to probe the origins of entropy and reveal how specific motions shape the thermodynamic landscape. The studies accurately captured molar entropy, identified key torsional motions as major contributors, and uncovered a critical angle-torsion coupling in which angle bending was strongly correlated with torsional rotation, a coupling that increases nonlinearly with molecular size. Evaluating entropic changes upon protein-ligand binding reveals that dominant entropic penalty arises from ligand dihedral rigidification rather than protein reorganization and highlights the specific dihedral rotations that become restricted. We also suggest systematic corrections for approaches considering solely rotamers to reliably reproduce the relative entropic penalty in computer-aided drug discovery. Together, our findings elucidate the molecular origins of entropy and entropy changes. In addition, we can quantify and illustrate the internal motions that strongly shape binding thermodynamics, thereby offering mechanistic insights to guide drug development.",
+      "summary_zh": "作者从分子动力学轨迹构建内部坐标 PC-entropy（iPC-entropy）方法，分解扭转、键角及其耦合对构型熵的贡献。蛋白–配体结合分析显示，主要熵罚来自配体二面角刚化而非蛋白重组，并指出了受限的具体二面角旋转。",
+      "why_it_matters_zh": "结合熵是结构导向设计中难以量化的因素；该方法提供可解释的运动学来源，可用于改进配体优化假设。摘要虽称能准确捕捉摩尔熵，但缺少跨体系误差和实验对照细节，结论的普适性仍待全文证据支持。",
+      "quality_score": 74.0,
+      "tags": [
+        "分子与药物发现"
+      ],
+      "evidence_flags": [],
+      "publication_status": "preprint",
+      "rank": 14,
+      "featured": false,
+      "category": "分子与药物发现",
+      "metrics": {},
+      "metadata": {
+        "doi": "10.64898/2026.08.18.745526",
+        "arxiv_id": ""
+      },
+      "abstract_zh": "分子柔性决定分子如何表现、重组并响应其环境。尽管实验测量小分子的摩尔熵，分子动力学（MD）模拟捕捉分子运动，但量化构型熵以及扭转旋转、键角弯曲及其耦合等协同内部运动，是理解热力学行为的核心，却仍具挑战。为剖析这些贡献，我们使用 MD 轨迹并开发内部坐标 PC-entropy（iPC-entropy）方法，以探究熵的来源并揭示特定运动如何塑造热力学图景。研究准确捕捉了摩尔熵，识别出关键扭转运动是主要贡献者，并发现关键的键角–扭转耦合：键角弯曲与扭转旋转强相关，且该耦合随分子尺寸非线性增加。评估蛋白质–配体结合时的熵变化显示，主导性熵罚来自配体二面角刚化，而非蛋白质重组，并突出了受到限制的具体二面角旋转。我们还为仅考虑 rotamer 的方法提出系统性校正，以便在计算机辅助药物发现中可靠再现相对熵罚。总体而言，我们的发现阐明了熵和熵变化的分子起源。此外，我们能够量化并展示强烈塑造结合热力学的内部运动，从而提供指导药物开发的机制性见解。",
+      "published": "2026-08-20",
+      "author_line": "Hung, T. I., Vig, E., Chang, C.-e."
+    },
+    {
+      "id": "biorxiv:10.64898/2026.08.16.745117",
       "channel": "aixchem",
       "related_channels": [
         "aixbio",
@@ -604,187 +647,103 @@
       ],
       "item_type": "paper",
       "source": "bioRxiv",
-      "title": "Signature Recontextualization: Mapping perturbational signatures across biological contexts",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.14.744937",
-      "published_at": "2026-08-19",
-      "updated_at": "2026-08-19",
+      "title": "An AI System for Autonomous Algorithm Evolution in Drug Development",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.16.745117",
+      "published_at": "2026-08-20",
+      "updated_at": "2026-08-20",
       "creators": [
-        "Chen, A. D.",
-        "Girke, T.",
-        "Monti, S."
+        "Zhou, Z.",
+        "Nan, Y.",
+        "Mou, M.",
+        "Qian, Y.",
+        "Liu, Y.",
+        "Zuo, Z.",
+        "Yang, H.",
+        "Xu, W.",
+        "Li, B.",
+        "Jiang, W.",
+        "Ren, Y.",
+        "Liao, Y.",
+        "Wang, Y.",
+        "Li, Y.",
+        "Yang, Q.",
+        "Xi, Z.",
+        "Mi, T.",
+        "Sun, H.",
+        "Liu, P.",
+        "Zhu, F."
       ],
       "language": "en",
-      "abstract_or_text": "Perturbational transcriptomics is a powerful tool for understanding gene function and drug effects, yet predicting how perturbations manifest across different biological contexts remains a central challenge, limiting translation from model systems to clinically relevant tissues. Despite growing interest in this problem, benchmarking efforts have been hindered by inconsistent evaluation tasks, heterogeneous metrics, and limited assessment across perturbation types and biological systems. Here, we introduce a benchmarking framework for cross-context perturbation-signature prediction (a task we define as signature recontextualization), grounded in explicit definitions of the prediction task, target-data availability, and evaluation metrics centered on signature recovery. The framework evaluates prediction performance across three target-context data regimes: (1) control only, where only control profiles from the target context are measured; (2) low coverage, where a limited subset of perturbations in the target context are measured; and (3) high coverage, where most perturbations in the target context are measured. This design enables systematic assessment of how prediction performance depends on target-context sample size while providing a standardized basis for comparing methods. We evaluate newly developed projection-based (projectCor) and network-based (netProp) methods alongside deep learning-based foundation models (scGPT, STACK) and statistical baselines. The benchmark spans four diverse perturbational datasets: CRISPR knockdowns and drug perturbations in cell lines, plus in vivo chemical perturbations in rat tissues from DrugMatrix, extending evaluation beyond isolated cell-line models to tissue-level responses. Across tasks, projection and network propagation approaches show strong flexibility across perturbation types and biological contexts, and in several cases match or exceed the performance of deep learning and foundation models, suggesting that model complexity does not inherently improve cross-context generalization. We further show that perturbation predictability varies substantially with pathway conservation, transcriptional response strength, and baseline similarity between source and target contexts. All datasets, methods, and evaluation utilities are released as an open-source R package (sigRecon), providing a foundation for reproducible benchmarking and future method development.",
-      "summary_zh": "建立跨生物情境扰动转录组特征预测基准，比较projectCor、netProp、scGPT、STACK及统计基线，并发布sigRecon R包。",
-      "why_it_matters_zh": "把药物和CRISPR扰动从细胞系扩展到大鼠组织，并明确不同目标数据可得性条件；性能会受通路保守性、响应强度及源—目标相似性显著影响。",
-      "quality_score": 73.0,
+      "abstract_or_text": "Artificial intelligence (AI) is increasingly permeating the drug development pipeline. Numerous algorithms for accelerating this multi-stage and multi-task process have been constructed, which depends heavily on expert design and labor-intensive task-specific optimization. Given that AI-driven acceleration of drug development is recognized as a cumulative, often synergistic, effect across multiple stages, the autonomous evolution of existing algorithms across the entire pipeline is demanded to achieve a holistic advancement. Here, we present DrugEvolve, a multi-role large language model system for systematic and autonomous algorithm evolution in drug development. DrugEvolve realizes a closed-loop evolution process by incorporating Researcher, Engineer, and Analyst domains, and enables an iterative design, implementation, evaluation, and refinement of algorithm by leveraging scientific knowledge and accumulated evolutionary experience. Across eleven representative tasks spanning target identification, drug discovery, preclinical study, and clinical trial, DrugEvolve autonomously evolved the corresponding task-specific algorithms and achieved substantial performance enhancement on 120 benchmark test sets. Moreover, it showed robust generalizabilities across heterogeneous data modalities (ranging from biological sequence and graph to molecular topology and textual language), and realized gains in both predictive and generative tasks. Collectively, this AI system can serve not only as an algorithmic infrastructure for drug development, but also as a transferable paradigm for broader scientific domains.",
+      "summary_zh": "DrugEvolve 是由 Researcher、Engineer 和 Analyst 角色组成的 LLM 系统，自动迭代设计、实现、评估并优化药物开发算法。在靶点识别、药物发现、临床前研究和临床试验的11类任务、120个基准测试集上，作者报告任务特异算法的显著提升，并覆盖预测和生成任务。",
+      "why_it_matters_zh": "该研究试图把药物研发各阶段的算法改进作为可迁移的自动化研究过程，并给出多模态、大范围基准。系统复杂且基准覆盖广，因果归因、可复现代码、计算资源以及对新任务的独立前瞻检验都需仔细审阅。",
+      "quality_score": 78.0,
       "tags": [
         "方法与模型"
       ],
       "evidence_flags": [
         "benchmark",
-        "dataset",
         "clinical",
-        "in vivo",
         "evaluation",
-        "release"
-      ],
-      "publication_status": "preprint",
-      "rank": 13,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.14.744937",
-        "arxiv_id": ""
-      },
-      "abstract_zh": "扰动转录组学是理解基因功能和药物效应的强大工具，但预测扰动如何在不同生物情境中呈现仍是核心挑战，限制了从模型系统向临床相关组织的转化。尽管人们对这一问题的兴趣不断增长，基准工作却受到评价任务不一致、指标异质以及对扰动类型和生物系统评估有限的阻碍。在此，我们引入跨情境扰动特征预测的基准框架——我们将该任务定义为特征再情境化——其基础是对预测任务、目标数据可得性和以特征恢复为中心的评价指标作出明确界定。该框架评估三种目标情境数据机制下的预测性能：（1）仅有对照，即只测量目标情境中的对照图谱；（2）低覆盖度，即测量目标情境中有限子集的扰动；（3）高覆盖度，即测量目标情境中大部分扰动。该设计能够系统评估预测性能如何依赖目标情境样本量，并为方法比较提供标准化基础。我们在四个多样的扰动数据集上评估新开发的投影方法（projectCor）和网络方法（netProp），并与深度学习基础模型（scGPT、STACK）和统计基线比较；数据集包括细胞系中的CRISPR敲低和药物扰动，以及来自DrugMatrix的大鼠组织体内化学扰动，使评估超出孤立细胞系模型而达到组织层面的反应。在各项任务中，投影和网络传播方法在不同扰动类型和生物情境中表现出强大的灵活性，并且在若干情况下达到或超过深度学习和基础模型的性能，提示模型复杂度本身并不保证改善跨情境泛化。我们还表明，扰动可预测性会随通路保守性、转录反应强度以及源情境和目标情境之间的基线相似性而显著变化。所有数据集、方法和评价工具均以开源R包sigRecon发布，为可复现基准测试和未来方法开发提供基础。",
-      "published": "2026-08-19",
-      "author_line": "Chen, A. D., Girke, T., Monti, S."
-    },
-    {
-      "id": "biorxiv:10.64898/2026.08.12.743536",
-      "channel": "aixchem",
-      "related_channels": [
-        "aixbio",
-        "aixmath"
-      ],
-      "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "A Generative Virtual Tissue Model Enables Computational Design of Therapeutic Perturbation Strategies",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.12.743536",
-      "published_at": "2026-08-18",
-      "updated_at": "2026-08-18",
-      "creators": [
-        "Lu, Y.",
-        "Zhang, W.",
-        "Chen, Y.-J.",
-        "Yin, J.",
-        "Chen, L.",
-        "Fleisher, K.",
-        "Gornet, J.",
-        "Liu, R.",
-        "Wang, Z. J.",
-        "Poon, Y.",
-        "You, Y.",
-        "Thomson, M."
-      ],
-      "language": "en",
-      "abstract_or_text": "Computational design has transformed many fields of engineering, where simulators can explore millions of candidate design configurations before experimental development and testing. Therapeutic design in biomedicine has resisted computational design approaches because disease progression and therapeutic response emerge from interactions among many cell types within human tissue, governed by biochemical parameters that are largely unknown and potentially unknowable. Here, we introduce the Cell Interaction Foundation Model (CIFM), a virtual tissue model that forward-simulates the transcriptional dynamics of cells in human tissue under arbitrary therapeutic conditions based upon a spatial transcriptomic seed. CIFM is a geometric graph neural network trained by self-supervised masked-transcriptome prediction on millions of cellular microenvironments spanning human tissue types and disease states; generative, auto-regressive, monte-carlo play-out, then, simulates transcriptional dynamics under combinatorial perturbations from a spatial transcriptomic seed. We validate CIFM by showing accuracy gains in gene expression prediction and imputation, disease classification, recapitulation of perturbation responses in prostate cancer models, and recovery of T cell-tumor signaling measured in cell-cell sequencing experiments. Beyond such conventional tasks, CIFM enables target identification and therapeutic design through generative tissue simulation play-outs. Analyzing over 10^6 single and combinatorial perturbations, CIFM designs immunotherapy strategies for cancer and autoimmune disease that exploit combinatorial manipulation of signaling pathways to induce or suppress immune activation. Broadly, CIFM shows how generative artificial intelligence methods can be applied to model emergent behavior in highly interacting biological systems, yielding new approaches to fundamental understanding of tissue behavior as well as large-scale therapeutic design.",
-      "summary_zh": "CIFM从空间转录组种子前向模拟组织细胞转录动态，并在超过100万种单一与组合扰动中提出癌症和自身免疫病免疫治疗策略。",
-      "why_it_matters_zh": "将空间转录组基础模型推进到组合治疗设计，且列出多类预测和细胞通信验证；治疗策略主要出自生成模拟，真实人体疗效和因果机制仍需实验检验。",
-      "quality_score": 72.0,
-      "tags": [
-        "方法与模型"
-      ],
-      "evidence_flags": [
-        "experimental"
-      ],
-      "publication_status": "preprint",
-      "rank": 14,
-      "featured": false,
-      "category": "方法与模型",
-      "metrics": {},
-      "metadata": {
-        "doi": "10.64898/2026.08.12.743536",
-        "arxiv_id": ""
-      },
-      "abstract_zh": "计算设计已改变许多工程领域，在这些领域中，模拟器可在实验开发和测试之前探索数百万种候选设计配置。生物医学中的治疗设计一直难以采用计算设计方法，因为疾病进展和治疗反应来自人类组织中多种细胞类型的相互作用，并受基本未知且可能无法得知的生化参数支配。在此，我们引入细胞相互作用基础模型（CIFM），这是一种虚拟组织模型，能够以空间转录组种子为基础，在任意治疗条件下前向模拟人类组织中细胞的转录动态。CIFM是一种几何图神经网络，在跨越人类组织类型和疾病状态的数百万个细胞微环境上，通过自监督掩码转录组预测进行训练；随后，生成式、自回归、蒙特卡洛推演从空间转录组种子出发，模拟组合扰动下的转录动态。我们通过展示基因表达预测和插补、疾病分类、前列腺癌模型中扰动反应再现，以及在细胞—细胞测序实验中测得的T细胞—肿瘤信号恢复方面的准确性提升，验证CIFM。除这些常规任务外，CIFM还通过生成式组织模拟推演实现靶标鉴定和治疗设计。对超过10^6种单一与组合扰动的分析，使CIFM为癌症和自身免疫疾病设计免疫治疗策略；这些策略利用对信号通路的组合操控来诱导或抑制免疫激活。总体而言，CIFM展示了如何将生成式人工智能方法应用于模拟高度相互作用生物系统中的涌现行为，为组织行为的基础理解以及大规模治疗设计带来新方法。",
-      "published": "2026-08-18",
-      "author_line": "Lu, Y., Zhang, W., Chen, Y.-J., Yin, J., Chen, L., Fleisher, K., Gornet, J., Liu, R., Wang, Z. J., Poon, Y., You, Y., Thomson, M."
-    },
-    {
-      "id": "chemrxiv:10.26434/chemrxiv.15007565/v1",
-      "channel": "aixchem",
-      "related_channels": [],
-      "item_type": "paper",
-      "source": "ChemRxiv",
-      "title": "High-Throughput DNA Sequence Space Exploration for Carbon Nanotube Biosensor Design",
-      "url": "https://doi.org/10.26434/chemrxiv.15007565/v1",
-      "published_at": "2026-08-18",
-      "updated_at": "2026-08-18",
-      "creators": [
-        "Magdalena Theresia Kuom",
-        "Phillip Galonska",
-        "Sayantani Chakraborty",
-        "Simon van Impel",
-        "Lela Vukovic",
-        "Sebastian Kruss"
-      ],
-      "language": "en",
-      "abstract_or_text": "Fluorescent single-walled carbon nanotubes (SWCNTs) can be non-covalently functionalized with biopolymers such as DNA to create biosensors. Noncovalent functionalization promises a vast design space, but synthesis is limited by low-throughput dispersion steps. Here, we present a high-throughput SWCNT-based platform that utilizes covalent DNAanchor chemistry to recruit ssDNA recognition motifs via hybridization. The approach circumvents low throughput processing steps such as sonication or centrifugation. By integrating automated liquid handling and spectroscopy, we bypass traditional fabrication bottlenecks and synthesize 180 unique sensors and test 540 analyte/sensor conditions in less than three days. This accelerated workflow generates large datasets that are combined with an iterative machine learning (ML) pipeline. We demonstrate the versatility of this approach by evolving sensors with enhanced sensitivity for the neurotransmitter dopamine over common interfering molecules such as ascorbic acid in complex media. Through iterative rounds of ML-driven prediction and synthesis, we establish a scalable framework for rapid synthesis of functional nanosensors and increase the sensitivity for dopamine for up to 89 % of the evolved sensors. This strategy bridges the gap between the vast DNA sequence space and the generation of sensor variants, offering a scalable path to next-generation sensors.",
-      "summary_zh": "将共价DNAanchor化学、自动化液体处理、光谱学与迭代机器学习结合，在不足3天内制备180种碳纳米管传感器并测试540个分析物—传感器条件。",
-      "why_it_matters_zh": "工作流具备明确的高通量实验支撑，并展示多巴胺传感灵敏度提升；示例集中于DNA-SWCNT体系，传感选择性、稳定性和其他分析物的泛化表现仍需继续评估。",
-      "quality_score": 71.0,
-      "tags": [
-        "分子与药物发现"
-      ],
-      "evidence_flags": [
-        "dataset"
+        "performance"
       ],
       "publication_status": "preprint",
       "rank": 15,
       "featured": false,
-      "category": "分子与药物发现",
+      "category": "方法与模型",
       "metrics": {},
       "metadata": {
-        "doi": "10.26434/chemrxiv.15007565/v1",
+        "doi": "10.64898/2026.08.16.745117",
         "arxiv_id": ""
       },
-      "abstract_zh": "荧光单壁碳纳米管（SWCNTs）可以通过DNA等生物聚合物进行非共价功能化，从而制成生物传感器。非共价功能化提供了巨大的设计空间，但合成受限于低通量分散步骤。在此，我们提出一个基于SWCNT的高通量平台，利用共价DNAanchor化学，通过杂交招募ssDNA识别基序。该方法避开了超声或离心等低通量处理步骤。通过整合自动化液体处理和光谱学，我们绕过传统制备瓶颈，在不足三天内合成180种独特传感器，并测试540个分析物/传感器条件。这一加速工作流生成大型数据集，并与迭代机器学习（ML）流程结合。我们通过进化得到对神经递质多巴胺、相对于抗坏血酸等复杂介质中常见干扰物具有更高灵敏度的传感器，展示了该方法的通用性。通过ML驱动预测和合成的迭代轮次，我们建立了可扩展的功能纳米传感器快速合成框架，并使多巴胺灵敏度在最多89%的进化传感器中得到提高。该策略弥合了广阔DNA序列空间与传感器变体生成之间的差距，为下一代传感器提供了一条可扩展路径。",
-      "published": "2026-08-18",
-      "author_line": "Magdalena Theresia Kuom, Phillip Galonska, Sayantani Chakraborty, Simon van Impel, Lela Vukovic, Sebastian Kruss"
+      "abstract_zh": "人工智能（AI）正日益渗透药物开发流程。为加速这一多阶段、多任务过程已构建了众多算法，但它们高度依赖专家设计和劳动密集型的任务专用优化。鉴于 AI 驱动的药物开发加速被认为是在多个阶段累积、且往往协同产生的效果，因此需要对整个流程中现有算法进行自主演化，以实现整体性进步。本文提出 DrugEvolve，一种用于药物开发中系统化、自主算法演化的多角色大语言模型系统。DrugEvolve 纳入 Researcher、Engineer 和 Analyst 领域，实现反复的算法设计、实现、评估和改进过程，借助科学知识和累积的演化经验。在横跨靶点识别、药物发现、临床前研究和临床试验的11项代表性任务中，DrugEvolve 自主演化了相应的任务专用算法，并在120个基准测试集上实现显著性能增强。此外，它在异质数据模态间表现出稳健泛化能力（从生物序列和图到分子拓扑和文本语言），并在预测任务和生成任务中均取得增益。总之，该 AI 系统不仅可作为药物开发的算法基础设施，也可作为更广泛科学领域的可迁移范式。",
+      "published": "2026-08-20",
+      "author_line": "Zhou, Z., Nan, Y., Mou, M., Qian, Y., Liu, Y., Zuo, Z., Yang, H., Xu, W., Li, B., Jiang, W., Ren, Y., Liao, Y., Wang, Y., Li, Y., Yang, Q., Xi, Z., Mi, T., Sun, H., Liu, P., Zhu, F."
     },
     {
-      "id": "biorxiv:10.64898/2026.08.13.744613",
+      "id": "chemrxiv:10.26434/chemrxiv.15007349/v2",
       "channel": "aixchem",
-      "related_channels": [
-        "aixbio"
-      ],
+      "related_channels": [],
       "item_type": "paper",
-      "source": "bioRxiv",
-      "title": "Causally-inspired meta-representation learning framework for predicting patient-specific clinical responses to drug combinations",
-      "url": "https://www.biorxiv.org/content/10.64898/2026.08.13.744613",
-      "published_at": "2026-08-18",
-      "updated_at": "2026-08-18",
+      "source": "ChemRxiv",
+      "title": "BEAVER: A Multi-Agent Framework for Evidence-Grounded Answering and Property-Constrained Design of Degradable Polymers",
+      "url": "https://doi.org/10.26434/chemrxiv.15007349/v2",
+      "published_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "creators": [
-        "Zhang, Q.-Q.",
-        "Zhang, S.-W.",
-        "Shi, M.-H.",
-        "Li, J.-N.",
-        "Qiang, Y.-R.",
-        "Zhang, T.-H."
+        "Xuerui Fang",
+        "Boyuan Zhang",
+        "Meifang Zhu",
+        "Jin Wen"
       ],
       "language": "en",
-      "abstract_or_text": "Large-scale prediction and assessment of clinical patient responses (i.e., RECIST class) to drug combinations remains challenging due to scarce patient-derived data. The existing prediction methods mainly rely on cancer cell line models. However, substantial biological heterogeneity between cancer cell lines and cancer patients within same tissues, as well as the heterogeneity between one tissue and another, often limit the generalizability of these methods in clinical patients. To overcome these limitations, here we present CaMeRe, a Causally-inspired Meta-representation learning framework designed to predict patient-specific clinical Response to drug combinations. In situations where stable causal factors and domain-specific response-modulating factors are unobservable, explicit discrete domain labels are unavailable, and data is scarce, CaMeRe designed a domain-invariant causal representation learning (DICRL) model guided by the invariant information bottleneck theory and causal intervention invariance principle, and also built a meta-learning framework with bi-level domain generalization to optimize DICRL model for achieving multi-domain generalization within and across tissues. By integrating the causal representation learning and meta learning framework, CaMeRe not only exhibited robust multi-domain generalization performance across multiple clinical drug combination response datasets and PDXs drug combination response datasets and generalization scenarios, but also had better interpretability. We applied CaMeRe to predict drug-combination response scores for 3,423 patients across 542,080 drug combinations. The predicted scores were significantly associated with biomarkers of known drug combinations and enabled the prioritization of candidate drug combinations across 11 cancer types, with stronger support from literature and clinical trial evidences than random baselines. We believe that CaMeRe can be a useful tool for predicting large-scale clinical individual drug combination responses and it has broad clinical applications.",
-      "summary_zh": "CaMeRe以因果启发的元表征学习预测患者特异药物组合反应，并为11种癌症中的3423名患者、542080种组合给出优先级。",
-      "why_it_matters_zh": "尝试缩小细胞系与患者之间的异质性缺口，并结合临床组合反应数据和PDX场景；预测关联虽有文献和临床试验证据支持，仍不能替代前瞻性临床验证。",
-      "quality_score": 71.0,
+      "abstract_or_text": "Degradable polymers are an important research area in materials science because of their environmental compatibility and tunable degradation. Scientific agents could accelerate discovery by integrating fragmented literature with heterogeneous property data, but two challenges remain: retrieving relevant evidence with sufficient coverage and converting it into traceable reasoning and multi-property-constrained material design. Here, we present BEAVER, an evidence-grounded multi-agent framework for scientific question answering and degradable polymer design. Its Intent-Planner architecture coordinates hybrid retrieval-augmented generation in two workflows: Query Mode for evidence-grounded question answering and Design Mode for candidate generation and assessment under property constraints. Across retrieval, question-answering, and design benchmarks, BEAVER translated higher-quality evidence into more reliable outputs. Reranking increased the overall RAGAS score by more than 0.08 on average across the chunk-level retrieval settings, while the reranked chunk-level hybrid configuration achieved the best balance between recall and relevance. In question answering, BEAVER obtained a bidirectional mean Overall score of 8.77, compared with 8.42 for the strongest closed-book baseline. In coupled-property design, it performed comparably to representative frontier LLMs while providing clearer evidence traceability, more complete constraint handling, and more explicit analysis of risks and uncertainties. Overall, BEAVER offers a traceable and extensible framework that unifies hybrid retrieval, evidence-grounded reasoning, and property-constrained design for degradable polymer research.",
+      "summary_zh": "BEAVER 是面向可降解聚合物的证据驱动多智能体系统，提供混合检索增强问答和多性质约束设计两种工作模式。作者报告重排序使 RAGAS 平均总分提高逾0.08，问答总体得分为8.77，并在耦合性质设计中提供更清晰的证据追溯和约束处理。",
+      "why_it_matters_zh": "可降解聚合物研究常受文献与性质数据割裂影响，该系统将检索、推理和设计放入可追溯工作流，具备实用价值。问答分数和候选设计质量仍依赖基准及评估协议，生成材料的合成、降解和性能实验尚未由摘要证实。",
+      "quality_score": 73.0,
       "tags": [
-        "分子与药物发现"
+        "材料与催化"
       ],
       "evidence_flags": [
-        "dataset",
-        "clinical",
-        "performance"
+        "benchmark"
       ],
       "publication_status": "preprint",
       "rank": 16,
       "featured": false,
-      "category": "分子与药物发现",
+      "category": "材料与催化",
       "metrics": {},
       "metadata": {
-        "doi": "10.64898/2026.08.13.744613",
+        "doi": "10.26434/chemrxiv.15007349/v2",
         "arxiv_id": ""
       },
-      "abstract_zh": "由于患者来源数据稀缺，对药物组合的临床患者反应（即RECIST类别）进行大规模预测和评估仍具挑战。现有预测方法主要依赖癌症细胞系模型。然而，同一组织中癌症细胞系与癌症患者之间存在显著生物学异质性，且不同组织之间也存在异质性，这常常限制了这些方法在临床患者中的泛化能力。为克服这些限制，我们提出CaMeRe，一种因果启发的元表征学习框架，用于预测患者特异的药物组合临床反应。在稳定因果因素和领域特异反应调制因素不可观测、明确离散领域标签不可用且数据稀缺的情况下，CaMeRe设计了由不变信息瓶颈理论和因果干预不变性原则指导的领域不变因果表征学习（DICRL）模型，并构建具有双层领域泛化的元学习框架来优化DICRL模型，以实现组织内和组织间的多领域泛化。通过整合因果表征学习和元学习框架，CaMeRe不仅在多个临床药物组合反应数据集、PDX药物组合反应数据集和泛化情境中表现出稳健的多领域泛化性能，也具有更好的可解释性。我们应用CaMeRe，为11种癌症中3423名患者的542080种药物组合预测反应评分。预测评分与已知药物组合的生物标志物显著相关，并能在11种癌症中对候选药物组合进行优先排序；与随机基线相比，其得到更强的文献和临床试验证据支持。我们相信CaMeRe可作为预测大规模临床个体药物组合反应的有用工具，并具有广泛临床应用前景。",
-      "published": "2026-08-18",
-      "author_line": "Zhang, Q.-Q., Zhang, S.-W., Shi, M.-H., Li, J.-N., Qiang, Y.-R., Zhang, T.-H."
+      "abstract_zh": "可降解聚合物因其环境相容性和可调降解性而成为材料科学的重要研究领域。科学智能体可通过整合碎片化文献与异质性质数据加速发现，但仍存在两项挑战：以足够覆盖度检索相关证据，以及将其转化为可追溯推理和多性质约束材料设计。本文提出 BEAVER，一种用于科学问答和可降解聚合物设计的证据驱动多智能体框架。其 Intent-Planner 架构在两种工作流中协调混合检索增强生成：用于证据驱动问答的 Query Mode，以及用于在性质约束下进行候选生成和评估的 Design Mode。在检索、问答和设计基准中，BEAVER 将更高质量的证据转化为更可靠的输出。在块级检索设置中，重排序使平均总体 RAGAS 分数提高逾0.08；经重排序的块级混合配置在召回率与相关性之间取得最佳平衡。在问答中，BEAVER 获得双向平均 Overall 分数8.77，而最强闭卷基线为8.42。在耦合性质设计中，它的表现可与代表性前沿 LLM 相比，同时提供更清晰的证据追溯、更完整的约束处理，以及对风险和不确定性更明确的分析。总体而言，BEAVER 提供了一个可追溯、可扩展的框架，统一混合检索、证据驱动推理和面向可降解聚合物研究的性质约束设计。",
+      "published": "2026-08-19",
+      "author_line": "Xuerui Fang, Boyuan Zhang, Meifang Zhu, Jin Wen"
     }
   ],
   "review": {
     "model": "gpt-5.6-terra",
     "reasoning_effort": "high",
-    "note": "从60项候选中选出16项；均为预印本，结论应结合后续同行评审、独立复现及实验扩展审慎解读。"
+    "note": "共选入16项。均为预印本；技术指标、基准结果与实验结论目前主要来自作者公开摘要，仍需等待全文方法细节、数据可得性与同行评议进一步检验。"
   }
 }

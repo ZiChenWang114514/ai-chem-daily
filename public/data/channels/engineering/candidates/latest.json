@@ -1,16 +1,61 @@
 {
   "schema_version": "2.0",
-  "date": "2026-08-20",
+  "date": "2026-08-21",
   "channel": "engineering",
-  "generated_at": "2026-08-20T06:18:21+00:00",
-  "count": 45,
+  "generated_at": "2026-08-20T23:18:45+00:00",
+  "count": 46,
   "items": [
+    {
+      "id": "github:373818176",
+      "channel": "engineering",
+      "related_channels": [
+        "aixmath",
+        "aixbio",
+        "aixchem"
+      ],
+      "item_type": "software_release",
+      "source": "GitHub Releases",
+      "title": "Diffusers 0.40.0: New pipelines, tensor-parallel support, improved CLI, and more",
+      "url": "https://github.com/huggingface/diffusers/releases/tag/v0.40.0",
+      "published_at": "2026-08-20T14:53:43Z",
+      "updated_at": "2026-08-20T14:27:24Z",
+      "creators": [
+        "huggingface/diffusers"
+      ],
+      "language": "en",
+      "abstract_or_text": "> [!TIP] > This release features several new pipelines, including LTX2.5, MiniMax H3, and Wan Animate 2. We're also graduating Modular Diffusers out of the experimental phase and announcing its stable support. Additionally, this release includes minimal support for tensor-parallel. There's a lot more that went down in this release. So, please consult the notes for details. ## New Pipelines ### MiniMax-H3 [**MiniMax-H3**](https://huggingface.co/docs/diffusers/main/api/pipelines/minimax_h3) generates video and its soundtrack together. A single transformer denoises one packed sequence containing the text conditioning, the conditioning media, and the target video *and* audio latents — there is no separate vocoder and no post-hoc audio pass. Its conditioner is a `Qwen3VLForConditionalGeneration` whose unnormalized 50th-decoder-layer hidden state is read instead of the last one. MiniMax-H3 is integrated as [Modular Diffusers](https://huggingface.co/docs/diffusers/main/modular_diffusers/overview) blocks only — `MiniMaxH3Blocks` and their `MiniMaxH3ModularPipeline` are the whole integration. The conversion ships both checkpoint partitions in one repository and exposes three workflows (`t2va`, `fl2va`, `ref2va`) that can be pruned at `from_pretrained` time so only that task's components are declared and downloaded. ### MiniMax Music 3 [**MiniMax Music 3**](https://huggingface.co/docs/diffusers/main/api/pipelines/minimax_music3) produces complete songs up to five minutes long from lyrics and a music description, with expressive vocals and long-range structure. It is a hybrid of an autoregressive and a diffusion stage: an 8B Qwen3-based global language model predicts one semantic audio token per frame while a small depth decoder fills in seven residual RVQ codebooks, and their fused hidden states condition a 2.4B flow-matching transformer that produces Flow-VAE latents in overlapping chunks. A DAC-style decoder turns the latents into 44.1 kHz stereo audio. ### Stable Audio 3 [**Stable Audio 3**](https://huggingface.co/docs/diffusers/main/api/pipelines/stable_audio_3) is a text-to-audio model from Stability AI that generates high-quality stereo audio at 44.1 kHz. It uses a rectified-flow DiT conditioned on a frozen T5Gemma text encoder (via cross-attention) and on duration (a float embedded by `StableAudio3DurationEmbedder` and used for adaptive layer norm), and decodes with the SAME (Semantically-Aligned Music Encoder) autoencoder, `AutoencoderSAME`. Three pipelines ship: `StableAudio3Pipeline`, `StableAudio3AudioToAudioPipeline`, and `StableAudio3InpaintPipeline`. Thanks to @buffett0323 for the contribution (https://github.com/huggingface/diffusers/pull/14119). ### LTX-2.5 [**LTX-2.5**](https://huggingface.co/docs/diffusers/main/api/pipelines/ltx2#ltx-25) reuses the existing `LTX2Pipeline` / `LTX2VideoTransformer3DModel` / `AutoencoderKLLTX2Video` classes — there is no separate pipeline class. The user-visible difference is the text encoder: LTX-2.5 is paired with a Gemma 4 (`gemma4_unified`) checkpoint, loaded automatically from a converted LTX-2.5 repo. [`Lightricks/LTX-2.5-Diffusers`](https://huggingface.co/Lightricks/LTX-2.5-Diffusers) ships both the distilled DiT (`transformer/`) and the full/SFT DiT (`transformer_full/`), plus everything two-stage generation needs. Alongside the checkpoint support, this release adds: - `LTX2VideoDiffusionDecoderModel` and `LTX2VideoDiffusionDecodePipeline` — a second video decoder over the same latent space, so latents are interchangeable between decoders. - A `duration_head` that predicts shot length from the text-connector output, so `num_frames` is auto-predicted by default when the loaded pipeline has one. - Prompt enhancement through a separate off-the-shelf `google/gemma-4-E2B-it` checkpoint (`enable_prompt_enhancement=True`). - `LTX25AutoBlocks` for Modular Diffusers ([#14453](https://github.com/huggingface/diffusers/pull/14453)). ### Wan-Animate-2 [**Wan-Animate-2**](https://huggingface.co/docs/diffusers/main/api/pipelines/wan_animate_2) by the Alibaba Wan Team animates a reference character image with the motion of a driving video. The driving video is processed in fixed-length segments: each segment runs a reference-extraction pass that caches the driving segment's K/V in every transformer layer, denoises against that cache, and is decoded inside the loop, because the next segment conditions on the previous segment's decoded tail frames. Two presets are available — the base checkpoint samples with classifier-free guidance, and the distilled checkpoint samples in few steps without it. Guidance is owned by the pipeline's guider component, so there is no `guidance_scale` argument. Thanks to @kelseyee for authoring the integration (https://github.com/huggingface/diffusers/pull/14413). ### JoyAI-Image-Edit-Plus [**JoyAI-Image-Edit-Plus**](https://huggingface.co/docs/diffusers/main/api/pipelines/joyimage_edit_plus) extends the JoyAI-Image family (an 8B MLLM paired with a 16B MMDiT) to multi-image instruction-guided editing. It accepts 1–5 reference images plus a text instruction and composes elements from the references into a new image. Thanks to @tangyanf for the contribution (https://github.com/huggingface/diffusers/pull/14032). ### Cosmos 3 follow-ups [**Cosmos 3**](https://huggingface.co/docs/diffusers/main/api/pipelines/cosmos3) landed in 0.39.0 and gets substantially more coverage in this release: - A [Cosmos 3 Modular pipeline](https://github.com/huggingface/diffusers/pull/14110) (`Cosmos3OmniModularPipeline`), with [Transfer support](https://github.com/huggingface/diffusers/pull/14150) for precomputed control videos (edge, blur, depth, segmentation, world-scenario maps) generated autoregressively in chunks and stitched automatically. - [Edge support](https://github.com/huggingface/diffusers/pull/14181). - [Distilled (few-step) text-to-image and image-to-video](https://github.com/huggingface/diffusers/pull/14177) via `Cosmos3DistilledModularPipeline`. - [Model parallelism](https://github.com/huggingface/diffusers/pull/14054). Thanks to @yzhautouskay and @atharvajoshi10 for the contributions. ## Modular Pipeline Support Modular Diffusers is **no longer marked experimental** ([#14525](https://github.com/huggingface/diffusers/pull/14525)) — the API warning has been dropped. - Three of this release's new integrations — **MiniMax-H3**, **MiniMax Music 3**, and **Wan-Animate-2** — ship as Modular blocks only, with no `DiffusionPipeline` half. - **Cosmos 3** ([#14110](https://github.com/huggingface/diffusers/pull/14110), [#14150](https://github.com/huggingface/diffusers/pull/14150), [#14177](https://github.com/huggingface/diffusers/pull/14177)) and **Krea 2** ([#14083](https://github.com/huggingface/diffusers/pull/14083), thanks to @Cedric-Perauer) gained modular pipelines, and **Anima** gained img2img blocks ([#13929](https://github.com/huggingface/diffusers/pull/13929), thanks to @PreethamNoelP). - **Branch-specific input defaults** ([#14234](https://github.com/huggingface/diffusers/pull/14234)): when sibling blocks of a `ConditionalPipelineBlocks` declare different defaults for the same input, `combine_inputs` now merges the default to `None` and records the per-block defaults in a new `InputParam.defaults_by_block` field. `get_block_state` falls back to the block's own declared default, so each branch resolves its own default when it actually runs. Docstrings render conflicted defaults as e.g. *\"defaults to None or 189, depending on the workflow\"*. - [Group offloading now works under auto offloading](https://github.com/huggingface/diffusers/pull/14358), and a [group-offload device mismatch](https://github.com/huggingface/diffusers/pull/14252) was fixed. - [Unused `intermediate_inputs` were cleaned up](https://github.com/huggingface/diffusers/pull/14278), [stale auto-docstrings are now detected in CI](https://github.com/huggingface/diffusers/pull/14241), and [Mellon custom-block required-input handling was fixed](https://github.com/huggingface/diffusers/pull/13888). > [!IMPORTANT] > Please try out Modular Diffusers and let us know about your feedback! ## Core Library ### Tensor parallelism [Tensor-parallel inference](https://github.com/huggingface/diffusers/pull/13718) is now supported for model inference on CUDA and AWS Neuron (Trainium/Inferentia), exposed through the same public API already used for context parallelism: ```py from diffusers import TensorParallelConfig pipe.transformer.enable_parallelism(config=TensorParallelConfig(mesh=tp_mesh)) ``` Sharding is model-agnostic and driven from a flat `_tp_plan`, which has been added to the FLUX.1, FLUX.2 and Qwen-Image DiTs. Check out the [docs](https://huggingface.co/docs/diffusers/main/en/training/distributed_inference#tensor-parallelism) for more details. ### New quantization backends - [**SDNQ**](https://github.com/huggingface/diffusers/pull/14277) — a training-free backend supporting int8 down to 2-bit, FP8 and other low-bit float formats, with optional SVD correction, Hadamard rotation, and quantized INT8/FP8 matmul. Runs on CUDA, ROCm, XPU, MPS, and CPU. [SDNQ MiniMax-H3 loading](https://github.com/huggingface/diffusers/pull/14398) landed too. Thanks to @asomoza. - [**Nunchaku Lite**](https://github.com/huggingface/diffusers/pull/14100) for loading prequantized checkpoints, with [fused-kernel performance documented](https://github.com/huggingface/diffusers/pull/14458). Thanks to @rootonchair. ### Attention, kernels and offloading - [Kernels are downloaded only when users request them](https://github.com/huggingface/diffusers/pull/14298) - [ROCm FlashAttention now uses the `kernels-community/aiter-flash-attn-ck` Hub kernel](https://github.com/huggingface/diffusers/pull/14436), dropping the `aiter` dependency. Thanks to @Abdennacer-Badaoui. - [Sequence-parallel support for the `_flash_3_varlen_hub` backend](https://github.com/huggingface/diffusers/pull/13809) and a [mask-handling fix](https://github.com/huggingface/diffusers/pull/14115). Thanks to @zhtmike. - [`DiffusionPipeline.device` deduction for split-device pipelines](https://github.com/huggingface/diffusers/pull/14383) - [Hook forward signatures are preserved](https://github.com/huggingface/diffusers/pull/14285). Thanks to @jloftin-nv. ### CLI The `diffusers-cli` was reworked for agentic use ([#13966](https://github.com/huggingface/diffusers/pull/13966)) and then cleaned up ([#14381](https://github.com/huggingface/diffusers/pull/14381)): `modular_model_index.json` is written when saving a custom block so `ModularPipeline.from_pretrained` can load and run custom blocks as pipelines, auto CPU offload works for Modular pipelines, `workflow` can be passed to Modular pipelines, and output saving handles multimodal output (e.g. LTX video frames + audio) and batched video. Skills are now installed through the CLI rather than the `Makefile` ([#14454](https://github.com/huggingface/diffusers/pull/14454)): ```bash diffusers-cli skills list diffusers-cli skills add ``` ## 🚨 Breaking changes and deprecations - **JAX/Flax support has been removed** ([#14169](https://github.com/huggingface/diffusers/pull/14169)) — roughly 12k lines deleted. All `Flax*` classes and the `flax` extras are gone. - **Mixed-rank LoRAs without alpha keys now load at their intended scale** ([#14409](https://github.com/huggingface/diffusers/pull/14409)). Previously `get_peft_kwargs` took `lora_alpha` from the first entry of the rank dict and never revisited it, so every module whose rank differed from the first key's rank got an arbitrary, key-order-dependent scale. Ranks are now mirrored into the alphas when a checkpoint brings no alpha information (the diffusers/PEFT convention: alpha == rank, scale 1.0). Adapters with a declared alpha keep it, and uniform-rank adapters are unaffected. Existing mixed-rank, no-alpha LoRAs will now produce different (correct) results. - **`torch_dtype` is deprecated in favour of `dtype`** ([#14205](https://github.com/huggingface/diffusers/pull/14205), [#14313](https://github.com/huggingface/diffusers/pull/14313)), following `transformers`. `torch_dtype` still works but warns, and will be removed in 1.0.0. A [`torch.dtype` alias](https://github.com/huggingface/diffusers/pull/14162) was added for the docs. - **DDUF is deprecated** ([#14141](https://github.com/huggingface/diffusers/pull/14141)). `dduf_file` warns and will be removed in **0.41.0**. ## Security - [Fixed a path-traversal / arbitrary out-of-directory file read via sharded checkpoint index files](https://github.com/huggingface/diffusers/pull/14182). Thanks to @buffett0323. - [A `SECURITY.md` was added](https://github.com/huggingface/diffusers/pull/14174). ## Training - [Caption dropout and aspect-ratio buckets for the Krea 2 and Qwen-Image LoRA scripts](https://github.com/huggingface/diffusers/pull/14089), plus an [aspect-ratio bucketing fix and on-the-fly buckets across the DreamBooth scripts](https://github.com/huggingface/diffusers/pull/14158). Thanks to @linoytsaban. - [Krea 2 LoRA cards are tagged with the Turbo base model first](https://github.com/huggingface/diffusers/pull/14171) so the inference widget works. ## LoRA - [ACE-Step LoRA support](https://github.com/huggingface/diffusers/pull/14193). Thanks to @chenyangzhu1. - [Fix LoRA hot-swapping recompilation with `different_shapes_for_compilation`](https://github.com/huggingface/diffusers/pull/14297). Thanks to @jiqing-feng. - [Only drop an adapter from `_merged_adapters` when it is unfused from all components](https://github.com/huggingface/diffusers/pull/14385). - [Fix local LoRA weight auto-discovery in offline mode](https://github.com/huggingface/diffusers/pull/14204). Thanks to @fropych. ## Notable fixes - [Fix Kandinsky 5 I2V conditioning](https://github.com/huggingface/diffusers/pull/14282) — the image latent is no longer injected into `visual_cond` channels. - [Fix batched DiffusionGemma adaptive stopping](https://github.com/huggingface/diffusers/pull/14386) - [Fix image preprocessing for Cosmos 3](https://github.com/huggingface/diffusers/pull/14519) and [Cosmos 3 Edge generator K normalization](https://github.com/huggingface/diffusers/pull/14246) - [Fix AuraFlow model-parallelism device mismatch](https://github.com/huggingface/diffusers/pull/14273) and [AuraFlow VAE dtype mismatch on pipeline reuse](https://github.com/huggingface/diffusers/pull/14184) - [Make `WanTransformer3DModel`](https://github.com/huggingface/diffusers/pull/14236) and [`SD3Transformer2DModel`](https://github.com/huggingface/diffusers/pull/14186) hidden states contiguous - [Fix the rectified-flow time scheduler](https://github.com/huggingface/diffusers/pull/14011) - [Fix Helios auto-offload decode](https://github.com/huggingface/diffusers/pull/14140) - [Align `snapshot_download` with the latest `huggingface_hub`](https://github.com/huggingface/diffusers/pull/14118) - [Reduce FLUX int8 test peak memory with sequential offload](https://github.com/huggingface/diffusers/pull/13776) ## Tests and infrastructure A large chunk of this release is test modernization: pipeline tests continue migrating to the new mixin structure (Wan, Qwen-Image, FLUX.2, CogVideoX, Stable Diffusion, and the LoRA pipeline tests), `tests/others`, training tests, and attention-processor tests moved to `pytest`, model-level and pipeline-level quantization tests were standardized, and an `output_shape` property was introduced in the pipeline tests. The agent-facing docs and skills under `.ai/` were expanded to cover tests, model implementation, and blockset conventions. ## All commits * Fix model offloading and training tests + prevent examples timeout by @GiGiKoneti in #14091 * fix `_flash_3_varlen_hub` mask handling by @zhtmike in #14115 * Make doc builds faster by @mishig25 in #14131 * [tests] fix autoencoderdc ml training fix. by @sayakpaul in #14129 * [tests] fix tests for transformers latest stable. by @sayakpaul in #14120 * fix rf time scheduler problem by @TheLovesOfLadyPurple in #14011 * docs: improve docstring scheduling_lcm.py by @delmalih in #14133 * feat: add JoyImage edit plus by @tangyanf in #14032 * update licensing for others to 2026. by @sayakpaul in #14128 * [fix] missing doc-builder imports by @stevhliu in #14134 * add SP support for `_flash_3_varlen_hub` backend by @zhtmike in #13809 * post release v0.39.0 by @sayakpaul in #14116 * deprecate dduf. by @sayakpaul (direct commit on v0.40.0-release) * Revert \"deprecate dduf.\" by @sayakpaul (direct commit on v0.40.0-release) * docs: improve docstring scheduling_scm.py by @delmalih in #14136 * Cosmos3 ModularPipeline by @yzhautouskay in #14110 * docs: improve docstring scheduling_sasolver.py by @delmalih in #14148 * Fix Helios auto offload decode by @pzarzycki in #14140 * docs: improve docstring scheduling_sde_ve.py by @delmalih in #14172 * Add Nunchaku Lite single-file quantization by @rootonchair in #14100 * Transfer support for Cosmos3 ModularPipeline by @yzhautouskay in #14150 * torch.dtype alias by @stevhliu in #14162 * ask to share self-review notes by @yiyixuxu in #14185 * Make `SD3Transformer2DModel` hidden states contiguous by @menglcai in #14186 * align snapshot_download to respect hfh latest version by @sayakpaul in #14118 * [skills] add notes about model implementation in our skills. by @sayakpaul in #14191 * [lora training] tag krea2 LoRA card with Turbo base model first to enable inference widget by @linoytsaban in #14171 * docs: improve docstring scheduling_tcd.py by @delmalih in #14192 * docs: improve docstring scheduling_unclip.py by @delmalih in #14196 * docs: improve docstring scheduling_repaint.py by @delmalih in #14199 * [core] deprecate dduf by @sayakpaul in #14141 * Fix local LoRA weight auto-discovery in offline mode by @fropych in #14204 * Add tests and agent docs for `kwargs_type` input/output by @yiyixuxu in #14157 * [Anima] Add img2img pipeline blocks by @PreethamNoelP in #13929 * update agent doc to cover more on tests + include it in review CI scope by @yiyixuxu in #14197 * Cosmos3 edge support by @atharvajoshi10 in #14181 * Fixing path traversal/arbitrary out-of-directory file read via sharde… by @buffett0323 in #14182 * add security.md as per internal notice. by @sayakpaul in #14174 * [Quantization] Fix ModelOpt pre-quantized loading by @yzhautouskay in #14188 * [tests] Pipeline test refactor by @sayakpaul in #14113 * docs: improve docstring scheduling_k_dpm_2_discrete.py by @delmalih in #14212 * Cosmos3 Distilled support by @yzhautouskay in #14177 * Add not_params to ModularPipelineTesterMixin by @yiyixuxu in #14207 * [agents doc] notes on when to create new blocksets for checkpoint variant by @yiyixuxu in #14208 * Fix AuraFlow VAE dtype mismatch on pipeline reuse by @IvenHsu01 in #14184 * [tests] fix autoencoderkl dtype tests by @sayakpaul in #14190 * refactor qwenimage pipeline tests to the new mixin structure by @akshan-main in #14220 * Add ace step lora support by @chenyangzhu1 in #14193 * [skills] update test skills for standard pipelines. by @sayakpaul in #14223 * Make `WanTransformer3DModel` hidden states contiguous before the block loop by @menglcai in #14236 * refactor wan 2.2 image-to-video pipeline tests to the new mixin structure by @akshan-main in #14242 * refactor wan vace pipeline tests to the new mixin structure by @akshan-main in #14231 * refactor wan 2.2 pipeline tests to the new mixin structure by @akshan-main in #14240 * refactor wan image-to-video pipeline tests to the new mixin structure by @akshan-main in #14228 * refactor wan pipeline tests to the new mixin structure by @akshan-main in #14224 * refactor wan video-to-video pipeline tests to the new mixin structure by @akshan-main in #14235 * refactor wan animate pipeline tests to the new mixin structure by @akshan-main in #14239 * fix test_pag_sdxl::StableDiffusionXLPAGPipelineIntegrationTests by @sywangyi in #13892 * [chore] remove experimental api warning from lora modules. by @sayakpaul in #14248 * [tests] fix cosmos3 tests by @sayakpaul in #14229 * Fix Cosmos3 Edge generator K normalization by @atharvajoshi10 in #14246 * [core] deprecate `torch_dtype` and prefer `dtype` following transformers. by @sayakpaul in #14205 * Remove JAX/Flax by @DN6 in #14169 * [tests] port attention processor tests to use pytest by @sayakpaul in #14161 * [Modular Diffusers] Fix group offload device mismatch by @asomoza in #14252 * [lora training] fix aspect ratio bucketing in dreambooth scripts (+ caption dropout, on-the-fly buckets) by @linoytsaban in #14158 * Reduce FLUX int8 test peak memory with sequential offload by @jiqing-feng in #13776 * Update `diffusers-cli` for agentic use by @DN6 in #13966 * [modular] detect stale auto docstrings in CI + regenerate current ones by @yiyixuxu in #14241 * Fix Wan and Motif video pipeline fast test failures by @sywangyi in #14269 * Krea2 Modular Pipeline Support, Documentation, Test Cases by @Cedric-Perauer in #14083 * [ci] ignore the token in vq_diffusion converter. by @sayakpaul in #14275 * Cosmos3 Model Parallelism by @atharvajoshi10 in #14054 * [tests] component manager tests by @sayakpaul in #13961 * [modular] clean up unused intermediate_inputs by @yiyixuxu in #14278 * refactor cogvideox video to video pipeline tests to the new mixin structure by @akshan-main in #14289 * refactor cogvideox pipeline tests to the new mixin structure by @akshan-main in #14276 * refactor cogvideox image to video pipeline tests to the new mixin structure by @akshan-main in #14283 * refactor cogvideox fun control pipeline tests to the new mixin structure by @akshan-main in #14284 * [tests] migrate training tests to pytest. by @sayakpaul in #14267 * [tests] fix some CLI command tests by @sayakpaul in #14302 * [lora training] add caption dropout and aspect ratio buckets to krea2 and qwen-image by @linoytsaban in #14089 * added the technical blog by @charchit7 in #14306 * [core] restrict logging of quant config based on the header size. by @sayakpaul in #14262 * docs: improve docstring scheduling_k_dpm_2_ancetstral_discrete.py by @delmalih in #14226 * [docs] add a warning note about device_map='cuda' usage. by @sayakpaul in #14261 * [docs] minor corrections in the overview of quantization table by @sayakpaul in #14301 * [docs] deprecate torch_dtype for dtype by @stevhliu in #14313 * refactor qwenimage controlnet pipeline tests to the new mixin structure by @akshan-main in #14309 * refactor qwenimage edit plus pipeline tests to the new mixin structure by @akshan-main in #14315 * refactor qwenimage edit pipeline tests to the new mixin structure by @akshan-main in #14314 * Preserve hook forward signature by @jloftin-nv in #14285 * Fix LoRA hot-swapping recompilation with `different_shapes_for_compilation` by @jiqing-feng in #14297 * refactor qwenimage img2img pipeline tests to the new mixin structure by @akshan-main in #14320 * [docs] remove image generation benchmarks by @stevhliu in #14310 * docs: improve docstring scheduling_ddpm_wuerstchen.py by @delmalih in #14319 * [docs] update agentic contribution guidelines by @stevhliu in #14312 * [tests] unify keep_in_32 tests in quantization test suites by @sayakpaul in #14257 * [quantization] SDNQ core loading by @asomoza in #14277 * docs: improve docstring scheduling folder - last batch by @delmalih in #14330 * Modular branch specific defaults by @yiyixuxu in #14234 * fix Mellon custom block required input handling by @wunianze666-netizen in #13888 * gguf: fix dequantization. by @sayakpaul in #14333 * [tests] standardize model-level quant tests by @sayakpaul in #14332 * Add missing `Args:` entries to scheduler docstrings by @4ktLuffy in #14354 * support group offloading under auto offloading by @yiyixuxu in #14358 * refactor flux2 klein inpaint pipeline tests to the new mixin structure by @akshan-main in #14337 * [kernels] download kernels when users request for it. by @sayakpaul in #14298 * refactor flux2 klein pipeline tests to the new mixin structure by @akshan-main in #14336 * refactor flux2 klein kv pipeline tests to the new mixin structure by @akshan-main in #14344 * Auto-reply to new model requests with remote code guidance by @yiyixuxu in #14343 * Add XPU expected slice for `SlowBnb4BitFluxControlWithLoraTests::test_lora_loading` by @jiqing-feng in #14202 * [tests] Migrate `tests/others` to `pytest`. by @sayakpaul in #14299 * [Kandinsky 5] Fix I2V conditioning: don't inject the image latent into visual_cond channels by @sashakunitsyn in #14282 * use assert_tensors_close in the migrated pipeline tests by @akshan-main in #14369 * Add MiniMax-H3 by @apolinario in #14355 * [Quantization] SDNQ Minimax H3 loading by @asomoza in #14398 * refactor qwenimage inpaint pipeline tests to the new mixin structure by @akshan-main in #14321 * refactor flux2 pipeline tests to the new mixin structure by @akshan-main in #14326 * [tests] introduce `output_shape` property in the pipeline tests. by @sayakpaul in #14253 * Point the MiniMax-H3 docs install note at main by @apolinario in #14401 * [core] support cp in h3. by @sayakpaul in #14407 * [tests] tighten tests for `unload_components()` by @sayakpaul in #14406 * [tests] implement todos in the modular tests for H3 followup by @sayakpaul in #14404 * [tests] fix torchao tests by @sayakpaul in #14258 * fix(lora): only drop adapter from _merged_adapters when unfused from all components by @AloysJehwin in #14385 * [tests] guard peft imports in test_lora_loader_utils by @sayakpaul in #14434 * [core] `DiffusionPipeline.device` deduction for split-device pipelines by @JingyaHuang in #14383 * 🚨 Give mixed-rank LoRAs without alpha keys their intended scale by @apolinario in #14409 * Ltx 2.5 by @sayakpaul in #14447 * docs: add installation instructions for NVIDIA Spark (ARM64) devices by @mfuntowicz in #14448 * Wan-Animate-2 (authored by @kelseyee) by @yiyixuxu in #14413 * Move `LTX25AutoBlocks` to new file with new model name by @dg845 in #14453 * [tests] tighten keep_in_32 modules tests by @sayakpaul in #14399 * Fix AuraFlow model parallelism device mismatch and update XPU IP-Adap… by @sywangyi in #14273 * feat: clean up peft related versioning voodoo. by @sayakpaul in #14463 * docs: document fused-kernel performance in Nunchaku Lite guide by @rootonchair in #14458 * [Agent docs] some updated based on recent integration by @yiyixuxu in #14452 * [CI][tests] Fix LTX-2.5 Diffuson Decoder Tiling CI CPU Timeout by @dg845 in #14462 * Add MiniMax Music 3 by @apolinario in #14456 * Add LoRA loading support for MiniMax-H3 by @apolinario in #14408 * [FA2] Use `kernels-community/aiter-flash-attn-ck` Hub kernel for ROCm FlashAttention (drop `aiter` dependency) by @Abdennacer-Badaoui in #14436 * split up tests in modular pipelines by @sayakpaul in #14444 * svd failures. by @sayakpaul (direct commit on v0.40.0-release) * Revert \"svd failures.\" by @sayakpaul (direct commit on v0.40.0-release) * Bump transformers from 4.47.0 to 5.5.0 in /examples/flux-control by @dependabot[bot] in #14179 * FIX LoRA tests warning about unexpected keys by @BenjaminBossan in #14476 * [tests] use eval() on t5 for deterministic results. by @sayakpaul in #14472 * tests: fix qwen tests from getting oom'd in our CI. by @sayakpaul in #14474 * fix SVD tests by @sayakpaul in #14475 * tests: fix cuda model tests. by @sayakpaul in #14464 * ci: drop stale tokenizers<0.23.0 override by @sayakpaul in #14504 * Drop the experimental warning from Modular Diffusers by @yiyixuxu in #14525 * [tests] skip parallelism tests for some models. by @sayakpaul in #14505 * Fix batched DiffusionGemma adaptive stopping by @kashif in #14386 * docs: fix typos in Kandinsky 5.0 video docs by @iridescentWen in #14345 * Support DiffSynth-Studio MiniMax-H3 LoRAs by @apolinario in #14484 * [tests] refactor stable diffusion pipeline tests by @sayakpaul in #14339 * [tests] refactor pipeline-level quantization tests by @sayakpaul in #14435 * replace enable_gpa with repeat_interleave for krea2 by @yiyixuxu in #14523 * [CLI] Clean up and improvements to diffusers CLI by @DN6 in #14381 * [CI] Allow single file tests to run as fast tests by @DN6 in #14324 * Feat -- Stable Audio 3 by @buffett0323 in #14119 * [core] Support tensor parallelism for model inference (CUDA, Neuron) by @JingyaHuang in #13718 * [CI] Fix authentication on forked PRs by @DN6 in #14534 * fix: image preprocessing for cosmos3 by @atharvajoshi10 in #14519 * [tests] migrate lora tests for pipelines to use new mixins by @sayakpaul in #14268 * [distributed] fix corrupted gradient problem under ring CP. by @sayakpaul in #14274 * Restructure skill files and reference guides for CLI based installation. by @DN6 in #14454 * [CI] Fix build and test step in release workflow by @DN6 in #14543 * Release: v0.40.0-release by @sayakpaul (direct commit on v0.40.0-release)",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 93,
+      "tags": [
+        "模型与框架"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "github",
+        "experimental",
+        "release",
+        "breaking",
+        "security"
+      ],
+      "publication_status": "release",
+      "rank": 0,
+      "featured": false,
+      "category": "模型与框架",
+      "metrics": {},
+      "metadata": {
+        "repository": "huggingface/diffusers",
+        "version": "v0.40.0",
+        "release_id": "373818176",
+        "release_type": "release"
+      }
+    },
     {
       "id": "github:372043815",
       "channel": "engineering",
       "related_channels": [
-        "aixbio",
-        "aixmath"
+        "aixmath",
+        "aixbio"
       ],
       "item_type": "software_release",
       "source": "GitHub Releases",
@@ -44,6 +89,45 @@
         "repository": "langchain-ai/langchain",
         "version": "langchain-openai==1.5.2a1",
         "release_id": "372043815",
+        "release_type": "release"
+      }
+    },
+    {
+      "id": "github:374028976",
+      "channel": "engineering",
+      "related_channels": [],
+      "item_type": "software_release",
+      "source": "GitHub Releases",
+      "title": "0.149.0",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.149.0",
+      "published_at": "2026-08-20T21:04:55Z",
+      "updated_at": "2026-08-20T20:09:39Z",
+      "creators": [
+        "openai/codex"
+      ],
+      "language": "en",
+      "abstract_or_text": "## New Features - Added an interactive `codex agents` dashboard for searching, starting, opening, renaming, and stopping tasks, with configurable shortcuts. (#39094, #39112, #39114, #39142) - Added `/cd`, `/pwd`, and `/cwd` commands for managing the working directory in TUI sessions. (#38894) - Added `codex queue` for sending messages to existing local or remote sessions. (#39092) - Expanded Vim editing with character replacement and more change motions such as `cw`, `c`, and `cc`. (#39661) - `codex doctor` now diagnoses endpoint protection, network/proxy failures, desktop app state, and update connectivity. (#38827, #38918, #39060, #39074) - SDK users can now pass exact CLI config overrides and select `max` or `ultra` reasoning effort. (#38817, #39662) ## Bug Fixes - Queued messages now wake idle sessions reliably, resolve duplicate session names more usefully, and preserve pasted or deferred command semantics. (#39034, #39385, #39604) - Resumed and forked threads now restore their active permission profile instead of silently falling back to current defaults. (#39153) - Fixed duplicate sub-agent activity and tightened TUI routing for sub-agent notifications and approvals. (#39049, #39088) - Realtime WebRTC sideband connections now reconnect after unexpected transport loss without dropping pending output. (#39257) - Inline TUI history now remains available in Windows Terminal scrollback. (#39619) - Inactive TUI thread replay buffers are now bounded to prevent excessive retained streamed output. (#39081) ## Documentation - Clarified that external contributions should go through issues and design discussion rather than pull requests. (#39089) - Documented DNS exfiltration risks and trust limitations for secure devcontainers. (#39283) ## Changelog Full Changelog: https://github.com/openai/codex/compare/rust-v0.148.0...rust-v0.149.0 - #38817 Add raw config overrides to the TypeScript SDK @copyberry - #38819 Support metadata staging for reserved thread IDs @copyberry - #38822 Avoid cloning TUI history span content @copyberry - #38823 Avoid allocating per character when decorating hyperlinks @copyberry - #38827 Add endpoint protection checks to `codex doctor` @copyberry - #38830 Isolate external editor buffers from sandbox-writable paths @copyberry - #38837 Share editor keymaps across TUI composer components @copyberry - #38840 Identify Mac mini hosts in remote control handshakes @copyberry - #38893 Restore thread timestamp maxima independently @copyberry - #38894 Add working-directory commands to the TUI @copyberry - #38899 Move requirements policy ownership to execpolicy @copyberry - #38902 Honor per-environment shell variable policies @copyberry - #38907 Edit queued messages with Vim history-up @copyberry - #38913 Stop rendering columns after filling their area @copyberry - #38916 Honor legacy `:project_roots` permission entries @copyberry - #38918 Improve `codex doctor` network diagnostics @copyberry - #38919 Reject obsolete app-server permission profile fields @copyberry - #38921 Compact successful command activity in the TUI @copyberry - #38940 Add experimental app-server project APIs @copyberry - #38941 Prevent Noise auth tokens from reaching child processes @copyberry - #38942 Enforce environment-specific command policies @copyberry - #38947 Stop loading legacy managed config on Windows @copyberry - #38978 Add a configurable skill catalog token budget @copyberry - #38980 Bound Guardian v2 parent compaction context @copyberry - #38987 Include images in Guardian v2 transcripts @copyberry - #38990 Source Guardian v2 defaults from the model catalog @copyberry - #38993 Evaluate recent and character-routed skill selection @copyberry - #38994 Remove the workspace settings gate for apps and plugins @copyberry - #38997 Retry transient Guardian sampling failures @copyberry - #39001 Ignore stale Guardian tool risk scores @copyberry - #39005 Disable Guardian V2 for managed automatic reviewers @copyberry - #39006 Emit API-key turn cost telemetry from app-server @copyberry - #39007 Wait for Guardian score progress in approval tests @copyberry - #39008 Add task context to shadow skill selection @copyberry - #39017 Move MCP policy types into `codex-protocol` @copyberry - #39019 Isolate MCP resource headers during OAuth requests @copyberry - #39020 Restrict Windows IDE pipe client impersonation @copyberry - #39022 Hang soft-break whitespace in the TUI composer @copyberry - #39023 Reduce retained MCP result data in TUI history @copyberry - #39025 Speed up the large diff highlighting test @copyberry - #39026 Use simulated time in the long typing test @copyberry - #39028 Cache the test pet spritesheet encoding @copyberry - #39030 Speed up the in-app resume cwd test @copyberry - #39032 Encapsulate TUI shimmer under the motion module @copyberry - #39033 Bound legacy resume preview scans @copyberry - #39034 Dispatch queued messages written by other processes @copyberry - #39035 Add app-server coverage for Guardian V2 approval routing @copyberry - #39036 Allow config reads to join active app-server read batches @copyberry - #39038 Restore Guardian risk scores across thread lifecycles @copyberry - #39040 Preserve foreign paths in managed network approvals @copyberry - #39043 Enforce managed authentication backend settings @copyberry - #39045 Add managed gates for in-app chat and dictation @copyberry - #39046 Restrict MCP HTTP redirects to the configured origin @copyberry - #39047 Skip plugin hook loading when hooks are disabled @copyberry - #39049 Avoid rendering sub-agent activity twice in the TUI @copyberry - #39050 Prepare the telemetry shutdown worker during initialization @copyberry - #39051 Use installed callable apps for TUI mentions @copyberry - #39055 Add network policy metadata to environment configuration @copyberry - #39056 Verify the pinned zsh manifest in release builds @copyberry - #39057 Rate-limit TUI frames from their actual emission time @copyberry - #39058 Tag Codex Apps protocol discovery metrics @copyberry - #39060 Add desktop app diagnostics to `codex doctor` @copyberry - #39061 Avoid rerendering streamed code fences @copyberry - #39063 Render only visible rows in the transcript pager @copyberry - #39064 Restrict queued-message editing to its dedicated binding @copyberry - #39065 Limit terminal hyperlink layout to the visible viewport @copyberry - #39067 Add desktop security enforcement diagnostics @copyberry - #39068 Remove skill model delegation support @copyberry - #39072 Persist generated images through turn executors @copyberry - #39073 Propagate caller metadata to rendezvous connections @copyberry - #39074 Add desktop update diagnostics to `codex doctor` @copyberry - #39075 Avoid redundant terminal row clears @copyberry - #39077 Build filesystem JSON params only for remote TUI sessions @copyberry - #39078 Preserve tracing context for environment resolution @copyberry - #39079 Apply user MCP policy to selected executor plugins @copyberry - #39081 Bound TUI thread replay buffers by delta size @copyberry - #39082 Prompt for project trust in remote TUI workspaces @copyberry - #39083 Harden Windows sandbox provisioning against reparse points @copyberry - #39084 Preserve filesystem permission path conventions @copyberry - #39087 Read plugin authentication state from AuthManager @copyberry - #39088 Harden TUI subagent navigation @copyberry - #39089 Clarify the external contribution policy @copyberry - #39092 Add a command to queue messages for existing sessions @copyberry - #39094 Add an agents overview dashboard to the TUI @copyberry - #39098 Trace exec-server requests from receipt through completion @copyberry - #39100 Avoid redundant terminal size queries during history insertion @copyberry - #39101 Update rmcp to 3.1.2 @copyberry - #39102 Raise the GPT-5.6 maximum context window @copyberry - #39103 Drop capabilities from Linux sandbox processes @copyberry - #39112 Make the agents overview an interactive task dashboard @copyberry - #39113 Surface interactive requests in realtime conversations @copyberry - #39114 Add a dedicated `codex agents` dashboard command @copyberry - #39115 Remove the experimental thread config endpoint @copyberry - #39117 Reject lossy legacy permission projections @copyberry - #39122 Fail closed on deeply nested command wrappers @copyberry - #39131 Validate identifiers in plugin creator workflows @copyberry - #39141 Redact auth tokens from app-server response logs @copyberry - #39142 Add configurable shortcuts for the agents dashboard @copyberry - #39143 Hydrate recommended plugin metadata on selection @copyberry - #39145 Persist active permission profiles in turn context @copyberry - #39147 Centralize persisted resume settings lookup @copyberry - #39152 Update PyPI publish action to v1.14.2 @copyberry - #39153 Restore permission profiles when resuming threads @copyberry - #39154 Box the TUI future to bound CLI stack usage @copyberry - #39155 Prepare Python SDK 0.147.0 stable release @copyberry - #39157 Notify clients when Guardian requires strict review @copyberry - #39159 Require approval for commands with dynamic shell words @copyberry - #39163 Refresh collaboration instructions when their content changes @copyberry - #39165 Prevent marketplace identity spoofing @copyberry - #39174 Skip empty user messages for automatic idle turns @copyberry - #39176 Drop descendant progress updates after remote compaction @copyberry - #39187 Scope MCP app resource reads to their originating call @copyberry - #39192 Preserve MCP resource origins across compaction @copyberry - #39200 Add a symlink-safe reader for sensitive files @copyberry - #39205 Reject symbolic links in memory workspaces @copyberry - #39213 Add a fail-closed Tree-sitter PowerShell lowerer @copyberry - #39214 Prevent custom providers from inheriting ambient auth @copyberry - #39220 Reconnect Guardian sampling WebSockets after auth changes @copyberry - #39221 Skip redirected external-agent migration destinations @copyberry - #39224 Add Guardian v2 approval review metrics @copyberry - #39227 Include node_repl screenshots in Guardian v2 reviews @copyberry - #39235 Decouple Noise relay streams from JSON-RPC processing @copyberry - #39240 Deduplicate remote plugin bundle syncs with shared semaphores @copyberry - #39241 Record Guardian v2 classification metrics @copyberry - #39242 Add safe permission profile intersection @copyberry - #39244 Scope MCP resource reads by connector @copyberry - #39246 Give Guardian classifier connections distinct thread identities @copyberry - #39249 Add exec-server forwarding mode @copyberry - #39256 Deduplicate rollout moves when archiving threads @copyberry - #39257 Reconnect WebRTC Realtime sideband transports @copyberry - #39259 Simplify unified exec output snapshots @copyberry - #39261 Stop TUI chats on misalignment policy violations @copyberry - #39262 Prevent ConPTY DLL loading from the current directory @copyberry - #39264 Improve Guardian v2 risk classification @copyberry - #39266 Require fresh approval beneath denied permission paths @copyberry - #39267 Inject Node REPL policy into Guardian review sessions @copyberry - #39273 Preserve thread names during rollout migration @copyberry - #39274 Add provider-owned authentication recovery @copyberry - #39277 Declare experimental Amazon Bedrock setup APIs @copyberry - #39278 Preserve owner-provided environment configuration @copyberry - #39279 Propagate Windows sandbox ACL update failures @copyberry - #39281 Move shell snapshot scripts into `codex-shell-command` @copyberry - #39283 Document secure devcontainer DNS exfiltration risk @copyberry - #39284 Report network disconnects during approval @copyberry - #39285 Show file destinations in TUI change approvals @copyberry - #39287 Report diagnostic upload failures @copyberry - #39288 Register the async message feature flag @copyberry - #39290 Add Windows sandbox diagnostics to `codex doctor` @copyberry - #39293 Remove app-server's direct reqwest dependency @copyberry - #39294 Increase SQLite log sink batching @copyberry - #39296 Enable MCP tool hooks in Codex sessions @copyberry - #39298 Allow overriding Codex package versions @copyberry - #39299 Restrict agent roles to bounded configuration overrides @copyberry - #39301 Prevent Node REPL auth tokens from reaching child processes @copyberry - #39303 Record Guardian v2 classification token usage @copyberry - #39304 Keep Guardian v2 risk scores in memory @copyberry - #39306 Honor managed config during project discovery @copyberry - #39307 Fail closed on Guardian V2 risk scoring errors @copyberry - #39309 Attribute executor skill invocations to plugins @copyberry - #39311 Bind unified exec approvals to shell executables @copyberry - #39312 Add async delivery metadata to agent messages @copyberry - #39314 Run hooks with the captured session environment @copyberry - #39315 Evict guardian transcript entries in cacheable chunks @copyberry - #39316 Support Edu Plus and Edu Pro account plans @copyberry - #39319 Add the async user message tool @copyberry - #39320 Expand OAuth metadata redirect test coverage @copyberry - #39322 Enforce workspace restrictions for header authentication @copyberry - #39325 Stop migrating Cursor sandbox settings @copyberry - #39331 Route hook MCP calls through current connections @copyberry - #39335 Enforce environment MCP policies @copyberry - #39372 Scope TUI approval requests to their threads @copyberry - #39385 Prefer the most recent session when queueing by name @copyberry - #39402 Remove npm package staging from repo checks @copyberry - #39404 Support FD mounts with older system Bubblewrap versions @copyberry - #39410 Refresh expired AWS credentials for Bedrock @copyberry - #39452 Remove the feature gate for async user messages @copyberry - #39474 Consolidate Guardian extensions into `codex-guardian-v2` @copyberry - #39480 Move shell snapshot tests into shell-command @copyberry - #39493 Make head-tail buffer capacity const generic @copyberry - #39494 Test panoramic Guardian transcript image resizing @copyberry - #39496 Use default timeouts in cyber exec policy tests @copyberry - #39497 Correct normalized dynamic tool coverage across response modes @copyberry - #39501 Use a narrow fixture for the unified image resize test @copyberry - #39505 Test text stringify errors in the code mode runtime @copyberry - #39506 Test code mode notifications without a sync tool call @copyberry - #39509 Test disabled enhanced Node REPL transcript images separately @copyberry - #39510 Track built-in control tool calls in analytics @copyberry - #39514 Use stored item types when materializing turn summaries @copyberry - #39515 Use `mem::take` to drain unified exec output buffers @copyberry - #39520 Isolate automatic plugin Git operations @copyberry - #39523 Persist thread section moves before the first turn @copyberry - #39524 Stop treating Git commands as inherently safe @copyberry - #39584 Add a just recipe for assembling Codex packages @copyberry - #39585 Test plugin sync isolation from repository Git config @copyberry - #39586 Isolate IPC in Bubblewrap sandboxes @copyberry - #39588 Preserve unparsed shell wrappers in exec policy @copyberry - #39590 Harden plugin manifest handling during installation @copyberry - #39592 Prevent SQLx warnings from feeding back into SQLite logs @copyberry - #39594 Raise the MCP tool name limit to 128 bytes @copyberry - #39595 Keep marketplace upgrade state out of config @copyberry - #39597 Separate thread settings from environment configuration @copyberry - #39599 Protect macOS Seatbelt writable root anchors @copyberry - #39601 Keep async user messages on the direct tool surface @copyberry - #39602 Use in-process parsing for PowerShell command classification @copyberry - #39604 Preserve queued TUI input semantics @copyberry - #39605 Hide approved automatic review warnings in the TUI @copyberry - #39606 Enable user namespaces in shared CI setup @copyberry - #39607 Resolve model-provided shells by type @copyberry - #39608 Harden skill installation against unsafe symlinks @copyberry - #39609 Limit Bazel integration test threads on macOS @copyberry - #39611 Harden MCP OAuth fallback credential writes @copyberry - #39614 Prevent `apply_patch` from widening write permissions @copyberry - #39615 Bind MCP OAuth refresh tokens to their issuer @copyberry - #39616 Validate linked worktrees before inheriting project trust @copyberry - #39618 Apply composer editing preferences to TUI text prompts @copyberry - #39619 Preserve inline TUI scrollback in Windows Terminal @copyberry - #39620 Stream executor capability and skill file reads @copyberry - #39623 Prevent protected-path rename bypasses in macOS Seatbelt @copyberry - #39625 Add cwd-relative turn diff paths @copyberry - #39629 Preserve parent repository discovery through sandbox metadata mounts @copyberry - #39630 Retire the untrusted approval policy @copyberry - #39631 Skip sandboxed shell commands in Guardian v2 by default @copyberry - #39632 Expose permission profile resolution in the core API @copyberry - #39635 Show strict review warnings in the TUI @copyberry - #39637 Treat `invalid_grant` refresh failures as permanent @copyberry - #39640 Prompt to unarchive sessions before resuming or forking @copyberry - #39641 Sanitize developer context in full-history agent forks @copyberry - #39645 Enforce managed residency for model providers @copyberry - #39646 Exercise restricted-token sandboxing in cyber policy tests @copyberry - #39649 Resolve bundled Windows helpers through bin junctions @copyberry - #39653 Enforce filesystem permissions when loading AGENTS.md @copyberry - #39655 Make core integration test permissions explicit @copyberry - #39656 Advertise the Desktop app in graphical Linux sessions @copyberry - #39657 Warn when launching the deprecated MCP server @copyberry - #39658 Let Guardian V2 satisfy required model reviews @copyberry - #39659 Harden unsandboxed patch filesystem access @copyberry - #39661 Expand Vim change commands and add character replacement @copyberry - #39662 Add max and ultra reasoning efforts to the SDKs @copyberry - #39663 Restrict plugin migration to home scope @copyberry - #39665 Add macOS Seatbelt filesystem integration tests @copyberry - #39666 Improve no-follow filesystem behavior across platforms @copyberry",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 75,
+      "tags": [
+        "工具链更新"
+      ],
+      "evidence_flags": [
+        "github",
+        "experimental",
+        "release",
+        "security"
+      ],
+      "publication_status": "release",
+      "rank": 0,
+      "featured": false,
+      "category": "工具链更新",
+      "metrics": {},
+      "metadata": {
+        "repository": "openai/codex",
+        "version": "rust-v0.149.0",
+        "release_id": "374028976",
         "release_type": "release"
       }
     },
@@ -125,25 +209,25 @@
       }
     },
     {
-      "id": "github:371154159",
+      "id": "github:373678025",
       "channel": "engineering",
       "related_channels": [],
       "item_type": "software_release",
       "source": "GitHub Releases",
-      "title": "b10448",
-      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10448",
-      "published_at": "2026-08-15T20:48:35Z",
-      "updated_at": "2026-08-15T15:11:05Z",
+      "title": "b10514",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10514",
+      "published_at": "2026-08-20T11:17:28Z",
+      "updated_at": "2026-08-19T14:53:31Z",
       "creators": [
         "ggml-org/llama.cpp"
       ],
       "language": "en",
-      "abstract_or_text": "model: add Kimi-K3 text model (#26185) * model: add Kimi-K3 text model Hybrid KDA (linear) + MLA (full) attention as in Kimi-Linear-48B, plus five things that architecture does not have: 1. cross-layer residual attention (attn_res_block_size) 2. latent MoE (routed experts run at n_expert_latent) 3. situ activation (replaces SwiGLU everywhere) 4. MLA output gate (sigmoid gate before o_proj) 5. full-rank KDA gate (single ssm_g instead of ssm_g_a/ssm_g_b) K3's text_config reports KimiLinearForCausalLM - the older 48B architecture - so get_model_architecture routes on the top-level name instead. The KDA decay gate has two forms, selected by linear_attn_config's gate_lower_bound. It is not a clamp: when set it swaps the activation entirely (fla/ops/kda/gate.py), from -exp(A_log)*softplus(x) to lower_bound*sigmoid(exp(A_log)*x). K3 sets it to -5.0; kimi-linear leaves it unset, so that path is unchanged. Cross-layer residuals reuse ggml_dsv4_hc_pre for the weighted sum. That op is CPU + CUDA only, so Metal/Vulkan will fall back per-node until those kernels exist. The routed experts ship as compressed-tensors \"mxfp4-pack-quantized\". That is bit-compatible with ggml's MXFP4 - same E2M1 code assignment, same E8M0 scale byte, only the nibble positions within a block differ - so they are repacked rather than dequantized, losslessly and without a ~5.5 TB bf16 round-trip. The repack is built lazily because gguf_writer holds every added tensor until the final write. DeepSeek-V4 was already doing the identical bit-shuffling, so it now shares the helper. Verified against Moonshot's own code path (transformers + fla's Triton KDA kernels) on a tiny model exercising every K3-specific feature. Final-position logits vs the fp32 reference: 6.7e-05 rel / corr 1.00000000 for both the chunked and the recurrent delta-net path. MXFP4 blocks dequantize to the source weights with 0.0e+00 error. Assisted-By: Claude Opus 5 (1M context) * model: fix ty errors in the Kimi-K3 converter - `_res_parts` buffers (kind, tensor) pairs, not bare tensors - `get_tensors` must return an Iterator, matching ModelBase - LazyBase's `func` takes one argument, so pass the expert loaders through `args` instead of the closure - borrowing KimiLinearModel.set_vocab from an unrelated TextModel is deliberate and safe, but not expressible in the signature No behaviour change: the MXFP4 repack still dequantizes to the source weights with 0.0e+00 error and end-to-end logits are unchanged (8.386e-03 rel, corr 0.99996630). Assisted-By: Claude Opus 5 (1M context) * Update conversion/kimi_k3.py Co-authored-by: Boris Dvorkin * Increase LLAMA_MAX_EXPERTS from 512 to 1024 * tests : support for Kimi K3 in archs test * chat : add Kimi K3 chat format (reasoning, content, typed tool calls) K3's assistant output is an XTML-ish tagged format built by the template's open_tag/close_tag macros. Two properties break generic parsing: 1. The generation prompt ends with open_tag('think'), so the completion starts inside the think section with no opening marker in the output (thinking_forced_open). 2. Only / / / are special tokens; tag names (\"think\", \"response\", \"message\") are ordinary text tokens. Adds common_chat_params_init_kimi_k3 (PEG_NATIVE) with detection on the marker trio, reasoning extraction, response unwrapping, and tool-call parsing of the tools/call/argument tag structure with argument types taken from the tool schema. Includes the K3 chat template fixture and 9 test-chat cases derived from real generations of the full 2.8T model. Verified end-to-end against Kimi-K3-Q2_K (GrEarl/Kimi-K3-GGUF) on 8x B200: content, reasoning_content, streaming deltas, and tool_calls all correct; finish_reason stop/tool_calls as appropriate. Co-Authored-By: Claude Fable 5 * chat : add message_delimiters for Kimi K3 Per-role message-start markers for token-level span splitting. User and assistant messages carry only the role attribute, so their full opener (through ) is used; system and tool messages continue with more attributes (type=/tool=/index=), so those delimiters stop after the role's closing quote. Verified against the K3 tiktoken vocabulary that the closing quote is always a standalone token across all attribute variants, so the token-level prefix match stays exact. Co-Authored-By: Claude Fable 5 * fix: apply nits from @ngxson and text fixes from @danielhanchen * tests : added missing hyperparameters and tensors for Kimi K3 in test-llama-archs * chore : move overly verbose header file comments to Kimi K3 source file * tests : re-enabled KIMI_K3 in test-llama-archs for WebGPU backend * model-saver : emit kda_gate_lower_bound for Kimi K3 Quick fix. The Kimi K3 loader reads kda_gate_lower_bound and gates a graph branch on it (it scales the KDA gate when the bound is above -INFINITY), but the model saver never wrote the key, so a save->load roundtrip silently dropped it back to the -INFINITY default and changed the model's output. The real K3 config sets gate_lower_bound = -5.0. I propose to emit it from the saver, and set it to -5.0 in the test-llama-archs K3 case so the roundtrip check exercises it (the roundtrip fails without the saver line). * Refactor conditional for model architecture check * tests : re-enabled (again) KIMI_K3 and MINIMAX_M3 in test-llama-archs for WebGPU backend * fix code comments * add template on conversion * move repack_mxfp4_blocks to model base * nits * add_value_length * optimize res_stack construction * nits --------- Co-authored-by: Boris Dvorkin Co-authored-by: Stanisław Szymczyk Co-authored-by: Deepankar Singh Co-authored-by: Claude Fable 5 Co-authored-by: Caleb DeLeeuw Co-authored-by: Xuan Son Nguyen **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10448/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10448/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10448/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10448/llama-b10448-ui.tar.gz)",
+      "abstract_or_text": "model : GraniteSWAForCausalLM / GraniteMoeSWAForCausalLM (#25505) * feat(convert): Add conversion for GraniteSWAForCausalLM Branch: GraniteSWAForCausalLM AI-usage: full (Bob, OpenCode + Qwen3.6-35b) Signed-off-by: Gabe Goodhart * feat(llama): Add granite_swa support Branch: GraniteSWAForCausalLM AI-usage: full (Bob, OpenCode + Qwen3.6-35b) Signed-off-by: Gabe Goodhart * feat(conversion): Add conversion infra for rope_pattern array NOTE: There is other work also targeting this, so this may be removed depending on merge order. Branch: GraniteSWAForCausalLM AI-usage: full (Bob) Signed-off-by: Gabe Goodhart * fix(conversion): Fix SWA pattern logic and support for non-rope layers Branch: GraniteSWAForCausalLM AI-usage: full (Bob) Signed-off-by: Gabe Goodhart * feat(conversion): Add support for GraniteMoeSWA Branch: GraniteSWAForCausalLM AI-usage: full (Bob) Signed-off-by: Gabe Goodhart * feat: Add llama_hparams::has_rope and arch constants NOTE: This shadows the work done for Granite Speech https://github.com/ggml-org/llama.cpp/pull/25107 Branch: GraniteSWAForCausalLM AI-usage: full (Bob) Signed-off-by: Gabe Goodhart * feat: Add support for per-layer rope determination Branch: GraniteSWAForCausalLM AI-usage: full (Bob) Signed-off-by: Gabe Goodhart * style: Fix failing flake8 for extra newlines Branch: GraniteSWAForCausalLM AI-usage: none Signed-off-by: Gabe Goodhart * test: Write out SLIDING_WINDOW_PATTERN in llama-model-saver Branch: GraniteSWAForCausalLM AI-usage: full (OpenCode + Qwen3.6-35b) Signed-off-by: Gabe Goodhart * fix(convert): Fix missing registration for GraniteMoeSWAForCausalLM Branch: GraniteSWAForCausalLM AI-usage: none Signed-off-by: Gabe Goodhart * fix: Load MoE params as optional Branch: GraniteSWAForCausalLM AI-usage: draft (OpenCode + Qwen3.6-35b) Signed-off-by: Gabe Goodhart * feat: Handle MoE params in conversion branch: GraniteSWAForCausalLM AI-usage: full (OpenCode + Qwen3.6-35b) Signed-off-by: Gabe Goodhart * style: Remove unnecessary newline AI-usage: none Signed-off-by: Gabe Goodhart * fix: Remove unnecessary tensor additions to GRANITE architecture Branch: GraniteSWAForCausalLM AI-usage: none Signed-off-by: Gabe Goodhart * fix: Correctly handle naming for ffn gate inp Branch: GraniteSWAForCausalLM AI-usage: none Signed-off-by: Gabe Goodhart * fix: Always default hparams.rope_pattern to 1s This isn't strictly necessary, but it will allow other models to rely on hparams.has_rope(il) without needting to prepopulate. Branch: GraniteSWAForCausalLM AI-usage: none Signed-off-by: Gabe Goodhart * feat: Move to has_rope for all granite model architectures Now that we have a proper hparam for this, it's better to use it and not require a hacky fallback in the hparam method itself. Branch: GraniteSWAForCausalLM AI-usage: none Signed-off-by: Gabe Goodhart * feat: No hacky rope_finetuned fallback in has_rope Branch: GraniteSWAForCausalLM AI-usage: none Signed-off-by: Gabe Goodhart * fix: Fully remove rope hparam filling in granitemoe There are no granitemoe models that use NoPE (it's not actually used in the layer building below), so this was just dead code. Branch: GraniteSWAForCausalLM AI-usage: none Signed-off-by: Gabe Goodhart * fix: Save out rope_pattern in model-saver Branch: GraniteSWAForCausalLM AI-usage: none Signed-off-by: Gabe Goodhart * fix: Set hparams.rope_finetuned for round trip Since the value is _read_ from rope_finetuned, we need to persist it when the model is saved with the saver. Branch: GraniteSWAForCausalLM AI-usage: none Signed-off-by: Gabe Goodhart * fix: Code review cleanup Signed-off-by: Gabe Goodhart Co-authored-by: Sigbjørn Skjæret Co-authored-by: Sigbjørn Skjæret * refactor: Keep gate/up fused for MoE path Branch: GraniteSWAForCausalLM AI-usage: full (Claude + Sonnet 5) Signed-off-by: Gabe Goodhart * fix: Skip GRANITE_SWA in model saver https://github.com/ggml-org/llama.cpp/pull/25505#discussion_r3773175651 Keeping is_swa_impl in the saver can break other models. Branch: GraniteSWAForCausalLM AI-usage: none Signed-off-by: Gabe Goodhart * add sliding window pattern for model in test * style: Fix indentation Branch: GraniteSWAForCausalLM AI-usage: none Signed-off-by: Gabe Goodhart * fix: Fix \\r\\n Thanks Claude! Branch: GraniteSWAForCausalLM AI-usage: none Signed-off-by: Gabe Goodhart * feat: Keep shared expert fused Branch: GraniteSWAForCausalLM AI-usage: full (Claude + Sonnet 5) Signed-off-by: Gabe Goodhart * style: More indentation fixes Signed-off-by: Gabe Goodhart Co-authored-by: Sigbjørn Skjæret --------- Signed-off-by: Gabe Goodhart Co-authored-by: Sigbjørn Skjæret **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-ubuntu-openvino-2026.3-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10514/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10514/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10514/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-win-openvino-2026.3-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10514/llama-b10514-ui.tar.gz)",
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "quality_score": 72,
+      "quality_score": 69,
       "tags": [
-        "工具链更新"
+        "模型与框架"
       ],
       "evidence_flags": [
         "github",
@@ -152,12 +236,12 @@
       "publication_status": "release",
       "rank": 0,
       "featured": false,
-      "category": "工具链更新",
+      "category": "模型与框架",
       "metrics": {},
       "metadata": {
         "repository": "ggml-org/llama.cpp",
-        "version": "b10448",
-        "release_id": "371154159",
+        "version": "b10514",
+        "release_id": "373678025",
         "release_type": "release"
       }
     },
@@ -200,40 +284,113 @@
       }
     },
     {
-      "id": "github:371561378",
+      "id": "github:374029099",
       "channel": "engineering",
       "related_channels": [],
       "item_type": "software_release",
       "source": "GitHub Releases",
-      "title": "b10456",
-      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10456",
-      "published_at": "2026-08-17T06:29:29Z",
-      "updated_at": "2026-08-17T04:32:16Z",
+      "title": "b10520",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10520",
+      "published_at": "2026-08-20T21:03:06Z",
+      "updated_at": "2026-08-19T20:03:13Z",
       "creators": [
         "ggml-org/llama.cpp"
       ],
       "language": "en",
-      "abstract_or_text": "sycl: fix thread/block count in quantized cpy kernel launches (#27160) Adjusts the thread/block count to be proportional to the size of the quant, reducing under/over subscription. Largest perf improvement is the q4_0 -> f32 path, with, on a Arc 70, throughput goes from 20.21 GB/s to 158.19 GB/s The rest of the quants are flat in performance uplift. **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10456/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10456/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10456/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10456/llama-b10456-ui.tar.gz)",
+      "abstract_or_text": "ggml-cpu: gate __fp16 on __ARM_FP16_FORMAT_IEEE (#26860) * ggml-cpu: gate __fp16 on __ARM_FP16_FORMAT_IEEE __ARM_NEON only signals NEON availability. The __fp16 type also needs the IEEE half format, implied on AArch64 but selected with -mfp16-format=ieee on 32 bit Arm, where the compiler otherwise rejects the type. The guard keeps every toolchain that provides the type on the same code and sends that one configuration to the generic lookup path. * ggml-cpu: gate the NEON+FMA block on __ARM_FP16_FORMAT_IEEE Both halves of the F16 section dereference __fp16, so armv7 with neon-vfpv4 hits the same unknown type error. Without the IEEE format the configuration now falls back to the scalar path. Address review from @JonathanC-ARM **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-ubuntu-openvino-2026.3-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10520/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10520/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10520/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-win-openvino-2026.3-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10520/llama-b10520-ui.tar.gz)",
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "quality_score": 69,
+      "quality_score": 66,
       "tags": [
-        "性能与部署"
+        "模型与框架"
       ],
       "evidence_flags": [
         "github",
-        "release",
-        "performance"
+        "release"
       ],
       "publication_status": "release",
       "rank": 0,
       "featured": false,
-      "category": "性能与部署",
+      "category": "模型与框架",
       "metrics": {},
       "metadata": {
         "repository": "ggml-org/llama.cpp",
-        "version": "b10456",
-        "release_id": "371561378",
+        "version": "b10520",
+        "release_id": "374029099",
+        "release_type": "release"
+      }
+    },
+    {
+      "id": "github:374013225",
+      "channel": "engineering",
+      "related_channels": [],
+      "item_type": "software_release",
+      "source": "GitHub Releases",
+      "title": "b10519",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10519",
+      "published_at": "2026-08-20T20:31:11Z",
+      "updated_at": "2026-08-19T18:48:09Z",
+      "creators": [
+        "ggml-org/llama.cpp"
+      ],
+      "language": "en",
+      "abstract_or_text": "server: refactor sleep handling, allow access /metrics during sleep (#27376) * add cached responses * refactor on_sleeping_state * allow accessing metrics during sleep * metrics task should not reset timer * updated docs * fix * fix get_res_model_info * add test * fix a race condition * split metrics and slots tasks / results * should_reset_buckets **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-ubuntu-openvino-2026.3-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10519/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10519/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10519/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-win-openvino-2026.3-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10519/llama-b10519-ui.tar.gz)",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 66,
+      "tags": [
+        "模型与框架"
+      ],
+      "evidence_flags": [
+        "github",
+        "release"
+      ],
+      "publication_status": "release",
+      "rank": 0,
+      "featured": false,
+      "category": "模型与框架",
+      "metrics": {},
+      "metadata": {
+        "repository": "ggml-org/llama.cpp",
+        "version": "b10519",
+        "release_id": "374013225",
+        "release_type": "release"
+      }
+    },
+    {
+      "id": "github:373918151",
+      "channel": "engineering",
+      "related_channels": [],
+      "item_type": "software_release",
+      "source": "GitHub Releases",
+      "title": "b10517",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10517",
+      "published_at": "2026-08-20T17:43:32Z",
+      "updated_at": "2026-08-19T15:44:15Z",
+      "creators": [
+        "ggml-org/llama.cpp"
+      ],
+      "language": "en",
+      "abstract_or_text": "vulkan : dequant q8_0 KV once in coopmat1 (#25494) * vulkan : dequant q8_0 KV once in coopmat1 Assisted-by: Claude (Opus 4.8) * vulkan : fall back instead of aborting when FA scratch exceeds maxStorageBufferRange * vulkan : require KV-cache layout in FA dequant path Assisted-by: Claude (Opus 4.8) * vulkan : skip FA dequant path on coopmat2 Assisted-by: Claude (Opus 4.8) * tests : add contiguously-allocated quant K/V FA tests Assisted-by: Claude (Opus 4.8) * vulkan : trim comments * vulkan : tighten permutation checks for FA path * vulkan : set prealloc_x_need_sync after the FA dispatch * vulkan : exclude Intel Xe1 from FA dequant path **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-ubuntu-openvino-2026.3-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10517/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10517/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10517/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-win-openvino-2026.3-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10517/llama-b10517-ui.tar.gz)",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 66,
+      "tags": [
+        "模型与框架"
+      ],
+      "evidence_flags": [
+        "github",
+        "release"
+      ],
+      "publication_status": "release",
+      "rank": 0,
+      "featured": false,
+      "category": "模型与框架",
+      "metrics": {},
+      "metadata": {
+        "repository": "ggml-org/llama.cpp",
+        "version": "b10517",
+        "release_id": "373918151",
         "release_type": "release"
       }
     },
@@ -271,6 +428,80 @@
         "repository": "openai/openai-python",
         "version": "v3.3.1",
         "release_id": "373198010",
+        "release_type": "release"
+      }
+    },
+    {
+      "id": "github:373750872",
+      "channel": "engineering",
+      "related_channels": [],
+      "item_type": "software_release",
+      "source": "GitHub Releases",
+      "title": "b10516",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10516",
+      "published_at": "2026-08-20T13:20:04Z",
+      "updated_at": "2026-08-19T15:43:10Z",
+      "creators": [
+        "ggml-org/llama.cpp"
+      ],
+      "language": "en",
+      "abstract_or_text": "vulkan: add null checks in ggml_vk_queue_command_pools_cleanup (#27353) * Guard against null queue pointers. **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-ubuntu-openvino-2026.3-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10516/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10516/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10516/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-win-openvino-2026.3-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10516/llama-b10516-ui.tar.gz)",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 66,
+      "tags": [
+        "模型与框架"
+      ],
+      "evidence_flags": [
+        "github",
+        "release"
+      ],
+      "publication_status": "release",
+      "rank": 0,
+      "featured": false,
+      "category": "模型与框架",
+      "metrics": {},
+      "metadata": {
+        "repository": "ggml-org/llama.cpp",
+        "version": "b10516",
+        "release_id": "373750872",
+        "release_type": "release"
+      }
+    },
+    {
+      "id": "github:373537425",
+      "channel": "engineering",
+      "related_channels": [],
+      "item_type": "software_release",
+      "source": "GitHub Releases",
+      "title": "b10509",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10509",
+      "published_at": "2026-08-20T06:52:43Z",
+      "updated_at": "2026-08-19T12:04:57Z",
+      "creators": [
+        "ggml-org/llama.cpp"
+      ],
+      "language": "en",
+      "abstract_or_text": "ggml: add ggml_rope_set_offset (+ metal support) (#27120) * add params * cpu kernel * metal kernel * add test backend ops * gate other backends * ggml: (cuda) support ggml_rope_set_offset (#27121) * rm cuda supports_op guard, fix webgpu clang-format * ggml: support ggml_rope_set_offset on vulkan (#27344) * ggml: support ggml_rope_set_offset on vulkan * remove inplace optimization **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-ubuntu-openvino-2026.3-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10509/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10509/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10509/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-win-openvino-2026.3-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10509/llama-b10509-ui.tar.gz)",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 66,
+      "tags": [
+        "工具链更新"
+      ],
+      "evidence_flags": [
+        "github",
+        "release"
+      ],
+      "publication_status": "release",
+      "rank": 0,
+      "featured": false,
+      "category": "工具链更新",
+      "metrics": {},
+      "metadata": {
+        "repository": "ggml-org/llama.cpp",
+        "version": "b10509",
+        "release_id": "373537425",
         "release_type": "release"
       }
     },
@@ -382,6 +613,43 @@
         "repository": "ggml-org/llama.cpp",
         "version": "b10505",
         "release_id": "373457653",
+        "release_type": "release"
+      }
+    },
+    {
+      "id": "github:373215105",
+      "channel": "engineering",
+      "related_channels": [],
+      "item_type": "software_release",
+      "source": "GitHub Releases",
+      "title": "v0.32.15",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.32.15",
+      "published_at": "2026-08-19T17:25:16Z",
+      "updated_at": "2026-08-19T22:40:16Z",
+      "creators": [
+        "ollama/ollama"
+      ],
+      "language": "en",
+      "abstract_or_text": "## What's Changed * New desktop onboarding flow on first launch * Caches resolved model metadata between requests, cutting time-to-first-token by roughly half (TTFT dropped from ~995 ms to ~524 ms in benchmarks) * Fixes a bug where chat and generate could wedge after a mid-stream parser error * **Qwen 3.8** system messages are now normalized so non-leading system messages are handled consistently * MLX and llama.cpp dependency updates ## New Contributors * @gaugarg-nv made their first contribution in https://github.com/ollama/ollama/pull/17752 **Full Changelog**: https://github.com/ollama/ollama/compare/v0.32.14...v0.32.15",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 66,
+      "tags": [
+        "模型与框架"
+      ],
+      "evidence_flags": [
+        "benchmark",
+        "github"
+      ],
+      "publication_status": "release",
+      "rank": 0,
+      "featured": false,
+      "category": "模型与框架",
+      "metrics": {},
+      "metadata": {
+        "repository": "ollama/ollama",
+        "version": "v0.32.15",
+        "release_id": "373215105",
         "release_type": "release"
       }
     },
@@ -681,65 +949,27 @@
       }
     },
     {
-      "id": "github:371785665",
+      "id": "github:373920197",
       "channel": "engineering",
       "related_channels": [],
       "item_type": "software_release",
       "source": "GitHub Releases",
-      "title": "b10470",
-      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10470",
-      "published_at": "2026-08-17T13:59:43Z",
-      "updated_at": "2026-08-17T13:14:13Z",
+      "title": "langchain-fireworks==1.6.0",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-fireworks%3D%3D1.6.0",
+      "published_at": "2026-08-20T17:47:18Z",
+      "updated_at": "2026-08-20T17:41:26Z",
       "creators": [
-        "ggml-org/llama.cpp"
+        "langchain-ai/langchain"
       ],
       "language": "en",
-      "abstract_or_text": "ci : push release tag explicitly in release.yml (#27261) Add a \"Create and push git tag\" step to the release job, right before the \"Create release\" step. The tag is created with git tag and pushed with the deploy key already configured by the Clone step, instead of relying on the Releases API (action-create-release) to create it as a side effect. The tag is lightweight, matching all existing b release tags. The step is idempotent: if the tag already exists (e.g. on a re-run), creation and push are skipped. Assisted-by: pi:llama.cpp/Qwen3.8-27B **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10470/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10470/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10470/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10470/llama-b10470-ui.tar.gz)",
+      "abstract_or_text": "Changes since langchain-fireworks==1.5.2 release(fireworks): 1.6.0 (#39810) feat(fireworks): add document reranking (#39732) fix(fireworks): filter invalid tool calls from v1 content (#39805) feat(core): add standard model exception types (#39538) chore(model-profiles): refresh model profile data (#39646) fix(fireworks): avoid repeated `service_tier` [closes #39619] (#39620) chore: bump langsmith from 0.10.6 to 0.10.16 in /libs/partners/fireworks (#39279) chore: bump aiohttp from 3.14.1 to 3.14.3 in /libs/partners/fireworks (#39236) chore(model-profiles): refresh model profile data (#39166)",
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "quality_score": 66,
-      "tags": [
-        "模型与框架"
-      ],
-      "evidence_flags": [
-        "github",
-        "release"
-      ],
-      "publication_status": "release",
-      "rank": 0,
-      "featured": false,
-      "category": "模型与框架",
-      "metrics": {},
-      "metadata": {
-        "repository": "ggml-org/llama.cpp",
-        "version": "b10470",
-        "release_id": "371785665",
-        "release_type": "release"
-      }
-    },
-    {
-      "id": "github:371547588",
-      "channel": "engineering",
-      "related_channels": [],
-      "item_type": "software_release",
-      "source": "GitHub Releases",
-      "title": "b10455",
-      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10455",
-      "published_at": "2026-08-17T05:47:28Z",
-      "updated_at": "2026-08-17T04:31:29Z",
-      "creators": [
-        "ggml-org/llama.cpp"
-      ],
-      "language": "en",
-      "abstract_or_text": "[SYCL] support OP OPT_STEP_ADAMW, OPT_STEP_SGD (#25268) * fix conflict * fix conflict of ops.md * fix conflict of ops.md * update the ops.md --------- Co-authored-by: Neo Zhang Jianyu **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10455/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10455/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10455/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10455/llama-b10455-ui.tar.gz)",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 66,
+      "quality_score": 63,
       "tags": [
         "工具链更新"
       ],
       "evidence_flags": [
-        "github",
         "release"
       ],
       "publication_status": "release",
@@ -748,257 +978,34 @@
       "category": "工具链更新",
       "metrics": {},
       "metadata": {
-        "repository": "ggml-org/llama.cpp",
-        "version": "b10455",
-        "release_id": "371547588",
+        "repository": "langchain-ai/langchain",
+        "version": "langchain-fireworks==1.6.0",
+        "release_id": "373920197",
         "release_type": "release"
       }
     },
     {
-      "id": "github:371325099",
+      "id": "github:373805496",
       "channel": "engineering",
       "related_channels": [],
       "item_type": "software_release",
       "source": "GitHub Releases",
-      "title": "b10453",
-      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10453",
-      "published_at": "2026-08-16T12:54:19Z",
-      "updated_at": "2026-08-16T12:12:55Z",
+      "title": "langchain==1.3.16",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.3.16",
+      "published_at": "2026-08-20T14:35:30Z",
+      "updated_at": "2026-08-20T14:32:02Z",
       "creators": [
-        "ggml-org/llama.cpp"
+        "langchain-ai/langchain"
       ],
       "language": "en",
-      "abstract_or_text": "model : remove some ggml_concat (#27176) Co-authored-by: Xuan Son Nguyen **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10453/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10453/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10453/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10453/llama-b10453-ui.tar.gz)",
+      "abstract_or_text": "Changes since langchain==1.3.15 release(langchain): 1.3.16 (#39806) feat(core): add standard model exception types (#39538) feat(langchain): support custom token_counter in ContextEditingMiddleware (#39754) fix(langchain): re-raise non-retryable exceptions in ModelRetryMiddleware (#38960) chore(langchain): update docs on error handling for json schema (#39632) fix(langchain): preserve final repeated schema ordering (#39284)",
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "quality_score": 66,
-      "tags": [
-        "模型与框架"
-      ],
-      "evidence_flags": [
-        "github",
-        "release"
-      ],
-      "publication_status": "release",
-      "rank": 0,
-      "featured": false,
-      "category": "模型与框架",
-      "metrics": {},
-      "metadata": {
-        "repository": "ggml-org/llama.cpp",
-        "version": "b10453",
-        "release_id": "371325099",
-        "release_type": "release"
-      }
-    },
-    {
-      "id": "github:371305663",
-      "channel": "engineering",
-      "related_channels": [],
-      "item_type": "software_release",
-      "source": "GitHub Releases",
-      "title": "b10452",
-      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10452",
-      "published_at": "2026-08-16T11:21:52Z",
-      "updated_at": "2026-08-16T10:45:33Z",
-      "creators": [
-        "ggml-org/llama.cpp"
-      ],
-      "language": "en",
-      "abstract_or_text": "chat: refactor handling supports_string_content / supports_typed_content (#27130) * better supports_string_content cap detect * test: add \"skip\" * messages_inp_normalizer **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10452/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10452/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10452/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10452/llama-b10452-ui.tar.gz)",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 66,
-      "tags": [
-        "模型与框架"
-      ],
-      "evidence_flags": [
-        "github",
-        "release"
-      ],
-      "publication_status": "release",
-      "rank": 0,
-      "featured": false,
-      "category": "模型与框架",
-      "metrics": {},
-      "metadata": {
-        "repository": "ggml-org/llama.cpp",
-        "version": "b10452",
-        "release_id": "371305663",
-        "release_type": "release"
-      }
-    },
-    {
-      "id": "github:371260055",
-      "channel": "engineering",
-      "related_channels": [],
-      "item_type": "software_release",
-      "source": "GitHub Releases",
-      "title": "b10451",
-      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10451",
-      "published_at": "2026-08-16T07:24:37Z",
-      "updated_at": "2026-08-16T06:38:01Z",
-      "creators": [
-        "ggml-org/llama.cpp"
-      ],
-      "language": "en",
-      "abstract_or_text": "llama : check LoRA tensor data is within file bounds (#27056) * llama : check LoRA tensor data is within file bounds * Update src/llama-adapter.cpp Co-authored-by: Sigbjørn Skjæret --------- Co-authored-by: Sigbjørn Skjæret **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10451/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10451/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10451/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10451/llama-b10451-ui.tar.gz)",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 66,
-      "tags": [
-        "模型与框架"
-      ],
-      "evidence_flags": [
-        "github",
-        "release"
-      ],
-      "publication_status": "release",
-      "rank": 0,
-      "featured": false,
-      "category": "模型与框架",
-      "metrics": {},
-      "metadata": {
-        "repository": "ggml-org/llama.cpp",
-        "version": "b10451",
-        "release_id": "371260055",
-        "release_type": "release"
-      }
-    },
-    {
-      "id": "github:371146472",
-      "channel": "engineering",
-      "related_channels": [],
-      "item_type": "software_release",
-      "source": "GitHub Releases",
-      "title": "b10447",
-      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10447",
-      "published_at": "2026-08-15T20:14:19Z",
-      "updated_at": "2026-08-15T14:48:40Z",
-      "creators": [
-        "ggml-org/llama.cpp"
-      ],
-      "language": "en",
-      "abstract_or_text": "server: re-design yield_to_queue thread model (#27133) * run common_speculative_process in worker * swap worker main thread design **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10447/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10447/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10447/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10447/llama-b10447-ui.tar.gz)",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 66,
-      "tags": [
-        "模型与框架"
-      ],
-      "evidence_flags": [
-        "github",
-        "release"
-      ],
-      "publication_status": "release",
-      "rank": 0,
-      "featured": false,
-      "category": "模型与框架",
-      "metrics": {},
-      "metadata": {
-        "repository": "ggml-org/llama.cpp",
-        "version": "b10447",
-        "release_id": "371146472",
-        "release_type": "release"
-      }
-    },
-    {
-      "id": "github:371140692",
-      "channel": "engineering",
-      "related_channels": [],
-      "item_type": "software_release",
-      "source": "GitHub Releases",
-      "title": "b10446",
-      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10446",
-      "published_at": "2026-08-15T19:44:16Z",
-      "updated_at": "2026-08-15T11:41:18Z",
-      "creators": [
-        "ggml-org/llama.cpp"
-      ],
-      "language": "en",
-      "abstract_or_text": "vendor: update BoringSSL to 0.20260813.0 (#27099) **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10446/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10446/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10446/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10446/llama-b10446-ui.tar.gz)",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 66,
-      "tags": [
-        "模型与框架"
-      ],
-      "evidence_flags": [
-        "github",
-        "release"
-      ],
-      "publication_status": "release",
-      "rank": 0,
-      "featured": false,
-      "category": "模型与框架",
-      "metrics": {},
-      "metadata": {
-        "repository": "ggml-org/llama.cpp",
-        "version": "b10446",
-        "release_id": "371140692",
-        "release_type": "release"
-      }
-    },
-    {
-      "id": "github:371128615",
-      "channel": "engineering",
-      "related_channels": [],
-      "item_type": "software_release",
-      "source": "GitHub Releases",
-      "title": "b10444",
-      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10444",
-      "published_at": "2026-08-15T18:42:10Z",
-      "updated_at": "2026-08-15T11:17:35Z",
-      "creators": [
-        "ggml-org/llama.cpp"
-      ],
-      "language": "en",
-      "abstract_or_text": "common: support --models-dir loading MTP assistant models (#24431) * common: support --models-dir loading MTP assistant models * common: preset: check for MTP models with strict prefix * common: preset: Take advantage of PR #27005 * handle other draft types * drop eagle3 * clean up --------- Co-authored-by: Xuan Son Nguyen **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10444/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10444/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10444/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10444/llama-b10444-ui.tar.gz)",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 66,
-      "tags": [
-        "模型与框架"
-      ],
-      "evidence_flags": [
-        "github",
-        "release"
-      ],
-      "publication_status": "release",
-      "rank": 0,
-      "featured": false,
-      "category": "模型与框架",
-      "metrics": {},
-      "metadata": {
-        "repository": "ggml-org/llama.cpp",
-        "version": "b10444",
-        "release_id": "371128615",
-        "release_type": "release"
-      }
-    },
-    {
-      "id": "github:371120586",
-      "channel": "engineering",
-      "related_channels": [],
-      "item_type": "software_release",
-      "source": "GitHub Releases",
-      "title": "b10443",
-      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10443",
-      "published_at": "2026-08-15T18:04:03Z",
-      "updated_at": "2026-08-15T09:45:30Z",
-      "creators": [
-        "ggml-org/llama.cpp"
-      ],
-      "language": "en",
-      "abstract_or_text": "fix: check gguf array type before reading (#27075) * fix: check gguf array type before reading * update skill **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-ubuntu-vulkan-arm64.tar.gz) - Ubuntu x64 (ROCm 7.14)[DISABLED](https://github.com/ggml-org/llama.cpp/pull/26969) - [Ubuntu x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-ubuntu-openvino-2026.2.1-x64.tar.gz) - [Ubuntu x64 (SYCL FP32)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-ubuntu-sycl-fp32-x64.tar.gz) - [Ubuntu x64 (SYCL FP16)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-ubuntu-sycl-fp16-x64.tar.gz) **Android:** - [Android arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-android-arm64.tar.gz) **Windows:** - [Windows x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-win-cpu-x64.zip) - [Windows arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-win-cpu-arm64.zip) - [Windows arm64 (OpenCL Adreno)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-win-opencl-adreno-arm64.zip) - [Windows x64 (CUDA 12)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-win-cuda-12.4-x64.zip) - [CUDA 12.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10443/cudart-llama-bin-win-cuda-12.4-x64.zip) - [Windows x64 (CUDA 13)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-win-cuda-13.3-x64.zip) - [CUDA 13.3 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10443/cudart-llama-bin-win-cuda-13.3-x64.zip) - [Windows arm64 (CUDA 13) (preview)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-win-cuda-13.4-arm64.zip) - [CUDA 13.4 DLLs](https://github.com/ggml-org/llama.cpp/releases/download/b10443/cudart-llama-bin-win-cuda-13.4-arm64.zip) - [Windows x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-win-vulkan-x64.zip) - [Windows x64 (OpenVINO)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-win-openvino-2026.2.1-x64.zip) - [Windows x64 (SYCL)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-win-sycl-x64.zip) - [Windows x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-bin-win-rocm-7.14-x64.zip) **openEuler:** - [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23705) - openEuler x86 (310p) - openEuler x86 (910b, ACL Graph) - openEuler aarch64 (310p) - openEuler aarch64 (910b, ACL Graph) **UI:** - [UI](https://github.com/ggml-org/llama.cpp/releases/download/b10443/llama-b10443-ui.tar.gz)",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 66,
+      "quality_score": 63,
       "tags": [
         "工具链更新"
       ],
       "evidence_flags": [
-        "github",
         "release"
       ],
       "publication_status": "release",
@@ -1007,45 +1014,45 @@
       "category": "工具链更新",
       "metrics": {},
       "metadata": {
-        "repository": "ggml-org/llama.cpp",
-        "version": "b10443",
-        "release_id": "371120586",
+        "repository": "langchain-ai/langchain",
+        "version": "langchain==1.3.16",
+        "release_id": "373805496",
         "release_type": "release"
       }
     },
     {
-      "id": "github:371138535",
+      "id": "github:373782994",
       "channel": "engineering",
       "related_channels": [],
       "item_type": "software_release",
       "source": "GitHub Releases",
-      "title": "v0.32.14",
-      "url": "https://github.com/ollama/ollama/releases/tag/v0.32.14",
-      "published_at": "2026-08-15T19:41:23Z",
-      "updated_at": "2026-08-15T18:56:40Z",
+      "title": "langchain-anthropic==1.6.1",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.6.1",
+      "published_at": "2026-08-20T14:06:49Z",
+      "updated_at": "2026-08-20T14:01:13Z",
       "creators": [
-        "ollama/ollama"
+        "langchain-ai/langchain"
       ],
       "language": "en",
-      "abstract_or_text": "## What's Changed * llm: transcode WebP images for llama-server * renderers/qwen: tolerate non-leading system messages **Full Changelog**: https://github.com/ollama/ollama/compare/v0.32.13...v0.32.14",
+      "abstract_or_text": "Changes since langchain-anthropic==1.6.0 release(anthropic): 1.6.1 (#39804) fix(anthropic): filter invalid tool calls from v1 content (#39803)",
       "summary_zh": "",
       "why_it_matters_zh": "",
-      "quality_score": 66,
+      "quality_score": 63,
       "tags": [
-        "模型与框架"
+        "工具链更新"
       ],
       "evidence_flags": [
-        "github"
+        "release"
       ],
       "publication_status": "release",
       "rank": 0,
       "featured": false,
-      "category": "模型与框架",
+      "category": "工具链更新",
       "metrics": {},
       "metadata": {
-        "repository": "ollama/ollama",
-        "version": "v0.32.14",
-        "release_id": "371138535",
+        "repository": "langchain-ai/langchain",
+        "version": "langchain-anthropic==1.6.1",
+        "release_id": "373782994",
         "release_type": "release"
       }
     },
@@ -1339,6 +1346,114 @@
       }
     },
     {
+      "id": "github:374056840",
+      "channel": "engineering",
+      "related_channels": [],
+      "item_type": "software_release",
+      "source": "GitHub Releases",
+      "title": "0.150.0-alpha.1",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.150.0-alpha.1",
+      "published_at": "2026-08-20T22:06:34Z",
+      "updated_at": "2026-08-20T21:17:27Z",
+      "creators": [
+        "openai/codex"
+      ],
+      "language": "en",
+      "abstract_or_text": "Release 0.150.0-alpha.1",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 58,
+      "tags": [
+        "工具链更新"
+      ],
+      "evidence_flags": [
+        "release"
+      ],
+      "publication_status": "prerelease",
+      "rank": 0,
+      "featured": false,
+      "category": "工具链更新",
+      "metrics": {},
+      "metadata": {
+        "repository": "openai/codex",
+        "version": "rust-v0.150.0-alpha.1",
+        "release_id": "374056840",
+        "release_type": "prerelease"
+      }
+    },
+    {
+      "id": "github:373945854",
+      "channel": "engineering",
+      "related_channels": [],
+      "item_type": "software_release",
+      "source": "GitHub Releases",
+      "title": "0.149.0-alpha.7",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.149.0-alpha.7",
+      "published_at": "2026-08-20T18:29:14Z",
+      "updated_at": "2026-08-20T16:56:34Z",
+      "creators": [
+        "openai/codex"
+      ],
+      "language": "en",
+      "abstract_or_text": "Release 0.149.0-alpha.7",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 58,
+      "tags": [
+        "工具链更新"
+      ],
+      "evidence_flags": [
+        "release"
+      ],
+      "publication_status": "prerelease",
+      "rank": 0,
+      "featured": false,
+      "category": "工具链更新",
+      "metrics": {},
+      "metadata": {
+        "repository": "openai/codex",
+        "version": "rust-v0.149.0-alpha.7",
+        "release_id": "373945854",
+        "release_type": "prerelease"
+      }
+    },
+    {
+      "id": "github:373625317",
+      "channel": "engineering",
+      "related_channels": [],
+      "item_type": "software_release",
+      "source": "GitHub Releases",
+      "title": "0.149.0-alpha.4",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.149.0-alpha.4",
+      "published_at": "2026-08-20T09:39:59Z",
+      "updated_at": "2026-08-20T08:38:16Z",
+      "creators": [
+        "openai/codex"
+      ],
+      "language": "en",
+      "abstract_or_text": "Release 0.149.0-alpha.4",
+      "summary_zh": "",
+      "why_it_matters_zh": "",
+      "quality_score": 58,
+      "tags": [
+        "工具链更新"
+      ],
+      "evidence_flags": [
+        "release"
+      ],
+      "publication_status": "prerelease",
+      "rank": 0,
+      "featured": false,
+      "category": "工具链更新",
+      "metrics": {},
+      "metadata": {
+        "repository": "openai/codex",
+        "version": "rust-v0.149.0-alpha.4",
+        "release_id": "373625317",
+        "release_type": "prerelease"
+      }
+    },
+    {
       "id": "github:373455220",
       "channel": "engineering",
       "related_channels": [],
@@ -1407,42 +1522,6 @@
         "repository": "openai/codex",
         "version": "rust-v0.149.0-alpha.2",
         "release_id": "373389645",
-        "release_type": "prerelease"
-      }
-    },
-    {
-      "id": "github:373215105",
-      "channel": "engineering",
-      "related_channels": [],
-      "item_type": "software_release",
-      "source": "GitHub Releases",
-      "title": "v0.32.15",
-      "url": "https://github.com/ollama/ollama/releases/tag/v0.32.15",
-      "published_at": "2026-08-19T17:25:16Z",
-      "updated_at": "2026-08-19T22:40:16Z",
-      "creators": [
-        "ollama/ollama"
-      ],
-      "language": "en",
-      "abstract_or_text": "## What's Changed * Add a model metadata cache to reduce Ollama’s per-request overhead ## New Contributors * @gaugarg-nv made their first contribution in https://github.com/ollama/ollama/pull/17752 **Full Changelog**: https://github.com/ollama/ollama/compare/v0.32.14...v0.32.15-rc1",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 58,
-      "tags": [
-        "模型与框架"
-      ],
-      "evidence_flags": [
-        "github"
-      ],
-      "publication_status": "prerelease",
-      "rank": 0,
-      "featured": false,
-      "category": "模型与框架",
-      "metrics": {},
-      "metadata": {
-        "repository": "ollama/ollama",
-        "version": "v0.32.15",
-        "release_id": "373215105",
         "release_type": "prerelease"
       }
     },
@@ -1623,42 +1702,6 @@
         "repository": "openai/codex",
         "version": "rust-v0.148.0-alpha.21",
         "release_id": "371903816",
-        "release_type": "prerelease"
-      }
-    },
-    {
-      "id": "github:371191288",
-      "channel": "engineering",
-      "related_channels": [],
-      "item_type": "software_release",
-      "source": "GitHub Releases",
-      "title": "0.148.0-alpha.20",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.148.0-alpha.20",
-      "published_at": "2026-08-16T00:21:59Z",
-      "updated_at": "2026-08-15T23:34:05Z",
-      "creators": [
-        "openai/codex"
-      ],
-      "language": "en",
-      "abstract_or_text": "Release 0.148.0-alpha.20",
-      "summary_zh": "",
-      "why_it_matters_zh": "",
-      "quality_score": 58,
-      "tags": [
-        "工具链更新"
-      ],
-      "evidence_flags": [
-        "release"
-      ],
-      "publication_status": "prerelease",
-      "rank": 0,
-      "featured": false,
-      "category": "工具链更新",
-      "metrics": {},
-      "metadata": {
-        "repository": "openai/codex",
-        "version": "rust-v0.148.0-alpha.20",
-        "release_id": "371191288",
         "release_type": "prerelease"
       }
     }

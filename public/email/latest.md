@@ -1,54 +1,54 @@
-# AIxDaily · 2026-08-20
+# AIxDaily · 2026-08-21
 
-今日精选：AI × Chem 16 项，AI × Bio 13 项，AI × Math 16 项，AI Voices 10 项，Engineering 7 项。今日五个频道均有精选，研究侧以预印本为主：化学聚焦分子生成、虚拟筛选与逆合成，生物涵盖跨模态单细胞、细菌蛋白语言模型和空间组学；数学集中讨论验证、自主构造和缺失前提推理。AI观点频道收录公开帖文及其发布主张，尚待独立核验；工程频道则为正式软件发布，提示关注升级兼容性。
+今日精选聚焦 AI 方法、验证与工具。化学和生命科学频道收录的均为预印本，涉及分子优化、跨情境组学预测与单细胞跨模态训练；数学频道也以预印本讨论推理验证和偏好不确定性。公开观点频道包含机构帖文及公测发布，工程频道则为正式软件发布，信息均应按其原始发布形态理解。
 
 ## AI × Chem
 
-采集 2196，候选 60，精选 16。来源状态：各来源已完成
+采集 1250，候选 60，精选 16。来源状态：各来源已完成
 
-- [Systematic Benchmarking of AI-Based Molecular Generation Models for Structure-Based Drug Design](https://www.biorxiv.org/content/10.64898/2026.08.14.744939) — 在176个蛋白—配体体系上比较12类分子生成与优化方法，并以SAFC结合受体构象集合、集合对接和相互作用图，为生成分子给出具备动力学信息的功能排序。
-- [Discovery of Selective Small-Molecule Ligands of SV2C by AI-Enhanced Virtual Screening and Experimental Validation](https://www.biorxiv.org/content/10.64898/2026.08.11.744237) — 以AI增强虚拟筛选和中等通量生物物理检测，从596万商业化合物中找到多类选择性SV2C小分子配体，其中化合物56对SV2C的Ki为3.25 μM。
-- [Training Chemical Plausibility-Aware Large Language Models for Single-Step Retrosynthesis](https://arxiv.org/abs/2608.18940v1) — 构建含约4560万条已验证反应的CREED-CCV-2+USPTO-XL，训练C3LM，并以Top-K提示和化学合理性、创新性奖励改进单步逆合成。
+- [A multi-agent molecular optimization framework leads to a rapid-recovery intravenous anesthetic candidate with an improved safety margin](https://www.biorxiv.org/content/10.64898/2026.08.17.745149) — MASCOT 将化学约束图编辑搜索与三个职责专门化智能体结合，用于在效力、药代和安全性之间进行先导化合物优化。它在6项基准设置中表现最佳，并由 remimazolam 衍生物 RM-7 的动物研究给出实验延伸：该候选物显示出更高效力、更快功能恢复、更宽安全窗及保留的 flumazenil 可逆性。
+- [Monroe: A Molecular Foundation Model for In-Context Probabilistic Inference](https://arxiv.org/abs/2608.18982v1) — Monroe 是面向低数据生物测定预测的分子基础模型：在超过8,100万 PM6 分子上预训练，改进立体化学图表示、构象去噪和多任务训练，并以 TabPFN 进行上下文下游预测。在 Polaris 与 activity cliff 基准上，它达到或超过已有模型；其 PFN 下游策略也提升了 MiniMol 和 CheMeleon。
+- [Training Chemical Plausibility-Aware Large Language Models for Single-Step Retrosynthesis](https://arxiv.org/abs/2608.18940v1) — 该研究以 Top-K 提示训练 C3LM，使单步逆合成可表达多个化学上合理的答案；模型在约4,560万条经验证反应组成的 CREED-CCV-2+USPTO-XL 上训练，并结合 ChemCensor 与新颖性奖励。在 OOD URSA-expert-2026 基准中报告了最佳表现，并分析了 LLM 与传统模型的互补反应空间。
 
 [查看频道专页](https://zichenwang114514.github.io/ai-x-daily/channels/aixchem/)
 
 ## AI × Bio
 
-采集 2330，候选 60，精选 13。来源状态：各来源已完成
+采集 1259，候选 60，精选 14。来源状态：各来源已完成
 
-- [Single-cell foundation models benefit from cross-modal training: adding proteomics data beats parameter scaling](https://www.biorxiv.org/content/10.64898/2026.08.14.744845) — 以 44,843 个蛋白质组样本继续预训练 Tahoe-x1，比较跨模态训练与单纯扩大 RNA 模型参数规模的效果。
-- [A contextualised protein language model reveals the functional syntax of bacterial evolution](https://www.biorxiv.org/content/10.1101/2025.07.20.665723) — 在超过 130 万个细菌基因组上训练 Bacformer，以全基因组蛋白序列上下文关联蛋白组织、功能与表型。
-- [Spatial second-order features predict glioma malignant transformation](https://www.biorxiv.org/content/10.64898/2026.08.14.744974) — 对 18 例回顾性 IDH 突变胶质瘤活检开展空间 DNA/RNA 整合分析，研究恶性转化的预测特征。
+- [Signature Recontextualization: Mapping perturbational signatures across biological contexts](https://www.biorxiv.org/content/10.64898/2026.08.14.744937) — 提出跨生物学情境扰动转录组预测的统一基准 sigRecon，比较投影、网络传播、深度学习和基础模型方法，并覆盖细胞系与大鼠组织扰动数据。
+- [Single-cell foundation models benefit from cross-modal training: adding proteomics data beats parameter scaling](https://www.biorxiv.org/content/10.64898/2026.08.14.744845) — 以44,843份蛋白质组样本继续预训练 Tahoe-x1，70M 参数模型在多数既有基准上达到或超过更大的 RNA-only 模型。
+- [Assessing the Reliability of LLM-Generated Phenotype-Genotype Associations Through External Validation](https://www.biorxiv.org/content/10.64898/2026.08.13.744701) — 在4,196条由四个 LLM 生成的表型—基因及表型—SNP 关联上，以 Ensembl、GWAS Catalog 和 OMIM 进行外部验证。
 
 [查看频道专页](https://zichenwang114514.github.io/ai-x-daily/channels/aixbio/)
 
 ## AI × Math
 
-采集 1233，候选 60，精选 16。来源状态：OpenReview: RuntimeError: 未配置 OpenReview 账号
+采集 521，候选 60，精选 9。来源状态：OpenReview: RuntimeError: 未配置 OpenReview 账号
 
-- [Grading the Graders: Verification Autonomy Levels (L0-L5) for LLM Reasoning](https://arxiv.org/abs/2608.19009v1) — 提出 Verification Autonomy Levels（VAL）L0–L5，用验证规范的来源与判定结论所能保证的内容，统一描述 LLM 推理验证方案。
-- [ALPS: Measuring Valid Creativity in Large Language Models with Mathematical Construction](https://arxiv.org/abs/2608.15979v1) — ALPS 以可自动判定的代数律任务，测试模型能否构造满足条件的无限数学结构，或证明这类结构不存在。
-- [Ask, Condition or Abstain: Reinforcement Learning for Missing-Premise Reasoning](https://arxiv.org/abs/2608.16554v1) — ACA-RL 训练模型在题目前提缺失时选择追问、给出条件式答案或弃答，并发布覆盖数学、逻辑和现实文字题的 MPB。
+- [Grading the Graders: Verification Autonomy Levels (L0-L5) for LLM Reasoning](https://arxiv.org/abs/2608.19009v1) — 提出 Verification Autonomy Levels（VAL）框架，以验证规格的来源和结论可保证的性质来区分 LLM 推理验证方案，并指出形式化可描述性质与开放世界经验任务在完备性上存在根本差异。
+- [Preference Reasoning under Indeterminacy in Large Language Models](https://arxiv.org/abs/2608.18631v1) — 将 LLM 的偏好推理问题形式化为认识论不确定性与结构性不确定性两条轴，并报告当前模型常不能区分存在确定解和不存在确定解的实例。
+- [Structure-Internalized Rule Language Model for Faithful Knowledge Graph Reasoning](https://arxiv.org/abs/2608.17443v1) — SIRLM 为知识图谱推理生成结构规则，并结合结构关系记忆、知识图谱 tokenizer 和受规则约束的神经符号推理器；作者在 36 个数据集上与 17 种 KGR 方法比较。
 
 [查看频道专页](https://zichenwang114514.github.io/ai-x-daily/channels/aixmath/)
 
 ## AI Voices
 
-采集 62，候选 60，精选 10。来源状态：各来源已完成
+采集 82，候选 60，精选 10。来源状态：各来源已完成
 
-- [@ornith_：Aloha! 🌺Introducing Ornith-1.5, a family of open-source LLMs spanning 9B Dense, 35B MoE, and 397B MoE, trained with self](https://x.com/ornith_/status/2090074077084127302) — Ornith 发布 Ornith-1.5 开源模型家族，覆盖 9B 稠密、35B MoE 与 397B MoE 三种规模，并公布了推理、智能体和编程基准成绩。发布方称，其训练采用端到端自我改进循环，模型会提出任务、生成任务脚手架，并产出用于强化学习的解题轨迹。
-- [@OpenAI：As models become more capable, the risks associated with developing and testing them internally also grow. We temporaril](https://x.com/OpenAI/status/2089777845187031262) — OpenAI 表示，为加强研究环境并扩展监测覆盖，其面向部署的最新模型强化学习训练暂停两周；计划中最大规模的前沿强化学习运行仍处于暂停状态。
-- [@UnslothAI：We’re releasing new Qwen3.8-27B GGUFs with 10% higher accuracy. Unsloth Dynamic V3 outperforms others by >10% on Div-300](https://x.com/UnslothAI/status/2090103470015828184) — Unsloth 发布用于 Qwen3.8-27B 的新 GGUF 量化版本，并称 Dynamic V3 在 Div-300、KLD 等测试中优于其他方案；同时提供号称可在 8GB 内存运行的 1-bit 量化版本。
+- [@OpenAI：As models become more capable, the risks associated with developing and testing them internally also grow. We temporaril](https://x.com/OpenAI/status/2089777845187031262) — OpenAI 宣布，为加强研究环境并扩大监测范围，已暂缓面向部署的最新模型强化学习训练两周；其最大规模的前沿强化学习训练仍待小规模训练和评测提供更多对齐证据。编辑认为，这是一项罕见且具体的前沿模型研发安全实践披露。
+- [@NVIDIAAI：We benchmarked 300+ NVIDIA verified skills to see how much they actually help agents on real tasks. Same task, same mode](https://x.com/NVIDIAAI/status/2090113635683340622) — NVIDIA 称，其在相同任务、模型和设置下测试了 300 多项已验证技能，仅改变代理是否获得该技能；发布方报告正确性、有效性和效率分别提高 41、39 和 35 个百分点，并开源了 SkillEvaluator。编辑认为，帖文提供了可复用的技能评测方向，但具体增益仍应结合基准任务和测量方法阅读。
+- [@NVIDIAAI：We just released TensorRT Model Connect in Public Preview. You can take a supported @huggingface model to end-to-end Ten](https://x.com/NVIDIAAI/status/2089750360869233059) — NVIDIA 发布 TensorRT Model Connect 公测版：受支持的 Hugging Face 模型可通过两条命令转换为端到端 TensorRT 推理流程，无需中间 ONNX 导出，并可由原生 C++ API 调用。发布方还称该开源项目在人工指导和审阅下广泛使用了 Codex 代理。编辑认为，其中可直接检查的实现、测试与文档比“由代理构建”的表述更值得工程团队关注。
 
 [查看频道专页](https://zichenwang114514.github.io/ai-x-daily/channels/aivoices/)
 
 ## Engineering
 
-采集 45，候选 45，精选 7。来源状态：各来源已完成
+采集 46，候选 46，精选 9。来源状态：各来源已完成
 
-- [0.148.0](https://github.com/openai/codex/releases/tag/rust-v0.148.0) — openai/codex 发布 rust-v0.148.0，加入会话导出、fork、归档与恢复、Amazon Bedrock Runtime 内置提供商，以及异步 Hook 和 MCP 工具调用；同时改进会话恢复、网络重连与 Windows/Linux 沙箱限制。
-- [JAX v0.11.1](https://github.com/jax-ml/jax/releases/tag/jax-v0.11.1) — jax-ml/jax 发布 jax-v0.11.1，加入 `jax.numpy.top_k`，并调整 Exported 模块反序列化、`EffortLevel` 配置、数组 API 返回类型和负索引默认行为。
-- [v0.14.24](https://github.com/run-llama/llama_index/releases/tag/v0.14.24) — run-llama/llama_index 发布 v0.14.24，修复文档摄取、聊天记忆、检索、工具参数和多家向量库兼容性问题，并新增 Claude Sonnet 5、Claude Opus 5、GPT-5.6、Gemini 3.7 Flash 等模型支持。
+- [Diffusers 0.40.0: New pipelines, tensor-parallel support, improved CLI, and more](https://github.com/huggingface/diffusers/releases/tag/v0.40.0) — huggingface/diffusers v0.40.0 发布多条音频、视频和图像生成管线，提供 tensor-parallel 推理，并将 Modular Diffusers 转为稳定支持；同时移除 JAX/Flax 支持并修复分片检查点的路径遍历问题。
+- [0.149.0](https://github.com/openai/codex/releases/tag/rust-v0.149.0) — openai/codex rust-v0.149.0 为终端工作流加入 `codex agents` 任务面板、`codex queue`、工作目录命令和更完整的 Vim 编辑，并加强诊断、会话恢复和安全处理。
+- [v0.14.24](https://github.com/run-llama/llama_index/releases/tag/v0.14.24) — run-llama/llama_index v0.14.24 修复摄取、记忆、检索、工具调用与多项连接器问题，并扩展 Claude Sonnet 5、Claude Opus 5、GPT-5.6、Gemini 3.7 Flash 和 MCP 2.x 支持。
 
 [查看频道专页](https://zichenwang114514.github.io/ai-x-daily/channels/engineering/)
 
