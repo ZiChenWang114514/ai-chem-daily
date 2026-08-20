@@ -2,6 +2,14 @@
   "schema_version": "2.0",
   "items": [
     {
+      "date": "2026-08-20",
+      "href": "data/channels/aixchem/archive/2026-08-20.json",
+      "selected": 16,
+      "candidates": 60,
+      "fetched": 2196,
+      "kind": "json"
+    },
+    {
       "date": "2026-08-19",
       "href": "data/channels/aixchem/archive/2026-08-19.json",
       "selected": 16,
